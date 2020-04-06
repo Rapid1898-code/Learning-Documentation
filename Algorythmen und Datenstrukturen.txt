@@ -1,4 +1,4 @@
-1 - Algorythmen und Datenstrukturen leichte erklärt
+1 Algorythmen und Datenstrukturen leichte erklärt
     Bespiele für Algorythmen:
     Sortieren
     YouTube-Empfehlungen
@@ -8,3 +8,13 @@
     News-Feed
 
 
+2 Bedigungen und erste Beispiele
+    Berechnung A mit 3 Bedinungen
+        falls X gilt dann Berechnung B
+        falls Y gilt dann Berechnung B'
+        sonst dann Berechnung B''
+    Beispiel:
+        Algo Sortiere_Zwei_Werte: (Wert_A, Wert_B)
+        Falls Wert_A < Wert_B: Klein<-Wert_A, Groß<-Wert_B
+        Falls Wert_A >= Wert_B: Klein<-Wert_B, Groß<-Wert_A
+        Ergebnis Klein, Groß
