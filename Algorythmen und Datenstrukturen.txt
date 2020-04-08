@@ -18,3 +18,12 @@
         Falls Wert_A < Wert_B: Klein<-Wert_A, Groß<-Wert_B
         Falls Wert_A >= Wert_B: Klein<-Wert_B, Groß<-Wert_A
         Ergebnis Klein, Groß
+
+
+3 Algorithmisches Denken und Schleifen
+    Algorithmus "Spiel"
+    Solange wir im Spiel sind
+        Leertaste => Springen
+        Rechts Pfeil => nach Rechts laufen
+    Schleife springt zurück zu Solange
+
