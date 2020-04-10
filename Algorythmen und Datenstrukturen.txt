@@ -1,5 +1,5 @@
-1 Algorythmen und Datenstrukturen leichte erklärt
-    Bespiele für Algorythmen:
+1 Algorythmen und Datenstrukturen leichte erklÃ¤rt
+    Bespiele fÃ¼r Algorythmen:
     Sortieren
     YouTube-Empfehlungen
     Google-Suche
@@ -15,9 +15,9 @@
         sonst dann Berechnung B''
     Beispiel:
         Algo Sortiere_Zwei_Werte: (Wert_A, Wert_B)
-        Falls Wert_A < Wert_B: Klein<-Wert_A, Groß<-Wert_B
-        Falls Wert_A >= Wert_B: Klein<-Wert_B, Groß<-Wert_A
-        Ergebnis Klein, Groß
+        Falls Wert_A < Wert_B: Klein<-Wert_A, GroÃŸ<-Wert_B
+        Falls Wert_A >= Wert_B: Klein<-Wert_B, GroÃŸ<-Wert_A
+        Ergebnis Klein, GroÃŸ
 
 
 3 Algorithmisches Denken und Schleifen
@@ -25,5 +25,23 @@
     Solange wir im Spiel sind
         Leertaste => Springen
         Rechts Pfeil => nach Rechts laufen
-    Schleife springt zurück zu Solange
+    Schleife springt zurÃ¼ck zu Solange
+
+
+4 Datenstrukturen einfach erklÃ¤rt
+    langsame und schnelle Datenstrukturen
+    z.B. Array, Linked List, Queues, Map, Set, Graph, Baum
+
+
+5 Laufzeitanalyse / Landau Notation / O-Notation
+    O(n) jedes Element wird 1x angegriffen (von oben nach unten)
+        => z.B. wenn ein bestimmtes Element gesucht wird
+    O(nÂ²) jedes Mal alle Element anfassen wenn ein Element gesucht wird
+        => z.B. bei Elementvergleichen
+    O(1) Direktzugriff
+        => das 26. Element lesen
+    
+    
+
+
 
