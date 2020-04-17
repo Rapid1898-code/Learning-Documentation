@@ -40,7 +40,12 @@
         => z.B. bei Elementvergleichen
     O(1) Direktzugriff
         => das 26. Element lesen
-    
+       
+6 Array
+    praktisch in allen Programmiersprachen       
+    grundsätzlich sehr unflexibel beim verändern
+    schnell: direkter Zugriff auf Element x
+    langsam: einfügen, suchen, löschen
     
 
 
