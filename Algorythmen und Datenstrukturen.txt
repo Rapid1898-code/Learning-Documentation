@@ -57,6 +57,38 @@
     Doubled Linked List => kennen nicht nur Nachfolger sondern auch den Vorgänger des Elements
     
 
+8 Queues / FIFO First In First Out
+    nur 2 Funktionen - ist wie eine Warteschlange
+    Push => Element an der ersten Stelle einfügen
+    Pop => letztes Element abschneiden
+    Stack / LIFO Last In First Out
+    Push / Pop bezieht sich immer auf das letzte Element
+    Einfügen / Löschen => Schnell
+    Zugriff / Suchen => Langsam
+    
+    
+9 Sets
+    Elemente im Set sind einzigartig - keine doppelten Elemente möglich
+    
+
+10 Maps / HashMaps
+    Immer Zuordnung von Schlüssel zu Wert
+    Zuweisung zwischen Schlüssel und Wert erfolgt mittels Hashfunktion h
+    
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+
     
 
     
