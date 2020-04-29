@@ -40,13 +40,25 @@
         => z.B. bei Elementvergleichen
     O(1) Direktzugriff
         => das 26. Element lesen
-       
+
+
 6 Array
     praktisch in allen Programmiersprachen       
     grundsätzlich sehr unflexibel beim verändern
     schnell: direkter Zugriff auf Element x
     langsam: einfügen, suchen, löschen
+
+
+7 Linked List
+    Jedes Element zeigt zum nächsten
+    Einfügen/Löschen von Elementen sehr schnell (im Gegensatz z.b. zu Arrays)
+    Zugriff und Suchen sehr langsam (es müssen alle Elemente angefasst werden
+    => vor allem geeignet wenn viel angepasst wird - wenig gelesen
+    Doubled Linked List => kennen nicht nur Nachfolger sondern auch den Vorgänger des Elements
     
 
+    
+
+    
 
 
