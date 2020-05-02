@@ -98,6 +98,19 @@
         l = [1,2,4,8,9,42,1337,1338,5600,13370]
         print(binary_search(l, 42))
 
+13 Selection Sort
+    Z.b. um eine Liste zu sortieren
+    Kleinstes Element wird ganz vorne eingefügt und getausch
+    Danch wird das kleinste Element ab dem zweiten gesucht und so weiter
+    Komplexität: O(n²) - ist nicht gut für einen Sortieralgorythmus
+    Sortierung erfolgt InPlace - Sortierung innerhalb eines Arrays möglich - braucht wenig Speicher
+    
+
+
+
+
+
+
 
 
 
