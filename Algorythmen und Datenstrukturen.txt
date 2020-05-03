@@ -81,7 +81,7 @@
     Liste wird geteilt und geschaut ob gesuchtes Element links oder rechts der Mitte ist
     Dann wird der jeweilige Teil genommen usw. bis die gesuchte Zahl gefunden wird
 
-    
+
 12 Binäre Suche in Python
     siehe BinarySearch.py
 
