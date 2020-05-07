@@ -111,6 +111,15 @@
     siehe InsertionSort.py
 
 
+17 Bubble Sort
+    vergleicht erste beiden Elemente und werden bei Bedarf vertauscht
+    nächsten beiden Elemente werden verglichen und bei Bedarf vertauscht
+    nach einem Lauf steht der größte Werte ganz hinten - muss nicht mehr angegriffen werden
+    nach jedem Lauf ist dann an der letzten Stelle ein Wert dazugekommen sortiert
+
+
+
+
 
 
 
