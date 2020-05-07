@@ -88,15 +88,27 @@
 
 13 Selection Sort
     Z.b. um eine Liste zu sortieren
-    Kleinstes Element wird ganz vorne eingefügt und getausch
+    Kleinstes Element wird ganz vorne eingefügt und getauscht
     Danch wird das kleinste Element ab dem zweiten gesucht und so weiter
     Komplexität: O(n²) - ist nicht gut für einen Sortieralgorythmus
     Sortierung erfolgt InPlace - Sortierung innerhalb eines Arrays möglich - braucht wenig Speicher
 
 
 14 Selection Sort in Python
-    abc
     siehe SelectionSort.py
+
+
+15 Insertion Sort
+    Algo bildet neue (sortierte Liste)
+    Erstes Element bleibt gleich
+    nächste Element wenn kleiner wird als erstes eingefügt
+    drittes Element wird dann wieder entsprechend eingeordnet
+    => jedes mal muss die gesamte Ergebnisliste durchlaufen werden
+    => Sortierung nicht in place (zweite Ergebnisliste wird benötigt)
+
+
+16 Insertin Sort in Python
+    siehe InsertionSort.py
 
 
 
