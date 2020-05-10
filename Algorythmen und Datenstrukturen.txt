@@ -123,6 +123,11 @@
     siehe BubbleSort.py
 
 
+19 Brute Force Algorythmen
+    es wird komplett alles ausprobiert (mit "brutaler Gewalt")
+    z.B. ein Sudoko komplett lösen - alles ausprobieren
+    z.b. Hashcracken, Sudoko, Passwörter cracken
+
 
 
 
