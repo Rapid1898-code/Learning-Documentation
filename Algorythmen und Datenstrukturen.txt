@@ -129,6 +129,28 @@
     z.b. Hashcracken, Sudoko, Passwörter cracken
 
 
+20 Divide and Conquer Verfahren
+    Aufteilung einer Kette in kleinere Teile und dort den Algorythmus anwenden
+    und am Ende die einzelnen Teile dann zusammenführen
+
+
+21 Merge Sort - Rekursives Divide und Conquer
+    Teile der Liste auf 2 Teile
+    Nochmal teilen bis keine Teilung mehr möglich ist (2 Elemente)
+    dann werden die einzelnen Teile sortiert
+    dann werden die einzuelne Teile wieder zusammengefügt und dabei immer sortiert
+    (dabei muss immer nur der erste Buchstabe beider Teile überprüft werden)
+    => Aufteilung erfolgt sehr schnell - log(n) mal
+    => Zusmamenfügen und währendessen Sortieren
+
+
+
+
+
+
+
+
+
 
 
 
