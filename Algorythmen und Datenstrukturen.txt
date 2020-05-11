@@ -143,6 +143,8 @@
     => Aufteilung erfolgt sehr schnell - log(n) mal
     => Zusmamenfügen und währendessen Sortieren
 
+22 Merge Sort - in Python
+    siehe MergeSort.py
 
 
 
