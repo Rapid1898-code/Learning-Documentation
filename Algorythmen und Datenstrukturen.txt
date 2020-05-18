@@ -143,8 +143,30 @@
     => Aufteilung erfolgt sehr schnell - log(n) mal
     => Zusmamenfügen und währendessen Sortieren
 
+
 22 Merge Sort - in Python
     siehe MergeSort.py
+
+
+23 Quick Sort
+    => weiterer Divide and Conquer Algorythmus
+    Sortierung anhand eines Pivot-Elements
+    Implementierung jetzt mit rechts Element ist immer das Pivot-Element
+    Ist High < als Pivot? => wenn nicht wird high 1 nach links geschoben
+    Elemente die < als Pivot sind kommen in den linken Teil - wenn die > sind in den rechten Teil
+    Pivot-Elemetn kommt dann in die Mitte => links sind alle Elemtne die < Pivot sind - recht die > sind
+    Auf die Teilisten wird dann wieder der Quicksort angewandt => rechts Element wird Pivot usw.
+
+
+24 Quick Sort - in Python
+    siehe QuickSort.py
+
+25 Bogo Sort
+    auch bekannt als Stupid Sort
+    Liste wird so zufällig zusammengewürfelt bis das Ergebnis sortiert ist
+
+
+
 
 
 
