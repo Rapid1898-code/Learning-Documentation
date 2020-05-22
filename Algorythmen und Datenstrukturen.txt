@@ -168,7 +168,8 @@
 26 Big O Notation visualisiert
     Laufzeit steigt generell linear bei O(n)
     (n sind die Elemente)
-
+    n^n => N³ => n² => n => log(n)
+    (n ist realistische Laufzeit - log(n) ist das was man anstrebt - Rest zu langsam)
 
 
 
