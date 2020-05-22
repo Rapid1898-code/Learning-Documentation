@@ -165,6 +165,10 @@
     auch bekannt als Stupid Sort
     Liste wird so zufällig zusammengewürfelt bis das Ergebnis sortiert ist
 
+26 Big O Notation visualisiert
+    Laufzeit steigt generell linear bei O(n)
+    (n sind die Elemente)
+
 
 
 

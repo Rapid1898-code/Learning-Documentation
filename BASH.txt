@@ -1,0 +1,93 @@
+//28 Bash - Scripten für das Terminal
+#!/bin/bash => muss als erste Zeile im Script stehen
+echo das ist ein text => in die Datei eintragen
+sudo chmod 744 BashScript => Rechte werden gesetzt damit die Datei ausgeführt werden darf
+./BashScript => Ausführen der Datei uns es erfolgt die Ausgabe
+
+
+//29 Bash - Variablen
+//Ausgabe von String
+    x="String"      => String-Variable wird definiert - keine Leerzeichen erlaubt vor oder nach dem "="
+    echo $x         => Variable wird ausgegeben
+//Berechnung eines Wertes
+//Kommawerte sind in Bash nicht möglich (muss z.B. durch Aufruf von Python-Scripts gelöst werden)
+    x=42
+    y=1337
+    z=$(($x+$y))
+    echo $z     => Ausgabe von 1379
+    echo $x+$y  => Ausgabe von 42 + 1337
+//Addition von Kommawert mit Python-Aufruf
+    x=42.5
+    y=1337
+    z=$(python -c "print($x+$y)")
+    echo $z     => Ausgabe von 1379.5
+
+
+//30 Bash - If Bedingungen
+//IF, FI
+    #!/bin/bash
+    if [ $x = 42 ]; then      => es kommt nur 1 "="
+        echo x is 42
+    elif [ $x = 1337 ]; then
+        echo x is 1337
+    else
+        echo x is not 42
+    fi
+
+
+//31 Bash - User Inputs
+//READ, SELECT OPTION
+    #!/bin/bash
+    echo Gib eine Zahl ein
+    read Zahl
+    x=$(($Zahl + 2))
+    echo "Du hast $Zahl eingegeben!"    => echo kann auch mit Ausführungszeichen geschrieben werden
+    echo "Ergebnis ist $x"
+// Select Options für Menü
+    #!/bin/bash
+    options="Run Exit"
+    select option in $options; do       => ähnlich zu switch case in anderen Sprachen
+        if [ "Run" = $option]; then
+            echo Hello World
+            exit
+        elif [ $option = "Exit"]; then
+            echo Exiting Now
+            exit
+        else
+            echo error
+        fi
+    done
+
+
+//32 Bash - Schleifen
+//FOR, WHILE, LET
+//For-Schleife
+    #!/bin/bash
+    for i in $( ls ); do        => alle Dateien des aktuellen Verzeichnises werden ausgegeben
+        echo item $i
+    done
+//While Do-Schleife
+// -eq => equal; -ne => not equal
+// -gt => greater than; -ge => greater equal
+// -lt => less than; -le => less equal
+    i=0
+    while [$i -lt 10]; do   => less than
+        echo item $i
+        let i=i+1
+    done
+
+
+//33 Bash - Funktionen
+    #!/bin/bash
+    function meinLS {   //Definition der Funktion
+        i=0
+        find . -iname "*" | while read f    //Sucht mit find und gibt den Inhalt weiter an die While-Schleife zur Ausgabe
+        do
+            echo item $f
+            echo $1 $2 $f       => ist Parameter 1 und Parameter 2
+        done
+    }
+    meinLS      //Aufruf der Funktion
+    cd ..
+    meinLS
+
