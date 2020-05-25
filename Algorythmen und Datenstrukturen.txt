@@ -175,12 +175,20 @@
     Omega-Notation - Funktion wächst schneller oder mind. gleich
     Deta-Notation - wächst exakt so wie sie angegeben ist
 
-28 Korrektheitsbeweise
+28 Korrektheitsbeweise Empirisch
     empirisch = "auf Erfahrung basierend"
     stichprobenartig test (wie bei einem Unittest)
     z.b. find_max([0,1,2,3,4,5]) == 5
     es können damit aber nur Fehler gefunden werdne - es kann aber nicht bewiesen werden, das der
     Algroryhtmus 100% funktioniert (weil es immer neue Kombinationen gibt - weil unendliche Kombinationen)
+
+29 Korrektheitsbeweis Mathematisch
+    Startbedingung und Invariante
+    Startbedingung gibt Voraussetzung an: z.B. jedes Element muss >= -1 sein
+    Invariante 1: {0,i-1}: list[j] <= max (aktuelles max)
+    Invariante 2: {0,i-1}: max aus list[0:j]
+    Induktsionsanfang: j=0: list[j] <= max => list[0] >= -1
+    Induktsionschritt:
 
 
 
