@@ -161,9 +161,11 @@
 24 Quick Sort - in Python
     siehe QuickSort.py
 
+
 25 Bogo Sort
     auch bekannt als Stupid Sort
     Liste wird so zufällig zusammengewürfelt bis das Ergebnis sortiert ist
+
 
 26 Big O Notation visualisiert
     Laufzeit steigt generell linear bei O(n)
@@ -171,9 +173,11 @@
     n^n => N³ => n² => n => log(n)
     (n ist realistische Laufzeit - log(n) ist das was man anstrebt - Rest zu langsam)
 
+
 27 Notationen - Deta und Omega
     Omega-Notation - Funktion wächst schneller oder mind. gleich
     Deta-Notation - wächst exakt so wie sie angegeben ist
+
 
 28 Korrektheitsbeweise Empirisch
     empirisch = "auf Erfahrung basierend"
@@ -182,13 +186,29 @@
     es können damit aber nur Fehler gefunden werdne - es kann aber nicht bewiesen werden, das der
     Algroryhtmus 100% funktioniert (weil es immer neue Kombinationen gibt - weil unendliche Kombinationen)
 
+
 29 Korrektheitsbeweis Mathematisch
     Startbedingung und Invariante
     Startbedingung gibt Voraussetzung an: z.B. jedes Element muss >= -1 sein
     Invariante 1: {0,i-1}: list[j] <= max (aktuelles max)
     Invariante 2: {0,i-1}: max aus list[0:j]
     Induktsionsanfang: j=0: list[j] <= max => list[0] >= -1
-    Induktsionschritt:
+    Induktsionschritt: j=>j+1
+
+
+30 Graphen - Einführung
+    Bahnnetz, Google, Netzwerk, Socialplan, Logistikunternehmen, Beziehnungen
+    Einzelne Punkte heißen Knoten
+    Verbindungen werden Kanten genannt
+    Pfeilspitze gibt Richtung vor
+    gerichteter Graph: z.b. nur eine Richtung der Beziehung
+    ungerichteter Graph: z.B. Facebook-Freundschaft
+    bi-direktonialer Graph: z.B. Zug fährt in beide Richtungen
+    zyklische Graphen: es gibt die Möglichekeit "im Kreis zu laufen" (normalerweise sind immer Zyklen vorhanden)
+    azyklische Graphen: man kann nicht mehr zu einem Knoten zurückkehren (Endlos nicht möglich)
+
+
+
 
 
 
