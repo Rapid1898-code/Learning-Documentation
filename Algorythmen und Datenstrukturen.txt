@@ -206,6 +206,7 @@
     bi-direktonialer Graph: z.B. Zug fährt in beide Richtungen
     zyklische Graphen: es gibt die Möglichekeit "im Kreis zu laufen" (normalerweise sind immer Zyklen vorhanden)
     azyklische Graphen: man kann nicht mehr zu einem Knoten zurückkehren (Endlos nicht möglich)
+    self-loop: Schleife auf dem Graphen selbst - macht eher wenig Sinn - z.B. man fährt von Wien nach Wien
 
 
 
