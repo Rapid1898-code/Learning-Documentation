@@ -209,6 +209,12 @@
     self-loop: Schleife auf dem Graphen selbst - macht eher wenig Sinn - z.B. man fährt von Wien nach Wien
 
 
+31 Knotengrade
+    Die Anzahl der Aus- und Eingänge pro Knotenpunkt ist der Knotengrad
+    self-loop zählt 2x (1x eingehend und 1x ausgehend)
+
+
+
 
 
 
