@@ -7,7 +7,6 @@
     Routenplanung
     News-Feed
 
-
 2 Bedigungen und erste Beispiele
     Berechnung A mit 3 Bedinungen
         falls X gilt dann Berechnung B
@@ -19,7 +18,6 @@
         Falls Wert_A >= Wert_B: Klein<-Wert_B, Groß<-Wert_A
         Ergebnis Klein, Groß
 
-
 3 Algorithmisches Denken und Schleifen
     Algorithmus "Spiel"
     Solange wir im Spiel sind
@@ -27,11 +25,9 @@
         Rechts Pfeil => nach Rechts laufen
     Schleife springt zurück zu Solange
 
-
 4 Datenstrukturen einfach erklärt
     langsame und schnelle Datenstrukturen
     z.B. Array, Linked List, Queues, Map, Set, Graph, Baum
-
 
 5 Laufzeitanalyse / Landau Notation / O-Notation
     O(n) jedes Element wird 1x angegriffen (von oben nach unten)
@@ -41,13 +37,11 @@
     O(1) Direktzugriff
         => das 26. Element lesen
 
-
 6 Array
     praktisch in allen Programmiersprachen       
     grundsätzlich sehr unflexibel beim verändern
     schnell: direkter Zugriff auf Element x
     langsam: einfügen, suchen, löschen
-
 
 7 Linked List
     Jedes Element zeigt zum nächsten
@@ -55,7 +49,6 @@
     Zugriff und Suchen sehr langsam (es müssen alle Elemente angefasst werden
     => vor allem geeignet wenn viel angepasst wird - wenig gelesen
     Doubled Linked List => kennen nicht nur Nachfolger sondern auch den Vorgänger des Elements
-    
 
 8 Queues / FIFO First In First Out
     nur 2 Funktionen - ist wie eine Warteschlange
@@ -66,25 +59,20 @@
     Einfügen / Löschen => Schnell
     Zugriff / Suchen => Langsam
     
-    
 9 Sets
     Elemente im Set sind einzigartig - keine doppelten Elemente möglich
-    
 
 10 Maps / HashMaps
     Immer Zuordnung von Schlüssel zu Wert
     Zuweisung zwischen Schlüssel und Wert erfolgt mittels Hashfunktion h
-
 
 11 Die Binäre Suche
     Sortierte Liste wird dafür benötigt
     Liste wird geteilt und geschaut ob gesuchtes Element links oder rechts der Mitte ist
     Dann wird der jeweilige Teil genommen usw. bis die gesuchte Zahl gefunden wird
 
-
 12 Binäre Suche in Python
     siehe BinarySearch.py
-
 
 13 Selection Sort
     Z.b. um eine Liste zu sortieren
@@ -93,10 +81,8 @@
     Komplexität: O(n²) - ist nicht gut für einen Sortieralgorythmus
     Sortierung erfolgt InPlace - Sortierung innerhalb eines Arrays möglich - braucht wenig Speicher
 
-
 14 Selection Sort in Python
     siehe SelectionSort.py
-
 
 15 Insertion Sort
     Algo bildet neue (sortierte Liste)
@@ -106,10 +92,8 @@
     => jedes mal muss die gesamte Ergebnisliste durchlaufen werden
     => Sortierung nicht in place (zweite Ergebnisliste wird benötigt)
 
-
 16 Insertin Sort in Python
     siehe InsertionSort.py
-
 
 17 Bubble Sort
     vergleicht erste beiden Elemente und werden bei Bedarf vertauscht
@@ -118,21 +102,17 @@
     nach jedem Lauf ist dann an der letzten Stelle ein Wert dazugekommen sortiert
     => inPlace (keine zweite Ergebnisliste benötigt)
 
-
 18 Bubble Sort in Python
     siehe BubbleSort.py
-
 
 19 Brute Force Algorythmen
     es wird komplett alles ausprobiert (mit "brutaler Gewalt")
     z.B. ein Sudoko komplett lösen - alles ausprobieren
     z.b. Hashcracken, Sudoko, Passwörter cracken
 
-
 20 Divide and Conquer Verfahren
     Aufteilung einer Kette in kleinere Teile und dort den Algorythmus anwenden
     und am Ende die einzelnen Teile dann zusammenführen
-
 
 21 Merge Sort - Rekursives Divide und Conquer
     Teile der Liste auf 2 Teile
@@ -143,10 +123,8 @@
     => Aufteilung erfolgt sehr schnell - log(n) mal
     => Zusmamenfügen und währendessen Sortieren
 
-
 22 Merge Sort - in Python
     siehe MergeSort.py
-
 
 23 Quick Sort
     => weiterer Divide and Conquer Algorythmus
@@ -157,15 +135,12 @@
     Pivot-Elemetn kommt dann in die Mitte => links sind alle Elemtne die < Pivot sind - recht die > sind
     Auf die Teilisten wird dann wieder der Quicksort angewandt => rechts Element wird Pivot usw.
 
-
 24 Quick Sort - in Python
     siehe QuickSort.py
-
 
 25 Bogo Sort
     auch bekannt als Stupid Sort
     Liste wird so zufällig zusammengewürfelt bis das Ergebnis sortiert ist
-
 
 26 Big O Notation visualisiert
     Laufzeit steigt generell linear bei O(n)
@@ -173,11 +148,9 @@
     n^n => N³ => n² => n => log(n)
     (n ist realistische Laufzeit - log(n) ist das was man anstrebt - Rest zu langsam)
 
-
 27 Notationen - Deta und Omega
     Omega-Notation - Funktion wächst schneller oder mind. gleich
     Deta-Notation - wächst exakt so wie sie angegeben ist
-
 
 28 Korrektheitsbeweise Empirisch
     empirisch = "auf Erfahrung basierend"
@@ -186,7 +159,6 @@
     es können damit aber nur Fehler gefunden werdne - es kann aber nicht bewiesen werden, das der
     Algroryhtmus 100% funktioniert (weil es immer neue Kombinationen gibt - weil unendliche Kombinationen)
 
-
 29 Korrektheitsbeweis Mathematisch
     Startbedingung und Invariante
     Startbedingung gibt Voraussetzung an: z.B. jedes Element muss >= -1 sein
@@ -194,7 +166,6 @@
     Invariante 2: {0,i-1}: max aus list[0:j]
     Induktsionsanfang: j=0: list[j] <= max => list[0] >= -1
     Induktsionschritt: j=>j+1
-
 
 30 Graphen - Einführung
     Bahnnetz, Google, Netzwerk, Socialplan, Logistikunternehmen, Beziehnungen
@@ -208,11 +179,21 @@
     azyklische Graphen: man kann nicht mehr zu einem Knoten zurückkehren (Endlos nicht möglich)
     self-loop: Schleife auf dem Graphen selbst - macht eher wenig Sinn - z.B. man fährt von Wien nach Wien
 
-
 31 Knotengrade
     Die Anzahl der Aus- und Eingänge pro Knotenpunkt ist der Knotengrad
     self-loop zählt 2x (1x eingehend und 1x ausgehend)
 
+32 Pfade
+    walk => Folge von Kanten (Kanten können auch wiederholt werden)
+    z.B. Freiburg nach Berlin, welche Straßen nehmen
+    trail => eine Folge von Kanten - aber ohne doppelte Kanten
+    path => eine Folge von Kanten - ohne doppelten Knoten
+
+33 Gewichtete Graphen
+    jede Kante zeigt wie lange etwas dauert - z.B. von Stadt Stadt x Stunden
+    manche Kanten können auch negative Gewichte haben
+    (z.B. Operation A - dann Operation B - und dann irgenetwas was die Laufzeit verbessert)
+    (das erste kostet 3 Euro, das zweite kostet 5 Euro - und danach immer 1 Euro zurück)
 
 
 
