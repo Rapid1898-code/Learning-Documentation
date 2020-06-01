@@ -195,6 +195,12 @@
     (z.B. Operation A - dann Operation B - und dann irgenetwas was die Laufzeit verbessert)
     (das erste kostet 3 Euro, das zweite kostet 5 Euro - und danach immer 1 Euro zurück)
 
+34 Teilgraphen
+    Teilgraph
+    induzierter Teilgraph (auch Untergraph)
+    => nur Knoten werden entfernt und all deren Kanten
+    spannender Teilgraph
+    => alle Knoten bleiben erhalten  - alle Knoten sind zusammenhängend
 
 
 
