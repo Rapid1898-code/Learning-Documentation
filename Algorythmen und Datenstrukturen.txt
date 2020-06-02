@@ -202,6 +202,16 @@
     spannender Teilgraph
     => alle Knoten bleiben erhalten  - alle Knoten sind zusammenhängend
 
+35 Bäume
+    sind spezielle Graphen
+    Wurzel => Element ganz oben
+    Kante => Verbindungen zwischen Knoten
+    innerer Knoten => Knoten zwischen Wurzel und Blättern
+    Blatt => Knoten der ganz unten ist
+    In der Informatik arbeitet man normalerweise nur mit Binärbäumen (1 Knoten hat nur max. 2 Kanten nach unten)
+    Einzelne Ebenen werden als "Niveau" bezeichnet
+    z.B. Computerspiele mit Entscheidungen
+
 
 
 
