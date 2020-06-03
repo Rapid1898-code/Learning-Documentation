@@ -218,7 +218,7 @@
         Knoten wird entfernt aus der Gesamtmenge
         Entfernen aller Kanten von diesem Knoten egal wohin sie gehen
     Anzahl der übriggebliebene Knoten wird ausgegeben (wenn nicht mehr überig bleibt
-    => gerichteter, azyklischer Graph wenn 0 Knoten übrig bleiben - sonst ist er zyklisch
+    => gerichteter, azyklischer Graph wenn 0 Knoten übrig bleiben - sonst ist er ein gerichteter, zyklischer Graph
 
 
 
