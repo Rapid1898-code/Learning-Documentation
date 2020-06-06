@@ -226,6 +226,11 @@
     Visited => Übersicht der besuchten Knoten
     Queue => welche Knoten noch angeschaut werden muss
     Ausgabe => Ergebnisse
+    Knoten wird genommen - alle Kanten die weggehen kommen in Queue und werden in Visited auf 1 gesetzt
+    Knoten werden aufsteigend nummeriert
+    Anwendungsbeispiele: P2P Nachbarknoten, Suchmaschinen Crawler, Broadcasting in Netztwerken
+
+
 
 
 
