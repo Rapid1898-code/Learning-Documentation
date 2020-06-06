@@ -220,6 +220,15 @@
     Anzahl der übriggebliebene Knoten wird ausgegeben (wenn nicht mehr überig bleibt
     => gerichteter, azyklischer Graph wenn 0 Knoten übrig bleiben - sonst ist er ein gerichteter, zyklischer Graph
 
+37 Breitensuche
+    jeder Knote soll 1x gesucht werden - den Graphen der Reihe nach durchgehen
+    3 Listen / Arrays : Visited / Queue / Ausgabe
+    Visited => Übersicht der besuchten Knoten
+    Queue => welche Knoten noch angeschaut werden muss
+    Ausgabe => Ergebnisse
+
+
+
 
 
 
