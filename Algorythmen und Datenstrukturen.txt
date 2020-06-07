@@ -220,8 +220,21 @@
     Anzahl der übriggebliebene Knoten wird ausgegeben (wenn nicht mehr überig bleibt
     => gerichteter, azyklischer Graph wenn 0 Knoten übrig bleiben - sonst ist er ein gerichteter, zyklischer Graph
 
-37 Breitensuche in Python
-    Siehe Graph Breitensuche.py
+37 Breitensuche
+    jeder Knote soll 1x gesucht werden - den Graphen der Reihe nach durchgehen
+    3 Listen / Arrays : Visited / Queue / Ausgabe
+    Visited => Übersicht der besuchten Knoten
+    Queue => welche Knoten noch angeschaut werden muss
+    Ausgabe => Ergebnisse
+    Knoten wird genommen - alle Kanten die weggehen kommen in Queue und werden in Visited auf 1 gesetzt
+    Knoten werden aufsteigend nummeriert
+    Anwendungsbeispiele: P2P Nachbarknoten, Suchmaschinen Crawler, Broadcasting in Netztwerken
+
+
+
+
+
+
 
 
 
