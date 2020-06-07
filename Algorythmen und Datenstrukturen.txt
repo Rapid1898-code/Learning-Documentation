@@ -220,7 +220,8 @@
     Anzahl der übriggebliebene Knoten wird ausgegeben (wenn nicht mehr überig bleibt
     => gerichteter, azyklischer Graph wenn 0 Knoten übrig bleiben - sonst ist er ein gerichteter, zyklischer Graph
 
-
+37 Breitensuche in Python
+    Siehe Graph Breitensuche.py
 
 
 
