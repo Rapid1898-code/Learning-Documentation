@@ -230,6 +230,8 @@
     Knoten werden aufsteigend nummeriert
     Anwendungsbeispiele: P2P Nachbarknoten, Suchmaschinen Crawler, Broadcasting in Netztwerken
 
+38 Graph Breitensuche in Python
+    siehe Graph Breitensuche.py
 
 
 
