@@ -233,6 +233,15 @@
 38 Graph Breitensuche in Python
     siehe Graph Breitensuche.py
 
+39 Tiefensuche
+    3 Listen / Arrays : Visited / Stack / Ausgabe (Stack ist der Unterscheid zu der Queue bei der Bereitensuche)
+    Beginnt bei Knoten 0
+    Man geht einer Kante entlang und nimmt den nächsten Knoten (z.B. 1)
+    Immer das neueste / letzte Element wird als erstes bearbeitet
+    Wenn von einem Knoten nicht mehr mit einer Kante zu einem anderen Knoten gegangen werden kann
+    => Knoten wird aus dem Stack entfernt
+    Anwendungsbeispiel: Labyrinthe lösen, Sortierungen, Min-Spanning Trees
+
 
 
 
