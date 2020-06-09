@@ -1,3 +1,7 @@
+// 0 Important
+NOMODESET: if there are starting problems when booting linux mint => replace quiet splash with nomodeset
+Change Keyboard-Setting to DE: setxkbmap de
+
 // 1 Installation
 //SUDO, APT-GET
 Virtual Box donwloaden
@@ -9,7 +13,6 @@ sudo => Superuserzugriff
 - sudo apt-get update
 - sudo apt-get upgrade
 - sudo apg-get dist-upgrade
-
 
 //6 Terminal - Dateien und Grundbefehle
 //WD, LS, CD, TOUCH, CAT, CLEAR, MAN
