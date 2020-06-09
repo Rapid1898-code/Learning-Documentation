@@ -242,6 +242,8 @@
     => Knoten wird aus dem Stack entfernt
     Anwendungsbeispiel: Labyrinthe lösen, Sortierungen, Min-Spanning Trees
 
+40 Tiefensuche in Python
+    siehe Graph Tiefensuche.py
 
 
 
