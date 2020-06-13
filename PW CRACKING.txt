@@ -180,8 +180,23 @@
 
 26 Limitierungen von Hashcat
 
+
 28 - THC Hydra
     Hydra greift Netzwerkpasswörter an
+    Clone: https://github.com/vanhauser-thc/thc-hydra
+    sudo apt-get install hydra hydra.gtk
+    xhydra ruft grafische Oberfläche auf
+    Port für FTP ist z.B. 21 (bei FTP-Angriff)
+    Protocol FTP auswählen (bei FTP-Angriff)
+    "Be Verbose" => Anzeige des Vorgangs
+    ca. 10 PW pro Sekunde => sehr langsam
+    User / Password angeben in Menü "Passwords"
+
+29 - Hydra - generierte Passwörter
+    => besser Wortlisten verwenden
+
+
+
 
 
 
