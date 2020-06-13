@@ -2,7 +2,7 @@
 NOMODESET: if there are starting problems when booting linux mint => replace quiet splash with nomodeset
 Change Keyboard-Setting to DE: setxkbmap de
 
-// 1 Installation
+// 1 Installation //
 //SUDO, APT-GET
 Virtual Box donwloaden
 Kali Linux Image downloaden

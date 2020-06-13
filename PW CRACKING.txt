@@ -180,6 +180,8 @@
 
 26 Limitierungen von Hashcat
 
+28 - THC Hydra
+    Hydra greift Netzwerkpasswörter an
 
 
 
