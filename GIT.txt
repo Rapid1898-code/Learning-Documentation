@@ -3,35 +3,35 @@
 sudo apt-get install git => Installation
 git init => Repository erstellen in dem aktuellen Verzeichnis
 git status => aktueller Status des GIT-Verzeichnises
-git add NeuesFile => Datei zum Repository hinzuf?gen
-git commit -m "addedFile" NeuesFile => Commit f?r neues File
-git add *   => alle Dateien werden zum Repository hinzugef?gt
-git add *.txt => alle Text-Dateien werden zum Repoistory hinzugef?gt
+git add NeuesFile => Datei zum Repository hinzufügen
+git commit -m "addedFile" NeuesFile => Commit für neues File
+git add *   => alle Dateien werden zum Repository hinzugefügt
+git add *.txt => alle Text-Dateien werden zum Repoistory hinzugefügt
 git commit -m "addedFile2" => in diesem File werden alle Files commited (wenn nicht angegeben wird)
-git log => ?bersicht der letzten Vorg?nge bzw. Commits
+git log => Übersicht der letzten Vorgänge bzw. Commits
 
 
 //35 GitHub Remote Repositories
 // REMOTE ADD, PUSH
-git remote add origin https://github.com/link/Test.git  => Repositgory verkn?pfen
+git remote add origin https://github.com/link/Test.git  => Repositgory verknüpfen
 git push -u origin master   => Files auf GitHub hinaufladen
 
 
 //36 Branches, Merges
 //PULL, DIFF, RESET, BRANCH, CHECKOUT, MERGE
-    git pull origin master  => File werden von GitHub aktualisiert (mit dem verkn?pften Repo lt. git remote Befehl siehe oben
-    git add Textfile4    => Textfile4 hinzugef?gt zum Repo
-    git diff HEAD   => Vergleich der Datei?nderungen
-    git diff --staged   => neue Dokumente die ge?ndert, aber noch nicht commited wurden
+    git pull origin master  => File werden von GitHub aktualisiert (mit dem verknüpften Repo lt. git remote Befehl siehe oben
+    git add Textfile4    => Textfile4 hinzugefügt zum Repo
+    git diff HEAD   => Vergleich der Dateiänderungen
+    git diff --staged   => neue Dokumente die geändert, aber noch nicht commited wurden
     git reset Textfile4     => File wird wieder aus dem Textfile herausgenommen
-    git commit -m "nachricht"   => Commit durchf?hren
+    git commit -m "nachricht"   => Commit durchführen
 //Neuer Branch wird erstellt
     git branch Neues_Feature    => Erstellung eines neuen Branch mit dem Namen "Neues_Feature"
     git checkout Neues-Feature  => Wechsel zum Branch "Neues_Feature"
-    git remove File2    => L?schen der Datei
-    git commit -m "remove all the junk"     => Commit der L?schung
+    git remove File2    => Löschen der Datei
+    git commit -m "remove all the junk"     => Commit der Löschung
     git checkout master => Wechel zum Master-Branch
-    git merge Neues_Feature => Branch wird wieder mit dem Hauptzweig zusammengef?hrt
-    git branch -d Neues_Feature => Branch wird wieder gel?scht
-    git push    => ?nderungen wird hochladen auf github
+    git merge Neues_Feature => Branch wird wieder mit dem Hauptzweig zusammengeführt
+    git branch -d Neues_Feature => Branch wird wieder gelöscht
+    git push    => Änderungen wird hochladen auf github
 

@@ -1,8 +1,8 @@
-//28 Bash - Scripten für das Terminal
+//28 Bash - Scripten fÃ¼r das Terminal
 #!/bin/bash => muss als erste Zeile im Script stehen
 echo das ist ein text => in die Datei eintragen
-sudo chmod 744 BashScript => Rechte werden gesetzt damit die Datei ausgeführt werden darf
-./BashScript => Ausführen der Datei uns es erfolgt die Ausgabe
+sudo chmod 744 BashScript => Rechte werden gesetzt damit die Datei ausgefÃ¼hrt werden darf
+./BashScript => AusfÃ¼hren der Datei uns es erfolgt die Ausgabe
 
 
 //29 Bash - Variablen
@@ -10,7 +10,7 @@ sudo chmod 744 BashScript => Rechte werden gesetzt damit die Datei ausgeführt we
     x="String"      => String-Variable wird definiert - keine Leerzeichen erlaubt vor oder nach dem "="
     echo $x         => Variable wird ausgegeben
 //Berechnung eines Wertes
-//Kommawerte sind in Bash nicht möglich (muss z.B. durch Aufruf von Python-Scripts gelöst werden)
+//Kommawerte sind in Bash nicht mÃ¶glich (muss z.B. durch Aufruf von Python-Scripts gelÃ¶st werden)
     x=42
     y=1337
     z=$(($x+$y))
@@ -41,12 +41,12 @@ sudo chmod 744 BashScript => Rechte werden gesetzt damit die Datei ausgeführt we
     echo Gib eine Zahl ein
     read Zahl
     x=$(($Zahl + 2))
-    echo "Du hast $Zahl eingegeben!"    => echo kann auch mit Ausführungszeichen geschrieben werden
+    echo "Du hast $Zahl eingegeben!"    => echo kann auch mit AusfÃ¼hrungszeichen geschrieben werden
     echo "Ergebnis ist $x"
-// Select Options für Menü
+// Select Options fÃ¼r MenÃ¼
     #!/bin/bash
     options="Run Exit"
-    select option in $options; do       => ähnlich zu switch case in anderen Sprachen
+    select option in $options; do       => Ã¤hnlich zu switch case in anderen Sprachen
         if [ "Run" = $option]; then
             echo Hello World
             exit

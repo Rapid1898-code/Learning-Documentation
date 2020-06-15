@@ -6,8 +6,8 @@ Change Keyboard-Setting to DE: setxkbmap de
 //SUDO, APT-GET
 Virtual Box donwloaden
 Kali Linux Image downloaden
-USB auf 1.1. ‰ndern
-Tastatur auf Deutsch ƒndern (Deutsch hinzuf¸gen - Englisch lˆschen)
+USB auf 1.1. √§ndern
+Tastatur auf Deutsch √Ñndern (Deutsch hinzuf√ºgen - Englisch l√∂schen)
 Linux aktalisieren:
 sudo => Superuserzugriff
 - sudo apt-get update
@@ -21,35 +21,35 @@ ls => listet alle Ordner0 / Dateien des aktuellen Pfades
 ls -a => auch versteckte Dateien werden angezeigt
 ls -l => Ausgabe der Rechte der Dateiens
 (1.Buchstabe gibt an ob es ein Directory ist oder nicht)
-(links die Rechte des Eigent¸mers/Root - mitte die Rechte der aktuellen Benutzergruppe - recht alle anderen)
-(r read, w write, x excute/ausf¸hren)
-cd => cd . ist der aktuelle Ordner / cd .. ist immer der dar¸berliegende Ordner
+(links die Rechte des Eigent√ºmers/Root - mitte die Rechte der aktuellen Benutzergruppe - recht alle anderen)
+(r read, w write, x excute/ausf√ºhren)
+cd => cd . ist der aktuelle Ordner / cd .. ist immer der dar√ºberliegende Ordner
 touch myFirstFile => erstellen einer (leeren) Datei
 cat myFirstFile => Ausgabe des Inhalts der Datei
-Auf¸hren einer Datei => ./Name
-clear => lˆschen den Bildschirm
+Auf√ºhren einer Datei => ./Name
+clear => l√∂schen den Bildschirm
 man => for Manual - zeigt Informatonen zu Linux-Befehlen
-telnet => Userinterface f¸r TELNET-Protocol
+telnet => Userinterface f√ºr TELNET-Protocol
 
 
 //7 Rechte und Rechtverwaltung
 //CHMOD
-chmod => ‰ndert Zugriffsrechte von Dateien und Ordnern
+chmod => √§ndert Zugriffsrechte von Dateien und Ordnern
 3-stellige Berechtigung read / write / execute
-entsprechend 3-stellige K¸rzel 111, 110, 100, usw.
+entsprechend 3-stellige K√ºrzel 111, 110, 100, usw.
 111 => 7, 100 => 4, 101 => 5
 chmod 751 datei => Root hat alle Rechte, akt. Benutzer read + execute, Sonstige nur execute
-touch => ‰ndert das Datum einer Datei
+touch => √§ndert das Datum einer Datei
 
 
 //8 Verzeichnisse
 //MKDIR, RM, RMDIR, CP, MV
 mkdir => Ordner erzeugen
-rm => File lˆschen (longname remove) mit Sicherheitsabfrage
-rm -f => File lˆschen ohne Sicherheitsabfrage
-rm -r Directory => Lˆschen eines Directory mit Sicherheitsabfrage
-rm -rf => Lˆschen eines gesamten Directory mit Inhalt OHNE Sicherheitsabfrage
-rmdir => lˆschen ein Directory
+rm => File l√∂schen (longname remove) mit Sicherheitsabfrage
+rm -f => File l√∂schen ohne Sicherheitsabfrage
+rm -r Directory => L√∂schen eines Directory mit Sicherheitsabfrage
+rm -rf => L√∂schen eines gesamten Directory mit Inhalt OHNE Sicherheitsabfrage
+rmdir => l√∂schen ein Directory
 cp => <source> <destination> kopiert Files (longname copy)
 cp -r => um gesamtes Directory mit Inhalt zu kopieren)
 mv => <source> <destination> verschiebt eine Datei (longname move)
@@ -75,13 +75,13 @@ head -n 3 txtfile => ersten 3 Zeilen der Datei werden ausgegeben
 tail -n 3 txtfile => letzten 3 Zeilen werden ausgegeben
 grep sea txtfile => alle Zeilen wo "sea" vorkommt werden ausgegeben
 grep -i sea txtfile => Suche inkl. ignoriern von Upper- und Lowercase
-grep -n sea txtfile => Zeilennummern werden zus‰tzlich ausgegeben
+grep -n sea txtfile => Zeilennummern werden zus√§tzlich ausgegeben
 grep -r sea => gesamte Verzeichnis und Unterverzeichnisse werden durchsucht
 //Regex Regular Expressions
 grep -E s[ei][at] -wgre
-. => f¸r einzelnen Buchstaben;
+. => f√ºr einzelnen Buchstaben;
 [abc] => es wird nach einem Buchstaben gesucht der a, b oder c ist
--w => nur ganze Wˆrter (nicht nur Teile davon)
+-w => nur ganze W√∂rter (nicht nur Teile davon)
 [^at] => verbotene Buchstaben - keine a oder t
 \zahl => Suche nach einer Zahl - z.b. \7
 s+ea => alles was vor "ea" 1 bis x "s" hat - z.B. sssea, sea, ssea
@@ -91,13 +91,13 @@ s{2]ea => alls was 2 ss hat und danach ea => "ssea"
 
 
 //11 Pipes
-//Filterung der Ausgabe mˆglich
+//Filterung der Ausgabe m√∂glich
 //Zeichen: |, >, >>
 ps -e | grep panel  => gibt alle Prozesse bzw. filtert alle Prozesse die "panel" enthalten
 ps -e | grep panel > searchpanels => gefilterte Prozesse werden in Datei umgeleitet
-//wenn erneute etwas in searchpanels ausgegeben wird - erfolgt ‹berschreibung ohne Warnung
-ps -e | grep terminal >> searchpanels => durch ">>" wird angeh‰ngt und nicht ¸berschrieben
-//Verschachtelung auch mˆglich:
+//wenn erneute etwas in searchpanels ausgegeben wird - erfolgt √úberschreibung ohne Warnung
+ps -e | grep terminal >> searchpanels => durch ">>" wird angeh√§ngt und nicht √ºberschrieben
+//Verschachtelung auch m√∂glich:
 ps -e | grep terminal | grep panel  => Filterung zuerst nach "terminal" und dann nach "panel"
 
 
@@ -108,29 +108,29 @@ diff => vergleicht den Inhalt zweiter Dateien
 diff filname1 filename2  => Vergleich zweiter Dateien
 apt-get install => zum insatllieren von Programmen / Paketen
 git clone github-repository-link => GIT-Repository wird von GitHub gecloned1
-tar cvf packfile filename1 filename2 filname3 => packen einer Datei (cv f¸r create and verbose)
-tar xvf packfile => entpacken der Datei (x f¸r extract)
+tar cvf packfile filename1 filename2 filname3 => packen einer Datei (cv f√ºr create and verbose)
+tar xvf packfile => entpacken der Datei (x f√ºr extract)
 
 
 //13 Finden von Dateien
 //FIND, WHEREIS, WHICH, LOCATE, WHOAMI
 find -name txtfile => sucht File und zeigt Speicherort an (auch Unterverzeichnisse)
-whereis txtfile => sucht ¸berall (nicht nur in den Unterverzeichnissen)
-which ls => sucht die ausf¸hrbare Datei "ls" und zeigt an wo sie liegt
-locate txtfile => gleich Funktion wie whereis (nur etwas schneller) - Files m¸ssen aber indiziert sein
+whereis txtfile => sucht √ºberall (nicht nur in den Unterverzeichnissen)
+which ls => sucht die ausf√ºhrbare Datei "ls" und zeigt an wo sie liegt
+locate txtfile => gleich Funktion wie whereis (nur etwas schneller) - Files m√ºssen aber indiziert sein
 whoami => gibt auch welche Rechte der Nutzer hat (z.B. root oder kali)
 
 
 //14 Links
 //LN, Hard Link, Symbolic Link
 ln abc.de abcde => Hardlink der Datei abc.de wird erzeugt
-(wenn anschlieﬂend eine Datei ge‰ndert - ‰ndert sich autoamtisch auch die andere Datei)
+(wenn anschlie√üend eine Datei ge√§ndert - √§ndert sich autoamtisch auch die andere Datei)
 ln -s abc.de abcde => Symbolic Link der Datei abc.de wird erstellt
-(ist wie eine Verkn¸pfung in Windows)
+(ist wie eine Verkn√ºpfung in Windows)
 
 
 //15 Fun and Small Things
-curl -4 http://wttr.in/Wien => Wetter der n‰chsten 3 Tage wird im Terminal angezeigt
+curl -4 http://wttr.in/Wien => Wetter der n√§chsten 3 Tage wird im Terminal angezeigt
 telnet towel.blinkenlights.nl => Star Wars Episode 4 als ASCII Art
 curl ftp://speedtest.tele2.net/1GB.zip -0 /dev/null => Speedtest mit 1GB Testfile
 asciivview bild.jpg -driver curses => Ausgabe eines Bildes als Ascii-Art (vorher aview installieren mit apt-get install aview)
@@ -142,17 +142,17 @@ Installaton: sudo apt-get install ffmpeg
 Gesamte Dokumentation: ffmpeg --help
 ffmpeg -i hacking.mkv -c copy -t 15 hackingNeu.mkv => kopieren in die neue Datei, aber nur die ersten 15 Sekunden
 -i => Input-Datei
--c => Angabe des Codecs (z.B. libx264 auf Linux) (c f¸r codec)
--c copy => bestehender Codec der Datei wird ¸bernomen (keine Neuberechnung - z.B. beim Splitten)
+-c => Angabe des Codecs (z.B. libx264 auf Linux) (c f√ºr codec)
+-c copy => bestehender Codec der Datei wird √ºbernomen (keine Neuberechnung - z.B. beim Splitten)
 -t 15 => Zugriff auf die Zeit - in diesem Fall 15 Sekunden
 -ss => Angabe der Startzeit in der Form 00:00:00 (hh:mm:ss)
 ffmpeg -i film.mkv -t 60 -c copy Teil1.mkv -ss 00:01:00 -c copy Teil2.kmv => Film wird gesplitet (ersten 60sek in Teil1 - Rest in Teil2)
-ffmpeg -f concat -i list.txt -c copy output.mkv => zusammenf¸gen von allen Filmdateien die in der Datei list.txt angegeben sind
+ffmpeg -f concat -i list.txt -c copy output.mkv => zusammenf√ºgen von allen Filmdateien die in der Datei list.txt angegeben sind
 - vn => Audio wird ausgelesenm
 ffmpeg -i film.mkv -vn -ab 256 output.mp3 => Audio wird extrahiert mit 256KB/s
 -c:v copy => Kopieren des Videocodecs
 -c:a aac => Audio wird in aac-Codec umgewandelt
-ffmpeg -i film.mkv -i audio.mp3 -c:v copy -c:a aac -strict experimental output.mkv => Video- und Audiospur zusammenf¸hren
+ffmpeg -i film.mkv -i audio.mp3 -c:v copy -c:a aac -strict experimental output.mkv => Video- und Audiospur zusammenf√ºhren
 ffmpeg -i film.mkv -vf scale=1000:-1 -t 5 -r 20 image.gif => Umwandlung einer Video-Datei in das GIF-Format
 
 
@@ -165,7 +165,7 @@ insults => Lustige Ausgaben, Insults bei Falscheingabe des Sudo-Passworts
 //22 Automatisches Herunterfahren
 //SHUTDOWN
 shutdown -h now => Linux wird sofort heruntergefahren
-shutdown -h 23:59 => Linux f‰hrt um 23:59 herunter
+shutdown -h 23:59 => Linux f√§hrt um 23:59 herunter
 shutdown -r +765 => System rebootet in 765 Minuten
 -h => normales Herunterfahren
 -r => Reboot
@@ -175,16 +175,16 @@ shutdown -r +765 => System rebootet in 765 Minuten
 //GRUB
 sudo gedit grub => Aufruf der Datei ohne Schreibschutz
 (wenn gedit noch nicht installiert => sudo apt-get install gedit)
-info -f grub -n "Simple configuration" => Ausgabe einer ‹bersicht der Befehle
+info -f grub -n "Simple configuration" => Ausgabe einer √úbersicht der Befehle
 GRUB_DEFAULT=0  => Default Betriebssystem => bei 0 erstes Betriebssystem, bei 1 das zweite Betriebssytem
-GRUB_TIMEOUT=5 => Auswahlzeitraum in Sekunden des Betriebssystems (mit Shift-Taste ˆffnet sich das Bootmen¸ immer)
+GRUB_TIMEOUT=5 => Auswahlzeitraum in Sekunden des Betriebssystems (mit Shift-Taste √∂ffnet sich das Bootmen√º immer)
 GRUB_BACKGROUND="/home/Bilder/meinBild.png" => Hintergrund-Bild des Bootloaders festlegen
-sudo update-grub => Nach den ƒnderungen muss dies im Terminal durchgef¸hrt werden um die Datei zu speichern
+sudo update-grub => Nach den √Ñnderungen muss dies im Terminal durchgef√ºhrt werden um die Datei zu speichern
 
 
 //26 PDF Dateien vereinigen
 //PDFUNITE
-pdfunite file1.pdf file2.pdf ausgabe.pdf    => 2 PDFs werden zusammengef¸hrt - f¸r beliebig viele Dateien
+pdfunite file1.pdf file2.pdf ausgabe.pdf    => 2 PDFs werden zusammengef√ºhrt - f√ºr beliebig viele Dateien
 
 
 

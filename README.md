@@ -29,15 +29,15 @@
 - Branches and Merges
 
 # SQL-Overview
-- Einführung in SQL und Datenbanken
+- EinfÃ¼hrung in SQL und Datenbanken
 - Distinct und Where
 - And, Or, Order By
-- Einfügen, Verändern, Löschen
+- EinfÃ¼gen, VerÃ¤ndern, LÃ¶schen
 - Null and Like
 - Geschachtelte Suchanfragen mit IN
 - Tabellen erstellen und Datentypen
 - Primary und Foreign Key, not null
-- Tabellen ändern, Autoincrement
+- Tabellen Ã¤ndern, Autoincrement
 - Joins
 - SQL Built in Funktionen
 

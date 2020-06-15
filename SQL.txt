@@ -1,4 +1,4 @@
-//1 Einführung in SQL und Datenbanken
+//1 EinfÃ¼hrung in SQL und Datenbanken
 //SELECT, FROM
 select * from customer      => Ausgabe aller Spalten der Tabelle CUSTOMER (automatisch nach ID sortiert)
 select firstname from customer     => gibt nur die Spalte id aus (keine Sortierung)
@@ -9,47 +9,47 @@ select firstname, lastname from customer => gibt 2 Spalten aus
 //DISTINCT, WHERE, BETWEEN, IN
 select distinct firstname from customer     => durch distinct erfolgt Ausgabe nur einmal pro firstname
 select distinct id,firstname from customer  => hier wird alles ausgegeben - da ID eindeutig ist und nichts doppelt sein kann
-select distinct firstname,lastname      => nur wenn Vorname und Zuname gleich sind erfolgt Unterdrückung
+select distinct firstname,lastname      => nur wenn Vorname und Zuname gleich sind erfolgt UnterdrÃ¼ckung
 select * from customer
     where id = 0        => Satz mit id=0 wird ausgegeben
 select * from customer
-    where firstname = 'Janet'        => Satz oder Sätze mit firstname = Janet werden ausgegeben
+    where firstname = 'Janet'        => Satz oder SÃ¤tze mit firstname = Janet werden ausgegeben
 select street from customer
-    where city = 'Oslo'        => Alle Straßen von Oslo werden ausgegeben
+    where city = 'Oslo'        => Alle StraÃŸen von Oslo werden ausgegeben
 ...where id >= 40       => alle IDs >= 40
-...where id <> 40       => alle IDs außer 40 (in manchen DBs auch stattdessen !=)
+...where id <> 40       => alle IDs auÃŸer 40 (in manchen DBs auch stattdessen !=)
 ...where id between 40 and 50   => alles zwischen inkl. von 40 bis 50
-...where id in (43,44,45)       => mehrere Werte könen abgefragt werden
+...where id in (43,44,45)       => mehrere Werte kÃ¶nen abgefragt werden
 
 
 //3 And, Or, Order By
 //AND, OR, ORDER BY, ASC, DESC
 select * from customer
 where id >= 40
-and firstname = "Robert"        => Ausgabe aller Sätze bei denen id >=40 und firstname = "Robert"
-...where id >= 40 or firstname = "Robert"       => eine der beiden Bedingungen müssen erfüllt sein
+and firstname = "Robert"        => Ausgabe aller SÃ¤tze bei denen id >=40 und firstname = "Robert"
+...where id >= 40 or firstname = "Robert"       => eine der beiden Bedingungen mÃ¼ssen erfÃ¼llt sein
 ...where id >= 40 or firstname = "Robert" and lastname = "Fuller"       => besser Klammern setzen
-    => es gilt entweder >= 40 oder (Name ist Robert Fuller) => and ist stärker als oder
+    => es gilt entweder >= 40 oder (Name ist Robert Fuller) => and ist stÃ¤rker als oder
 select * from customer
 where id >= 40
 order by firstname, lastname asc    => Ausgabe von ID >=40 dortiert absteigend nach firstname und dann lastname (asc ist Default)
 ...order by firstname, lastname desc    =>  Ausgabe erfolgt aufsteigend
 
 
-//4 Einfügen, Verändern, Löschen
+//4 EinfÃ¼gen, VerÃ¤ndern, LÃ¶schen
 //INSERT, INTO, VALUES, UPDATE, SET, DELETE
 insert into customer
 values (50, 'James', 'Karsen', '107 Upland Pl.', 'Dallas')
     => legt Satz in der Tabelle customer mit diesen Werten an
 insert into customer (id, firstname, lastname, city)
 values (51, 'James', 'Karsen', 'Dallas')
-    => Satz wird angelegt mit Straße = NULL (funtioniert z.b. nicht bei id weil dort not NULL definiert ist)
+    => Satz wird angelegt mit StraÃŸe = NULL (funtioniert z.b. nicht bei id weil dort not NULL definiert ist)
 update customer
 set street = '547 Seventh Av.'
 where id = 51
     => Update des Satzes mit id = 51 betreffend street
 ...where firstname = 'James' and lastname = 'Karsen'
-    => Update der Straße überall wo firstname und lastname = James Karsen
+    => Update der StraÃŸe Ã¼berall wo firstname und lastname = James Karsen
 delete from customer
 where id = 51
     => Delete des Satzes mit der id = 51
@@ -57,16 +57,16 @@ where id = 51
 
 //5 Null and Like
 //NULL, LIKE, TOP, LIMIT, ROWNUM, PERCENT
-select top 5 * from customer    => die ersten 5 Ergebnisse werden ausgegeben (abhängig von der Sortierung)
+select top 5 * from customer    => die ersten 5 Ergebnisse werden ausgegeben (abhÃ¤ngig von der Sortierung)
 select * from customer
-limit 10    => in manachen DBs auch in dieser Form - die ersten 10 Sätze werden ausgegeben
+limit 10    => in manachen DBs auch in dieser Form - die ersten 10 SÃ¤tze werden ausgegeben
 select * from customer
 where rownum <= 10  => und auch diese Form gibt es bei einigen DBs
 select top 10 percent * from customer       => top 10 Prozent werden ausgegeben
 select * from computer
-where city like 'O_lo'  => "_" wird durch einen Buchstaben ersetzt - Ausgabe daher von allen Einträgen mit city = Oslo
-... where city like '%lo'   => Ausgabe von allem das mit "lo" aufhört in der Stadt
-... where city like '__l%'  => Ausgabe vo allem das mit 2 Buchstaben anfängt, dann "l" und danach beliebig
+where city like 'O_lo'  => "_" wird durch einen Buchstaben ersetzt - Ausgabe daher von allen EintrÃ¤gen mit city = Oslo
+... where city like '%lo'   => Ausgabe von allem das mit "lo" aufhÃ¶rt in der Stadt
+... where city like '__l%'  => Ausgabe vo allem das mit 2 Buchstaben anfÃ¤ngt, dann "l" und danach beliebig
 ... where city like '__l\%' => wenn nach dem Prozentzeichen gesucht werden soll muss dies mit \% maskiert werden
 select * from computer
 where lastname is NULL   => Abfrage wo Null als Eintrag im lastname vorhanden ist
@@ -78,7 +78,7 @@ where lastname is NOT NULL  => Abfrage wo ein Eintrag und nicht Null vorhanden i
 select * from customer
 where id IN
         (select id from rechnungen      => IDs werden ermittelt aus der Rechnungen-Tabelle...
-        where date <=3)                 => und diese werden dann oben als Input für die Where-Abfrage bei Select * herangezogen
+        where date <=3)                 => und diese werden dann oben als Input fÃ¼r die Where-Abfrage bei Select * herangezogen
 
 
 //7 Tabellen erstellen und Datentypen
@@ -91,7 +91,7 @@ create table Rechnung       => Erstellung einer neuen Tabelle mit Name Rechnung
     )
 insert into Rechnung
 values (1,0,50)     => Anlage eines Satzes in Rechnung mit diesen Werten
-//weitere mögliche Attriubtwerte
+//weitere mÃ¶gliche Attriubtwerte
 value INT   => Integer
 name VARCHAR(255)   => variabler String
 bin BINARY (255)    => Bits
@@ -110,7 +110,7 @@ TIMESTAMP
 
 //8 Primary und Foreign Keys, not null
 //DROP, UNIQUE, NOT NULL, PRIMARY KEY, FOREIGN KEY, REFERENCES
-drop table Rechnung IF EXISTS   => Tabelle wieder löschen
+drop table Rechnung IF EXISTS   => Tabelle wieder lÃ¶schen
 create table Rechnung
     (
     RechnungsID int NOT NULL UNIQUE
@@ -125,7 +125,7 @@ create table Rechnung
     )
 
 
-//9 Tabelle ändern, Autoincrement
+//9 Tabelle Ã¤ndern, Autoincrement
 //AUTO_INCREMENT, DEFAULT, IDENTITY, ALTER TABLE, ADD, DROP COLUMN, ALTER COLUMN
 create table Rechnung
     (
@@ -153,11 +153,11 @@ from customer
 inner join Rechnung
 on customer.ID = rechnung.customerID
     => Ausgabe von allen Attributen von Kunden die auch eine Rechnung haben
-    => grundsätzlich die gleiche Ausgabe wie oben nur mit allen Attributen
+    => grundsÃ¤tzlich die gleiche Ausgabe wie oben nur mit allen Attributen
 ...left join Rechnung
-    => gibt alle Elemente von der linken Tabelle (customer) gibt alle Sätze aus - wo in Rechnung etwas steht wird etwas ausgegeben, sonst nicht
+    => gibt alle Elemente von der linken Tabelle (customer) gibt alle SÃ¤tze aus - wo in Rechnung etwas steht wird etwas ausgegeben, sonst nicht
 ...right join Rechnung
-    => alle Einträge von der rechten Tabelle (rechnung) - mit Informationen aus beiden Tabellen
+    => alle EintrÃ¤ge von der rechten Tabelle (rechnung) - mit Informationen aus beiden Tabellen
 ...full join Rechnung
     => gibt von beiden Tabellen links und rechts alles aus
 
@@ -165,7 +165,7 @@ on customer.ID = rechnung.customerID
 //11 SQL Built In Funktionen
 //AVG, COUNT, TOP,  FIRST, LIMIT, LAST, UCASE, UPPER, LCASE, LOWER
 select avg(betrag) from rechnung    => Durchschnitt wird ausgegeben
-select count(rechnungID) from rechnung  => Anzahl der Sätze wird ausgegeben
+select count(rechnungID) from rechnung  => Anzahl der SÃ¤tze wird ausgegeben
 select count(rechnungID) from rechnung
 where betrag >= (select AVB(betrag) from rechnung)
     => Ausgabe der Anzahl der Rechnungen deren Betrag >= dem Durchschnittsbetrag in der Rechnungstabelle ist
@@ -177,12 +177,12 @@ order by customerID desc
     //manchmal auch last(customerID)
 select max(betrag) from rechnung    =>maxmial-Betrag wird ausgegeben
 select min(betrag) from rechnung    =>minimal-Betrag wird ausgegeben
-select sum(betrag) from rechnung    =>Summe aller Beträge
+select sum(betrag) from rechnung    =>Summe aller BetrÃ¤ge
 select ucase(firstname) from customer   => Ausgabe des firstname als Uppercase
     //manchmal upper(firstname)
 select lcase(firstname) from customer   => Ausgabe des firstname als Lowercase
     //manchmal lower(firstname)
-select len(firstname) from customer     => Ausgabe der Länge jedes Strings
+select len(firstname) from customer     => Ausgabe der LÃ¤nge jedes Strings
 select now() from  customer     => Ausgabe des aktuellen Datums + aktuelle Zeit
 
 
