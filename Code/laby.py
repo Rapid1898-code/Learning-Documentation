@@ -4,6 +4,10 @@ window = turtle.Screen()        # Bild erstellen
 window.bgcolor("black")
 window.title("Tiefensuche im Labyrinth")
 window.setup(1600,900)
+start_x = 10
+start_y = 33
+end_x = 33
+end_y = 32
 
 class Wall(turtle.Turtle):
     def __init__(self):
@@ -66,6 +70,12 @@ grid = [
 "0000000000s00000000000000000000100",
 "0000000000000000000000000000000000"]
 
+def paint_blob(x,y,blob):
+    screen_x = -700 + (x * 24)
+    screen_y = 400 - (y * 24)
+    blob.goto(screen_x,screen_y)
+    blob.stamp()
+
 def paint_maze(grid):
     for y in range(len(grid)):
         for x in range(len(grid[y])):
@@ -77,24 +87,49 @@ def paint_maze(grid):
                 print("Start x = " + str(x))
                 print("Start y = " + str(y))
 
-            screen_x = -700 + (x*24)
-            screen_y = 400 - (y*24)
             if char == "0":
-                wall.goto(screen_x, screen_y)
-                wall.stamp()
+                paint_blob(x,y,wall)
             if char == "e":
-                green.goto(screen_x, screen_y)
-                green.stamp()
+                paint_blob(x,y,green)
             if char == "s":
-                red.goto(screen_x, screen_y)
-                red.stamp()
+                paint_blob(x,y,red)
+
+def _tiefensuche(visited,x,y):
+    visited[y][x] = True
+    if x == end_x and y == end_y:       # Abbruchbedingung
+        window.exitonclick()
+    paint_blob(x,y,red)
+    print("Visited " + str(x) + ", " + str(y) + ".")
+    if y - 1 >=0 and grid[y-1][x] != "0" and not visited[y-1][x]:
+        _tiefensuche(visited,x,y-1)
+    if x + 1 < 35 and grid[y][x+1] != "0" and not visited[y][x+1]:
+        _tiefensuche(visited,x+1,y)
+    if x - 1 >= 0 and grid[y][x - 1] != "0" and not visited[y][x - 1]:
+        _tiefensuche(visited, x - 1, y)
+    if y + 1 < 35 and grid[y + 1][x] != "0" and not visited[y + 1][x]:
+        _tiefensuche(visited, x, y + 1)
+
+def tiefensuche():
+    visited = []
+    for i in range(len(grid)):
+        l = []
+        for j in range(len(grid[0])):
+            l.append(False)
+        visited.append(l)
+    print(visited)
+    _tiefensuche(visited,start_x,start_y)
 
 if  __name__ == "__main__":
     wall = Wall()
     red = Red()
     green = Green()
     paint_maze(grid)
-
+    tiefensuche()
+    #print("Grid: " + str(len(grid)))
+    #print("Grid X: " + str(len(grid[0])))
+    #for i in grid:
+    #assert len(i) == len(grid[0])
+    window.exitonclick()
 
 
 print(len(grid))

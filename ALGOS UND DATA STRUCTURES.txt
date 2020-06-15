@@ -248,6 +248,11 @@
 41 Tiefensuche im Labyrinth mit Turtle
     siehe Laby.py
 
+42 Greedy Algorithmen
+    Das Death Stranding Problem
+    (Rucksack möglichst effizient einpacken)
+    "Wir nehme das was am meisten bringt und packen das ein"
+
 
 
 

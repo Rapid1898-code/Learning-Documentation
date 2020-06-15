@@ -195,6 +195,16 @@
 29 - Hydra - generierte Passwörter
     => besser Wortlisten verwenden
 
+33 - WiFi WPA Handshakes mit hashcat cracken
+    .cap-Datei ist Voraussetzung (Handshake muss bekannt sein)
+    Cap-Datei umwandeln zu einem hashcat capture file
+    Modus: -m 2500
+
+34 - PHPBB Passwörter auslesen und mit Hashcat cracken
+    Forums Framework
+
+
+
 
 
 
