@@ -245,6 +245,9 @@
 40 Tiefensuche in Python
     siehe Graph Tiefensuche.py
 
+41 Tiefensuche im Labyrinth mit Turtle
+    siehe Laby.py
+
 
 
 
