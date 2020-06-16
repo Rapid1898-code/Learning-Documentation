@@ -253,6 +253,17 @@
     (Rucksack möglichst effizient einpacken)
     "Wir nehme das was am meisten bringt und packen das ein"
 
+43 Dijkstra Algortihmus
+    Algo für gewichtete Graphen der den kürzesten / günstigsten Weg findet
+    Jede Kante hat ein "Gewicht" (Kosten, Stunde, usw.)
+    Algo funktioniert nur bei positiven Gewichten - bei einem negativen Wert funktioniert es nicht
+    Start bei Knoten A - B und C werden durch die Kosten ersetzt - sucht den nächst günstigsten Weg
+    wenn es schnelleren Weg gibt => den bestimmten Knoten updaten
+    fixierte Knoten werden nicht mehr angegriffen
+    Am Ende steht dann in jedem Knoten wieviel der Weg kostet
+
+
+
 
 
 
