@@ -4,7 +4,6 @@ Change Keyboard-Setting to DE: setxkbmap de
 show $PATH variables: sed 's/:/\n/g' <<< "$PATH"
 add entry to $PATH: export PATH="/home/bin:$PATH"       => /home/bin will be added
 
-
 // 1 Installation //
 //SUDO, APT-GET
 Virtual Box donwloaden
