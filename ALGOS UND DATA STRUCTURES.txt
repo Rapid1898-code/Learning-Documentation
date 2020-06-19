@@ -262,8 +262,21 @@
     fixierte Knoten werden nicht mehr angegriffen
     Am Ende steht dann in jedem Knoten wieviel der Weg kostet
 
-44 Dijkstra Algortihmus in Python
+44 Dijkstra Algorithmus in Python
     siehe Dijkstra.py
+
+45 Bellmann Ford Algorithmus
+    selbes Ziel wie Dijkstra
+    funktoniert aber auch mit negativen Kantenwerten
+    (Dijkstra hat den Nachteil das er nur mit positiven Kanten umgehen kann)
+    läuft aber etwas länger (daher Dijkstra bei pos. Kantenwerten anwenden) - sonst Bellmann Ford Algo verwenden
+    => (1) alle Kantengewichte auf unendlich-Wert setzen
+    => alle Knoten müssen Anzahl-Knoten minus 1 durchlaufen werden
+    => funktiniert für neg. Kanten - aber bei negativen Zyklen funktioniert es nicht - weil diese würde unendlich
+    weitergehen und das Ergebnis unendlich Minus machen
+    => dadurch ist eine ergänzende Abbruchbedingung notwendig: es wird noch einmal zum Abschluß alle Knoten durch-
+    gegangen - wenn es dann noch immer einen Wert gibt der sich ändert (=negativer Zyklus), dann kann es für diese
+    Graphen kein Ergebnis geben
 
 
 
