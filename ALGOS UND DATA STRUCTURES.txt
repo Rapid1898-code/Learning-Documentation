@@ -278,6 +278,19 @@
     gegangen - wenn es dann noch immer einen Wert gibt der sich ändert (=negativer Zyklus), dann kann es für diese
     Graphen kein Ergebnis geben
 
+46 Bellmann Ford Algo in Python
+    siehe Bellmann.py
+
+47 Minimum Spanning Trees
+    Kruskals MST Algorithmus
+    baut Teilgraph auf der nur aus den minimalen Gewichten besteht
+    1) Löschen aller Kanten und sortieren nach der Größe
+    2) Kleinste Kante wird eingefügt - dann die nächst kleinste Kante - und usw.
+    alle Zyklen sind verboten - d.h. wenn bei der Bildung ein Kreislauf entsteht wird die Kante wieder gelöscht
+    => Fertig ist, wenn alle Knoten irgendwie verbunden sind (aber ohne Kreislauf bei einem bestimmten Teil)
+    Anwendung z.B. bei Stromnetzen - muss nicht der kürzste Weg zwangsläufig sein - aber alle Knoten müssen verbunden sein
+
+
 
 
 
