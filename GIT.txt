@@ -3,8 +3,9 @@
 sudo apt-get install git => Installation
 git init => Repository erstellen in dem aktuellen Verzeichnis
 git status => aktueller Status des GIT-Verzeichnises
-git add NeuesFile => Datei zum Repository hinzufügen
-git commit -m "addedFile" NeuesFile => Commit für neues File
+git add NeuesFile => Datei zum Repository hinzufügen (für Commit vorbereiten)
+git commit -m "comment" => Commit für neues File mit entsprechendem Kommentar
+git add . => add everything to the repository
 git add *   => alle Dateien werden zum Repository hinzugefügt
 git add *.txt => alle Text-Dateien werden zum Repoistory hinzugefügt
 git commit -m "addedFile2" => in diesem File werden alle Files commited (wenn nicht angegeben wird)
@@ -23,15 +24,27 @@ git push -u origin master   => Files auf GitHub hinaufladen
     git add Textfile4    => Textfile4 hinzugefügt zum Repo
     git diff HEAD   => Vergleich der Dateiänderungen
     git diff --staged   => neue Dokumente die geändert, aber noch nicht commited wurden
-    git reset Textfile4     => File wird wieder aus dem Textfile herausgenommen
+    git reset Textffile4     => File wird wieder aus dem Textfile herausgenommen
     git commit -m "nachricht"   => Commit durchführen
-//Neuer Branch wird erstellt
+//Neuer Branch wird erstelltf
     git branch Neues_Feature    => Erstellung eines neuen Branch mit dem Namen "Neues_Feature"
     git checkout Neues-Feature  => Wechsel zum Branch "Neues_Feature"
     git remove File2    => Löschen der Datei
     git commit -m "remove all the junk"     => Commit der Löschung
-    git checkout master => Wechel zum Master-Branch
+    git checkout -b new => Create a new branch named "new"
+    git checkout master => Change back to branch "master"
+    git checkout new => Change back toi branch "new"
+    git merge master => merge the content from the master with the file "new" (or the actual checkout repo)
     git merge Neues_Feature => Branch wird wieder mit dem Hauptzweig zusammengeführt
     git branch -d Neues_Feature => Branch wird wieder gelöscht
-    git push    => Änderungen wird hochladen auf github
+    git config --global user.name "Rapid1898"    => name for the remote repository
+    git config --global user.email "rapid1898@gmail"    => mail configured for the remote repository
+    git push -u origin master       => all commits are pushed to the master
+        (-u saves the paths - so at the next push - it must be only typed push)
+    git pull origin master      => pull alle the changes from the remote repository
+
+
+
+
+
 
