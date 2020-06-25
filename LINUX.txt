@@ -20,7 +20,7 @@ sudo => Superuserzugriff
 - sudo apg-get dist-upgrade
 
 //6 Terminal - Dateien und Grundbefehle
-//WD, LS, CD, TOUCH, CAT, CLEAR, MAN, HELP, MAN
+//WD, LS, CD, TOUCH, CAT, CLEAR, MAN, HELP, MAN, READLINK
 pwd => zeigt aktuelles Working Directory
 ls --help => description of the command
 man ls => outputs the manual for the command
@@ -38,6 +38,7 @@ ls -la .. => list all files in the parent of the working directory
 (row6: Modification time)
 (row7: file name)
 cd => cd . ist der aktuelle Ordner / cd .. ist immer der darüberliegende Ordner
+readlink -e ./out.txt   => read full path for a file
 touch myFirstFile => erstellen einer (leeren) Datei
 cat myFirstFile => Ausgabe des Inhalts der Datei
 Auführen einer Datei => ./Name

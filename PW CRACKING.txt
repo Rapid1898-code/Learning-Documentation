@@ -205,7 +205,10 @@
 
 35 - 7Zip Passwörter cracken
     7z2hashcat von github installieren
-    
+
+36 - Truecrypt Passwörter cracken
+    mit hashcat
+
 
 
 
