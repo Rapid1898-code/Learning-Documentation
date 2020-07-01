@@ -209,6 +209,18 @@
 36 - Truecrypt Passwörter cracken
     mit hashcat
 
+37 - Veracrypt Passwörter cracken
+
+38 - John The Ripper Installation
+
+39 - MS Office cracken
+
+40 - PDFs cracken
+
+41 - WinRar Archive cracken
+
+
+
 
 
 
