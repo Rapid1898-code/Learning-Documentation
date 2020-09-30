@@ -1982,6 +1982,7 @@ pyinstaller --onefile prg.py                                  # Generate only on
 prg.exe                                                       # Open this file to start the python-program
 
 ### Problems with some added python modules (eg. pycountry)
+https://groups.google.com/g/pyinstaller/c/OYhJdeZ9010/m/32g3-T8XBAAJ
 when trying to execute the compiled exe-file - there is an error about the pycountry-module - workaround:
 1) use command <pyi-makespec --onefile temp2.py> to generate a temp2.spec file
 2) change filename.spec

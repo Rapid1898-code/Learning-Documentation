@@ -1,11 +1,13 @@
-###Overview###
+### Overview
 HTML = content / structure (core focus...)
 CSS = style (a little bit...)
 JS = behaviour / interaction (a little bit...)
 => bandwidth focus more html and less of css/js
 ----------
 
-# HTML Structure
+
+
+### HTML Structure
 index.html                              	# Should be the first site
 <!DOCTYPE html>								# Standard structure in the html-file
 <html>
@@ -17,7 +19,9 @@ index.html                              	# Should be the first site
     </body>
 </html>
 
-#HTML Elements
+
+
+### HTML Elements
 <!-- This is a comment -->              # commentar in HTML
 <header>...</header>						# eg. menue at the title of the webpage
 <nav></nav>                             	# Navigation info for the user (unordered ul list normaly)
@@ -49,7 +53,8 @@ index.html                              	# Should be the first site
 </ol>
 
 
-# Forms
+
+### Forms
 <form action="confirmation.html" method="post">
     <label for="zebra">First Name:</label>
     <input id="zebra" type="text" name="" value="">
@@ -58,7 +63,8 @@ index.html                              	# Should be the first site
 </form>
 
 
-# CSS attributes
+
+### CSS attributes
 color: red; 								# Define red color for element
 color: #FF0000;								# Define color with hex code
 color: rgba(255,0,0,1);						# Defome color with rgb code (4th parameter is opaque - 0.5. means half transparent, 1 no transparent)
@@ -88,12 +94,14 @@ width: 5em;									# Define width (calculated on elements font size - when font
 height: 200px;								# Define height of element	
 max-width:20%;								# Resize something eg. img
 max-height:20%;								# Resize something eg. img
-float: left;								# Define floating for an image (text will float her on the right side of the image)
 list-style-type: none;						# no bullets in unordered list
 display: inline;							# show elements in line - eg. horizontal li-elements
+float: left;								# Define floating for an image (text will float her on the right side of the image)
+clear: both;								# Clear floating (for left and right)
+*{box-sizing: border-box}					# With this statement every sizing is included with the border
 
 
-###CSS###
+### CSS
 should go in seperate file (better than inline or in the head)
 css statements are called "rules"
 <link rel="stylesheet" href="css/style.css">    # link the html-file to the css-file
@@ -118,19 +126,23 @@ p {
 }
 
 
-###Specificity
+
+### Specificity
 # defines the priority which styles can overwrite which style
 # priority has the style which came later - but only when the specificity is equal or higher!
 1 point for tags
 10 points for classes
 100 points for ids
 1000 points for Inline Style
-p{}	=> 1 point (1 tag)
-#zebra{} => 100 point (1 id)
-section .bob{}	=> 11 point (1 tag + 1 class)
+p{}								=> 1 point (1 tag)
+#zebra{} 						=> 100 points (1 id)
+section .bob { }				=> 11 points (1 tag + 1 class)
+.bob{ !important }				=> 1010 points (1 class + 1 other)
+section1,section2 .bob { }		=> 11 points (1 tag + 1 class) for section1 and for section2
 
 
-###Font Definition
+
+### Font Definition
 taken from google fonts for example (take fonts and then create link in upper right corner for the link
 <head>                                          # define in html in the header
     <link href="https://fonts.googleapis.com/css2?familiy=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylessheet">
@@ -140,7 +152,8 @@ p {
 }
 
 
-###Parent > Child
+
+### Parent > Child
 <section>
     <p>hello, twitch!</p>
 </section>                                      # direct parent > child connection with ">"
@@ -166,17 +179,8 @@ p + p {											# format is used when two <p>s are after each other
 }
 
 
-###IDs
-<section>
-	<p>Hello, Twitch!</p>
-	<p id="zebra">Hello, YouTube!</p>
-</section>										# id is used for formating unique elements
-#zebra {										# can used only ONE time
-	color: red;									# only one id per element
-}
 
-
-###Classes	
+### Classes	
 <section>
 	<p class="robot">Hello, Twitch!</p>
 	<p id="zebra" class="bob">Hello, YouTube!</p>
@@ -185,9 +189,52 @@ p + p {											# format is used when two <p>s are after each other
 .bob {											
 	color: red;
 }	
+.class1.class2 {...}							# both classes have to be in the SAME element
+.class1 .class2 {...}							# the parent-element has to be class1 and the child-element class2
+.class1,.class2 {...}							# one of the classes have to be in the element
+body article.class1 h2.class2.class3 {...}		# h2, which have class2+classe3 in h2, their parent has class1, and the parent is in body
 
 
-###Positioning Content
+
+### IDs
+<section>
+	<p>Hello, Twitch!</p>
+	<p id="zebra">Hello, YouTube!</p>
+</section>										# id is used for formating unique elements
+#zebra {color: red;}							# can used only ONE time - only one id per element
+#class1,#class2 {...}							# one of the ids have to be in the element
+body section.top h2#rhino {...}					# h2, which has id=rhino, the parent has class=top and the parent is in body
+
+
+
+### Inline Style / !important
+.bob {
+	color: red !important;						# with !important this style get the maximum priority / overwrites everything
+}												# not often used - eg. in cases of immediate urgency to show something - when a error is not found cxurrently
+
+
+
+### Box Model
+https://en.wikipedia.org/wiki/CSS_box_model#/media/File:Boxmodell-detail.png
+every element is a box - box in the middle
+box has a heigth and width - eg. 100px*100px
+padding outside the box - between box and border (top,right,bottom,left)
+border (outside padding) (top,right,bottom,left)
+margin (outside border) (top,right,bottom,left)
+
+
+
+### Layouts - Floats
+old Layouting - not state of the art!
+element tries to got as much up - and as much left or right (according if floated left or right)
+normaly everything will float to the left
+
+
+
+
+
+
+### Positioning Content
 <header>...</header>							# example1 - without cass all the elements will be positoned from top to bottom
 <section>...</section>
 <aside>...</aside>
