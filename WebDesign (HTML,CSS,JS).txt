@@ -1,0 +1,239 @@
+###Overview###
+HTML = content / structure (core focus...)
+CSS = style (a little bit...)
+JS = behaviour / interaction (a little bit...)
+=> bandwidth focus more html and less of css/js
+----------
+
+# HTML Structure
+index.html                              	# Should be the first site
+<!DOCTYPE html>								# Standard structure in the html-file
+<html>
+    <head>
+        <!--Stuff the browser needs -->
+    </head>
+    <body>
+        <!--Everything the user sees -->
+    </body>
+</html>
+
+#HTML Elements
+<!-- This is a comment -->              # commentar in HTML
+<header>...</header>						# eg. menue at the title of the webpage
+<nav></nav>                             	# Navigation info for the user (unordered ul list normaly)
+<section></section>                     	# part of the homepage - eg. the core middle of the site
+<article></article>							# part of the section
+<aside></aside>								# mostly on the side of the homepage
+<div></div>                             	# grouping some html-area
+<footer></footer>							# bottom of the document
+<p>text</p>					        		# Normal Paragraph (long text)
+<p>Text <a href="www.x.com">X</a></p>		# Paragraph / Text with anchor link
+<p class="nine">Hello</p>					# Paragraph with a class
+<span>text</span>		    				# Short text
+<h1>Import Header</h1>						# Header1-Tag with Text (most important on the page)
+<h2>2nd important thing</h1>				# Header2-Tag with Text (second important)
+<h6>6th important thing</h1>				# Header6-Tag with Text (sixth important thing on the page)
+<img src="pic.jpeg">                    	# Insert picture - no close tag
+<pre> </pre>								 Preserves whitespace (not good - should be done by CSS)
+<br>, </br>									# linebreak (not good - should be done by css)
+<hr>, </hr>									# htmlbreak (not good - should be done by css)
+<ul>										# Unordered List with anchor links
+	<li><a href="x.html">One</a></li>
+	<li><a href="y.html">Two</a></li>
+	<li><a href="z.html">Three</a></li>
+</ul>	
+<ol>										# Ordered List
+	<li>One</li>
+	<li>Two></li>	
+	<li>Three></li>
+</ol>
+
+
+# Forms
+<form action="confirmation.html" method="post">
+    <label for="zebra">First Name:</label>
+    <input id="zebra" type="text" name="" value="">
+    <input type="tel" name="" value="">
+    <input type="email" name="" value="">
+</form>
+
+
+# CSS attributes
+color: red; 								# Define red color for element
+color: #FF0000;								# Define color with hex code
+color: rgba(255,0,0,1);						# Defome color with rgb code (4th parameter is opaque - 0.5. means half transparent, 1 no transparent)
+color: hsla(0, 100%, 50%,1);                # define color per hsla value 
+font_weight: bold;							# Font bold
+font_weight: 700;							# Define when a font is downloaded from eg. google fonts
+font-size: 25px;							# Define font size with 25 pixel
+text-decoration: underline;					# Define text decoration unterline
+text-decoration: line-through;				# Define text with line-through
+text-align: center;							# Center text / or list-entries in ul
+font-style: italic;							# Font italic / cursive
+background-color: #e2b007;					# Define background color
+border: 3px solid #FFA500;					# Define border of element (width, style, color) - "shorthand"-method
+border-bottom: 6px dashed #FFA500;			# Define only the bottom-border - "longhand"-method	
+border-bottom-width: 12px;					# Define only the bottom-border-width - "longhand"-method	
+border-radius: 5px;							# Define a border radius with 5 pixel - "shorthand"-method
+border-top-right-radius: 5px;				# Define the border radius for top right corner  - "longhand"-method
+height: 100px;								# Height of the box
+margin: 20px;								# Margin of the box (outside the border, for all 4 sites) - "shorthand"-setting
+margin: 10px 20px;							# Margin of the box (10 pixel for top/bottom and 20 pixel for left/right)
+margin: 10px 20px 0 15px;					# Margin of the box (clockwise from tom) => 10px top, 20px right, 0px bottom, 115px left
+padding: 20px;								# Padding of the box (inside the border)
+margin-top: 10px							# Setting the margin to 10 pixel - "longhand"-method
+padding-left: 6px							# Setting the padding to 6 pixel - "longhand"-method
+width: 50%;									# Define width in percent (relative to the width of the parent element)
+width: 5em;									# Define width (calculated on elements font size - when font-size=14px - the width would be 70px (5*14)
+height: 200px;								# Define height of element	
+max-width:20%;								# Resize something eg. img
+max-height:20%;								# Resize something eg. img
+float: left;								# Define floating for an image (text will float her on the right side of the image)
+list-style-type: none;						# no bullets in unordered list
+display: inline;							# show elements in line - eg. horizontal li-elements
+
+
+###CSS###
+should go in seperate file (better than inline or in the head)
+css statements are called "rules"
+<link rel="stylesheet" href="css/style.css">    # link the html-file to the css-file
+/* comment */
+
+p {                                             # syntax of the css statement / rule
+    color: red;                                 => (p => selector, color:red; => declaration)
+}                                               => color => property, red => value)
+
+p {                                             # set rule with 2 declerations for p => red and bold
+    color: red;
+    font_weight: bold;
+}
+
+### Cascading Rules
+p {                                             # cascading rules (from top to bottom, step by step)
+    color: red;                                 =>output is blue+bold
+    font_weight: bold;
+}
+p {
+    color: blue;
+}
+
+
+###Specificity
+# defines the priority which styles can overwrite which style
+# priority has the style which came later - but only when the specificity is equal or higher!
+1 point for tags
+10 points for classes
+100 points for ids
+1000 points for Inline Style
+p{}	=> 1 point (1 tag)
+#zebra{} => 100 point (1 id)
+section .bob{}	=> 11 point (1 tag + 1 class)
+
+
+###Font Definition
+taken from google fonts for example (take fonts and then create link in upper right corner for the link
+<head>                                          # define in html in the header
+    <link href="https://fonts.googleapis.com/css2?familiy=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylessheet">
+</head>
+p {
+    font-family: "Source Sans Pro", "Helvetica" sans-serif;			# Helvetica and sans-serif are the fallback fonts when Source Sans Pro is not loading
+}
+
+
+###Parent > Child
+<section>
+    <p>hello, twitch!</p>
+</section>                                      # direct parent > child connection with ">"
+section > p {                                   # direct child connection (only the p which are direct unter section
+    color:red;                                  # p is the direct child of section
+}
+
+<section>
+    <article>
+        <p>hello, twitch!</p>
+    </article>
+</section>                                      # normal parent child connection
+section p {                                     # all connections above (when there is a p - somewhere on a level - in the section)
+    color:red;                                  # p is the grandchild of section / somewhere a child of section
+}
+
+<section>
+    <p>Hello, Twitch!</p>
+	<p>Hello, YouTube!</p>
+</section>										# previous sibling + next sibling
+p + p {											# format is used when two <p>s are after each other
+	color: red;									# only the second p will get red
+}
+
+
+###IDs
+<section>
+	<p>Hello, Twitch!</p>
+	<p id="zebra">Hello, YouTube!</p>
+</section>										# id is used for formating unique elements
+#zebra {										# can used only ONE time
+	color: red;									# only one id per element
+}
+
+
+###Classes	
+<section>
+	<p class="robot">Hello, Twitch!</p>
+	<p id="zebra" class="bob">Hello, YouTube!</p>
+	<p class="bob">Goodbye!</p>	
+</section>										# class is used for formating many different elements	
+.bob {											
+	color: red;
+}	
+
+
+###Positioning Content
+<header>...</header>							# example1 - without cass all the elements will be positoned from top to bottom
+<section>...</section>
+<aside>...</aside>
+<footer>...</footer>
+
+section {										# with that css-command section and aside will be on the same level
+	float:left;									# section on the left side and aside on the right side
+}
+aside {
+	float:right;
+}
+
+section {										# with that css-command section and aside will be on the same level
+	float:left;									# section on the left side with 63% of the space and aside with 30% of the space
+	margin 0 1.5%;								# both have a margin outside the element
+	width: 63%
+}
+aside {
+	float:right;
+	margin 0 1.5%;
+	width: 30%
+}	
+footer {
+	clear: both;								# after the float - the floats have to be cleared to get the old normal vertically float
+}
+	
+<header>...</header>							# example2 - without cass all the elements will be positoned from top to bottom
+<section>...</section>
+<section>...</section>
+<section>...</section>
+<footer>...</footer>	
+
+section {										# with that all 3 section elements will float left
+	float: left									# so they are horizontal alligned side by side
+	margin 0 1.5%;								# width has to be adjusted accordingly
+	width: 30%
+}
+footer {
+	clear: both;								# after the float - the floats have to be cleared to get the old normal vertically float
+}
+	
+
+
+
+
+
+
+
+
