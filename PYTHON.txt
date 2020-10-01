@@ -709,7 +709,7 @@ from openpyxl import load_workbook                      # Import module for load
 from openpyxl import Workbook							# Import module for creating a workbook
 wb = load_workbook(("Test.xlsx"))                       # Load xlsx
 wb = openpyxl.Workbook()								# Create new workbook
-wb.create_sheet("ws")									# Create new worksheet (at the end)
+wb.create_sheet("ws")			time						# Create new worksheet (at the end)
 wb.create_sheet("ws",0)									# Create new worksheet (at the beginning)
 wb.create_sheet("ws",-2)								# Create new worksheet (at the second last position)
 wb.sheetnames                                           # All worksheets from the 
@@ -1113,7 +1113,7 @@ calendar.monthrange(year,month)                         # return tuple - 1st: we
 import timeit
 start = timeit.default_timer()                          # Start timer
 stop = timeit.default_timer()                           # Stop timer
-round(stop-start/60,2)                                  # Stopped time in minutes and rounde for 2 decimals
+round((stop-start)/60,2)                                # Stopped time in minutes and rounded to 2 decimals
 timeit.timeit(stmt="[0,1,2]",number=1000000)     		# Checking the time for creating the list for 1mio times
 
 ### Countdown while waiting

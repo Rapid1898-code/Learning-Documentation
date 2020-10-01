@@ -8,6 +8,7 @@ JS = behaviour / interaction (a little bit...)
 
 
 ### HTML Structure
+https://in.pinterest.com/pin/345862446359675335/
 index.html                              	# Should be the first site
 <!DOCTYPE html>								# Standard structure in the html-file
 <html>
@@ -21,15 +22,22 @@ index.html                              	# Should be the first site
 
 
 
-### HTML Elements
-<!-- This is a comment -->              # commentar in HTML
-<header>...</header>						# eg. menue at the title of the webpage
+### HTML Grouping - Layout
+https://www.w3schools.com/html/html_layout.asp
+<header>...</header>						# eg. menue at the title
 <nav></nav>                             	# Navigation info for the user (unordered ul list normaly)
 <section></section>                     	# part of the homepage - eg. the core middle of the site
-<article></article>							# part of the section
-<aside></aside>								# mostly on the side of the homepage
+<article></article>							# part of the section - can be taken and dropped to another place
+<aside></aside>								# mostly on the side of the homepage - something you can take away and the page would still be working
 <div></div>                             	# grouping some html-area
 <footer></footer>							# bottom of the document
+
+
+
+### HTML Elements
+https://www.w3.org/community/webed/wiki/HTML/Training/Tag_syntax#:~:text=HTML%20is%20using%20tags%20for,to%20compose%20an%20HTML%20element.
+https://developer.mozilla.org/de/docs/Web/HTML/HTML5/HTML5_element_list
+<!-- This is a comment -->              # commentar in HTML
 <p>text</p>					        		# Normal Paragraph (long text)
 <p>Text <a href="www.x.com">X</a></p>		# Paragraph / Text with anchor link
 <p class="nine">Hello</p>					# Paragraph with a class
@@ -64,7 +72,8 @@ index.html                              	# Should be the first site
 
 
 
-### CSS attributes
+### CSS Attributes
+https://www.w3schools.com/cssref/
 color: red; 								# Define red color for element
 color: #FF0000;								# Define color with hex code
 color: rgba(255,0,0,1);						# Defome color with rgb code (4th parameter is opaque - 0.5. means half transparent, 1 no transparent)
@@ -72,12 +81,13 @@ color: hsla(0, 100%, 50%,1);                # define color per hsla value
 font_weight: bold;							# Font bold
 font_weight: 700;							# Define when a font is downloaded from eg. google fonts
 font-size: 25px;							# Define font size with 25 pixel
-text-decoration: underline;					# Define text decoration unterline
+text-decoration: underline red;				# Define text decoration a red underline
 text-decoration: line-through;				# Define text with line-through
 text-align: center;							# Center text / or list-entries in ul
 font-style: italic;							# Font italic / cursive
 background-color: #e2b007;					# Define background color
 border: 3px solid #FFA500;					# Define border of element (width, style, color) - "shorthand"-method
+border: thin solid red;						# Define border of element (width, style, color) - "shorthand"-method
 border-bottom: 6px dashed #FFA500;			# Define only the bottom-border - "longhand"-method	
 border-bottom-width: 12px;					# Define only the bottom-border-width - "longhand"-method	
 border-radius: 5px;							# Define a border radius with 5 pixel - "shorthand"-method
@@ -86,6 +96,8 @@ height: 100px;								# Height of the box
 margin: 20px;								# Margin of the box (outside the border, for all 4 sites) - "shorthand"-setting
 margin: 10px 20px;							# Margin of the box (10 pixel for top/bottom and 20 pixel for left/right)
 margin: 10px 20px 0 15px;					# Margin of the box (clockwise from tom) => 10px top, 20px right, 0px bottom, 115px left
+margin: 100px 0;							# Margin of the box => will do this clockwise for top+right and bottom-left => 100px for top+bottom, 0 for right+left
+margin: auto								# Set the margin automatc - wg. when the width is set to a percentage
 padding: 20px;								# Padding of the box (inside the border)
 margin-top: 10px							# Setting the margin to 10 pixel - "longhand"-method
 padding-left: 6px							# Setting the padding to 6 pixel - "longhand"-method
@@ -98,12 +110,14 @@ list-style-type: none;						# no bullets in unordered list
 display: inline;							# show elements in line - eg. horizontal li-elements
 float: left;								# Define floating for an image (text will float her on the right side of the image)
 clear: both;								# Clear floating (for left and right)
-*{box-sizing: border-box}					# With this statement every sizing is included with the border
+
 
 
 ### CSS
 should go in seperate file (better than inline or in the head)
 css statements are called "rules"
+resetting all browser-styles: http://meyerweb.com/eric/tools/css/reset/
+normalize the alle browser-styles: github.com/necolas/normalize.css
 <link rel="stylesheet" href="css/style.css">    # link the html-file to the css-file
 /* comment */
 
@@ -116,7 +130,7 @@ p {                                             # set rule with 2 declerations f
     font_weight: bold;
 }
 
-### Cascading Rules
+### Cascade Rules (but Specificity overrules - see below)
 p {                                             # cascading rules (from top to bottom, step by step)
     color: red;                                 =>output is blue+bold
     font_weight: bold;
@@ -127,22 +141,8 @@ p {
 
 
 
-### Specificity
-# defines the priority which styles can overwrite which style
-# priority has the style which came later - but only when the specificity is equal or higher!
-1 point for tags
-10 points for classes
-100 points for ids
-1000 points for Inline Style
-p{}								=> 1 point (1 tag)
-#zebra{} 						=> 100 points (1 id)
-section .bob { }				=> 11 points (1 tag + 1 class)
-.bob{ !important }				=> 1010 points (1 class + 1 other)
-section1,section2 .bob { }		=> 11 points (1 tag + 1 class) for section1 and for section2
-
-
-
 ### Font Definition
+https://fonts.google.com/
 taken from google fonts for example (take fonts and then create link in upper right corner for the link
 <head>                                          # define in html in the header
     <link href="https://fonts.googleapis.com/css2?familiy=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylessheet">
@@ -153,10 +153,10 @@ p {
 
 
 
-### Parent > Child
+### Parent > Child Relationsships
 <section>
     <p>hello, twitch!</p>
-</section>                                      # direct parent > child connection with ">"
+</section>                                      # direct parent relationsship > child connection with ">"
 section > p {                                   # direct child connection (only the p which are direct unter section
     color:red;                                  # p is the direct child of section
 }
@@ -165,7 +165,7 @@ section > p {                                   # direct child connection (only 
     <article>
         <p>hello, twitch!</p>
     </article>
-</section>                                      # normal parent child connection
+</section>                                      # normal parent child connection (ignores deepeness)
 section p {                                     # all connections above (when there is a p - somewhere on a level - in the section)
     color:red;                                  # p is the grandchild of section / somewhere a child of section
 }
@@ -190,9 +190,13 @@ p + p {											# format is used when two <p>s are after each other
 	color: red;
 }	
 .class1.class2 {...}							# both classes have to be in the SAME element
+p.class1.class2 {...}							# both classes have to be in the SAME element - only for p-elements
 .class1 .class2 {...}							# the parent-element has to be class1 and the child-element class2
+section.class1 h2.class2 {...}					# the parent-element <section> has to be class1 and the child-element <h2> class2
 .class1,.class2 {...}							# one of the classes have to be in the element
+p.class1, a.class2 {...}						# rule is for <p> with class1 or <a> with class2
 body article.class1 h2.class2.class3 {...}		# h2, which have class2+classe3 in h2, their parent has class1, and the parent is in body
+aside.aExtra h3									# rule for <h3> which have a parent-element <aside> with class aExtra
 
 
 
@@ -201,9 +205,10 @@ body article.class1 h2.class2.class3 {...}		# h2, which have class2+classe3 in h
 	<p>Hello, Twitch!</p>
 	<p id="zebra">Hello, YouTube!</p>
 </section>										# id is used for formating unique elements
-#zebra {color: red;}							# can used only ONE time - only one id per element
+#zebra {color: red;}							# can used only ONE time - only one id per element - nothing else can have this id
 #class1,#class2 {...}							# one of the ids have to be in the element
 body section.top h2#rhino {...}					# h2, which has id=rhino, the parent has class=top and the parent is in body
+section#aMilk h2								# rule for <h2> which have a parent-element <section> with id aMilk
 
 
 
@@ -214,27 +219,39 @@ body section.top h2#rhino {...}					# h2, which has id=rhino, the parent has cla
 
 
 
-### Box Model
+### Specificity
+https://down4kode.wordpress.com/2014/05/21/css-specificity-calculator/
+# defines the priority which styles can overwrite which style
+# priority has the style which came later - but only when the specificity is equal or higher!
+1 point for tags
+10 points for classes
+100 points for ids
+1000 points for Inline Style
+p{}								=> 1 point (1 tag)
+#zebra{} 						=> 100 points (1 id)
+section .bob { }				=> 11 points (1 tag + 1 class)
+.bob{ !important }				=> 1010 points (1 class + 1 other)
+section1,section2 .bob { }		=> 11 points (1 tag + 1 class) for section1 and for section2
+
+
+
+### Box Model / Boxing
 https://en.wikipedia.org/wiki/CSS_box_model#/media/File:Boxmodell-detail.png
 every element is a box - box in the middle
 box has a heigth and width - eg. 100px*100px
 padding outside the box - between box and border (top,right,bottom,left)
 border (outside padding) (top,right,bottom,left)
 margin (outside border) (top,right,bottom,left)
+*{box-sizing: border-box}						# With this statement every sizing is included with the border
 
 
 
-### Layouts - Floats
+### Layouts - Floating
 old Layouting - not state of the art!
 element tries to got as much up - and as much left or right (according if floated left or right)
 normaly everything will float to the left
 
-
-
-
-
-
-### Positioning Content
+Positioning Content
 <header>...</header>							# example1 - without cass all the elements will be positoned from top to bottom
 <section>...</section>
 <aside>...</aside>
@@ -275,8 +292,111 @@ section {										# with that all 3 section elements will float left
 footer {
 	clear: both;								# after the float - the floats have to be cleared to get the old normal vertically float
 }
-	
 
+
+
+### Layout - Flexbox
+display: flex;									# initialize display with flex
+justify-content: flex-start;					# put elements to the max left - horizontally
+justify-content: flex-end;						# put elements to the max right - horizontally
+justify-content: center;						# center the elements horizontally
+justify-content: space-around;					# place elements with space around horizontally
+justify-content: space-between;					# place elements with space between the elements horizontally
+align-items: flex-start;						# align elements at the top vertically
+align-items: flex-end;							# align elements at the bottom vertically
+align-items: center;							# center the elements vertically
+flex-direction:	row;							# items are placed to the text direction
+flex-direction:	row-reverse;					# items are placed opposite to the text direction
+flex-direction:	column;							# items are placed top to bottom
+flex-direction:	column-reverse;					# items are placed top to bottom  oppostie to the text direction
+align-self: flex-end;							# align individual element at the bottom
+flex-wrap: nowrap;								# show every item in a single line
+flex-wrap: wrap;								# wrap elements to next line
+
+
+
+### Media Queries
+@media screen and (max-width: 600px) {			# this rule get only be used when the device width is between 0 and 600 pixel
+	h1 {
+		color: blue;
+	}
+}
+
+
+
+### Responsive Design
+Running the page on smaller devices
+Fluid - everathing as a percentage (no percents)
+Elastic - using em and rem (em looks at the previous element / rem looks at the html-element)
+Content Decision - Mobile First
+	
+	
+	
+### HTML Template
+<!DOCTYPE html>
+<html lang="en">																# language of the page
+	<head>
+    	<meta charset="utf-8">													# standard to get more or less all chars
+    	<meta name="description" content="Your description goes here">			# used by search-engines to lookup a site
+    	<meta name="keywords" content="one, two, three">						# keywords for search-enginges	
+		<meta name="viewport" content="width=device-width, initial-scale=1">	# set the width of the device
+
+		<title>Blank Template</title>											# showed in the title of the browser
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/normalize.css">						# use the standards from the browsers
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>	
+
+
+
+### CSS Template - style.css
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+
+}
+
+footer {
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
 
 
 
