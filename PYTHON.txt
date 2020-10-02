@@ -99,6 +99,11 @@ Alt Enter					# Suggestions for fix error, function informations
 Alt 1						# Open the project windows (on the left side)
 Alt + F7					# Show usage of the variable, function, class
 Esc							# Focus back on the editor window
+
+#Git Ignore Files/Folders:
+when doing a commit - right click + add to .gitignore		# file will be created when not exists
+individual file will be ignored
+to ignore a whole folder with all files in it - add /* to the folder => eg. /prg/dist/*
 ----------
 
 

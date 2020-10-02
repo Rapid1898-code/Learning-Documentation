@@ -1,5 +1,5 @@
-//34 Git - Tutorial 1
-// INIT, STATUS, ADD, COMMIT, LOG
+### Git - Tutorial 1
+### INIT, STATUS, ADD, COMMIT, LOG
 sudo apt-get install git => Installation
 git init => Repository erstellen in dem aktuellen Verzeichnis
 git status => aktueller Status des GIT-Verzeichnises
@@ -12,13 +12,13 @@ git commit -m "addedFile2" => in diesem File werden alle Files commited (wenn ni
 git log => Übersicht der letzten Vorgänge bzw. Commits
 
 
-//35 GitHub Remote Repositories
-// REMOTE ADD, PUSH
+### GitHub Remote Repositories
+### REMOTE ADD, PUSH
 git remote add origin https://github.com/link/Test.git  => Repositgory verknüpfen
 git push -u origin master   => Files auf GitHub hinaufladen
 
 
-//36 Branches, Merges
+### Branches, Merges
 //PULL, DIFF, RESET, BRANCH, CHECKOUT, MERGE
     git pull origin master  => File werden von GitHub aktualisiert (mit dem verknüpften Repo lt. git remote Befehl siehe oben
     git add Textfile4    => Textfile4 hinzugefügt zum Repo
@@ -42,6 +42,17 @@ git push -u origin master   => Files auf GitHub hinaufladen
     git push -u origin master       => all commits are pushed to the master
         (-u saves the paths - so at the next push - it must be only typed push)
     git pull origin master      => pull alle the changes from the remote repository
+
+### Git - Ignore
+create a file ".gitignore" in the root-folder of the respository
+=> this files / folders will be ignored when comitting (and so for pushing to the remote repository)
+=> github has for eg. some problems with files > 100MB
+add folder: /prg/dist/*		# all files in this folder will be ignored
+add file: /prg.xlsx		# this file will be ignored						
+
+
+
+
 
 
 
