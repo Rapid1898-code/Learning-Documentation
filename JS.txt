@@ -1,0 +1,35 @@
+###### OPERATORS AND INPUTS
+// Comment something	 					# Comments in Javascript
+let intStr = "7"							# Declare and assign string 
+let intNum = parseInt(intStr,10);			# change String to Int with base 10
+let floatStr = "5.14673"					# declare and assign string
+let floatNum = parseFloat(floatStr);		# change String to Float
+num.toString()								# convert numeric value to string
+num + ""									# 2nd method to convert numeric value to string
+7 % 2                  			        	# Modulo / Rest of the division (=> 1)
+x == y 										# Check 2 values / variables (result in true / false)
+x === y										# equal value and equal type
+x != y										# not equal
+x !== y										# not equal value and not equal type
+>,<,>=,<=									# greater, lesser, greater + equal , lesser + equal
+num++;										# makes variable +1
+console.log(num)							# outputs variable num in console
+
+
+
+###### CONTROL STRUCTURES AND ITERATIONS
+if (age > 18) { console.log("Great") }		# if structure
+else { console.log("Young") }				# with else condition
+if (a == 9) && (b == 7) { c = "Hurra!" }	# if structure with logical and	
+if (a == 9) || (b == 7) { c = "Hurra!" }	# if structure with logical or
+while (x < 4) {}                 			# While loop with break condition
+while (true) {}                  			# Endless while loop - has to be exited somewhere
+for (leti=1; i<=5; i++) {}					# Iteration from 1 to 5 with for-loop
+
+
+
+###### FUNCTIONS
+function add(x=0,y=0) {						# Defome a function	- with default value 0 if no input is given
+	let erg = x+y;							# Calculate erg
+	return erg;								# Return erg value
+}

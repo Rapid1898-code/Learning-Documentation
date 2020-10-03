@@ -49,17 +49,33 @@ https://developer.mozilla.org/de/docs/Web/HTML/HTML5/HTML5_element_list
 <pre> </pre>								 Preserves whitespace (not good - should be done by CSS)
 <br>, </br>									# linebreak (not good - should be done by css)
 <hr>, </hr>									# htmlbreak (not good - should be done by css)
+
 <ul>										# Unordered List with anchor links
 	<li><a href="x.html">One</a></li>
 	<li><a href="y.html">Two</a></li>
 	<li><a href="z.html">Three</a></li>
 </ul>	
+
 <ol>										# Ordered List
 	<li>One</li>
 	<li>Two></li>	
 	<li>Three></li>
 </ol>
 
+<table>
+	<tr>
+		<th>First table header</th>
+		<th>Second table header</th>
+	</tr>
+	<tr>
+		<td>First row, first column</td>
+		<td>First row, second column</td>
+	</tr>	
+	<tr>
+		<td>Second row, first column</td>
+		<td>Second row, second column</td>
+	</tr>		
+</table>
 
 
 ### Forms

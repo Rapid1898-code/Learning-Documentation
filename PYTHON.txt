@@ -1089,7 +1089,8 @@ from datetime import date                                    # Import module dat
 datetime.strptime(s, "%Y-%m-%d")                             # Conversion string to datetime in format dd.mm.jjjj
 datetime.strftime(dt, "%Y-%m-%d")                            # Conversion datetime to string in format  dd.mm.jjjj
 datetime.strftime((datetime.strptime(cont_tmp,"%m/%d/%Y")),"%Y-%m-%d")      # Convert dateformat from string in one line (1st from - 2nd to)
-isinstance(x, datetime.date)								 # Check if variable is of type datetime.date                   
+isinstance(x, date)											 # Check if variable is of type datetime.date or datetime.datetime                   
+isinstance(x, datetime)										 # Check if variable is of type datetime.datetime
 date = date(2020,7,24)                                       # Define date as "2020-07-24"
 dt = datetime(2020,3,5,19,27,23)                      		 # Define date+time as "2020-03-05 19:27:23"
 now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")           # Actual date+time in format 2020-06-09 20:11:13
