@@ -1,6 +1,9 @@
 ###### OPERATORS AND INPUTS
 // Comment something	 					# Comments in Javascript
-let intStr = "7"							# Declare and assign string 
+let intStr = "7"							# Declare and assign string (possible with "" or '')
+"/n /t"										# Linebreak and Tab should not used - is morely css-stuff for formating
+let age = 25								# Declare and assign int (also signed int like -36)	
+let float = 5.14876							# Declare and assign float (also signed float like +4.5763	
 let intNum = parseInt(intStr,10);			# change String to Int with base 10
 let floatStr = "5.14673"					# declare and assign string
 let floatNum = parseFloat(floatStr);		# change String to Float
@@ -33,3 +36,26 @@ function add(x=0,y=0) {						# Defome a function	- with default value 0 if no in
 	let erg = x+y;							# Calculate erg
 	return erg;								# Return erg value
 }
+
+document.getElementById("green").onclick = funcGreen					# Old Method / Waiting for click on this element (by ID) as a "event-listener"
+document.querySelector("#id").addEventListener(type:"click",funcGreen)	# New Method / create an Event Listener / takes the first match
+
+function funcGreen() {										# Define function
+  document.querySelector("body")
+	.style.backgroundColor = "rgba(241,63,247,1)"			# Change BackGroundColor-Style to rgba-color green (as inlinecode in the rendering - not in the html-code)
+  document.querySelector("body").style.color = "white"		# Change Fontcolor to white (as inlinecode in the rendering - not in the html-code)
+}
+
+document.getElementById							# Old Method / Select an element by ID
+document.querySelector("xyz")					# Select a <tag> or .class or #id
+.onclick										# Element-Listener waiting for a click7
+.style.backgroundColor							# Change BackgroundColor
+.style.color									# Change Font Color	
+.innerText										# Change Text of the selected element
+
+
+
+
+
+
+	
