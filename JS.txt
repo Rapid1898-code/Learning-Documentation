@@ -2,7 +2,8 @@
 // Comment something	 					# Comments in Javascript
 let intStr = "7"							# Declare and assign string (possible with "" or '')
 "/n /t"										# Linebreak and Tab should not used - is morely css-stuff for formating
-let age = 25								# Declare and assign int (also signed int like -36)	
+let age = 25								# Declare a variable and assign int (also signed int like -36)	
+const age = 25								# Declare a constant and assign int (constant can not be changed like variables)
 let float = 5.14876							# Declare and assign float (also signed float like +4.5763	
 let intNum = parseInt(intStr,10);			# change String to Int with base 10
 let floatStr = "5.14673"					# declare and assign string
@@ -21,8 +22,14 @@ console.log(num)							# outputs variable num in console
 
 
 ###### CONTROL STRUCTURES AND ITERATIONS
-if (age > 18) { console.log("Great") }		# if structure
-else { console.log("Young") }				# with else condition
+if (condition is true) {
+	//Do something
+}else if (condition is true){
+	//Do something else
+}else{
+	//Default else
+}	
+
 if (a == 9) && (b == 7) { c = "Hurra!" }	# if structure with logical and	
 if (a == 9) || (b == 7) { c = "Hurra!" }	# if structure with logical or
 while (x < 4) {}                 			# While loop with break condition
@@ -47,12 +54,14 @@ function funcGreen() {										# Define function
 }
 
 document.getElementById							# Old Method / Select an element by ID
-document.querySelector("xyz")					# Select a <tag> or .class or #id
+document.querySelector("xyz")					# New Method / Select a <tag> or .class or #id
 .onclick										# Element-Listener waiting for a click7
 .style.backgroundColor							# Change BackgroundColor
 .style.color									# Change Font Color	
 .innerText										# Change Text of the selected element
-
+.innerText = v1 + " " + v2 + " " + v3			# Concatenate 3 variables with space between (old method)
+.inntrText = "${v1} ${v2} ${v3}"				# Concatenate 3 variables with space between (new method)
+.value											# Read the text of the field
 
 
 

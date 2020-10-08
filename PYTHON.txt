@@ -99,6 +99,7 @@ Alt Enter					# Suggestions for fix error, function informations
 Alt 1						# Open the project windows (on the left side)
 Alt + F7					# Show usage of the variable, function, class
 Esc							# Focus back on the editor window
+Ctrl + Shift + "-"			# Collapse all functions
 
 #Git Ignore Files/Folders:
 when doing a commit - right click + add to .gitignore		# file will be created when not exists
@@ -210,6 +211,9 @@ import re
 https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285		# Information about regex handling
 pattern = re.compile("^[0-9]{4}-[0-9]{2}$")                		# Find str with 4xdigits + "-"char + 2xdigits
 pattern.match(s)                                               	# Check if pattern matches - <> None when matches
+pattern2 = re.compile("[0-9]{4}-[0-9]{2}")                		# Find str with 4xdigits + "-"char + 2xdigits
+pattern.fullmatch(s)											# Check with fullmatch (^ and $ not necessary) - <> None when matches 
+pattern3 = re.compile ("[0-9]{1}\.[0-9]{3}")					# Char "." has to cherck with "\n" (is a wildcard letter in regex)
 re.sub("\d","",s)												# Replace all digits in string with blank
 re.sub(r'([a-z](?=[A-Z])|[A-Z](?=[A-Z][a-z]))', r'\1 ', "txt")	# Insert blank before every capitalized word eg. "CostOfRevenue" => "Cost Of Revenue"
 ----------
@@ -1080,6 +1084,7 @@ conn.close()									# Close Connection
 ###### MODULES - DATES, DATETIME, CALENDAR, TIMEIT, TIME, SYS, CTYPES
 # Standardmodules from python no pip install necessary
 https://www.programiz.com/python-programming/datetime/strptime      # Overview % parsing commands
+https://rdrr.io/r/base/strptime.html
 from datetime import datetime, timedelta                     # Import module datetime and timedelta
 from datetime import date                                    # Import module dat
 datetime.strptime(s, "%Y-%m-%d")                             # Conversion string to datetime in format dd.mm.jjjj
@@ -1097,6 +1102,7 @@ dt.year, dt.month, dt.day                              		 # Year / month / day f
 tday.isoweekday()                                            # Returns weekday (monday=1, sunday=7)
 last_friday = day - timedelta(days=tday.isoweekday() + 2)    # Calculates last friday (+2 for FR, +1 SA, 0 SU, -1 MO, -2 TU, -3 WE, -4 TH)
 tdelta = timedelta(days=7)                                   # Creates timedelta for 7 days
+tdelta = timedelta(seconds=60)                               # Creates timedelta for 1 minute
 tday + tdelta                                                # 7 days are added to the actual day
 newdate = date - timedelta(days=1)                           # Previous 1-day-back-date for date
 date2-date1                                                  # Timedelta for two dates
@@ -1106,6 +1112,10 @@ datetime.fromisoformat('2020-07-10 02:00:00').timestamp()    # Generate ISO-form
 iso_dt = datetime.fromisoformat(str(datetime.now())).timestamp()   # Generate ISO-format from actual date
 date = datetime.fromtimestamp(1594339200000 / 1e3)           # Generate Datetime from ISO-format#
 sys.getsizeof(l) or sys.getsizeof(t)						 # Shows size of the list / tuple in bytes
+
+###Using german names for month- and day-names
+import locale
+locale.setlocale(category=locale.LC_ALL,locale="German")
 
 ### Check last day of month & first weekday of month
 import calendar
@@ -1236,6 +1246,10 @@ os.path.exists("temp/file.txt")                             # Checks if filename
 os.path.isdir("xyz")                                        # Checks if folder exists
 os.path.isfile("xyz")                                       # Checks if element is a file
 os.listdir()											    # Put all filenames to a list from the actual working dir
+
+# find home-directory for the actual user
+from os.path import expanduser								
+home = expanduser("~")
 ----------
 
 
@@ -1722,6 +1736,24 @@ elif platform in ["linux","darwin"]: options.add_argument('--kiosk')        # Wi
 
 options.add_experimental_option ('excludeSwitches', ['enable-logging'])     # No error messagegs when exec in cmd
 driver = webdriver.Chrome(os.getcwd() + '/chromedriver', options=options)
+
+# Scroll to the very botom of a site - eg. Twitter, Facebook, Stocktwits,...
+lenOfPage = driver.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
+match=False
+while(match==False):
+    lastCount = lenOfPage
+    time.sleep(1)
+    lenOfPage = driver.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
+    if lastCount==lenOfPage:
+        match=True
+
+# When there are problem clicking an element on a page
+Method1:
+element = driver.find_element_by_id('datePickerToggleBtn')
+webdriver.ActionChains(driver).move_to_element(element ).click(element ).perform()
+Method2:
+element = driver.find_element_by_css('div[class*="loadingWhiteBox"]')
+driver.execute_script("arguments[0].click();", element)
 ----------
 
 
