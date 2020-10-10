@@ -45,7 +45,8 @@ function add(x=0,y=0) {						# Defome a function	- with default value 0 if no in
 }
 
 document.getElementById("green").onclick = funcGreen					# Old Method / Waiting for click on this element (by ID) as a "event-listener"
-document.querySelector("#id").addEventListener(type:"click",funcGreen)	# New Method / create an Event Listener / takes the first match
+document.querySelector('#check').addEventListener('click', funcGreen)	# New Method / create an Event Listener / takes the first match
+
 
 function funcGreen() {										# Define function
   document.querySelector("body")
@@ -55,15 +56,18 @@ function funcGreen() {										# Define function
 
 document.getElementById							# Old Method / Select an element by ID
 document.querySelector("xyz")					# New Method / Select a <tag> or .class or #id
+const elem = document.querySelector("xyz")		# Assign the element to a constante
 .onclick										# Element-Listener waiting for a click7
 .style.backgroundColor							# Change BackgroundColor
 .style.color									# Change Font Color	
+.style.display = "none"							# Hide element in DOM
 .innerText										# Change Text of the selected element
 .innerText = v1 + " " + v2 + " " + v3			# Concatenate 3 variables with space between (old method)
 .inntrText = "${v1} ${v2} ${v3}"				# Concatenate 3 variables with space between (new method)
 .value											# Read the text of the field
-
-
+.classList										# Manipulate classes informations
+.classList.toggle("hidden")						# Toggle the class hidden (when triggered class is deleted OR added (when the next click occured)
+.classList.add("hidden")						# Add the classe hidden
 
 
 

@@ -1711,8 +1711,8 @@ field = driver.find_element_by_name("q").send_keys("txt")         # Feld wird na
 field = driver.find_element_by_id("xy-id")                        # Feld word nach ID gesucht
 field = driver.find_elements_by_class_name("cl")[0]               # Felder werdem nach Class gesucht (als Liste)
 field = driver.find_elements_by_tag_name("tag")[0]                # Felder werdem nach Tag gesucht (als Liste)
-el.send_keys("textbla",Keys.Backspace,Keys.ARROW_LEFT,Keys.ENTER) # Send single keyboard-elements <> chars (needs import keys)
-el.send_keys (u'\ue007')										  # Send an Return-keystroke (eg. for enter after data entries in fields)
+driver.send_keys(Keys.Backspace,Keys.ARROW_LEFT,Keys.ENTER)		  # Send single keyboard-elements <> chars (needs import keys)
+driver.send_keys (u'\ue007')									  # Send an Return-keystroke (eg. for enter after data entries in fields)
 field.submit()                                                    # Enter wird gedrückt bzw. die Seite abgeschickt
 driver.quit()                                                     # Driver schließen (sonst schließt sich das Fenster nicht)
 driver.title                                                      # Titel der HTML-Seite
