@@ -5,19 +5,20 @@ let intStr = "7"							# Declare and assign string (possible with "" or '')
 let age = 25								# Declare a variable and assign int (also signed int like -36)	
 const age = 25								# Declare a constant and assign int (constant can not be changed like variables)
 let float = 5.14876							# Declare and assign float (also signed float like +4.5763	
-let intNum = parseInt(intStr,10);			# change String to Int with base 10
-let floatStr = "5.14673"					# declare and assign string
-let floatNum = parseFloat(floatStr);		# change String to Float
-num.toString()								# convert numeric value to string
+let intNum = parseInt(intStr,10);			# Change String to Int with base 10
+let floatStr = "5.14673"					# Declare and assign string
+let floatNum = parseFloat(floatStr);		# Change String to Float
+num.toString()								# Convert numeric value to string
 num + ""									# 2nd method to convert numeric value to string
 7 % 2                  			        	# Modulo / Rest of the division (=> 1)
 x == y 										# Check 2 values / variables (result in true / false)
-x === y										# equal value and equal type
-x != y										# not equal
-x !== y										# not equal value and not equal type
->,<,>=,<=									# greater, lesser, greater + equal , lesser + equal
-num++;										# makes variable +1
-console.log(num)							# outputs variable num in console
+x === y										# Equal value and equal type
+x != y										# Not equal
+x !== y										# Not equal value and not equal type
+>,<,>=,<=									# Greater, lesser, greater + equal , lesser + equal
+num++;										# Makes variable +1
+console.log(num)							# Outputs variable num in console
+alert("Text!")								# Alert information in a window
 
 
 
@@ -30,11 +31,12 @@ if (condition is true) {
 	//Default else
 }	
 
-if (a == 9) && (b == 7) { c = "Hurra!" }	# if structure with logical and	
-if (a == 9) || (b == 7) { c = "Hurra!" }	# if structure with logical or
-while (x < 4) {}                 			# While loop with break condition
-while (true) {}                  			# Endless while loop - has to be exited somewhere
-for (leti=1; i<=5; i++) {}					# Iteration from 1 to 5 with for-loop
+if (a == 9) && (b == 7) { c = "Hurra!" }		# If structure with logical and	
+if (a == 9) || (b == 7) { c = "Hurra!" }		# If structure with logical or
+while (x < 4) {}                 				# While loop with break condition
+while (true) {}                  				# Endless while loop - has to be exited somewhere
+for (leti=1; i<=5; i++) {}						# Iteration from 1 to 5 with for-loop
+Array.from(arr).forEach(element) => element...	# Iterate through and an array and do something with every element (eg. addEventListener)
 
 
 
@@ -44,9 +46,8 @@ function add(x=0,y=0) {						# Defome a function	- with default value 0 if no in
 	return erg;								# Return erg value
 }
 
-document.getElementById("green").onclick = funcGreen					# Old Method / Waiting for click on this element (by ID) as a "event-listener"
 document.querySelector('#check').addEventListener('click', funcGreen)	# New Method / create an Event Listener / takes the first match
-
+document.getElementById("green").onclick = funcGreen					# Old Method / Waiting for click on this element (by ID) as a "event-listener"
 
 function funcGreen() {										# Define function
   document.querySelector("body")
@@ -55,8 +56,8 @@ function funcGreen() {										# Define function
 }
 
 document.getElementById							# Old Method / Select an element by ID
-document.querySelector("xyz")					# New Method / Select a <tag> or .class or #id
-const elem = document.querySelector("xyz")		# Assign the element to a constante
+const c = document.querySelector("xyz")			# New Method / Select (first) a <tag> or .class or #id and store it in the constante c
+const c = document.querySelectorAll("h2")	    # Select all elements which have h2 and store it in the constante c
 .onclick										# Element-Listener waiting for a click7
 .style.backgroundColor							# Change BackgroundColor
 .style.color									# Change Font Color	
@@ -68,7 +69,7 @@ const elem = document.querySelector("xyz")		# Assign the element to a constante
 .classList										# Manipulate classes informations
 .classList.toggle("hidden")						# Toggle the class hidden (when triggered class is deleted OR added (when the next click occured)
 .classList.add("hidden")						# Add the classe hidden
-
+.classList.contains("cl")						# Check if element contains class "cl"
 
 
 	

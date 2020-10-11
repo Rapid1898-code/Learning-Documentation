@@ -5,7 +5,8 @@
 # MODULE (general)
 # VIRTUALENV
 # INTELLIJ IDEA IDE
-# OPERATORS and INPUTS
+# MYSQL, MARIADB, HEIDISQL
+# OPERATORS, INPUTS, ARGUMENTS
 # RANDOM, SECRETS
 # STRING
 # REGEX
@@ -22,6 +23,7 @@
 # XML (handling XML)
 # URLLIB (handling URLs,links)
 # MODULE - CSV (handling CSV)
+# MOUDLE - ZIPFILE (handling ZIP files)
 # MODULE - GSPREAD (API for Google Sheets)
 # MODULE - OPENPYXL (working with excel worksheets)
 # MODULE - XLWINNGS (working on the fly with open excel worksheets)
@@ -110,8 +112,19 @@ to ignore a whole folder with all files in it - add /* to the folder => eg. /prg
 
 
 ----------
-###### OPERATORS and INPUTS
+###### MYSQL, MARIADB, HEIDISQL
+----------
+C:\Program Files\MariaDB 10.3\data				# Data where the MariaDB-database is stored
+C:\ProgramData\MySQL\MYSQL Server 8.0\data		# Data where the MySQL-database is stored
+HeidiSQL - Datei / Verbindungsmanager			# Shows the database-version in the column header	
+----------
+
+
+
+----------
+###### OPERATORS, INPUTS, ARGUMENTS
 import math                     # Import module for math calculations
+import sys						# Import module for reading arguments from the command line
 5 // 2                          # Result without Decimals (=> 2)
 7 % 2                           # Modulo / Rest of the division (=> 1)
 d,e,f = 4,5,6                   # Assigment of several varaibles
@@ -133,6 +146,9 @@ sys.argv[1:].upper()            # Check for argument which is given when startin
 print("Text")					# Print "Text" (with a linebreak \n at the end)
 print("Text", end="-")			# Print with end-statement (next print will be in the same line
 print()							# Print linebreak \n
+example starting program 		# python test.py arg1 arg2 arg3
+str(sys.argv)					# Show the arguments from the command line when starting the program eg. ['test.py', 'arg1', 'arg2', 'arg3']
+len(sys.argv)					# Len of the arguments - eg. 4 (program test.py itself and 3 arguments following)
 ----------
 
 
@@ -667,6 +683,16 @@ import codecs
 url = link                                                      # direct link to a csv html file
 ftpstream = urllib.request.urlopen(url)
 csvfile = csv.reader(codecs.iterdecode(ftpstream, 'utf-8'))     # output is nested list
+----------
+
+
+
+----------
+###### MODULE - ZIPFILE
+import zipfile
+zf = zipfile.ZipFile('example.zip', 'r')						# Read Zip-File
+zf.namelist()													# List of string with the names of the files in the Zip-File
+zf.open (file_name)												# Open file vom Zip-File (eg. CSV-File which is in the Zip-File)
 ----------
 
 
@@ -1773,6 +1799,8 @@ table.find_all("td"):    			                            # Read all table data ce
 soup.find_all("tr", class_="arrow0"):       			        # Read all table rows for specific class
 for col_id, col_content in enumerate(result.find_all("td")):    # Read all table data cells with id and content
 entries = results.find_all("div", class_="col-xs-6")            # Read all divs with specific class
+soup.find("div", {"id": "lj_div"})								# Find div with id "lj_div"
+soup.find("p", {"class": line}									# Find (first) p with class "line"
 if row.get("class") == ["ellipsis", "nobr", "new"]:             # Check if class has specific content
 for e in soup.find_all("a"): e.get("href"))                     # Read all links from href element    
 for e in soup.find_all("a"): e.get("value"))                    # Read all number from the field "value"
