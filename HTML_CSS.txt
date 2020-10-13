@@ -45,8 +45,8 @@ https://developer.mozilla.org/de/docs/Web/HTML/HTML5/HTML5_element_list
 <h1>Import Header</h1>						# Header1-Tag with Text (most important on the page)
 <h2>2nd important thing</h1>				# Header2-Tag with Text (second important)
 <h6>6th important thing</h1>				# Header6-Tag with Text (sixth important thing on the page)
-<img src="pic.jpeg">                    	# Insert picture - no close tag
-<pre> </pre>								 Preserves whitespace (not good - should be done by CSS)
+<img src="pic.jpeg" alt="text">             # Insert picture - no close tag (with alternative text - when img can´t be displayed)
+<pre> </pre>								# Preserves whitespace (not good - should be done by CSS)
 <br>, </br>									# linebreak (not good - should be done by css)
 <hr>, </hr>									# htmlbreak (not good - should be done by css)
 
@@ -359,14 +359,41 @@ main,.bottom {				# arranges elements in main and class bottom with flex-system
 
 
 
-
 ### Media Queries
 @media screen and (max-width: 600px) {			# this rule get only be used when the device width is between 0 and 600 pixel
 	h1 {
 		color: blue;
 	}
 }
-	
+
+
+
+###Animating, Transform
+transform: matrix(1,2,3,4,5,6);					# combines the follwing 6 rules
+transform: translate (120px, 50%);				# move left/right, up/down4kode
+transform: scale (2, 0.5);						# change the scale of the object
+transform: rotate (0.5turn);					# rotate object (possible for any axes (rotateX, rotateY, rotateZ)
+transform: skew(30deg, 20deg);					# skew object
+transform: scale(0.5) translate(-100%,-100%)	# combine some transformations
+
+@keyframes xyzAction{							# responsible for the animation - is corresponding to a class definition (see below)
+	0% {transform: rotateZ(0deg)};				# at 0% of the animation nothing should change on the z-axe
+	50% {transform: rotateZ(180deg)};			# at 50% of the antimaton the z-axe should rotate 180deg		
+	100% {transform: rotateZ(360deg)};			# at 100% of the antimaton the z-axe should rotate 360deg		
+}
+
+.letRip{}										# define the class for the @keyframe above
+animation-name: xyzAction;						# Name of the keyframe (puts together the setup to the keyframe)
+animation-iteration-count: infinite;			# How many times the animation runs (infinite or eg. 5 for 5 times)
+animation-duration: 500ms;						# Lenght of one duration of the animation eg. 500ms or 0.5sec
+animation-function: linear;						# Animation is progressing linear
+animation-function: easy-in-out;				# Animation is progressing faster to the end
+animation-function: step(5,end);				# Animation is progressing in steps (not smooth)
+animation-play-state: running;					# Possible values are runnning or pause (can be used with javacript to start/stop)
+animation-delay									# How long the start of the animation delays
+animation-direction:							# Control of the progression - forward, backward, alternate
+animation-fill-mode
+
 	
 	
 ### HTML Template

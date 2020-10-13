@@ -34,6 +34,7 @@ if (condition is true) {
 if (a == 9) && (b == 7) { c = "Hurra!" }		# If structure with logical and	
 if (a == 9) || (b == 7) { c = "Hurra!" }		# If structure with logical or
 while (x < 4) {}                 				# While loop with break condition
+do {} while (x < 4)								# Do While loop with break condition
 while (true) {}                  				# Endless while loop - has to be exited somewhere
 for (leti=1; i<=5; i++) {}						# Iteration from 1 to 5 with for-loop
 Array.from(arr).forEach(element) => element...	# Iterate through and an array and do something with every element (eg. addEventListener)
@@ -62,7 +63,7 @@ const c = document.querySelectorAll("h2")	    # Select all elements which have h
 .style.backgroundColor							# Change BackgroundColor
 .style.color									# Change Font Color	
 .style.display = "none"							# Hide element in DOM
-.innerText										# Change Text of the selected element
+.innerText = "xyz"								# Change Text of the selected element
 .innerText = v1 + " " + v2 + " " + v3			# Concatenate 3 variables with space between (old method)
 .inntrText = "${v1} ${v2} ${v3}"				# Concatenate 3 variables with space between (new method)
 .value											# Read the text of the field
@@ -70,6 +71,12 @@ const c = document.querySelectorAll("h2")	    # Select all elements which have h
 .classList.toggle("hidden")						# Toggle the class hidden (when triggered class is deleted OR added (when the next click occured)
 .classList.add("hidden")						# Add the classe hidden
 .classList.contains("cl")						# Check if element contains class "cl"
+.classList.remove("wiggle")						# Remove the class from the element
+setInterval(()=> {do something},10000)			# Do something any 10 seconds
+setTimeout(()=> {do something,1000}]			# Do something and wait 1 second
+
+
+
 
 
 	

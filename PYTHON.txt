@@ -582,11 +582,18 @@ Human.grunt()                 # Aufruf der statischen Methode => Ausgabe: "*grun
 
 ----------
 ###### TXT FILES
-with open ("fn.txt","r") as f: print(f)					# Read textfile - and print it
+with open ("fn.txt","r") as f: print(f.read()			# Read textfile - and print it
+with open ("fn.txt","r+") as f: print(f.read()			# Open File for Read and Write
 with open("fn.txt","r") as f:                           # Read textfile - stored in list per line
     lines = [x.strip() for x in f.readlines()]          # Whitespaces are eliminated with strip()
 with open("fn.txt","w") as obj: obj.write("Ein neuer Text")   # Writing in textfile
 with open("fn.txt","a") as obj: obj.write("\nNoch ein Text")  # Append text in the next line
+if os.path.exists(fn) == False:							# Check if file allready exists
+with open (fn,"a") as f: f.write("init")				# Create and initialize file when not exisiting
+f.read()												# Read content to string
+f.seek(0)												# Set the current postion in the file to beginning
+f.write(s)												# Write s to the f-file opened
+
     
 while True:                  							# Try/Except - checks if file can be saved
 try:                         							# otherwise outputs a error message
@@ -1272,6 +1279,7 @@ os.path.exists("temp/file.txt")                             # Checks if filename
 os.path.isdir("xyz")                                        # Checks if folder exists
 os.path.isfile("xyz")                                       # Checks if element is a file
 os.listdir()											    # Put all filenames to a list from the actual working dir
+os.popen('attrib +h ' + fn).read().close()					# Change file to hidden
 
 # find home-directory for the actual user
 from os.path import expanduser								
@@ -2045,13 +2053,11 @@ prg.exe                                                       # Open this file t
 
 ### Problems with some added python modules (eg. pycountry)
 https://groups.google.com/g/pyinstaller/c/OYhJdeZ9010/m/32g3-T8XBAAJ
-when trying to execute the compiled exe-file - there is an error about the pycountry-module - workaround:
-1) use command <pyi-makespec --onefile temp2.py> to generate a temp2.spec file
-2) change filename.spec
-	=> from PyInstaller.utils.hooks import copy_metadata (in the header)
-	=> in the a = Analysis(...) section change " datas = []," to <datas = copy_metadata("pycountry"),>
-3) use pyinstaller to compile exe as above
-Alternative: compile program before - change spec - an use command <pyInstaller --clean temp2.spec>
+Create hook-file hook-pycountry.py with content:
+	from PyInstaller.utils.hooks import copy_metadata, collect_data_files
+	datas = copy_metadata("pycountry") + collect_data_files("pycountry")
+Compile Program with
+	pyinstaller --onefile --exclude-module matplotlib --additional-hooks-dir=. TestPyCountry.py
 
 ### Problems with path when executing from py and exe   
 config_name = 'creds.json'                                    # Define the config file name
