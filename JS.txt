@@ -22,6 +22,43 @@ alert("Text!")								# Alert information in a window
 
 
 
+###### STRINGS
+.toLowerCase()								# Lowercase the whole string
+
+
+
+###### ARRAY
+let arr = [];									# Define an array
+let arr = [6,7,8]; 						  		# Define an array and initialize it
+let mat= [[1,2,3],[4,5,6],[7,8,9]]				# Define multidim array
+arr[1]											# Get second element => 7
+mat[1][1]										# Get element in the matrix => 5
+arr[2] = 9										# Replace the third element
+arr.length										# Total count of the elemets in the array
+arr.pop()										# Extracts and delete element at the end (fast!)
+arr.shift()										# Extracts and delete element at the begin (slow!)
+arr.push("X","Y)								# Append new elements to the array at the end (fast!)
+arr.unshift("Y","Z")							# Add new elements to the array at the beginning (slow!)
+for (let i=0; i < arr.lenth; i++) {do smth.}	# Iterate through index of the array
+for (let elem of arr) {alert(arr)}				# Iterate through array elements
+String(Arr)										# Returns list as a string => "6,7,8"
+a1 === a2										# Must allways be compared with triple =
+
+
+
+###### OBJECT
+
+let o = {};										# Define an object
+let o = {name: "John", age: 30}					# Define an object and initialize it
+o.name											# Shows value of the key "name" (1st method) => John
+o["name"]										# Shows value of the key "name" (2nd method) => John
+o.age											# Shows key "age" of the object => 30
+age in o 										# Check if key is in the object
+delete o.age									# Delete a property of an object
+for (let key in o) {alert(key,alert, o[key]}	# Iterate through the keys of the object and outputs key and value
+
+
+
 ###### CONTROL STRUCTURES AND ITERATIONS
 if (condition is true) {
 	//Do something
@@ -36,7 +73,7 @@ if (a == 9) || (b == 7) { c = "Hurra!" }		# If structure with logical or
 while (x < 4) {}                 				# While loop with break condition
 do {} while (x < 4)								# Do While loop with break condition
 while (true) {}                  				# Endless while loop - has to be exited somewhere
-for (leti=1; i<=5; i++) {}						# Iteration from 1 to 5 with for-loop
+for (let i=1; i<=5; i++) {}						# Iteration from 1 to 5 with for-loop
 Array.from(arr).forEach(element) => element...	# Iterate through and an array and do something with every element (eg. addEventListener)
 
 
@@ -66,7 +103,7 @@ const c = document.querySelectorAll("h2")	    # Select all elements which have h
 .innerText = "xyz"								# Change Text of the selected element
 .innerText = v1 + " " + v2 + " " + v3			# Concatenate 3 variables with space between (old method)
 .inntrText = "${v1} ${v2} ${v3}"				# Concatenate 3 variables with space between (new method)
-.value											# Read the text of the field
+.value											# Read the value/text of the field
 .classList										# Manipulate classes informations
 .classList.toggle("hidden")						# Toggle the class hidden (when triggered class is deleted OR added (when the next click occured)
 .classList.add("hidden")						# Add the classe hidden

@@ -848,31 +848,46 @@ for row in content:                                    # Determination of the lo
 ### Formating the xlsx
 (when a cell is formated 2 times - it gets overwritten)
 from openpyxl.styles import Font, PatternFill, Border, Side, Alignment
-bold = Font (bold=True)                                                                # bold font
-bg_yellow = PatternFill (fill_type="solid", start_color='fbfce1', end_color='fbfce1')  # yellow background (use color picker)
-bg_grey = PatternFill (fill_type="solid", start_color='babab6', end_color='babab6')    # grey background (use color picker)
-bg_green = PatternFill (fill_type="solid", start_color='8af542', end_color='8af542')   # blue background (use color picker)
-frame_all = Border (left=Side (style='thin'), right=Side (style='thin'),               # define border on very side
+from openpyxl import formatting, styles
+bold = Font (bold=True)                                                                			# bold font
+bg_yellow = PatternFill (fill_type="solid", start_color='fbfce1', end_color='fbfce1')  			# yellow background (use color picker)
+bg_grey = PatternFill (fill_type="solid", start_color='babab6', end_color='babab6')    			# grey background (use color picker)
+bg_green = PatternFill (fill_type="solid", start_color='8af542', end_color='8af542')   			# blue background (use color picker)
+frame_all = Border (left=Side (style='thin'), right=Side (style='thin'),               			# define border on very side
                     top=Side (style='thin'), bottom=Side (style='thin'))
-frame_upanddown = Border (top=Side (style='thin'), bottom=Side (style='thin'))         # border only on top and bottom
-size14 = Font (bold=True, size="14")                                                   # font size 14
-left_allign = Alignment (horizontal="left")                                            # define left alignment
-right_allign = Alignment (horizontal="right")                                          # define right alignment
-for row in ws["D1":"G34"]:                                         # define right alignment for area
+frame_upanddown = Border (top=Side (style='thin'), bottom=Side (style='thin'))         			# border only on top and bottom
+size14 = Font (bold=True, size="14")                                                   			# font size 14
+left_allign = Alignment (horizontal="left")                                            			# define left alignment
+right_allign = Alignment (horizontal="right")                                          			# define right alignment
+for row in ws["D1":"G34"]:                                         								# define right alignment for area
     for cell in row: cell.alignment = right_allign  
-areas = ["A7:G19","A27:G31"]                                       # define full border for several areas
+areas = ["A7:G19","A27:G31"]                                       								# define full border for several areas
 for area in areas:
     for row in ws[area]:
         for cell in row: cell.border = frame_all
-for i in ["A6","D6","E6","A26","D26","E26"]:                       # set background and size for several specific cells
+for i in ["A6","D6","E6","A26","D26","E26"]:                       								# set background and size for several specific cells
     ws[i].fill = bg_green
     ws[i].font = size12
-freeze = ws["B2"]                                                  # freeze worksheet at cell B2 for right and down scrolling 
+freeze = ws["B2"]                                                  								# freeze worksheet at cell B2 for right and down scrolling 
 ws.freeze_panes = freeze        
-ws.sheet_properties.pageSetUpPr.fitToPage = True                   # fit xlsx to one page for printing - 1st part
-ws.page_setup.fitToHeight = False                                  # fit xlsx to one page for printing - 2nd part
-ws.set_printer_settings(paper_size=1, orientation = 'landscape')   # set page to landscape horizontal
-ws.set_printer_settings(paper_size=1, orientation = 'portrait')   # set page to landscape horizontal
+ws.sheet_properties.pageSetUpPr.fitToPage = True                   								# fit xlsx to one page for printing - 1st part
+ws.page_setup.fitToHeight = False                                  								# fit xlsx to one page for printing - 2nd part
+ws.set_printer_settings(paper_size=1, orientation = 'landscape')   								# set page to landscape horizontal
+ws.set_printer_settings(paper_size=1, orientation = 'portrait')    								# set page to landscape horizontal
+red_color = 'ffc7ce'											   								# Define red color background
+red_color_font = '9c0103'																		# Define red color font
+red_font = styles.Font (size=14, bold=True, color=red_color_font)   							# Define red_font with size / bold / red color
+red_fill = styles.PatternFill (start_color=red_color, end_color=red_color, fill_type='solid')	# Define red_fill with color red / fill type solid
+ws.conditional_formatting.add ('A1:Z100',														# Define conditional formating for area, <0, => fill with red background
+	formatting.rule.CellIsRule (operator='lessThan',formula=['0'],fill=red_fill))
+ws.conditional_formatting.add ('A1:G25',														# Define conditional formating for area, <0, => use red font
+	formatting.rule.CellIsRule (operator='lessThan',formula=['0'],fill=red_fill,font=red_font))
+for area in ["B1:B100","C2:G100"]:																# Conditional formating for more than one area
+	ws.conditional_formatting.add (area, ...)												
+ws.conditional_formatting.add('E1:E10',															# Conditional formating according to a formula
+	FormulaRule(formula=['ISBLANK(E1)'], stopIfTrue=True, fill=redFill))
+ws.conditional_formatting.add('D2:D10',															# Conditional formating according to a formula
+	FormulaRule(formula=['E1=0'], font=myFont, border=myBorder, fill=redFill))
 ----------
 
 
