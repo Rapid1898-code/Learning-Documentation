@@ -1,0 +1,14 @@
+#############################
+### Docker and Kibernates ###
+#############################
+
+Docker =>
+	Run container in seconds (instead of minutes)
+	Less resources (space and memory)
+	Does not need full OS
+	Infrastructure => Host Operating System => Docker => Apps A,B,C,D,E,F
+Virtual Machine =>
+	Infratructure => Hypervisor => every Apps needs Guest Operating System
+	
+	
+	

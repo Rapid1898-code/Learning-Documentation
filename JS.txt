@@ -1,4 +1,19 @@
-###### OPERATORS AND INPUTS
+###########
+### TOC ###
+###########
+
+# OPERATOR, INPUT, OUTPUT
+# STRING
+# ARRAY
+# OBJECT
+# CONSTRUCTOR / CLASS
+# CONTROL STRUCTURE AND ITERATION
+# FUNCTION
+# API ACCESS
+
+
+
+###### OPERATOR, INPUT, OUTPUT
 // Comment something	 					# Comments in Javascript
 let intStr = "7"							# Declare and assign string (possible with "" or '')
 "/n /t"										# Linebreak and Tab should not used - is morely css-stuff for formating
@@ -19,11 +34,13 @@ x !== y										# Not equal value and not equal type
 num++;										# Makes variable +1
 console.log(num)							# Outputs variable num in console
 alert("Text!")								# Alert information in a window
+alert("Bla ${name} bla")					# Alert some text with outputing the variable "name" between
+Math.sqrt(9)								# Return the square-root => 3
 
 
-
-###### STRINGS
+###### STRING
 .toLowerCase()								# Lowercase the whole string
+.charAt(1)									# Returns the second char of a string
 
 
 
@@ -41,25 +58,65 @@ arr.push("X","Y)								# Append new elements to the array at the end (fast!)
 arr.unshift("Y","Z")							# Add new elements to the array at the beginning (slow!)
 for (let i=0; i < arr.lenth; i++) {do smth.}	# Iterate through index of the array
 for (let elem of arr) {alert(arr)}				# Iterate through array elements
+arr.forEach((x,i) => console.log(x))			# Iterate through array by elements (x) and index (i)
 String(Arr)										# Returns list as a string => "6,7,8"
-a1 === a2										# Must allways be compared with triple =
+a1 === a2										# Must allways be compared with triple = (only == would be wrong)
 
 
 
 ###### OBJECT
-
-let o = {};										# Define an object
+# properties => attributes of the object (eg. color, shape, minutes, seconds)
+# methods => functions of the object (eg. start/stop on a stopclock)
+# everything in javascript is an object (with properties / methods)
+# eg. arr.length is a property of the object array
+# eg. arr.pop() is a method of the object array
+let o = {}										# Define an object
 let o = {name: "John", age: 30}					# Define an object and initialize it
 o.name											# Shows value of the key "name" (1st method) => John
 o["name"]										# Shows value of the key "name" (2nd method) => John
 o.age											# Shows key "age" of the object => 30
+o.newOne										# Add a new propertie to the object
+o.newMethod = function(var) {...do someth...}	# Add a new method to the object
+o.newMethod(25)									# Call the new method
 age in o 										# Check if key is in the object
 delete o.age									# Delete a property of an object
 for (let key in o) {alert(key,alert, o[key]}	# Iterate through the keys of the object and outputs key and value
 
 
 
-###### CONTROL STRUCTURES AND ITERATIONS
+###### CONSTRUCTOR / CLASS
+# make a Object with the old method
+function MakeCar (carMake,carModel,carColor){		# Define the constructor function
+	this.make = carMake								# Define properties for the constructor
+	this.carModel = carModel						# "this" is referencing to the actual object
+	this.carColor = carColor
+	this.honk = function(){							# Define a mtehod for the constructor
+		alert("BEEP ${this.carModel} BEEP")			# Alert something when the method is called (with prop this.carModel)
+	}
+}
+let car1 = new MakeCar("Honda","Civic","black")		# Create a new car1 (with codeword "new")
+let car2 = new MakeCar("Tesla","Roadster","red")	# Create a new car1
+
+# make a Object with the new class method
+class MakeCar{ 										# Define the class
+	constructor (carMake,carModel,carColor){		# Define properties for the class
+		this.make = carMake							# Assign the properties of the class to the concrete individual object
+		this.carModel = carModel					# "this" is referencing to the actual object
+		this.carColor = carColor
+	}
+	honk(){											# Define a method for the class
+		alert("BEEP ${this.carModel} BEEP")			# Alert something when the method is called (with prop this.carModel)
+	}
+}
+let car1 = new MakeCar("Honda","Civic","black")		# Create a new car1 (with codeword "new")
+let car2 = new MakeCar("Tesla","Roadster","red")	# Create a new car1
+
+
+
+
+
+
+###### CONTROL STRUCTURE AND ITERATION
 if (condition is true) {
 	//Do something
 }else if (condition is true){
@@ -78,7 +135,7 @@ Array.from(arr).forEach(element) => element...	# Iterate through and an array an
 
 
 
-###### FUNCTIONS
+###### FUNCTION
 function add(x=0,y=0) {						# Defome a function	- with default value 0 if no input is given
 	let erg = x+y;							# Calculate erg
 	return erg;								# Return erg value
@@ -94,7 +151,7 @@ function funcGreen() {										# Define function
 }
 
 document.getElementById							# Old Method / Select an element by ID
-const c = document.querySelector("xyz")			# New Method / Select (first) a <tag> or .class or #id and store it in the constante c
+document.querySelector("xyz")					# New Method / Select (first) a <tag> or .class or #id
 const c = document.querySelectorAll("h2")	    # Select all elements which have h2 and store it in the constante c
 .onclick										# Element-Listener waiting for a click7
 .style.backgroundColor							# Change BackgroundColor
@@ -102,7 +159,7 @@ const c = document.querySelectorAll("h2")	    # Select all elements which have h
 .style.display = "none"							# Hide element in DOM
 .innerText = "xyz"								# Change Text of the selected element
 .innerText = v1 + " " + v2 + " " + v3			# Concatenate 3 variables with space between (old method)
-.inntrText = "${v1} ${v2} ${v3}"				# Concatenate 3 variables with space between (new method)
+.innerText = "${v1} ${v2} ${v3}"				# Concatenate 3 variables with space between (new method)
 .value											# Read the value/text of the field
 .classList										# Manipulate classes informations
 .classList.toggle("hidden")						# Toggle the class hidden (when triggered class is deleted OR added (when the next click occured)
@@ -111,6 +168,22 @@ const c = document.querySelectorAll("h2")	    # Select all elements which have h
 .classList.remove("wiggle")						# Remove the class from the element
 setInterval(()=> {do something},10000)			# Do something any 10 seconds
 setTimeout(()=> {do something,1000}]			# Do something and wait 1 second
+
+
+
+###### API ACCESS
+# request data from API
+# get data back in JSON format
+fetch(url)										# Reading / Fetching the informations from an API-url
+	.then(res => res.json())					# Request the API-content and output as JSON-information
+	.then(data => {								# Acees the returned data of the API
+		console.log(data)						# And do something with the data
+	})
+	.catch(err => {								# Standard Error Handling
+		console.log("error ${err}")
+	});
+
+
 
 
 

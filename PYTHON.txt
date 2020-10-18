@@ -203,6 +203,7 @@ s = s.title()                                   # Capitalize the first char of a
 s.startswith("H")								# Check if the string is starting with char "H"
 s.endswith("H")	      							# Check if the string is ending with char "H"
 s.split()                                       # Split the words in a list
+s.split('#', 1)[0]								# Split till the first occurence of "#"
 s.splitlines()                                  # Split sentences after line breaks
 s = s.strip()                                   # Delete all whitespaces at the beginning and the end
 s = s.replace("e","X")                          # Replacement of two strings
@@ -228,6 +229,7 @@ https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-6
 pattern = re.compile("^[0-9]{4}-[0-9]{2}$")                		# Find str with 4xdigits + "-"char + 2xdigits
 pattern.match(s)                                               	# Check if pattern matches - <> None when matches
 pattern2 = re.compile("[0-9]{4}-[0-9]{2}")                		# Find str with 4xdigits + "-"char + 2xdigits
+pattern2 = re.compile("[0-9]{3,4}-[0-9]{2}")                	# Find str with 3 to 4 xdigits + "-"char + 2xdigits
 pattern.fullmatch(s)											# Check with fullmatch (^ and $ not necessary) - <> None when matches 
 pattern3 = re.compile ("[0-9]{1}\.[0-9]{3}")					# Char "." has to cherck with "\n" (is a wildcard letter in regex)
 re.sub("\d","",s)												# Replace all digits in string with blank
@@ -612,7 +614,7 @@ except Exception as e:
 import json                                         # Import json-module
 fn = "numbers.json"
 with open(fn) as data: info = json.loads(data)      # Reading informations in json-format
-json_format = json.dumps(d,indent=4)				# Convert / Encode a dict to a json-file (with indent for better reading)
+json_format = json.dumps(d,indent=2)				# Convert / Encode a dict to a json-file (with indent for better reading)
 json_format = json.dumps(d,sort_keys=True)			# Convert / Encode a dict to a json-file (with sorting the keys)
 with open(fn,"w") as data: json.dump(person, data)  # Writing information in json-format (e.g. after updating the values/format)
 person = json.loads(json_format)					# Convert / Decode a json-file to a dict
@@ -757,6 +759,7 @@ ws.title = "xyz"										# Change worksheet name
 ws["A1"].value                                          # Value from specific cell
 ws.cell(row=1, column=1).value                          # Value from specific cell (other method)
 ws["A1"] = 97                                           # Assign value to specific cell
+ws["A1"] = "=SUBTOTAL(1,I6:I10000)"                     # Assign formula to specific cell (only english names for function and arguments must be sepearted by "," and not ";")
 wb.save("Test2.xlsx")                                   # Save workbook to xlsx
 for row in ws["A1":"C3"]:                               # Loop trough specific area and print the cell values
     for cell in row: print(cell.value)
@@ -776,6 +779,9 @@ ws.max_column / ws.max_row								# Returns max column / row count of the worksh
 ws.min_column / ws.min_row								# Returns min column / row count of the worksheet (which contains data)
 ws.print_title_rows(1:3)								# Rows 1:3 to be printed at the top of every page 
 del wb["sheet4"]                                        # Delete worksheet in workbook
+ws.auto_filter.ref = "A5:Q5"							# Define filters in columns A5 to Q5
+ws.auto_filter.add_filter_column(2,["X","Y","Z"])		# Set filter to values "X","Y","Z" in column 2
+ws.auto_filter.add_sort_condition("B2:B15")				# Sort elements in filter for columsn B2 to B15
 wb.close()												# Close workbook
 for row in ws.iter_rows():								# Iterate trough worksheet row by row
     for cell in row: print(cell.value)	
@@ -864,7 +870,10 @@ for row in ws["D1":"G34"]:                                         								# def
 areas = ["A7:G19","A27:G31"]                                       								# define full border for several areas
 for area in areas:
     for row in ws[area]:
-        for cell in row: cell.border = frame_all
+        for cell in row: 
+			cell.border = frame_all
+			cell.number_format = "0"															# define number format without decimals
+			cell.number_format = "0.000E+00"													# define number format with 3 decimals		
 for i in ["A6","D6","E6","A26","D26","E26"]:                       								# set background and size for several specific cells
     ws[i].fill = bg_green
     ws[i].font = size12
@@ -1031,6 +1040,8 @@ engine = create_engine("mysql+pymysql:                     # Define access to th
 conn = engine.connect()                                    # Establish connection
 engine.table_names()                                       # Read all existing tables from the databasen - returns list
 conn.execute("SELECT * FROM actor").fetchall()             # Read data from db - returns list with tupels as rows
+conn.close()											   # Close connection at the end
+engine.dispose()										   # Close sql engine at the end
 
 ### Tabelle anlegen in MySQL DB
 from sqlalchemy import Table, Column, Integer, String, Float, MetaData
@@ -1756,10 +1767,11 @@ driver.get("url")                                                 # Zugriff auf 
 driver.find_element_by_xpath('//*[@id="button"]/input').click()   # KLick auf ein ELement (Copy ) - mit Untersuchen - Copy XPath
 time.sleep(1)                                                     # Manchmal notwendig um Verarbeitung abzuwarten
 driver.find_element_by_xpath('//*[@id="name"]').send_keys("x"])   # Feld Name wird mit Inhalt x befüllt
-field = driver.find_element_by_name("q").send_keys("txt")         # Feld wird nach Name gesucht
-field = driver.find_element_by_id("xy-id")                        # Feld word nach ID gesucht
-field = driver.find_elements_by_class_name("cl")[0]               # Felder werdem nach Class gesucht (als Liste)
-field = driver.find_elements_by_tag_name("tag")[0]                # Felder werdem nach Tag gesucht (als Liste)
+driver.find_element_by_name("q").send_keys("txt")         		  # Text wird in Feld eingetragen
+driver.find_element_by_name("q").send_keys("txt" + u'\ue007')     # Text wird in Feld eingetragen und Enter gedrückt
+driver.find_element_by_id("xy-id")                        		  # Feld word nach ID gesucht
+driver.find_elements_by_class_name("cl")[0]               		  # Felder werdem nach Class gesucht (als Liste)
+driver.find_elements_by_tag_name("tag")[0]                		  # Felder werdem nach Tag gesucht (als Liste)
 driver.send_keys(Keys.Backspace,Keys.ARROW_LEFT,Keys.ENTER)		  # Send single keyboard-elements <> chars (needs import keys)
 driver.send_keys (u'\ue007')									  # Send an Return-keystroke (eg. for enter after data entries in fields)
 field.submit()                                                    # Enter wird gedrückt bzw. die Seite abgeschickt

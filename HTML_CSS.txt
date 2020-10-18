@@ -1,4 +1,9 @@
-### Overview
+###########
+### TOC ###
+###########
+
+
+###### Overview
 HTML = content / structure (core focus...)
 CSS = style (a little bit...)
 JS = behaviour / interaction (a little bit...)
@@ -7,7 +12,7 @@ JS = behaviour / interaction (a little bit...)
 
 
 
-### HTML Structure
+###### HTML Structure
 https://in.pinterest.com/pin/345862446359675335/
 index.html                              	# Should be the first site
 <!DOCTYPE html>								# Standard structure in the html-file
@@ -22,7 +27,7 @@ index.html                              	# Should be the first site
 
 
 
-### HTML Grouping - Layout
+###### HTML Grouping - Layout
 https://www.w3schools.com/html/html_layout.asp
 <header>...</header>						# eg. menue at the title
 <nav></nav>                             	# Navigation info for the user (unordered ul list normaly)
