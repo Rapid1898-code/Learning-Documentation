@@ -88,20 +88,26 @@ pip install -r requirements.txt                            # Install all the pac
 
 ----------
 ###### INTELLIJ IDEA IDE
+Ctrl + /					# Comment / Uncomment line ("/" on numblock)
 Ctrl + Alt + F7				# Find usages
 Ctrl + F    				# Find in File
 Ctrl + R     				# Replace in File
 F3							# Find next
 Ctrl + G					# Goto line
+Ctrl + D					# Copy / Duplicate lines	
+Alt + Shift + Down/Upate	# Move line
 Ctrl + E					# Recent opened files
 Ctrl + TABLE				# File switcher
-Ctrl + D					# Copy / Duplicate lines	
 Ctrl + (Shift) + W			# Select / deselect parts of the code step by step
 Alt Enter					# Suggestions for fix error, function informations
 Alt 1						# Open the project windows (on the left side)
 Alt + F7					# Show usage of the variable, function, class
 Esc							# Focus back on the editor window
 Ctrl + Shift + "-"			# Collapse all functions
+Ctrl + "-"					# Collapse block ("-" on numblock)
+Ctrl + "+"					# Expand block ("+" on numblock)
+Ctrl + "A"					# Select whole file
+
 
 #Git Ignore Files/Folders:
 when doing a commit - right click + add to .gitignore		# file will be created when not exists
