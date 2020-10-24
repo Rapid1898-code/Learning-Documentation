@@ -246,6 +246,7 @@ re.sub(r'([a-z](?=[A-Z])|[A-Z](?=[A-Z][a-z]))', r'\1 ', "txt")	# Insert blank be
 
 ----------
 ###### LIST
+###### LIST
 #ordered, mutable, allows duplicate elements
 l = []                                           # Define empty list
 l1,l2,l3,l4 = ([] for i in range(4))		     # Define several empty lists (NOT use l1=l=l3=[] => this would be the SAME list)		
@@ -264,6 +265,9 @@ l.pop(0)                                         # Delete first element from lis
 l.sort()                                         # Sort list ascending
 l.sort(reverse=True)                             # Sort list descending
 l_sort = sorted(l)                               # Sort list and store it in a different independent list
+l_sort = sorted(l, reverse=True)                 # Sort list descending and store it in a different independent list
+if sorted(l) == l								 # Check if a list is sorted (by ascending)
+if sorted(l, reverse=True) == l					 # Check if a list is sorted by descending
 l.sort(key=len)									 # Sort list by len of elements
 l = [[1,4,3], [2,2,4], [3,1,5]]					 # Define nested list
 l.sort(key=lambda x: x[1])						 # Sort the nested list for the 2nd element ascending
@@ -1136,7 +1140,8 @@ c.execute"SELECT * FROM adresses")				# Select rows from database
 c.execute("DELETE from addresses WHERE			# Delte row from database - get key from delete_box widget (eg. tkinter-module)
 		oid = " + delete_box.get())
 records = c.fetchall()							# Fetch all rows
-records = c.fetchone()							# Fetch only one row
+records = list
+c.fetchone()							# Fetch only one row
 records = c.fetchmany(50)						# Fetch the first 50 rows
 conn.commit()									# Commit Changes
 conn.close()									# Close Connection
@@ -1154,7 +1159,7 @@ from datetime import datetime, timedelta                     # Import module dat
 from datetime import date                                    # Import module dat
 datetime.strptime(s, "%Y-%m-%d")                             # Conversion string to datetime in format dd.mm.jjjj
 datetime.strftime(dt, "%Y-%m-%d")                            # Conversion datetime to string in format  dd.mm.jjjj
-datetime.strftime((datetime.strptime(cont_tmp,"%m/%d/%Y")),"%Y-%m-%d")      # Convert dateformat from string in one line (1st from - 2nd to)
+dt.strftime((dt.strptime(tmp,"%m/%d/%Y")),"%Y-%m-%d")      	# Convert dateformat from string in one line (1st from - 2nd to)
 isinstance(x, date)											 # Check if variable is of type datetime.date or datetime.datetime                   
 isinstance(x, datetime)										 # Check if variable is of type datetime.datetime
 date = date(2020,7,24)                                       # Define date as "2020-07-24"
@@ -1185,6 +1190,20 @@ locale.setlocale(category=locale.LC_ALL,locale="German")
 ### Check last day of month & first weekday of month
 import calendar
 calendar.monthrange(year,month)                         # return tuple - 1st: weekday first day - 2nd: ultimo day
+
+### Check if date and timezone has summmer time / daylight time
+import pytz
+def is_dst(dt=None, timezone="UTC"):
+    if dt is None:
+        dt = datetime.utcnow()
+    timezone = pytz.timezone(timezone)
+    timezone_aware_date = timezone.localize(dt, is_dst=None)
+    return timezone_aware_date.tzinfo._dst.seconds != 0
+is_dst()													# False => UTC has no daylight time
+is_dst(datetime(2019, 1, 1), timezone="US/Eastern")			# False => at this date US/Eastern has no daylight time
+is_dst(datetime(2019, 4, 1), timezone="US/Eastern")			# True => at this date US/Eastern has daylight time
+is_dst(datetime(2019, 1, 1), timezone="CET")				# False => at this date CET has no daylight time
+is_dst(datetime(2019, 4, 1), timezone="CET")				# True => at this date CET has daylight time	
 
 ### Timing a specific activity
 import timeit
