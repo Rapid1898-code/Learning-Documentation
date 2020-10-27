@@ -1,0 +1,28 @@
+Tutorial:
+https://www.pcwelt.de/ratgeber/Mac-OS-X-ausprobieren-mit-einem-virtuellem-PC-Mac-unter-Windows-9756806.html
+
+pyinstaller on mac os only working in several situations with this command:
+pyinstaller --hidden-import=pkg_resources.py2_warn --onefile example.py
+
+Mouse Wheel Wrong Direction:
+https://superuser.com/questions/381697/set-mouse-wheel-scrolling-direction-in-mac-os-x-and-windows
+
+Install Python 3.7:
+https://installpython3.com/mac/
+
+Install Gasterweiterung in MacOs im Gastsystem:
+https://www.wintotal.de/tipp/virtualbox-gasterweiterung/
+
+Installing PyCharm:
+https://web.stanford.edu/class/archive/cs/cs106ap/cs106ap.1196/coursehandouts/installingpycharm.html
+
+Installing pip:
+https://www.shellhacks.com/python-install-pip-mac-ubuntu-centos/
+
+@-Zeichen:
+wird mit Alt-L erzeugt
+
+Virtual Box - MacOs
+Right-Ctrl Home       					# Open Menü in VirtualBox
+Read USB-Stick							# Menü aufrufen => "Geräte" und "USB" auswählen
+

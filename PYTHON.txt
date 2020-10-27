@@ -246,10 +246,11 @@ re.sub(r'([a-z](?=[A-Z])|[A-Z](?=[A-Z][a-z]))', r'\1 ', "txt")	# Insert blank be
 
 ----------
 ###### LIST
-###### LIST
 #ordered, mutable, allows duplicate elements
 l = []                                           # Define empty list
 l1,l2,l3,l4 = ([] for i in range(4))		     # Define several empty lists (NOT use l1=l=l3=[] => this would be the SAME list)		
+if l											 # check for True if list has an element
+if not l										 # check for False if list is empty (same would be if l == []
 l = [4,5,6]                                      # Define list with content
 l = list(range(20))                              # Define list - content is list from 0 to 19
 l = ["" for x in range(8)]                       # Define list with 8 empyt strings
@@ -349,7 +350,7 @@ len(d)                                               # Count of entries in dict
 d["four"] = 4                                        # New entry for dict (key = "four", value = 4)
 del d["one"]                                         # Delete specific key in dict
 mydict[new_key] = mydict.pop(old_key)                # Rename dict-keyname
-combined_dict = {**d1, **d2}                         # Combine 2 dicts
+combined_dict = {**d1, **d2}                         # Combine 2 dicts (if key is in both dicts - the second value will be taken)
 if "xyz" in d:										 # Check if key is in dict
 d2 = d												 # Copying a dict (all changes will be made in BOTH dicts)
 d2 = d.copy()										 # Copying a dict (dicts will be handled seperate)
@@ -1183,7 +1184,7 @@ iso_dt = datetime.fromisoformat(str(datetime.now())).timestamp()   # Generate IS
 date = datetime.fromtimestamp(1594339200000 / 1e3)           # Generate Datetime from ISO-format#
 sys.getsizeof(l) or sys.getsizeof(t)						 # Shows size of the list / tuple in bytes
 
-###Using german names for month- and day-names
+###Using german names / deutsche namen for month- and day-names
 import locale
 locale.setlocale(category=locale.LC_ALL,locale="German")
 
@@ -2100,6 +2101,7 @@ pyinstaller prg.py                                            # Generate the bun
 pyinstaller --onefile prg.py                                  # Generate only one file
 --icon=app.ico                                                # Generate file with icon
 --hidden-import=pkg_resources.py2_warn                        # Generating under mac os sometimes only work with this params
+--hidden-import=pkg_resources.py2_warn                        # Generating under mac os sometimes only work with this params
 --exclude-module matplotlib                                   # when there is a depreciating warning from matlib        
 prg.exe                                                       # Open this file to start the python-program
 
@@ -2119,13 +2121,4 @@ if getattr(sys, 'frozen', False):                             # Get path when st
 elif __file__:                                                # Get path when running from IDE as py-file
     application_path = os.path.dirname(__file__)
 config_path = os.path.join(application_path, config_name)     # Final Config Path   
-----------
-
-
-
-----------
-####### Virtual Box - MacOs
-Right-Ctrl Home       					# Open Menü in VirtualBox
-Read USB-Stick							# Menü aufrufen => "Geräte" und "USB" auswählen
-
 ----------

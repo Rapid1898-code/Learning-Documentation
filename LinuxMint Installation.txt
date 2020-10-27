@@ -1,0 +1,95 @@
+Nice To Know:
+NOMODESET: if there are starting problems when booting linux mint => replace quiet splash with nomodeset
+Change Keyboard-Setting to DE: setxkbmap de
+List PATH entries: echo $PATH | tr ":" "\n" | nl
+Add entry to PATH: export PATH=$PATH:/opt/games
+
+Setup and DualBoot with Win10:
+https://itsfoss.com/guide-install-linux-mint-16-dual-boot-windows/
+https://www.youtube.com/watch?v=g2uLnyzEVKg
+- in Disk Management (Datenträgerverwaltung) free up space for Linux with shrinking the boot device (e.g. 100GB)
+- boot to mint with DVD / USB and Install
+- Select Someting Else
+- Change Boot loader to Windows Boot Manager
+- Create Partition Swap - 2GB - use as swap area
+- Create Partition Swap - 30GB - use as root wit mount point: /
+- Create Partition Swap - 70GB - use as home space
+
+Problems with starting at installation and further:
+https://www.linuxmint.com/rel_tessa_cinnamon.php
+=> siehe Video eher unten
+https://itsfoss.com/fix-ubuntu-freezing/
+=> replace quite splash with "nomodeset" and then start with F10
+
+Win10 as default system in bootloader grub
+https://askubuntu.com/questions/52963/how-do-i-set-windows-to-boot-as-the-default-in-the-boot-loader
+=> Edit: sudo nano -B /etc/default/grub
+=> To "saved" when it should start with the last oss: GRUB_DEFAULT=saved
+=> To "xzy Windows" when it should start allwayas from Win10: GRUB_DEFAULT="Windows NT/2000/XP (loader) (on /dev/sda1)"
+=> Add this line: GRUB_SAVEDEFAULT=true
+
+Wrong time in Win10 with dualboot with linux:
+https://askubuntu.com/questions/169376/clock-time-is-off-on-dual-boot
+
+Set permanent Access to NAS
+https://www.tutonaut.de/anleitung-netzwerkfreigaben-unter-ubuntu-dauerhaft-einbinden-per-gui/
+
+Error message chrome browser not ended properly:
+Disable "Apps im Hintergrund ausführen" in den Erweiterten Einstellungen des Browsers
+(works not at every time - but i think it works more often then nothing)
+
+GMail as standard mail-client when opening mailto from some internet page
+https://forums.linuxmint.com/viewtopic.php?f=90&t=82107&sid=b9eb7fe47582350913c2cb74534f60fe&start=20
+Install Gmail Addon "MailToi: for Gmail" - after that gmail opens in linux
+https://chrome.google.com/webstore/detail/mailto-for-gmail/dgkkmcknielgdhebimdnfahpipajcpjn
+
+
+SW to install:
+- Atom (Editor, Development)
+- Audacious (WinAmp Alternative)
+- AutoKey (AHK AutoHotKey Alternative)
+- Brasero (CDBurner XP Alternative)
+- CPU-X (SysInfo, AIDA64 Alternative)
+- Calibre
+- CopyQ (ZwischenablageMgmt)
+- Evince (PDF-XChange Viewer Alternative)
+- Flameshot (Greenshot Alternative)
+- Folderview Screenlet (Alternative zu Fences)
+- FreeFileSync
+- GParted (Tool, Partitioning)
+- GSmartControl (Alternative zu CrystalDiskInfo)
+- Gimp (Photoshop Alternative)
+- GitKraken
+- Google Chrome (Browser)
+- Gramps
+- JDownloader2 => https://wiki.ubuntuusers.de/JDownloader_2/
+- Jupyter Notebook
+- Keepass2
+- Kodi
+- LibreOffice (Alternative zu OIfficePaket
+- Lm-Sensors (Speedfan Alternative)
+- NAPS2 (Omnipage Ultimate Alternative)
+- NordVPN => https://support.nordvpn.com/Connectivity/Linux/1325531132/Installing-and-using-NordVPN-on-Debian-Ubuntu-Elementary-OS-and-Linux-Mint.htm
+- OBS Studio (Camtasia Alternative)
+- Ocenaudio (Audacity Alternative)
+- OpenShot, ShotCut, Kdenlive (MagixVideoDeluxe Alternative)
+- Portfolio Performance
+- PyCharm (install with tar-Download - not frome Applikationsmgmt in Linux Mint - there are problems)
+    => Choose python interpreter in "Project: GitHub" - "Project Interpreter" - "Add" - "Virtualenv Environment" - "Existing Environment"
+    => Choose there /usr/bin/python3.6
+    => under project interpreter there must be standing: "Python 3.6. /usr/bin/python3.6
+- SpeedCrunch (CalcTape Alternative)
+- Teamviewer
+- TinyMediaManger (EmberMediaManager Alternative)
+- Truecrypt => use version 7.1a (further versions have reduced functionlity)
+- VLC Media Player
+- VideoDownloadHelper (YouTube Downloader Alternative) => in Firefox installieren, Download als AVI möglich
+- WinRAR(7Zip Alternative) => only as Command Line program
+- qBittorrent
+
+
+
+
+
+
+
