@@ -51,7 +51,6 @@
 # MODULE - TKinter (making GUIs)
 # MODULE - PYGAME (making games)
 # PYINSTALLER (generate python programs to executables)
-# VIRTUAL BOX (eg. for MacOS)
 
 
 
@@ -62,6 +61,11 @@ from math import ceil            # Import specific function of a module
 import numpy as np               # Import a module with abbreviation
 if __name__ == '__main__':       # When directly called - programm is running from here
 python --version				 # Check which python version is installed
+
+# Use modules / functions from other folder
+import sys, os
+sys.path.append(os.path.join('C:/', 'Users\path_to_module'))	# Create Path to module
+import RapidTechTools as rtt									# Import Module RapidTechTools
 ----------
 
 
