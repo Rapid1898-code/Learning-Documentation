@@ -29,12 +29,12 @@ index.html                              	# Should be the first site
 
 ###### HTML Grouping - Layout
 https://www.w3schools.com/html/html_layout.asp
-<header>...</header>						# eg. menue at the title
-<nav></nav>                             	# Navigation info for the user (unordered ul list normaly)
+<div></div>                             	# grouping some html-area
 <section></section>                     	# part of the homepage - eg. the core middle of the site
 <article></article>							# part of the section - can be taken and dropped to another place
-<aside></aside>								# mostly on the side of the homepage - something you can take away and the page would still be working
-<div></div>                             	# grouping some html-area
+<aside></aside>								# mostly on the side of the homepage - something you can take away and the page would still be working (eg. ads)
+<header>...</header>						# eg. menue at the title
+<nav></nav>                             	# Navigation info for the user (unordered ul list normaly)
 <footer></footer>							# bottom of the document
 
 
@@ -54,6 +54,8 @@ https://developer.mozilla.org/de/docs/Web/HTML/HTML5/HTML5_element_list
 <pre> </pre>								# Preserves whitespace (not good - should be done by CSS)
 <br>, </br>									# linebreak (not good - should be done by css)
 <hr>, </hr>									# htmlbreak (not good - should be done by css)
+<em> Stress Emphasis </em>					# Emphasis some text - but only for accessibility reason (not styling!)
+<strong> Strong Importance </strong>		# Bold some text - but only for accessibility reason (not styling!)
 
 <ul>										# Unordered List with anchor links
 	<li><a href="x.html">One</a></li>
