@@ -1,14 +1,148 @@
 #############################
 ### Docker and Kibernates ###
 #############################
+https://www.youtube.com/watch?v=bhBSlnQcq2k&t=3476s
 
-Docker =>
+###Docker =>
 	Run container in seconds (instead of minutes)
 	Less resources (space and memory)
 	Does not need full OS
 	Infrastructure => Host Operating System => Docker => Apps A,B,C,D,E,F
-Virtual Machine =>
-	Infratructure => Hypervisor => every Apps needs Guest Operating System
+
+###Virtual Machine =>
+	Infratructure => Hypervisor => every Apps needs Guest Operating System	
+
+###Image =>
+	template for creating an environment of your choice
+	snapshot
+	has everything to run your apps
+	os, software, app code
+
+###Container =>
+	running instance of an image
 	
+Download Images from: https://hub.docker.com/	
+
+###Commands
+docker --version						=> show docker version
+docker pull nginx						=> load nginx image
+Status: Downloaded newer image for nginx:latest
+										=> nginx:latest is the image
+										=> :latest is the tag of the image							
+docker xyz --help						=> information about a command
+docker images							=> show images (repo-name, tag, image id, created, size)
+docker image ls							=> alternative to show the images
+docker run nginx:latest					=> start a container (instance) of the image
+docker  container ls					=> show the running containers (conainter, image, command, created, status, ports)
+docker run -d nginx:latest				=> start a container in detached mode (same cmd-window can be used)
+docker ps								=> show running container (second, faster method)
+docker stop <container ID>				=> stop running the container (by container id)
+docker stop <container Name>		    => stop running the container (by container name)
+docker run -d -p 8080:80 nginx:latest	=> start containe and map localhost:8080 to port 80
+	=> typing localhost:8080 in the browser will connect to the nginx webserver running on port 80
+docker run -d -p 8080:80 -p 3000:80 nginx:latest
+	=> start container and map localhost:8080 and localhost:3000 to port 80
+docker start <container ID>				=> start running the container (by container id)
+docker start <container Name>		    => start running the container (by container name)
+docker inspect <container ID or NAME> 	=> show informations about the container / image (per id or name)
+docker logs <container ID or NAME>		=> show log for the container (per id or name)
+docker ps -a							=> see all containers (running and not running)
+docker rm <container ID or NAME>		=> delete a container (per id or name)	
+docker ps -aq							=> see all containers (but only the container ids)
+docker rm $(docker ps -aq)				=> delete all (inactive container) - if container is running there will be an error
+docker rm -f $(docker ps -aq)			=> delete all container (inactive and running) - in windows only working in powerhsell (not cmd)
+docker run --name website -d -p 3000:80 nginx:latest
+	=> start the container and name it as "website"
+docker start website / docker stop webiste
+	=> now the name can be used for starting and stoping the containers 
 	
+###Volumes =>
+		Allows sharing of data between host<=>container and container <=> container
+###Example for sharing volume between host and container:
+docker run --name website -v c:/TEMP/website:/usr/share/nginx/html:ro -d -p 8080:80 nginx		
+	=> create container with volume from c:/TEMP/website to the container volume in :ro (read-only mode)
+	=> when there is a html-file in c:/TEMP/website then it will be displayed in the container under localhost:8080
+	=> all changes which are done on the file in windows are automatically reflected also in the container cause they are mounted
+docker run --name website -v c:/TEMP/website:/usr/share/nginx/html -d -p 8080:80 nginx	 
+	=> without the :ro command the volume is mounted also for read / write
+	=> so it is also possible that there are changes directly on the container volume - which are reflected to the (windows)-host
+###Example for sharing a volume between 2 containers:
+docker run --name website-copy --volumes-from website -d -p 8081:80 nginx	 
+	=> first container is the previous container website on port 8080:80
+	=> second container is the website-copy on port 8081:80
 	
+###Dockerfile =>
+	to build own images
+	Docu: https://docs.docker.com/engine/reference/builder/
+
+Creating a file "Dockerfile"
+FROM nginx:latest						=> template / existing docker images as basis
+ADD . /usr/share/nginx/html				=> add all files in this path
+docker build --tag website:latest .		=> build an image (name "website", version "latest", use actual folder with "." where the docker file is)
+	2 Steps are done (commands from the Dockerfile)
+	=> [1/2] FROM docker.io/library/nginx:latest                                                                                                                                                  0.1s
+	=> [2/2] ADD . /usr/share/nginx/html
+docker image ls 						=> shows now 2 images (1x the previous "nginx" and 1x the new "website")	
+docker run --name website -p 8080:80 -d website:latest
+										=> start the container from the new build image "website:latest"
+
+###Image from an API
+Install https://nodejs.org/en/ and http://expressjs.com/
+Create folder eg. user-service-api
+npm install --save expressjs			=> install expressjs
+Create index.js and copy the example Hello World from expressjs.com/
+node index.js							=> start listening on port 3000 (or in IDEA)
+localhost:3000							=> shows "Hello World" in the browser
+create dockerfile "Dockerfile" with content:
+	FROM node:latest				
+	WORKDIR /APP						=> creating the APP directory if it not exits
+	ADD . .								=> ADD everything from the local machine to the container
+	RUN npm install						=> install dependencies
+	CMD node index.js					=> command which should be executed
+Image "user-service-api" created
+
+###.dockerignore
+	create this file for ignoring folder and files
+	=> node_modules						=> ignore folder or files which the docker-image not need
+	=> Dockerfile						=> ignore the Dockerfile
+	*.xyz.js							=> ignore files which ending with xyz.js
+	folder/**							=> ignore folder
+
+###Reduce image space with alpine versions	
+reduce the filesize using the "alpine"-file version of the image
+docker pull node:lts-alpine 			=> pull docker image with lts-apline tag (lts for latest)
+with this alpine version / tag we can save a huge amount of space for the image
+node: has only 117MB (900MB full version)
+nginx: has only 21,8MB (133MB before)
+
+###Tag, Versioning and Tagging
+Allows you to control image version
+Avoid breaking changes
+Using the latest version is sometimes dangerous (takes allways the last version - sometimes this could not work with your code)
+docker tag amigoscode-website:latest amigoscode-website:1
+	=> tag the repo "amigoscode-website" with tag "1"
+
+###Docker Registries
+stores images - server holds the images
+push => takes images to the registry
+registry could be private or publich (like github)
+=> Docker Hub
+=> quay.io/library/nginx
+=> Amazon ECR
+example: https://hub.docker.com/repository/docker/rapid1898/website
+
+###Kubernetes
+Orchistration Tool for docker images / containers
+
+
+
+
+
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 

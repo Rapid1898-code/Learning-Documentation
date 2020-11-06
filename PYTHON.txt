@@ -444,18 +444,20 @@ d.rotateleft(-1)			# Shift all elements 1 place to the left
 
 ----------
 ###### CONTROL STRUCTURES and ITERATIONS
-if x>10: pass                # If / elif / else
-elif x> 10: pass
+if x>10: pass                	# If / elif / else
+elif x > 10: pass
 else: pass
 
-for i in range(5):           # 5 iterations from 0 to 4
-for i in range(0, 5, 1)      # 5 iterations from 0 to 4 (start, end, step)
-for i in range(4, -1, -1)    # Iterations descending from 4 to 0
+if (10 < a < 20)...				# use 2 conditions in one line (instead of (a>10 and a<20)
 
-while x < 4:                 # While loop with break condition
-while True:                  # Endless while loop - has to be exited with break
-break                        # Break loop completely
-continue                     # Break actual loop run - continue with next loop run
+for i in range(5):           	# 5 iterations from 0 to 4
+for i in range(0, 5, 1)      	# 5 iterations from 0 to 4 (start, end, step)
+for i in range(4, -1, -1)    	# Iterations descending from 4 to 0
+
+while x < 4:                 	# While loop with break condition
+while True:                  	# Endless while loop - has to be exited with break
+break                        	# Break loop completely
+continue                     	# Break actual loop run - continue with next loop run
 ----------
 
 
