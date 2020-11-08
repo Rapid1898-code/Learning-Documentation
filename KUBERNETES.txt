@@ -1,0 +1,106 @@
+##################
+### Kubernetes ###
+##################
+
+Orchestration Tool for docker images / containers
+Trend from Monolith to Microservices - incread usage of conatainers
+Offerings from Kubernetes
+	=> high availailibility / no downtime
+	=> scalability / high performance
+	=> disaster recovery / backup and restore
+Architecture
+	=> 1 Master Node (has a API server, Controller Manager, Scheduler - has a UI, API, CLI)
+	(backup of the master is absolute necessary - normally at least 2 instances of the master which can be switched at any time)
+	=> many Worker Nodes (different docker containers on the nodes - one or many)
+	=> Virtual Network - communication between Worker Nodes and Master Node (creates an unfified machine)
+Pod
+	=> abstraction over containers
+	=> layer above the container
+	=> usually 1 application per Pod
+	=> each Pod gets itw own IP address
+	=> IP is allways changed when the pod is new created
+Service
+	=> has a permanent IP adress
+	=> is a load balancer
+	=> lifecycle of Pod and Service are not connected (when the Pod starts new - IP from service keeps stable)	
+Ingress
+	=> routing the traffic in the cluster
+Config Map
+	=> store Configuration Informations (eg. db-url, no security relevant infos)
+Secret
+	=> used to store secret Config-Data (eg. credentials)
+Volumes
+	=> connects servcies to a db (internal or in the cloud)
+	=> generally Kubernetes is not storing data!
+Deployments (abstraction layer for pods)
+	=> blueprint of pods
+	=> abstraction of pods
+	=> moslty we work with deployments and not with pods
+	=> when the App dies - it will be reconnected to another deployment / service
+	=> DBs can´t be replicated via Deyployment!
+	=> DBs are often hosted outside Kubernetes
+Minikube
+	=> one Node Kubernetes Cluster for testing purposes
+	=> runs on the machine as a virtual box
+Kubectl
+	=> command line tool for Kubernetes Cluster	
+	=> commits commands to the CLI froim Kubernetes
+	
+Install on Mac
+	=> brew install hyperkit
+	=> brew install minikube (also installs Kubectl)
+	=> Minikube CLI für start up / deleting the cluster
+	=> Kubectl CLI for configuring Minikube cluster
+kubectl or minikube 										=> show all possible commands
+minikube start --vm-driver=hyperkit							=> starts virtual minikube cluster
+kubectl get nodes											=> show information about the nodes
+minikube status												=> show information about the minikube status
+kubectl version												=> show the version of Kubernet
+kubectl get pod												=> shows the pods
+kubectl get services										=> shows the services
+kubectl	create deyployment nginx-deployment --image=nginx	=> create deployment "nginx-deployment" from the docker image "nginx"
+kubectl get deployment										=> shows the deployments
+kubectl describe pod 										=> shows which changes had be done to the pod	
+kubectl logs [pod name]										=> log of the pod (when there are some problems)
+kubectl exec -it [pod name]									=> goes to the terminal of the container (eg. mongo-db terminal)
+kubectl apply -f nginx-deyployment.yaml						=> takes config file (all information for the creation of deployment are inside)
+kubectl delete -f nginx-deyployment.yaml					=> delete whith configuration file
+
+Example with Mongo Express and Mongo DB
+URL => Mongo Express External Service => Pod Mongo Express => MongoDB Internal Service => Pod MongoDB
+Create MongoDB (with config file)
+	spec:
+		containers:
+		- name: mongodb
+		  image: mongo-db
+		  ports
+		  - containerPort: 27017
+		  env:
+		  - name: MONGO_INITDB_ROOT_USERNAME
+			value:
+		  - name: MONGO_INITDB_ROOT_PASSWORD
+			value:
+			
+			
+			
+			
+			
+		  
+	
+	
+	
+	
+
+
+
+
+
+
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 

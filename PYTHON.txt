@@ -4,7 +4,7 @@
 
 # MODULE (general)
 # VIRTUALENV
-# INTELLIJ IDEA IDE
+# INTELLIJ IDEA IDE, GITHUB
 # MYSQL, MARIADB, HEIDISQL
 # OPERATORS, INPUTS, ARGUMENTS
 # RANDOM, SECRETS
@@ -91,7 +91,8 @@ pip install -r requirements.txt                            # Install all the pac
 
 
 ----------
-###### INTELLIJ IDEA IDE
+###### INTELLIJ IDEA IDE, GITHUB
+#Shortcuts
 Ctrl + /					# Comment / Uncomment line ("/" on numblock)
 Ctrl + Alt + F7				# Find usages
 Ctrl + F    				# Find in File
@@ -117,6 +118,15 @@ Ctrl + "A"					# Select whole file
 when doing a commit - right click + add to .gitignore		# file will be created when not exists
 individual file will be ignored
 to ignore a whole folder with all files in it - add /* to the folder => eg. /prg/dist/*
+
+#Add directory to GitHub
+Select directory => <VCS> => <Import into Version Control> => <Create Git Repository>
+Commit the files / new directory
+<VCS> => <Import into Version Control> => <Share Project on GitHub>
+<VCS> => <Git> => <Push>
+
+#Change name of repository on github.com
+select repository => settings => rename
 ----------
 
 

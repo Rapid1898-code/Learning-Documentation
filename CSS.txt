@@ -1,44 +1,110 @@
 ### CSS Attributes
 https://www.w3schools.com/cssref/
-color: red; 								# Define red color for element
-color: #FF0000;								# Define color with hex code
-color: rgba(255,0,0,1);						# Defome color with rgb code (4th parameter is opaque - 0.5. means half transparent, 1 no transparent)
-color: hsla(0, 100%, 50%,1);                # define color per hsla value 
-font_weight: bold;							# Font bold
-font_weight: 700;							# Define when a font is downloaded from eg. google fonts
-font-size: 25px;							# Define font size with 25 pixel
-font-style: italic;							# Font italic / cursive
-line-height: 1.5,;							# Defines line-height as 1.5 of the normal height
-text-decoration: underline red;				# Define text decoration a red underline
-text-decoration: line-through;				# Define text with line-through
-text-align: center;							# Center text / or list-entries in ul
-background-color: #e2b007;					# Define background color
-border: 3px solid #FFA500;					# Define border of element (width, style, color) - "shorthand"-method
-border: thin solid red;						# Define border of element (width, style, color) - "shorthand"-method
-border-bottom: 6px dashed #FFA500;			# Define only the bottom-border - "longhand"-method	
-border-bottom-width: 12px;					# Define only the bottom-border-width - "longhand"-method	
-border-radius: 5px;							# Define a border radius with 5 pixel - "shorthand"-method
-border-top-right-radius: 5px;				# Define the border radius for top right corner  - "longhand"-method
-height: 100px;								# Height of the box
-margin: 20px;								# Margin of the box (outside the border, for all 4 sites) - "shorthand"-setting
-margin: 10px 20px;							# Margin of the box (10 pixel for top/bottom and 20 pixel for left/right)
-margin: 10px 20px 0 15px;					# Margin of the box (clockwise from tom) => 10px top, 20px right, 0px bottom, 115px left
-margin: 100px 0;							# Margin of the box => will do this clockwise for top+right and bottom-left => 100px for top+bottom, 0 for right+left
-margin: auto								# Set the margin automatc - wg. when the width is set to a percentage
-padding: 20px;								# Padding of the box (inside the border)
-margin-top: 10px							# Setting the margin to 10 pixel - "longhand"-method
-padding-left: 6px							# Setting the padding to 6 pixel - "longhand"-method
-width: 50%;									# Define width in percent (relative to the width of the parent element)
-width: 5em;									# Define width (calculated on elements font size - when font-size=14px - the width would be 70px (5*14)
-height: 200px;								# Define height of element	
-max-width:20%;								# Resize something eg. img
-max-height:20%;								# Resize something eg. img
-list-style-type: none;						# no bullets in unordered list (using at ul-element)
-display: inline;							# show elements in line - eg. horizontal li-elements
-float: left;								# Define floating for an image (text will float her on the right side of the image)
-clear: both;								# Clear floating (for left and right)
-transistion: background 5s;					# Change the background fading in for 5 seconds	(eg. going from white to dark blue)
+color: red; 							# Define red color for element
+color: #FF0000;							# Define color with hex code
+color: rgba(255,0,0,1);					# Defome color with rgb code (4th parameter is opaque - 0.5. means half transparent, 1 no transparent)
+color: hsla(0, 100%, 50%,1);            # define color per hsla value 
+font_weight: bold;						# Font bold
+font_weight: 700;						# Define when a font is downloaded from eg. google fonts
+font-size: 25px;						# Define font size with 25 pixel
+font-style: italic;						# Font italic / cursive
+line-height: 1.5,;						# Defines line-height as 1.5 of the normal height
+text-decoration: underline red;			# Define text decoration a red underline
+text-decoration: line-through;			# Define text with line-through
+text-align: center;						# Center text / or list-entries in ul
+background-color: #e2b007;				# Define background color
+border: 3px solid #FFA500;				# Define border of element (width, style, color) - "shorthand"-method
+border: thin solid red;					# Define border of element (width, style, color) - "shorthand"-method
+border-bottom: 6px dashed #FFA500;		# Define only the bottom-border - "longhand"-method	
+border-bottom-width: 12px;				# Define only the bottom-border-width - "longhand"-method	
+border-radius: 5px;						# Define a border radius with 5 pixel - "shorthand"-method
+border-top-right-radius: 5px;			# Define the border radius for top right corner  - "longhand"-method
+height: 100px;							# Height of the box
+margin: 20px;							# Margin of the box (outside the border, for all 4 sites) - "shorthand"-setting
+margin: 10px 20px;						# Margin of the box (10 pixel for top/bottom and 20 pixel for left/right)
+margin: 10px 20px 0 15px;				# Margin of the box (clockwise from tom) => 10px top, 20px right, 0px bottom, 115px left
+margin: 100px 0;						# Margin of the box => will do this clockwise for top+right and bottom-left => 100px for top+bottom, 0 for right+left
+margin: auto							# Set the margin automatc - wg. when the width is set to a percentage
+padding: 20px;							# Padding of the box (inside the border)
+margin-top: 10px						# Setting the margin to 10 pixel - "longhand"-method
+padding-left: 6px						# Setting the padding to 6 pixel - "longhand"-method
+width: 50%;								# Define width in percent (relative to the width of the parent element)
+width: 5em;								# Define width (calculated on elements font size - when font-size=14px - the width would be 70px (5*14)
+height: 200px;							# Define height of element	
+max-width:20%;							# Resize something eg. img
+max-height:20%;							# Resize something eg. img
+list-style-type: none;					# no bullets in unordered list (using at ul-element)
+disply: none;							# hide element	
+display: inline;						# show element in line - eg. horizontal li-elements - or wrap border only around a paragraph p (and not the whole block)
+display: block;							# show element as a block (max width of the window) - eg. wrap border around a span element over the whole window (and not only the span)
+display: inline-block;					# show elements in the block in a line - eg. alle <p>s in a <div>-element
+float: left;							# Define floating for an image (text will float her on the right side of the image)
+clear: both;							# Clear floating (for left and right)
+transistion: background 5s;				# Change the background fading in for 5 seconds	(eg. going from white to dark blue)
+position: static;						# Static element - is not positioned in any way (position tags top-bottom-left-rigth will have no effect)
+position: relative;						# with the position tags (top, botom, left, right) the element is shifted away from its normal position
+position: fixed;						# element stays according the position tags - but will not change the place even if the windows is scrolled
 
+
+
+### CSS Elements
+a:link{...}								# format link when not clicked
+a:visited{...}							# format link when allready clicked
+a:hover{...}							# format link when hoovered over it
+
+
+
+### Formating snippets
+# center an unordered list
+ul {
+   text-align: center;}
+ul li {
+   display: inline-block;}
+
+# make unordered list vertical
+li {
+    list-style-type: none;
+    display: inline;}
+
+# show sepeartor between unordered list
+li + li:before{
+    content: " | ";
+    padding: 0 3px;}
+
+# resize a block element and center it
+(if using only "width" => when the window is to small - the browser resolves this with a horizontal scrollbar)
+(so its better to use "max-width" => this reduces the width when the windows is / becomes to small)
+    max-width: 600px;
+    margin: 0 auto; 
+
+# let a image float right - and let the text float around it in the left and bottom area around the picture
+img {
+  float: right;
+  margin: 0 0 1em 1em;}
+
+# when floating and the image is bigger then the element use this so the element is adjusted to the image heigth
+.clearfix {
+  overflow: auto;}
+
+# nav menue on the left side - with several section beside the nav in the right area
+(with a percentage parameter - better then fixed px-amounts especially when using smaller windows)
+nav {
+  float: left;
+  width: 25%;}
+section {
+  margin-left: 25%;}
+
+# show all elements in a div-block flexible as inline
+div {
+    display: inline-block;
+    width: 300px;
+    height: 100px;
+    margin: 1em;}
+
+# styling link based on state
+a:link {...}		=> format link when not allready clicked
+a:visited {...}		=> format link when allready clicked
+a:hover {...}		=> format link when hovered over with the mouse
 
 
 ### CSS
@@ -76,13 +142,14 @@ taken from google fonts for example (take fonts and then create link in upper ri
     <link href="https://fonts.googleapis.com/css2?familiy=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylessheet">
 </head>
 p {
-    font-family: "Source Sans Pro", "Helvetica" sans-serif;			# Helvetica and sans-serif are the fallback fonts when Source Sans Pro is not loading
-	font-weight: 700;												# how thick / bold the font is
+    font-family: "Source Sans Pro", "Helvetica", sans-serif;			# Helvetica and sans-serif are the fallback fonts when Source Sans Pro is not loading
+	font-weight: 700;													# how thick / bold the font is
 }
 
 
 
 ### Parent > Child Relationsships
+# direct parent/child relationship
 <section>
     <p>hello, twitch!</p>
 </section>                                      # direct parent relationsship > child connection with ">"
@@ -90,6 +157,7 @@ section > p {                                   # direct child connection (only 
     color:red;                                  # p is the direct child of section
 }
 
+# normal parent/child realtionship
 <section>
     <article>
         <p>hello, twitch!</p>
@@ -99,6 +167,7 @@ section p {                                     # all connections above (when th
     color:red;                                  # p is the grandchild of section / somewhere a child of section
 }
 
+# Sibling Relationship
 <section>
     <p>Hello, Twitch!</p>
 	<p>Hello, YouTube!</p>
@@ -106,6 +175,11 @@ section p {                                     # all connections above (when th
 p + p {											# format is used when two <p>s are after each other
 	color: red;									# only the second p will get red
 }
+
+# Examples with combinations
+article p span {...}							# selects any <span> that is inside a <p>, which is inside an <article>
+h1 + ul + p {...}								# selects any <p> that comes directly after a <ul>, which comes directly after an <h1>
+body h1 + p .special {...}						# select 	
 
 
 

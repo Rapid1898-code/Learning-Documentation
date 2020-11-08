@@ -1,6 +1,6 @@
-#############################
-### Docker and Kibernates ###
-#############################
+##############
+### Docker ###
+##############
 https://www.youtube.com/watch?v=bhBSlnQcq2k&t=3476s
 
 ###Docker =>
@@ -132,7 +132,22 @@ registry could be private or publich (like github)
 example: https://hub.docker.com/repository/docker/rapid1898/website
 
 ###Kubernetes
-Orchistration Tool for docker images / containers
+Orchestration Tool for docker images / containers
+Trend from Monolith to Microservices - incread usage of conatainers
+offerings from Kubernetes
+	=> high availailibility / no downtime
+	=> scalability / high performance
+	=> disaster recovery / backup and restore
+Architecture
+	=> 1 Master Node (has a API server, Controller Manager, Scheduler - has a UI, API, CLI)
+	(backup of the master is absolute necessary - normally at least 2 instances of the master which can be switched at any time)
+	=> many Worker Nodes (different docker containers on the nodes - one or many)
+	=> Virtual Network - communication between Worker Nodes and Master Node (creates an unfified machine)
+	
+	
+	
+	
+
 
 
 
