@@ -4,7 +4,7 @@
 
 # MODULE (general)
 # VIRTUALENV
-# INTELLIJ IDEA IDE, GITHUB
+# SHORTCUTS INTELLIJ IDEA IDE, GITHUB, CHROME, WINDOWS
 # MYSQL, MARIADB, HEIDISQL
 # OPERATORS, INPUTS, ARGUMENTS
 # RANDOM, SECRETS
@@ -91,8 +91,8 @@ pip install -r requirements.txt                            # Install all the pac
 
 
 ----------
-###### INTELLIJ IDEA IDE, GITHUB
-#Shortcuts
+###### SHORTCUTS INTELLIJ IDEA IDE, GITHUB, CHROME, WINDOWS
+#Shortcuts Intellij Idea
 Ctrl + /					# Comment / Uncomment line ("/" on numblock)
 Ctrl + Alt + F7				# Find usages
 Ctrl + F    				# Find in File
@@ -113,6 +113,13 @@ Ctrl + "-"					# Collapse block ("-" on numblock)
 Ctrl + "+"					# Expand block ("+" on numblock)
 Ctrl + "A"					# Select whole file
 
+# Shortcuts Chrome
+F5							# Refresh site
+Strg Tab					# Go tab right
+Strg Shift Tab				# Go tab left
+
+# Shortcuts Win10
+Alt Tab 					# Focus on other window
 
 #Git Ignore Files/Folders:
 when doing a commit - right click + add to .gitignore		# file will be created when not exists
@@ -188,6 +195,8 @@ random.sample(list,3)           # Choose 3 random (unique) entries from the list
 random.choices(list,k=3)	    # Choose 3 random entries from the list (possible to be the same)
 random.shuffle(l)				# Shuffle the content of a list
 random.seed(1)					# Can reproduce the same results (unsecure)
+"".join(random.choices(string.ascii_uppercase, k=6))
+				=> 	generate a random uppercase 6-char string
 
 import secrets					# Import secrets module - for security reasons (is slower)
 secrets.randbelow(10)			# Random int in the range from 0-10 (10 excluded)

@@ -24,7 +24,8 @@ margin: 20px;							# Margin of the box (outside the border, for all 4 sites) - 
 margin: 10px 20px;						# Margin of the box (10 pixel for top/bottom and 20 pixel for left/right)
 margin: 10px 20px 0 15px;				# Margin of the box (clockwise from tom) => 10px top, 20px right, 0px bottom, 115px left
 margin: 100px 0;						# Margin of the box => will do this clockwise for top+right and bottom-left => 100px for top+bottom, 0 for right+left
-margin: auto							# Set the margin automatc - wg. when the width is set to a percentage
+margin: auto;							# Set the margin automatc - wg. when the width is set to a percentage
+margin: 0 auto;							# Center the content horizontal
 padding: 20px;							# Padding of the box (inside the border)
 margin-top: 10px						# Setting the margin to 10 pixel - "longhand"-method
 padding-left: 6px						# Setting the padding to 6 pixel - "longhand"-method
@@ -38,12 +39,16 @@ disply: none;							# hide element
 display: inline;						# show element in line - eg. horizontal li-elements - or wrap border only around a paragraph p (and not the whole block)
 display: block;							# show element as a block (max width of the window) - eg. wrap border around a span element over the whole window (and not only the span)
 display: inline-block;					# show elements in the block in a line - eg. alle <p>s in a <div>-element
+display: flex;							# show elements in the block in the flex system
 float: left;							# Define floating for an image (text will float her on the right side of the image)
 clear: both;							# Clear floating (for left and right)
 transistion: background 5s;				# Change the background fading in for 5 seconds	(eg. going from white to dark blue)
 position: static;						# Static element - is not positioned in any way (position tags top-bottom-left-rigth will have no effect)
 position: relative;						# with the position tags (top, botom, left, right) the element is shifted away from its normal position
 position: fixed;						# element stays according the position tags - but will not change the place even if the windows is scrolled
+overflow: visible; 						# default-value - we can see the content when it overflows
+overflow: hidden;						# hides the overflow (can not see the text which is outside the box)
+overflow: auto;							# shows a scrollbar when the content is overflowing
 
 
 
@@ -105,6 +110,12 @@ div {
 a:link {...}		=> format link when not allready clicked
 a:visited {...}		=> format link when allready clicked
 a:hover {...}		=> format link when hovered over with the mouse
+
+# center the whole site in the middle
+body {
+  width: 75%;
+  margin: 0 auto;}
+
 
 
 ### CSS
@@ -176,10 +187,23 @@ p + p {											# format is used when two <p>s are after each other
 	color: red;									# only the second p will get red
 }
 
-# Examples with combinations
+
+
+### Selectors and Combinations
+h1 {...}										# Type Selector - Select one specific type 
+* {...}											# Universal Selector - Select everything
+.box {...}										# Class Selector - Select specific class
+#unique {...}									# ID Selectors - Select specific ID
+Attribute selector	a[title] {...}				# Attribute Selectors - Select elements which have the attribute "title"
+p:first-child {...}								# Pseudo Class Selector - Select elements with special state (eg. first-child, hover, focus, clicked,...)
+p::first-line {...}								# Pseudo Elements Selector - Style a specific part of the selected element (eg. first-letter, first-line,...)
+article p										# Descendant combinator - all connections above (when there is a p - somewhere on a level - in the article)
+article > p										# Child Combinator - direct child connection (only the p which are direct unter article)
+h1 + p											# Adjacent Sibling - format is used when a <p> is following directly after a <h1>
+h1 ~ p											# General Sibling - selects any <p> which is following somewhere after a <h1>
 article p span {...}							# selects any <span> that is inside a <p>, which is inside an <article>
 h1 + ul + p {...}								# selects any <p> that comes directly after a <ul>, which comes directly after an <h1>
-body h1 + p .special {...}						# select 	
+body h1 + p .special {...}						# select elements with class "special" which are somwhere after p which is directly after h1 which is somewhere in the body 	
 
 
 
@@ -245,6 +269,8 @@ box has a heigth and width - eg. 100px*100px
 padding outside the box - between box and border (top,right,bottom,left)
 border (outside padding) (top,right,bottom,left)
 margin (outside border) (top,right,bottom,left)
+block boxes => eg. h1, p - break to new line, fill the maximum available space, width and heigth will be respected
+inline boxex => eg. a, span, em, strong - will not break to new line, use only the minium space, width/heigth will not apply
 *{box-sizing: border-box}					# With this statement every sizing is included with the border
 
 
@@ -321,6 +347,22 @@ article:nth-of-type(3) { flex: 2 200px; }		# gives the 3rd item 2 proportion (it
 button:first-child { align-self: flex-end; }	# overwrites the vertical position of the item in the flexcontainer
 button:first-child { order: 1; }				# change the order of the first item (everything has order 0 - with 1 it goes to the very right position)
 button:last-child { order: -1; }				# change the order of the last item (everything has order 0 - with -1 it goes to the very first position)
+
+
+
+### Layout - Grid
+display: grid;									# Define grid for the layouting
+grid-template-columns: 200px 200px 200px;		# Define 3 fixed columns with 200px each
+grid-template-columns: 1fr 1fr 1fr;				# Define 3 flexible columns with fr-units (define 3 columns with max possible place)
+grid-template-columns: repeat(3, 1fr);			# 2nd way: Define 3 flexible columns with fr-units (define 3 columns with max possible place)
+grid-template-columns: 2fr 1fr 1fr;				# Define 3 flexible columns with fr-units (4 spaces - 1st column takes 2; 2nd+3rd colujmn take 1)
+grid-template-columns:							# Create as many columns as will fit into the container
+	repeat(auto-fill, minmax(200px, 1fr));			
+grid-gap: 20px;									# Define gap between the elements
+grid-auto-rows: 100px;							# Define heigth of the row
+grid-auto-rows: minmax(100px, auto);			# Define heigth of the row (100px is minimum, auto expand to fit the content)
+grid-column 1 / 3;								# Use for element grid-columns 1 - 3
+grid-row: 1;									# Use for element grid-row 1
 
 
 
