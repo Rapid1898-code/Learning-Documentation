@@ -19,6 +19,9 @@ border-bottom: 6px dashed #FFA500;		# Define only the bottom-border - "longhand"
 border-bottom-width: 12px;				# Define only the bottom-border-width - "longhand"-method	
 border-radius: 5px;						# Define a border radius with 5 pixel - "shorthand"-method
 border-top-right-radius: 5px;			# Define the border radius for top right corner  - "longhand"-method
+border-color: red;                      # Define border color with red
+border-width: 1px 2px 1px 2px;          # Define border width with 1px/2px (clockwise => up-rigth-down-left)
+border-style: solid;                    # Define 
 height: 100px;							# Height of the box
 margin: 20px;							# Margin of the box (outside the border, for all 4 sites) - "shorthand"-setting
 margin: 10px 20px;						# Margin of the box (10 pixel for top/bottom and 20 pixel for left/right)
@@ -113,8 +116,15 @@ a:hover {...}		=> format link when hovered over with the mouse
 
 # center the whole site in the middle
 body {
-  width: 75%;
-  margin: 0 auto;}
+	width: 75%;
+	margin: 0 auto;}
+
+# make media scalable
+img, video, canvas {
+	max-width: 100%;
+}
+
+
 
 
 
@@ -221,7 +231,7 @@ p.class1.class2 {...}							# both classes have to be in the SAME element - only
 .class1 .class2 {...}							# the parent-element has to be class1 and the child-element class2
 section.class1 h2.class2 {...}					# the parent-element <section> has to be class1 and the child-element <h2> class2
 .class1,.class2 {...}							# one of the classes have to be in the element
-p.class1, a.class2 {...}						# rule is for <p> with class1 or <a> with class2
+p.class1.class2, a.class2 {...}					# rule is for <p> with class1+class2 or <a> with class2
 body article.class1 h2.class2.class3 {...}		# h2, which have class2+classe3 in h2, their parent has class1, and the parent is in body
 aside.aExtra h3									# rule for <h3> which have a parent-element <aside> with class aExtra
 
@@ -327,7 +337,7 @@ footer {
 ### Layout - Flexbox
 section [ display: flex; }						# initialize flexcontainer (parent element of the flex items)
 section { justify-content: flex-start; }		# put elements to the max left - horizontally
-section { justify-content: flex-end; }			# put elements to the max right - horizontally
+section { justify-ccontent: flex-end; }			# put elements to the max right - horizontally
 section { justify-content: center; }			# center the elements horizontally
 section { justify-content: space-around; }		# place elements with space around horizontally
 section { justify-content: space-between; }		# place elements with space between the elements horizontally
