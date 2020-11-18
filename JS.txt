@@ -82,6 +82,15 @@ age in o 										# Check if key is in the object
 delete o.age									# Delete a property of an object
 for (let key in o) {alert(key,alert, o[key]}	# Iterate through the keys of the object and outputs key and value
 
+# Other example for an object
+var school = {
+  name: 'The Starter League',
+  location: 'Merchandise Mart',
+  students: 120,
+  teachers: ['Jeff', 'Raghu', 'Carolyn', 'Shay']
+};
+
+
 
 
 ###### CONSTRUCTOR / CLASS
@@ -110,9 +119,6 @@ class MakeCar{ 										# Define the class
 }
 let car1 = new MakeCar("Honda","Civic","black")		# Create a new car1 (with codeword "new")
 let car2 = new MakeCar("Tesla","Roadster","red")	# Create a new car1
-
-
-
 
 
 
@@ -172,6 +178,7 @@ setTimeout(()=> {do something,1000}]			# Do something and wait 1 second
 
 
 ###### API ACCESS
+https://learn.shayhowe.com/advanced-html-css/jquery/
 # request data from API
 # get data back in JSON format
 fetch(url)										# Reading / Fetching the informations from an API-url
@@ -182,6 +189,30 @@ fetch(url)										# Reading / Fetching the informations from an API-url
 	.catch(err => {								# Standard Error Handling
 		console.log("error ${err}")
 	});
+
+
+
+###### JQUERY
+library for javascript
+- Traversing
+- Manipulating
+- Events
+- Effects
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>		=> include before </body> tag
+$(document).ready(function(event){...});		# put all jQuery code in this function (waiting until the the page has loaded an the DOM is ready)
+$('.feature');           						// Class selector
+$('li strong');          						// Descendant selector
+$('em, i');              						// Multiple selector
+$('a[target="_blank"]'); 						// Attribute selector
+$('p:nth-child(2)');     						// Pseudo-class selector
+
+
+
+
+
+
+
+
 
 
 

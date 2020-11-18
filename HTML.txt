@@ -97,22 +97,5 @@ https://developer.mozilla.org/de/docs/Web/HTML/HTML5/HTML5_element_list
 	
 	
 ### HTML Template
-<!DOCTYPE html>																	<!-- indicates it is used HTML5-->
-<html lang="en">																<!-- language of the page-->
-	<head>
-    	<meta charset="utf-8">													<!-- get all chars which are possible-->
-    	<meta name="description" content="Your description goes here">			<!-- used by search-engines to lookup a site-->
-    	<meta name="keywords" content="one, two, three">						<!-- keywords for search-enginges-->
-		<meta name="viewport" content="width=device-width, initial-scale=1">	<!-- set the width of the device-->
-
-		<title>Blank Template</title>											<!-- tabname in the browser-->
-
-		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/normalize.css">						<!-- use the standards from the browsers
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	<body>
-		<script type="text/javascript" src="js/main.js"></script>
-	</body>
-</html>	
+see Learning-Documentation - folder "Template HTML_CSS_JS"
 

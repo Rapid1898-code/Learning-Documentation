@@ -1,0 +1,23 @@
+###### Tipps from LeonNoel during 100Devs
+
+Direct applications makes no sense (like drowing the application in the dustbin...)
+Stranger => Acquaintance => Friend => Referral => Coworker
+
+Places to meet:
+- meetup.com / local boards
+- google interest + conference
+- local is always better
+- tell friends and family what you are doing (eg. web development)
+
+Normal Follow Up:
+Meet => EMail => Linkedin => Twitter
+never send a linkedin-invitation without a message...
+
+Coffe Chat Follow Up:
+after 1 week: email follow up
+after 2 weeks: email folow up 2
+after 1 month: last email
+
+Use a sheet for tracking the networking
+Where met? When? What was it all about (programming, football, hobby,..) Next Steps?
+

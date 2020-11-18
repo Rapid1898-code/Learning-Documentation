@@ -29,8 +29,10 @@ margin: 10px 20px 0 15px;				# Margin of the box (clockwise from tom) => 10px to
 margin: 100px 0;						# Margin of the box => will do this clockwise for top+right and bottom-left => 100px for top+bottom, 0 for right+left
 margin: auto;							# Set the margin automatc - wg. when the width is set to a percentage
 margin: 0 auto;							# Center the content horizontal
-padding: 20px;							# Padding of the box (inside the border)
 margin-top: 10px						# Setting the margin to 10 pixel - "longhand"-method
+padding: 20px;							# Padding on all sides
+padding: 0 0 20px 0;					# Padding only on the bottom side (values are going clockwise starting at the top)
+padding: 0 10px;						# Padding on the left and right - no padding at top and bottom
 padding-left: 6px						# Setting the padding to 6 pixel - "longhand"-method
 width: 50%;								# Define width in percent (relative to the width of the parent element)
 width: 5em;								# Define width (calculated on elements font size - when font-size=14px - the width would be 70px (5*14)
@@ -52,13 +54,7 @@ position: fixed;						# element stays according the position tags - but will not
 overflow: visible; 						# default-value - we can see the content when it overflows
 overflow: hidden;						# hides the overflow (can not see the text which is outside the box)
 overflow: auto;							# shows a scrollbar when the content is overflowing
-
-
-
-### CSS Elements
-a:link{...}								# format link when not clicked
-a:visited{...}							# format link when allready clicked
-a:hover{...}							# format link when hoovered over it
+z-index: 2; 							# can overlap other elements - element with the highest z-index in front
 
 
 
@@ -126,8 +122,6 @@ img, video, canvas {
 
 
 
-
-
 ### CSS
 should go in seperate file (better than inline or in the head)
 css statements are called "rules"
@@ -170,6 +164,7 @@ p {
 
 
 ### Parent > Child Relationsships
+Overview Complex Selectors see: https://learn.shayhowe.com/advanced-html-css/complex-selectors/
 # direct parent/child relationship
 <section>
     <p>hello, twitch!</p>
@@ -269,6 +264,19 @@ p{}								=> 1 point (1 tag)
 section .bob { }				=> 11 points (1 tag + 1 class)
 .bob{ !important }				=> 1010 points (1 class + 1 other)
 section1,section2 .bob { }		=> 11 points (1 tag + 1 class) for section1 and for section2
+
+
+
+### Pseudo Classes
+overview see: https://learn.shayhowe.com/advanced-html-css/complex-selectors/
+special classes which are dinamically populated as a result of user actions of document structure
+a:link{...}								# format link when not clicked
+a:visited{...}							# format link when allready clicked
+a:hover{...}							# format link when hoovered over it
+li:first-child							# Selects an element that is the first within a parent
+li:last-child							# Selects an element that is the last within a parent
+p:first-of-type							# Selects an element that is the first of its type within a parent
+p:last-of-type							# Selects an element that is the last of its type within a parent
 
 
 
@@ -377,7 +385,7 @@ grid-row: 1;									# Use for element grid-row 1
 
 
 ### Responsive Design
-Running the page on smaller devices
+Running the page on different / smaller devices
 - Fluid - everathing as a percentage (no percents)
 - Elastic - using em and rem (em looks at the previous element / rem looks at the html-element)
 (only changing the font-size central when changes)
@@ -432,38 +440,48 @@ animation-fill-mode
 
 
 ### CSS Template - style.css
-/* Box Model Hack */
-* {
-     box-sizing: border-box;
-}
+see Learning-Documentation - folder "Template HTML_CSS_JS"
+<link rel="stylesheet" href="css/normalize.css">
+	=> normalize the different browser standard styling
 
-/* Clear fix hack */
-.clearfix:after {
-     content: ".";
-     display: block;
-     clear: both;
-     visibility: hidden;
-     line-height: 0;
-     height: 0;
-}
-.clear {
-	clear: both;
-}
-/******************************************
-/* BASE STYLES
-/*******************************************/
-body {
-}
-/******************************************
-/* LAYOUT
-/*******************************************/
-header {
-}
-footer {
-}
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/
+
+
+### Performance and Organization
+https://learn.shayhowe.com/advanced-html-css/performance-organization/
+- keep selector shorthand
+- use no or less ids - better classes
+- do not use elements before classes (Bad: article.feat Good: .feat)
+- reuse styles whereever its possible
+- compress files with gzip
+- compress / convert images (program PNGGauntlet)
+
+
+
+### Preprocessors
+https://learn.shayhowe.com/advanced-html-css/preprocessors/
+# Haml => Preprocessor for HTML
+(Ruby must be installed before)
+gem install haml				# Installation of haml
+haml index.haml index.html		# Compile the .haml-file to html
+
+# Sass
+(more like a programming language with expressions, loops, if-statements,...)
+gem install sass				# Installation of Sass
+
+Many other preprocessors like Jade, Slim, LESS, Stylus, CoffeeScript
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

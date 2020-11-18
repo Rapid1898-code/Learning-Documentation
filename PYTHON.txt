@@ -93,33 +93,37 @@ pip install -r requirements.txt                            # Install all the pac
 ----------
 ###### SHORTCUTS INTELLIJ IDEA IDE, GITHUB, CHROME, WINDOWS
 #Shortcuts Intellij Idea
-Ctrl + /					# Comment / Uncomment line ("/" on numblock)
-Ctrl + Alt + F7				# Find usages
-Ctrl + F    				# Find in File
-Ctrl + R     				# Replace in File
+Ctrl /						# Comment / Uncomment line ("/" on numblock)
+Ctrl Alt F7					# Find usages
+Ctrl F 		   				# Find in File
+Ctrl R  	   				# Replace in File
 F3							# Find next
-Ctrl + G					# Goto line
-Ctrl + D					# Copy / Duplicate lines	
-Alt + Shift + Down/Upate	# Move line
-Ctrl + E					# Recent opened files
-Ctrl + TABLE				# File switcher
-Ctrl + (Shift) + W			# Select / deselect parts of the code step by step
+Ctrl G						# Goto line
+Ctrl D						# Copy / Duplicate lines	
+Alt Shift Down/Up			# Move line
+Ctrl E						# Recent opened files
+Ctrl TAB					# Switch windows in IDE
+Ctrl (Shift) W				# Select / deselect parts of the code step by step
 Alt Enter					# Suggestions for fix error, function informations
 Alt 1						# Open the project windows (on the left side)
-Alt + F7					# Show usage of the variable, function, class
+Alt F7						# Show usage of the variable, function, class
 Esc							# Focus back on the editor window
-Ctrl + Shift + "-"			# Collapse all functions
-Ctrl + "-"					# Collapse block ("-" on numblock)
-Ctrl + "+"					# Expand block ("+" on numblock)
-Ctrl + "A"					# Select whole file
+Ctrl Shift -	   			# Collapse all functions
+Ctrl -						# Collapse block ("-" on numblock)
+Ctrl +						# Expand block ("+" on numblock)
+Ctrl A						# Select whole file
+Ctrl (Shift) Z				# Undo (backwards) / Redo (forwards)
 
 # Shortcuts Chrome
 F5							# Refresh site
-Strg Tab					# Go tab right
-Strg Shift Tab				# Go tab left
+Ctrl Tab					# Go tab right
+Ctrl Shift Tab				# Go tab left
 
 # Shortcuts Win10
 Alt Tab 					# Focus on other window
+Ctrl C						# Copy
+Ctrl X						# Cut
+Ctrl VALUES					# Paste	
 
 #Git Ignore Files/Folders:
 when doing a commit - right click + add to .gitignore		# file will be created when not exists
@@ -364,7 +368,9 @@ d = dict(one=1,two=2,three=3)						 # 2nd way to defince a dict with content
 d = dict([("one",1),("two",2),("three",3)])          # Define dict with content (with dupels)
 d = dict([["one",1],["two",2],["three",3]])          # Define dict with content (with pairs in nested list)
 d = dict(zip(["one","two","three"], [1,2,3]))        # Define dict with 2 different lists (1x keys and 1x values)
-d["two"]                                             # Access value with key element
+d["two"]                                             # Access value with key element (error when the key is not in the dict)
+d.get("two","N/A")									 # BETTER: Acesss value with get for key element (no error when the key is not in the dict - returns second parameter instead)
+d.setdefault("two","N/A")							 # Access value - same as get - but also initialize the key when it is not in the dict - with the second parameter)
 key = list(d.keys())[list(d.values()).index(v)]		 # Find key for specific value (v) in dict
 list(d.keys())                                       # Read keys from dict to list
 list(d.values())                                     # Read values from dict to list
@@ -483,6 +489,15 @@ continue                     	# Break actual loop run - continue with next loop 
 
 ----------
 ###### FUNCTIONS, DECORATORS
+description of the function in form of a docstring
+=> """...description..."""
+    def printNumAbbr(value):
+	"""	
+    eg. Make abbreviaton for numeric value in thousands (K), millions (M), billions (B) or trillions (T)
+    :param value: numeric value which should be abbreviated
+    :return: string value with maximum possible abbreviation
+    """
+
 def add(x=0,y=0):               	# Define function - with default value 0 if no input is given
     erg = x+y                   	# Calculation in function
     return erg                  	# Return value from the function
