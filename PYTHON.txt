@@ -303,7 +303,7 @@ l.sort(key=lambda x: x[1], reverse=True)		 # Sort the nested list for the 2nd el
 l.reverse()                                      # Reverse the complete list
 l_reverse = revrsed(l)                           # Reverse complete list and store it in different independent list
 del l[2]                                         # Delete element at index position 2
-l.remove("abc")                                  # Delete element with this value from the list
+l.remove("abc")                                  # Delete first element with this value from the list
 l.clear()                                        # Delete complete content of the list (same as l = [])
 min(l)                                           # Find smallest element in the list
 max(l)                                           # Find greatest element in the list
@@ -339,7 +339,15 @@ c=[x*2 for x in [1,2,3,4,5]]					 # Also possible with list comprehension => [2,
 list(filter(lambda x: x%2==0, [1,2,3,4,5]))		 # List is filtered with lambda for even numbers => [2,4]
 c=[x for x in [1,2,3,4,5] if x%2==0]			 # Also possible with list comprehension => [2,4]
 zip([1,2,3],[4,5,6])							 # Build paris as tuple => (1,4),(2,5),(3,6)
-list(set(x))									 # Remove all double entries in list	
+list(set(x))									 # Remove duplicates from a list
+
+# Iterate over 2 lists at the same time using zip
+animal = ['Cat', 'Dog', 'Fish', 'Goat']
+age = [1, 2, 2, 6]
+z = zip(animal, age)
+for animal, age in z: ...
+
+
 ----------
 
 

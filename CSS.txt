@@ -343,7 +343,8 @@ footer {
 
 
 ### Layout - Flexbox
-section [ display: flex; }						# initialize flexcontainer (parent element of the flex items)
+# css-tricks.com: Complete Guide To Flexbox
+section { display: flex; }						# initialize flexcontainer (parent element of the flex items)
 section { justify-content: flex-start; }		# put elements to the max left - horizontally
 section { justify-ccontent: flex-end; }			# put elements to the max right - horizontally
 section { justify-content: center; }			# center the elements horizontally
@@ -386,10 +387,37 @@ grid-row: 1;									# Use for element grid-row 1
 
 ### Responsive Design
 Running the page on different / smaller devices
-- Fluid - everathing as a percentage (no percents)
-- Elastic - using em and rem (em looks at the previous element / rem looks at the html-element)
-(only changing the font-size central when changes)
-- Content Decision - Mobile First
+- Fluid - everything sized with percentage (no fixed measures)
+	=> looks more or less good on every windows-size
+- Elastic - using em and rem (em looks at the parents fontsize and use this as a base / rem looks at the html-element)
+	(set a standard font-size as a base for the whole document)
+	=> em: the change has only to be done at the one font-size decleration
+	=> rem: the change has only to be done at the font-size from the html
+	=> font-size: 62.5%; /* font-size 1em = 10px bei normaler Browser-Einstellung */
+	(so everything would response to the default font size from the actual user)
+	(only changing the font-size central when changes)
+- Content Decision - Mobile First or Desktop to Mobile
+	=> first think about the design on mobile (and then bigger and bigger from Tablet to fully desktop)
+	=> or make it the other way (desktop design first and then shrinking to mobile version)
+	=> decide what should be shown on mobile devices and what not
+	=> using media queries
+
+### Media Queries
+@media screen and (max-width: 600px) {			# smartphones: this rule get only be used when the device width is between 0 and 600 pixel
+	h1 {
+		color: blue;
+	}
+}
+@media screen and (min-width: 600px) {			# tablets: this rule is used when the width is greater 600px
+    .middle{
+        background-color: yellow;
+    }
+}
+@media screen and (min-width: 900px) {			# desktop: this rule is used when the width is greater 900px
+    .middle{
+        background-color: yellow;
+    }
+}
 
 section {
 	height: 200px;
@@ -400,14 +428,10 @@ main,.bottom {				# arranges elements in main and class bottom with flex-system
 	display: flex;
 }
 
-
-
-### Media Queries
-@media screen and (max-width: 600px) {			# this rule get only be used when the device width is between 0 and 600 pixel
-	h1 {
-		color: blue;
-	}
-}
+Important addition to the template-columns:
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	=> enables the windows to be zoomed
+	(never set initial-scale to none - zooming would be not possible)
 
 
 
@@ -454,6 +478,12 @@ https://learn.shayhowe.com/advanced-html-css/performance-organization/
 - reuse styles whereever its possible
 - compress files with gzip
 - compress / convert images (program PNGGauntlet)
+
+
+
+
+### Google Chrome Hacks
+select the width or heigth - press rigth strg - up/down 	=>   live the selected element in the browser
 
 
 
