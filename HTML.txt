@@ -30,6 +30,7 @@ index.html                              	# Should be the first site
 ###### HTML Grouping - Layout
 https://www.w3schools.com/html/html_layout.asp
 <div></div>                             	# grouping some html-area
+<main></main>								# main part of the homepage
 <section></section>                     	# part of the homepage - eg. the core middle of the site
 <article></article>							# part of the section - can be taken and dropped to another place
 <aside></aside>								# mostly on the side of the homepage - something you can take away and the page would still be working (eg. ads)
@@ -42,7 +43,11 @@ https://www.w3schools.com/html/html_layout.asp
 ### HTML Elements
 https://www.w3.org/community/webed/wiki/HTML/Training/Tag_syntax#:~:text=HTML%20is%20using%20tags%20for,to%20compose%20an%20HTML%20element.
 https://developer.mozilla.org/de/docs/Web/HTML/HTML5/HTML5_element_list
-<!-- This is a comment -->              # commentar in HTML
+<!-- This is a comment -->              	# commentar in HTML
+<a href="www.x.com">X</a>					# anker link element
+<form action="search.html" method="post">	# form element
+	<label>Search:</label>
+</form>
 <p>text</p>					        		# Normal Paragraph (long text)
 <p>Text <a href="www.x.com">X</a></p>		# Paragraph / Text with anchor link
 <p class="nine">Hello</p>					# Paragraph with a class
