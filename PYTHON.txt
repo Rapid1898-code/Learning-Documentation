@@ -167,6 +167,7 @@ HeidiSQL - Datei / Verbindungsmanager			# Shows the database-version in the colu
 ###### OPERATORS, INPUTS, ARGUMENTS
 import math                     # Import module for math calculations
 import sys						# Import module for reading arguments from the command line
+import statistics as stat		# Using some numpy functions
 5 // 2                          # Result without Decimals (=> 2)
 7 % 2                           # Modulo / Rest of the division (=> 1)
 d,e,f = 4,5,6                   # Assigment of several varaibles
@@ -182,7 +183,7 @@ dir(var)                        # Shows all available methods and attributes for
 isinstance(x,float)             # Check if x has type format float
 isinstance(x,str)               # Check if x has type format string
 x = float("inf")                # Set var to max-value (float infinite)
-math.sqrt(9)                    # Calculates the sqrt of the value => 3
+math.sqrt(9)                    # Calculates the sqrt of the value => i3
 if "myVar" in locals():         # Check if a variable exists
 sys.argv[1:].upper()            # Check for argument which is given when starting the program
 print("Text")					# Print "Text" (with a linebreak \n at the end)
@@ -191,6 +192,9 @@ print()							# Print linebreak \n
 example starting program 		# python test.py arg1 arg2 arg3
 str(sys.argv)					# Show the arguments from the command line when starting the program eg. ['test.py', 'arg1', 'arg2', 'arg3']
 len(sys.argv)					# Len of the arguments - eg. 4 (program test.py itself and 3 arguments following)
+min(3,5,7)						# Find the minimum value => 3
+max(3,5,7)						# Find the maximum value => 7
+stat.mean(3,5,7)					# Find the mean value => 5 (with numpy-module)
 ----------
 
 
@@ -1015,7 +1019,7 @@ ws.range("A2:A100").value = l                           # Writeback the updates 
 xl_col_sort(ws,1)                                       # Sort worksheet in the first col (function see below)
 ws["C8"].color											# Reads the color of a cell and returns a rgb-tuple eg. (146, 208, 80)
 ws["C8"].color = None									# Remove background from a cell
-ws.Range( "A1:C3").color = (255,255,255)				# Assigns background color for a range of cells
+ws.Range("A1:C3").color = (255,255,255)					# Assigns background color for a range of cells
 
 
 ### Sorting workssheet in given col
