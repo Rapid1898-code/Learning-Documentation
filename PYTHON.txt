@@ -194,7 +194,7 @@ str(sys.argv)					# Show the arguments from the command line when starting the p
 len(sys.argv)					# Len of the arguments - eg. 4 (program test.py itself and 3 arguments following)
 min(3,5,7)						# Find the minimum value => 3
 max(3,5,7)						# Find the maximum value => 7
-stat.mean(3,5,7)					# Find the mean value => 5 (with numpy-module)
+stat.mean([3,5,7])				# Find the mean value => 5 (with statistic-module - input must be given as list)
 ----------
 
 
@@ -2198,6 +2198,7 @@ pyinstaller --onefile prg.py                                  # Generate only on
 --icon=app.ico                                                # Generate file with icon
 --hidden-import=pkg_resources.py2_warn                        # Generating under mac os sometimes only work with this params
 --hidden-import=pkg_resources.py2_warn                        # Generating under mac os sometimes only work with this params
+--hidden-import=pymssql										  # When some modules are making problems - sometimes this helps
 --exclude-module matplotlib                                   # when there is a depreciating warning from matlib        
 prg.exe                                                       # Open this file to start the python-program
 
