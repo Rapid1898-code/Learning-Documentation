@@ -17,7 +17,7 @@
 # FUNCTIONS, DECORATORS
 # GENERATORS, YIELD
 # LAMBDA
-# CLASSES
+# CLASSES, DATACLASSES
 # TXT (handling txt files)
 # JSON (handling JSON)
 # XML (handling XML)
@@ -627,7 +627,7 @@ c=[x for x in a if x%2==0]			# also possible with list comprehension => [2,4]
 
 
 ----------
-###### CLASS
+###### CLASSES, DATACLASSES
 class Human(object):          # Define a class
   species = "Homo Sapiens"    # Fix variable / class variable for all instances of the class
   def __init__(self,name):    # Constructor - automatically applied when an instance is created
@@ -652,6 +652,17 @@ i.get_species()               # Output "Homo Sapiens"
 j.get_species()               # Same output  "Homo Sapiens"
 Human.species = "Was Neues"   # Change of the class variable - applies for all instances
 Human.grunt()                 # Aufruf der statischen Methode => Ausgabe: "*grunt*" 
+
+# Dataclasses
+from dataclasses import dataclass		# import dataclass necessary
+@dataclass								# define a dataclass
+class Coordinate:						# class is defined an need NO __init__, __repr__, __eq__
+    x: int								# __init__ no necessary - values get assigned automatically
+    y: int = 10							# __repr__ print for the string-represantion is automatic => Coordinate(x=4, y=5)
+a = Coordinate(4, 5)
+@dataclass (frozen=True)				# defines a unmutable instance
+asdict(dc)								# converts the dataclass to a dict
+astuple(dc)								# converts the dataclass to a tuple
 ----------
 
 
