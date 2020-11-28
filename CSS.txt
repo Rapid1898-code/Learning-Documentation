@@ -404,20 +404,15 @@ Running the page on different / smaller devices
 
 ### Media Queries
 @media screen and (max-width: 600px) {			# smartphones: this rule get only be used when the device width is between 0 and 600 pixel
-	h1 {
-		color: blue;
-	}
-}
+	h1 { color: blue; }              }
 @media screen and (min-width: 600px) {			# tablets: this rule is used when the width is greater 600px
-    .middle{
-        background-color: yellow;
-    }
-}
+    .middle{color: yellow; }         }
 @media screen and (min-width: 900px) {			# desktop: this rule is used when the width is greater 900px
-    .middle{
-        background-color: yellow;
-    }
-}
+    .middle{color: yellow; }         }
+@media screen and (min-width: 600px) and (max-width: 900px){	# this rule is used when the width is between 600px and 900px
+	img {border: 2px solid red;}     }
+
+
 
 section {
 	height: 200px;
