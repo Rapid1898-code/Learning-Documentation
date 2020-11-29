@@ -55,6 +55,7 @@ overflow: visible; 						# default-value - we can see the content when it overfl
 overflow: hidden;						# hides the overflow (can not see the text which is outside the box)
 overflow: auto;							# shows a scrollbar when the content is overflowing
 z-index: 2; 							# can overlap other elements - element with the highest z-index in front
+filter: brightness(40%);				# make a picture darker
 
 
 

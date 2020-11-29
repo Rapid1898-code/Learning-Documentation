@@ -128,6 +128,7 @@ https://www.makeuseof.com/tag/google-chrome-shortcuts-pdf/
 F5							# Refresh site
 Ctrl Tab					# Go tab right
 Ctrl Shift Tab				# Go tab left
+Ctrl F5						# Clear Cache and reload page
 
 # Shortcuts Win10
 https://fossbytes.com/windows-keyboard-shortcuts-cheat-sheet-for-windows-10/
