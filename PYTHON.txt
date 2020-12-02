@@ -283,6 +283,10 @@ pattern.fullmatch(s)											# Check with fullmatch (^ and $ not necessary) - 
 pattern3 = re.compile ("[0-9]{1}\.[0-9]{3}")					# Char "." has to cherck with "\n" (is a wildcard letter in regex)
 re.sub("\d","",s)												# Replace all digits in string with blank
 re.sub(r'([a-z](?=[A-Z])|[A-Z](?=[A-Z][a-z]))', r'\1 ', "txt")	# Insert blank before every capitalized word eg. "CostOfRevenue" => "Cost Of Revenue"
+pattern = "([0-9]+) ([a-z]:([a-z]+)"							# Define pattern => as many digits (endless) + " " + one lowercase cahr + ":" + as many digits (endless)
+match = re.search(pattern, elem)								# Check if elem fits the pattern => returns <re.Match object; span=(0, 19), match="3 n: nnnlncrnnnnn">
+value = match.group(1)											# Assign the value of the first group => 3
+all = match.group(0)											# Show the full string => "3 n: nnnlncrnnnnn"
 ----------
 
 

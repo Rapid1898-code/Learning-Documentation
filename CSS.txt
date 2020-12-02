@@ -39,6 +39,7 @@ width: 50%;								# Define width in percent (relative to the width of the paren
 width: 5em;								# Define width (calculated on elements font size - when font-size=14px - the width would be 70px (5*14)
 height: 200px;							# Define height of element	
 max-width:20%;							# Resize something eg. img
+max-width:100%;							# Prevents the eg. image from getting bigger than its original size	
 max-height:20%;							# Resize something eg. img
 list-style-type: none;					# no bullets in unordered list (using at ul-element)
 disply: none;							# hide element	
@@ -117,6 +118,14 @@ body {
 img, video, canvas {
 	max-width: 100%;
 }
+# show different images depending on browser width
+<picture>
+  <source srcset="img_smallflower.jpg" media="(max-width: 600px)">
+  <source srcset="img_flowers.jpg" media="(max-width: 1500px)">
+  <source srcset="flowers.jpg">
+  <img src="img_flowers.jpg" alt="Flowers" style="width:auto;">
+</picture>
+
 
 
 
@@ -159,6 +168,13 @@ p {
 	font-weight: 700;													# how thick / bold the font is
 }
 
+
+### Icon Use
+https://fontawesome.com/
+<head>                                         
+	<script src="https://kit.fontawesome.com/bf5e040b82.js" crossorigin="anonymous"></script>		# Definition in the head
+</head>
+<i class="fas fa-search">						# use icon in css (change size, color)
 
 
 ### Parent > Child Relationsships

@@ -18,7 +18,16 @@ index.html                              	# Should be the first site
 <!DOCTYPE html>								# Standard structure in the html-file
 <html>
     <head>
-        <!--Stuff the browser needs -->
+		<meta charset="utf-8">														# Define standard charset
+		<meta name="description" content="Techcrunch">								# Description of the site
+		<meta name="keywords" content="one, two, three">							# Keywords of the site
+		<meta name="viewport" content="width=device-width, initial-scale=1">		# Viewport Definition
+		<title>Techcrunch</title>													# Title of the site
+		<link rel="preconnect" href="https://fonts.gstatic.com">					# Use Google Font Style
+		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">		# Use Google Font Style
+		<link rel="stylesheet" href="css/normalize.css">							# Normalizing the CSS-Browser-Styles
+		<link rel="stylesheet" href="css/techcrunch_layout1.css">					# External CSS-File-Link
+		<script src="https://kit.fontawesome.com/bf5e040b82.js" crossorigin="anonymous"></script>		# Use FontAwesome Icons
     </head>
     <body>
         <!--Everything the user sees -->
@@ -108,5 +117,3 @@ https://developer.mozilla.org/de/docs/Web/HTML/HTML5/HTML5_element_list
 	
 ### HTML Template
 see Learning-Documentation - folder "Template HTML_CSS_JS"
-
-n
