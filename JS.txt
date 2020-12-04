@@ -38,6 +38,7 @@ alert("Bla ${name} bla")					# Alert some text with outputing the variable "name
 Math.sqrt(9)								# Return the square-root => 3
 
 
+
 ###### STRING
 .toLowerCase()								# Lowercase the whole string
 .charAt(1)									# Returns the second char of a string
@@ -147,7 +148,8 @@ function add(x=0,y=0) {						# Defome a function	- with default value 0 if no in
 	return erg;								# Return erg value
 }
 
-document.querySelector('#check').addEventListener('click', funcGreen)	# New Method / create an Event Listener / takes the first match
+document.querySelector('#check').addEventListener('click',func1)		# New Method / create an Event Listener / execute function "func1" when mouse is clicked
+document.querySelector('#check').addEventListener('onmouseenter',func2)	# New Method / create an Event Listener / exceute function "func2" when mouse-cursor is over the element
 document.getElementById("green").onclick = funcGreen					# Old Method / Waiting for click on this element (by ID) as a "event-listener"
 
 function funcGreen() {										# Define function
