@@ -152,11 +152,15 @@ document.querySelector('#check').addEventListener('click',func1)		# New Method /
 document.querySelector('#check').addEventListener('onmouseenter',func2)	# New Method / create an Event Listener / exceute function "func2" when mouse-cursor is over the element
 document.getElementById("green").onclick = funcGreen					# Old Method / Waiting for click on this element (by ID) as a "event-listener"
 
+# E.G. document.querySelector('#idBlue').addEventListener('click',changeToBlue)
+
 function funcGreen() {										# Define function
   document.querySelector("body")
 	.style.backgroundColor = "rgba(241,63,247,1)"			# Change BackGroundColor-Style to rgba-color green (as inlinecode in the rendering - not in the html-code)
   document.querySelector("body").style.color = "white"		# Change Fontcolor to white (as inlinecode in the rendering - not in the html-code)
 }
+
+# E.G. document.querySelector("body").style.backgroundColor = "blue"
 
 document.getElementById							# Old Method / Select an element by ID
 document.querySelector("xyz")					# New Method / Select (first) a <tag> or .class or #id

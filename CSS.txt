@@ -12,6 +12,7 @@ line-height: 1.5,;						# Defines line-height as 1.5 of the normal height
 text-decoration: underline red;			# Define text decoration a red underline
 text-decoration: line-through;			# Define text with line-through
 text-align: center;						# Center text / or list-entries in ul
+text-align: justify;					# Display text as blocktext (left and right in a line)
 text-transform: uppercase;				# Make text uppercased
 background-color: #e2b007;				# Define background color
 border: 3px solid #FFA500;				# Define border of element (width, style, color) - "shorthand"-method
