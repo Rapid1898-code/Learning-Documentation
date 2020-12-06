@@ -417,6 +417,22 @@ Running the page on different / smaller devices
 	=> decide what should be shown on mobile devices and what not
 	=> using media queries
 
+# Make YouTube-Video responsive
+.financeToolsDetail .videoContainer {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+.financeToolsDetail .videoContainer iframe {
+    position: absolute;
+    top: 0;
+    left: 15%;											# Position the video in the middle of the div-box
+    width: 60%;											# Defines how big the video should be displayed (width)
+    height: 55%;										# Defines how big the video should be displayed (height)
+}
+
+
+
 ### Media Queries
 @media screen and (max-width: 600px) {			# smartphones: this rule get only be used when the device width is between 0 and 600 pixel
 	h1 { color: blue; }              }
@@ -426,8 +442,6 @@ Running the page on different / smaller devices
     .middle{color: yellow; }         }
 @media screen and (min-width: 600px) and (max-width: 900px){	# this rule is used when the width is between 600px and 900px
 	img {border: 2px solid red;}     }
-
-
 
 section {
 	height: 200px;
