@@ -59,6 +59,7 @@ overflow: hidden;						# hides the overflow (can not see the text which is outsi
 overflow: auto;							# shows a scrollbar when the content is overflowing
 z-index: 2; 							# can overlap other elements - element with the highest z-index in front
 filter: brightness(40%);				# make a picture darker
+cursor: pointer;						# make cursor a pointer when going over the element
 
 
 
@@ -115,10 +116,12 @@ body {
 	width: 75%;						# space which can be taken by the body
 	margin: 0 auto;}				# rest of the space (=25%) will be splitted left and right
 
+
 # make media scalable
 img, video, canvas {
 	max-width: 100%;
 }
+
 # show different images depending on browser width
 <picture>
   <source srcset="img_smallflower.jpg" media="(max-width: 600px)">
@@ -127,7 +130,17 @@ img, video, canvas {
   <img src="img_flowers.jpg" alt="Flowers" style="width:auto;">
 </picture>
 
+# define variable
+at the very beginning:
+:root {
+  --primary-color: #047aed}
+use the variable somewhere in the css:
+background-color: var(--primary-color);
 
+# no border when entering an input field
+input:focus {
+  outline: none;
+}
 
 
 ### CSS
@@ -502,7 +515,6 @@ https://learn.shayhowe.com/advanced-html-css/performance-organization/
 - reuse styles whereever its possible
 - compress files with gzip
 - compress / convert images (program PNGGauntlet)
-
 
 
 
