@@ -41,6 +41,7 @@ Math.sqrt(9)								# Return the square-root => 3
 
 ###### STRING
 .toLowerCase()								# Lowercase the whole string
+.toUpperCase()								# Uppercase the whole string
 .charAt(1)									# Returns the second char of a string
 
 
