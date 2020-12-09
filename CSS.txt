@@ -119,8 +119,7 @@ body {
 
 # make media scalable
 img, video, canvas {
-	max-width: 100%;
-}
+	max-width: 100%;}
 
 # show different images depending on browser width
 <picture>
@@ -139,8 +138,17 @@ background-color: var(--primary-color);
 
 # no border when entering an input field
 input:focus {
-  outline: none;
-}
+  outline: none;}
+
+# button attention (makes button during hovering a little bit smaller)
+.btn:hover {
+  transform: scale(0.98);}
+
+# make a obliquely line
+.element::before					# define area before the element
+.element::after						# define area after the element
+	height: 100px;					# define heigth for the element		
+	transform (skeyY(-3deg);		# make it oblique before / after the element
 
 
 ### CSS
