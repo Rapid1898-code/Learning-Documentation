@@ -36,6 +36,7 @@ console.log(num)							# Outputs variable num in console
 alert("Text!")								# Alert information in a window
 alert("Bla ${name} bla")					# Alert some text with outputing the variable "name" between
 Math.sqrt(9)								# Return the square-root => 3
+n = n.toFixed(2)							# Round to 2 decimal digits
 
 
 
@@ -150,7 +151,7 @@ function add(x=0,y=0) {						# Defome a function	- with default value 0 if no in
 }
 
 # return-statement with "?" or "||"
-	return (age > 18) ? true : console.log('Did parents allow');		# When age > 18 returns true - otherwise output something in the console
+	return (age > 18) ? true : console.log('Did parents allow');		s# When age > 18 returns true - otherwise output something in the console
 	return (age > 18) || console.log('Did parents allow');				# Same logic with "||"
 
 document.querySelector('#check').addEventListener('click',func1)		# New Method / create an Event Listener / execute function "func1" when mouse is clicked
