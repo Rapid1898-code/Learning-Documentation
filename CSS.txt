@@ -60,7 +60,7 @@ overflow: auto;							# shows a scrollbar when the content is overflowing
 z-index: 2; 							# can overlap other elements - element with the highest z-index in front
 filter: brightness(40%);				# make a picture darker
 cursor: pointer;						# make cursor a pointer when going over the element
-
+&copy									# make copyright-sign
 
 
 ### Formating snippets
@@ -149,6 +149,14 @@ input:focus {
 .element::after						# define area after the element
 	height: 100px;					# define heigth for the element		
 	transform (skeyY(-3deg);		# make it oblique before / after the element
+
+# button / picture attention (shift button / pic up for 15px when hoovered)
+.languages .card:hover {					# shift up element for 15px when hoovered
+  transform: translateY(-15px);}
+.languages .card {							# reduces speed / make i smoover when hoovering
+  transition: transform 0.2s ease-in;}  
+
+
 
 
 ### CSS
