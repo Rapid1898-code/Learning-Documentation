@@ -110,6 +110,9 @@ https://developer.mozilla.org/de/docs/Web/HTML/HTML5/HTML5_element_list
     <input type="text" id="name"  name="" value="">
     <input type="tel" name="" value="">
     <input type="email" name="" value="">
+	<textarea id="textField" name="w3review" rows="4" cols="50">
+		Pls input your UPPERCASE text here!
+	</textarea>
 </form>
 <button id="check" type="button" name="button">check</button>
 
