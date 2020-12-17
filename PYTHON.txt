@@ -197,6 +197,7 @@ len(sys.argv)					# Len of the arguments - eg. 4 (program test.py itself and 3 a
 min(3,5,7)						# Find the minimum value => 3
 max(3,5,7)						# Find the maximum value => 7
 stat.mean([3,5,7])				# Find the mean value => 5 (with statistic-module - input must be given as list)
+exit()							# Stop program at this point (helpful in test-situations)
 ----------
 
 
@@ -363,6 +364,7 @@ list(filter(lambda x: x%2==0, [1,2,3,4,5]))		 # List is filtered with lambda for
 c=[x for x in [1,2,3,4,5] if x%2==0]			 # Also possible with list comprehension => [2,4]
 zip([1,2,3],[4,5,6])							 # Build paris as tuple => (1,4),(2,5),(3,6)
 list(set(x))									 # Remove duplicates from a list
+list(map(int,l))								 # Change elements in list to int
 
 # Iterate over 2 lists at the same time using zip
 animal = ['Cat', 'Dog', 'Fish', 'Goat']
