@@ -312,7 +312,7 @@ l1 + l2											 # Add both lists together (to a new list)
 l.append(1)                                      # Add 1 element to the list at the back
 l.extend([6,5,4])                                # Add several elements to the list at the back
 l.insert(3, "xyz")                               # Insert an element at the index-position 3
-l.index("xzy")                                   # Returns index position of element "xyz"
+l.index("xzy")                                   # Returns first index position of element "xyz"
 l.pop()                                          # Delete last element from list
 l.pop(0)                                         # Delete first element from list
 l.sort()                                         # Sort list ascending
@@ -367,13 +367,15 @@ zip([1,2,3],[4,5,6])							 # Build paris as tuple => (1,4),(2,5),(3,6)
 list(set(x))									 # Remove duplicates from a list
 list(map(int,l))								 # Change elements in list to int
 
+# rotate list for n places
+def rotate(l, n):
+    return l[-n:] + l[:-n]
+
 # Iterate over 2 lists at the same time using zip
 animal = ['Cat', 'Dog', 'Fish', 'Goat']
 age = [1, 2, 2, 6]
 z = zip(animal, age)
 for animal, age in z: ...
-
-
 ----------
 
 

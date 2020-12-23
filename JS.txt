@@ -1,74 +1,73 @@
-###########
-### TOC ###
-###########
+///////////
+/// TOC ///
+///////////
 
-# OPERATOR, INPUT, OUTPUT
-# STRING
-# CONTROL STRUCTURE AND ITERATION
-# FUNCTION
-# ARRAY
-# OBJECT
-# CONSTRUCTOR / CLASS
-# DOCUMENT, QUERYSELECTOR, EVENTLISTENER
-# API ACCESS
-# JQUERY
-# MATH
-
-
-
-###### OPERATORs, INPUT, OUTPUT
-// Comment something	 					# Comments in Javascript
-/* Text xzy */								# Multiline comments
-let intStr = "7"							# Declare and assign string (possible with "" or '') - "var" was the earlier version in the past for that
-"/n /t"										# Linebreak and Tab should not used - is morely css-stuff for formating
-let age = 25								# Declare a variable and assign int (also signed int like -36)	
-let var										# Defining without assigning (var gets value undefined)
-const age = 25								# Declare a constant and assign int (constant can not be changed like variables)
-let float = 5.14876							# Declare and assign float (also signed float like +4.5763	
-let intNum = parseInt(intStr,10);			# Change String to Int with base 10
-let floatStr = "5.14673"					# Declare and assign string
-let floatNum = parseFloat(floatStr);		# Change String to Float
-let v = user || "guest"						# Defines+Assigns a variable (if user exists/has a value use that - otherwise initialize with "guest"
-const inp = prompt("Enter:")				# Open windows for entering something and store in const inp
-num.toString()								# Convert numeric value to string
-num + ""									# 2nd method to convert numeric value to string
-String(n)									# 3rd method to convert number / int to a String
-Number(s)									# Converts String to Number / Int
-typeof x									# Shows the type of the variable (eg. number, string, boolean)
-7 % 2                  			        	# Modulo / Rest of the division (=> 1)
-x == y 										# Check 2 values / variables (result in true / false)
-x === y										# Equal value and equal type
-x != y										# Not equal
-x !== y										# Not equal value and not equal type
->,<,>=,<=									# Greater, lesser, greater + equal , lesser + equal
-isNaN1(x)									# Check if value is NaN (NotANumber) - eg. when converting with Number() and the value is no number
-Number.isInteger(n)							# Check if n is a integer
-num++;										# Makes variable +1
-console.log(num)							# Outputs variable num in console
-alert("Text!")								# Alert information in a window
-alert("Bla ${name} bla")					# Alert some text with outputing the variable "name" between
-Math.sqrt(9)								# Return the square-root => 3
-n = n.toFixed(2)							# Round to 2 decimal digits
+// OPERATOR, INPUT, OUTPUT
+// STRING
+// CONTROL STRUCTURE AND ITERATION
+// FUNCTION
+// ARRAY
+// OBJECT
+// CONSTRUCTOR / CLASS
+// DOCUMENT, QUERYSELECTOR, EVENTLISTENER
+// API ACCESS
+// JQUERY
+// MATH
 
 
 
-###### STRING
-let s = "this is a test"					# Define a string
-let s = "this \n text"						# String with linebreak \n
-s[0]										# show the whole string
-s[0,1]										# extracht only the first character
-s[-1]										# last char of a string
-s[3,5]										# slicing 2 chars from pos 3 and 4
-s[3]										# slice from pos 3 to the end
-s.length									# shows the length of the string
-s.toLowerCase()								# Lowercase the whole string
-s.toUpperCase()								# Uppercase the whole string
-s.charAt(1)									# Returns the second char of a string
-s.trim()									# Delete all whitespaces at the beginning and the end
+//////////// OPERATORs, INPUT, OUTPUT
+// Comment something	 					// Comments in Javascript
+/* Text xzy */								// Multiline comments
+let intStr = "7"							// Declare and assign string (possible with "" or '') - "var" was the earlier version in the past for that
+"/n /t"										// Linebreak and Tab should not used - is morely css-stuff for formating
+let age = 25								// Declare a variable and assign int (also signed int like -36)	
+let var										// Defining without assigning (var gets value undefined)
+const age = 25								// Declare a constant and assign int (constant can not be changed like variables)
+let float = 5.14876							// Declare and assign float (also signed float like +4.5763	
+let intNum = parseInt(intStr,10);			// Change String to Int with base 10
+let floatStr = "5.14673"					// Declare and assign string
+let floatNum = parseFloat(floatStr);		// Change String to Float
+let v = user || "guest"						// Defines+Assigns a variable (if user exists/has a value use that - otherwise initialize with "guest"
+const inp = prompt("Enter:")				// Open windows for entering something and store in const inp
+num.toString()								// Convert numeric value to string
+num + ""									// 2nd method to convert numeric value to string
+String(n)									// 3rd method to convert number / int to a String
+Number(s)									// Converts String to Number / Int
+typeof x									// Shows the type of the variable (eg. number, string, boolean)
+7 % 2                  			        	// Modulo / Rest of the division (=> 1)
+x == y 										// Check 2 values / variables (result in true / false)
+x === y										// Equal value and equal type
+x != y										// Not equal
+x !== y										// Not equal value and not equal type
+>,<,>=,<=									// Greater, lesser, greater + equal , lesser + equal
+isNaN1(x)									// Check if value is NaN (NotANumber) - eg. when converting with Number() and the value is no number
+Number.isInteger(n)							// Check if n is a integer
+num++;										// Makes variable +1
+console.log(num)							// Outputs variable num in console
+alert("Text!")								// Alert information in a window
+alert("Bla ${name} bla")					// Alert some text with outputing the variable "name" between
+n = n.toFixed(2)							// Round to 2 decimal digits
 
 
 
-###### CONTROL STRUCTURE AND ITERATION
+//////////// STRING
+let s = "this is a test"					// Define a string
+let s = "this \n text"						// String with linebreak \n
+s[0]										// show the whole string
+s[0,1]										// extracht only the first character
+s[-1]										// last char of a string
+s[3,5]										// slicing 2 chars from pos 3 and 4
+s[3]										// slice from pos 3 to the end
+s.length									// shows the length of the string
+s.toLowerCase()								// Lowercase the whole string
+s.toUpperCase()								// Uppercase the whole string
+s.charAt(1)									// Returns the second char of a string
+s.trim()									// Delete all whitespaces at the beginning and the end
+
+
+
+//////////// CONTROL STRUCTURE AND ITERATION
 if (condition is true) {
 	//Do something
 }else if (condition is true){
@@ -76,93 +75,112 @@ if (condition is true) {
 }else{
 	//Default else
 }	
+e.g.
+if (a == 9) && (b == 7) { c = "Hurra!" }		// If structure with logical and	
+if (a == 9) || (b == 7) { c = "Hurra!" }		// If structure with logical or
+if !(a > 13)									// If structure with logical not
 
-switch (expression) {							# Switch expression for multiple options
-case value1:									# Do something when expression is value1
+switch (expression) {							// Switch expression for multiple options
+case value1:									// Do something when expression is value1
 	// Do something
-	break;										# Break necessary for any case / value
-case value2:									# Do something when expression is value2
+	break;										// Break necessary for any case / value
+case value2:									// Do something when expression is value2
 	// Do something
 	break;
-default:										# When no case is mathing - then do this
+default:										// When no case is mathing - then do this
 	// Do something
 	break;
 }
 
-if (a == 9) && (b == 7) { c = "Hurra!" }		# If structure with logical and	
-if (a == 9) || (b == 7) { c = "Hurra!" }		# If structure with logical or
-if !(a > 13)									# If structure with logical not
-while (x < 4) {}                 				# While loop with break condition
-do {} while (x < 4)								# Do While loop with break condition
-while (true) {}                  				# Endless while loop - has to be exited somewhere
-for (let i=1; i<=5; i++) {}						# Iteration from 1 to 5 with for-loop
-Array.from(arr).forEach(element) => element...	# Iterate through and an array and do something with every element (eg. addEventListener)
-0,"",'',null,undefined,NaN						# Are all falsy values - can checked with if (xyz)...
-isNight ? s="Night" : s="Day"					# Ternary Operator for if - if isNight=true then s=Night - else s=Day
+for (let i=1; i<=5; i++) {}						// Iteration from 1 to 5 with for-loop
+for (let i=3; i>=0; i--) {}						// Iteration backwards from 3 to 0 with for-loop
+for (let i=0; i<arr.length; i++) {}				// Iterate through an array
+
+while (x < 4) {									// While loop with break condition
+	if xyz === "abc" {break}
+}                 				
+do {} while (x < 4)								// Do While loop with break condition
+while (true) {}                  				// Endless while loop - has to be exited somewhere
+
+Array.from(arr).forEach(element) => element...	// Iterate through and an array and do something with every element (eg. addEventListener)
+0,"",'',null,undefined,NaN						// Are all falsy values - can checked with if (xyz)...
+isNight ? s="Night" : s="Day"					// Ternary Operator for if - if isNight=true then s=Night - else s=Day
 
 
 
-###### FUNCTION
-# Normal Function Decleration
-function addFunc(x=0,y=0) {					# Define a function	- with default value 0 if no input is given
-	let erg = x+y							# Calculate erg
-	return erg}								# Return erg value
-addFunc(3,5)								# Function Call
+//////////// FUNCTION
+// Normal Function Decleration
+function addFunc(x=0,y=0) {					// Define a function	- with default value 0 if no input is given
+	let erg = x+y							// Calculate erg
+	return erg}								// Return erg value
+addFunc(3,5)								// Function Call
 
-# Functino Expression (used for anonymous functions)
-const add = function(x,y) {...}				# Define a function expression (function is assigned to an variable
-add(3,5)									# Function Call
+// Functino Expression (used for anonymous functions)
+const add = function(x,y) {...}				// Define a function expression (function is assigned to an variable
+add(3,5)									// Function Call
 
-# Anonymous Function with Fat Arrow syntax
+// Anonymous Function with Fat Arrow syntax
 const add = (x,y) => {...}
-add(3,5)									# Function Call
-let h = a => a % 3							# Even shorter without parentees
+add(3,5)									// Function Call
+let h = a => a % 3							// Even shorter without parentees
 
 
-# return-statement with "?" or "||"
-	return (age > 18) ? true : console.log('Did parents allow');		s# When age > 18 returns true - otherwise output something in the console
-	return (age > 18) || console.log('Did parents allow');				# Same logic with "||"
+// return-statement with "?" or "||"
+	return (age > 18) ? true : console.log('Did parents allow');		s// When age > 18 returns true - otherwise output something in the console
+	return (age > 18) || console.log('Did parents allow');				// Same logic with "||"
 
 
-###### ARRAY
-let arr = [];									# Define an array
-let arr = [6,7,8]; 						  		# Define an array and initialize it
-let mat= [[1,2,3],[4,5,6],[7,8,9]]				# Define multidim array
-arr[1]											# Get second element => 7
-mat[1][1]										# Get element in the matrix => 5
-arr[2] = 9										# Replace the third element
-arr.length										# Total count of the elemets in the array
-arr.pop()										# Extracts and delete element at the end (fast!)
-arr.shift()										# Extracts and delete element at the begin (slow!)
-arr.push("X","Y)								# Append new elements to the array at the end (fast!)
-arr.unshift("Y","Z")							# Add new elements to the array at the beginning (slow!)
-for (let i=0; i < arr.lenth; i++) {do smth.}	# Iterate through index of the array
-for (let elem of arr) {alert(arr)}				# Iterate through array elements
-arr.forEach((x,i) => console.log(x))			# Iterate through array by elements (x) and index (i)
-String(Arr)										# Returns list as a string => "6,7,8"
-a1 === a2										# Must allways be compared with triple = (only == would be wrong)
+//////////// ARRAY
+let arr = [];									// Define an array
+let arr = [6,7,8]; 						  		// Define an array and initialize it
+let mat= [[1,2,3],[4,5,6],[7,8,9]]				// Define multidim array
+arr[1]											// Get second element => 7
+arr[arr.length-1]								// Access last element in array
+mat[1][1]										// Get element in the matrix => 5
+arr[2] = 9										// Replace the third element
+arr.length										// Total count of the elemets in the array
+arr.pop()										// Extracts and delete element at the end (fast!)
+arr.shift()										// Extracts and delete element at the begin (slow!)
+arr.push("X","Y)								// Append new elements to the array at the end (fast!)
+arr.unshift("Y","Z")							// Add new elements to the array at the beginning (slow!)
+arr.slice(2,3)									// Elements from index position 2 to 3
+arr.indexOf("xyz")								// Returns first index position of element "xyz" (if not exists result is -1)
+for (let i=0; i < arr.lenth; i++) {do smth.}	// Iterate through index of the array
+for (let elem of arr) {alert(arr)}				// Iterate through array elements
+arr.forEach((x,i) => console.log(x))			// Iterate through array by elements (x) and index (i)
+String(Arr)										// Returns list as a string => "6,7,8"
+a1 === a2										// Must allways be compared with triple = (only == would be wrong)
 
 
 
-###### OBJECT
-# properties => attributes of the object (eg. color, shape, minutes, seconds)
-# methods => functions of the object (eg. start/stop on a stopclock)
-# everything in javascript is an object (with properties / methods)
-# eg. arr.length is a property of the object array
-# eg. arr.pop() is a method of the object array
-let o = {}										# Define an object
-let o = {name: "John", age: 30}					# Define an object and initialize it
-o.name											# Shows value of the key "name" (1st method) => John
-o["name"]										# Shows value of the key "name" (2nd method) => John
-o.age											# Shows key "age" of the object => 30
-o.newOne										# Add a new propertie to the object
-o.newMethod = function(var) {...do someth...}	# Add a new method to the object
-o.newMethod(25)									# Call the new method
-age in o 										# Check if key is in the object
-delete o.age									# Delete a property of an object
-for (let key in o) {alert(key,alert, o[key]}	# Iterate through the keys of the object and outputs key and value
+//////////// OBJECT
+// properties => attributes of the object (eg. color, shape, minutes, seconds)
+// methods => functions of the object (eg. start/stop on a stopclock)
+// everything in javascript is an object (with properties / methods)
+// eg. arr.length is a property of the object array
+// eg. arr.pop() is a method of the object array
+let o = {}										// Define an object
+var o = {}, const o = {}						// 2nd method to define objects
 
-# Other example for an object
+let o = {										// Define an object and initialize it	
+	name: "John",
+	age: 30,
+	shout() {									// Defines a method for the object
+		return "Hurra!"
+	}
+}					
+
+o.name											// Shows value of the key "name" (1st method) => John
+o["name"]										// Shows value of the key "name" (2nd method) => John
+o.age											// Shows key "age" of the object => 30
+o.newOne										// Add a new propertie to the object
+o.newMethod = function(var) {...do someth...}	// Add a new method to the object
+o.newMethod(25)									// Call the new method
+age in o 										// Check if key is in the object
+delete o.age									// Delete a property of an object
+for (let key in o) {alert(key,alert, o[key]}	// Iterate through the keys of the object and outputs key and value
+
+// Other example for an object
 var school = {
   name: 'The Starter League',
   location: 'Merchandise Mart',
@@ -173,80 +191,80 @@ var school = {
 
 
 
-###### CONSTRUCTOR / CLASS
-# make a Object with the old method
-function MakeCar (carMake,carModel,carColor){		# Define the constructor function
-	this.make = carMake								# Define properties for the constructor
-	this.carModel = carModel						# "this" is referencing to the actual object
+//////////// CONSTRUCTOR / CLASS
+// make a Object with the old method
+function MakeCar (carMake,carModel,carColor){		// Define the constructor function
+	this.make = carMake								// Define properties for the constructor
+	this.carModel = carModel						// "this" is referencing to the actual object
 	this.carColor = carColor
-	this.honk = function(){							# Define a mtehod for the constructor
-		alert("BEEP ${this.carModel} BEEP")			# Alert something when the method is called (with prop this.carModel)
+	this.honk = function(){							// Define a mtehod for the constructor
+		alert("BEEP ${this.carModel} BEEP")			// Alert something when the method is called (with prop this.carModel)
 	}
 }
-let car1 = new MakeCar("Honda","Civic","black")		# Create a new car1 (with codeword "new")
-let car2 = new MakeCar("Tesla","Roadster","red")	# Create a new car1
+let car1 = new MakeCar("Honda","Civic","black")		// Create a new car1 (with codeword "new")
+let car2 = new MakeCar("Tesla","Roadster","red")	// Create a new car1
 
-# make a Object with the new class method
-class MakeCar{ 										# Define the class
-	constructor (carMake,carModel,carColor){		# Define properties for the class
-		this.make = carMake							# Assign the properties of the class to the concrete individual object
-		this.carModel = carModel					# "this" is referencing to the actual object
+// make a Object with the new class method
+class MakeCar{ 										// Define the class
+	constructor (carMake,carModel,carColor){		// Define properties for the class
+		this.make = carMake							// Assign the properties of the class to the concrete individual object
+		this.carModel = carModel					// "this" is referencing to the actual object
 		this.carColor = carColor
 	}
-	honk(){											# Define a method for the class
-		alert("BEEP ${this.carModel} BEEP")			# Alert something when the method is called (with prop this.carModel)
+	honk(){											// Define a method for the class
+		alert("BEEP ${this.carModel} BEEP")			// Alert something when the method is called (with prop this.carModel)
 	}
 }
-let car1 = new MakeCar("Honda","Civic","black")		# Create a new car1 (with codeword "new")
-let car2 = new MakeCar("Tesla","Roadster","red")	# Create a new car1
+let car1 = new MakeCar("Honda","Civic","black")		// Create a new car1 (with codeword "new")
+let car2 = new MakeCar("Tesla","Roadster","red")	// Create a new car1
 
 
 
-###### DOCUMENT, QUERYSELECTOR, EVENTLISTENER
-document.querySelector('#check').addEventListener('click',func1)		# New Method / create an Event Listener / execute function "func1" when mouse is clicked
-document.querySelector('#check').addEventListener('onmouseenter',func2)	# New Method / create an Event Listener / exceute function "func2" when mouse-cursor is over the element
-document.querySelector('#check').addEventListener('input',func3)		# Event Listener / trigger is input in 
-document.getElementById("green").onclick = funcGreen					# Old Method / Waiting for click on this element (by ID) as a "event-listener"
+//////////// DOCUMENT, QUERYSELECTOR, EVENTLISTENER
+document.querySelector('//check').addEventListener('click',func1)		// New Method / create an Event Listener / execute function "func1" when mouse is clicked
+document.querySelector('//check').addEventListener('onmouseenter',func2)	// New Method / create an Event Listener / exceute function "func2" when mouse-cursor is over the element
+document.querySelector('//check').addEventListener('input',func3)		// Event Listener / trigger is input in 
+document.getElementById("green").onclick = funcGreen					// Old Method / Waiting for click on this element (by ID) as a "event-listener"
 
-# E.G. document.querySelector('#idBlue').addEventListener('click',changeToBlue)
-function funcGreen() {										# Define function
+// E.G. document.querySelector('//idBlue').addEventListener('click',changeToBlue)
+function funcGreen() {										// Define function
   document.querySelector("body")
-	.style.backgroundColor = "rgba(241,63,247,1)"			# Change BackGroundColor-Style to rgba-color green (as inlinecode in the rendering - not in the html-code)
-  document.querySelector("body").style.color = "white"		# Change Fontcolor to white (as inlinecode in the rendering - not in the html-code)
+	.style.backgroundColor = "rgba(241,63,247,1)"			// Change BackGroundColor-Style to rgba-color green (as inlinecode in the rendering - not in the html-code)
+  document.querySelector("body").style.color = "white"		// Change Fontcolor to white (as inlinecode in the rendering - not in the html-code)
 }
 
-# E.G. document.querySelector("body").style.backgroundColor = "blue"
-document.getElementById							# Old Method / Select an element by ID
-document.querySelector("xyz")					# New Method / Select (first) a <tag> or .class or #id
-const c = document.querySelectorAll("h2")	    # Select all elements which have h2 and store it in the constante c
-.onclick										# Element-Listener waiting for a click7
-.style.backgroundColor							# Change BackgroundColor
-.style.color									# Change Font Color	
-.style.display = "none"							# Hide element in DOM
-.innerText = "xyz"								# Change Text of the selected element
-.innerText = v1 + " " + v2 + " " + v3			# Concatenate 3 variables with space between (old method)
-.innerText = `${v1} ${v2} ${v3}`				# Concatenate 3 variables with space between (new method with the "`"-char called template string)
-.value											# Read the value/text of the field
-.classList										# Manipulate classes informations
-.classList.toggle("hidden")						# Toggle the class hidden (when triggered class is deleted OR added (when the next click occured)
-.classList.add("hidden")						# Add the classe hidden
-.classList.contains("cl")						# Check if element contains class "cl"
-.classList.remove("wiggle")						# Remove the class from the element
-setInterval(()=> {do something},10000)			# Do something any 10 seconds
-setTimeout(()=> {do something,1000}]			# Do something and wait 1 second
+// E.G. document.querySelector("body").style.backgroundColor = "blue"
+document.getElementById							// Old Method / Select an element by ID
+document.querySelector("xyz")					// New Method / Select (first) a <tag> or .class or //id
+const c = document.querySelectorAll("h2")	    // Select all elements which have h2 and store it in the constante c
+.onclick										// Element-Listener waiting for a click7
+.style.backgroundColor							// Change BackgroundColor
+.style.color									// Change Font Color	
+.style.display = "none"							// Hide element in DOM
+.innerText = "xyz"								// Change Text of the selected element
+.innerText = v1 + " " + v2 + " " + v3			// Concatenate 3 variables with space between (old method)
+.innerText = `${v1} ${v2} ${v3}`				// Concatenate 3 variables with space between (new method with the "`"-char called template string)
+.value											// Read the value/text of the field
+.classList										// Manipulate classes informations
+.classList.toggle("hidden")						// Toggle the class hidden (when triggered class is deleted OR added (when the next click occured)
+.classList.add("hidden")						// Add the classe hidden
+.classList.contains("cl")						// Check if element contains class "cl"
+.classList.remove("wiggle")						// Remove the class from the element
+setInterval(()=> {do something},10000)			// Do something any 10 seconds
+setTimeout(()=> {do something,1000}]			// Do something and wait 1 second
 
 
 
-###### API ACCESS
+////// API ACCESS
 https://learn.shayhowe.com/advanced-html-css/jquery/
-# request data from API
-# get data back in JSON format
-fetch(url)										# Reading / Fetching the informations from an API-url
-	.then(res => res.json())					# Request the API-content and output as JSON-information
-	.then(data => {								# Acees the returned data of the API
-		console.log(data)						# And do something with the data
+// request data from API
+// get data back in JSON format
+fetch(url)										// Reading / Fetching the informations from an API-url
+	.then(res => res.json())					// Request the API-content and output as JSON-information
+	.then(data => {								// Acees the returned data of the API
+		console.log(data)						// And do something with the data
 	})
-	.catch(err => {								# Standard Error Handling
+	.catch(err => {								// Standard Error Handling
 		console.log("error ${err}")
 	});
 
@@ -271,8 +289,8 @@ $('p:nth-child(2)');     						// Pseudo-class selector
 ////// MATH
 Math.floor(Math.random()*6)					// Random number between 1 and 6 like a cube
 Math.ceil(43.8)								// Nearest Upward rounding => 44
-
-
+Math.sqrt(9)								// Return the square-root => 3
+Math.PI										// Use PI
 
 
 
