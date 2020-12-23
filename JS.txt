@@ -4,33 +4,45 @@
 
 # OPERATOR, INPUT, OUTPUT
 # STRING
+# CONTROL STRUCTURE AND ITERATION
+# FUNCTION
 # ARRAY
 # OBJECT
 # CONSTRUCTOR / CLASS
-# CONTROL STRUCTURE AND ITERATION
-# FUNCTION
+# DOCUMENT, QUERYSELECTOR, EVENTLISTENER
 # API ACCESS
+# JQUERY
+# MATH
 
 
 
-###### OPERATOR, INPUT, OUTPUT
+###### OPERATORs, INPUT, OUTPUT
 // Comment something	 					# Comments in Javascript
-let intStr = "7"							# Declare and assign string (possible with "" or '')
+/* Text xzy */								# Multiline comments
+let intStr = "7"							# Declare and assign string (possible with "" or '') - "var" was the earlier version in the past for that
 "/n /t"										# Linebreak and Tab should not used - is morely css-stuff for formating
 let age = 25								# Declare a variable and assign int (also signed int like -36)	
+let var										# Defining without assigning (var gets value undefined)
 const age = 25								# Declare a constant and assign int (constant can not be changed like variables)
 let float = 5.14876							# Declare and assign float (also signed float like +4.5763	
 let intNum = parseInt(intStr,10);			# Change String to Int with base 10
 let floatStr = "5.14673"					# Declare and assign string
 let floatNum = parseFloat(floatStr);		# Change String to Float
+let v = user || "guest"						# Defines+Assigns a variable (if user exists/has a value use that - otherwise initialize with "guest"
+const inp = prompt("Enter:")				# Open windows for entering something and store in const inp
 num.toString()								# Convert numeric value to string
 num + ""									# 2nd method to convert numeric value to string
+String(n)									# 3rd method to convert number / int to a String
+Number(s)									# Converts String to Number / Int
+typeof x									# Shows the type of the variable (eg. number, string, boolean)
 7 % 2                  			        	# Modulo / Rest of the division (=> 1)
 x == y 										# Check 2 values / variables (result in true / false)
 x === y										# Equal value and equal type
 x != y										# Not equal
 x !== y										# Not equal value and not equal type
 >,<,>=,<=									# Greater, lesser, greater + equal , lesser + equal
+isNaN1(x)									# Check if value is NaN (NotANumber) - eg. when converting with Number() and the value is no number
+Number.isInteger(n)							# Check if n is a integer
 num++;										# Makes variable +1
 console.log(num)							# Outputs variable num in console
 alert("Text!")								# Alert information in a window
@@ -39,11 +51,77 @@ Math.sqrt(9)								# Return the square-root => 3
 n = n.toFixed(2)							# Round to 2 decimal digits
 
 
+
 ###### STRING
-.toLowerCase()								# Lowercase the whole string
-.toUpperCase()								# Uppercase the whole string
-.charAt(1)									# Returns the second char of a string
-Number(s)									# Converts String to Number / Int
+let s = "this is a test"					# Define a string
+let s = "this \n text"						# String with linebreak \n
+s[0]										# show the whole string
+s[0,1]										# extracht only the first character
+s[-1]										# last char of a string
+s[3,5]										# slicing 2 chars from pos 3 and 4
+s[3]										# slice from pos 3 to the end
+s.length									# shows the length of the string
+s.toLowerCase()								# Lowercase the whole string
+s.toUpperCase()								# Uppercase the whole string
+s.charAt(1)									# Returns the second char of a string
+s.trim()									# Delete all whitespaces at the beginning and the end
+
+
+
+###### CONTROL STRUCTURE AND ITERATION
+if (condition is true) {
+	//Do something
+}else if (condition is true){
+	//Do something else
+}else{
+	//Default else
+}	
+
+switch (expression) {							# Switch expression for multiple options
+case value1:									# Do something when expression is value1
+	// Do something
+	break;										# Break necessary for any case / value
+case value2:									# Do something when expression is value2
+	// Do something
+	break;
+default:										# When no case is mathing - then do this
+	// Do something
+	break;
+}
+
+if (a == 9) && (b == 7) { c = "Hurra!" }		# If structure with logical and	
+if (a == 9) || (b == 7) { c = "Hurra!" }		# If structure with logical or
+if !(a > 13)									# If structure with logical not
+while (x < 4) {}                 				# While loop with break condition
+do {} while (x < 4)								# Do While loop with break condition
+while (true) {}                  				# Endless while loop - has to be exited somewhere
+for (let i=1; i<=5; i++) {}						# Iteration from 1 to 5 with for-loop
+Array.from(arr).forEach(element) => element...	# Iterate through and an array and do something with every element (eg. addEventListener)
+0,"",'',null,undefined,NaN						# Are all falsy values - can checked with if (xyz)...
+isNight ? s="Night" : s="Day"					# Ternary Operator for if - if isNight=true then s=Night - else s=Day
+
+
+
+###### FUNCTION
+# Normal Function Decleration
+function addFunc(x=0,y=0) {					# Define a function	- with default value 0 if no input is given
+	let erg = x+y							# Calculate erg
+	return erg}								# Return erg value
+addFunc(3,5)								# Function Call
+
+# Functino Expression (used for anonymous functions)
+const add = function(x,y) {...}				# Define a function expression (function is assigned to an variable
+add(3,5)									# Function Call
+
+# Anonymous Function with Fat Arrow syntax
+const add = (x,y) => {...}
+add(3,5)									# Function Call
+let h = a => a % 3							# Even shorter without parentees
+
+
+# return-statement with "?" or "||"
+	return (age > 18) ? true : console.log('Did parents allow');		s# When age > 18 returns true - otherwise output something in the console
+	return (age > 18) || console.log('Did parents allow');				# Same logic with "||"
 
 
 ###### ARRAY
@@ -124,42 +202,13 @@ let car2 = new MakeCar("Tesla","Roadster","red")	# Create a new car1
 
 
 
-###### CONTROL STRUCTURE AND ITERATION
-if (condition is true) {
-	//Do something
-}else if (condition is true){
-	//Do something else
-}else{
-	//Default else
-}	
-
-if (a == 9) && (b == 7) { c = "Hurra!" }		# If structure with logical and	
-if (a == 9) || (b == 7) { c = "Hurra!" }		# If structure with logical or
-while (x < 4) {}                 				# While loop with break condition
-do {} while (x < 4)								# Do While loop with break condition
-while (true) {}                  				# Endless while loop - has to be exited somewhere
-for (let i=1; i<=5; i++) {}						# Iteration from 1 to 5 with for-loop
-Array.from(arr).forEach(element) => element...	# Iterate through and an array and do something with every element (eg. addEventListener)
-
-
-
-###### FUNCTION
-function add(x=0,y=0) {						# Defome a function	- with default value 0 if no input is given
-	let erg = x+y;							# Calculate erg
-	return erg;								# Return erg value
-}
-
-# return-statement with "?" or "||"
-	return (age > 18) ? true : console.log('Did parents allow');		s# When age > 18 returns true - otherwise output something in the console
-	return (age > 18) || console.log('Did parents allow');				# Same logic with "||"
-
+###### DOCUMENT, QUERYSELECTOR, EVENTLISTENER
 document.querySelector('#check').addEventListener('click',func1)		# New Method / create an Event Listener / execute function "func1" when mouse is clicked
 document.querySelector('#check').addEventListener('onmouseenter',func2)	# New Method / create an Event Listener / exceute function "func2" when mouse-cursor is over the element
 document.querySelector('#check').addEventListener('input',func3)		# Event Listener / trigger is input in 
 document.getElementById("green").onclick = funcGreen					# Old Method / Waiting for click on this element (by ID) as a "event-listener"
 
 # E.G. document.querySelector('#idBlue').addEventListener('click',changeToBlue)
-
 function funcGreen() {										# Define function
   document.querySelector("body")
 	.style.backgroundColor = "rgba(241,63,247,1)"			# Change BackGroundColor-Style to rgba-color green (as inlinecode in the rendering - not in the html-code)
@@ -167,7 +216,6 @@ function funcGreen() {										# Define function
 }
 
 # E.G. document.querySelector("body").style.backgroundColor = "blue"
-
 document.getElementById							# Old Method / Select an element by ID
 document.querySelector("xyz")					# New Method / Select (first) a <tag> or .class or #id
 const c = document.querySelectorAll("h2")	    # Select all elements which have h2 and store it in the constante c
@@ -204,14 +252,14 @@ fetch(url)										# Reading / Fetching the informations from an API-url
 
 
 
-###### JQUERY
+////// JQUERY
 library for javascript
 - Traversing
 - Manipulating
 - Events
 - Effects
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>		=> include before </body> tag
-$(document).ready(function(event){...});		# put all jQuery code in this function (waiting until the the page has loaded an the DOM is ready)
+$(document).ready(function(event){...});		// put all jQuery code in this function (waiting until the the page has loaded an the DOM is ready)
 $('.feature');           						// Class selector
 $('li strong');          						// Descendant selector
 $('em, i');              						// Multiple selector
@@ -220,6 +268,9 @@ $('p:nth-child(2)');     						// Pseudo-class selector
 
 
 
+////// MATH
+Math.floor(Math.random()*6)					// Random number between 1 and 6 like a cube
+Math.ceil(43.8)								// Nearest Upward rounding => 44
 
 
 
