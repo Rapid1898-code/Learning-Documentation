@@ -4,9 +4,9 @@
 
 // OPERATOR, INPUT, OUTPUT
 // STRING
+// ARRAY
 // CONTROL STRUCTURE AND ITERATION
 // FUNCTION
-// ARRAY
 // OBJECT
 // CONSTRUCTOR / CLASS
 // DOCUMENT, QUERYSELECTOR, EVENTLISTENER
@@ -64,6 +64,41 @@ s.toLowerCase()								// Lowercase the whole string
 s.toUpperCase()								// Uppercase the whole string
 s.charAt(1)									// Returns the second char of a string
 s.trim()									// Delete all whitespaces at the beginning and the end
+s.repeat(3)									// Repeat string 3 times
+s.split(" ")								// Split the words in a array
+s.trim()                                    // Delete all whitespaces at the beginning and the end
+s.padstart(3,"0")							// Fills leading zero in a string with allways 3 chars - eg. 006
+s.indexOf("ee")								// Find Index of first occurence of this string
+
+
+
+//////////// ARRAY
+let arr = [];									// Define an array
+let arr = [6,7,8]; 						  		// Define an array and initialize it
+let mat= [[1,2,3],[4,5,6],[7,8,9]]				// Define multidim array
+arr[1]											// Get second element => 7
+arr[arr.length-1]								// Access last element in array
+mat[1][1]										// Get element in the matrix => 5
+arr[2] = 9										// Replace the third element
+String(Arr)										// Returns list as a string => "6,7,8"
+a1 === a2										// Must allways be compared with triple = (only == would be wrong)
+arr.length										// Total count of the elemets in the array
+arr.pop()										// Extracts and delete element at the end (fast!)
+arr.shift()										// Extracts and delete element at the begin (slow!)
+arr.push("X","Y)								// Append new elements to the array at the end (fast!)
+arr.unshift("Y","Z")							// Add new elements to the array at the beginning (slow!)
+arr.slice(2,3)									// Elements from index position 2 to 3
+arr.indexOf("xyz")								// Returns first index position of element "xyz" (if not exists result is -1)
+arr.lastIndexOf("xyz")							// Return the last index position of the element "xyz"
+for (let i=0; i < arr.lenth; i++) {do smth.}	// Iterate through index of the array
+for (let elem of arr) {alert(arr)}				// Iterate through array elements
+arr.forEach((x) => {							// Iterate through array by elements (x)
+	console.log(x)
+})			
+arr.filter(x => x.length > 6);					// Filters all values which are > 6 eg. in a new array
+arr.map(x => x * 2);							// Maps a functionality to all elements of the array - every element multiplicated by 2
+arr1.concat(arr2)								// Concatenate 2 arrays to one
+arr.join(" ")									// Concatenate the array to a string seperated by " "
 
 
 
@@ -102,7 +137,12 @@ while (x < 4) {									// While loop with break condition
 do {} while (x < 4)								// Do While loop with break condition
 while (true) {}                  				// Endless while loop - has to be exited somewhere
 
-Array.from(arr).forEach(element) => element...	// Iterate through and an array and do something with every element (eg. addEventListener)
+arr.forEach((x) => {							// Iterate through array by elements (x)
+	console.log(x)
+})
+	
+
+
 0,"",'',null,undefined,NaN						// Are all falsy values - can checked with if (xyz)...
 isNight ? s="Night" : s="Day"					// Ternary Operator for if - if isNight=true then s=Night - else s=Day
 
@@ -115,7 +155,7 @@ function addFunc(x=0,y=0) {					// Define a function	- with default value 0 if n
 	return erg}								// Return erg value
 addFunc(3,5)								// Function Call
 
-// Functino Expression (used for anonymous functions)
+// Function Expression (used for anonymous functions)
 const add = function(x,y) {...}				// Define a function expression (function is assigned to an variable
 add(3,5)									// Function Call
 
@@ -124,32 +164,14 @@ const add = (x,y) => {...}
 add(3,5)									// Function Call
 let h = a => a % 3							// Even shorter without parentees
 
-
 // return-statement with "?" or "||"
-	return (age > 18) ? true : console.log('Did parents allow');		s// When age > 18 returns true - otherwise output something in the console
-	return (age > 18) || console.log('Did parents allow');				// Same logic with "||"
+	return (age > 18) ? true : console.log('Did parents allow');	// When age > 18 returns true - otherwise output something in the console
+	return (age > 18) || console.log('Did parents allow');			// Same logic with "||"
 
-
-//////////// ARRAY
-let arr = [];									// Define an array
-let arr = [6,7,8]; 						  		// Define an array and initialize it
-let mat= [[1,2,3],[4,5,6],[7,8,9]]				// Define multidim array
-arr[1]											// Get second element => 7
-arr[arr.length-1]								// Access last element in array
-mat[1][1]										// Get element in the matrix => 5
-arr[2] = 9										// Replace the third element
-arr.length										// Total count of the elemets in the array
-arr.pop()										// Extracts and delete element at the end (fast!)
-arr.shift()										// Extracts and delete element at the begin (slow!)
-arr.push("X","Y)								// Append new elements to the array at the end (fast!)
-arr.unshift("Y","Z")							// Add new elements to the array at the beginning (slow!)
-arr.slice(2,3)									// Elements from index position 2 to 3
-arr.indexOf("xyz")								// Returns first index position of element "xyz" (if not exists result is -1)
-for (let i=0; i < arr.lenth; i++) {do smth.}	// Iterate through index of the array
-for (let elem of arr) {alert(arr)}				// Iterate through array elements
-arr.forEach((x,i) => console.log(x))			// Iterate through array by elements (x) and index (i)
-String(Arr)										// Returns list as a string => "6,7,8"
-a1 === a2										// Must allways be compared with triple = (only == would be wrong)
+// Use Rest Parameters to accept any number of arguments			
+function max(...numbers) {											// Any numbers of arguments
+	// do something with a loop
+}
 
 
 
@@ -247,7 +269,7 @@ const c = document.querySelectorAll("h2")	    // Select all elements which have 
 .value											// Read the value/text of the field
 .classList										// Manipulate classes informations
 .classList.toggle("hidden")						// Toggle the class hidden (when triggered class is deleted OR added (when the next click occured)
-.classList.add("hidden")						// Add the classe hidden
+.classList.add("hidden")						// Add the class hidden
 .classList.contains("cl")						// Check if element contains class "cl"
 .classList.remove("wiggle")						// Remove the class from the element
 setInterval(()=> {do something},10000)			// Do something any 10 seconds

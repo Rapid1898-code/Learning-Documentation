@@ -505,11 +505,12 @@ d.rotateleft(-1)			# Shift all elements 1 place to the left
 
 ----------
 ###### CONTROL STRUCTURES and ITERATIONS
-if x>10: pass                	# If / elif / else
+if x > 10: pass                	# If / elif / else
 elif x > 10: pass
 else: pass
 
-if (10 < a < 20)...				# use 2 conditions in one line (instead of (a>10 and a<20)
+if (10 < a < 20)...				# Use 2 conditions in one line (instead of (a>10 and a<20)
+if a<10 & b>10 & c==4...		# Connecting different control structures with logical and &
 
 for i in range(5):           	# 5 iterations from 0 to 4
 for i in range(0, 5, 1)      	# 5 iterations from 0 to 4 (start, end, step)
