@@ -12,11 +12,12 @@
 // DOCUMENT, QUERYSELECTOR, EVENTLISTENER
 // API ACCESS
 // JQUERY
+// DATE
 // MATH
 
 
 
-//////////// OPERATORs, INPUT, OUTPUT
+////// OPERATORs, INPUT, OUTPUT
 // Comment something	 					// Comments in Javascript
 /* Text xzy */								// Multiline comments
 let intStr = "7"							// Declare and assign string (possible with "" or '') - "var" was the earlier version in the past for that
@@ -173,6 +174,13 @@ function max(...numbers) {											// Any numbers of arguments
 	// do something with a loop
 }
 
+// AddEventListener with parameters in the function
+document.querySelector("#dayToday").addEventListener("click",function() {	// define addEventListener as normal but use "function ()"
+    toggleBackground("today", 6)											// call the function with parameters inside
+}, false);
+
+
+
 
 
 //////////// OBJECT
@@ -272,6 +280,7 @@ const c = document.querySelectorAll("h2")	    // Select all elements which have 
 .classList.add("hidden")						// Add the class hidden
 .classList.contains("cl")						// Check if element contains class "cl"
 .classList.remove("wiggle")						// Remove the class from the element
+setInterval(func1, 1000)						// Call function "func1" every second (1000ms)
 setInterval(()=> {do something},10000)			// Do something any 10 seconds
 setTimeout(()=> {do something,1000}]			// Do something and wait 1 second
 
@@ -305,6 +314,14 @@ $('li strong');          						// Descendant selector
 $('em, i');              						// Multiple selector
 $('a[target="_blank"]'); 						// Attribute selector
 $('p:nth-child(2)');     						// Pseudo-class selector
+
+
+
+////// DATE
+let now = new Date()							// Assign variable to actual date
+let secondes = now.get.Seconds()				// Assign actual seconds from actual date variable "now"
+
+
 
 
 
