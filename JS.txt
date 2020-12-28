@@ -251,7 +251,7 @@ let car2 = new MakeCar("Tesla","Roadster","red")	// Create a new car1
 
 
 //////////// DOCUMENT, QUERYSELECTOR, EVENTLISTENER
-document.querySelector('//check').addEventListener('click',func1)		// New Method / create an Event Listener / execute function "func1" when mouse is clicked
+document.('//check').addEventListener('click',func1)		// New Method / create an Event Listener / execute function "func1" when mouse is clicked
 document.querySelector('//check').addEventListener('onmouseenter',func2)	// New Method / create an Event Listener / exceute function "func2" when mouse-cursor is over the element
 document.querySelector('//check').addEventListener('input',func3)		// Event Listener / trigger is input in 
 document.getElementById("green").onclick = funcGreen					// Old Method / Waiting for click on this element (by ID) as a "event-listener"
@@ -299,6 +299,12 @@ fetch(url)										// Reading / Fetching the informations from an API-url
 		console.log("error ${err}")
 	});
 
+//eg. use horoscope api
+https://aztro.readthedocs.io/en/latest/
+need to us browserify
+http://browserify.org/#install
+so the require can also run with html (otherwise it only works in the IDE)
+
 
 
 ////// JQUERY
@@ -320,8 +326,6 @@ $('p:nth-child(2)');     						// Pseudo-class selector
 ////// DATE
 let now = new Date()							// Assign variable to actual date
 let secondes = now.get.Seconds()				// Assign actual seconds from actual date variable "now"
-
-
 
 
 

@@ -106,6 +106,10 @@ div {
     height: 100px;
     margin: 1em;}
 
+# size div automatically according to the content
+	height: fit-content;
+
+
 # styling link based on state
 a:link {...}		=> format link when not allready clicked
 a:visited {...}		=> format link when allready clicked
@@ -193,6 +197,7 @@ taken from google fonts for example (take fonts and then create link in upper ri
 <head>                                          # define in html in the header
     <link href="https://fonts.googleapis.com/css2?familiy=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylessheet">
 </head>
+p {
 p {
     font-family: "Source Sans Pro", "Helvetica", sans-serif;			# Helvetica and sans-serif are the fallback fonts when Source Sans Pro is not loading
 	font-weight: 700;													# how thick / bold the font is
