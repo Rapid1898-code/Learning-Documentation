@@ -43,6 +43,7 @@ x != y										// Not equal
 x !== y										// Not equal value and not equal type
 >,<,>=,<=									// Greater, lesser, greater + equal , lesser + equal
 isNaN1(x)									// Check if value is NaN (NotANumber) - eg. when converting with Number() and the value is no number
+isNaN1(x)									// Check if value is NaN (NotANumber) - eg. when converting with Number() and the value is no number
 Number.isInteger(n)							// Check if n is a integer
 num++;										// Makes variable +1
 console.log(num)							// Outputs variable num in console
@@ -70,7 +71,7 @@ s.split(" ")								// Split the words in a array
 s.trim()                                    // Delete all whitespaces at the beginning and the end
 s.padstart(3,"0")							// Fills leading zero in a string with allways 3 chars - eg. 006
 s.indexOf("ee")								// Find Index of first occurence of this string
-
+s.includes("ee")							// Check if string/chars are ion 
 
 
 //////////// ARRAY
@@ -91,6 +92,7 @@ arr.unshift("Y","Z")							// Add new elements to the array at the beginning (sl
 arr.slice(2,3)									// Elements from index position 2 to 3
 arr.indexOf("xyz")								// Returns first index position of element "xyz" (if not exists result is -1)
 arr.lastIndexOf("xyz")							// Return the last index position of the element "xyz"
+arr.includes("xyz")								// Check if string exists in the array	
 for (let i=0; i < arr.lenth; i++) {do smth.}	// Iterate through index of the array
 for (let elem of arr) {alert(arr)}				// Iterate through array elements
 arr.forEach((x) => {							// Iterate through array by elements (x)
@@ -275,6 +277,7 @@ const c = document.querySelectorAll("h2")	    // Select all elements which have 
 .innerText = v1 + " " + v2 + " " + v3			// Concatenate 3 variables with space between (old method)
 .innerText = `${v1} ${v2} ${v3}`				// Concatenate 3 variables with space between (new method with the "`"-char called template string)
 .value											// Read the value/text of the field
+.id												// Show the ID of the selected element	
 .classList										// Manipulate classes informations
 .classList.toggle("hidden")						// Toggle the class hidden (when triggered class is deleted OR added (when the next click occured)
 .classList.add("hidden")						// Add the class hidden
@@ -304,6 +307,7 @@ https://aztro.readthedocs.io/en/latest/
 need to us browserify
 http://browserify.org/#install
 so the require can also run with html (otherwise it only works in the IDE)
+parse the JSON-content to an object => let obj = JSON.parse(body)
 
 
 

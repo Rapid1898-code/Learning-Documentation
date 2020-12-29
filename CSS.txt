@@ -52,15 +52,16 @@ float: left;							# Define floating for an image (text will float her on the ri
 clear: both;							# Clear floating (for left and right)
 transistion: background 5s;				# Change the background fading in for 5 seconds	(eg. going from white to dark blue)
 position: static;						# Static element - is not positioned in any way (position tags top-bottom-left-rigth will have no effect)
-position: relative;						# with the position tags (top, botom, left, right) the element is shifted away from its normal position
-position: fixed;						# element stays according the position tags - but will not change the place even if the windows is scrolled
-overflow: visible; 						# default-value - we can see the content when it overflows
-overflow: hidden;						# hides the overflow (can not see the text which is outside the box)
-overflow: auto;							# shows a scrollbar when the content is overflowing
-z-index: 2; 							# can overlap other elements - element with the highest z-index in front
-filter: brightness(40%);				# make a picture darker
-cursor: pointer;						# make cursor a pointer when going over the element
-&copy									# make copyright-sign
+position: relative;						# With the position tags (top, botom, left, right) the element is shifted away from its normal position
+position: fixed;						# Element stays according the position tags - but will not change the place even if the windows is scrolled
+overflow: visible; 						# Default-value - we can see the content when it overflows
+overflow: hidden;						# Hides the overflow (can not see the text which is outside the box)
+overflow: auto;							# Shows a scrollbar when the content is overflowing
+z-index: 2; 							# Can overlap other elements - element with the highest z-index in front
+filter: brightness(40%);				# Make a picture darker
+cursor: pointer;						# Make cursor a pointer when going over the element
+user-select: none;						# Disable highlighting of text selection
+&copy									# Make copyright-sign
 
 
 ### Formating snippets
@@ -419,18 +420,40 @@ button:last-child { order: -1; }				# change the order of the last item (everyth
 
 
 ### Layout - Grid
-display: grid;									# Define grid for the layouting
+display: grid;									# Define grid for the layouting as block)
+display: inline-grid;							# Define grid as inline-block
 grid-template-columns: 200px 200px 200px;		# Define 3 fixed columns with 200px each
 grid-template-columns: 1fr 1fr 1fr;				# Define 3 flexible columns with fr-units (define 3 columns with max possible place)
 grid-template-columns: repeat(3, 1fr);			# 2nd way: Define 3 flexible columns with fr-units (define 3 columns with max possible place)
+grid-template-columns: auto auto auto;			# 3rd way: Define 3 flexible columns with auto
 grid-template-columns: 2fr 1fr 1fr;				# Define 3 flexible columns with fr-units (4 spaces - 1st column takes 2; 2nd+3rd colujmn take 1)
 grid-template-columns:							# Create as many columns as will fit into the container
 	repeat(auto-fill, minmax(200px, 1fr));			
-grid-gap: 20px;									# Define gap between the elements
+grid-gap: 20px;									# Define gap between the elements (20 px for rows and columns)
+grid-gap: 10px 50px;							# Define gap between the elements (10px for the row-gap and 50px for the column-gap)
+grid-row-gap: 30px;								# Define the gap only for the rows
+grid-column-gap: 20px;							# Define the gap only for the columns
 grid-auto-rows: 100px;							# Define heigth of the row
 grid-auto-rows: minmax(100px, auto);			# Define heigth of the row (100px is minimum, auto expand to fit the content)
 grid-column 1 / 3;								# Use for element grid-columns 1 - 3
 grid-row: 1;									# Use for element grid-row 1
+justify-content: space-evenly;					# Arrange grid elements (horizontally) with equal space around every element
+justify-content: space-around;					# Same space around every grid
+justify-content: space-between;					# Same space between the elements
+justify-content: center;						# Center the elements
+justify-content: start;							# Arrange the elements on the starting left side
+justify-content: end;							# Arrange the elements on the ending right side
+align-content: center;							# Arrange grid elements (vertically) - center the elements
+align-content: start, space-around,...			# Same options as horizontaly with justify-content
+
+# Element spans from 1st column to thue 3rd column
+grid-column-start: 1							
+grid-column-end: 4
+
+# Element spans from the 1st row to the 2nd row in the 3rd column
+grid-column: 3;
+grid-row-start: 1;
+grid-row-end: 3;
 
 
 
