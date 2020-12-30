@@ -10,6 +10,7 @@
 // OBJECT
 // CONSTRUCTOR / CLASS
 // DOCUMENT, QUERYSELECTOR, EVENTLISTENER
+// CSS VARIABLE HANDLING
 // API ACCESS
 // JQUERY
 // DATE
@@ -253,9 +254,11 @@ let car2 = new MakeCar("Tesla","Roadster","red")	// Create a new car1
 
 
 //////////// DOCUMENT, QUERYSELECTOR, EVENTLISTENER
-document.('//check').addEventListener('click',func1)		// New Method / create an Event Listener / execute function "func1" when mouse is clicked
-document.querySelector('//check').addEventListener('onmouseenter',func2)	// New Method / create an Event Listener / exceute function "func2" when mouse-cursor is over the element
-document.querySelector('//check').addEventListener('input',func3)		// Event Listener / trigger is input in 
+document.querySelector('#check').addEventListener('click',func1)		// New Method / create an Event Listener / execute function "func1" when mouse is clicked
+.addEventListener('onmouseenter',func2)									// New Method / create an Event Listener / exceute function "func2" when mouse-cursor is over the element
+.addEventListener('input',func3)										// Event Listener with trigger input
+.addEventListener('change',func3)										// Event Listener with trigger every change in the element
+.addEventListener('mousemove',func3)									// Event Listener with trigger when mouse is moved over the element
 document.getElementById("green").onclick = funcGreen					// Old Method / Waiting for click on this element (by ID) as a "event-listener"
 
 // E.G. document.querySelector('//idBlue').addEventListener('click',changeToBlue)
@@ -286,6 +289,24 @@ const c = document.querySelectorAll("h2")	    // Select all elements which have 
 setInterval(func1, 1000)						// Call function "func1" every second (1000ms)
 setInterval(()=> {do something},10000)			// Do something any 10 seconds
 setTimeout(()=> {do something,1000}]			// Do something and wait 1 second
+
+
+
+////// CSS VARIABLE HANDLING
+let inputs = document.querySelectorAll(".controls input");
+	//=> Read all control- and input-elements
+inputs.forEach(input => input.addEventListener("change", handleUpdate));
+	//=> Wait for change in any element and call the function "handleUpdate"
+function handleUpdate() {
+    const suffix = this.dataset.sizing || "";
+		//=> read the sizing-parameter for the triggered element (used data-sizing in html)
+    document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+		//=> set the variable in css (name according to --name in css)
+		//=> use the value from the read element from the adventlistener
+		//=> and use the suffix which is read above
+		//=> full property looks eg. like "--spacing: 10px"	
+}	
+(For definition and using the variables in CSS have a look at CSS.txt)
 
 
 

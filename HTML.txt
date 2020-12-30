@@ -104,16 +104,23 @@ https://developer.mozilla.org/de/docs/Web/HTML/HTML5/HTML5_element_list
 </table>
 
 
+
 ### Forms, Buttons
-<form>
-    <label for="name">First Name:</label>
-    <input type="text" id="name"  name="" value="">
-    <input type="tel" name="" value="">
-    <input type="email" name="" value="">
-	<textarea id="textField" name="w3review" rows="4" cols="50">
-		Pls input your UPPERCASE text here!
-	</textarea>
-</form>
+<form> ... </form>									# Different input fields can be arranged in a form tag
+<label for="name">First Name:</label>				# Label is shown before the element(for-name should be ident with the id-name or name-tag of the object)
+<input type="text" id="name"  name="" value="">		# Text-Inputfield - with id, name and value (default)
+<input type="tel" name="" value="">					# Telephon-Inputfield - with id, name and value (default)
+<input type="email" name="" value="">				# EMail-Inputfield - with id, name and value (default)
+
+# Range/Slider-Inputfield with id, name, min/max-value for the slider, value (default) and data-sizing-definition (px)
+<input type="range" id="xyz" name="xyz" min="0" max="25" value="10" data-sizing="px"
+
+# Definition of a TextField for input with id, name, number of rows and columns
+<textarea id="textField" name="w3review" rows="4" cols="50">
+	Pls input your UPPERCASE text here!
+</textarea>
+
+# Define Button with id, name and text on the button
 <button id="check" type="button" name="button">check</button>
 
 	

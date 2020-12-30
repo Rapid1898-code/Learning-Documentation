@@ -543,6 +543,22 @@ animation-direction:							# Control of the progression - forward, backward, alt
 animation-fill-mode
 
 
+###Variables
+# Define variables in css
+:root {											# Highest possible level of setting a variable
+	--var1: 10px;								# Define variable and initialize with 10px
+	--var2: #ffd166;							# Define variable and initialize with color hex code						
+	--var3: 20%;								# Define variable and initialize with percentage value
+}
+# Use variables in in css
+img {											# Eg. using for image-rule
+	padding: var(--var1)						# Using Variable
+	background: var(--var2)
+	max-width: var(--var3)	
+}
+(Changing variable in JS have a look at JS.txt)
+
+
 
 ### CSS Template - style.css
 see Learning-Documentation - folder "Template HTML_CSS_JS"
