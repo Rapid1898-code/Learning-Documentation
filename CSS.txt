@@ -327,6 +327,7 @@ li:first-child							# Selects an element that is the first within a parent
 li:last-child							# Selects an element that is the last within a parent
 p:first-of-type							# Selects an element that is the first of its type within a parent
 p:last-of-type							# Selects an element that is the last of its type within a parent
+div p:nth-child(2)						# Select the second p-child in the div-element
 
 
 
@@ -394,28 +395,29 @@ footer {
 
 ### Layout - Flexbox
 # css-tricks.com: Complete Guide To Flexbox
-section { display: flex; }						# initialize flexcontainer (parent element of the flex items)
-section { justify-content: flex-start; }		# put elements to the max left - horizontally
-section { justify-ccontent: flex-end; }			# put elements to the max right - horizontally
-section { justify-content: center; }			# center the elements horizontally
-section { justify-content: space-around; }		# place elements with space around horizontally
-section { justify-content: space-between; }		# place elements with space between the elements horizontally
-section { align-items: flex-start; }			# align elements at the top vertically
-section { align-items: flex-end; }				# align elements at the bottom vertically
-section { align-items: center; }				# center the elements vertically
-section { align-self: flex-end; }				# align individual element at the bottom
-section { flex-direction: row; }				# items are placed to the text direction
-section { flex-direction: row-reverse; }		# items are placed opposite to the text direction
-section { flex-direction: column; }				# items are placed top to bottom
-section { flex-direction: column-reverse; }		# items are placed top to bottom  oppostie to the text direction
-section { flex-wrap: nowrap; }					# show every item in a single line in the flexcontainer section
-section { flex-wrap: wrap; } 					# wrap elements to next line in the flexcontainer section
-section { flex-flow: row wrap; }				# combination from direction + row (same as flex-direction:	row and flex-wrap: wrap)
-article { flex: 1 200px; }						# gives the flex-item 1 proportion value (when there are 3 items - every item gets the same space)
-article:nth-of-type(3) { flex: 2 200px; }		# gives the 3rd item 2 proportion (item 1+2 get 1/4 of the space - item 3 gets 1/2 of the space)
-button:first-child { align-self: flex-end; }	# overwrites the vertical position of the item in the flexcontainer
-button:first-child { order: 1; }				# change the order of the first item (everything has order 0 - with 1 it goes to the very right position)
-button:last-child { order: -1; }				# change the order of the last item (everything has order 0 - with -1 it goes to the very first position)
+display: flex;									# Initialize flexcontainer (parent element of the flex items)
+justify-content: flex-start;					# Put elements to the max left - horizontally
+justify-ccontent: flex-end;						# Put elements to the max right - horizontally
+justify-content: center;						# Center the elements horizontally
+justify-content: space-around;					# Place elements with space around horizontally
+justify-content: space-between;					# Place elements with space between the elements horizontally
+align-items: flex-start;						# Align elements at the top vertically
+align-items: flex-end;							# Align elements at the bottom vertically
+align-items: center;							# Center the elements vertically
+align-self: flex-end;							# Align individual element at the bottom
+flex-direction: row;							# Items are placed to the text direction
+flex-direction: row-reverse;					# Items are placed opposite to the text direction
+flex-direction: column;							# Items are placed top to bottom
+flex-direction: column-reverse;					# Items are placed top to bottom  oppostie to the text direction
+flex-wrap: nowrap;								# Show every item in a single line in the flexcontainer section
+flex-wrap: wrap; 								# Wrap elements to next line in the flexcontainer section
+flex-flow: row wrap;							# Combination from direction + row (same as flex-direction:	row and flex-wrap: wrap)
+flex: 1 200px;									# Gives the flex-item 1 proportion value (when there are 3 items - every item gets the same space)
+flex: 5;										# Give the element 5times the overall room - eg. 3 items get 1 spaces and 1 item get 5 spaces (8 spaces overall)	
+article:nth-of-type(3) { flex: 2 200px; }		# Gives the 3rd item 2 proportion (item 1+2 get 1/4 of the space - item 3 gets 1/2 of the space)
+button:first-child { align-self: flex-end; }	# Overwrites the vertical position of the item in the flexcontainer
+button:first-child { order: 1; }				# Change the order of the first item (everything has order 0 - with 1 it goes to the very right position)
+button:last-child { order: -1; }				# Change the order of the last item (everything has order 0 - with -1 it goes to the very first position)
 
 
 
@@ -436,7 +438,9 @@ grid-column-gap: 20px;							# Define the gap only for the columns
 grid-auto-rows: 100px;							# Define heigth of the row
 grid-auto-rows: minmax(100px, auto);			# Define heigth of the row (100px is minimum, auto expand to fit the content)
 grid-column 1 / 3;								# Use for element grid-columns 1 - 3
+grid-column 1 / span 2;							# Use for element gird columns 1 and 2
 grid-row: 1;									# Use for element grid-row 1
+grid-area: 1 / 2 / 5 / 6;						# Use for element area => grid-row-start / grid-column-start / grid-row-end / grid-column-end
 justify-content: space-evenly;					# Arrange grid elements (horizontally) with equal space around every element
 justify-content: space-around;					# Same space around every grid
 justify-content: space-between;					# Same space between the elements
@@ -455,6 +459,19 @@ grid-column: 3;
 grid-row-start: 1;
 grid-row-end: 3;
 
+# Name all items
+.item1 { grid-area: header; }					# Name the different areas
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+.gid-container {								
+  grid-template-areas:
+    'header header header header header header' # Define where the areas should be displayed in the grid
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+}
+ 
 
 
 ### Responsive Design

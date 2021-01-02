@@ -48,6 +48,7 @@ isNaN1(x)									// Check if value is NaN (NotANumber) - eg. when converting wi
 Number.isInteger(n)							// Check if n is a integer
 num++;										// Makes variable +1
 console.log(num)							// Outputs variable num in console
+console.table(object)						// Outputs element as table (eg. for objects, arrays)
 alert("Text!")								// Alert information in a window
 alert("Bla ${name} bla")					// Alert some text with outputing the variable "name" between
 n = n.toFixed(2)							// Round to 2 decimal digits
@@ -96,13 +97,34 @@ arr.lastIndexOf("xyz")							// Return the last index position of the element "x
 arr.includes("xyz")								// Check if string exists in the array	
 for (let i=0; i < arr.lenth; i++) {do smth.}	// Iterate through index of the array
 for (let elem of arr) {alert(arr)}				// Iterate through array elements
+arr=Array.from(document.querySelectorAll("a"))	// Convert a node-list to an array
+arr=[...document.querySelectorAll("a")]			// 2nd method for converting node-list to an array
+
+// Iterate trough array
 arr.forEach((x) => {							// Iterate through array by elements (x)
-	console.log(x)
-})			
-arr.filter(x => x.length > 6);					// Filters all values which are > 6 eg. in a new array
+	console.log(x))			
+
 arr.map(x => x * 2);							// Maps a functionality to all elements of the array - every element multiplicated by 2
 arr1.concat(arr2)								// Concatenate 2 arrays to one
 arr.join(" ")									// Concatenate the array to a string seperated by " "
+
+// Sort Method
+arr.sort((a,b) => a > b ? 1 : -1)				// Order array ascending
+arr.sort((a,b) => a > b ? -1 : 1)				// Order array descending
+arr.sort(function(a,b) {						// Ordering long method with function
+	return a > b ? 1 : -1}
+
+// Filter Method
+arr.filter (function(x){						// Filters all values which are > 6 eg. in a new array
+	if x.length > 6 {							// Long Method
+		return true}}
+arr.filter(x => x.length > 6);					// Short Method in one line
+
+// Reduce Method								// Method for doing something with the array and output / calculate something
+arr.reduce (total, element) => {				// "total" is the new calculation element - result of this is the sum of all elements of the array
+	return total + element						// every element is added to total
+},0)											// 0 is the default value of "total"
+
 
 
 
@@ -255,10 +277,11 @@ let car2 = new MakeCar("Tesla","Roadster","red")	// Create a new car1
 
 //////////// DOCUMENT, QUERYSELECTOR, EVENTLISTENER
 document.querySelector('#check').addEventListener('click',func1)		// New Method / create an Event Listener / execute function "func1" when mouse is clicked
-.addEventListener('onmouseenter',func2)									// New Method / create an Event Listener / exceute function "func2" when mouse-cursor is over the element
-.addEventListener('input',func3)										// Event Listener with trigger input
-.addEventListener('change',func3)										// Event Listener with trigger every change in the element
-.addEventListener('mousemove',func3)									// Event Listener with trigger when mouse is moved over the element
+...'onmouseenter'...													// New Method / create an Event Listener / exceute function "func2" when mouse-cursor is over the element
+...'input'...															// Event Listener with trigger input
+...'change'...															// Event Listener with trigger every change in the element
+...'mousemove'...														// Event Listener with trigger when mouse is moved over the element
+...'transitionend'...													// Event Listener with trigger when the transistion ends
 document.getElementById("green").onclick = funcGreen					// Old Method / Waiting for click on this element (by ID) as a "event-listener"
 
 // E.G. document.querySelector('//idBlue').addEventListener('click',changeToBlue)
@@ -269,6 +292,16 @@ function funcGreen() {										// Define function
 }
 
 // E.G. document.querySelector("body").style.backgroundColor = "blue"
+
+// Use EventListner for alle elements with a specific class
+let elements = document.querySelectorAll(".panel");			
+	// => Select all elements with class "panel"
+elements.forEach(elem => elem.addEventListener("click",func1))
+	// => Iterate trough every element and create EventListener - when clicked start func1 for the element
+function func1() {
+	this.classlist.toggle("newClass")}
+	// => Function is run with the activated Element for the EventListener
+
 document.getElementById							// Old Method / Select an element by ID
 document.querySelector("xyz")					// New Method / Select (first) a <tag> or .class or //id
 const c = document.querySelectorAll("h2")	    // Select all elements which have h2 and store it in the constante c
@@ -295,6 +328,8 @@ setTimeout(()=> {do something,1000}]			// Do something and wait 1 second
 ////// CSS VARIABLE HANDLING
 let inputs = document.querySelectorAll(".controls input");
 	//=> Read all control- and input-elements
+	//=> Output is not an array - its a node-list (does not have all methods like an array)
+	
 inputs.forEach(input => input.addEventListener("change", handleUpdate));
 	//=> Wait for change in any element and call the function "handleUpdate"
 function handleUpdate() {
