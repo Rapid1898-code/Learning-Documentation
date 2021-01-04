@@ -1,0 +1,36 @@
+Contract WebDesign / Homepage
+
+Delivering beautiful experience
+
+Project proposal: {proposal_name}
+Client: {client_name}
+Delivered on: {date_submitted}
+Submitted by: {user_assigned}
+
+
+
+
+
+
+Offer Description:
+xyz Description xyz
+- number of pages
+- design customization
+- responsive design
+- inlude source code
+- pages mined / scraped
+- sources minded / scraped
+- working on Windows / MacOs
+
+Delivery:
+- one-delivery - deliver a finished product
+- milestontes - deliver gradually in steps
+
+Total Offer Amount:
+xyz $ Dollaer / € Euro
+
+Delivery Time:
+x days
+
+Number of Revisions:
+x
