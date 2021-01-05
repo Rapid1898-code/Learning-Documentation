@@ -1,6 +1,6 @@
 Contract WebDesign / Homepage
 
-Delivering beautiful experience
+Slogan "Delivering beautiful experience"
 
 Project proposal: {proposal_name}
 Client: {client_name}
@@ -8,8 +8,17 @@ Delivered on: {date_submitted}
 Submitted by: {user_assigned}
 
 
+Proposal Name:
+xyz
 
+Client Name:
+xyz
 
+Contractor Name:
+xyz
+
+Date of Creation:
+yyyy-mm-dd
 
 
 Offer Description:

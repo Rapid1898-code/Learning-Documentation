@@ -38,6 +38,7 @@ padding: 0 10px;						# Padding on the left and right - no padding at top and bo
 padding-left: 6px						# Setting the padding to 6 pixel - "longhand"-method
 width: 50%;								# Define width in percent (relative to the width of the parent element)
 width: 5em;								# Define width (calculated on elements font size - when font-size=14px - the width would be 70px (5*14)
+width: calc(33.3% - 20px)				# Define width (and reserve additional 10px for eg. the margin of each element)
 height: 200px;							# Define height of element	
 max-width:20%;							# Resize something eg. img
 max-width:100%;							# Prevents the eg. image from getting bigger than its original size	
@@ -395,29 +396,51 @@ footer {
 
 ### Layout - Flexbox
 # css-tricks.com: Complete Guide To Flexbox
-display: flex;									# Initialize flexcontainer (parent element of the flex items)
-justify-content: flex-start;					# Put elements to the max left - horizontally
-justify-ccontent: flex-end;						# Put elements to the max right - horizontally
-justify-content: center;						# Center the elements horizontally
-justify-content: space-around;					# Place elements with space around horizontally
-justify-content: space-between;					# Place elements with space between the elements horizontally
-align-items: flex-start;						# Align elements at the top vertically
-align-items: flex-end;							# Align elements at the bottom vertically
-align-items: center;							# Center the elements vertically
-align-self: flex-end;							# Align individual element at the bottom
-flex-direction: row;							# Items are placed to the text direction
-flex-direction: row-reverse;					# Items are placed opposite to the text direction
-flex-direction: column;							# Items are placed top to bottom
-flex-direction: column-reverse;					# Items are placed top to bottom  oppostie to the text direction
+display: flex;									# Initialize flexcontainer (parent element as a block)
+display: inline-flex;							# Initialize flexcontainer (as inline-element - not as block)
+flex-direction: row;							# Items are placed horizontal from left to right (DEFAULT)
+flex-direction: row-reverse;					# Items are placed horizontal from rigth to left
+	# => main axis is horizontal and cross axis is vertical	
+flex-direction: column;							# Items are placed vertical top to bottom
+flex-direction: column-reverse;					# Items are placed vertical top to bottom
+	# => main axis is vertical and cross axis is horizontal
+flex-wrap: nowrap;								# No wrapping - shows all items in one line (overwrites element width) (DEFAULT)
+flex-wrap: wrap; 								# Wrap elements to next line in the flexcontainer section (according to the width)
+flex-wrap: wrap-reverse;						# Wrap elements but start at the bottom left corner(and going from left to right)
+flex-flow: row wrap;							# Combination from direction + row (same as flex-direction:	row and flex-wrap: wrap)
+flex: 1;										# Give every element equal space / proportion
+flex: 2;										# One element or all elements should have 2 proportions - eg. more space for a specific item
+order: 1;										# Defines the order of the specific element (if > 0 then put it at the end - when < 0 put it at the very beginning)
 flex-wrap: nowrap;								# Show every item in a single line in the flexcontainer section
 flex-wrap: wrap; 								# Wrap elements to next line in the flexcontainer section
 flex-flow: row wrap;							# Combination from direction + row (same as flex-direction:	row and flex-wrap: wrap)
+justify-content: flex-start;					# Put elements to the max left/top (for the main axis) (DEFAULT)
+justify-ccontent: flex-end;						# Put elements to the max right/bottom (for the main axis=
+justify-content: center;						# Center the elements (for the main axis)
+justify-content: space-around;					# Place elements with equal space around the elements (for the main axis)
+justify-content: space-between;					# Place elements with equal space between the elements (for the main axis)
+align-items: stretch;							# Stretches the elements on the cross axis (DEFAULT)
+align-items: flex-start;						# Align elements from the top or left (for the cross axis)
+align-items: flex-end;							# Align elements from the bottom or right (for the cross axis)
+align-items: center;							# Center the elements (for the cross axis)
+align-items: baseline;							# Align elements on the baseline of the elements (for the cross axis) - eg. when there are different font-sizes in the flex-items
+align-self: flex-end;							# Align individual element at the bottom or right (for the cross axis) - overwrittes the align-items-setting for the single item
 flex: 1 200px;									# Gives the flex-item 1 proportion value (when there are 3 items - every item gets the same space)
 flex: 5;										# Give the element 5times the overall room - eg. 3 items get 1 spaces and 1 item get 5 spaces (8 spaces overall)	
 article:nth-of-type(3) { flex: 2 200px; }		# Gives the 3rd item 2 proportion (item 1+2 get 1/4 of the space - item 3 gets 1/2 of the space)
 button:first-child { align-self: flex-end; }	# Overwrites the vertical position of the item in the flexcontainer
 button:first-child { order: 1; }				# Change the order of the first item (everything has order 0 - with 1 it goes to the very right position)
 button:last-child { order: -1; }				# Change the order of the last item (everything has order 0 - with -1 it goes to the very first position)
+
+# flex-basis, flex-grow, flex-shrink
+# longhanded values for flex
+flex: 10 5 400px								# means 10 for flex-grow, 5 for flex-shrink, 400px for flex-basis
+	=> flex-basis: set the basis width of the flex-element
+	=> flex-grow: how to deal with the extra-space (in the main axis)
+	=> flex-grow: when there is extra space would should be done with them - DEFAULT is 0 => do nothing
+	=> flex-grow: when set to 1 for one element the whole extra-space will be taken for this element
+	=> flex-shrink: what to do when there is not enough space when the window gets shrinked
+	=> flex-shrink: DEFAULT is 0 - when there is not enough space the elments get shrinked equally
 
 
 
