@@ -50,6 +50,7 @@
 # MODULE - PYQT (making GUIs)
 # MODULE - TKinter (making GUIs)
 # MODULE - PYGAME (making games)
+# MODULE - PYTHONCOM (make new formula in excel with python-function)
 # PYINSTALLER (generate python programs to executables)
 
 
@@ -2211,6 +2212,43 @@ msg_img = f.render(msg,True,msg_col,bg_col)              # Create an image of th
 msg_img_rect = msg_image.get_rect()                      # Read rect from message-image
 msg_img_rect.center = screen_rect.center                 # Pos the message-image in the middle of the window
 screen.blit(msg_img, msg_img_rect)                       # Display the positioned message-image
+----------
+
+
+
+###### MODULE - PYTHONCOM
+# https://www.youtube.com/watch?v=cYwn8Pu5eRg&feature=emb_logo
+import pythoncom								# Import necessary modules
+import win32com.client
+import win32com.server.register
+class PythonObjectLibrary:						# Put everything in a class
+_reg_clsid_ = pythoncom.CreateGuid()            # UniqueID for our object to register it with Windows
+_reg_clsctx = pythoncom.CLSCTX_LOCAL_SERVER     # Register the object as an EXE
+_reg_clsctx = pythoncom.IMPROC_SERVER         	# Register the object as a DLL
+_reg_progid_ = "Python.ObjectLibrary"           # Name of the project library
+_reg_desc_ = "This is our Python Obj Library"   # Optional / Description of the library
+_public_methods_ = ["f1","f2,"f3"]				# Name the functions - this sees the user in excel
+def f1(self, x, y):								# Define the function in the class
+	return x + y								# Return the result of the function (to excel later)
+def f2(self, myRange):							# Another function - this time wie a range (more cells in excel)	
+	rng1 = win32com.client.Dispatch(myRange)	# Create an instance of the range object passed trough
+	rng1val = np.array(list(rng1.Value))		# Change the object to an numpy-array (or an list)
+	return rng1val.sum()						# Return the sum of the range (to excel later)
+if __name__ == "__main__":						# Part of the code in the main-section
+win32com.server.register.UseCommandLine(PythonObjectLibrary)
+	# Register the library
+When the program is started => the Library is registered in Windows
+
+# Part in Excel
+(in the Visual Basic Editor under Development Tools)
+# Definition of the f1-function - now the user can use the function "f1" in excel
+Function f1(x As Long, y As Long)
+    f1 = VBA.CreateObject("Python.ObjectLibrary").f1(x, y)
+End Function
+# Definition of the f2-function - now the user can use the function "f2" in excel
+Function f2(x As Range)
+    f2 = VBA.CreateObject("Python.ObjectLibrary").f2(x)
+End Function
 ----------
 
 
