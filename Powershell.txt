@@ -1,1 +1,2 @@
 Set-PSReadLineOption -colors @{ Command = "White"}		=> change font color to white
+Start-Process xzy.exe									=> to start a program
