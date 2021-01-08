@@ -161,6 +161,7 @@ input:focus {
   transform: translateY(-15px);}
 .languages .card {							# reduces speed / make i smoover when hoovering
   transition: transform 0.2s ease-in;}  
+  transition: all 1s;
 
 
 

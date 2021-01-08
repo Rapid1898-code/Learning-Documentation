@@ -99,6 +99,7 @@ Ctrl /						# Comment / Uncomment line ("/" on numblock)
 Ctrl Alt F7					# Find usages
 Ctrl F 		   				# Find in File
 Ctrl R  	   				# Replace in File
+Ctrl Shift RANDOM			# Replace in Path (in all Files)
 F3							# Find next
 Ctrl G						# Goto line
 Ctrl D						# Copy / Duplicate lines	
