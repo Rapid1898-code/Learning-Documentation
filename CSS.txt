@@ -147,22 +147,17 @@ input:focus {
   outline: none;}
 
 # button attention (makes button during hovering a little bit smaller)
-.btn:hover {
-  transform: scale(0.98);}
+transform: scale(0.98);
+
+# button / picture attention (shift button / pic up for 15px when hoovered)
+transform: translateY(-15px);}				# shift up element for 15px when hoovered
+transition: 1.5s ease;						# make smooth transisition (with ease => slow - than fast - than slow again)
 
 # make a obliquely line
 .element::before					# define area before the element
 .element::after						# define area after the element
 	height: 100px;					# define heigth for the element		
 	transform (skeyY(-3deg);		# make it oblique before / after the element
-
-# button / picture attention (shift button / pic up for 15px when hoovered)
-.languages .card:hover {					# shift up element for 15px when hoovered
-  transform: translateY(-15px);}
-.languages .card {							# reduces speed / make i smoover when hoovering
-  transition: transform 0.2s ease-in;}  
-  transition: all 1s;
-
 
 
 

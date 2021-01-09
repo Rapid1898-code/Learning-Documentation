@@ -51,6 +51,7 @@
 # MODULE - TKinter (making GUIs)
 # MODULE - PYGAME (making games)
 # MODULE - PYTHONCOM (make new formula in excel with python-function)
+# MODULE - FLASK (making an API)
 # PYINSTALLER (generate python programs to executables)
 
 
@@ -2251,6 +2252,35 @@ Function f2(x As Range)
     f2 = VBA.CreateObject("Python.ObjectLibrary").f2(x)
 End Function
 ----------
+
+
+
+###### MODULE - FLASK
+# https://nordicapis.com/how-to-create-an-api-from-a-dataset-using-python-and-flask/
+import flask												# Import the module
+app = flask.Flask(__name__)									# Creates a Flask application
+app.config["DEBUG"] = True									# Runs the program in debug mode (no reset necessary when changing a line of code)
+@app.route('/', methods=['GET'])							# "/" indicates where the result in the url will output - GET will read data (POST for writing data)
+app.run()													# Runs the application
+
+# Outputs a List with a dict to the server / url
+@app.route('/api/v1/resources/books/all', methods=['GET'])	# Data will available at: http://127.0.0.1:5000/api/v1/resources/books/all
+def api_all():
+    return jsonify(books)									# Converts and returns the list in JSON-Flask-format
+app.run()
+=> results are available under http://127.0.0.1:5000/api/v1/resources/books/all 
+
+# Filtering data
+@app.route('/api/v1/resources/books', methods=['GET'])
+def api_id():            
+    if 'id' in request.args:								# Check if an ID was provided as part of the URL
+        id = int(request.args['id'])						# If ID is provided, assign it to a variable
+    else: return "Error: No id field provided"				# If no ID is provided, display an error in the browser.        
+    for book in books:										# Loop through the data and match results that fit the requested ID
+        if book['id'] == id: results.append(book)
+    return jsonify(results)									# Use the jsonify function from Flask to convert our list of - Python dictionaries to the JSON format
+app.run()
+=> results are available under http://127.0.0.1:5000/api/v1/resources/books?id=1
 
 
 
