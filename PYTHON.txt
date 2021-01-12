@@ -51,7 +51,7 @@
 # MODULE - TKinter (making GUIs)
 # MODULE - PYGAME (making games)
 # MODULE - PYTHONCOM (make new formula in excel with python-function)
-# MODULE - FLASK (making an API)
+# MODULE - FLASK, ZAPPA, AWS (making an API)
 # PYINSTALLER (generate python programs to executables)
 
 
@@ -87,7 +87,7 @@ deactivate                                                 # Go back to the glob
 virtualenv -p C:\..path to..\Python37\python.exe py37_env  # Create new virtual env with specific python-version
 py37_env\Scripts\activate                                  # Activate new virtual env named py37_env
 python --version                                           # Shows the used python version in the virtual env
-pip install -r requirements.txt                            # Install all the packages from requirment.txt
+pip install -r requirements.txt                            # Install all the packages from requirements.txt
 ----------
 
 
@@ -2255,8 +2255,14 @@ End Function
 
 
 
-###### MODULE - FLASK
+###### MODULE - FLASK, ZAPPA, AWS
 # https://nordicapis.com/how-to-create-an-api-from-a-dataset-using-python-and-flask/
+	=> create basic api in flask
+# https://pythonforundergradengineers.com/deploy-serverless-web-app-aws-lambda-zappa.html#what-is-zappa
+	=> create basic api in flask, deploy to AWS with zappa and setup on Rapidapi
+# https://towardsdatascience.com/develop-and-sell-a-python-api-from-start-to-end-tutorial-9a038e433966
+	=> create basic api in flask, deploy to AWS with zappa and 
+
 import flask												# Import the module
 app = flask.Flask(__name__)									# Creates a Flask application
 app.config["DEBUG"] = True									# Runs the program in debug mode (no reset necessary when changing a line of code)
@@ -2281,6 +2287,37 @@ def api_id():
     return jsonify(results)									# Use the jsonify function from Flask to convert our list of - Python dictionaries to the JSON format
 app.run()
 => results are available under http://127.0.0.1:5000/api/v1/resources/books?id=1
+
+# Using zappa and deploying to AWS
+# zappa is only working in a virtual environment	
+pip install zappa											# Install module
+create file credentials in "%UserProfile%\.aws				# Create file and insert the credentials from AWS (creation see second link above)
+	[default]
+	aws_access_key_id = XXXXXXXXXXXXXXXXXXXXXXXXXX
+	aws_secret_access_key = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+virtualenv xyz												# Create an virtual environment
+xyz\Scripts\activate										# Activate virtual environment
+go back to folder xyz and install all necessary modules with pip install
+pip list													# Check if everything is installed in the folder
+zappa init (when virutal environement is activated!)		# Create zappa_settings.json File (press return at any prompt)
+    "dev": {
+		"app_function": "app.app",							# Name of the py-file
+		"aws_region": "eu-central-1",						# Nearest aws-region
+        "profile_name": "default",							# Same as in aws-credentials at "%UserProfile%/.aws/credentials
+        "project_name": "apicheck",
+        "runtime": "python3.7",								# Automatic generated
+        "s3_bucket": "zappa-gsoln7zyl"						# Automatic generated
+    }
+pip freeze > requirements.txt								# Create requirements.txt for all installed modules in the virtual environment
+zappa deploy dev (when virutal environement is activated!)	# Deploy everything to AWS (when ended with link everything worked fine) (otherwise 502 error - often a module is missing)
+	eg. https://xnujiyxsb1.execute-api.eu-central-1.amazonaws.com/dev/api/v1/incstat?ticker=FB
+		https://xnujiyxsb1.execute-api.eu-central-1.amazonaws.com/dev/api/v1/summary?ticker=CAT
+		https://xnujiyxsb1.execute-api.eu-central-1.amazonaws.com/dev/api/v1/profile?ticker=FB
+zappa update dev (when virutal environement is activated!)	# Update deployment on AWS (when something changed in the pyhton-program)
+zappa undeploy dev											# Undeploy everything on AWS
+zappa status												# Show actual status
+zappa tail													# Show actual loggin (in error cases)
+
 
 
 
