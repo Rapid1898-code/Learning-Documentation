@@ -21,8 +21,8 @@
 # TXT (handling txt files)
 # JSON (handling JSON)
 # XML (handling XML)
-# URLLIB (handling URLs,links)
-# MODULE - CSV (handling CSV)
+# URLLIB (handling URLs,links)beautiful soap
+# MODULE - CSV (handling CSV)soap
 # MOUDLE - ZIPFILE (handling ZIP files)
 # MODULE - GSPREAD (API for Google Sheets)
 # MODULE - OPENPYXL (working with excel worksheets)
@@ -2317,6 +2317,7 @@ zappa update dev (when virutal environement is activated!)	# Update deployment o
 zappa undeploy dev											# Undeploy everything on AWS
 zappa status												# Show actual status
 zappa tail													# Show actual loggin (in error cases)
+see the APIs under AWS Api Geteway => region on the upper right site has to be the same as in the zappa_settings.json file
 
 
 
