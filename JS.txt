@@ -395,7 +395,7 @@ Math.ceil(43.8)								// Nearest Upward rounding => 44
 Math.sqrt(9)								// Return the square-root => 3
 Math.PI										// Use PI
 Math.floor(5.95)							// Round down the float => 5
-
+Math.pow(2,3)								// First number to the power of the second => 8
 
 
 
