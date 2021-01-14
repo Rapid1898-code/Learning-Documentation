@@ -2317,9 +2317,17 @@ zappa update dev (when virutal environement is activated!)	# Update deployment o
 zappa undeploy dev											# Undeploy everything on AWS
 zappa status												# Show actual status
 zappa tail													# Show actual loggin (in error cases)
-see the APIs under AWS Api Geteway => region on the upper right site has to be the same as in the zappa_settings.json file
 
-
+# AWS part
+see the APIs under AWS Api Geteway => region on the upper right site has to be the same as in the zappa_settings.json file#
+check API-access
+	select API (under API Gateway and APIs)
+	click on second ANY link
+	click Test (on the left side)
+	select Method Get
+	input path example under {proxy} eg. api/v1/incstat?ticker=FB
+	click Test Button (at the bottom)
+	
 
 
 ----------

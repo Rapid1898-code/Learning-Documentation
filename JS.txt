@@ -50,7 +50,7 @@ num++;										// Makes variable +1
 console.log(num)							// Outputs variable num in console
 console.table(object)						// Outputs element as table (eg. for objects, arrays)
 alert("Text!")								// Alert information in a window
-alert("Bla ${name} bla")					// Alert some text with outputing the variable "name" between
+alert(`Bla ${name} bla`)					// Alert some text with outputing the variable "name" between (using backticks "`"
 n = n.toFixed(2)							// Round to 2 decimal digits
 
 
@@ -101,10 +101,14 @@ arr=Array.from(document.querySelectorAll("a"))	// Convert a node-list to an arra
 arr=[...document.querySelectorAll("a")]			// 2nd method for converting node-list to an array
 
 // Iterate trough array by index and element
-arr.forEach((elem,idx) =>						// Iterate through array by elements and index
+arr.forEach((elem,idx) =>						// Iterate through array by elements and index (with shortform)
 	console.log(idx)							// Outputs index
 	console.log(elem)							// Outputs element of array
 )
+arr.forEach(function(entry) {					// Iterate through array by elements and index (with longform)
+	console.log(idx)							// Outputs index
+	console.log(elem)							// Outputs element of array
+});
 
 arr.map(x => x * 2);							// Maps a functionality to all elements of the array - every element multiplicated by 2
 arr1.concat(arr2)								// Concatenate 2 arrays to one
