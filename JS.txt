@@ -74,6 +74,7 @@ s.trim()                                    // Delete all whitespaces at the beg
 s.padstart(3,"0")							// Fills leading zero in a string with allways 3 chars - eg. 006
 s.indexOf("ee")								// Find Index of first occurence of this string
 s.includes("ee")							// Check if string/chars are ion 
+s.charAt(1)									// Outputs the x character in the string => second char of the string (same as s[1])	
 
 
 //////////// ARRAY
@@ -121,10 +122,11 @@ arr.sort(function(a,b) {						// Ordering long method with function
 	return a > b ? 1 : -1}
 
 // Filter Method
-arr.filter (function(x){						// Filters all values which are > 6 eg. in a new array
-	if x.length > 6 {							// Long Method
-		return true}}
-arr.filter(x => x.length > 6);					// Short Method in one line
+newarr = arr.filter (function(x){				// Filters all values which are > 6 eg. in a new array
+	if x > 6 {									// Long Method
+	return true}}
+newarr = arr.filter(x => x > 6);				// Short Method in one line
+
 
 // Reduce Method								// Method for doing something with the array and output / calculate something
 arr.reduce (total, element) => {				// "total" is the new calculation element - result of this is the sum of all elements of the array
