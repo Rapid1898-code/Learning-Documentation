@@ -404,6 +404,7 @@ Math.sqrt(9)								// Return the square-root => 3
 Math.PI										// Use PI
 Math.floor(5.95)							// Round down the float => 5
 Math.pow(2,3)								// First number to the power of the second => 8
+Math.cbrt(8)								// Creates the cube root => 3
 
 
 
