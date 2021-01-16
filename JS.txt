@@ -90,29 +90,38 @@ a1 === a2										// Must allways be compared with triple = (only == would be w
 arr.length										// Total count of the elemets in the array
 arr.pop()										// Extracts and delete element at the end (fast!)
 arr.shift()										// Extracts and delete element at the begin (slow!)
-arr.push("X","Y)								// Append new elements to the array at the end (fast!)
+arr.push("X","Y")								// Append new elements to the array at the end (fast!)
 arr.unshift("Y","Z")							// Add new elements to the array at the beginning (slow!)
-arr.slice(2,3)									// Elements from index position 2 to 3
+ergArr = arr.slice(2,3)							// Copy elements from index 2 to index 3 => result is one char at index 2
+ergArr = arr.slice(-2)							// Copy the last 2 elements of the array
+arr.splice(2,1)									// Delete 1 element beginning from index 2
+arr.splice(0,2,10,11)							// Delete 2 elements beginning from the index 0 - and insert the elements 10 and 11
+arr.splice(-1,0,3,4)							// From index -1 delete 0 elements and add 3 and 4
+ergArr = arr.splice(0,2)						// Delete 2 elements beginning from the index 0 - and assign them to ergArr
+ergArr = arr1.concat(arr2)						// Concatenate 2 arrays to one
 arr.indexOf("xyz")								// Returns first index position of element "xyz" (if not exists result is -1)
 arr.lastIndexOf("xyz")							// Return the last index position of the element "xyz"
 arr.includes("xyz")								// Check if string exists in the array	
+arr.reverse()									// Reverse the entire array
+arr = varStr.split(" ")							// Split the words in a array
+varStr = arr.join(", ")							// Join the elements from the array in a string with ", " as seperator
+Array.isArray(arr)								// Check if object is an array (if array = true)
 for (let i=0; i < arr.lenth; i++) {do smth.}	// Iterate through index of the array
 for (let elem of arr) {alert(arr)}				// Iterate through array elements
 arr=Array.from(document.querySelectorAll("a"))	// Convert a node-list to an array
 arr=[...document.querySelectorAll("a")]			// 2nd method for converting node-list to an array
 
 // Iterate trough array by index and element
-arr.forEach((elem,idx) =>						// Iterate through array by elements and index (with shortform)
+arr.forEach((elem,idx) => {						// Iterate through array by elements and index (with shortform)
 	console.log(idx)							// Outputs index
 	console.log(elem)							// Outputs element of array
-)
-arr.forEach(function(entry) {					// Iterate through array by elements and index (with longform)
+})
+arr.forEach(function(elem,idx) {				// Iterate through array by elements and index (with longform)
 	console.log(idx)							// Outputs index
 	console.log(elem)							// Outputs element of array
 });
 
-arr.map(x => x * 2);							// Maps a functionality to all elements of the array - every element multiplicated by 2
-arr1.concat(arr2)								// Concatenate 2 arrays to one
+newarr = arr.map(x => x * 2);					// Maps a functionality to all elements of the array - every element multiplicated by 2
 arr.join(" ")									// Concatenate the array to a string seperated by " "
 
 // Sort Method
@@ -129,7 +138,7 @@ newarr = arr.filter(x => x > 6);				// Short Method in one line
 
 
 // Reduce Method								// Method for doing something with the array and output / calculate something
-arr.reduce (total, element) => {				// "total" is the new calculation element - result of this is the sum of all elements of the array
+newarr = arr.reduce ((total, element) => {		// "total" is the new calculation element - result of this is the sum of all elements of the array
 	return total + element						// every element is added to total
 },0)											// 0 is the default value of "total"
 
@@ -222,26 +231,25 @@ document.querySelector("#dayToday").addEventListener("click",function() {	// def
 // everything in javascript is an object (with properties / methods)
 // eg. arr.length is a property of the object array
 // eg. arr.pop() is a method of the object array
-let o = {}										// Define an object
-var o = {}, const o = {}						// 2nd method to define objects
+let obj = {}										// Define an object
 
-let o = {										// Define an object and initialize it	
+let obj = {											// Define an object and initialize it	
 	name: "John",
 	age: 30,
-	shout() {									// Defines a method for the object
+	shout() {										// Defines a method for the object
 		return "Hurra!"
 	}
 }					
 
-o.name											// Shows value of the key "name" (1st method) => John
-o["name"]										// Shows value of the key "name" (2nd method) => John
-o.age											// Shows key "age" of the object => 30
-o.newOne										// Add a new propertie to the object
-o.newMethod = function(var) {...do someth...}	// Add a new method to the object
-o.newMethod(25)									// Call the new method
-age in o 										// Check if key is in the object
-delete o.age									// Delete a property of an object
-for (let key in o) {alert(key,alert, o[key]}	// Iterate through the keys of the object and outputs key and value
+obj.name											// Shows value of the key "name" (1st method) => John
+obj["name"]											// Shows value of the key "name" (2nd method) => John
+obj.age												// Shows key "age" of the object => 30
+obj.newOne											// Add a new propertie to the object
+obj.newMethod = function(var) {...do someth...}		// Add a new method to the object
+obj.newMethod(25)									// Call the new method
+age in obj 											// Check if key is in the object
+delete obj.age										// Delete a property of an object
+for (let key in obj) {alert(key,alert, obj[key]}	// Iterate through the keys of the object and outputs key and value
 
 // Other example for an object
 var school = {
