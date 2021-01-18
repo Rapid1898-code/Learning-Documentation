@@ -21,7 +21,7 @@
 # TXT (handling txt files)
 # JSON (handling JSON)
 # XML (handling XML)
-# URLLIB (handling URLs,links)beautiful soap
+# URLLIB (handling URLs,links)
 # MODULE - CSV (handling CSV)soap
 # MOUDLE - ZIPFILE (handling ZIP files)
 # MODULE - GSPREAD (API for Google Sheets)
@@ -52,6 +52,7 @@
 # MODULE - PYGAME (making games)
 # MODULE - PYTHONCOM (make new formula in excel with python-function)
 # MODULE - FLASK, ZAPPA, AWS (making an API)
+# MODULE - ICECREAM (print for debugging)
 # PYINSTALLER (generate python programs to executables)
 
 
@@ -2327,7 +2328,18 @@ check API-access
 	select Method Get
 	input path example under {proxy} eg. api/v1/incstat?ticker=FB
 	click Test Button (at the bottom)
-	
+----------	
+
+
+
+----------
+###### MODULE - ICECRAM
+from icecream import ic										# Imort icecream
+ic(var1)													# Show value of the variable in the form: ic| var1: 20
+ic()														# Show when command is reached: ic| icecream_example.py:5 in func() at 01:44:20.394 (line / file / time)
+ic.configureOutput(includeContext=True)						# Set Context Output => also shows line / file / time
+----------
+
 
 
 ----------

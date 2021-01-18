@@ -1,3 +1,64 @@
+###########
+### TOC ###
+###########
+
+### CSS General
+### CSS Attributes
+### Formating snippets
+### Font Definition
+### Icon Use
+### Parent > Child Relationsships
+### Selectors and Combinations
+### Classes
+### IDs
+### Inline Style / !important
+### Pseudo Classes
+### Box Model / Boxing
+### Layouts - Floating
+### Layout - Flexbox
+### Layout - Grid
+### Responsive Design
+### Media Queries
+### Animating, Transform
+### Variables
+### CSS Template - style.css
+### Performance and Organization
+### Google Chrome Hacks
+### Preprocessors
+
+
+
+----------
+### CSS General
+should go in seperate file (better than inline or in the head)
+css statements are called "rules"
+resetting all browser-styles: http://meyerweb.com/eric/tools/css/reset/
+normalize the alle browser-styles: github.com/necolas/normalize.css
+<link rel="stylesheet" href="css/style.css">    # link the html-file to the css-file
+/* comment */
+
+p {                                             # syntax of the css statement / rule
+    color: red;                                 => (p => selector, color:red; => declaration)
+}                                               => color => property, red => value)
+
+p {                                             # set rule with 2 declerations for p => red and bold
+    color: red;
+    font_weight: bold;
+}
+
+# Cascade Rules (but Specificity overrules - see below)
+p {                                             # cascading rules (from top to bottom, step by step)
+    color: red;                                 =>output is blue+bold
+    font_weight: bold;
+}
+p {
+    color: blue;
+}
+----------
+
+
+
+----------
 ### CSS Attributes
 https://www.w3schools.com/cssref/
 color: red; 							# Define red color for element
@@ -63,8 +124,11 @@ filter: brightness(40%);				# Make a picture darker
 cursor: pointer;						# Make cursor a pointer when going over the element
 user-select: none;						# Disable highlighting of text selection
 &copy									# Make copyright-sign
+----------
 
 
+
+----------
 ### Formating snippets
 # center an unordered list
 ul {
@@ -158,37 +222,11 @@ transition: 1.5s ease;						# make smooth transisition (with ease => slow - than
 .element::after						# define area after the element
 	height: 100px;					# define heigth for the element		
 	transform (skeyY(-3deg);		# make it oblique before / after the element
+----------
 
 
 
-### CSS
-should go in seperate file (better than inline or in the head)
-css statements are called "rules"
-resetting all browser-styles: http://meyerweb.com/eric/tools/css/reset/
-normalize the alle browser-styles: github.com/necolas/normalize.css
-<link rel="stylesheet" href="css/style.css">    # link the html-file to the css-file
-/* comment */
-
-p {                                             # syntax of the css statement / rule
-    color: red;                                 => (p => selector, color:red; => declaration)
-}                                               => color => property, red => value)
-
-p {                                             # set rule with 2 declerations for p => red and bold
-    color: red;
-    font_weight: bold;
-}
-
-### Cascade Rules (but Specificity overrules - see below)
-p {                                             # cascading rules (from top to bottom, step by step)
-    color: red;                                 =>output is blue+bold
-    font_weight: bold;
-}
-p {
-    color: blue;
-}
-
-
-
+----------
 ### Font Definition
 https://fonts.google.com/
 taken from google fonts for example (take fonts and then create link in upper right corner for the link
@@ -200,16 +238,40 @@ p {
     font-family: "Source Sans Pro", "Helvetica", sans-serif;			# Helvetica and sans-serif are the fallback fonts when Source Sans Pro is not loading
 	font-weight: 700;													# how thick / bold the font is
 }
+----------
 
 
+
+----------
 ### Icon Use
-https://fontawesome.com/
+# Using icons directly from https://fontawesome.com/
 <head>                                         
 	<script src="https://kit.fontawesome.com/bf5e040b82.js" crossorigin="anonymous"></script>		# Definition in the head
 </head>
 <i class="fas fa-search">						# use icon in css (change size, color)
 
+# Using svg-files
+put full svg-code (source) of the svg in a svg-tag
+		like: <svg enable-background="new 0 0 515.91 728.5" height="512" id="Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg"...</svg>
+		change all fill="#123456" entries to fill=currentColor
+put a div-wrapper around the svg-element (and probably a a-tag for a link around the wrapper too)
+		like: <div class="wrapperSVG"> ... </div>
+format the svg:						# for sizing the svg-icon with width and height
+	svg {
+		width: 1.4%;
+		height: 1%;}
+format the div-wrapper:				# for coloring and positioning the svg-icon (in the wrapper)
+	div.wrapperSVG {
+		color: var(--darkest);
+		display: inline;
+		position: relative;
+		top: 3px;
+	}
+----------
 
+
+
+----------
 ### Parent > Child Relationsships
 Overview Complex Selectors see: https://learn.shayhowe.com/advanced-html-css/complex-selectors/
 # direct parent/child relationship
@@ -238,9 +300,11 @@ section p {                                     # all connections above (when th
 p + p {											# format is used when two <p>s are after each other
 	color: red;									# only the second p will get red
 }
+----------
 
 
 
+----------
 ### Selectors and Combinations
 h1 {...}										# Type Selector - Select one specific type 
 * {...}											# Universal Selector - Select everything
@@ -256,10 +320,12 @@ h1 ~ p											# General Sibling - selects any <p> which is following somewher
 article p span {...}							# selects any <span> that is inside a <p>, which is inside an <article>
 h1 + ul + p {...}								# selects any <p> that comes directly after a <ul>, which comes directly after an <h1>
 body h1 + p .special {...}						# select elements with class "special" which are somwhere after p which is directly after h1 which is somewhere in the body 	
+----------
 
 
 
-### Classes	
+----------
+### Classes
 <section>
 	<p class="robot">Hello, Twitch!</p>
 	<p id="zebra" class="bob">Hello, YouTube!</p>
@@ -276,9 +342,11 @@ section.class1 h2.class2 {...}					# the parent-element <section> has to be clas
 p.class1.class2, a.class2 {...}					# rule is for <p> with class1+class2 or <a> with class2
 body article.class1 h2.class2.class3 {...}		# h2, which have class2+classe3 in h2, their parent has class1, and the parent is in body
 aside.aExtra h3									# rule for <h3> which have a parent-element <aside> with class aExtra
+----------
 
 
 
+----------
 ### IDs
 <section>
 	<p>Hello, Twitch!</p>
@@ -288,16 +356,20 @@ aside.aExtra h3									# rule for <h3> which have a parent-element <aside> with
 #class1,#class2 {...}							# one of the ids have to be in the element
 body section.top h2#rhino {...}					# h2, which has id=rhino, the parent has class=top and the parent is in body
 section#aMilk h2								# rule for <h2> which have a parent-element <section> with id aMilk
+----------
 
 
 
+----------
 ### Inline Style / !important
 .bob {
 	color: red !important;						# with !important this style get the maximum priority / overwrites everything
 }												# not often used - eg. in cases of immediate urgency to show something - when a error is not found cxurrently
+----------
 
 
 
+----------
 ### Specificity
 https://down4kode.wordpress.com/2014/05/21/css-specificity-calculator/
 # defines the priority which styles can overwrite which style
@@ -311,9 +383,11 @@ p{}								=> 1 point (1 tag)
 section .bob { }				=> 11 points (1 tag + 1 class)
 .bob{ !important }				=> 1010 points (1 class + 1 other)
 section1,section2 .bob { }		=> 11 points (1 tag + 1 class) for section1 and for section2
+----------
 
 
 
+----------
 ### Pseudo Classes
 overview see: https://learn.shayhowe.com/advanced-html-css/complex-selectors/
 special classes which are dinamically populated as a result of user actions of document structure
@@ -325,9 +399,11 @@ li:last-child							# Selects an element that is the last within a parent
 p:first-of-type							# Selects an element that is the first of its type within a parent
 p:last-of-type							# Selects an element that is the last of its type within a parent
 div p:nth-child(2)						# Select the second p-child in the div-element
+----------
 
 
 
+----------
 ### Box Model / Boxing
 https://en.wikipedia.org/wiki/CSS_box_model#/media/File:Boxmodell-detail.png
 every element is a box - box in the middle
@@ -338,9 +414,11 @@ margin (outside border) (top,right,bottom,left)
 block boxes => eg. h1, p - break to new line, fill the maximum available space, width and heigth will be respected
 inline boxex => eg. a, span, em, strong - will not break to new line, use only the minium space, width/heigth will not apply
 *{box-sizing: border-box}					# With this statement every sizing is included with the border
+----------
 
 
  
+----------
 ### Layouts - Floating
 old layouting - not state of the art!
 element tries to got as much up to the top - and as much left (or right according if floated left or right)
@@ -387,9 +465,11 @@ section {									# with that all 3 section elements will float left
 footer {
 	clear: both;							# after the float - the floats have to be cleared to get the old normal vertically float
 }
+----------
 
 
 
+----------
 ### Layout - Flexbox
 # css-tricks.com: Complete Guide To Flexbox
 display: flex;									# Initialize flexcontainer (parent element as a block)
@@ -437,9 +517,11 @@ flex: 10 5 400px								# means 10 for flex-grow, 5 for flex-shrink, 400px for f
 	=> flex-grow: when set to 1 for one element the whole extra-space will be taken for this element
 	=> flex-shrink: what to do when there is not enough space when the window gets shrinked
 	=> flex-shrink: DEFAULT is 0 - when there is not enough space the elments get shrinked equally
+----------
 
 
 
+----------
 ### Layout - Grid
 display: grid;									# Define grid for the layouting as block)
 display: inline-grid;							# Define grid as inline-block
@@ -490,9 +572,11 @@ grid-row-end: 3;
     'menu main main main right right'
     'menu footer footer footer footer footer';
 }
+---------- 
+ 
  
 
-
+----------
 ### Responsive Design
 Running the page on different / smaller devices
 - Fluid - everything sized with percentage (no fixed measures)
@@ -523,9 +607,11 @@ Running the page on different / smaller devices
     width: 60%;											# Defines how big the video should be displayed (width)
     height: 55%;										# Defines how big the video should be displayed (height)
 }
+----------
 
 
 
+----------
 ### Media Queries
 @media screen and (max-width: 600px) {			# smartphones: this rule get only be used when the device width is between 0 and 600 pixel
 	h1 { color: blue; }              }
@@ -549,10 +635,12 @@ Important addition to the template-columns:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	=> enables the windows to be zoomed
 	(never set initial-scale to none - zooming would be not possible)
+----------
 
 
 
-###Animating, Transform
+----------
+### Animating, Transform
 transform: matrix(1,2,3,4,5,6);					# combines the follwing 6 rules
 transform: translate (120px, 50%);				# move left/right, up/down4kode
 transform: scale (2, 0.5);						# change the scale of the object
@@ -577,9 +665,12 @@ animation-play-state: running;					# Possible values are runnning or pause (can 
 animation-delay									# How long the start of the animation delays
 animation-direction:							# Control of the progression - forward, backward, alternate
 animation-fill-mode
+----------
 
 
-###Variables
+
+----------
+### Variables
 # Define variables in css
 :root {											# Highest possible level of setting a variable
 	--var1: 10px;								# Define variable and initialize with 10px
@@ -593,16 +684,20 @@ img {											# Eg. using for image-rule
 	max-width: var(--var3)	
 }
 (Changing variable in JS have a look at JS.txt)
+----------
 
 
 
+----------
 ### CSS Template - style.css
 see Learning-Documentation - folder "Template HTML_CSS_JS"
 <link rel="stylesheet" href="css/normalize.css">
 	=> normalize the different browser standard styling
+----------
 
 
 
+----------
 ### Performance and Organization
 https://learn.shayhowe.com/advanced-html-css/performance-organization/
 - keep selector shorthand
@@ -611,14 +706,18 @@ https://learn.shayhowe.com/advanced-html-css/performance-organization/
 - reuse styles whereever its possible
 - compress files with gzip
 - compress / convert images (program PNGGauntlet)
+----------
 
 
 
+----------
 ### Google Chrome Hacks
 select the width or heigth - press rigth strg - up/down 	=>   live the selected element in the browser
+----------
 
 
 
+----------
 ### Preprocessors
 https://learn.shayhowe.com/advanced-html-css/preprocessors/
 # Haml => Preprocessor for HTML
@@ -631,23 +730,3 @@ haml index.haml index.html		# Compile the .haml-file to html
 gem install sass				# Installation of Sass
 
 Many other preprocessors like Jade, Slim, LESS, Stylus, CoffeeScript
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
