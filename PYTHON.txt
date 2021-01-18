@@ -101,7 +101,7 @@ Ctrl /						# Comment / Uncomment line ("/" on numblock)
 Ctrl Alt F7					# Find usages
 Ctrl F 		   				# Find in File
 Ctrl R  	   				# Replace in File
-Ctrl Shift RANDOM			# Replace in Path (in all Files)
+Ctrl Shift R				# Replace in Path (in all Files)
 F3							# Find next
 Ctrl G						# Goto line
 Ctrl D						# Copy / Duplicate lines	
@@ -1335,6 +1335,7 @@ is_dst(datetime(2019, 4, 1), timezone="CET")				# True => at this date CET has d
 import timeit
 start = timeit.default_timer()                          # Start timer
 stop = timeit.default_timer()                           # Stop timer
+round(stop-start,2)										# Stopped time in seconds and rounded to 2 decimals
 round((stop-start)/60,2)                                # Stopped time in minutes and rounded to 2 decimals
 timeit.timeit(stmt="[0,1,2]",number=1000000)     		# Checking the time for creating the list for 1mio times
 
