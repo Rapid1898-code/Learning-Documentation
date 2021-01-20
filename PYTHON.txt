@@ -79,8 +79,8 @@ pip install virtualenv                                     # Install virtualenv
 pip list                                                   # Global packages installed
 where python                                               # Shows where the python-file is (Windows)
 which python                                               # Shows where the python-file is (Linux)
-virtualenv pj1_env                                         # Create new virtual environment pj1_env
-project1_env\Scripts\activate                              # Activate environment pj1_env
+virtualenv env                                         # Create new virtual environment pj1_env
+venv\Scripts\activate                              # Activate environment pj1_env
     when activated: pip list                               # Now only shows the installed modules for the virtual environment
     pip install package                                    # Only installs in the activated virtual environment
 pip freeze --local > requirements.txt                      # Extracts all the modules / dependencies to a txt-file 
@@ -2289,6 +2289,11 @@ def api_id():
     return jsonify(results)									# Use the jsonify function from Flask to convert our list of - Python dictionaries to the JSON format
 app.run()
 => results are available under http://127.0.0.1:5000/api/v1/resources/books?id=1
+
+# Check if API is called from the right access-place (like rapidapi.com)
+(key is provided from the platform - eg. here from rapidapi.com)
+    if "e6e45ed0-55e5-11eb-963e-ffe9fcdce080" not in request.headers:
+        return "Error: Wrong API-Call - use www.rapidapi.com for calling the API!"
 
 # Using zappa and deploying to AWS
 # zappa is only working in a virtual environment	
