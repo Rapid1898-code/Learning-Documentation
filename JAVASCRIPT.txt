@@ -114,14 +114,17 @@ for (let elem of arr) {alert(arr)}				// Iterate through array elements
 arr=Array.from(document.querySelectorAll("a"))	// Convert a node-list to an array
 arr=[...document.querySelectorAll("a")]			// 2nd method for converting node-list to an array
 
-// Iterate trough array by index and element
-arr.forEach((elem,idx) => {						// Iterate through array by elements and index (with shortform)
-	console.log(idx)							// Outputs index
-	console.log(elem)							// Outputs element of array
+// Iterate trough array by index and element (with shortform)
+// Outputs index and Outputs element of array
+arr.forEach((elem,idx) => {						
+	console.log(idx)							
+	console.log(elem)							
 })
-arr.forEach(function(elem,idx) {				// Iterate through array by elements and index (with longform)
-	console.log(idx)							// Outputs index
-	console.log(elem)							// Outputs element of array
+// Iterate through array by elements and index (with longform)
+// Outputs index and Outputs element of array
+arr.forEach(function(elem,idx) {				
+	console.log(idx)							
+	console.log(elem)							
 });
 
 newarr = arr.map(x => x * 2);					// Maps a functionality to all elements of the array - every element multiplicated by 2

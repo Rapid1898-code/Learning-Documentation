@@ -4,3 +4,4 @@ Start-Process xzy.exe									=> to start a program
 
 # CMD
 Ctrl CMD						=> Cancel a running program
+Specific folder                 => open the folder in explorer - click in the path and write cmd (open cmd with actual folder)
