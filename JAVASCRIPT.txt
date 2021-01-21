@@ -43,8 +43,7 @@ x === y										// Equal value and equal type
 x != y										// Not equal
 x !== y										// Not equal value and not equal type
 >,<,>=,<=									// Greater, lesser, greater + equal , lesser + equal
-isNaN1(x)									// Check if value is NaN (NotANumber) - eg. when converting with Number() and the value is no number
-isNaN1(x)									// Check if value is NaN (NotANumber) - eg. when converting with Number() and the value is no number
+isNaN(x)									// Check if value is NaN (NotANumber) - eg. when converting with Number() and the value is no number
 Number.isInteger(n)							// Check if n is a integer
 num++;										// Makes variable +1
 console.log(num)							// Outputs variable num in console
@@ -61,8 +60,8 @@ let s = "this \n text"						// String with linebreak \n
 s[0]										// show the whole string
 s[0,1]										// extracht only the first character
 s[-1]										// last char of a string
-s[3,5]										// slicing 2 chars from pos 3 and 4
-s[3]										// slice from pos 3 to the end
+s.slice[3,5]								// slicing 2 chars from pos 3 and 4
+s.slice[3]									// slice from pos 3 to the end
 s.length									// shows the length of the string
 s.toLowerCase()								// Lowercase the whole string
 s.toUpperCase()								// Uppercase the whole string
@@ -73,12 +72,13 @@ s.split(" ")								// Split the words in a array
 s.trim()                                    // Delete all whitespaces at the beginning and the end
 s.padstart(3,"0")							// Fills leading zero in a string with allways 3 chars - eg. 006
 s.indexOf("ee")								// Find Index of first occurence of this string
-s.includes("ee")							// Check if string/chars are ion 
+s.includes("ee")							// Check if string/chars are in 
 s.charAt(1)									// Outputs the x character in the string => second char of the string (same as s[1])	
 s.slice(-3)									// Get the last 3 chars of the string
 s.substr(s.length-3)						// 2nd variant: Get the last 3 chars of the string
-
-
+s.charCodeAt(0)								// Return Ascii-Code of the first character of the string
+char = String.fromCharCode(65)				// Returns char for specific ascii-code
+char.match(/[A-Z]/i)						// Check if char is in A-Z
 
 //////////// ARRAY
 let arr = [];									// Define an array
@@ -136,10 +136,12 @@ arr.sort((a,b) => a > b ? -1 : 1)				// Order array descending
 arr.sort(function(a,b) {						// Ordering long method with function
 	return a > b ? 1 : -1}
 
-// Filter Method
-newarr = arr.filter (function(x){				// Filters all values which are > 6 eg. in a new array
-	if x > 6 {									// Long Method
-	return true}}
+// Filter Method - Long Method (Filters all values which are > 6 eg. in a new array)
+newarr = arr.filter (function(x){				
+	if (x > 6) {									
+		return true
+	}
+})
 newarr = arr.filter(x => x > 6);				// Short Method in one line
 
 
@@ -237,25 +239,28 @@ document.querySelector("#dayToday").addEventListener("click",function() {	// def
 // everything in javascript is an object (with properties / methods)
 // eg. arr.length is a property of the object array
 // eg. arr.pop() is a method of the object array
-let obj = {}										// Define an object
+let obj = {}										// Define an object (literal syntax)
+let obj = new Object()								// 2nd method to define object (construtor syntax)
 
 let obj = {											// Define an object and initialize it	
 	name: "John",
-	age: 30,
+	age: 30,										// last "," i allowed and called trailing / hanging (its easier so to add/remove/move properties of the object)
 	shout() {										// Defines a method for the object
 		return "Hurra!"
 	}
 }					
 
-obj.name											// Shows value of the key "name" (1st method) => John
+obj.name											// Access property / shows value of the key "name" (1st method) => John
 obj["name"]											// Shows value of the key "name" (2nd method) => John
 obj.age												// Shows key "age" of the object => 30
-obj.newOne											// Add a new propertie to the object
+obj.newOne = "xyz"									// Add a new propertie to the object
 obj.newMethod = function(var) {...do someth...}		// Add a new method to the object
 obj.newMethod(25)									// Call the new method
 age in obj 											// Check if key is in the object
 delete obj.age										// Delete a property of an object
 for (let key in obj) {alert(key,alert, obj[key]}	// Iterate through the keys of the object and outputs key and value
+Object.keys(obj).length === 0 && obj.constructor === Object
+	// Check if Object is empty
 
 // Other example for an object
 var school = {
