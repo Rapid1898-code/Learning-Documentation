@@ -66,13 +66,14 @@ s.length									// shows the length of the string
 s.toLowerCase()								// Lowercase the whole string
 s.toUpperCase()								// Uppercase the whole string
 s.charAt(1)									// Returns the second char of a string
+s.search("xyz")								// Search if "xyz" is int the string - returns the position where found - when not found returns -1
+s.includes("ee")							// Check if string/chars are in 
 s.trim()									// Delete all whitespaces at the beginning and the end
 s.repeat(3)									// Repeat string 3 times
 s.split(" ")								// Split the words in a array
 s.trim()                                    // Delete all whitespaces at the beginning and the end
 s.padstart(3,"0")							// Fills leading zero in a string with allways 3 chars - eg. 006
 s.indexOf("ee")								// Find Index of first occurence of this string
-s.includes("ee")							// Check if string/chars are in 
 s.charAt(1)									// Outputs the x character in the string => second char of the string (same as s[1])	
 s.slice(-3)									// Get the last 3 chars of the string
 s.substr(s.length-3)						// 2nd variant: Get the last 3 chars of the string
@@ -142,13 +143,16 @@ newarr = arr.filter (function(x){
 		return true
 	}
 })
-newarr = arr.filter(x => x > 6);				// Short Method in one line
+// Short Method in one line
+newarr = arr.filter(x => x > 6);				
 
 
-// Reduce Method								// Method for doing something with the array and output / calculate something
-newarr = arr.reduce ((total, element) => {		// "total" is the new calculation element - result of this is the sum of all elements of the array
-	return total + element						// every element is added to total
-},0)											// 0 is the default value of "total"
+// Reduce Method - for doing something with the array and output / calculate something
+// "total" is the new calculation element - result of this is the sum of all elements of the array
+// every element is added to total - 0 is the default value of "total"
+erg = arr.reduce ((total, element) => {		
+	return total + element						
+},0)											
 
 
 
@@ -417,7 +421,7 @@ let secondes = now.get.Seconds()				// Assign actual seconds from actual date va
 
 
 ////// MATH
-Math.floor(Math.random()*6)					// Random number between 1 and 6 like a cube
+Math.floor(Math.random()*6) + 1				// Random number between 1 and 6 like a cube (Math.random returns value between 0 and 1)
 Math.ceil(43.8)								// Nearest Upward rounding => 44
 Math.sqrt(9)								// Return the square-root => 3
 Math.PI										// Use PI

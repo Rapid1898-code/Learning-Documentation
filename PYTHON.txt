@@ -102,6 +102,7 @@ Ctrl Alt F7					# Find usages
 Ctrl F 		   				# Find in File
 Ctrl R  	   				# Replace in File
 Ctrl Shift R				# Replace in Path (in all Files)
+F2							# Jump to the next error
 F3							# Find next
 Ctrl G						# Goto line
 Ctrl D						# Copy / Duplicate lines	
@@ -330,7 +331,7 @@ l = [[1,4,3], [2,2,4], [3,1,5]]					 # Define nested list
 l.sort(key=lambda x: x[1])						 # Sort the nested list for the 2nd element ascending
 l.sort(key=lambda x: x[1], reverse=True)		 # Sort the nested list for the 2nd element descending
 l.reverse()                                      # Reverse the complete list
-l_reverse = revrsed(l)                           # Reverse complete list and store it in different independent list
+l_reverse = reversed(l)                           # Reverse complete list and store it in different independent list
 del l[2]                                         # Delete element at index position 2
 l.remove("abc")                                  # Delete first element with this value from the list
 l.clear()                                        # Delete complete content of the list (same as l = [])
