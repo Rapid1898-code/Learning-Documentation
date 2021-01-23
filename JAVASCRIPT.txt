@@ -263,6 +263,8 @@ obj.newMethod(25)									// Call the new method
 age in obj 											// Check if key is in the object
 delete obj.age										// Delete a property of an object
 for (let key in obj) {alert(key,alert, obj[key]}	// Iterate through the keys of the object and outputs key and value
+Object.keys(obj)									// Store all the keys of the object in an array	
+if ("property" in obj) {...}						// Check if a property / method is in an object
 Object.keys(obj).length === 0 && obj.constructor === Object
 	// Check if Object is empty
 
@@ -273,6 +275,12 @@ var school = {
   students: 120,
   teachers: ['Jeff', 'Raghu', 'Carolyn', 'Shay']
 };
+
+# Pillars of Object Oriented Programming
+Abstraction => hide everything internally what is not usable for the user of the object#
+Encapsulation => very object should be independent and not dependencies outside
+Inheritance => objects can take the properties of existing objects
+Polymorphism => redefine methods for derived classes (object can behave in different ways)
 
 
 
@@ -303,6 +311,7 @@ class MakeCar{ 										// Define the class
 }
 let car1 = new MakeCar("Honda","Civic","black")		// Create a new car1 (with codeword "new")
 let car2 = new MakeCar("Tesla","Roadster","red")	// Create a new car1
+
 
 
 
