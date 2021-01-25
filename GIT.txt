@@ -2,13 +2,13 @@
 ### TOC ###
 ###########
 
-# BASICS, GITHUB
-# GITIGNORE
-# BRANCHES
+#> BASICS, GITHUB
+#> GITIGNORE
+#> BRANCHES
 
 
 ###### BASICS, GITHUB
-(INIT, STATUS, ADD, COMMIT, LOG)
+(INIT, STATUS, ADD, COMMIT, LOG)<br>
 sudo apt-get install git 					=> Installation (linux)
 git init									=> Create repository in the actual directory
 git config --global user.name "Rapid1898"   => Config name for the repository
@@ -24,22 +24,28 @@ git log 									=> Show overview about the last activities
 git clone github-link										=> Clone a repository in the actual path
 git remote add origin https://github.com/link/Test.git  	=> Link the acutal folder/repo to the github-repo
 git push -u origin master   								=> Push (update) files on GitHub
-git pull -u origin master  									=> Pull (update) files from GitHub
+
+=> Pull (update) files from GitHub<br>
 (-u saves the paths - so at the next push - it must be only typed push)
+""
+git pull -u origin master  									
+""
+
 
 
 
 ###### GITIGNORE
-create a file ".gitignore" in the root-folder of the respository
-	=> this files / folders will be ignored when comitting (and so for pushing to the remote repository)
-	=> github has for eg. some problems with files > 100MB
+create a file ".gitignore" in the root-folder of the respository<br>
+this files / folders will be ignored when comitting (and so for pushing to the remote repository)<br>
+github has for eg. some problems with files > 100MB<br>
+
 add folder: /prg/dist/*						=> all files in this folder will be ignored
 add file: /prg.xlsx							=> this specific file will be ignored
 
 
 
 ###### BRANCHES
-(BRANCH, CHECKOUT, DIFF, MERGE)
+(BRANCH, CHECKOUT, DIFF, MERGE)<br>
 git branch newFeature    					=> Create a new branch with the name "newFeature"
 git checkout newFeature 					=> Change to branch "newFeature" (from the master-branch)
 git checkout master							=> Return to the master-branch

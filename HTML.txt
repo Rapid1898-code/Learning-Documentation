@@ -127,3 +127,11 @@ https://developer.mozilla.org/de/docs/Web/HTML/HTML5/HTML5_element_list
 	
 ### HTML Template
 see Learning-Documentation - folder "Template HTML_CSS_JS"
+
+
+### Markdown-File integration in html
+Create Text-File
+Convert Text-File with ConverTXT_MD.py to MD-File
+Read MD-File with Markdown Monster - check if formating is ok in the editor
+Save To - Save to HTML - Choose Zip Archive - store the zip-file somewhere and extract
+Copy the part from <Markdown Monster Content> to <End Markdown Monster Content> in the HTML-File

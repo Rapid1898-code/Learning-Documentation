@@ -1,466 +1,511 @@
-///////////
-/// TOC ///
-///////////
+###########
+### TOC ###
+###########
 
-// OPERATOR, INPUT, OUTPUT
-// STRING
-// ARRAY
-// CONTROL STRUCTURE AND ITERATION
-// FUNCTION
-// OBJECT
-// CONSTRUCTOR / CLASS
-// DOCUMENT, QUERYSELECTOR, EVENTLISTENER
-// CSS VARIABLE HANDLING
-// API ACCESS
-// JQUERY
-// DATE
-// MATH
-
-
-
-////// OPERATORs, INPUT, OUTPUT
-// Comment something	 					// Comments in Javascript
-/* Text xzy */								// Multiline comments
-let intStr = "7"							// Declare and assign string (possible with "" or '') - "var" was the earlier version in the past for that
-"/n /t"										// Linebreak and Tab should not used - is morely css-stuff for formating
-let age = 25								// Declare a variable and assign int (also signed int like -36)	
-let var										// Defining without assigning (var gets value undefined)
-const age = 25								// Declare a constant and assign int (constant can not be changed like variables)
-let float = 5.14876							// Declare and assign float (also signed float like +4.5763	
-let intNum = parseInt(intStr,10);			// Change String to Int with base 10
-let floatStr = "5.14673"					// Declare and assign string
-let floatNum = parseFloat(floatStr);		// Change String to Float
-let v = user || "guest"						// Defines+Assigns a variable (if user exists/has a value use that - otherwise initialize with "guest"
-const inp = prompt("Enter:")				// Open windows for entering something and store in const inp
-num.toString()								// Convert numeric value to string
-num + ""									// 2nd method to convert numeric value to string
-String(n)									// 3rd method to convert number / int to a String
-Number(s)									// Converts String to Number / Int
-typeof x									// Shows the type of the variable (eg. number, string, boolean)
-7 % 2                  			        	// Modulo / Rest of the division (=> 1)
-x == y 										// Check 2 values / variables (result in true / false)
-x === y										// Equal value and equal type
-x != y										// Not equal
-x !== y										// Not equal value and not equal type
->,<,>=,<=									// Greater, lesser, greater + equal , lesser + equal
-isNaN(x)									// Check if value is NaN (NotANumber) - eg. when converting with Number() and the value is no number
-Number.isInteger(n)							// Check if n is a integer
-num++;										// Makes variable +1
-console.log(num)							// Outputs variable num in console
-console.table(object)						// Outputs element as table (eg. for objects, arrays)
-alert("Text!")								// Alert information in a window
-alert(`Bla ${name} bla`)					// Alert some text with outputing the variable "name" between (using backticks "`"
-n = n.toFixed(2)							// Round to 2 decimal digits
+#> OPERATOR, INPUT, OUTPUT
+#> STRING
+#> ARRAY
+#> CONTROL STRUCTURE AND ITERATION
+#> FUNCTION
+#> OBJECT
+#> CONSTRUCTOR, CLASS
+#> DOCUMENT, QUERYSELECTOR, EVENTLISTENER
+#> CSS VARIABLE HANDLING
+#> API ACCESS
+#> JQUERY
+#> DATE
+#> MATH
 
 
+###### OPERATOR, INPUT, OUTPUT
+// Comment something                        => Comments in Javascript
+/*Text xzy*/                                => Multiline comments
+let intStr = "7"                            => Declare and assign string (possible with "" or '') - "var" was the earlier version in the past for that
+"/n /t"                                     => Linebreak and Tab should not used - is morely css-stuff for formating
+let age = 25                                => Declare a variable and assign int (also signed int like -36) 
+let var                                     => Defining without assigning (var gets value undefined)
+const age = 25                              => Declare a constant and assign int (constant can not be changed like variables)
+let float = 5.14876                         => Declare and assign float (also signed float like +4.5763 
+let intNum = parseInt(intStr,10);           => Change String to Int with base 10
+let floatStr = "5.14673"                    => Declare and assign string
+let floatNum = parseFloat(floatStr);        => Change String to Float
+let v = user || "guest"                     => Defines+Assigns a variable (if user exists/has a value use that - otherwise initialize with "guest"
+const inp = prompt("Enter:")                => Open windows for entering something and store in const inp
+num.toString()                              => Convert numeric value to string
+num + ""                                    => 2nd method to convert numeric value to string
+String(n)                                   => 3rd method to convert number / int to a String
+Number(s)                                   => Converts String to Number / Int
+typeof x                                    => Shows the type of the variable (eg. number, string, boolean)
+7 % 2                                       => Modulo / Rest of the division (=> 1)
+x == y                                      => Check 2 values / variables (result in true / false)
+x === y                                     => Equal value and equal type
+x != y                                      => Not equal
+x !== y                                     => Not equal value and not equal type
+>,<,>=,<=                                   => Greater, lesser, greater + equal , lesser + equal
+isNaN(x)                                    => Check if value is NaN (NotANumber) - eg. when converting with Number() and the value is no number
+Number.isInteger(n)                         => Check if n is a integer
+num++;                                      => Makes variable +1
+console.log(num)                            => Outputs variable num in console
+console.table(object)                       => Outputs element as table (eg. for objects, arrays)
+alert("Text!")                              => Alert information in a window
+alert(`Bla ${name} bla`)                    => Alert some text with outputing the variable "name" between (using backticks "`"
+n = n.toFixed(2)                            => Round to 2 decimal digits
 
-//////////// STRING
-let s = "this is a test"					// Define a string
-let s = "this \n text"						// String with linebreak \n
-s[0]										// show the whole string
-s[0,1]										// extracht only the first character
-s[-1]										// last char of a string
-s.slice[3,5]								// slicing 2 chars from pos 3 and 4
-s.slice[3]									// slice from pos 3 to the end
-s.length									// shows the length of the string
-s.toLowerCase()								// Lowercase the whole string
-s.toUpperCase()								// Uppercase the whole string
-s.charAt(1)									// Returns the second char of a string
-s.search("xyz")								// Search if "xyz" is int the string - returns the position where found - when not found returns -1
-s.includes("ee")							// Check if string/chars are in 
-s.trim()									// Delete all whitespaces at the beginning and the end
-s.repeat(3)									// Repeat string 3 times
-s.split(" ")								// Split the words in a array
-s.trim()                                    // Delete all whitespaces at the beginning and the end
-s.padstart(3,"0")							// Fills leading zero in a string with allways 3 chars - eg. 006
-s.indexOf("ee")								// Find Index of first occurence of this string
-s.charAt(1)									// Outputs the x character in the string => second char of the string (same as s[1])	
-s.slice(-3)									// Get the last 3 chars of the string
-s.substr(s.length-3)						// 2nd variant: Get the last 3 chars of the string
-s.charCodeAt(0)								// Return Ascii-Code of the first character of the string
-char = String.fromCharCode(65)				// Returns char for specific ascii-code
-char.match(/[A-Z]/i)						// Check if char is in A-Z
 
-//////////// ARRAY
-let arr = [];									// Define an array
-let arr = [6,7,8]; 						  		// Define an array and initialize it
-let mat= [[1,2,3],[4,5,6],[7,8,9]]				// Define multidim array
-arr[1]											// Get second element => 7
-arr[arr.length-1]								// Access last element in array
-mat[1][1]										// Get element in the matrix => 5
-arr[2] = 9										// Replace the third element
-String(Arr)										// Returns list as a string => "6,7,8"
-a1 === a2										// Must allways be compared with triple = (only == would be wrong)
-arr.length										// Total count of the elemets in the array
-arr.pop()										// Extracts and delete element at the end (fast!)
-arr.shift()										// Extracts and delete element at the begin (slow!)
-arr.push("X","Y")								// Append new elements to the array at the end (fast!)
-arr.unshift("Y","Z")							// Add new elements to the array at the beginning (slow!)
-ergArr = arr.slice(2,3)							// Copy elements from index 2 to index 3 => result is one char at index 2
-ergArr = arr.slice(-2)							// Copy the last 2 elements of the array
-arr.splice(2,1)									// Delete 1 element beginning from index 2
-arr.splice(0,2,10,11)							// Delete 2 elements beginning from the index 0 - and insert the elements 10 and 11
-arr.splice(-1,0,3,4)							// From index -1 delete 0 elements and add 3 and 4
-ergArr = arr.splice(0,2)						// Delete 2 elements beginning from the index 0 - and assign them to ergArr
-ergArr = arr1.concat(arr2)						// Concatenate 2 arrays to one
-arr.indexOf("xyz")								// Returns first index position of element "xyz" (if not exists result is -1)
-arr.lastIndexOf("xyz")							// Return the last index position of the element "xyz"
-arr.includes("xyz")								// Check if string exists in the array	
-arr.reverse()									// Reverse the entire array
-arr = varStr.split(" ")							// Split the words in a array
-varStr = arr.join(", ")							// Join the elements from the array in a string with ", " as seperator
-Array.isArray(arr)								// Check if object is an array (if array = true)
-for (let i=0; i < arr.lenth; i++) {do smth.}	// Iterate through index of the array
-for (let elem of arr) {alert(arr)}				// Iterate through array elements
-arr=Array.from(document.querySelectorAll("a"))	// Convert a node-list to an array
-arr=[...document.querySelectorAll("a")]			// 2nd method for converting node-list to an array
 
-// Iterate trough array by index and element (with shortform)
-// Outputs index and Outputs element of array
-arr.forEach((elem,idx) => {						
-	console.log(idx)							
-	console.log(elem)							
+###### STRING
+let s = "this is a test"                    => Define a string
+let s = "this \n text"                      => String with linebreak \n
+s[0]                                        => show the whole string
+s[0,1]                                      => extracht only the first character
+s[-1]                                       => last char of a string
+s.slice[3,5]                                => slicing 2 chars from pos 3 and 4
+s.slice[3]                                  => slice from pos 3 to the end
+s.length                                    => shows the length of the string
+s.toLowerCase()                             => Lowercase the whole string
+s.toUpperCase()                             => Uppercase the whole string
+s.charAt(1)                                 => Returns the second char of a string
+s.search("xyz")                             => Search if "xyz" is int the string - returns the position where found - when not found returns -1
+s.includes("ee")                            => Check if string/chars are in 
+s.trim()                                    => Delete all whitespaces at the beginning and the end
+s.repeat(3)                                 => Repeat string 3 times
+s.split(" ")                                => Split the words in a array
+s.trim()                                    => Delete all whitespaces at the beginning and the end
+s.padstart(3,"0")                           => Fills leading zero in a string with allways 3 chars - eg. 006
+s.indexOf("ee")                             => Find Index of first occurence of this string
+s.charAt(1)                                 => Outputs the x character in the string => second char of the string (same as s[1])    
+s.slice(-3)                                 => Get the last 3 chars of the string
+s.substr(s.length-3)                        => 2nd variant: Get the last 3 chars of the string
+s.charCodeAt(0)                             => Return Ascii-Code of the first character of the string
+char = String.fromCharCode(65)              => Returns char for specific ascii-code
+char.match(/[A-Z]/i)                        => Check if char is in A-Z
+
+###### ARRAY
+let arr = [];                                   => Define an array
+let arr = [6,7,8];                              => Define an array and initialize it
+let mat= [[1,2,3],[4,5,6],[7,8,9]]              => Define multidim array
+arr[1]                                          => Get second element => 7
+arr[arr.length-1]                               => Access last element in array
+mat[1][1]                                       => Get element in the matrix => 5
+arr[2] = 9                                      => Replace the third element
+String(Arr)                                     => Returns list as a string => "6,7,8"
+a1 === a2                                       => Must allways be compared with triple = (only == would be wrong)
+arr.length                                      => Total count of the elemets in the array
+arr.pop()                                       => Extracts and delete element at the end (fast!)
+arr.shift()                                     => Extracts and delete element at the begin (slow!)
+arr.push("X","Y")                               => Append new elements to the array at the end (fast!)
+arr.unshift("Y","Z")                            => Add new elements to the array at the beginning (slow!)
+ergArr = arr.slice(2,3)                         => Copy elements from index 2 to index 3 => result is one char at index 2
+ergArr = arr.slice(-2)                          => Copy the last 2 elements of the array
+arr.splice(2,1)                                 => Delete 1 element beginning from index 2
+arr.splice(0,2,10,11)                           => Delete 2 elements beginning from the index 0 - and insert the elements 10 and 11
+arr.splice(-1,0,3,4)                            => From index -1 delete 0 elements and add 3 and 4
+ergArr = arr.splice(0,2)                        => Delete 2 elements beginning from the index 0 - and assign them to ergArr
+ergArr = arr1.concat(arr2)                      => Concatenate 2 arrays to one
+arr.indexOf("xyz")                              => Returns first index position of element "xyz" (if not exists result is -1)
+arr.lastIndexOf("xyz")                          => Return the last index position of the element "xyz"
+arr.includes("xyz")                             => Check if string exists in the array  
+arr.reverse()                                   => Reverse the entire array
+arr = varStr.split(" ")                         => Split the words in a array
+varStr = arr.join(", ")                         => Join the elements from the array in a string with ", " as seperator
+Array.isArray(arr)                              => Check if object is an array (if array = true)
+for (let i=0; i < arr.lenth; i++) {do smth.}    => Iterate through index of the array
+for (let elem of arr) {alert(arr)}              => Iterate through array elements
+arr=Array.from(document.querySelectorAll("a"))  => Convert a node-list to an array
+arr=[...document.querySelectorAll("a")]         => 2nd method for converting node-list to an array
+
+=> Iterate trough array by index and element (with shortform)<br>
+Outputs index and Outputs element of array
+""
+arr.forEach((elem,idx) => {                 
+    console.log(idx)                            
+    console.log(elem)                           
 })
-// Iterate through array by elements and index (with longform)
-// Outputs index and Outputs element of array
-arr.forEach(function(elem,idx) {				
-	console.log(idx)							
-	console.log(elem)							
-});
-
-newarr = arr.map(x => x * 2);					// Maps a functionality to all elements of the array - every element multiplicated by 2
-arr.join(" ")									// Concatenate the array to a string seperated by " "
-
-// Sort Method
-arr.sort((a,b) => a > b ? 1 : -1)				// Order array ascending
-arr.sort((a,b) => a > b ? -1 : 1)				// Order array descending
-arr.sort(function(a,b) {						// Ordering long method with function
-	return a > b ? 1 : -1}
-
-// Filter Method - Long Method (Filters all values which are > 6 eg. in a new array)
-newarr = arr.filter (function(x){				
-	if (x > 6) {									
-		return true
-	}
+""
+=> Iterate through array by elements and index (with longform)<br>
+Outputs index and Outputs element of array
+""
+arr.forEach(function(elem,idx) {                
+    console.log(idx)                            
+    console.log(elem)                           
 })
-// Short Method in one line
-newarr = arr.filter(x => x > 6);				
+""
+newarr = arr.map(x => x * 2);                   *> Maps a functionality to all elements of the array - every element multiplicated by 2
+arr.join(" ")                                   *> Concatenate the array to a string seperated by " "
+
+arr.sort((a,b) => a > b ? 1 : -1)               *> Order array ascending
+arr.sort((a,b) => a > b ? -1 : 1)               *> Order array descending
+arr.sort(function(a,b) {return a > b ? 1 : -1}  *> Ordering long method with function
+    
+=> Filter Method - Long Method (Filters all values which are > 6 eg. in a new array)
+""
+newarr = arr.filter (function(x){               
+    if (x > 6) {                                    
+        return true
+    }
+})
+""
+=> Short Method in one line
+""
+newarr = arr.filter(x => x > 6);                
+""
 
 
-// Reduce Method - for doing something with the array and output / calculate something
-// "total" is the new calculation element - result of this is the sum of all elements of the array
-// every element is added to total - 0 is the default value of "total"
-erg = arr.reduce ((total, element) => {		
-	return total + element						
-},0)											
+=> Reduce Method - for doing something with the array and output / calculate something<br>
+"total" is the new calculation element - result of this is the sum of all elements of the array<br>
+every element is added to total - 0 is the default value of "total"
+""
+erg = arr.reduce ((total, element) => {     
+    return total + element                      
+},0)                                            
+""
 
 
 
-
-//////////// CONTROL STRUCTURE AND ITERATION
+###### CONTROL STRUCTURE AND ITERATION
+""
 if (condition is true) {
-	//Do something
+    =>Do something
 }else if (condition is true){
-	//Do something else
+    =>Do something else
 }else{
-	//Default else
-}	
-e.g.
-if (a == 9) && (b == 7) { c = "Hurra!" }		// If structure with logical and	
-if (a == 9) || (b == 7) { c = "Hurra!" }		// If structure with logical or
-if !(a > 13)									// If structure with logical not
-
-switch (expression) {							// Switch expression for multiple options
-case value1:									// Do something when expression is value1
-	// Do something
-	break;										// Break necessary for any case / value
-case value2:									// Do something when expression is value2
-	// Do something
-	break;
-default:										// When no case is mathing - then do this
-	// Do something
-	break;
+    =>Default else
 }
+""  
+if (a == 9) && (b == 7) { c = "Hurra!" }        => If structure with logical and    
+if (a == 9) || (b == 7) { c = "Hurra!" }        => If structure with logical or
+if !(a > 13)                                    => If structure with logical not
 
-for (let i=1; i<=5; i++) {}						// Iteration from 1 to 5 with for-loop
-for (let i=3; i>=0; i--) {}						// Iteration backwards from 3 to 0 with for-loop
-for (let i=0; i<arr.length; i++) {}				// Iterate through an array
+Switch Expression
+""
+switch (expression) {           // Switch expression for multiple options
+case value1:                    // Do something when expression is value1
+    // Do something
+    break;                      // Break necessary for any case / value
+case value2:                    // Do something when expression is value2
+    // Do something
+    break;
+default:                        // When no case is mathing - then do this
+    => Do something
+    break;
+}
+""
 
-while (x < 4) {									// While loop with break condition
-	if xyz === "abc" {break}
-}                 				
-do {} while (x < 4)								// Do While loop with break condition
-while (true) {}                  				// Endless while loop - has to be exited somewhere
+for (let i=1; i<=5; i++) {}                     => Iteration from 1 to 5 with for-loop
+for (let i=3; i>=0; i--) {}                     => Iteration backwards from 3 to 0 with for-loop
+for (let i=0; i<arr.length; i++) {}             => Iterate through an array
 
-arr.forEach((x) => {							// Iterate through array by elements (x)
-	console.log(x)
+=> While loop with break condition
+""
+while (x < 4) {                                 
+    if xyz === "abc" {break}
+}                               
+""
+
+do {} while (x < 4)                             => Do While loop with break condition
+while (true) {}                                 => Endless while loop - has to be exited somewhere
+
+=> Iterate through array by elements (x)
+""
+arr.forEach((x) => {                            
+    console.log(x)
 })
-	
+""
+  
+0,"",'',null,undefined,NaN                      => Are all falsy values - can checked with if (xyz)...
+isNight ? s="Night" : s="Day"                   => Ternary Operator for if - if isNight=true then s=Night - else s=Day
 
 
-0,"",'',null,undefined,NaN						// Are all falsy values - can checked with if (xyz)...
-isNight ? s="Night" : s="Day"					// Ternary Operator for if - if isNight=true then s=Night - else s=Day
 
+###### FUNCTION
+=> Normal Function Decleration
+""
+function addFunc(x=0,y=0) {    // Define a function    - with default value 0 if no input is given
+    let erg = x+y              // Calculate erg
+    return erg}                // Return erg value
+addFunc(3,5)                   // Function Call
+""
 
+=> Function Expression (used for anonymous functions)
+""
+const add = function(x,y) {...}     // Define a function expression (function is assigned to an variable
+add(3,5)                            // Function Call
+""
 
-//////////// FUNCTION
-// Normal Function Decleration
-function addFunc(x=0,y=0) {					// Define a function	- with default value 0 if no input is given
-	let erg = x+y							// Calculate erg
-	return erg}								// Return erg value
-addFunc(3,5)								// Function Call
-
-// Function Expression (used for anonymous functions)
-const add = function(x,y) {...}				// Define a function expression (function is assigned to an variable
-add(3,5)									// Function Call
-
-// Anonymous Function with Fat Arrow syntax
+=> Anonymous Function with Fat Arrow syntax
+""
 const add = (x,y) => {...}
-add(3,5)									// Function Call
-let h = a => a % 3							// Even shorter without parentees
+add(3,5)                            // Function Call
+let h = a => a % 3                  // Even shorter without parentees
+""
 
-// return-statement with "?" or "||"
-	return (age > 18) ? true : console.log('Did parents allow');	// When age > 18 returns true - otherwise output something in the console
-	return (age > 18) || console.log('Did parents allow');			// Same logic with "||"
+=> return-statement with "?" or "||"
+""
+return (age > 18) ? true : console.log('Did parents allow');    // When age > 18 returns true - otherwise output something in the console
+return (age > 18) || console.log('Did parents allow');          // Same logic with "||"
+""
 
-// Use Rest Parameters to accept any number of arguments			
-function max(...numbers) {											// Any numbers of arguments
-	// do something with a loop
+=> Use Rest Parameters to accept any number of arguments            
+""
+function max(...numbers) {                // Any numbers of arguments
+    => do something with a loop
 }
+""
 
-// AddEventListener with parameters in the function
-document.querySelector("#dayToday").addEventListener("click",function() {	// define addEventListener as normal but use "function ()"
-    toggleBackground("today", 6)											// call the function with parameters inside
+=> AddEventListener with parameters in the function
+""
+document.querySelector("#dayToday").addEventListener("click",function() {   // define addEventListener as normal but use "function ()"
+    toggleBackground("today", 6)                                            // call the function with parameters inside
 }, false);
+""
 
 
 
+###### OBJECT
+=> properties = attributes of the object (eg. color, shape, minutes, seconds)<br>
+methods = functions of the object (eg. start/stop on a stopclock)<br>
+everything in javascript is an object (with properties / methods)<br>
+eg. arr.length is a property of the object array<br>
+eg. arr.pop() is a method of the object array<br>
+let obj = {}                                        => Define an object (literal syntax)
+let obj = new Object()                              => 2nd method to define object (construtor syntax)
 
+=> Define an object and initialize it   
+""
+let obj = {                                         
+    name: "John",
+    age: 30,                // last "," i allowed and called trailing / hanging (its easier so to add/remove/move properties of the object)
+    shout() {               // Defines a method for the object
+        return "Hurra!"
+    }
+}
+""                   
 
-//////////// OBJECT
-// properties => attributes of the object (eg. color, shape, minutes, seconds)
-// methods => functions of the object (eg. start/stop on a stopclock)
-// everything in javascript is an object (with properties / methods)
-// eg. arr.length is a property of the object array
-// eg. arr.pop() is a method of the object array
-let obj = {}										// Define an object (literal syntax)
-let obj = new Object()								// 2nd method to define object (construtor syntax)
+obj.name                                            => Access property / shows value of the key "name" (1st method) => John
+obj["name"]                                         => Shows value of the key "name" (2nd method) => John
+obj.age                                             => Shows key "age" of the object => 30
+obj.newOne = "xyz"                                  => Add a new propertie to the object
+obj.newMethod = function(var) {...do someth...}     => Add a new method to the object
+obj.newMethod(25)                                   => Call the new method
+age in obj                                          => Check if key is in the object
+delete obj.age                                      => Delete a property of an object
+for (let key in obj) {alert(key,alert, obj[key]}    => Iterate through the keys of the object and outputs key and value
+Object.keys(obj)                                    => Store all the keys of the object in an array 
+if ("property" in obj) {...}                        => Check if a property / method is in an object
+Object.keys(obj).length === 0 && obj.constructor === Object     => Check if Object is empty
+    
 
-let obj = {											// Define an object and initialize it	
-	name: "John",
-	age: 30,										// last "," i allowed and called trailing / hanging (its easier so to add/remove/move properties of the object)
-	shout() {										// Defines a method for the object
-		return "Hurra!"
-	}
-}					
-
-obj.name											// Access property / shows value of the key "name" (1st method) => John
-obj["name"]											// Shows value of the key "name" (2nd method) => John
-obj.age												// Shows key "age" of the object => 30
-obj.newOne = "xyz"									// Add a new propertie to the object
-obj.newMethod = function(var) {...do someth...}		// Add a new method to the object
-obj.newMethod(25)									// Call the new method
-age in obj 											// Check if key is in the object
-delete obj.age										// Delete a property of an object
-for (let key in obj) {alert(key,alert, obj[key]}	// Iterate through the keys of the object and outputs key and value
-Object.keys(obj)									// Store all the keys of the object in an array	
-if ("property" in obj) {...}						// Check if a property / method is in an object
-Object.keys(obj).length === 0 && obj.constructor === Object
-	// Check if Object is empty
-
-// Other example for an object
+=> Other example for an object
+""
 var school = {
   name: 'The Starter League',
   location: 'Merchandise Mart',
   students: 120,
   teachers: ['Jeff', 'Raghu', 'Carolyn', 'Shay']
 };
+""
 
-# Pillars of Object Oriented Programming
-Abstraction => hide everything internally what is not usable for the user of the object#
-Encapsulation => very object should be independent and not dependencies outside
-Inheritance => objects can take the properties of existing objects
-Polymorphism => redefine methods for derived classes (object can behave in different ways)
+=> 4 Pillars of Object Orientation
+- Abstraction = hide everything internally what is not usable for the user of the object
+- Encapsulation = very object should be independent and not dependencies outside
+- Inheritance = objects can take the properties of existing objects
+- Polymorphism = redefine methods for derived classes (object can behave in different ways)
 
 
 
 
-//////////// CONSTRUCTOR / CLASS
-// make a Object with the old method
-function MakeCar (carMake,carModel,carColor){		// Define the constructor function
-	this.make = carMake								// Define properties for the constructor
-	this.carModel = carModel						// "this" is referencing to the actual object
-	this.carColor = carColor
-	this.honk = function(){							// Define a mtehod for the constructor
-		alert("BEEP ${this.carModel} BEEP")			// Alert something when the method is called (with prop this.carModel)
-	}
+###### CONSTRUCTOR, CLASS
+=> Make a Object with the old method
+""
+function MakeCar (carMake,carModel,carColor){       // Define the constructor function
+    this.make = carMake                             // Define properties for the constructor
+    this.carModel = carModel                        // "this" is referencing to the actual object
+    this.carColor = carColor
+    this.honk = function(){                         // Define a mtehod for the constructor
+        alert("BEEP ${this.carModel} BEEP")         // Alert something when the method is called (with prop this.carModel)
+    }
 }
-let car1 = new MakeCar("Honda","Civic","black")		// Create a new car1 (with codeword "new")
-let car2 = new MakeCar("Tesla","Roadster","red")	// Create a new car1
+let car1 = new MakeCar("Honda","Civic","black")     // Create a new car1 (with codeword "new")
+let car2 = new MakeCar("Tesla","Roadster","red")    // Create a new car1
+""
 
-// make a Object with the new class method
-class MakeCar{ 										// Define the class
-	constructor (carMake,carModel,carColor){		// Define properties for the class
-		this.make = carMake							// Assign the properties of the class to the concrete individual object
-		this.carModel = carModel					// "this" is referencing to the actual object
-		this.carColor = carColor
-	}
-	honk(){											// Define a method for the class
-		alert("BEEP ${this.carModel} BEEP")			// Alert something when the method is called (with prop this.carModel)
-	}
+=> Make a Object with the new class method
+""
+class MakeCar{                                      // Define the class
+    constructor (carMake,carModel,carColor){        // Define properties for the class
+        this.make = carMake                         // Assign the properties of the class to the concrete individual object
+        this.carModel = carModel                    // "this" is referencing to the actual object
+        this.carColor = carColor
+    }
+    honk(){                                         // Define a method for the class
+        alert("BEEP ${this.carModel} BEEP")         // Alert something when the method is called (with prop this.carModel)
+    }
 }
-let car1 = new MakeCar("Honda","Civic","black")		// Create a new car1 (with codeword "new")
-let car2 = new MakeCar("Tesla","Roadster","red")	// Create a new car1
-MakeCar.prototype.wash = true						// Give all the created cars from the calss "MakeCar" a new property "wash"
-MakeCar.prototype.newFunc = function () {			// Give all the created cars from the class "MakeCar" a new function "newFunc"
-	console.log("We have a new function!"
+let car1 = new MakeCar("Honda","Civic","black")     // Create a new car1 (with codeword "new")
+let car2 = new MakeCar("Tesla","Roadster","red")    // Create a new car1
+""
+
+=> Give new property and function
+""
+MakeCar.prototype.wash = true                       // Give all the created cars from the class "MakeCar" a new property "wash"
+MakeCar.prototype.newFunc = function () {           // Give all the created cars from the class "MakeCar" a new function "newFunc"
+    console.log("We have a new function!"
 }
+""
 
 
 
+###### DOCUMENT, QUERYSELECTOR, EVENTLISTENER
+=> Add Eventlistener
+""
+document.querySelector('#check').addEventListener('click',func1)        // New Method / create an Event Listener / execute function "func1" when mouse is clicked
+...'onmouseenter'...                                                    // New Method / create an Event Listener / exceute function "func2" when mouse-cursor is over the element
+...'input'...                                                           // Event Listener with trigger input
+...'change'...                                                          // Event Listener with trigger every change in the element
+...'mousemove'...                                                       // Event Listener with trigger when mouse is moved over the element
+...'transitionend'...                                                   // Event Listener with trigger when the transistion ends
+document.getElementById("green").onclick = funcGreen                    // Old Method / Waiting for click on this element (by ID) as a "event-listener"
+""
 
-//////////// DOCUMENT, QUERYSELECTOR, EVENTLISTENER
-document.querySelector('#check').addEventListener('click',func1)		// New Method / create an Event Listener / execute function "func1" when mouse is clicked
-...'onmouseenter'...													// New Method / create an Event Listener / exceute function "func2" when mouse-cursor is over the element
-...'input'...															// Event Listener with trigger input
-...'change'...															// Event Listener with trigger every change in the element
-...'mousemove'...														// Event Listener with trigger when mouse is moved over the element
-...'transitionend'...													// Event Listener with trigger when the transistion ends
-document.getElementById("green").onclick = funcGreen					// Old Method / Waiting for click on this element (by ID) as a "event-listener"
-
-// E.G. document.querySelector('//idBlue').addEventListener('click',changeToBlue)
-function funcGreen() {										// Define function
+=> E.G. document.querySelector('=>idBlue').addEventListener('click',changeToBlue)
+""
+function funcGreen() {                                      // Define function
   document.querySelector("body")
-	.style.backgroundColor = "rgba(241,63,247,1)"			// Change BackGroundColor-Style to rgba-color green (as inlinecode in the rendering - not in the html-code)
-  document.querySelector("body").style.color = "white"		// Change Fontcolor to white (as inlinecode in the rendering - not in the html-code)
+    .style.backgroundColor = "rgba(241,63,247,1)"           // Change BackGroundColor-Style to rgba-color green (as inlinecode in the rendering - not in the html-code)
+  document.querySelector("body").style.color = "white"      // Change Fontcolor to white (as inlinecode in the rendering - not in the html-code)
 }
+""
 
-// E.G. document.querySelector("body").style.backgroundColor = "blue"
+=> Use EventListner for alle elements with a specific class
+""
+let elements = document.querySelectorAll(".panel");             // Select all elements with class "panel"
+elements.forEach(elem => elem.addEventListener("click",func1))  // Iterate trough every element and create EventListener - when clicked start func1 for the element
+function func1() {                                              // Function is run with the activated Element for the EventListener    
+    this.classlist.toggle("newClass")}
+""
 
-// Use EventListner for alle elements with a specific class
-let elements = document.querySelectorAll(".panel");			
-	// => Select all elements with class "panel"
-elements.forEach(elem => elem.addEventListener("click",func1))
-	// => Iterate trough every element and create EventListener - when clicked start func1 for the element
-function func1() {
-	this.classlist.toggle("newClass")}
-	// => Function is run with the activated Element for the EventListener
-
-document.getElementById							// Old Method / Select an element by ID
-document.querySelector("xyz")					// New Method / Select (first) a <tag> or .class or //id
-const c = document.querySelectorAll("h2")	    // Select all elements which have h2 and store it in the constante c
-.onclick										// Element-Listener waiting for a click7
-.style.backgroundColor							// Change BackgroundColor
-.style.color									// Change Font Color	
-.style.display = "none"							// Hide element in DOM
-.innerText = "xyz"								// Change Text of the selected element
-.innerText = v1 + " " + v2 + " " + v3			// Concatenate 3 variables with space between (old method)
-.innerText = `${v1} ${v2} ${v3}`				// Concatenate 3 variables with space between (new method with the "`"-char called template string)
-.value											// Read the value/text of the field
-.id												// Show the ID of the selected element	
-.src											// Set the src of a image
-.classList										// Manipulate classes informations
-.classList.toggle("hidden")						// Toggle the class hidden (when triggered class is deleted OR added (when the next click occured)
-.classList.add("hidden")						// Add the class hidden
-.classList.contains("cl")						// Check if element contains class "cl"
-.classList.remove("wiggle")						// Remove the class from the element
-setInterval(func1, 1000)						// Call function "func1" every second (1000ms)
-setInterval(()=> {do something},10000)			// Do something any 10 seconds
-setTimeout(()=> {do something,1000}]			// Do something and wait 1 second
+document.getElementById                         => Old Method / Select an element by ID
+document.querySelector("xyz")                   => New Method / Select (first) a <tag> or .class or =>id
+const c = document.querySelectorAll("h2")       => Select all elements which have h2 and store it in the constante c
+.onclick                                        => Element-Listener waiting for a click7
+.style.backgroundColor                          => Change BackgroundColor
+.style.color                                    => Change Font Color    
+.style.display = "none"                         => Hide element in DOM
+.innerText = "xyz"                              => Change Text of the selected element
+.innerText = v1 + " " + v2 + " " + v3           => Concatenate 3 variables with space between (old method)
+.innerText = `${v1} ${v2} ${v3}`                => Concatenate 3 variables with space between (new method with the "`"-char called template string)
+.value                                          => Read the value/text of the field
+.id                                             => Show the ID of the selected element  
+.src                                            => Set the src of a image
+.classList                                      => Manipulate classes informations
+.classList.toggle("hidden")                     => Toggle the class hidden (when triggered class is deleted OR added (when the next click occured)
+.classList.add("hidden")                        => Add the class hidden
+.classList.contains("cl")                       => Check if element contains class "cl"
+.classList.remove("wiggle")                     => Remove the class from the element
+setInterval(func1, 1000)                        => Call function "func1" every second (1000ms)
+setInterval(()=> {do something},10000)          *> Do something any 10 seconds
+setTimeout(()=> {do something,1000}]            *> Do something and wait 1 second
 
 
 
-////// CSS VARIABLE HANDLING
+###### CSS VARIABLE HANDLING
+=> Read all control- and input-elements<br>
+Output is not an array - its a node-list (does not have all methods like an array)
+""
 let inputs = document.querySelectorAll(".controls input");
-	//=> Read all control- and input-elements
-	//=> Output is not an array - its a node-list (does not have all methods like an array)
-	
-inputs.forEach(input => input.addEventListener("change", handleUpdate));
-	//=> Wait for change in any element and call the function "handleUpdate"
-function handleUpdate() {
-    const suffix = this.dataset.sizing || "";
-		//=> read the sizing-parameter for the triggered element (used data-sizing in html)
-    document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
-		//=> set the variable in css (name according to --name in css)
-		//=> use the value from the read element from the adventlistener
-		//=> and use the suffix which is read above
-		//=> full property looks eg. like "--spacing: 10px"	
-}	
+""
+
+    
+inputs.forEach(input => input.addEventListener("change", handleUpdate));    *> Wait for change in any element and call the function "handleUpdate"
+
+=> Handle Update<br>
 (For definition and using the variables in CSS have a look at CSS.txt)
+""
+function handleUpdate() {
+    const suffix = this.dataset.sizing || '';       // read the sizing-parameter for the triggered element (used data-sizing in html)
+    document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+        // set the variable in css (name according to --name in css)
+        // use the value from the read element from the adventlistener
+        // and use the suffix which is read above
+        // full property looks eg. like "--spacing: 10px"   
+}   
+""
+
+
+###### API ACCESS
+<a href="https://learn.shayhowe.com/advanced-html-css/jquery/" style="font-style: italic">https://learn.shayhowe.com/advanced-html-css/jquery/</a>
+=> request data from API  get data back in JSON format
+=> Reading / Fetching the informations from an API-url
+=> Request the API-content and output as JSON-information
+=> alle the information is stored in data
+=> last part is the error handling when something wrong happens
+""
+fetch(url)                                      
+    .then(res => res.json())                    
+    .then(data => {                     
+        console.log(data)                       
+    })
+    .catch(err => {                             
+        console.log("error ${err}")
+    });
+""
+
+=> sometimes the URL also hase a search query parameter<br>
+eg. <a href="https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita" style="font-style: italic">https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita</a><br>
+"s" is the parameter and "margarita" the serach string<br>
+eg. <a href="https:/api.nasa.gov/planetary/apod?api_key=DemoKey&date=2020-10-10" style="font-style: italic">https:/api.nasa.gov/planetary/apod?api_key=DemoKey&date=2020-10-10</a><br>
+here are used 2 parameters - one "api-key" and the second "data"
+    
+=>eg. use horoscope api<br>
+<a href="https://aztro.readthedocs.io/en/latest/" style="font-style: italic">https://aztro.readthedocs.io/en/latest/</a><br>
+need to use browserify<br>
+<a href="http://browserify.org/#install" style="font-style: italic">http://browserify.org/#install</a><br>
+so the require can also run with html (otherwise it only works in the IDE)<br>
+parse the JSON-content to an object: let obj = JSON.parse(body)
 
 
 
-////// API ACCESS
-https://learn.shayhowe.com/advanced-html-css/jquery/
-// request data from API  get data back in JSON format
-// Reading / Fetching the informations from an API-url
-// Request the API-content and output as JSON-information
-// alle the information is stored in data
-// last part is the error handling when something wrong happens
-fetch(url)										
-	.then(res => res.json())					
-	.then(data => {						
-		console.log(data)						
-	})
-	.catch(err => {								
-		console.log("error ${err}")
-	});
-
-sometimes the URL also hase a search query parameter
-	eg. https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
-	"s" is the parameter and "margarita" the serach string
-	eg. https://api.nasa.gov/planetary/apod?api_key=DemoKey&date=2020-10-10
-	here are used 2 parameters - one "api-key" and the second "data"
-	
-//eg. use horoscope api
-https://aztro.readthedocs.io/en/latest/
-need to us browserify
-http://browserify.org/#install
-so the require can also run with html (otherwise it only works in the IDE)
-parse the JSON-content to an object => let obj = JSON.parse(body)
-
-
-
-////// JQUERY
-library for javascript
-- Traversing
-- Manipulating
-- Events
+###### JQUERY
+=> library for javascript<br>
+- Traversing<br>
+- Manipulating<br>
+- Events<br>
 - Effects
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>		=> include before </body> tag
-$(document).ready(function(event){...});		// put all jQuery code in this function (waiting until the the page has loaded an the DOM is ready)
-$('.feature');           						// Class selector
-$('li strong');          						// Descendant selector
-$('em, i');              						// Multiple selector
-$('a[target="_blank"]'); 						// Attribute selector
-$('p:nth-child(2)');     						// Pseudo-class selector
+
+<script src="=>ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>      *> include before body-tag
+$(document).ready(function(event){...});        => put all jQuery code in this function (waiting until the the page has loaded an the DOM is ready)
+$('.feature');                                  => Class selector
+$('li strong');                                 => Descendant selector
+$('em, i');                                     => Multiple selector
+$('a[target="_blank"]');                        => Attribute selector
+$('p:nth-child(2)');                            => Pseudo-class selector
 
 
 
-////// DATE
-let now = new Date()							// Assign variable to actual date
-let secondes = now.get.Seconds()				// Assign actual seconds from actual date variable "now"
+###### DATE
+let now = new Date()                            => Assign variable to actual date
+let secondes = now.get.Seconds()                => Assign actual seconds from actual date variable "now"
 
 
 
-////// MATH
-Math.floor(Math.random()*6) + 1				// Random number between 1 and 6 like a cube (Math.random returns value between 0 and 1)
-Math.ceil(43.8)								// Nearest Upward rounding => 44
-Math.sqrt(9)								// Return the square-root => 3
-Math.PI										// Use PI
-Math.floor(5.95)							// Round down the float => 5
-Math.pow(2,3)								// First number to the power of the second => 8
-Math.cbrt(8)								// Creates the cube root => 3
-Math.abs(-3)								// Returns the absolute number => 3
-Math.min(1,2,3)								// Returns the Minimum of the values => 1
-Math.max(1,2,3)								// Returns the Maximum of the values => 3
-
-
-
-
-
+###### MATH
+Math.floor(Math.random()*6) + 1             => Random number between 1 and 6 like a cube (Math.random returns value between 0 and 1)
+Math.ceil(43.8)                             => Nearest Upward rounding => 44
+Math.sqrt(9)                                => Return the square-root => 3
+Math.PI                                     => Use PI
+Math.floor(5.95)                            => Round down the float => 5
+Math.pow(2,3)                               => First number to the power of the second => 8
+Math.cbrt(8)                                => Creates the cube root => 3
+Math.abs(-3)                                => Returns the absolute number => 3
+Math.min(1,2,3)                             => Returns the Minimum of the values => 1
+Math.max(1,2,3)                             => Returns the Maximum of the values => 3
 
 
 
 
-	
+
+
+
+
+
+    
