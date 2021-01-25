@@ -311,6 +311,10 @@ class MakeCar{ 										// Define the class
 }
 let car1 = new MakeCar("Honda","Civic","black")		// Create a new car1 (with codeword "new")
 let car2 = new MakeCar("Tesla","Roadster","red")	// Create a new car1
+MakeCar.prototype.wash = true						// Give all the created cars from the calss "MakeCar" a new property "wash"
+MakeCar.prototype.newFunc = function () {			// Give all the created cars from the class "MakeCar" a new function "newFunc"
+	console.log("We have a new function!"
+}
 
 
 
@@ -354,6 +358,7 @@ const c = document.querySelectorAll("h2")	    // Select all elements which have 
 .innerText = `${v1} ${v2} ${v3}`				// Concatenate 3 variables with space between (new method with the "`"-char called template string)
 .value											// Read the value/text of the field
 .id												// Show the ID of the selected element	
+.src											// Set the src of a image
 .classList										// Manipulate classes informations
 .classList.toggle("hidden")						// Toggle the class hidden (when triggered class is deleted OR added (when the next click occured)
 .classList.add("hidden")						// Add the class hidden
@@ -387,17 +392,26 @@ function handleUpdate() {
 
 ////// API ACCESS
 https://learn.shayhowe.com/advanced-html-css/jquery/
-// request data from API
-// get data back in JSON format
-fetch(url)										// Reading / Fetching the informations from an API-url
-	.then(res => res.json())					// Request the API-content and output as JSON-information
-	.then(data => {								// Acees the returned data of the API
-		console.log(data)						// And do something with the data
+// request data from API  get data back in JSON format
+// Reading / Fetching the informations from an API-url
+// Request the API-content and output as JSON-information
+// alle the information is stored in data
+// last part is the error handling when something wrong happens
+fetch(url)										
+	.then(res => res.json())					
+	.then(data => {						
+		console.log(data)						
 	})
-	.catch(err => {								// Standard Error Handling
+	.catch(err => {								
 		console.log("error ${err}")
 	});
 
+sometimes the URL also hase a search query parameter
+	eg. https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
+	"s" is the parameter and "margarita" the serach string
+	eg. https://api.nasa.gov/planetary/apod?api_key=DemoKey&date=2020-10-10
+	here are used 2 parameters - one "api-key" and the second "data"
+	
 //eg. use horoscope api
 https://aztro.readthedocs.io/en/latest/
 need to us browserify

@@ -1998,18 +1998,40 @@ image = requests.get(f'https:{url_i}').content                  # Read image as 
 results.prettify()                                              # Formated Output with html indentations
 if "Kein Zugriff" in soup.text:                                 # Check if specific text in soup text-output
     
-# Read with Selenium when necessary due the specific homepage
-import time
-import os
-from selenium import webdriver
+# Read with Selenium when necessary due the specific homepage				
 from bs4 import BeautifulSoup
+from selenium import webdriver
+link = "https://www.gurufocus.com/stock/" + stock + "/summary"			# define the homepage to be scraped
+options = Options()
+options.add_argument('--headless')										# webpage will work in the back
+options.add_experimental_option ('excludeSwitches', ['enable-logging'])
+path = os.path.abspath (os.path.dirname (sys.argv[0]))					# works for alle platforms (Win,MacOs,Linux)
+if platform == "win32":
+	cd = '/chromedriver.exe'
+elif platform == "linux":
+	cd = '/chromedriver_linux'
+elif platform == "darwin":
+	cd = '/chromedriver'
+driver = webdriver.Chrome (path + cd, options=options)					# Use chromedriver.exe to read website with the above options
+driver.get (link)  														# Read link
+time.sleep (2)  														# Wait till the full site is loaded
 
-driver = webdriver.Chrome(os.getcwd() + '/chromedriver')       # Use chromedriver.exe to read website
-driver.get(link)                                               # Read link
-time.sleep(2)                                                  # Wait till the full site is loaded
-soup = BeautifulSoup(driver.page_source, 'html.parser')        # Read page with html.parser
-time.sleep (2)                                                 # Wait again 2 seconds before closing the site
-driver.quit ()                                                 # Close the chromedriver window
+element = driver.find_element_by_id("analyst-estimate")					# Wait for the specific element to load
+driver.execute_script("arguments[0].scrollIntoView();", element)			
+time.sleep (1)
+
+soup = BeautifulSoup(driver.page_source, 'html.parser')        			# Read page with html.parser and to the further scraping
+driver.quit ()                                                 			# Close the chromedriver window
+
+(all searches also possible for more elements wiht find_elements_*)
+driver.find_element_by id												# Search for a id in html
+driver.find_element_by_name												# Search for name-field (eg. in input-tag)
+driver.find_element_by_xpath											# Search by xpath of the element (right mouse blick in Chrome Dev Tools)
+driver.find_element_by_link_text										# Search for (full) text within the tags
+driver.find_element_by_partial_link_text								# Search for (part) text within the tags
+driver.find_element_by_tag_name('h1')									# Search for a tag in html
+driver.find_element_by_class_name("cont")								# Search for a specific class name in html
+driver.find_element_by_css_selector('p.content')						# Search for tag and selector
 ----------
 
 
