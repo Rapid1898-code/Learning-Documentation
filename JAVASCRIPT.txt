@@ -80,6 +80,8 @@ s.charCodeAt(0)                             => Return Ascii-Code of the first ch
 char = String.fromCharCode(65)              => Returns char for specific ascii-code
 char.match(/[A-Z]/i)                        => Check if char is in A-Z
 
+
+
 ###### ARRAY
 let arr = [];                                   => Define an array
 let arr = [6,7,8];                              => Define an array and initialize it
@@ -122,6 +124,7 @@ arr.forEach((elem,idx) => {
     console.log(elem)                           
 })
 ""
+
 => Iterate through array by elements and index (with longform)<br>
 Outputs index and Outputs element of array
 ""
@@ -130,6 +133,7 @@ arr.forEach(function(elem,idx) {
     console.log(elem)                           
 })
 ""
+
 newarr = arr.map(x => x * 2);                   *> Maps a functionality to all elements of the array - every element multiplicated by 2
 arr.join(" ")                                   *> Concatenate the array to a string seperated by " "
 
@@ -145,11 +149,11 @@ newarr = arr.filter (function(x){
     }
 })
 ""
+
 => Short Method in one line
 ""
 newarr = arr.filter(x => x > 6);                
 ""
-
 
 => Reduce Method - for doing something with the array and output / calculate something<br>
 "total" is the new calculation element - result of this is the sum of all elements of the array<br>
@@ -163,6 +167,7 @@ erg = arr.reduce ((total, element) => {
 
 
 ###### CONTROL STRUCTURE AND ITERATION
+If condition with else if and else
 ""
 if (condition is true) {
     =>Do something
@@ -172,6 +177,7 @@ if (condition is true) {
     =>Default else
 }
 ""  
+
 if (a == 9) && (b == 7) { c = "Hurra!" }        => If structure with logical and    
 if (a == 9) || (b == 7) { c = "Hurra!" }        => If structure with logical or
 if !(a > 13)                                    => If structure with logical not

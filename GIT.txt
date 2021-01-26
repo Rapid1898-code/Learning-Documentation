@@ -8,7 +8,8 @@
 
 
 ###### BASICS, GITHUB
-(INIT, STATUS, ADD, COMMIT, LOG)<br>
+- INIT, STATUS, ADD, COMMIT, LOG
+
 sudo apt-get install git 					=> Installation (linux)
 git init									=> Create repository in the actual directory
 git config --global user.name "Rapid1898"   => Config name for the repository
@@ -35,9 +36,9 @@ git pull -u origin master
 
 
 ###### GITIGNORE
-create a file ".gitignore" in the root-folder of the respository<br>
-this files / folders will be ignored when comitting (and so for pushing to the remote repository)<br>
-github has for eg. some problems with files > 100MB<br>
+- create a file ".gitignore" in the root-folder of the respository<br>
+- this files / folders will be ignored when comitting (and so for pushing to the remote repository)<br>
+- github has for eg. some problems with files > 100MB<br>
 
 add folder: /prg/dist/*						=> all files in this folder will be ignored
 add file: /prg.xlsx							=> this specific file will be ignored
@@ -45,7 +46,8 @@ add file: /prg.xlsx							=> this specific file will be ignored
 
 
 ###### BRANCHES
-(BRANCH, CHECKOUT, DIFF, MERGE)<br>
+- BRANCH, CHECKOUT, DIFF, MERGE)
+
 git branch newFeature    					=> Create a new branch with the name "newFeature"
 git checkout newFeature 					=> Change to branch "newFeature" (from the master-branch)
 git checkout master							=> Return to the master-branch

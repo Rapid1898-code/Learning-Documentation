@@ -9,8 +9,9 @@
 ---
 ## BASICS, GITHUB
 [jump to top...](#git)<br><br>
-(INIT, STATUS, ADD, COMMIT, LOG)<br>
-Installation (linux)
+- INIT, STATUS, ADD, COMMIT, LOG
+
+<br>Installation (linux)
 ```markdown
 sudo apt-get install git
 ```
@@ -71,7 +72,7 @@ Push (update) files on GitHub
 git push -u origin master
 ```
 
-Pull (update) files from GitHub<br>
+<br>Pull (update) files from GitHub<br>
 (-u saves the paths - so at the next push - it must be only typed push)
 ```markdown
 git pull -u origin master
@@ -83,11 +84,11 @@ git pull -u origin master
 ---
 ## GITIGNORE
 [jump to top...](#git)<br><br>
-create a file ".gitignore" in the root-folder of the respository<br>
-this files / folders will be ignored when comitting (and so for pushing to the remote repository)<br>
-github has for eg. some problems with files > 100MB<br>
+- create a file ".gitignore" in the root-folder of the respository<br>
+- this files / folders will be ignored when comitting (and so for pushing to the remote repository)<br>
+- github has for eg. some problems with files > 100MB<br>
 
-all files in this folder will be ignored
+<br>all files in this folder will be ignored
 ```markdown
 add folder: /prg/dist/*
 ```
@@ -101,8 +102,9 @@ add file: /prg.xlsx
 ---
 ## BRANCHES
 [jump to top...](#git)<br><br>
-(BRANCH, CHECKOUT, DIFF, MERGE)
-Create a new branch with the name "newFeature"
+- BRANCH, CHECKOUT, DIFF, MERGE)
+
+<br>Create a new branch with the name "newFeature"
 ```markdown
 git branch newFeature
 ```

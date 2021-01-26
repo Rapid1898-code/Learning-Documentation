@@ -19,7 +19,7 @@
 ---
 ## OPERATOR, INPUT, OUTPUT
 [jump to top...](#javascript)<br><br>
-Comments in Javascript
+<br>Comments in Javascript
 ```markdown
 // Comment something
 ```
@@ -153,7 +153,7 @@ n = n.toFixed(2)
 ---
 ## STRING
 [jump to top...](#javascript)<br><br>
-Define a string
+<br>Define a string
 ```markdown
 let s = "this is a test"
 ```
@@ -254,10 +254,12 @@ Check if char is in A-Z
 char.match(/[A-Z]/i)
 ```
 
+
+
 ---
 ## ARRAY
 [jump to top...](#javascript)<br><br>
-Define an array
+<br>Define an array
 ```markdown
 let arr = [];
 ```
@@ -386,7 +388,7 @@ arr=Array.from(document.querySelectorAll("a"))
 arr=[...document.querySelectorAll("a")]
 ```
 
-Iterate trough array by index and element (with shortform)<br>
+<br>Iterate trough array by index and element (with shortform)<br>
 Outputs index and Outputs element of array
 ```markdown
 arr.forEach((elem,idx) => {
@@ -394,7 +396,8 @@ arr.forEach((elem,idx) => {
     console.log(elem)
 })
 ```
-Iterate through array by elements and index (with longform)<br>
+
+<br>Iterate through array by elements and index (with longform)<br>
 Outputs index and Outputs element of array
 ```markdown
 arr.forEach(function(elem,idx) {
@@ -402,6 +405,7 @@ arr.forEach(function(elem,idx) {
     console.log(elem)
 })
 ```
+
 Maps a functionality to all elements of the array - every element multiplicated by 2
 ```markdown
 newarr = arr.map(x => x * 2);
@@ -424,7 +428,7 @@ Ordering long method with function
 arr.sort(function(a,b) {return a > b ? 1 : -1}
 ```
 
-Filter Method - Long Method (Filters all values which are > 6 eg. in a new array)
+<br>Filter Method - Long Method (Filters all values which are > 6 eg. in a new array)
 ```markdown
 newarr = arr.filter (function(x){
     if (x > 6) {
@@ -432,13 +436,13 @@ newarr = arr.filter (function(x){
     }
 })
 ```
-Short Method in one line
+
+<br>Short Method in one line
 ```markdown
 newarr = arr.filter(x => x > 6);
 ```
 
-
-Reduce Method - for doing something with the array and output / calculate something<br>
+<br>Reduce Method - for doing something with the array and output / calculate something<br>
 "total" is the new calculation element - result of this is the sum of all elements of the array<br>
 every element is added to total - 0 is the default value of "total"
 ```markdown
@@ -452,6 +456,7 @@ erg = arr.reduce ((total, element) => {
 ---
 ## CONTROL STRUCTURE AND ITERATION
 [jump to top...](#javascript)<br><br>
+If condition with else if and else
 ```markdown
 if (condition is true) {
     =>Do something
@@ -461,7 +466,8 @@ if (condition is true) {
     =>Default else
 }
 ```
-If structure with logical and
+
+<br>If structure with logical and
 ```markdown
 if (a == 9) && (b == 7) { c = "Hurra!" }
 ```
@@ -489,7 +495,7 @@ default:                        // When no case is mathing - then do this
 }
 ```
 
-Iteration from 1 to 5 with for-loop
+<br>Iteration from 1 to 5 with for-loop
 ```markdown
 for (let i=1; i<=5; i++) {}
 ```
@@ -502,14 +508,14 @@ Iterate through an array
 for (let i=0; i<arr.length; i++) {}
 ```
 
-While loop with break condition
+<br>While loop with break condition
 ```markdown
 while (x < 4) {
     if xyz === "abc" {break}
 }
 ```
 
-Do While loop with break condition
+<br>Do While loop with break condition
 ```markdown
 do {} while (x < 4)
 ```
@@ -518,14 +524,14 @@ Endless while loop - has to be exited somewhere
 while (true) {}
 ```
 
-Iterate through array by elements (x)
+<br>Iterate through array by elements (x)
 ```markdown
 arr.forEach((x) => {
     console.log(x)
 })
 ```
 
-Are all falsy values - can checked with if (xyz)...
+<br>Are all falsy values - can checked with if (xyz)...
 ```markdown
 0,"",'',null,undefined,NaN
 ```
@@ -547,33 +553,33 @@ function addFunc(x=0,y=0) {    // Define a function    - with default value 0 if
 addFunc(3,5)                   // Function Call
 ```
 
-Function Expression (used for anonymous functions)
+<br>Function Expression (used for anonymous functions)
 ```markdown
 const add = function(x,y) {...}     // Define a function expression (function is assigned to an variable
 add(3,5)                            // Function Call
 ```
 
-Anonymous Function with Fat Arrow syntax
+<br>Anonymous Function with Fat Arrow syntax
 ```markdown
 const add = (x,y) => {...}
 add(3,5)                            // Function Call
 let h = a => a % 3                  // Even shorter without parentees
 ```
 
-return-statement with "?" or "||"
+<br>return-statement with "?" or "||"
 ```markdown
 return (age > 18) ? true : console.log('Did parents allow');    // When age > 18 returns true - otherwise output something in the console
 return (age > 18) || console.log('Did parents allow');          // Same logic with "||"
 ```
 
-Use Rest Parameters to accept any number of arguments
+<br>Use Rest Parameters to accept any number of arguments
 ```markdown
 function max(...numbers) {                // Any numbers of arguments
     => do something with a loop
 }
 ```
 
-AddEventListener with parameters in the function
+<br>AddEventListener with parameters in the function
 ```markdown
 document.querySelector("#dayToday").addEventListener("click",function() {   // define addEventListener as normal but use "function ()"
     toggleBackground("today", 6)                                            // call the function with parameters inside
@@ -590,7 +596,7 @@ methods = functions of the object (eg. start/stop on a stopclock)<br>
 everything in javascript is an object (with properties / methods)<br>
 eg. arr.length is a property of the object array<br>
 eg. arr.pop() is a method of the object array<br>
-Define an object (literal syntax)
+<br>Define an object (literal syntax)
 ```markdown
 let obj = {}
 ```
@@ -599,7 +605,7 @@ let obj = {}
 let obj = new Object()
 ```
 
-Define an object and initialize it
+<br>Define an object and initialize it
 ```markdown
 let obj = {
     name: "John",
@@ -610,7 +616,7 @@ let obj = {
 }
 ```
 
-Access property / shows value of the key "name" (1st method) => John
+<br>Access property / shows value of the key "name" (1st method) => John
 ```markdown
 obj.name
 ```
@@ -660,7 +666,7 @@ Object.keys(obj).length === 0 && obj.constructor === Object
 ```
 
 
-Other example for an object
+<br>Other example for an object
 ```markdown
 var school = {
   name: 'The Starter League',
@@ -670,7 +676,7 @@ var school = {
 };
 ```
 
-4 Pillars of Object Orientation
+<br>4 Pillars of Object Orientation
 - Abstraction = hide everything internally what is not usable for the user of the object
 - Encapsulation = very object should be independent and not dependencies outside
 - Inheritance = objects can take the properties of existing objects
@@ -696,7 +702,7 @@ let car1 = new MakeCar("Honda","Civic","black")     // Create a new car1 (with c
 let car2 = new MakeCar("Tesla","Roadster","red")    // Create a new car1
 ```
 
-Make a Object with the new class method
+<br>Make a Object with the new class method
 ```markdown
 class MakeCar{                                      // Define the class
     constructor (carMake,carModel,carColor){        // Define properties for the class
@@ -712,7 +718,7 @@ let car1 = new MakeCar("Honda","Civic","black")     // Create a new car1 (with c
 let car2 = new MakeCar("Tesla","Roadster","red")    // Create a new car1
 ```
 
-Give new property and function
+<br>Give new property and function
 ```markdown
 MakeCar.prototype.wash = true                       // Give all the created cars from the class "MakeCar" a new property "wash"
 MakeCar.prototype.newFunc = function () {           // Give all the created cars from the class "MakeCar" a new function "newFunc"
@@ -736,7 +742,7 @@ document.querySelector('#check').addEventListener('click',func1)        // New M
 document.getElementById("green").onclick = funcGreen                    // Old Method / Waiting for click on this element (by ID) as a "event-listener"
 ```
 
-E.G. document.querySelector('=>idBlue').addEventListener('click',changeToBlue)
+<br>E.G. document.querySelector('=>idBlue').addEventListener('click',changeToBlue)
 ```markdown
 function funcGreen() {                                      // Define function
   document.querySelector("body")
@@ -745,7 +751,7 @@ function funcGreen() {                                      // Define function
 }
 ```
 
-Use EventListner for alle elements with a specific class
+<br>Use EventListner for alle elements with a specific class
 ```markdown
 let elements = document.querySelectorAll(".panel");             // Select all elements with class "panel"
 elements.forEach(elem => elem.addEventListener("click",func1))  // Iterate trough every element and create EventListener - when clicked start func1 for the element
@@ -753,7 +759,7 @@ function func1() {                                              // Function is r
     this.classlist.toggle("newClass")}
 ```
 
-Old Method / Select an element by ID
+<br>Old Method / Select an element by ID
 ```markdown
 document.getElementById
 ```
@@ -855,7 +861,7 @@ Wait for change in any element and call the function "handleUpdate"
 inputs.forEach(input => input.addEventListener("change", handleUpdate));
 ```
 
-Handle Update<br>
+<br>Handle Update<br>
 (For definition and using the variables in CSS have a look at CSS.txt)
 ```markdown
 function handleUpdate() {
@@ -873,11 +879,11 @@ function handleUpdate() {
 ## API ACCESS
 [jump to top...](#javascript)<br><br>
 <a href="https://learn.shayhowe.com/advanced-html-css/jquery/" style="font-style: italic">https://learn.shayhowe.com/advanced-html-css/jquery/</a>
-request data from API  get data back in JSON format
-Reading / Fetching the informations from an API-url
-Request the API-content and output as JSON-information
-alle the information is stored in data
-last part is the error handling when something wrong happens
+<br>request data from API  get data back in JSON format
+<br>Reading / Fetching the informations from an API-url
+<br>Request the API-content and output as JSON-information
+<br>alle the information is stored in data
+<br>last part is the error handling when something wrong happens
 ```markdown
 fetch(url)
     .then(res => res.json())
@@ -889,7 +895,7 @@ fetch(url)
     });
 ```
 
-sometimes the URL also hase a search query parameter<br>
+<br>sometimes the URL also hase a search query parameter<br>
 eg. <a href="https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita" style="font-style: italic">https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita</a><br>
 "s" is the parameter and "margarita" the serach string<br>
 eg. <a href="https:/api.nasa.gov/planetary/apod?api_key=DemoKey&date=2020-10-10" style="font-style: italic">https:/api.nasa.gov/planetary/apod?api_key=DemoKey&date=2020-10-10</a><br>
@@ -917,7 +923,7 @@ include before body-tag
 ```markdown
 <script src="=>ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 ```
-put all jQuery code in this function (waiting until the the page has loaded an the DOM is ready)
+<br>put all jQuery code in this function (waiting until the the page has loaded an the DOM is ready)
 ```markdown
 $(document).ready(function(event){...});
 ```
@@ -947,7 +953,7 @@ $('p:nth-child(2)');
 ---
 ## DATE
 [jump to top...](#javascript)<br><br>
-Assign variable to actual date
+<br>Assign variable to actual date
 ```markdown
 let now = new Date()
 ```
@@ -961,7 +967,7 @@ let secondes = now.get.Seconds()
 ---
 ## MATH
 [jump to top...](#javascript)<br><br>
-Random number between 1 and 6 like a cube (Math.random returns value between 0 and 1)
+<br>Random number between 1 and 6 like a cube (Math.random returns value between 0 and 1)
 ```markdown
 Math.floor(Math.random()*6) + 1
 ```
