@@ -2,257 +2,310 @@
 ### TOC ###
 ###########
 
-### CSS General
-### CSS Attributes
-### Formating snippets
-### Font Definition
-### Icon Use
-### Parent > Child Relationsships
-### Selectors and Combinations
-### Classes
-### IDs
-### Inline Style / !important
-### Pseudo Classes
-### Box Model / Boxing
-### Layouts - Floating
-### Layout - Flexbox
-### Layout - Grid
-### Responsive Design
-### Media Queries
-### Animating, Transform
-### Variables
-### CSS Template - style.css
-### Performance and Organization
-### Google Chrome Hacks
-### Preprocessors
+#> GENERAL
+#> ATTRIBUTES
+#> FORMATING SNIPPETS
+#> FONT DEFINITION
+#> ICON USE
+#> PARENT CHILD RELATIONSHIP
+#> SELECTORS AND COMBINATIONS
+#> CLASSES
+#> ID
+#> INLINE STYLE
+#> SPECIFICITY
+#> PSEUDO CLASSES
+#> BOX MODEL
+#> LAYOUTS, FLOATING
+#> LAYOUT FLEXBOX
+#> LAYOUT GRID
+#> RESPONSIVE DESIGN
+#> MEDIA QUERIES
+#> ANIMATING, TRANSFORM
+#> VARIABLES
+#> TEMPLATE
+#> PERFORMANCE ORGANIZATION
+#> CHROME HACKS
+#> PREPROCESSORS
+#> SASS
 
 
 
-----------
-### CSS General
-should go in seperate file (better than inline or in the head)
-css statements are called "rules"
-resetting all browser-styles: http://meyerweb.com/eric/tools/css/reset/
-normalize the alle browser-styles: github.com/necolas/normalize.css
-<link rel="stylesheet" href="css/style.css">    # link the html-file to the css-file
-/* comment */
+####### GENERAL
+- should go in seperate file (better than inline or in the head)
+- css statements are called "rules"
+- resetting all browser-styles: http://meyerweb.com/eric/tools/css/reset/
+- normalize the alle browser-styles: github.com/necolas/normalize.css
 
-p {                                             # syntax of the css statement / rule
-    color: red;                                 => (p => selector, color:red; => declaration)
-}                                               => color => property, red => value)
+<link rel="stylesheet" href="css/style.css">    => link the html-file to the css-file
+/* comment */                                   => comment in css
 
-p {                                             # set rule with 2 declerations for p => red and bold
+=> syntax of the css statement / rule
+""
+p {                                             
+    color: red;                                 /* (p => selector, color:red; => declaration) */
+}                                               /* color => property, red => value) */
+""
+
+=> set rule with 2 declerations for p => red and bold
+""
+p {                                             
     color: red;
     font_weight: bold;
 }
+""
 
-# Cascade Rules (but Specificity overrules - see below)
-p {                                             # cascading rules (from top to bottom, step by step)
-    color: red;                                 =>output is blue+bold
+=> Cascade Rules (but Specificity overrules - see below)
+""
+p {                                             /* cascading rules (from top to bottom, step by step) */
+    color: red;                                 /* output is blue+bold */
     font_weight: bold;
 }
 p {
     color: blue;
 }
-----------
+""
 
 
 
-----------
-### CSS Attributes
+###### ATTRIBUTES
 https://www.w3schools.com/cssref/
-color: red; 							# Define red color for element
-color: #FF0000;							# Define color with hex code
-color: rgba(255,0,0,1);					# Defome color with rgb code (4th parameter is opaque - 0.5. means half transparent, 1 no transparent)
-color: hsla(0, 100%, 50%,1);            # define color per hsla value 
-font_weight: bold;						# Font bold
-font_weight: 700;						# Define when a font is downloaded from eg. google fonts
-font-size: 25px;						# Define font size with 25 pixel
-font-style: italic;						# Font italic / cursive
-line-height: 1.5,;						# Defines line-height as 1.5 of the normal height
-text-decoration: underline red;			# Define text decoration a red underline
-text-decoration: line-through;			# Define text with line-through
-text-align: center;						# Center text / or list-entries in ul
-text-align: justify;					# Display text as blocktext (left and right in a line)
-text-transform: uppercase;				# Make text uppercased
-background-color: #e2b007;				# Define background color
-border: 3px solid #FFA500;				# Define border of element (width, style, color) - "shorthand"-method
-border: thin solid red;					# Define border of element (width, style, color) - "shorthand"-method
-border-bottom: 6px dashed #FFA500;		# Define only the bottom-border - "longhand"-method	
-border-bottom-width: 12px;				# Define only the bottom-border-width - "longhand"-method	
-border-radius: 5px;						# Define a border radius with 5 pixel - "shorthand"-method
-border-top-right-radius: 5px;			# Define the border radius for top right corner  - "longhand"-method
-border-color: red;                      # Define border color with red
-border-width: 1px 2px 1px 2px;          # Define border width with 1px/2px (clockwise => up-rigth-down-left)
-border-style: solid;                    # Define 
-height: 100px;							# Height of the box
-margin: 20px;							# Margin of the box (outside the border, for all 4 sites) - "shorthand"-setting
-margin: 10px 20px;						# Margin of the box (10 pixel for top/bottom and 20 pixel for left/right)
-margin: 10px 20px 0 15px;				# Margin of the box (clockwise from tom) => 10px top, 20px right, 0px bottom, 115px left
-margin: 100px 0;						# Margin of the box => will do this clockwise for top+right and bottom-left => 100px for top+bottom, 0 for right+left
-margin: auto;							# Set the margin automatc - wg. when the width is set to a percentage
-margin: 0 auto;							# Center the content horizontal
-margin-top: 10px						# Setting the margin to 10 pixel - "longhand"-method
-padding: 20px;							# Padding on all sides
-padding: 0 0 20px 0;					# Padding only on the bottom side (values are going clockwise starting at the top)
-padding: 0 10px;						# Padding on the left and right - no padding at top and bottom
-padding-left: 6px						# Setting the padding to 6 pixel - "longhand"-method
-width: 50%;								# Define width in percent (relative to the width of the parent element)
-width: 5em;								# Define width (calculated on elements font size - when font-size=14px - the width would be 70px (5*14)
-width: calc(33.3% - 20px)				# Define width (and reserve additional 10px for eg. the margin of each element)
-height: 200px;							# Define height of element	
-max-width:20%;							# Resize something eg. img
-max-width:100%;							# Prevents the eg. image from getting bigger than its original size	
-max-height:20%;							# Resize something eg. img
-list-style-type: none;					# no bullets in unordered list (using at ul-element)
-disply: none;							# hide element	
-display: inline;						# show element in line - eg. horizontal li-elements - or wrap border only around a paragraph p (and not the whole block)
-display: block;							# show element as a block (max width of the window) - eg. wrap border around a span element over the whole window (and not only the span)
-display: inline-block;					# show elements in the block in a line - eg. alle <p>s in a <div>-element
-display: flex;							# show elements in the block in the flex system
-float: left;							# Define floating for an image (text will float her on the right side of the image)
-clear: both;							# Clear floating (for left and right)
-transistion: background 5s;				# Change the background fading in for 5 seconds	(eg. going from white to dark blue)
-position: static;						# Static element - is not positioned in any way (position tags top-bottom-left-rigth will have no effect)
-position: relative;						# With the position tags (top, botom, left, right) the element is shifted away from its normal position
-position: fixed;						# Element stays according the position tags - but will not change the place even if the windows is scrolled
-overflow: visible; 						# Default-value - we can see the content when it overflows
-overflow: hidden;						# Hides the overflow (can not see the text which is outside the box)
-overflow: auto;							# Shows a scrollbar when the content is overflowing
-z-index: 2; 							# Can overlap other elements - element with the highest z-index in front
-filter: brightness(40%);				# Make a picture darker
-cursor: pointer;						# Make cursor a pointer when going over the element
-user-select: none;						# Disable highlighting of text selection
-&copy									# Make copyright-sign
-----------
+color: red; 							=> Define red color for element
+color: #FF0000;			    			=> Define color with hex code
+color: rgba(255,0,0,1);					=> Defome color with rgb code (4th parameter is opaque - 0.5. means half transparent, 1 no transparent)
+color: hsla(0, 100%, 50%,1);            => define color per hsla value 
+font_weight: bold;						=> Font bold
+font_weight: 700;						=> Define when a font is downloaded from eg. google fonts
+font-size: 25px;						=> Define font size with 25 pixel
+font-style: italic;						=> Font italic / cursive
+line-height: 1.5,;						=> Defines line-height as 1.5 of the normal height
+text-decoration: underline red;			=> Define text decoration a red underline
+text-decoration: line-through;			=> Define text with line-through
+text-align: center;						=> Center text / or list-entries in ul
+text-align: justify;					=> Display text as blocktext (left and right in a line)
+text-transform: uppercase;				=> Make text uppercased
+background-color: #e2b007;				=> Define background color
+border: 3px solid #FFA500;				=> Define border of element (width, style, color) - "shorthand"-method
+border: thin solid red;					=> Define border of element (width, style, color) - "shorthand"-method
+border-bottom: 6px dashed #FFA500;		=> Define only the bottom-border - "longhand"-method	
+border-bottom-width: 12px;				=> Define only the bottom-border-width - "longhand"-method	
+border-radius: 5px;						=> Define a border radius with 5 pixel - "shorthand"-method
+border-top-right-radius: 5px;			=> Define the border radius for top right corner  - "longhand"-method
+border-color: red;                      => Define border color with red
+border-width: 1px 2px 1px 2px;          => Define border width with 1px/2px (clockwise => up-rigth-down-left)
+border-style: solid;                    => Define border style
+height: 100px;							=> Height of the box
+margin: 20px;							=> Margin of the box (outside the border, for all 4 sites) - "shorthand"-setting
+margin: 10px 20px;						=> Margin of the box (10 pixel for top/bottom and 20 pixel for left/right)
+margin: 10px 20px 0 15px;				=> Margin of the box (clockwise from tom) => 10px top, 20px right, 0px bottom, 115px left
+margin: 100px 0;						=> Margin of the box => will do this clockwise for top+right and bottom-left => 100px for top+bottom, 0 for right+left
+margin: auto;							=> Set the margin automatc - wg. when the width is set to a percentage
+margin: 0 auto;							=> Center the content horizontal
+margin-top: 10px						=> Setting the margin to 10 pixel - "longhand"-method
+padding: 20px;							=> Padding on all sides
+padding: 0 0 20px 0;					=> Padding only on the bottom side (values are going clockwise starting at the top)
+padding: 0 10px;						=> Padding on the left and right - no padding at top and bottom
+padding-left: 6px						=> Setting the padding to 6 pixel - "longhand"-method
+width: 50%;								=> Define width in percent (relative to the width of the parent element)
+width: 5em;								=> Define width (calculated on elements font size - when font-size=14px - the width would be 70px (5*14)
+width: calc(33.3% - 20px)				=> Define width (and reserve additional 10px for eg. the margin of each element)
+height: 200px;							=> Define height of element	
+max-width:20%;							=> Resize something eg. img
+max-width:100%;							=> Prevents the eg. image from getting bigger than its original size	
+max-height:20%;							=> Resize something eg. img
+list-style-type: none;					=> no bullets in unordered list (using at ul-element)
+disply: none;							=> hide element	
+display: inline;						=> show element in line - eg. horizontal li-elements - or wrap border only around a paragraph p (and not the whole block)
+display: block;							=> show element as a block (max width of the window) - eg. wrap border around a span element over the whole window (and not only the span)
+display: inline-block;					=> show elements in the block in a line - eg. all p-elements in a div-element
+display: flex;							=> show elements in the block in the flex system
+float: left;							=> Define floating for an image (text will float her on the right side of the image)
+clear: both;							=> Clear floating (for left and right)
+transistion: background 5s;				=> Change the background fading in for 5 seconds	(eg. going from white to dark blue)
+position: static;						=> Static element - is not positioned in any way (position tags top-bottom-left-rigth will have no effect)
+position: relative;						=> With the position tags (top, botom, left, right) the element is shifted away from its normal position
+position: fixed;						=> Element stays according the position tags - but will not change the place even if the windows is scrolled
+overflow: visible; 						=> Default-value - we can see the content when it overflows
+overflow: hidden;						=> Hides the overflow (can not see the text which is outside the box)
+overflow: auto;							=> Shows a scrollbar when the content is overflowing
+z-index: 2; 							=> Can overlap other elements - element with the highest z-index in front
+filter: brightness(40%);				=> Make a picture darker
+cursor: pointer;						=> Make cursor a pointer when going over the element
+user-select: none;						=> Disable highlighting of text selection
+&copy									=> Make copyright-sign
 
 
 
-----------
-### Formating snippets
-# center an unordered list
+###### FORMATING SNIPPETS
+=> center an unordered list
+""
 ul {
-   text-align: center;}					# center the whole ul in the block
+   text-align: center;					# center the whole ul in the block
+}
 ul li {
-   display: inline-block;}				# arrange list elements vertically
+   display: inline-block;				# arrange list elements vertically
    list-style-type: none;			   	# not dots for the list elements
+}
+""
 
-# show sepeartor between unordered list
+=> show sepeartor between unordered list
+""
 li + li:before{
     content: " | ";
-    padding: 0 3px;}
+    padding: 0 3px;
+}
+""
 
-# resize a block element and center it
+=> resize a block element and center it
+""
 (if using only "width" => when the window is to small - the browser resolves this with a horizontal scrollbar)
 (so its better to use "max-width" => this reduces the width when the windows is / becomes to small)
     max-width: 600px;
     margin: 0 auto; 
+""
 
-# let a image float right - and let the text float around it in the left and bottom area around the picture
+=> let a image float right - and let the text float around it in the left and bottom area around the picture
+""
 img {
   float: right;
-  margin: 0 0 1em 1em;}
+  margin: 0 0 1em 1em;
+}
+""
 
-# when floating and the image is bigger then the element use this so the element is adjusted to the image heigth
+=> when floating and the image is bigger then the element use this so the element is adjusted to the image heigth
+""
 .clearfix {
-  overflow: auto;}
+  overflow: auto;
+}
 
-# nav menue on the left side - with several section beside the nav in the right area
+""
+
+=> nav menue on the left side - with several section beside the nav in the right area
+""
 (with a percentage parameter - better then fixed px-amounts especially when using smaller windows)
 nav {
   float: left;
   width: 25%;}
 section {
-  margin-left: 25%;}
+  margin-left: 25%;
+}
+""
 
-# show all elements in a div-block flexible as inline
+=> show all elements in a div-block flexible as inline
+""
 div {
     display: inline-block;
     width: 300px;
     height: 100px;
-    margin: 1em;}
+    margin: 1em;
+}
+""
 
-# size div automatically according to the content
-	height: fit-content;
 
+height: fit-content => size div automatically according to the content
 
-# styling link based on state
+=> styling link based on state
+""
 a:link {...}		=> format link when not allready clicked
 a:visited {...}		=> format link when allready clicked
 a:hover {...}		=> format link when hovered over with the mouse
+""
 
-# center the whole site in the middle
+=> center the whole site in the middle
+""
 body {
 	width: 75%;						# space which can be taken by the body
 	margin: 0 auto;}				# rest of the space (=25%) will be splitted left and right
+""
 
-
-# make media scalable
+=> make media scalable
+""
 img, video, canvas {
 	max-width: 100%;}
+""
 
-# show different images depending on browser width
+=> show different images depending on browser width
+""
 <picture>
   <source srcset="img_smallflower.jpg" media="(max-width: 600px)">
   <source srcset="img_flowers.jpg" media="(max-width: 1500px)">
   <source srcset="flowers.jpg">
   <img src="img_flowers.jpg" alt="Flowers" style="width:auto;">
 </picture>
+""
 
-# define variable
-at the very beginning:
+=> define variable at the very beginning:
+""
 :root {
-  --primary-color: #047aed}
-use the variable somewhere in the css:
+  --primary-color: #047aed
+}
+""
+=> use the variable somewhere in the css:
+""
 background-color: var(--primary-color);
+""
 
-# no border when entering an input field
+=> no border when entering an input field
+""
 input:focus {
-  outline: none;}
+  outline: none;
+}
+""
 
-# button attention (makes button during hovering a little bit smaller)
+=> button attention (makes button during hovering a little bit smaller)
+""
 transform: scale(0.98);
+""
 
-# button / picture attention (shift button / pic up for 15px when hoovered)
+=> button / picture attention (shift button / pic up for 15px when hoovered)
+""
 transform: translateY(-15px);}				# shift up element for 15px when hoovered
 transition: 1.5s ease;						# make smooth transisition (with ease => slow - than fast - than slow again)
+""
 
-# make a obliquely line
+=> make a obliquely line
+""
 .element::before					# define area before the element
 .element::after						# define area after the element
 	height: 100px;					# define heigth for the element		
 	transform (skeyY(-3deg);		# make it oblique before / after the element
-----------
+""
 
 
 
-----------
-### Font Definition
+###### FONT DEFINITION
 https://fonts.google.com/
-taken from google fonts for example (take fonts and then create link in upper right corner for the link
-<head>                                          # define in html in the header
+=> taken from google fonts for example (take fonts and then create link in upper right corner for the link
+""
+<head>                     # define in html in the header
     <link href="https://fonts.googleapis.com/css2?familiy=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylessheet">
 </head>
+""
+
+=> Helvetica and sans-serif are the fallback fonts when Source Sans Pro is not loading
+""
 p {
-p {
-    font-family: "Source Sans Pro", "Helvetica", sans-serif;			# Helvetica and sans-serif are the fallback fonts when Source Sans Pro is not loading
-	font-weight: 700;													# how thick / bold the font is
+    font-family: "Source Sans Pro", "Helvetica", sans-serif;    
+	font-weight: 700;				# how thick / bold the font is
 }
-----------
+""
 
 
-
-----------
-### Icon Use
-# Using icons directly from https://fontawesome.com/
-<head>                                         
-	<script src="https://kit.fontawesome.com/bf5e040b82.js" crossorigin="anonymous"></script>		# Definition in the head
+###### ICON USE
+=> Using icons directly from https://fontawesome.com/
+""
+<head>      # Definition in the head                                   
+	<script src="https://kit.fontawesome.com/bf5e040b82.js" 
+        crossorigin="anonymous"></script>   
 </head>
-<i class="fas fa-search">						# use icon in css (change size, color)
+<i class="fas fa-search">		# use icon in css (change size, color)
+""
 
-# Using svg-files
+=> Using svg-files
+""
 put full svg-code (source) of the svg in a svg-tag
-		like: <svg enable-background="new 0 0 515.91 728.5" height="512" id="Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg"...</svg>
+		like: <svg enable-background="new 0 0 515.91 728.5" 
+            height="512" id="Layer_1" version="1.1" 
+            xmlns="http://www.w3.org/2000/svg"...</svg>
 		change all fill="#123456" entries to fill=currentColor
 put a div-wrapper around the svg-element (and probably a a-tag for a link around the wrapper too)
 		like: <div class="wrapperSVG"> ... </div>
@@ -267,165 +320,172 @@ format the div-wrapper:				# for coloring and positioning the svg-icon (in the w
 		position: relative;
 		top: 3px;
 	}
-----------
+""
 
 
-
-----------
-### Parent > Child Relationsships
+###### PARENT CHILD RELATIONSHIP
 Overview Complex Selectors see: https://learn.shayhowe.com/advanced-html-css/complex-selectors/
-# direct parent/child relationship
+=> direct parent/child relationship
+""
 <section>
     <p>hello, twitch!</p>
-</section>                                      # direct parent relationsship > child connection with ">"
-section > p {                                   # direct child connection (only the p which are direct unter section
-    color:red;                                  # p is the direct child of section
+</section>                 # direct parent relationsship > child connection with ">"
+section > p {              # direct child connection (only the p which are direct unter section
+    color:red;             # p is the direct child of section
 }
+""
 
-# normal parent/child realtionship
+=> normal parent/child realtionship
+""
 <section>
     <article>
         <p>hello, twitch!</p>
     </article>
-</section>                                      # normal parent child connection (ignores deepeness)
-section p {                                     # all connections above (when there is a p - somewhere on a level - in the section)
-    color:red;                                  # p is the grandchild of section / somewhere a child of section
+</section>                 # normal parent child connection (ignores deepeness)
+section p {                # all connections above (when there is a p - somewhere on a level - in the section)
+    color:red;             # p is the grandchild of section / somewhere a child of section
 }
+""
 
-# Sibling Relationship
+=> Sibling Relationship
+""
 <section>
     <p>Hello, Twitch!</p>
 	<p>Hello, YouTube!</p>
-</section>										# previous sibling + next sibling
-p + p {											# format is used when two <p>s are after each other
-	color: red;									# only the second p will get red
+</section>				   # previous sibling + next sibling
+p + p {					   # format is used when two <p>s are after each other
+	color: red;			   # only the second p will get red
 }
-----------
+""
 
 
 
-----------
-### Selectors and Combinations
-h1 {...}										# Type Selector - Select one specific type 
-* {...}											# Universal Selector - Select everything
-.box {...}										# Class Selector - Select specific class
-#unique {...}									# ID Selectors - Select specific ID
-Attribute selector	a[title] {...}				# Attribute Selectors - Select elements which have the attribute "title"
-p:first-child {...}								# Pseudo Class Selector - Select elements with special state (eg. first-child, hover, focus, clicked,...)
-p::first-line {...}								# Pseudo Elements Selector - Style a specific part of the selected element (eg. first-letter, first-line,...)
-article p										# Descendant combinator - all connections above (when there is a p - somewhere on a level - in the article)
-article > p										# Child Combinator - direct child connection (only the p which are direct unter article)
-h1 + p											# Adjacent Sibling - format is used when a <p> is following directly after a <h1>
-h1 ~ p											# General Sibling - selects any <p> which is following somewhere after a <h1>
-article p span {...}							# selects any <span> that is inside a <p>, which is inside an <article>
-h1 + ul + p {...}								# selects any <p> that comes directly after a <ul>, which comes directly after an <h1>
-body h1 + p .special {...}						# select elements with class "special" which are somwhere after p which is directly after h1 which is somewhere in the body 	
-----------
+###### SELECTORS AND COMBINATIONS
+h1 {...}										=> Type Selector - Select one specific type 
+* {...}											=> Universal Selector - Select everything
+.box {...}										=> Class Selector - Select specific class
+#unique {...}									=> ID Selectors - Select specific ID
+Attribute selector	a[title] {...}				=> Attribute Selectors - Select elements which have the attribute "title"
+p:first-child {...}								=> Pseudo Class Selector - Select elements with special state (eg. first-child, hover, focus, clicked,...)
+p::first-line {...}								=> Pseudo Elements Selector - Style a specific part of the selected element (eg. first-letter, first-line,...)
+article p										=> Descendant combinator - all connections above (when there is a p - somewhere on a level - in the article)
+article > p										=> Child Combinator - direct child connection (only the p which are direct unter article)
+h1 + p											=> Adjacent Sibling - format is used when a p-element is following directly after a h1-element
+h1 ~ p											=> General Sibling - selects any p-element which is following somewhere after a h1-element
+article p span {...}							=> selects any span-element that is inside a p-element, which is inside an article-element
+h1 + ul + p {...}								=> selects any p-element that comes directly after a ul-element, which comes directly after an h1-element
+body h1 + p .special {...}						=> select elements with class "special" which are somwhere after p which is directly after h1 which is somewhere in the body 	
 
 
 
-----------
-### Classes
+###### CLASSES
+=> class is used for formating many different elements	
+""
 <section>
 	<p class="robot">Hello, Twitch!</p>
 	<p id="zebra" class="bob">Hello, YouTube!</p>
 	<p class="bob">Goodbye!</p>	
-</section>										# class is used for formating many different elements	
+</section>										
 .bob {											
 	color: red;
-}	
-.class1.class2 {...}							# both classes have to be in the SAME element
-p.class1.class2 {...}							# both classes have to be in the SAME element - only for p-elements
-.class1 .class2 {...}							# the parent-element has to be class1 and the child-element class2
-section.class1 h2.class2 {...}					# the parent-element <section> has to be class1 and the child-element <h2> class2
-.class1,.class2 {...}							# one of the classes have to be in the element
-p.class1.class2, a.class2 {...}					# rule is for <p> with class1+class2 or <a> with class2
-body article.class1 h2.class2.class3 {...}		# h2, which have class2+classe3 in h2, their parent has class1, and the parent is in body
-aside.aExtra h3									# rule for <h3> which have a parent-element <aside> with class aExtra
-----------
+}
+""	
+.class1.class2 {...}							=> both classes have to be in the SAME element
+p.class1.class2 {...}							=> both classes have to be in the SAME element - only for p-elements
+.class1 .class2 {...}							=> the parent-element has to be class1 and the child-element class2
+section.class1 h2.class2 {...}					=> the parent-element section has to be class1 and the child-element h2 class2
+.class1,.class2 {...}							=> one of the classes have to be in the element
+p.class1.class2, a.class2 {...}					=> rule is for p with class1+class2 or a with class2
+body article.class1 h2.class2.class3 {...}		=> h2, which have class2+classe3 in h2, their parent has class1, and the parent is in body
+aside.aExtra h3									=> rule for h3 which have a parent-element aside with class aExtra
 
 
 
-----------
-### IDs
+
+###### ID
+=> id is used for formating unique elements
+""
 <section>
 	<p>Hello, Twitch!</p>
 	<p id="zebra">Hello, YouTube!</p>
-</section>										# id is used for formating unique elements
-#zebra {color: red;}							# can used only ONE time - only one id per element - nothing else can have this id
-#class1,#class2 {...}							# one of the ids have to be in the element
-body section.top h2#rhino {...}					# h2, which has id=rhino, the parent has class=top and the parent is in body
-section#aMilk h2								# rule for <h2> which have a parent-element <section> with id aMilk
-----------
+</section>										
+""
+#zebra {color: red;}							=> can used only ONE time - only one id per element - nothing else can have this id
+#class1,#class2 {...}							=> one of the ids have to be in the element
+body section.top h2#rhino {...}					=> h2, which has id=rhino, the parent has class=top and the parent is in body
+section#aMilk h2								=> rule for h2 which have a parent-element section with id aMilk
 
 
 
-----------
-### Inline Style / !important
+
+###### INLINE STYLE
+=> !important
+""
 .bob {
 	color: red !important;						# with !important this style get the maximum priority / overwrites everything
 }												# not often used - eg. in cases of immediate urgency to show something - when a error is not found cxurrently
-----------
+""
 
 
 
-----------
-### Specificity
+###### SPECIFICITY
 https://down4kode.wordpress.com/2014/05/21/css-specificity-calculator/
-# defines the priority which styles can overwrite which style
-# priority has the style which came later - but only when the specificity is equal or higher!
+=> defines the priority which styles can overwrite which style
+""
+priority has the style which came later - but only when the specificity is equal or higher!
 1 point for tags
 10 points for classes
 100 points for ids
 1000 points for Inline Style
+""
 p{}								=> 1 point (1 tag)
 #zebra{} 						=> 100 points (1 id)
 section .bob { }				=> 11 points (1 tag + 1 class)
 .bob{ !important }				=> 1010 points (1 class + 1 other)
 section1,section2 .bob { }		=> 11 points (1 tag + 1 class) for section1 and for section2
-----------
 
 
 
-----------
-### Pseudo Classes
+
+###### PSEUDO CLASSES
 overview see: https://learn.shayhowe.com/advanced-html-css/complex-selectors/
-special classes which are dinamically populated as a result of user actions of document structure
-a:link{...}								# format link when not clicked
-a:visited{...}							# format link when allready clicked
-a:hover{...}							# format link when hoovered over it
-li:first-child							# Selects an element that is the first within a parent
-li:last-child							# Selects an element that is the last within a parent
-p:first-of-type							# Selects an element that is the first of its type within a parent
-p:last-of-type							# Selects an element that is the last of its type within a parent
-div p:nth-child(2)						# Select the second p-child in the div-element
-----------
+=> special classes which are dinamically populated as a result of user actions of document structure
+""
+a:link{...}								=> format link when not clicked
+a:visited{...}							=> format link when allready clicked
+a:hover{...}							=> format link when hoovered over it
+li:first-child							=> Selects an element that is the first within a parent
+li:last-child							=> Selects an element that is the last within a parent
+p:first-of-type							=> Selects an element that is the first of its type within a parent
+p:last-of-type							=> Selects an element that is the last of its type within a parent
+div p:nth-child(2)						=> Select the second p-child in the div-element
+""
 
 
 
-----------
-### Box Model / Boxing
+###### BOX MODEL
 https://en.wikipedia.org/wiki/CSS_box_model#/media/File:Boxmodell-detail.png
-every element is a box - box in the middle
-box has a heigth and width - eg. 100px*100px
-padding outside the box - between box and border (top,right,bottom,left)
-border (outside padding) (top,right,bottom,left)
-margin (outside border) (top,right,bottom,left)
+=> every element is a box - box in the middle
+=> box has a heigth and width - eg. 100px*100px
+=> padding outside the box - between box and border (top,right,bottom,left)
+=> border (outside padding) (top,right,bottom,left)
+=> margin (outside border) (top,right,bottom,left)
 block boxes => eg. h1, p - break to new line, fill the maximum available space, width and heigth will be respected
-inline boxex => eg. a, span, em, strong - will not break to new line, use only the minium space, width/heigth will not apply
-*{box-sizing: border-box}					# With this statement every sizing is included with the border
-----------
+inline boxes => eg. a, span, em, strong - will not break to new line, use only the minium space, width/heigth will not apply
+*{box-sizing: border-box}					=> With this statement every sizing is included with the border
 
 
  
-----------
-### Layouts - Floating
-old layouting - not state of the art!
-element tries to got as much up to the top - and as much left (or right according if floated left or right)
-normaly everything will float to the left
 
+###### LAYOUTS, FLOATING
+=>old layouting - not state of the art!
+=> element tries to got as much up to the top - and as much left (or right according if floated left or right)
+=> normaly everything will float to the left
+
+=> example1 - without cass all the elements will be positoned from top to bottom
+""
 Positioning Content
-<header>...</header>						# example1 - without cass all the elements will be positoned from top to bottom
+<header>...</header>						
 <section>...</section>
 <aside>...</aside>
 <footer>...</footer>
@@ -450,8 +510,11 @@ aside {
 footer {
 	clear: both;							# after the float - the floats have to be cleared to get the old normal vertically float
 }
-	
-<header>...</header>						# example2 - without cass all the elements will be positoned from top to bottom
+""
+
+=> example2 - without cass all the elements will be positoned from top to bottom	
+""
+<header>...</header>						
 <section>...</section>
 <section>...</section>
 <section>...</section>
@@ -465,51 +528,48 @@ section {									# with that all 3 section elements will float left
 footer {
 	clear: both;							# after the float - the floats have to be cleared to get the old normal vertically float
 }
-----------
+""
 
 
 
-----------
-### Layout - Flexbox
-# css-tricks.com: Complete Guide To Flexbox
-display: flex;									# Initialize flexcontainer (parent element as a block)
-display: inline-flex;							# Initialize flexcontainer (as inline-element - not as block)
-flex-direction: row;							# Items are placed horizontal from left to right (DEFAULT)
-flex-direction: row-reverse;					# Items are placed horizontal from rigth to left
-	# => main axis is horizontal and cross axis is vertical	
-flex-direction: column;							# Items are placed vertical top to bottom
-flex-direction: column-reverse;					# Items are placed vertical top to bottom
-	# => main axis is vertical and cross axis is horizontal
-flex-wrap: nowrap;								# No wrapping - shows all items in one line (overwrites element width) (DEFAULT)
-flex-wrap: wrap; 								# Wrap elements to next line in the flexcontainer section (according to the width)
-flex-wrap: wrap-reverse;						# Wrap elements but start at the bottom left corner(and going from left to right)
-flex-flow: row wrap;							# Combination from direction + row (same as flex-direction:	row and flex-wrap: wrap)
-flex: 1;										# Give every element equal space / proportion
-flex: 2;										# One element or all elements should have 2 proportions - eg. more space for a specific item
-order: 1;										# Defines the order of the specific element (if > 0 then put it at the end - when < 0 put it at the very beginning)
-flex-wrap: nowrap;								# Show every item in a single line in the flexcontainer section
-flex-wrap: wrap; 								# Wrap elements to next line in the flexcontainer section
-flex-flow: row wrap;							# Combination from direction + row (same as flex-direction:	row and flex-wrap: wrap)
-justify-content: flex-start;					# Put elements to the max left/top (for the main axis) (DEFAULT)
-justify-ccontent: flex-end;						# Put elements to the max right/bottom (for the main axis=
-justify-content: center;						# Center the elements (for the main axis)
-justify-content: space-around;					# Place elements with equal space around the elements (for the main axis)
-justify-content: space-between;					# Place elements with equal space between the elements (for the main axis)
-align-items: stretch;							# Stretches the elements on the cross axis (DEFAULT)
-align-items: flex-start;						# Align elements from the top or left (for the cross axis)
-align-items: flex-end;							# Align elements from the bottom or right (for the cross axis)
-align-items: center;							# Center the elements (for the cross axis)
-align-items: baseline;							# Align elements on the baseline of the elements (for the cross axis) - eg. when there are different font-sizes in the flex-items
-align-self: flex-end;							# Align individual element at the bottom or right (for the cross axis) - overwrittes the align-items-setting for the single item
-flex: 1 200px;									# Gives the flex-item 1 proportion value (when there are 3 items - every item gets the same space)
-flex: 5;										# Give the element 5times the overall room - eg. 3 items get 1 spaces and 1 item get 5 spaces (8 spaces overall)	
-article:nth-of-type(3) { flex: 2 200px; }		# Gives the 3rd item 2 proportion (item 1+2 get 1/4 of the space - item 3 gets 1/2 of the space)
-button:first-child { align-self: flex-end; }	# Overwrites the vertical position of the item in the flexcontainer
-button:first-child { order: 1; }				# Change the order of the first item (everything has order 0 - with 1 it goes to the very right position)
-button:last-child { order: -1; }				# Change the order of the last item (everything has order 0 - with -1 it goes to the very first position)
+###### LAYOUT FLEXBOX
+=> css-tricks.com: Complete Guide To Flexbox
+display: flex;									=> Initialize flexcontainer (parent element as a block)
+display: inline-flex;							=> Initialize flexcontainer (as inline-element - not as block)
+flex-direction: row;							=> Items are placed horizontal from left to right (DEFAULT)
+flex-direction: row-reverse;					=> Items are placed horizontal from rigth to left (main axis is horizontal and cross axis is vertical)
+flex-direction: column;							=> Items are placed vertical top to bottom
+flex-direction: column-reverse;					=> Items are placed vertical top to bottom (main axis is vertical and cross axis is horizontal)
+flex-wrap: nowrap;								=> No wrapping - shows all items in one line (overwrites element width) (DEFAULT)
+flex-wrap: wrap; 								=> Wrap elements to next line in the flexcontainer section (according to the width)
+flex-wrap: wrap-reverse;						=> Wrap elements but start at the bottom left corner(and going from left to right)
+flex-flow: row wrap;							=> Combination from direction + row (same as flex-direction:	row and flex-wrap: wrap)
+flex: 1;										=> Give every element equal space / proportion
+flex: 2;										=> One element or all elements should have 2 proportions - eg. more space for a specific item
+order: 1;										=> Defines the order of the specific element (if > 0 then put it at the end - when < 0 put it at the very beginning)
+flex-wrap: nowrap;								=> Show every item in a single line in the flexcontainer section
+flex-wrap: wrap; 								=> Wrap elements to next line in the flexcontainer section
+flex-flow: row wrap;							=> Combination from direction + row (same as flex-direction:	row and flex-wrap: wrap)
+justify-content: flex-start;					=> Put elements to the max left/top (for the main axis) (DEFAULT)
+justify-ccontent: flex-end;						=> Put elements to the max right/bottom (for the main axis=
+justify-content: center;						=> Center the elements (for the main axis)
+justify-content: space-around;					=> Place elements with equal space around the elements (for the main axis)
+justify-content: space-between;					=> Place elements with equal space between the elements (for the main axis)
+align-items: stretch;							=> Stretches the elements on the cross axis (DEFAULT)
+align-items: flex-start;						=> Align elements from the top or left (for the cross axis)
+align-items: flex-end;							=> Align elements from the bottom or right (for the cross axis)
+align-items: center;							=> Center the elements (for the cross axis)
+align-items: baseline;							=> Align elements on the baseline of the elements (for the cross axis) - eg. when there are different font-sizes in the flex-items
+align-self: flex-end;							=> Align individual element at the bottom or right (for the cross axis) - overwrittes the align-items-setting for the single item
+flex: 1 200px;									=> Gives the flex-item 1 proportion value (when there are 3 items - every item gets the same space)
+flex: 5;										=> Give the element 5times the overall room - eg. 3 items get 1 spaces and 1 item get 5 spaces (8 spaces overall)	
+article:nth-of-type(3) { flex: 2 200px; }		=> Gives the 3rd item 2 proportion (item 1+2 get 1/4 of the space - item 3 gets 1/2 of the space)
+button:first-child { align-self: flex-end; }	=> Overwrites the vertical position of the item in the flexcontainer
+button:first-child { order: 1; }				=> Change the order of the first item (everything has order 0 - with 1 it goes to the very right position)
+button:last-child { order: -1; }				=> Change the order of the last item (everything has order 0 - with -1 it goes to the very first position)
 
-# flex-basis, flex-grow, flex-shrink
-# longhanded values for flex
+=> flex-basis, flex-grow, flex-shrink (longhanded values for flex)
+""
 flex: 10 5 400px								# means 10 for flex-grow, 5 for flex-shrink, 400px for flex-basis
 	=> flex-basis: set the basis width of the flex-element
 	=> flex-grow: how to deal with the extra-space (in the main axis)
@@ -517,50 +577,53 @@ flex: 10 5 400px								# means 10 for flex-grow, 5 for flex-shrink, 400px for f
 	=> flex-grow: when set to 1 for one element the whole extra-space will be taken for this element
 	=> flex-shrink: what to do when there is not enough space when the window gets shrinked
 	=> flex-shrink: DEFAULT is 0 - when there is not enough space the elments get shrinked equally
-----------
+""
 
 
 
-----------
-### Layout - Grid
-display: grid;									# Define grid for the layouting as block)
-display: inline-grid;							# Define grid as inline-block
-grid-template-columns: 200px 200px 200px;		# Define 3 fixed columns with 200px each
-grid-template-columns: 1fr 1fr 1fr;				# Define 3 flexible columns with fr-units (define 3 columns with max possible place)
-grid-template-columns: repeat(3, 1fr);			# 2nd way: Define 3 flexible columns with fr-units (define 3 columns with max possible place)
-grid-template-columns: auto auto auto;			# 3rd way: Define 3 flexible columns with auto
-grid-template-columns: 2fr 1fr 1fr;				# Define 3 flexible columns with fr-units (4 spaces - 1st column takes 2; 2nd+3rd colujmn take 1)
-grid-template-columns:							# Create as many columns as will fit into the container
-	repeat(auto-fill, minmax(200px, 1fr));			
-grid-gap: 20px;									# Define gap between the elements (20 px for rows and columns)
-grid-gap: 10px 50px;							# Define gap between the elements (10px for the row-gap and 50px for the column-gap)
-grid-row-gap: 30px;								# Define the gap only for the rows
-grid-column-gap: 20px;							# Define the gap only for the columns
-grid-auto-rows: 100px;							# Define heigth of the row
-grid-auto-rows: minmax(100px, auto);			# Define heigth of the row (100px is minimum, auto expand to fit the content)
-grid-column 1 / 3;								# Use for element grid-columns 1 - 3
-grid-column 1 / span 2;							# Use for element gird columns 1 and 2
-grid-row: 1;									# Use for element grid-row 1
-grid-area: 1 / 2 / 5 / 6;						# Use for element area => grid-row-start / grid-column-start / grid-row-end / grid-column-end
-justify-content: space-evenly;					# Arrange grid elements (horizontally) with equal space around every element
-justify-content: space-around;					# Same space around every grid
-justify-content: space-between;					# Same space between the elements
-justify-content: center;						# Center the elements
-justify-content: start;							# Arrange the elements on the starting left side
-justify-content: end;							# Arrange the elements on the ending right side
-align-content: center;							# Arrange grid elements (vertically) - center the elements
-align-content: start, space-around,...			# Same options as horizontaly with justify-content
+###### LAYOUT GRID
+display: grid;									=> Define grid for the layouting as block)
+display: inline-grid;							=> Define grid as inline-block
+grid-template-columns: 200px 200px 200px;		=> Define 3 fixed columns with 200px each
+grid-template-columns: 1fr 1fr 1fr;				=> Define 3 flexible columns with fr-units (define 3 columns with max possible place)
+grid-template-columns: repeat(3, 1fr);			=> 2nd way: Define 3 flexible columns with fr-units (define 3 columns with max possible place)
+grid-template-columns: auto auto auto;			=> 3rd way: Define 3 flexible columns with auto
+grid-template-columns: 2fr 1fr 1fr;				=> Define 3 flexible columns with fr-units (4 spaces - 1st column takes 2; 2nd+3rd colujmn take 1)
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));	=> Create as many columns as will fit into the container			
+grid-gap: 20px;									=> Define gap between the elements (20 px for rows and columns)
+grid-gap: 10px 50px;							=> Define gap between the elements (10px for the row-gap and 50px for the column-gap)
+grid-row-gap: 30px;								=> Define the gap only for the rows
+grid-column-gap: 20px;							=> Define the gap only for the columns
+grid-auto-rows: 100px;							=> Define heigth of the row
+grid-auto-rows: minmax(100px, auto);			=> Define heigth of the row (100px is minimum, auto expand to fit the content)
+grid-column 1 / 3;								=> Use for element grid-columns 1 - 3
+grid-column 1 / span 2;							=> Use for element gird columns 1 and 2
+grid-row: 1;									=> Use for element grid-row 1
+grid-area: 1 / 2 / 5 / 6;						=> Use for element area => grid-row-start / grid-column-start / grid-row-end / grid-column-end
+justify-content: space-evenly;					=> Arrange grid elements (horizontally) with equal space around every element
+justify-content: space-around;					=> Same space around every grid
+justify-content: space-between;					=> Same space between the elements
+justify-content: center;						=> Center the elements
+justify-content: start;							=> Arrange the elements on the starting left side
+justify-content: end;							=> Arrange the elements on the ending right side
+align-content: center;							=> Arrange grid elements (vertically) - center the elements
+align-content: start, space-around,...			=> Same options as horizontaly with justify-content
 
-# Element spans from 1st column to thue 3rd column
+=> Element spans from 1st column to thue 3rd column
+""
 grid-column-start: 1							
 grid-column-end: 4
+""
 
-# Element spans from the 1st row to the 2nd row in the 3rd column
+=> Element spans from the 1st row to the 2nd row in the 3rd column
+""
 grid-column: 3;
 grid-row-start: 1;
 grid-row-end: 3;
+""
 
-# Name all items
+=> Name all items
+""
 .item1 { grid-area: header; }					# Name the different areas
 .item2 { grid-area: menu; }
 .item3 { grid-area: main; }
@@ -572,13 +635,12 @@ grid-row-end: 3;
     'menu main main main right right'
     'menu footer footer footer footer footer';
 }
----------- 
- 
+""
  
 
-----------
-### Responsive Design
-Running the page on different / smaller devices
+###### RESPONSIVE DESIGN
+=> Running the page on different / smaller devices
+""
 - Fluid - everything sized with percentage (no fixed measures)
 	=> looks more or less good on every windows-size
 - Elastic - using em and rem (em looks at the parents fontsize and use this as a base / rem looks at the html-element)
@@ -593,8 +655,10 @@ Running the page on different / smaller devices
 	=> or make it the other way (desktop design first and then shrinking to mobile version)
 	=> decide what should be shown on mobile devices and what not
 	=> using media queries
+""
 
-# Make YouTube-Video responsive
+=> Make YouTube-Video responsive
+""
 .financeToolsDetail .videoContainer {
     position: relative;
     padding-bottom: 56.25%;
@@ -607,126 +671,145 @@ Running the page on different / smaller devices
     width: 60%;											# Defines how big the video should be displayed (width)
     height: 55%;										# Defines how big the video should be displayed (height)
 }
-----------
+""
 
 
 
-----------
-### Media Queries
-@media screen and (max-width: 600px) {			# smartphones: this rule get only be used when the device width is between 0 and 600 pixel
+###### MEDIA QUERIES
+=> smartphones: this rule get only be used when the device width is between 0 and 600 pixel
+""
+@media screen and (max-width: 600px) {			
 	h1 { color: blue; }              }
-@media screen and (min-width: 600px) {			# tablets: this rule is used when the width is greater 600px
-    .middle{color: yellow; }         }
-@media screen and (min-width: 900px) {			# desktop: this rule is used when the width is greater 900px
-    .middle{color: yellow; }         }
-@media screen and (min-width: 600px) and (max-width: 900px){	# this rule is used when the width is between 600px and 900px
-	img {border: 2px solid red;}     }
+""
 
+=> tablets: this rule is used when the width is greater 600px
+""
+@media screen and (min-width: 600px) {			
+    .middle{color: yellow; }         }
+""
+
+=> desktop: this rule is used when the width is greater 900px
+""
+@media screen and (min-width: 900px) {			
+    .middle{color: yellow; }         }
+""
+
+=> this rule is used when the width is between 600px and 900px
+""
+@media screen and (min-width: 600px) and (max-width: 900px){	
+	img {border: 2px solid red;}     }
+""
+
+=> use the full length of the width	
+""
 section {
 	height: 200px;
 	border 1px solid black;
-	flex: 1;				# use the full length of the width	
+	flex: 1;				
 }
-main,.bottom {				# arranges elements in main and class bottom with flex-system
+""
+
+=> arranges elements in main and class bottom with flex-system
+""
+main,.bottom {				
 	display: flex;
 }
+""
 
-Important addition to the template-columns:
+=> Important addition to the template-columns:
+""
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	=> enables the windows to be zoomed
 	(never set initial-scale to none - zooming would be not possible)
-----------
+""
 
 
 
-----------
-### Animating, Transform
-transform: matrix(1,2,3,4,5,6);					# combines the follwing 6 rules
-transform: translate (120px, 50%);				# move left/right, up/down4kode
-transform: scale (2, 0.5);						# change the scale of the object
-transform: rotate (0.5turn);					# rotate object (possible for any axes (rotateX, rotateY, rotateZ)
-transform: skew(30deg, 20deg);					# skew object
-transform: scale(0.5) translate(-100%,-100%)	# combine some transformations
 
-@keyframes xyzAction{							# responsible for the animation - is corresponding to a class definition (see below)
+####### ANIMATING, TRANSFORM
+transform: matrix(1,2,3,4,5,6);					=> combines the follwing 6 rules
+transform: translate (120px, 50%);				=> move left/right, up/down4kode
+transform: scale (2, 0.5);						=> change the scale of the object
+transform: rotate (0.5turn);					=> rotate object (possible for any axes (rotateX, rotateY, rotateZ)
+transform: skew(30deg, 20deg);					=> skew object
+transform: scale(0.5) translate(-100%,-100%)	=> combine some transformations
+
+=> responsible for the animation - is corresponding to a class definition (see below)
+""
+@keyframes xyzAction{							
 	0% {transform: rotateZ(0deg)};				# at 0% of the animation nothing should change on the z-axe
 	50% {transform: rotateZ(180deg)};			# at 50% of the antimaton the z-axe should rotate 180deg		
 	100% {transform: rotateZ(360deg)};			# at 100% of the antimaton the z-axe should rotate 360deg		
 }
+""
 
-.letRip{}										# define the class for the @keyframe above
-animation-name: xyzAction;						# Name of the keyframe (puts together the setup to the keyframe)
-animation-iteration-count: infinite;			# How many times the animation runs (infinite or eg. 5 for 5 times)
-animation-duration: 500ms;						# Lenght of one duration of the animation eg. 500ms or 0.5sec
-animation-function: linear;						# Animation is progressing linear
-animation-function: easy-in-out;				# Animation is progressing faster to the end
-animation-function: step(5,end);				# Animation is progressing in steps (not smooth)
-animation-play-state: running;					# Possible values are runnning or pause (can be used with javacript to start/stop)
-animation-delay									# How long the start of the animation delays
-animation-direction:							# Control of the progression - forward, backward, alternate
-animation-fill-mode
-----------
+.letRip{}										=> define the class for the @keyframe above
+animation-name: xyzAction;						=> Name of the keyframe (puts together the setup to the keyframe)
+animation-iteration-count: infinite;			=> How many times the animation runs (infinite or eg. 5 for 5 times)
+animation-duration: 500ms;						=> Lenght of one duration of the animation eg. 500ms or 0.5sec
+animation-function: linear;						=> Animation is progressing linear
+animation-function: easy-in-out;				=> Animation is progressing faster to the end
+animation-function: step(5,end);				=> Animation is progressing in steps (not smooth)
+animation-play-state: running;					=> Possible values are runnning or pause (can be used with javacript to start/stop)
+animation-delay									=> How long the start of the animation delays
+animation-direction:							=> Control of the progression - forward, backward, alternate
+animation-fill-mode                             => Animation fill mode
 
 
 
-----------
-### Variables
-# Define variables in css
+###### VARIABLES
+=> Define variables in css
+""
 :root {											# Highest possible level of setting a variable
 	--var1: 10px;								# Define variable and initialize with 10px
 	--var2: #ffd166;							# Define variable and initialize with color hex code						
 	--var3: 20%;								# Define variable and initialize with percentage value
 }
-# Use variables in in css
+""
+
+=> Use variables in in css
+""
 img {											# Eg. using for image-rule
 	padding: var(--var1)						# Using Variable
 	background: var(--var2)
 	max-width: var(--var3)	
 }
-(Changing variable in JS have a look at JS.txt)
-----------
+(Changing variable in JS have a look at JS Learning Path / Cheatsheet)
+""
 
 
 
-----------
-### CSS Template - style.css
-see Learning-Documentation - folder "Template HTML_CSS_JS"
-<link rel="stylesheet" href="css/normalize.css">
-	=> normalize the different browser standard styling
-----------
+###### TEMPLATE
+=> see Learning-Documentation
+<a href="../docs/htmlTemplate.zip">link</a>
 
 
 
-----------
-### Performance and Organization
+###### PERFORMANCE ORGANIZATION
 https://learn.shayhowe.com/advanced-html-css/performance-organization/
-- keep selector shorthand
-- use no or less ids - better classes
-- do not use elements before classes (Bad: article.feat Good: .feat)
-- reuse styles whereever its possible
-- compress files with gzip
-- compress / convert images (program PNGGauntlet)
-----------
+=> keep selector shorthand
+=> use no or less ids - better classes
+=> do not use elements before classes (Bad: article.feat Good: .feat)
+=> reuse styles whereever its possible
+=> compress files with gzip
+=> compress / convert images (program PNGGauntlet)
 
 
 
-----------
-### Google Chrome Hacks
+###### CHROME HACKS
 select the width or heigth - press rigth strg - up/down 	=>   live the selected element in the browser
-----------
 
 
 
-----------
-### Preprocessors
+###### PREPROCESSORS
 https://learn.shayhowe.com/advanced-html-css/preprocessors/
-# Haml => Preprocessor for HTML
-(Ruby must be installed before)
-gem install haml				# Installation of haml
-haml index.haml index.html		# Compile the .haml-file to html
+=> Haml: Preprocessor for HTML
+=> Ruby must be installed before
+gem install haml				=> Installation of haml
+haml index.haml index.html		=> Compile the .haml-file to html
 
-# Sass
-(more like a programming language with expressions, loops, if-statements,...)
-gem install sass				# Installation of Sass
+###### SASS
+=> (more like a programming language with expressions, loops, if-statements,...)
+=> Many other preprocessors like Jade, Slim, LESS, Stylus, CoffeeScript
+gem install sass				=> Installation of Sass
 
-Many other preprocessors like Jade, Slim, LESS, Stylus, CoffeeScript

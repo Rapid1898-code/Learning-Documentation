@@ -205,6 +205,14 @@ Check if string/chars are in
 ```markdown
 s.includes("ee")
 ```
+Replace "abc" with "xyz" for any occurrences in the string (only working for new browsers!)
+```markdown
+sNew = s.replaceAll("abc","xyy)
+```
+2nd method for replacing everything (works for more browsers!)
+```markdown
+sNew = s.replace(/abc/g,"xyz")
+```
 Delete all whitespaces at the beginning and the end
 ```markdown
 s.trim()
@@ -244,6 +252,10 @@ s.substr(s.length-3)
 Return Ascii-Code of the first character of the string
 ```markdown
 s.charCodeAt(0)
+```
+Returns True if the string end with "?"
+```markdown
+s.endsWith("?")
 ```
 Returns char for specific ascii-code
 ```markdown

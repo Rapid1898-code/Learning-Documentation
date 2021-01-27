@@ -1,0 +1,283 @@
+Comments in Javascript;// Comment something;javascript
+Multiline comments;/*Text xzy*/;javascript
+"Declare and assign string (possible with """" or '') - ""var"" was the earlier version in the past for that";"let intStr = ""7""";javascript
+Linebreak and Tab should not used - is morely css-stuff for formating;"""/n /t""";javascript
+Declare a variable and assign int (also signed int like -36);let age = 25;javascript
+Defining without assigning (var gets value undefined);let var;javascript
+Declare a constant and assign int (constant can not be changed like variables);const age = 25;javascript
+Declare and assign float (also signed float like +4.5763;let float = 5.14876;javascript
+Change String to Int with base 10;"let intNum = parseInt(intStr,10);";javascript
+Declare and assign string;"let floatStr = ""5.14673""";javascript
+Change String to Float;"let floatNum = parseFloat(floatStr);";javascript
+"Defines+Assigns a variable (if user exists/has a value use that - otherwise initialize with ""guest""";"let v = user || ""guest""";javascript
+Open windows for entering something and store in const inp;"const inp = prompt(""Enter:"")";javascript
+Convert numeric value to string;num.toString();javascript
+2nd method to convert numeric value to string;"num + """"";javascript
+3rd method to convert number / int to a String;String(n);javascript
+Converts String to Number / Int;Number(s);javascript
+Shows the type of the variable (eg. number, string, boolean);typeof x;javascript
+Modulo / Rest of the division (=> 1);7 % 2;javascript
+Check 2 values / variables (result in true / false);x == y;javascript
+Equal value and equal type;x === y;javascript
+Not equal;x != y;javascript
+Not equal value and not equal type;x !== y;javascript
+Greater, lesser, greater + equal , lesser + equal;>,<,>=,<=;javascript
+Check if value is NaN (NotANumber) - eg. when converting with Number() and the value is no number;isNaN(x);javascript
+Check if n is a integer;Number.isInteger(n);javascript
+Makes variable +1;"num++;";javascript
+Outputs variable num in console;console.log(num);javascript
+Outputs element as table (eg. for objects, arrays);console.table(object);javascript
+Alert information in a window;"alert(""Text!"")";javascript
+"Alert some text with outputing the variable ""name"" between (using backticks ""`""";alert(`Bla ${name} bla`);javascript
+Round to 2 decimal digits;n = n.toFixed(2);javascript
+Define a string;"let s = ""this is a test""";javascript
+String with linebreak \n;"let s = ""this \n text""";javascript
+show the whole string;s[0];javascript
+extracht only the first character;s[0,1];javascript
+last char of a string;s[-1];javascript
+slicing 2 chars from pos 3 and 4;s.slice[3,5];javascript
+slice from pos 3 to the end;s.slice[3];javascript
+shows the length of the string;s.length;javascript
+Lowercase the whole string;s.toLowerCase();javascript
+Uppercase the whole string;s.toUpperCase();javascript
+Returns the second char of a string;s.charAt(1);javascript
+"Search if ""xyz"" is int the string - returns the position where found - when not found returns -1";"s.search(""xyz"")";javascript
+Check if string/chars are in;"s.includes(""ee"")";javascript
+"Replace ""abc"" with ""xyz"" for any occurrences in the string (only working for new browsers!)";"sNew = s.replaceAll(""abc"",""xyy)";javascript
+2nd method for replacing everything (works for more browsers!);"sNew = s.replace(/abc/g,""xyz"")";javascript
+Delete all whitespaces at the beginning and the end;s.trim();javascript
+Repeat string 3 times;s.repeat(3);javascript
+Split the words in a array;"s.split("" "")";javascript
+Delete all whitespaces at the beginning and the end;s.trim();javascript
+Fills leading zero in a string with allways 3 chars - eg. 006;"s.padstart(3,""0"")";javascript
+Find Index of first occurence of this string;"s.indexOf(""ee"")";javascript
+Outputs the x character in the string => second char of the string (same as s[1]);s.charAt(1);javascript
+Get the last 3 chars of the string;s.slice(-3);javascript
+2nd variant: Get the last 3 chars of the string;s.substr(s.length-3);javascript
+Return Ascii-Code of the first character of the string;s.charCodeAt(0);javascript
+"Returns True if the string end with ""?""";"s.endsWith(""?"")";javascript
+Returns char for specific ascii-code;char = String.fromCharCode(65);javascript
+Check if char is in A-Z;char.match(/[A-Z]/i);javascript
+Define an array;"let arr = [];";javascript
+Define an array and initialize it;"let arr = [6,7,8];";javascript
+Define multidim array;let mat= [[1,2,3],[4,5,6],[7,8,9]];javascript
+Get second element => 7;arr[1];javascript
+Access last element in array;arr[arr.length-1];javascript
+Get element in the matrix => 5;mat[1][1];javascript
+Replace the third element;arr[2] = 9;javascript
+"Returns list as a string => ""6,7,8""";String(Arr);javascript
+Must allways be compared with triple = (only == would be wrong);a1 === a2;javascript
+Total count of the elemets in the array;arr.length;javascript
+Extracts and delete element at the end (fast!);arr.pop();javascript
+Extracts and delete element at the begin (slow!);arr.shift();javascript
+Append new elements to the array at the end (fast!);"arr.push(""X"",""Y"")";javascript
+Add new elements to the array at the beginning (slow!);"arr.unshift(""Y"",""Z"")";javascript
+Copy elements from index 2 to index 3 => result is one char at index 2;ergArr = arr.slice(2,3);javascript
+Copy the last 2 elements of the array;ergArr = arr.slice(-2);javascript
+Delete 1 element beginning from index 2;arr.splice(2,1);javascript
+Delete 2 elements beginning from the index 0 - and insert the elements 10 and 11;arr.splice(0,2,10,11);javascript
+From index -1 delete 0 elements and add 3 and 4;arr.splice(-1,0,3,4);javascript
+Delete 2 elements beginning from the index 0 - and assign them to ergArr;ergArr = arr.splice(0,2);javascript
+Concatenate 2 arrays to one;ergArr = arr1.concat(arr2);javascript
+"Returns first index position of element ""xyz"" (if not exists result is -1)";"arr.indexOf(""xyz"")";javascript
+"Return the last index position of the element ""xyz""";"arr.lastIndexOf(""xyz"")";javascript
+Check if string exists in the array;"arr.includes(""xyz"")";javascript
+Reverse the entire array;arr.reverse();javascript
+Split the words in a array;"arr = varStr.split("" "")";javascript
+"Join the elements from the array in a string with "", "" as seperator";"varStr = arr.join("", "")";javascript
+Check if object is an array (if array = true);Array.isArray(arr);javascript
+Iterate through index of the array;"for (let i=0; i < arr.lenth; i++) {do smth.}";javascript
+Iterate through array elements;for (let elem of arr) {alert(arr)};javascript
+Convert a node-list to an array;"arr=Array.from(document.querySelectorAll(""a""))";javascript
+2nd method for converting node-list to an array;"arr=[...document.querySelectorAll(""a"")]";javascript
+Iterate trough array by index and element (with shortform);"arr.forEach((elem,idx) => {
+    console.log(idx)
+    console.log(elem)
+})";javascript
+Iterate through array by elements and index (with longform);"arr.forEach(function(elem,idx) {
+    console.log(idx)
+    console.log(elem)
+})";javascript
+Filter Method - Long Method (Filters all values which are > 6 eg. in a new array);"newarr = arr.filter (function(x){
+    if (x > 6) {
+        return true
+    }
+})";javascript
+Short Method in one line;"newarr = arr.filter(x => x > 6);";javascript
+Reduce Method - for doing something with the array and output / calculate something;"erg = arr.reduce ((total, element) => {
+    return total + element
+},0)";javascript
+erg = arr.reduce ((total, element) {;"if (condition is true) {
+    =>Do something
+}else if (condition is true){
+    =>Do something else
+}else{
+    =>Default else
+}";javascript
+If structure with logical and;"if (a == 9) && (b == 7) { c = ""Hurra!"" }";javascript
+If structure with logical or;"if (a == 9) || (b == 7) { c = ""Hurra!"" }";javascript
+If structure with logical not;if !(a > 13);javascript
+if !(a > 13)                                    If structure with logical not;"switch (expression) {           // Switch expression for multiple options
+case value1:                    // Do something when expression is value1
+    // Do something
+    break;                      // Break necessary for any case / value
+case value2:                    // Do something when expression is value2
+    // Do something
+    break;
+default:                        // When no case is mathing - then do this
+    => Do something
+    break;
+}";javascript
+Iteration from 1 to 5 with for-loop;"for (let i=1; i<=5; i++) {}";javascript
+Iteration backwards from 3 to 0 with for-loop;"for (let i=3; i>=0; i--) {}";javascript
+Iterate through an array;"for (let i=0; i<arr.length; i++) {}";javascript
+While loop with break condition;"while (x < 4) {
+    if xyz === ""abc"" {break}
+}";javascript
+Do While loop with break condition;do {} while (x < 4);javascript
+Endless while loop - has to be exited somewhere;while (true) {};javascript
+Iterate through array by elements (x);"arr.forEach((x) => {
+    console.log(x)
+})";javascript
+Are all falsy values - can checked with if (xyz)...;"0,"""",'',null,undefined,NaN";javascript
+Ternary Operator for if - if isNight=true then s=Night - else s=Day;"isNight ? s=""Night"" : s=""Day""";javascript
+Normal Function Decleration;"function addFunc(x=0,y=0) {    // Define a function    - with default value 0 if no input is given
+    let erg = x+y              // Calculate erg
+    return erg}                // Return erg value
+addFunc(3,5)                   // Function Call";javascript
+Function Expression (used for anonymous functions);"const add = function(x,y) {...}     // Define a function expression (function is assigned to an variable
+add(3,5)                            // Function Call";javascript
+Anonymous Function with Fat Arrow syntax;"const add = (x,y) => {...}
+add(3,5)                            // Function Call
+let h = a => a % 3                  // Even shorter without parentees";javascript
+"return-statement with ""?"" or ""||""";"return (age > 18) ? true : console.log('Did parents allow');    // When age > 18 returns true - otherwise output something in the console
+return (age > 18) || console.log('Did parents allow');          // Same logic with ""||""";javascript
+Use Rest Parameters to accept any number of arguments;"function max(...numbers) {                // Any numbers of arguments
+    => do something with a loop
+}";javascript
+AddEventListener with parameters in the function;"document.querySelector(""#dayToday"").addEventListener(""click"",function() {   // define addEventListener as normal but use ""function ()""
+    toggleBackground(""today"", 6)                                            // call the function with parameters inside
+}, false);";javascript
+Define an object (literal syntax);let obj = {};javascript
+2nd method to define object (construtor syntax);let obj = new Object();javascript
+Define an object and initialize it;"let obj = {
+    name: ""John"",
+    age: 30,                // last "","" i allowed and called trailing / hanging (its easier so to add/remove/move properties of the object)
+    shout() {               // Defines a method for the object
+        return ""Hurra!""
+    }
+}";javascript
+"Access property / shows value of the key ""name"" (1st method) => John";obj.name;javascript
+"Shows value of the key ""name"" (2nd method) => John";"obj[""name""]";javascript
+"Shows key ""age"" of the object => 30";obj.age;javascript
+Add a new propertie to the object;"obj.newOne = ""xyz""";javascript
+Add a new method to the object;obj.newMethod = function(var) {...do someth...};javascript
+Call the new method;obj.newMethod(25);javascript
+Check if key is in the object;age in obj;javascript
+Delete a property of an object;delete obj.age;javascript
+Iterate through the keys of the object and outputs key and value;for (let key in obj) {alert(key,alert, obj[key]};javascript
+Store all the keys of the object in an array;Object.keys(obj);javascript
+Check if a property / method is in an object;"if (""property"" in obj) {...}";javascript
+Check if Object is empty;Object.keys(obj).length === 0 && obj.constructor === Object;javascript
+Other example for an object;"var school = {
+  name: 'The Starter League',
+  location: 'Merchandise Mart',
+  students: 120,
+  teachers: ['Jeff', 'Raghu', 'Carolyn', 'Shay']
+};";javascript
+Make a Object with the old method;"function MakeCar (carMake,carModel,carColor){       // Define the constructor function
+    this.make = carMake                             // Define properties for the constructor
+    this.carModel = carModel                        // ""this"" is referencing to the actual object
+    this.carColor = carColor
+    this.honk = function(){                         // Define a mtehod for the constructor
+        alert(""BEEP ${this.carModel} BEEP"")         // Alert something when the method is called (with prop this.carModel)
+    }
+}
+let car1 = new MakeCar(""Honda"",""Civic"",""black"")     // Create a new car1 (with codeword ""new"")
+let car2 = new MakeCar(""Tesla"",""Roadster"",""red"")    // Create a new car1";javascript
+Make a Object with the new class method;"class MakeCar{                                      // Define the class
+    constructor (carMake,carModel,carColor){        // Define properties for the class
+        this.make = carMake                         // Assign the properties of the class to the concrete individual object
+        this.carModel = carModel                    // ""this"" is referencing to the actual object
+        this.carColor = carColor
+    }
+    honk(){                                         // Define a method for the class
+        alert(""BEEP ${this.carModel} BEEP"")         // Alert something when the method is called (with prop this.carModel)
+    }
+}
+let car1 = new MakeCar(""Honda"",""Civic"",""black"")     // Create a new car1 (with codeword ""new"")
+let car2 = new MakeCar(""Tesla"",""Roadster"",""red"")    // Create a new car1";javascript
+Give new property and function;"MakeCar.prototype.wash = true                       // Give all the created cars from the class ""MakeCar"" a new property ""wash""
+MakeCar.prototype.newFunc = function () {           // Give all the created cars from the class ""MakeCar"" a new function ""newFunc""
+    console.log(""We have a new function!""
+}";javascript
+Add Eventlistener;"document.querySelector('#check').addEventListener('click',func1)        // New Method / create an Event Listener / execute function ""func1"" when mouse is clicked
+...'onmouseenter'...                                                    // New Method / create an Event Listener / exceute function ""func2"" when mouse-cursor is over the element
+...'input'...                                                           // Event Listener with trigger input
+...'change'...                                                          // Event Listener with trigger every change in the element
+...'mousemove'...                                                       // Event Listener with trigger when mouse is moved over the element
+...'transitionend'...                                                   // Event Listener with trigger when the transistion ends
+document.getElementById(""green"").onclick = funcGreen                    // Old Method / Waiting for click on this element (by ID) as a ""event-listener""";javascript
+E.G. document.querySelector('=>idBlue').addEventListener('click',changeToBlue);"function funcGreen() {                                      // Define function
+  document.querySelector(""body"")
+    .style.backgroundColor = ""rgba(241,63,247,1)""           // Change BackGroundColor-Style to rgba-color green (as inlinecode in the rendering - not in the html-code)
+  document.querySelector(""body"").style.color = ""white""      // Change Fontcolor to white (as inlinecode in the rendering - not in the html-code)
+}";javascript
+Use EventListner for alle elements with a specific class;"let elements = document.querySelectorAll("".panel"");             // Select all elements with class ""panel""
+elements.forEach(elem => elem.addEventListener(""click"",func1))  // Iterate trough every element and create EventListener - when clicked start func1 for the element
+function func1() {                                              // Function is run with the activated Element for the EventListener
+    this.classlist.toggle(""newClass"")}";javascript
+Old Method / Select an element by ID;document.getElementById;javascript
+New Method / Select (first) a <tag> or .class or =>id;"document.querySelector(""xyz"")";javascript
+Select all elements which have h2 and store it in the constante c;"const c = document.querySelectorAll(""h2"")";javascript
+Element-Listener waiting for a click7;.onclick;javascript
+Change BackgroundColor;.style.backgroundColor;javascript
+Change Font Color;.style.color;javascript
+Hide element in DOM;".style.display = ""none""";javascript
+Change Text of the selected element;".innerText = ""xyz""";javascript
+Concatenate 3 variables with space between (old method);".innerText = v1 + "" "" + v2 + "" "" + v3";javascript
+"Concatenate 3 variables with space between (new method with the ""`""-char called template string)";.innerText = `${v1} ${v2} ${v3}`;javascript
+Read the value/text of the field;.value;javascript
+Show the ID of the selected element;.id;javascript
+Set the src of a image;.src;javascript
+Manipulate classes informations;.classList;javascript
+Toggle the class hidden (when triggered class is deleted OR added (when the next click occured);".classList.toggle(""hidden"")";javascript
+Add the class hidden;".classList.add(""hidden"")";javascript
+"Check if element contains class ""cl""";".classList.contains(""cl"")";javascript
+Remove the class from the element;".classList.remove(""wiggle"")";javascript
+"Call function ""func1"" every second (1000ms)";setInterval(func1, 1000);javascript
+Read all control- and input-elements;"let inputs = document.querySelectorAll("".controls input"");";javascript
+Handle Update;"function handleUpdate() {
+    const suffix = this.dataset.sizing || '';       // read the sizing-parameter for the triggered element (used data-sizing in html)
+    document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+        // set the variable in css (name according to --name in css)
+        // use the value from the read element from the adventlistener
+        // and use the suffix which is read above
+        // full property looks eg. like ""--spacing: 10px""
+}";javascript
+last part is the error handling when something wrong happens;"fetch(url)
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+    })
+    .catch(err => {
+        console.log(""error ${err}"")
+    });";javascript
+put all jQuery code in this function (waiting until the the page has loaded an the DOM is ready);"$(document).ready(function(event){...});";javascript
+Class selector;"$('.feature');";javascript
+Descendant selector;"$('li strong');";javascript
+Multiple selector;"$('em, i');";javascript
+Attribute selector;"$('a[target=""_blank""]');";javascript
+Pseudo-class selector;"$('p:nth-child(2)');";javascript
+Assign variable to actual date;let now = new Date();javascript
+"Assign actual seconds from actual date variable ""now""";let secondes = now.get.Seconds();javascript
+Random number between 1 and 6 like a cube (Math.random returns value between 0 and 1);Math.floor(Math.random()*6) + 1;javascript
+Nearest Upward rounding => 44;Math.ceil(43.8);javascript
+Return the square-root => 3;Math.sqrt(9);javascript
+Use PI;Math.PI;javascript
+Round down the float => 5;Math.floor(5.95);javascript
+First number to the power of the second => 8;Math.pow(2,3);javascript
+Creates the cube root => 3;Math.cbrt(8);javascript
+Returns the absolute number => 3;Math.abs(-3);javascript
+Returns the Minimum of the values => 1;Math.min(1,2,3);javascript
+Returns the Maximum of the values => 3;Math.max(1,2,3);javascript

@@ -1,0 +1,84 @@
+Should be the first site;index.html;html
+Standard structure in the html-file;"<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=""utf-8"">                                                      # Define standard charset
+        <meta name=""description"" content=""Techcrunch"">                              # Description of the site
+        <meta name=""keywords"" content=""one, two, three"">                            # Keywords of the site
+        <meta name=""viewport"" content=""width=device-width, initial-scale=1"">        # Viewport Definition
+        <title>Techcrunch</title>                                                   # Title of the site
+        <link rel=""preconnect"" href=""https://fonts.gstatic.com"">                    # Use Google Font Style
+        <link href=""https://fonts.googleapis.com/css2?family=Roboto&display=swap"" rel=""stylesheet"">     # Use Google Font Style
+        <link rel=""stylesheet"" href=""css/normalize.css"">                            # Normalizing the CSS-Browser-Styles
+        <link rel=""stylesheet"" href=""css/techcrunch_layout1.css"">                   # External CSS-File-Link
+        <script src=""https://kit.fontawesome.com/bf5e040b82.js"" crossorigin=""anonymous""></script>       # Use FontAwesome Icons
+    </head>
+    <body>
+        <!--Everything the user sees -->
+    </body>
+</html>";html
+grouping some html-area;<div></div>;html
+main part of the homepage;<main></main>;html
+part of the homepage - eg. the core middle of the site;<section></section>;html
+part of the section - can be taken and dropped to another place;<article></article>;html
+mostly on the side of the homepage - something you can take away and the page would still be working (eg. ads);<aside></aside>;html
+eg. menue at the title;<header>...</header>;html
+Navigation info for the user (unordered ul list normaly);<nav></nav>;html
+bottom of the document;<footer></footer>;html
+commentar in HTML;<!-- This is a comment -->;html
+anker link element;"<a href=""www.x.com"">X</a>";html
+form element;"<form action=""search.html"" method=""post"">
+    <label>Search:</label>
+</form>";html
+Normal Paragraph (long text);<p>text</p>;html
+Paragraph / Text with anchor link;"<p>Text <a href=""www.x.com"">X</a></p>";html
+Paragraph with a class;"<p class=""nine"">Hello</p>";html
+Short text;<span>text</span>;html
+Header1-Tag with Text (most important on the page);<h1>Import Header</h1>;html
+Header2-Tag with Text (second important);<h2>2nd important thing</h1>;html
+Header6-Tag with Text (sixth important thing on the page);<h6>6th important thing</h1>;html
+Insert picture - no close tag (with alternative text - when img can´t be displayed);"<img src=""pic.jpeg"" alt=""text"">";html
+Preserves whitespace (not good - should be done by CSS);<pre> </pre>;html
+linebreak (not good - should be done by css);<br>, </br>;html
+htmlbreak (not good - should be done by css);<hr>, </hr>;html
+Emphasis some text - but only for accessibility reason (not styling!);<em> Stress Emphasis </em>;html
+Bold some text - but only for accessibility reason (not styling!);<strong> Strong Importance </strong>;html
+Insert video;"<video width=""400"" controls>
+  <source src=""mov1.mp4"" type=""video/mp4"">
+  <source src=""mov2.ogg"" type=""video/ogg"">
+  Your browser does not support HTML video.
+</video>";html
+Unordered List with anchor links;"<ul>
+    <li><a href=""x.html"">One</a></li>
+    <li><a href=""y.html"">Two</a></li>
+    <li><a href=""z.html"">Three</a></li>
+</ul>";html
+Ordered List;"<ol>
+    <li>One</li>
+    <li>Two></li>
+    <li>Three></li>
+</ol>";html
+Table Definition;"<table>
+    <tr>
+        <th>First table header</th>
+        <th>Second table header</th>
+    </tr>
+    <tr>
+        <td>First row, first column</td>
+        <td>First row, second column</td>
+    </tr>
+    <tr>
+        <td>Second row, first column</td>
+        <td>Second row, second column</td>
+    </tr>
+</table>";html
+Different input fields can be arranged in a form tag;<form> ... </form>;html
+Label is shown before the element(for-name should be ident with the id-name or name-tag of the object);"<label for=""name"">First Name:</label>";html
+Text-Inputfield - with id, name and value (default);"<input type=""text"" id=""name""  name="""" value="""">";html
+Telephon-Inputfield - with id, name and value (default);"<input type=""tel"" name="""" value="""">";html
+EMail-Inputfield - with id, name and value (default);"<input type=""email"" name="""" value="""">";html
+Range/Slider-Inputfield with id, name, min/max-value for the slider, value (default) and data-sizing-definition (px);"<input type=""range"" id=""xyz"" name=""xyz"" min=""0"" max=""25"" value=""10"" data-sizing=""px""#";html
+Definition of a TextField for input with id, name, number of rows and columns;"<textarea id=""textField"" name=""w3review"" rows=""4"" cols=""50"">
+    Pls input your UPPERCASE text here!
+</textarea>";html
+Define Button with id, name and text on the button;"<button id=""check"" type=""button"" name=""button"">check</button>";html

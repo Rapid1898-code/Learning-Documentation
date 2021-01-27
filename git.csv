@@ -1,0 +1,26 @@
+Installation (linux);sudo apt-get install git;git
+Create repository in the actual directory;git init;git
+Config name for the repository;"git config --global user.name ""Rapid1898""";git
+Config mail for the repository;"git config --global user.email ""x@gmx.com""";git
+Add file to the repository (prepared for later commit);git add file.xyz;git
+Remove file from the repository (not planned for later commit);git rm --cached file.xyz;git
+Add alle html-files to the repo;git add *.html;git
+Add everything to the repository from the directory;git add .;git
+2nd way to add everything to the repository from the directory;git add *;git
+Actual status in the git-directoy (eg. added files, changed files, not added,...);git status;git
+Commit files which are added / changed in the repo (with comment);"git commit -m ""comment""";git
+Show overview about the last activities;git log;git
+Clone a repository in the actual path;git clone github-link;git
+Link the acutal folder/repo to the github-repo;git remote add origin https://github.com/link/Test.git;git
+Push (update) files on GitHub;git push -u origin master;git
+Pull (update) files from GitHub;git pull -u origin master;git
+all files in this folder will be ignored;add folder: /prg/dist/*;git
+this specific file will be ignored;add file: /prg.xlsx;git
+"Create a new branch with the name ""newFeature""";git branch newFeature;git
+"Change to branch ""newFeature"" (from the master-branch)";git checkout newFeature;git
+Return to the master-branch;git checkout master;git
+Delete branch;git branch -d newFeature;git
+"Create a new branch named ""new""";git checkout -b new;git
+Show the difference in the files;git diff head;git
+Show only the differences for the files which are not commited yet;git diff --staged;git
+Merge the branch with the master;git merge newFeature;git
