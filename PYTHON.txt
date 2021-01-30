@@ -2,7 +2,7 @@
 ### TOC ###
 ###########
 
-# MODULE (general)
+# MODULE, GENERAL
 # VIRTUALENV
 # SHORTCUTS INTELLIJ IDEA IDE, GITHUB, CHROME, WINDOWS
 # MYSQL, MARIADB, HEIDISQL
@@ -57,46 +57,49 @@
 
 
 
-----------
-###### MODULE
-import math                      # Import python module
-from math import ceil            # Import specific function of a module
-import numpy as np               # Import a module with abbreviation
-if __name__ == '__main__':       # When directly called - programm is running from here
-python --version				 # Check which python version is installed
+###### MODULE, GENERAL
+import math                      =>  Import python module
+from math import ceil            =>  Import specific function of a module
+import numpy as np               =>  Import a module with abbreviation
+if __name__ == '__main__':       =>  When directly called - programm is running from here
+python --version				 =>  Check which python version is installed
 
-# Use modules / functions from other folder
+=> Use modules / functions from other folder
+""
 import sys, os
 sys.path.append(os.path.join('C:/', 'Users\path_to_module'))	# Create Path to module
 import RapidTechTools as rtt									# Import Module RapidTechTools
-----------
+""
 
 
 
-----------
 ###### VIRTUALENV
-pip install virtualenv                                     # Install virtualenv
-pip list                                                   # Global packages installed
-where python                                               # Shows where the python-file is (Windows)
-which python                                               # Shows where the python-file is (Linux)
-virtualenv env                                         # Create new virtual environment pj1_env
-venv\Scripts\activate                              # Activate environment pj1_env
-    when activated: pip list                               # Now only shows the installed modules for the virtual environment
-    pip install package                                    # Only installs in the activated virtual environment
-pip freeze --local > requirements.txt                      # Extracts all the modules / dependencies to a txt-file 
-deactivate                                                 # Go back to the global environment
-virtualenv -p C:\..path to..\Python37\python.exe py37_env  # Create new virtual env with specific python-version
-py37_env\Scripts\activate                                  # Activate new virtual env named py37_env
-python --version                                           # Shows the used python version in the virtual env
-pip install -r requirements.txt                            # Install all the packages from requirements.txt
-----------
+pip install virtualenv                                     =>  Install virtualenv
+pip list                                                   =>  Global packages installed
+where python                                               =>  Shows where the python-file is (Windows)
+which python                                               =>  Shows where the python-file is (Linux)
+virtualenv env                                         	   =>  Create new virtual environment pj1_env
+
+=> Activate environment 
+""
+venv\Scripts\activate                              		   
+    when activated: pip list                               =>  Now only shows the installed modules for the virtual environment
+    pip install package                                    =>  Only installs in the activated virtual environment
+""	
+	
+pip freeze --local > requirements.txt                      =>  Extracts all the modules / dependencies to a txt-file 
+deactivate                                                 =>  Go back to the global environment
+virtualenv -p C:\..path to..\Python37\python.exe py37_env  =>  Create new virtual env with specific python-version
+py37_env\Scripts\activate                                  =>  Activate new virtual env named py37_env
+python --version                                           =>  Shows the used python version in the virtual env
+pip install -r requirements.txt                            =>  Install all the packages from requirements.txt
 
 
 
-----------
 ###### SHORTCUTS INTELLIJ IDEA IDE, GITHUB, CHROME, WINDOWS
-#Shortcuts Intellij Idea
-https://www.shortcutfoo.com/app/dojos/intellij-idea-win/cheatsheet
+=> Shortcuts Intellij Idea
+=> https://www.shortcutfoo.com/app/dojos/intellij-idea-win/cheatsheet
+""
 Ctrl /						# Comment / Uncomment line ("/" on numblock)
 Ctrl Alt F7					# Find usages
 Ctrl F 		   				# Find in File
@@ -128,372 +131,377 @@ Ctrl Del					# Delete to end of word
 Ctrl Backspace				# Delete to beginning of word
 lorem + TAB					# Create lorem text for html-code
 p>lorem + TAB				# Create lorem text inside <p>-tags
+""
 
-# Shortcuts Chrome
-https://www.makeuseof.com/tag/google-chrome-shortcuts-pdf/
+=> Shortcuts Chrome
+=> https://www.makeuseof.com/tag/google-chrome-shortcuts-pdf/
+""
 F5							# Refresh site
 Ctrl Tab					# Go tab right
 Ctrl Shift Tab				# Go tab left
 Ctrl F5						# Clear Cache and reload page
+""
 
-# Shortcuts Win10
-https://fossbytes.com/windows-keyboard-shortcuts-cheat-sheet-for-windows-10/
+=> Shortcuts Win10
+=> https://fossbytes.com/windows-keyboard-shortcuts-cheat-sheet-for-windows-10/
+""
 Alt Tab 					# Focus on other window
 Ctrl C						# Copy
 Ctrl X						# Cut
 Ctrl VALUES					# Paste	
+""
 
-#Git Ignore Files/Folders:
+=> Git Ignore Files/Folders:
+""
 when doing a commit - right click + add to .gitignore		# file will be created when not exists
 individual file will be ignored
 to ignore a whole folder with all files in it - add /* to the folder => eg. /prg/dist/*
+""
 
-#Add directory to GitHub
+=> Add directory to GitHub
+""
 Select directory => <VCS> => <Import into Version Control> => <Create Git Repository>
 Commit the files / new directory
 <VCS> => <Import into Version Control> => <Share Project on GitHub>
 <VCS> => <Git> => <Push>
+""
 
-#Change name of repository on github.com
+=> Change name of repository on github.com
+""
 select repository => settings => rename
-----------
+""
 
 
 
-----------
 ###### MYSQL, MARIADB, HEIDISQL
-----------
-C:\Program Files\MariaDB 10.3\data				# Data where the MariaDB-database is stored
-C:\ProgramData\MySQL\MYSQL Server 8.0\data		# Data where the MySQL-database is stored
-HeidiSQL - Datei / Verbindungsmanager			# Shows the database-version in the column header	
-----------
+C:\Program Files\MariaDB 10.3\data				=> Data where the MariaDB-database is stored
+C:\ProgramData\MySQL\MYSQL Server 8.0\data		=> Data where the MySQL-database is stored
+HeidiSQL - Datei / Verbindungsmanager			=> Shows the database-version in the column header	
 
 
 
-----------
 ###### OPERATORS, INPUTS, ARGUMENTS
-import math                     # Import module for math calculations
-import sys						# Import module for reading arguments from the command line
-import statistics as stat		# Using some numpy functions
-5 // 2                          # Result without Decimals (=> 2)
-7 % 2                           # Modulo / Rest of the division (=> 1)
-d,e,f = 4,5,6                   # Assigment of several varaibles
-a,b = b,a                       # Change / swap 2 values
-a += 1                          # Increase value by one
-i = 1_000_000				    # For better readability - "_" are possible using long num-values (will be ignored)
-round (77.2321, 2)              # Value is rounded to two decimal places => 77.23
-str(5), float("5"), int("5")    # Conversion to String / Float / Int
-abs(-2)                         # Outputs absolute value => 2
-input("ENTER to continue")      # Wait for pressing ENTER (or a keyboard stroke) to follow along
-int(input("Alter?"))            # Input age and change to int
-type(var)                       # Returns the type of a variable
-dir(var)                        # Shows all available methods and attributes for the object as list
-isinstance(x,float)             # Check if x has type format float
-isinstance(x,str)               # Check if x has type format string
-x = float("inf")                # Set var to max-value (float infinite)
-math.sqrt(9)                    # Calculates the sqrt of the value => i3
-if "myVar" in locals():         # Check if a variable exists
-sys.argv[1:].upper()            # Check for argument which is given when starting the program
-print("Text")					# Print "Text" (with a linebreak \n at the end)
-print("Text", end="-")			# Print with end-statement (next print will be in the same line
-print()							# Print linebreak \n
-example starting program 		# python test.py arg1 arg2 arg3
-str(sys.argv)					# Show the arguments from the command line when starting the program eg. ['test.py', 'arg1', 'arg2', 'arg3']
-len(sys.argv)					# Len of the arguments - eg. 4 (program test.py itself and 3 arguments following)
-min(3,5,7)						# Find the minimum value => 3
-max(3,5,7)						# Find the maximum value => 7
-stat.mean([3,5,7])				# Find the mean value => 5 (with statistic-module - input must be given as list)
-exit()							# Stop program at this point (helpful in test-situations)
-----------
+import math                     => Import module for math calculations
+import sys						=> Import module for reading arguments from the command line
+import statistics as stat		=> Using some numpy functions
+5 // 2                          => Result without Decimals (=> 2)
+7 % 2                           => Modulo / Rest of the division (=> 1)
+d,e,f = 4,5,6                   => Assigment of several varaibles
+a,b = b,a                       => Change / swap 2 values
+a += 1                          => Increase value by one
+i = 1_000_000				    => For better readability - "_" are possible using long num-values (will be ignored)
+round (77.2321, 2)              => Value is rounded to two decimal places => 77.23
+str(5), float("5"), int("5")    => Conversion to String / Float / Int
+abs(-2)                         => Outputs absolute value => 2
+input("ENTER to continue")      => Wait for pressing ENTER (or a keyboard stroke) to follow along
+int(input("Alter?"))            => Input age and change to int
+type(var)                       => Returns the type of a variable
+dir(var)                        => Shows all available methods and attributes for the object as list
+isinstance(x,float)             => Check if x has type format float
+isinstance(x,str)               => Check if x has type format string
+x = float("inf")                => Set var to max-value (float infinite)
+math.sqrt(9)                    => Calculates the sqrt of the value => i3
+if "myVar" in locals():         => Check if a variable exists
+sys.argv[1:].upper()            => Check for argument which is given when starting the program
+print("Text")					=> Print "Text" (with a linebreak \n at the end)
+print("Text", end="-")			=> Print with end-statement (next print will be in the same line
+print()							=> Print linebreak \n
+example starting program 		=> python test.py arg1 arg2 arg3
+str(sys.argv)					=> Show the arguments from the command line when starting the program eg. ['test.py', 'arg1', 'arg2', 'arg3']
+len(sys.argv)					=> Len of the arguments - eg. 4 (program test.py itself and 3 arguments following)
+min(3,5,7)						=> Find the minimum value => 3
+max(3,5,7)						=> Find the maximum value => 7
+stat.mean([3,5,7])				=> Find the mean value => 5 (with statistic-module - input must be given as list)
+exit()							=> Stop program at this point (helpful in test-situations)
 
 
 
-----------
 ###### RANDOM, SECRETS
-# random: unsecure, reproducable with seeds
-# secret: secure, not reproducable
-import random					# Import random module - fast, but not very secure
-random.randint(1,6)             # Random int number between 1 and 6 like a cube
-random.uniform(1,3)				# Random float number between 1 and 3 
-random.random()					# Random value between 0 and 1 in float format - eg. 0.16394553
-random.uniform(1,10)			# Random float in the range from 1 to 10
-random.normal(0,1)				# Random value for standard deviation
-random.choice(list)             # Choose random entry from a list
-random.sample(list,3)           # Choose 3 random (unique) entries from the list
-random.choices(list,k=3)	    # Choose 3 random entries from the list (possible to be the same)
-random.shuffle(l)				# Shuffle the content of a list
-random.seed(1)					# Can reproduce the same results (unsecure)
-"".join(random.choices(string.ascii_uppercase, k=6))
-				=> 	generate a random uppercase 6-char string
-
-import secrets					# Import secrets module - for security reasons (is slower)
-secrets.randbelow(10)			# Random int in the range from 0-10 (10 excluded)
-secrets.randbits(4)				# Random int with 4 bits (highest possible value is 15 - 1111)
-secrets.choice(l)				# Random choice (which is not reproducable)
-----------
+=> random: unsecure, reproducable with seeds
+=> secret: secure, not reproducable
+import random					=> Import random module - fast, but not very secure
+random.randint(1,6)             => Random int number between 1 and 6 like a cube
+random.uniform(1,3)				=> Random float number between 1 and 3 
+random.random()					=> Random value between 0 and 1 in float format - eg. 0.16394553
+random.uniform(1,10)			=> Random float in the range from 1 to 10
+random.normal(0,1)				=> Random value for standard deviation
+random.choice(list)             => Choose random entry from a list
+random.sample(list,3)           => Choose 3 random (unique) entries from the list
+random.choices(list,k=3)	    => Choose 3 random entries from the list (possible to be the same)
+random.shuffle(l)				=> Shuffle the content of a list
+random.seed(1)					=> Can reproduce the same results (unsecure)
+"".join(random.choices(string.ascii_uppercase, k=6))   => 	generate a random uppercase 6-char string
+import secrets					=> Import secrets module - for security reasons (is slower)
+secrets.randbelow(10)			=> Random int in the range from 0-10 (10 excluded)
+secrets.randbits(4)				=> Random int with 4 bits (highest possible value is 15 - 1111)
+secrets.choice(l)				=> Random choice (which is not reproducable)
 
 
 
-----------
 ###### STRINGS
-# ordered, immutable, text representation
+=> ordered, immutable, text representation
 s = "this is a test"							# Define a string
 s = "this \n text"								# String with linebreak \n
 s = "this \t text" 								# String with tab between the words
-s = """this \									# Define string over more lines in editor with
+
+=> Define string over more lines in editor with
+""
+s = """this \									
 	and this"""
-c = s[0]										# first char of a string
-c = s[-1]										# last char of a string
-s = "text %s bla" % var							# Insert variable in string oldest method (%s for string, %i for int, %f for float, %.2f for 2 decimals)
-s = "text {} bla".format(var)					# Insert variable in string old method (:.2f for 2 decimals)
-s = f"text {var} bla"							# Insert variable in string new method
-"{0} like, {0} especially {0} 					# Multiple use
-but {1}".format("Joe", "noodles")    							
-s.find ("ist")                                  # Returns the index where the text is found
-s.count ("i")                                   # Counts the occurrence of a text
-[n for n in range(len(txt)) if txt.find('/', n) == n]	# Return all findings of the search string ("/") in the other string (txt)
-[x.start() for x in re.finditer('ist', s)]      # Returns all indexwa as a list (needs import re)
-s = s.lower()                                   # Lowercase the whole string
-s = s.upper()                                   # Capitalize the whole string
-s = s.capitalize()                              # Capitalize the first char
-s = s.title()                                   # Capitalize the first char of all words
-s.startswith("H")								# Check if the string is starting with char "H"
-s.endswith("H")	      							# Check if the string is ending with char "H"
-s.split()                                       # Split the words in a list
-s.split('#', 1)[0]								# Split till the first occurence of "#"
-s.splitlines()                                  # Split sentences after line breaks
-s = s.strip()                                   # Delete all whitespaces at the beginning and the end
-s = s.replace("e","X")                          # Replacement of two strings
-s.isdigit()                                     # TRUE if the whole string are digits
-s.isalpha()                                     # True if the whole string are no digits
-s2 in s                                         # TRUE if string2 is in strings1
-l = list(s)                                     # Change string to list with all single chars
-ord(char)                                       # Convert char to ASCII value
-chr(ascii)                                      # Convert ASCII value to char (eg. 65=A, 97=a)
-hashlib.md5(s).encode('utf-8')).hexdigest()     # Outputs hashvalue oif the string (needs import hashlib)
-exec(print("hello"))                            # Execute statement in a string => hello
-eval("2+2")                                     # Gives the value of an expression => 4
-my_string[::-1]									# Reverse a string
-repr(s)											# Print string with special characters
-----------
+""
+
+c = s[0]										=> first char of a string
+c = s[-1]										=> last char of a string
+s = "text %s bla" % var							=> Insert variable in string oldest method (%s for string, %i for int, %f for float, %.2f for 2 decimals)
+s = "text {} bla".format(var)					=> Insert variable in string old method (:.2f for 2 decimals)
+s = f"text {var} bla"							=> Insert variable in string new method
+"{0} like, {0} especially {0} but {1}".format("Joe", "noodles")  	=> Multiple use   							
+s.find ("ist")                                  => Returns the index where the text is found
+s.count ("i")                                   => Counts the occurrence of a text
+[n for n in range(len(txt)) if txt.find('/', n) == n]	=> Return all findings of the search string ("/") in the other string (txt)
+[x.start() for x in re.finditer('ist', s)]      => Returns all indexwa as a list (needs import re)
+s = s.lower()                                   => Lowercase the whole string
+s = s.upper()                                   => Capitalize the whole string
+s = s.capitalize()                              => Capitalize the first char
+s = s.title()                                   => Capitalize the first char of all words
+s.startswith("H")								=> Check if the string is starting with char "H"
+s.endswith("H")	      							=> Check if the string is ending with char "H"
+s.split()                                       => Split the words in a list
+s.split('=>', 1)[0]								=> Split till the first occurence of "=>"
+s.splitlines()                                  => Split sentences after line breaks
+s = s.strip()                                   => Delete all whitespaces at the beginning and the end
+s = s.replace("e","X")                          => Replacement of two strings
+s.isdigit()                                     => TRUE if the whole string are digits
+s.isalpha()                                     => True if the whole string are no digits
+s2 in s                                         => TRUE if string2 is in strings1
+l = list(s)                                     => Change string to list with all single chars
+ord(char)                                       => Convert char to ASCII value
+chr(ascii)                                      => Convert ASCII value to char (eg. 65=A, 97=a)
+hashlib.md5(s).encode('utf-8')).hexdigest()     => Outputs hashvalue oif the string (needs import hashlib)
+exec(print("hello"))                            => Execute statement in a string => hello
+eval("2+2")                                     => Gives the value of an expression => 4
+my_string[::-1]									=> Reverse a string
+repr(s)											=> Print string with special characters
 
 
 
-----------
 ###### REGEX
-import re
-https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285		# Information about regex handling
-pattern = re.compile("^[0-9]{4}-[0-9]{2}$")                		# Find str with 4xdigits + "-"char + 2xdigits
-pattern.match(s)                                               	# Check if pattern matches - <> None when matches
-pattern2 = re.compile("[0-9]{4}-[0-9]{2}")                		# Find str with 4xdigits + "-"char + 2xdigits
-pattern2 = re.compile("[0-9]{3,4}-[0-9]{2}")                	# Find str with 3 to 4 xdigits + "-"char + 2xdigits
-pattern.fullmatch(s)											# Check with fullmatch (^ and $ not necessary) - <> None when matches 
-pattern3 = re.compile ("[0-9]{1}\.[0-9]{3}")					# Char "." has to cherck with "\n" (is a wildcard letter in regex)
-re.sub("\d","",s)												# Replace all digits in string with blank
-re.sub(r'([a-z](?=[A-Z])|[A-Z](?=[A-Z][a-z]))', r'\1 ', "txt")	# Insert blank before every capitalized word eg. "CostOfRevenue" => "Cost Of Revenue"
+import re                                                       => import regex module
+https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285		=> Information about regex handling
+pattern = re.compile("^[0-9]{4}-[0-9]{2}$")                		=> Find str with 4xdigits + "-"char + 2xdigits
+pattern.match(s)                                               	=> Check if pattern matches - <> None when matches
+pattern2 = re.compile("[0-9]{4}-[0-9]{2}")                		=> Find str with 4xdigits + "-"char + 2xdigits
+pattern2 = re.compile("[0-9]{3,4}-[0-9]{2}")                	=> Find str with 3 to 4 xdigits + "-"char + 2xdigits
+pattern.fullmatch(s)											=> Check with fullmatch (^ and $ not necessary) - <> None when matches 
+pattern3 = re.compile ("[0-9]{1}\.[0-9]{3}")					=> Char "." has to cherck with "\n" (is a wildcard letter in regex)
+re.sub("\d","",s)												=> Replace all digits in string with blank
+re.sub(r'([a-z](?=[A-Z])|[A-Z](?=[A-Z][a-z]))', r'\1 ', "txt")	=> Insert blank before every capitalized word eg. "CostOfRevenue" => "Cost Of Revenue"
 
-# Read string an try to match with groups
-pattern = "([0-9]+) ([a-z]:([a-z]+)"							# Define pattern => as many digits (endless) + " " + one lowercase cahr + ":" + as many digits (endless)
-match = re.search(pattern, elem)								# Check if elem fits the pattern => returns <re.Match object; span=(0, 19), match="3 n: nnnlncrnnnnn">
-value = match.group(1)											# Assign the value of the first group => 3
-all = match.group(0)											# Show the full string => "3 n: nnnlncrnnnnn"
-----------
-
+=> Read string an try to match with groups
+pattern = "([0-9]+) ([a-z]:([a-z]+)"							=> Define pattern => as many digits (endless) + " " + one lowercase cahr + ":" + as many digits (endless)
+match = re.search(pattern, elem)								=> Check if elem fits the pattern => returns <re.Match object; span=(0, 19), match="3 n: nnnlncrnnnnn">
+value = match.group(1)											=> Assign the value of the first group => 3
+all = match.group(0)											=> Show the full string => "3 n: nnnlncrnnnnn"
 
 
-----------
+
 ###### LIST
-#ordered, mutable, allows duplicate elements
-l = []                                           # Define empty list
-l1,l2,l3,l4 = ([] for i in range(4))		     # Define several empty lists (NOT use l1=l=l3=[] => this would be the SAME list)		
-if l											 # check for True if list has an element
-if not l										 # check for False if list is empty (same would be if l == []
-l = [4,5,6]                                      # Define list with content
-l = list(range(20))                              # Define list - content is list from 0 to 19
-l = ["" for x in range(8)]                       # Define list with 8 empyt strings
-l = [x.upper(for x in l)]                        # Uppercase the whole list
-l = [["" for x in range(5)] for x in range(5)]   # Define a nested list with 5x5
-l1 + l2											 # Add both lists together (to a new list)	
-l.append(1)                                      # Add 1 element to the list at the back
-l.extend([6,5,4])                                # Add several elements to the list at the back
-l.insert(3, "xyz")                               # Insert an element at the index-position 3
-l.index("xzy")                                   # Returns first index position of element "xyz"
-l.pop()                                          # Delete last element from list
-l.pop(0)                                         # Delete first element from list
-l.sort()                                         # Sort list ascending
-l.sort(reverse=True)                             # Sort list descending
-l_sort = sorted(l)                               # Sort list and store it in a different independent list
-l_sort = sorted(l, reverse=True)                 # Sort list descending and store it in a different independent list
-if sorted(l) == l								 # Check if a list is sorted (by ascending)
-if sorted(l, reverse=True) == l					 # Check if a list is sorted by descending
-l.sort(key=len)									 # Sort list by len of elements
-l = [[1,4,3], [2,2,4], [3,1,5]]					 # Define nested list
-l.sort(key=lambda x: x[1])						 # Sort the nested list for the 2nd element ascending
-l.sort(key=lambda x: x[1], reverse=True)		 # Sort the nested list for the 2nd element descending
-l.reverse()                                      # Reverse the complete list
-l_reverse = reversed(l)                           # Reverse complete list and store it in different independent list
-del l[2]                                         # Delete element at index position 2
-l.remove("abc")                                  # Delete first element with this value from the list
-l.clear()                                        # Delete complete content of the list (same as l = [])
-min(l)                                           # Find smallest element in the list
-max(l)                                           # Find greatest element in the list
-max(mylist, key=len)							 # Find longest string in the list
-len(max(mylist, key=len))						 # Find lenght of longest string in the list
-sum(l)                                           # Sum of all elements in the list
-2xls_sum  = [sum(pair) for pair in zip(l1, l2)]  # Pair Sorting from 2 lists (1 with 1, 2 with 2, 3 mit 3, aso.) 
-len(l)                                           # Count of elements in list
-l.count("a")									 # Count of occurence of the element "a" in the list	
-l2 = l1											 # No seperate copy of the list (updates in both lists)
-l2 = l.copy()                                    # Separate individual copy of the list (no updates in both lists)
-l2 = l[:]                                        # Separate individual copy of the list - 2nd variant
-l2 = list(l)                                     # Separate individual copy of the list - 3rd variant
-l[0]                                             # First element
-l[-1]                                            # Last element
-l[-3:]                                           # Last 3 elements
-l[2:4]                                           # Elements from index position 2 to 3
-l[:2]                                            # Elements from 0 to 1 (exclusive index position 2)
-l[2:]                                            # Elements from index position 2 to the end of the list
-l[::2]                                           # Every second element [start:end:step]
-9 in l                                           # Check if element is in list
-if any(x in string for x in ["ab","cd","de"]):   # Check if any elements from the list are in the string
-if all(x in string for x in ["ab","cd","de"]):   # Check if all elements from the list are in the string    
-if all(x not in string for x in ["ab","cd""]):   # Check if all elements from the list are NOT in the string    
-for i in l:                                      # Iterate through list content
-for i in range(len(l)):                          # Iterate through list with index
-for idx, cont in enumerate(l):                   # Iterate through list with index and content
-for x,y in zip(l1,l2):							 # Iterate through 2 lists pair-wise (stops when the shorter list is reached)
-', '.join(l)                              		 # Create string with elements joined together with ", " eg. ["a","b","c"] => a, b, c
-a = [1,2,3,4,5]
-list(map(lambda x: x*2, [1,2,3,4,5]))			 # List is mapped with the lambda function => [2,4,6,8,10]
-c=[x*2 for x in [1,2,3,4,5]]					 # Also possible with list comprehension => [2,4,6,8,10]
-list(filter(lambda x: x%2==0, [1,2,3,4,5]))		 # List is filtered with lambda for even numbers => [2,4]
-c=[x for x in [1,2,3,4,5] if x%2==0]			 # Also possible with list comprehension => [2,4]
-zip([1,2,3],[4,5,6])							 # Build paris as tuple => (1,4),(2,5),(3,6)
-list(set(x))									 # Remove duplicates from a list
-list(map(int,l))								 # Change elements in list to int
+=> ordered, mutable, allows duplicate elements
+l = []                                           => Define empty list
+l1,l2,l3,l4 = ([] for i in range(4))		     => Define several empty lists (NOT use l1=l=l3=[] => this would be the SAME list)		
+if l											 => check for True if list has an element
+if not l										 => check for False if list is empty (same would be if l == []
+l = [4,5,6]                                      => Define list with content
+l = list(range(20))                              => Define list - content is list from 0 to 19
+l = ["" for x in range(8)]                       => Define list with 8 empyt strings
+l = [x.upper(for x in l)]                        => Uppercase the whole list
+l = [["" for x in range(5)] for x in range(5)]   => Define a nested list with 5x5
+l1 + l2											 => Add both lists together (to a new list)	
+l.append(1)                                      => Add 1 element to the list at the back
+l.extend([6,5,4])                                => Add several elements to the list at the back
+l.insert(3, "xyz")                               => Insert an element at the index-position 3
+l.index("xzy")                                   => Returns first index position of element "xyz"
+l.pop()                                          => Delete last element from list
+l.pop(0)                                         => Delete first element from list
+l.sort()                                         => Sort list ascending
+l.sort(reverse=True)                             => Sort list descending
+l_sort = sorted(l)                               => Sort list and store it in a different independent list
+l_sort = sorted(l, reverse=True)                 => Sort list descending and store it in a different independent list
+if sorted(l) == l								 => Check if a list is sorted (by ascending)
+if sorted(l, reverse=True) == l					 => Check if a list is sorted by descending
+l.sort(key=len)									 => Sort list by len of elements
+l = [[1,4,3], [2,2,4], [3,1,5]]					 => Define nested list
+l.sort(key=lambda x: x[1])						 => Sort the nested list for the 2nd element ascending
+l.sort(key=lambda x: x[1], reverse=True)		 => Sort the nested list for the 2nd element descending
+l.reverse()                                      => Reverse the complete list
+l_reverse = reversed(l)                          => Reverse complete list and store it in different independent list
+del l[2]                                         => Delete element at index position 2
+l.remove("abc")                                  => Delete first element with this value from the list
+l.clear()                                        => Delete complete content of the list (same as l = [])
+min(l)                                           => Find smallest element in the list
+max(l)                                           => Find greatest element in the list
+max(mylist, key=len)							 => Find longest string in the list
+len(max(mylist, key=len))						 => Find lenght of longest string in the list
+sum(l)                                           => Sum of all elements in the list
+2xls_sum  = [sum(pair) for pair in zip(l1, l2)]  => Pair Sorting from 2 lists (1 with 1, 2 with 2, 3 mit 3, aso.) 
+len(l)                                           => Count of elements in list
+l.count("a")									 => Count of occurence of the element "a" in the list	
+l2 = l1											 => No seperate copy of the list (updates in both lists)
+l2 = l.copy()                                    => Separate individual copy of the list (no updates in both lists)
+l2 = l[:]                                        => Separate individual copy of the list - 2nd variant
+l2 = list(l)                                     => Separate individual copy of the list - 3rd variant
+l[0]                                             => First element
+l[-1]                                            => Last element
+l[-3:]                                           => Last 3 elements
+l[2:4]                                           => Elements from index position 2 to 3
+l[:2]                                            => Elements from 0 to 1 (exclusive index position 2)
+l[2:]                                            => Elements from index position 2 to the end of the list
+l[::2]                                           => Every second element [start:end:step]
+9 in l                                           => Check if element is in list
+if any(x in string for x in ["ab","cd","de"]):   => Check if any elements from the list are in the string
+if all(x in string for x in ["ab","cd","de"]):   => Check if all elements from the list are in the string    
+if all(x not in string for x in ["ab","cd""]):   => Check if all elements from the list are NOT in the string    
+for i in l:                                      => Iterate through list content
+for i in range(len(l)):                          => Iterate through list with index
+for idx, cont in enumerate(l):                   => Iterate through list with index and content
+for x,y in zip(l1,l2):							 => Iterate through 2 lists pair-wise (stops when the shorter list is reached)
+', '.join(l)                              		 => Create string with elements joined together with ", " eg. ["a","b","c"] => a, b, c
+a = [1,2,3,4,5]                                  => Define list
+list(map(lambda x: x*2, [1,2,3,4,5]))			 => List is mapped with the lambda function => [2,4,6,8,10]
+c=[x*2 for x in [1,2,3,4,5]]					 => Also possible with list comprehension => [2,4,6,8,10]
+list(filter(lambda x: x%2==0, [1,2,3,4,5]))		 => List is filtered with lambda for even numbers => [2,4]
+c=[x for x in [1,2,3,4,5] if x%2==0]			 => Also possible with list comprehension => [2,4]
+zip([1,2,3],[4,5,6])							 => Build paris as tuple => (1,4),(2,5),(3,6)
+list(set(x))									 => Remove duplicates from a list
+list(map(int,l))								 => Change elements in list to int
 
-# rotate list for n places
+=> rotate list for n places
+""
 def rotate(l, n):
     return l[-n:] + l[:-n]
+""
 
-# Iterate over 2 lists at the same time using zip
+=> Iterate over 2 lists at the same time using zip
+""
 animal = ['Cat', 'Dog', 'Fish', 'Goat']
 age = [1, 2, 2, 6]
 z = zip(animal, age)
 for animal, age in z: ...
-----------
+""
 
 
 
-----------
 ######TUPLE
-# ordered, immutable, allows duplicate elements
-# working can be more efficient than with lists - especially with big data - regarding space and runtime
-t = (4,5,6)										# Create a tuple
-t = tuple([3,4,4]								# Create a tuple from a list
-t[]												# Selection / slicing of elements - same as with lists
-l = list(t)										# Change tuple to list
-t = tuple(l)									# Change list to tuples
-a,b,c = (0,1,2)									# Assigning vars to tuple-elements (a=0, b=1, c=2)
-f,*m,l = (0,1,2,3,4)							# Assigning to tuple-values (f=0, m=[1,2,3], l=4)
-----------
+=> ordered, immutable, allows duplicate elements
+=> working can be more efficient than with lists - especially with big data - regarding space and runtime
+t = (4,5,6)										=> Create a tuple
+t = tuple([3,4,4]								=> Create a tuple from a list
+t[]												=> Selection / slicing of elements - same as with lists
+l = list(t)										=> Change tuple to list
+t = tuple(l)									=> Change list to tuples
+a,b,c = (0,1,2)									=> Assigning vars to tuple-elements (a=0, b=1, c=2)
+f,*m,l = (0,1,2,3,4)							=> Assigning to tuple-values (f=0, m=[1,2,3], l=4)
 
 
 
-----------
 ###### DICTIONARY
-# key-value pairs, unordered (till version 3.7), mutable
-d = {}                                               # Define empty dict
-d = {"one": 1, "two": 2, "three": 3}                 # Define dict with content
-d = dict(one=1,two=2,three=3)						 # 2nd way to defince a dict with content
-d = dict([("one",1),("two",2),("three",3)])          # Define dict with content (with dupels)
-d = dict([["one",1],["two",2],["three",3]])          # Define dict with content (with pairs in nested list)
-d = dict(zip(["one","two","three"], [1,2,3]))        # Define dict with 2 different lists (1x keys and 1x values)
-d["two"]                                             # Access value with key element (error when the key is not in the dict)
-d.get("two","N/A")									 # BETTER: Acesss value with get for key element (no error when the key is not in the dict - returns second parameter instead)
-d.setdefault("two","N/A")							 # Access value - same as get - but also initialize the key when it is not in the dict - with the second parameter)
-key = list(d.keys())[list(d.values()).index(v)]		 # Find key for specific value (v) in dict
-list(d.keys())                                       # Read keys from dict to list
-list(d.values())                                     # Read values from dict to list
-len(d)                                               # Count of entries in dict
-"three" in d                                         # Check if key is in dict (true / false)
-d["four"] = 4                                        # New entry for dict (key = "four", value = 4)
-del d["one"]                                         # Delete specific key in dict
-mydict[new_key] = mydict.pop(old_key)                # Rename dict-keyname
-combined_dict = {**d1, **d2}                         # Combine 2 dicts (if key is in both dicts - the second value will be taken)
-if "xyz" in d:										 # Check if key is in dict
-d2 = d												 # Copying a dict (all changes will be made in BOTH dicts)
-d2 = d.copy()										 # Copying a dict (dicts will be handled seperate)
-d2 = dict(d)										 # Copying a dict 2nd method (dicts will be handled seperate)
-d.update(d2)										 # Dict d get updated with d2 (all existing keys are overwritten - and new added)
-for key in d.keys():                                 # Iterate through dict keys
-for key in sorted(d.keys()):                         # Iterate through sorted dict keys ascending
-for key in sorted(d.keys(),reverse=True):            # Iterate through sorted dict keys descending
-for val in d.values():                               # Iterate through dict values
-for key, val in d.items():                           # Iterate through keys and values of the dict
-d = {k: v for k, v in sorted(d.items(),              # Sort dict descending according to values (=item[1])
-         key=lambda item: item[1], reverse=True)}  
-d = {k: v for k, v in sorted(d.items(),              # Sort dict ascending according to keys (=item[0])
-         key=lambda item: item[0])}  
-d = {k: v for k, v in sorted(d.items(),              # Dict sorted: 1st value-desc (x[0]) - 2nd key-ascnd (-x[0])
-         key=lambda x: (-x[1],x[0]))}
-----------
+=> key-value pairs, unordered (till version 3.7), mutable
+d = {}                                               => Define empty dict
+d = {"one": 1, "two": 2, "three": 3}                 => Define dict with content
+d = dict(one=1,two=2,three=3)						 => 2nd way to defince a dict with content
+d = dict([("one",1),("two",2),("three",3)])          => Define dict with content (with dupels)
+d = dict([["one",1],["two",2],["three",3]])          => Define dict with content (with pairs in nested list)
+d = dict(zip(["one","two","three"], [1,2,3]))        => Define dict with 2 different lists (1x keys and 1x values)
+d["two"]                                             => Access value with key element (error when the key is not in the dict)
+d.get("two","N/A")									 => BETTER: Acesss value with get for key element (no error when the key is not in the dict - returns second parameter instead)
+d.setdefault("two","N/A")							 => Access value - same as get - but also initialize the key when it is not in the dict - with the second parameter)
+key = list(d.keys())[list(d.values()).index(v)]		 => Find key for specific value (v) in dict
+list(d.keys())                                       => Read keys from dict to list
+list(d.values())                                     => Read values from dict to list
+len(d)                                               => Count of entries in dict
+"three" in d                                         => Check if key is in dict (true / false)
+d["four"] = 4                                        => New entry for dict (key = "four", value = 4)
+del d["one"]                                         => Delete specific key in dict
+mydict[new_key] = mydict.pop(old_key)                => Rename dict-keyname
+combined_dict = {**d1, **d2}                         => Combine 2 dicts (if key is in both dicts - the second value will be taken)
+if "xyz" in d:										 => Check if key is in dict
+d2 = d												 => Copying a dict (all changes will be made in BOTH dicts)
+d2 = d.copy()										 => Copying a dict (dicts will be handled seperate)
+d2 = dict(d)										 => Copying a dict 2nd method (dicts will be handled seperate)
+d.update(d2)										 => Dict d get updated with d2 (all existing keys are overwritten - and new added)
+for key in d.keys():                                 => Iterate through dict keys
+for key in sorted(d.keys()):                         => Iterate through sorted dict keys ascending
+for key in sorted(d.keys(),reverse=True):            => Iterate through sorted dict keys descending
+for val in d.values():                               => Iterate through dict values
+for key, val in d.items():                           => Iterate through keys and values of the dict
+d = {k: v for k, v in sorted(d.items(), key=lambda item: item[1], reverse=True)}    => Sort dict descending according to values (=item[1])
+d = {k: v for k, v in sorted(d.items(), key=lambda item: item[0])}      => Sort dict ascending according to keys (=item[0])
+d = {k: v for k, v in sorted(d.items(), key=lambda x: (-x[1],x[0]))}    => Dict sorted: 1st value-desc (x[0]) - 2nd key-ascnd (-x[0])
 
 
 
-----------
 ###### SETS
-# unordered, mutable, no duplicates                   
-s=set()					# Define empty set - {} would define a dict and not a set
-s = {1,1,2,2,3,4}       # Define set with content
-s = set("Hello")        # Define empty set - returns: {"o","l","H","e"}
-s2 = {1,7,8}            # Define second set
-s.add(5)                # Add element in set1
-s.update([10,11,12])    # Add several elements to set1
-s & s2                  # Intersection of 2 sets (same as: s.intersection(s2))
-s | s2                  # Untion of 2 sets (same as: s.union(s2))
-s - s2                  # Difference of 2 sets (same as: s.difference(s2))
-s <= s2                 # True if s is subset from s2 (same as: s.issubset(s2))
-3 in s                  # Check if element is in set
-s.clear()				# Clear the set
-s.pop()                 # Delete lowest elmeent in set
-s.remove(5)				# Delete element 5 from set - but key error possible
-s.discard(5)            # Delete element 5 from set - NO key error possible
-for i in s:             # Iterate through set content
-s2 = s1					# Copying a set (all changes will be made in BOTH sets)
-s2 = s.copy()			# Copying a set (set will be handled seperate)
-s2 = set(s)				# Copying a set 2nd method (set will be handled seperate)
-s = frozenset(1,2,3)	# Define a frozenset - no changes are possible in the set - union, intersection aso. will work
+=> unordered, mutable, no duplicates                   
+s=set()					=> Define empty set - {} would define a dict and not a set
+s = {1,1,2,2,3,4}       => Define set with content
+s = set("Hello")        => Define empty set - returns: {"o","l","H","e"}
+s2 = {1,7,8}            => Define second set
+s.add(5)                => Add element in set1
+s.update([10,11,12])    => Add several elements to set1
+s & s2                  => Intersection of 2 sets (same as: s.intersection(s2))
+s | s2                  => Untion of 2 sets (same as: s.union(s2))
+s - s2                  => Difference of 2 sets (same as: s.difference(s2))
+s <= s2                 => True if s is subset from s2 (same as: s.issubset(s2))
+3 in s                  => Check if element is in set
+s.clear()				=> Clear the set
+s.pop()                 => Delete lowest elmeent in set
+s.remove(5)				=> Delete element 5 from set - but key error possible
+s.discard(5)            => Delete element 5 from set - NO key error possible
+for i in s:             => Iterate through set content
+s2 = s1					=> Copying a set (all changes will be made in BOTH sets)
+s2 = s.copy()			=> Copying a set (set will be handled seperate)
+s2 = set(s)				=> Copying a set 2nd method (set will be handled seperate)
+s = frozenset(1,2,3)	=> Define a frozenset - no changes are possible in the set - union, intersection aso. will work
 ----------
 
 
 
 ----------
 ####### MODULE - COLLECTIONS
-#Counter, namedtuple, OrderedDict, defaultdict, deque
-### COUNTER
+=> Counter, namedtuple, OrderedDict, defaultdict, deque
+
+=> COUNTER
+""
 from collections import Counter
 colors = ['blue', 'blue', 'red', 'red', "red"]
 counter = Counter(colors)									# Creates dict with counts => {'red': 3, 'blue': 2} in ordered form
 counter.most_common(1) 		                           		# Outputs the element with the most counts as tuple
 counter["red"})            		                            # Outputs the occurence of the value "red" => 3
+""
 
-###NAMEDTUPLE
+=> NAMEDTUPLE
+""
 from collections import namedtuple
 Point = namedtuple("Point","x,y")							# Creates class with tumple
 pt = Point(1,-4)											# Creates Point(x=1,y=-4)
 print(pt.x, pt.y)											# Shows 1 and -4
+""
 
-###ORDEREDDICT
+=> ORDEREDDICT
+""
 not necessary anymore in the newer python versions
 is allready implemented in the regular dict-type) 
+""
 
-### DEFAULTDIC
+=> DEFAULTDIC
+""
 d = defaultdict(int)	# Create defaultdict and define default-type
 d["xyz"]				# No key error when when key not in the dict => default-type value 0 is outputed
+""
 
-### DEQUE
-from collections import deque
+=> DEQUE
+""
+from collections import deque      # import collections deque module
 d = deque()				# Create deque (optimized for working with elements at the end or beginning of the list)
 d.append(1)				# Add element at the end
 d.appendleft(2)			# Add element at the beginning
@@ -504,60 +512,71 @@ d.popleft()				# Delete element at the beginning
 d.clear()				# Clear entire list
 d.rotate(2)				# Shift all elements 2 places to the right
 d.rotateleft(-1)			# Shift all elements 1 place to the left
-----------
+""
 
 
 
-----------
 ###### CONTROL STRUCTURES and ITERATIONS
-if x > 10: pass                	# If / elif / else
+=> If / elif / else
+""
+if x > 10: pass                	
 elif x > 10: pass
 else: pass
+""
 
-if (10 < a < 20)...				# Use 2 conditions in one line (instead of (a>10 and a<20)
-if a<10 & b>10 & c==4...		# Connecting different control structures with logical and &
+if (10 < a < 20)...				=> Use 2 conditions in one line (instead of (a>10 and a<20)
+if a<10 & b>10 & c==4...		=> Connecting different control structures with logical and &
 
-for i in range(5):           	# 5 iterations from 0 to 4
-for i in range(0, 5, 1)      	# 5 iterations from 0 to 4 (start, end, step)
-for i in range(4, -1, -1)    	# Iterations descending from 4 to 0
+for i in range(5):           	=> 5 iterations from 0 to 4
+for i in range(0, 5, 1)      	=> 5 iterations from 0 to 4 (start, end, step)
+for i in range(4, -1, -1)    	=> Iterations descending from 4 to 0
 
-while x < 4:                 	# While loop with break condition
-while True:                  	# Endless while loop - has to be exited with break
-break                        	# Break loop completely
-continue                     	# Break actual loop run - continue with next loop run
-----------
-
+while x < 4:                 	=> While loop with break condition
+while True:                  	=> Endless while loop - has to be exited with break
+break                        	=> Break loop completely
+continue                     	=> Break actual loop run - continue with next loop run
 
 
-----------
+
 ###### FUNCTIONS, DECORATORS
-description of the function in form of a docstring
-=> """...description..."""
+=> description of the function in form of a docstring
+""
+"""...description..."""
     def printNumAbbr(value):
-	"""	
+    """	
     eg. Make abbreviaton for numeric value in thousands (K), millions (M), billions (B) or trillions (T)
     :param value: numeric value which should be abbreviated
     :return: string value with maximum possible abbreviation
     """
+""
 
-def add(x=0,y=0):               	# Define function - with default value 0 if no input is given
+=> Define function - with default value 0 if no input is given
+""
+def add(x=0,y=0):               	
     erg = x+y                   	# Calculation in function
     return erg                  	# Return value from the function
+""
 
-def pet (animal,n1=None,n2="x") 	# Optional argument in the funtction (first element is must - second optional)   
+=> Optional argument in the funtction (first element is must - second optional)   
+""
+def pet (animal,n1=None,n2="x") 	
 pet("Cat")                      	# Calling function with n1=None and n2 = "x"
 pet("Cat","name")					# Calling function with n1=name and n2 = "X"
 pet("Cat",n2="xyz") 				# Calling function with n1=None and n2 = "xyz" (third parameter has to be named when calling)
+""
 
-
-def varargs(*args): print(args) 	# Function with infinite arguments
-varargs(1,2,3)                  	# Oututs (1,2,3)
+=> Function with infinite arguments
+""
+def varargs(*args): print(args) 	
+varargs(1,2,3)                  	# Outputs (1,2,3)
 
 def keyword_args(**kwargs):
     print(kwargs)
 keyword_args("a"=3, "b"=4)      	# Outputs {"a":3, "b":4}  
+""
 
-#decorator template
+=> decorator template
+""
 def my_decorator(func):				# Define decorator
   @functools.wraps(func)
   def wrapper(*args,**kwargs):		# Decorator with * arguments
@@ -566,8 +585,10 @@ def my_decorator(func):				# Define decorator
 	  #Do...					 	# Do something after the functions	  
 	  return result					# Return the results from the function
   return wrapper
+""
 
-#decorator
+=> decorator
+""
 extend behaviour of a function with a decorators
 def start_end_decorator(func):		# Define the decorator with function "func" as input-parameter
 	def wrapper():					# Inside the decorator a wrapper function has to be defined
@@ -579,8 +600,10 @@ def start_end_decorator(func):		# Define the decorator with function "func" as i
 def print_name():					# Normal content of the function
 	print("xyz")					# Core functionality of the function
 print_name()						# Now when the function is executed - outputs not only "xyz" - also "Start" before and "End" after 	
+""
 
-#decorator with function arguments
+=> decorator with function arguments
+""
 def start_end_decorator(func):		# Define the decorator with function "func" as input-parameter
 	def wrapper(*args,**kwargs):	# Inside the decorator a wrapper function has to be defined
 		print("Start")				# Decorated code which is executed before the core code from the function
@@ -593,61 +616,66 @@ def add5(x):						# Normal content of the function with one argument
 	return x + 5					# Core functionality of the function
 result = add5(10)					# Outputs "Start" => "End" => 15
 print(result)		
-----------
+""
 
 
 
-----------
 ###### GENERATORS, YIELD
-# very memory efficient
-def mygenerator():					# Defines the generator with 3 yield statements
+=>  very memory efficient
+=> Defines the generator with 3 yield statements
+""
+def mygenerator():					
 	yield 3
 	yield 2
 	yield 1
-g = mygenerator()					# Creates the generator and stores in g (=generator type)
-for i in g: print(i)				# Outputs 3,2,1
-print(next(g))						# Outputs 3
-print(next(g))						# Outputs 2
-sum(g)								# Sum-Function can also use a generator => result is 6
-sorted(g)							# Sorted-Function can use generator => returns list with sorted elements [1,2,3]
-----------
+""
+
+g = mygenerator()					=> Creates the generator and stores in g (=generator type)
+for i in g: print(i)				=> Outputs 3,2,1
+print(next(g))						=> Outputs 3
+print(next(g))						=> Outputs 2
+sum(g)								=> Sum-Function can also use a generator => result is 6
+sorted(g)							=> Sorted-Function can use generator => returns list with sorted elements [1,2,3]
 
 
 
-----------
 ###### EXCEPTIONS
+=> try / except
+""
 try:
 	a = 5 / 0
 except Exception as e:
 	print("Exception: ",e)						# Prints exception "division by zero"	
+""
 
+=> assert / raise
+""
 x = -5
 assert (x>=0), "x is not positive"				# Checks / Assert some condition => prints "x is not positive"
 if x<0: raise Exception("x should positive")	# Raises an exception => prints "Exception: x should be positive"
-----------
+""
 
 
 
-----------
 ###### LAMBDA, MAP, FILTER
-add10 = lambda x: x+10				# functions with one argument - add10(5) => 15
-mult = lambda x,y: x*y				# functions with two arguments for multiplying - mult(2,7) => 14	
-p = [(1,2),(15,1),(5,-1),(10,4)]
-sorted(p)							# output is sorted with first element then second element => [(1,2),(5,-1),(10,4),(15,1)]
-sorted(p,key=lambda x:x[1])			# output is sorted by the second element => [(5,-1),(15,1),(1,2),(10,4)]
-sorted(p,key=lambda x:x[0]+x[1])	# output is sorted by the sum of both => [(1,2),(5,-1),(10,4),(15,1)]
-a = [1,2,3,4,5]
-list(map(lambda x: x*2,a))			# list is mapped with the lambda function => [2,4,6,8,10]
-c=[x*2 for x in a]					# also possible with list comprehension => [2,4,6,8,10]
-list(filter(lambda x: x%2==0,a))	# list is filtered with lambda for even numbers => [2,4]
-c=[x for x in a if x%2==0]			# also possible with list comprehension => [2,4]
-----------
+add10 = lambda x: x+10				=> functions with one argument - add10(5) => 15
+mult = lambda x,y: x*y				=> functions with two arguments for multiplying - mult(2,7) => 14	
+=> p = [(1,2),(15,1),(5,-1),(10,4)]
+sorted(p)							=> output is sorted with first element then second element => [(1,2),(5,-1),(10,4),(15,1)]
+sorted(p,key=lambda x:x[1])			=> output is sorted by the second element => [(5,-1),(15,1),(1,2),(10,4)]
+sorted(p,key=lambda x:x[0]+x[1])	=> output is sorted by the sum of both => [(1,2),(5,-1),(10,4),(15,1)]
+=> a = [1,2,3,4,5]
+list(map(lambda x: x*2,a))			=> list is mapped with the lambda function => [2,4,6,8,10]
+c=[x*2 for x in a]					=> also possible with list comprehension => [2,4,6,8,10]
+list(filter(lambda x: x%2==0,a))	=> list is filtered with lambda for even numbers => [2,4]
+c=[x for x in a if x%2==0]			=> also possible with list comprehension => [2,4]
 
 
 
-----------
 ###### CLASSES, DATACLASSES
-class Human(object):          # Define a class
+=> Define a class
+""
+class Human(object):          
   species = "Homo Sapiens"    # Fix variable / class variable for all instances of the class
   def __init__(self,name):    # Constructor - automatically applied when an instance is created
       self.name = name		  # Name is assigned to the instance of the classe (self.)
@@ -661,18 +689,19 @@ class Human(object):          # Define a class
   @staticmethod               # Static methode - is called without class or method
   def grunt():
       return "*grunt*"    
+""    
     
-    
-i = Human(name="Ian")         # Create instance of the class
-print(i.say("Hi"))            # Call the methode of the class (output: "Ian: Hi")
-j = Human(name="Joel")        # Create additonal instance of the class
-print(i.say("Hallo"))         # Call the methode of the class (output: "Joel: Hallo")
-i.get_species()               # Output "Homo Sapiens"
-j.get_species()               # Same output  "Homo Sapiens"
-Human.species = "Was Neues"   # Change of the class variable - applies for all instances
-Human.grunt()                 # Aufruf der statischen Methode => Ausgabe: "*grunt*" 
+i = Human(name="Ian")         => Create instance of the class
+print(i.say("Hi"))            => Call the methode of the class (output: "Ian: Hi")
+j = Human(name="Joel")        => Create additonal instance of the class
+print(i.say("Hallo"))         => Call the methode of the class (output: "Joel: Hallo")
+i.get_species()               => Output "Homo Sapiens"
+j.get_species()               => Same output  "Homo Sapiens"
+Human.species = "Was Neues"   => Change of the class variable - applies for all instances
+Human.grunt()                 => Aufruf der statischen Methode => Ausgabe: "*grunt*" 
 
-# Dataclasses
+=> Dataclasses
+""
 from dataclasses import dataclass		# import dataclass necessary
 @dataclass								# define a dataclass
 class Coordinate:						# class is defined an need NO __init__, __repr__, __eq__
@@ -682,26 +711,32 @@ a = Coordinate(4, 5)
 @dataclass (frozen=True)				# defines a unmutable instance
 asdict(dc)								# converts the dataclass to a dict
 astuple(dc)								# converts the dataclass to a tuple
-----------
+""
 
 
 
-----------
 ###### TXT FILES
-with open ("fn.txt","r") as f: print(f.read()			# Read textfile - and print it
-with open ("fn.txt","r+") as f: print(f.read()			# Open File for Read and Write
-with open("fn.txt","r") as f:                           # Read textfile - stored in list per line
+with open ("fn.txt","r") as f: print(f.read()			=> Read textfile - and print it
+with open ("fn.txt","r+") as f: print(f.read()			=> Open File for Read and Write
+
+=> Read textfile - stored in list per line
+""
+with open("fn.txt","r") as f:                           
     lines = [x.strip() for x in f.readlines()]          # Whitespaces are eliminated with strip()
-with open("fn.txt","w") as obj: obj.write("Ein neuer Text")   # Writing in textfile
-with open("fn.txt","a") as obj: obj.write("\nNoch ein Text")  # Append text in the next line
-if os.path.exists(fn) == False:							# Check if file allready exists
-with open (fn,"a") as f: f.write("init")				# Create and initialize file when not exisiting
-f.read()												# Read content to string
-f.seek(0)												# Set the current postion in the file to beginning
-f.write(s)												# Write s to the f-file opened
+""
+    
+with open("fn.txt","w") as obj: obj.write("Ein neuer Text")   => Writing in textfile
+with open("fn.txt","a") as obj: obj.write("\nNoch ein Text")  => Append text in the next line
+if os.path.exists(fn) == False:							=> Check if file allready exists
+with open (fn,"a") as f: f.write("init")				=> Create and initialize file when not exisiting
+f.read()												=> Read content to string
+f.seek(0)												=> Set the current postion in the file to beginning
+f.write(s)												=> Write s to the f-file opened
 
     
-while True:                  							# Try/Except - checks if file can be saved
+=> Try/Except - checks if file can be saved
+""
+while True:                  							
 try:                         							# otherwise outputs a error message
     writer.save ()    
     break
@@ -709,22 +744,22 @@ except Exception as e:
     print ("Error: ", e)
 	traceback.print_exc()                               # Outputs the detailed error message
     input ("File Open not possible - pls close and press <Enter>")    
-----------
+""
    
    
    
-----------
 ###### JSON format   
-import json                                         # Import json-module
-fn = "numbers.json"
-with open(fn) as data: info = json.loads(data)      # Reading informations in json-format
-json_format = json.dumps(d,indent=2)				# Convert / Encode a dict to a json-file (with indent for better reading)
-json_format = json.dumps(d,sort_keys=True)			# Convert / Encode a dict to a json-file (with sorting the keys)
-with open(fn,"w") as data: json.dump(person, data)  # Writing information in json-format (e.g. after updating the values/format)
-person = json.loads(json_format)					# Convert / Decode a json-file to a dict
-with open(fn.json,"r") as data: d=json.load(file)	# Reading information in json-format
+import json                                         => Import json-module
+fn = "numbers.json"                                 => Assign JSON-filename
+with open(fn) as data: info = json.loads(data)      => Reading informations in json-format
+json_format = json.dumps(d,indent=2)				=> Convert / Encode a dict to a json-file (with indent for better reading)
+json_format = json.dumps(d,sort_keys=True)			=> Convert / Encode a dict to a json-file (with sorting the keys)
+with open(fn,"w") as data: json.dump(person, data)  => Writing information in json-format (e.g. after updating the values/format)
+person = json.loads(json_format)					=> Convert / Decode a json-file to a dict
+with open(fn.json,"r") as data: d=json.load(file)	=> Reading information in json-format
 
-#json-example										# Example for json-file	
+=> Example for json-file	
+""
 {
 	"firstName" : "Chuck",
 	"lastName" : "Doe",
@@ -742,78 +777,82 @@ with open(fn.json,"r") as data: d=json.load(file)	# Reading information in json-
 		}		
 	]	
 }
-info["firstName"]									# Read name value => "Chuck"
-for item in children:								# Iterate trough the json-file (eg. many children)
-----------
+""
+info["firstName"]									=> Read name value => "Chuck"
+for item in children:								=> Iterate trough the json-file (eg. many children)
 
 
 
-----------
 ###### XML format
-import xml.etree.ElementTree as ET					# Import xml-module
+import xml.etree.ElementTree as ET					=> Import xml-module
+=> Example for xml-file
+""
 <persons>
-	<person>										# Example for xml-file
+	<person>										
 		<name>Chuck</name>
 		<phone type="int1"> +1 734 555"</phone>
 		<email hide="yes"/>
 	</person>
 	...
 </persons>
-tree = ET.fromstring(data)							# Read xml-file into tree
-tree.find("name").text								# Read name text => "Chuck"
-tree.find("email".get("hide"))						# Read hide value from email => yes		
-lst = persons.findall("persons/person")				# Iterate trough xml-file (eg. many persons)
-for item in lst:
-----------
+""
+tree = ET.fromstring(data)							=> Read xml-file into tree
+tree.find("name").text								=> Read name text => "Chuck"
+tree.find("email".get("hide"))						=> Read hide value from email => yes		
+
+=> Iterate trough xml-file (eg. many persons)
+""
+lst = persons.findall("persons/person")				
+for item in lst:                                    
+""
 
 
 
-----------
 # URLLIB (handling URLs,links)
-import from urllib.parse import urlparse			# Import Module for URL parsing
-https://pymotw.com/2/urlparse/
-import urllib.request
-https://docs.python.org/3/library/urllib.request.html#module-urllib.request
-u = urlparse("http://google.com/search")			# Parse HTML-link1
-u.scheme											# Returns "http"
-u.path												# Returns "/search"
-u.netloc											# Returns "google.com"
-----------
+=> https://pymotw.com/2/urlparse/
+import from urllib.parse import urlparse			=> Import Module for URL parsing
+=> https://docs.python.org/3/library/urllib.request.html#module-urllib.request
+import urllib.request                               => Import Module for request
+u = urlparse("http://google.com/search")			=> Parse HTML-link1
+u.scheme											=> Returns "http"
+u.path												=> Returns "/search"
+u.netloc											=> Returns "google.com"
 
 
 
-----------
 ###### MODULE - CSV
-import csv                       
-with open("test.csv","w",newline="") as fp:               # Open csv-file in writemode
+import csv                                                => Import CSV-Module
+=> Open csv-file in writemode
+""
+with open("test.csv","w",newline="") as fp:               
     a = csv.writer (fp, delimiter=",")                    # Define csv-writer with ","-delimiter
     data = [["A", "B"],["100", "24"],["120", "33"]]       # Data for writing in nested list form
     a.writerows (data)                                    # Writing individual rows
+""
     
-### Read csv-data from a HTML-link
+=> Read csv-data from a HTML-link
+""
 import urllib.request
 import codecs
 url = link                                                      # direct link to a csv html file
 ftpstream = urllib.request.urlopen(url)
 csvfile = csv.reader(codecs.iterdecode(ftpstream, 'utf-8'))     # output is nested list
-----------
+""
 
 
 
-----------
 ###### MODULE - ZIPFILE
-import zipfile
-zf = zipfile.ZipFile('example.zip', 'r')						# Read Zip-File
-zf.namelist()													# List of string with the names of the files in the Zip-File
-zf.open (file_name)												# Open file vom Zip-File (eg. CSV-File which is in the Zip-File)
-----------
+import zipfile                                                  => Import zip module
+zf = zipfile.ZipFile('example.zip', 'r')						=> Read Zip-File
+zf.namelist()													=> List of string with the names of the files in the Zip-File
+zf.open (file_name)												=> Open file vom Zip-File (eg. CSV-File which is in the Zip-File)
 
 
 
-----------
 ###### MODULE - GSPREAD
-# API for GoogleSheets
-https://techwithtim.net/tutorials/google-sheets-python-api-tutorial/	# Tutorial explaining handling
+=>  API for GoogleSheets / Tutorial explaining handling
+=> https://techwithtim.net/tutorials/google-sheets-python-api-tutorial/	
+""
 # Create a project on https://console.cloud.google.com/
 # See further setup in tutorial
 import gspread                                                      # import module
@@ -825,26 +864,29 @@ scope = ["https://spreadsheets.google.com/feeds",
          "https://www.googleapis.com/auth/drive"]
 creds = ServiceAccountCredentials.from_json_keyfile_name
     ("creds.json", scope)
-client = gspread.authorize(creds)                                   # Credentials Mgmt for GoogleSheets
-sheet = client.open("testpython").sheet1                            # Open the spreadhseet
-data = sheet.get_all_records()                                      # Get a list of all records
-len(data)                                                           # Count of all used rows in the sheet
-pprint(data)                                                        # Show all data with pprint - pretty print
-row = sheet.row_values(3)                                           # Get row 3 (starts counting from 1 - not 0)
-col = sheet.col_values(5)                                           # Get col E (starts counting from 1 - not 0)
-col = sheet.col_values(2)[3:5]                                      # Get values from col B rows 4 and 5
-cell = sheet.cell(1,2).value                                        # Get the value from row 1 and col B
-sheet.update_cell(2,2, "CHANGED")                                   # Update cell from row 2 and col B
-sheet.insert_row(["new1","new2","new3"],2)                          # Insert new row at row number 2
-sheet.append_row(["new1","new2","new3"])                            # Append new row at the end
-sheet.sort((1, 'asc'), (2, 'des'), range='A2:G20')                  # Sorting the sheet (Range + col1 asc + col2 desc)
-cell_list = worksheet.range('A1:G1')                                # Define cell area / cell row
-new_values = [1,2,3,4,5]                                            # Define new values for area / row
-for i, val in enumerate(new_values): cell_list[i].value = val       # Write new values to cell area / cell row
-worksheet.update_cells(cell_list)                                   # Upate cell area / cell row    
+""
+        
+client = gspread.authorize(creds)                                   => Credentials Mgmt for GoogleSheets
+sheet = client.open("testpython").sheet1                            => Open the spreadhseet
+data = sheet.get_all_records()                                      => Get a list of all records
+len(data)                                                           => Count of all used rows in the sheet
+pprint(data)                                                        => Show all data with pprint - pretty print
+row = sheet.row_values(3)                                           => Get row 3 (starts counting from 1 - not 0)
+col = sheet.col_values(5)                                           => Get col E (starts counting from 1 - not 0)
+col = sheet.col_values(2)[3:5]                                      => Get values from col B rows 4 and 5
+cell = sheet.cell(1,2).value                                        => Get the value from row 1 and col B
+sheet.update_cell(2,2, "CHANGED")                                   => Update cell from row 2 and col B
+sheet.insert_row(["new1","new2","new3"],2)                          => Insert new row at row number 2
+sheet.append_row(["new1","new2","new3"])                            => Append new row at the end
+sheet.sort((1, 'asc'), (2, 'des'), range='A2:G20')                  => Sorting the sheet (Range + col1 asc + col2 desc)
+cell_list = worksheet.range('A1:G1')                                => Define cell area / cell row
+new_values = [1,2,3,4,5]                                            => Define new values for area / row
+for i, val in enumerate(new_values): cell_list[i].value = val       => Write new values to cell area / cell row
+worksheet.update_cells(cell_list)                                   => Upate cell area / cell row    
 
-# Gspread Formatting
-# https://pypi.org/project/gspread-formatting/
+=> Gspread Formatting
+=> https://pypi.org/project/gspread-formatting/
+""
 # Set format for area:
 	from gspread_formatting import *
 	fmt = cellFormat(
@@ -871,31 +913,35 @@ worksheet.update_cells(cell_list)                                   # Upate cell
 	rules.clear()
 	rules.append(rule)
 	rules.save()
-----------
+""
 
 
 
-----------
 ###### MODULE - OPENPYXL
-https://openpyxl.readthedocs.io/en/stable/api/openpyxl.worksheet.worksheet.html#openpyxl.worksheet.worksheet.Worksheet.PAPERSIZE_A3
-from openpyxl import load_workbook                      # Import module for loading a workbook
-from openpyxl import Workbook							# Import module for creating a workbook
-wb = load_workbook(("Test.xlsx"))                       # Load xlsx
-wb = openpyxl.Workbook()								# Create new workbook
-wb.create_sheet("ws")			time						# Create new worksheet (at the end)
-wb.create_sheet("ws",0)									# Create new worksheet (at the beginning)
-wb.create_sheet("ws",-2)								# Create new worksheet (at the second last position)
-wb.sheetnames                                           # All worksheets from the 
-ws = wb["sheet1"]                                       # Select specific worksheet in workbook
-ws = wb.active                                          # Select active worksheet from workbook		
-ws.title = "xyz"										# Change worksheet name
-ws["A1"].value                                          # Value from specific cell
-ws.cell(row=1, column=1).value                          # Value from specific cell (other method)
-ws["A1"] = 97                                           # Assign value to specific cell
-ws["A1"] = "=SUBTOTAL(1,I6:I10000)"                     # Assign formula to specific cell (only english names for function and arguments must be sepearted by "," and not ";")
-wb.save("Test2.xlsx")                                   # Save workbook to xlsx
-for row in ws["A1":"C3"]:                               # Loop trough specific area and print the cell values
+Documentation: => https://openpyxl.readthedocs.io/en/stable/api/openpyxl.worksheet.worksheet.html#openpyxl.worksheet.worksheet.Worksheet.PAPERSIZE_A3
+from openpyxl import load_workbook                      => Import module for loading a workbook
+from openpyxl import Workbook							=> Import module for creating a workbook
+wb = load_workbook(("Test.xlsx"))                       => Load xlsx
+wb = openpyxl.Workbook()								=> Create new workbook
+wb.create_sheet("ws")									=> Create new worksheet (at the end)
+wb.create_sheet("ws",0)									=> Create new worksheet (at the beginning)
+wb.create_sheet("ws",-2)								=> Create new worksheet (at the second last position)
+wb.sheetnames                                           => All worksheets from the 
+ws = wb["sheet1"]                                       => Select specific worksheet in workbook
+ws = wb.active                                          => Select active worksheet from workbook		
+ws.title = "xyz"										=> Change worksheet name
+ws["A1"].value                                          => Value from specific cell
+ws.cell(row=1, column=1).value                          => Value from specific cell (other method)
+ws["A1"] = 97                                           => Assign value to specific cell
+ws["A1"] = "=SUBTOTAL(1,I6:I10000)"                     => Assign formula to specific cell (only english names for function and arguments must be sepearted by "," and not ";")
+wb.save("Test2.xlsx")                                   => Save workbook to xlsx
+
+=> Loop trough specific area and print the cell values
+""
+for row in ws["A1":"C3"]:                               
     for cell in row: print(cell.value)
+""
+
 for cell in ws["C"]: print(cell.value)                  # Loop trough specific column and print the cell values
 ws.insert_cols(3)                         				# Insert column before col 3
 ws.insert_cols(3,2)                       				# Insert 2 columns before col 3	
@@ -916,16 +962,32 @@ ws.auto_filter.ref = "A5:Q5"							# Define filters in columns A5 to Q5
 ws.auto_filter.add_filter_column(2,["X","Y","Z"])		# Set filter to values "X","Y","Z" in column 2
 ws.auto_filter.add_sort_condition("B2:B15")				# Sort elements in filter for columsn B2 to B15
 wb.close()												# Close workbook
-for row in ws.iter_rows():								# Iterate trough worksheet row by row
+=> Iterate trough worksheet row by row
+""
+for row in ws.iter_rows():								
     for cell in row: print(cell.value)	
-for row in ws.iter_rows									# Iterate trough worksheet row by row (from A1 to C6 - 6 lines)
+""
+
+=> Iterate trough worksheet row by row (from A1 to C6 - 6 lines)
+""
+for row in ws.iter_rows									
 	(min_row=1,min_col=1,max_row=6,max_col=3):
-for col in sheet.iter_cols():							# Iterate trough worksheet col by col
+""
+
+=> Iterate trough worksheet col by col
+""
+for col in sheet.iter_cols():							
     for cell in col: print(cell.value)	
-for col in ws.iter_cols									# Iterate trough worksheet col by col (from A1 to C6 - 3 lines)
+""
+
+=> Iterate trough worksheet col by col (from A1 to C6 - 3 lines)
+""
+for col in ws.iter_cols									
 	(min_row=1,min_col=1,max_row=6,max_col=3):
+""
 	
-### Read whole worksheet to a nested list
+=> Read whole worksheet to a nested list
+""
 data_list = []
 for row in ws.iter_rows ():
     zeile = []
@@ -935,8 +997,10 @@ for row in ws.iter_rows ():
         else:
             zeile.append (cell.value)
     data_list.append (zeile)
+""
 
-### Saving a nested list in XLSX
+=> Saving a nested list in XLSX
+""
 import pandas as pd
 from openpyxl import load_workbook
 cont = [[row1_cell1, row1_cell2], [row2.cell1,row3_cell3]]      # Nested list for saving
@@ -949,8 +1013,10 @@ pd.DataFrame (cont).to_excel (writer, sheet_name="WS2",			# Prepare Data for XLS
                               header=False, index=False) 							  
 writer.save()                                                   # Save XLSX with the new worksheets
 writer.close()													# Close writer
+""
 
-### Checking if xlsx is open while trying to save
+=> Checking if xlsx is open while trying to save
+""
 while True:
     try:
         writer.save ()
@@ -960,13 +1026,17 @@ while True:
         print ("Error: ", e)
 		traceback.print_exc()
         input ("Datei kann nicht geöffnet werden - bitte schließen und <Enter> drücken!")
+""
 
-### Read column to a list
+=> Read column to a list
+""
 mylist = []
 for col in ws['A']:
      mylist.append(col.value)
+""
 
-### Automatic adjustment of the columns accoring to best fit
+=> Automatic adjustment of the columns accoring to best fit
+""
 column_widths = []
 ws = writer.sheets[stock]
 for row in content:                                    # Determination of the longest value per column
@@ -983,111 +1053,151 @@ for row in content:                                    # Determination of the lo
             ws.column_dimensions[get_column_letter (i + 1)].width = 32
         else:
             ws.column_dimensions[get_column_letter (i + 1)].width = column_width + 2
+""
     
-### Formating the xlsx
-(when a cell is formated 2 times - it gets overwritten)
-from openpyxl.styles import Font, PatternFill, Border, Side, Alignment
-from openpyxl import formatting, styles
-bold = Font (bold=True)                                                                			# bold font
-bg_yellow = PatternFill (fill_type="solid", start_color='fbfce1', end_color='fbfce1')  			# yellow background (use color picker)
-bg_grey = PatternFill (fill_type="solid", start_color='babab6', end_color='babab6')    			# grey background (use color picker)
-bg_green = PatternFill (fill_type="solid", start_color='8af542', end_color='8af542')   			# blue background (use color picker)
-frame_all = Border (left=Side (style='thin'), right=Side (style='thin'),               			# define border on very side
+=> Formating the xlsx
+=> when a cell is formated 2 times - it gets overwritten)
+from openpyxl.styles import Font, PatternFill, Border, Side, Alignment                          => import openpyxl.styles
+from openpyxl import formatting, styles                                                         => import formatting, styles
+bold = Font (bold=True)                                                                			=> bold font
+bg_yellow = PatternFill (fill_type="solid", start_color='fbfce1', end_color='fbfce1')  			=> yellow background (use color picker)
+bg_grey = PatternFill (fill_type="solid", start_color='babab6', end_color='babab6')    			=> grey background (use color picker)
+bg_green = PatternFill (fill_type="solid", start_color='8af542', end_color='8af542')   			=> blue background (use color picker)
+
+=> define border on very side
+""
+frame_all = Border (left=Side (style='thin'), right=Side (style='thin'),               			
                     top=Side (style='thin'), bottom=Side (style='thin'))
-frame_upanddown = Border (top=Side (style='thin'), bottom=Side (style='thin'))         			# border only on top and bottom
-size14 = Font (bold=True, size="14")                                                   			# font size 14
-left_allign = Alignment (horizontal="left")                                            			# define left alignment
-right_allign = Alignment (horizontal="right")                                          			# define right alignment
-for row in ws["D1":"G34"]:                                         								# define right alignment for area
+""
+
+frame_upanddown = Border (top=Side (style='thin'), bottom=Side (style='thin'))         			=> border only on top and bottom
+size14 = Font (bold=True, size="14")                                                   			=> font size 14
+left_allign = Alignment (horizontal="left")                                            			=> define left alignment
+right_allign = Alignment (horizontal="right")                                          			=> define right alignment
+
+=> define right alignment for area
+""
+for row in ws["D1":"G34"]:                                         								
     for cell in row: cell.alignment = right_allign  
-areas = ["A7:G19","A27:G31"]                                       								# define full border for several areas
+""
+
+areas = ["A7:G19","A27:G31"]                                       								=> define full border for several areas
+
+=> format area
+""
 for area in areas:
     for row in ws[area]:
         for cell in row: 
 			cell.border = frame_all
-			cell.number_format = "0"															# define number format without decimals
-			cell.number_format = "0.000E+00"													# define number format with 3 decimals		
-for i in ["A6","D6","E6","A26","D26","E26"]:                       								# set background and size for several specific cells
+			cell.number_format = "0"															=> define number format without decimals
+			cell.number_format = "0.000E+00"													=> define number format with 3 decimals		
+""
+
+=> set background and size for several specific cells
+""
+for i in ["A6","D6","E6","A26","D26","E26"]:                       								
     ws[i].fill = bg_green
     ws[i].font = size12
-freeze = ws["B2"]                                                  								# freeze worksheet at cell B2 for right and down scrolling 
-ws.freeze_panes = freeze        
-ws.sheet_properties.pageSetUpPr.fitToPage = True                   								# fit xlsx to one page for printing - 1st part
-ws.page_setup.fitToHeight = False                                  								# fit xlsx to one page for printing - 2nd part
-ws.set_printer_settings(paper_size=1, orientation = 'landscape')   								# set page to landscape horizontal
-ws.set_printer_settings(paper_size=1, orientation = 'portrait')    								# set page to landscape horizontal
-red_color = 'ffc7ce'											   								# Define red color background
-red_color_font = '9c0103'																		# Define red color font
-red_font = styles.Font (size=14, bold=True, color=red_color_font)   							# Define red_font with size / bold / red color
-red_fill = styles.PatternFill (start_color=red_color, end_color=red_color, fill_type='solid')	# Define red_fill with color red / fill type solid
-ws.conditional_formatting.add ('A1:Z100',														# Define conditional formating for area, <0, => fill with red background
+""
+
+=> freeze worksheet at cell B2 for right and down scrolling 
+""
+freeze = ws["B2"]                                                  								
+ws.freeze_panes = freeze                          
+""
+
+ws.sheet_properties.pageSetUpPr.fitToPage = True                   								=> fit xlsx to one page for printing - 1st part
+ws.page_setup.fitToHeight = False                                  								=> fit xlsx to one page for printing - 2nd part
+ws.set_printer_settings(paper_size=1, orientation = 'landscape')   								=> set page to landscape horizontal
+ws.set_printer_settings(paper_size=1, orientation = 'portrait')    								=> set page to landscape horizontal
+red_color = 'ffc7ce'											   								=> Define red color background
+red_color_font = '9c0103'																		=> Define red color font
+red_font = styles.Font (size=14, bold=True, color=red_color_font)   							=> Define red_font with size / bold / red color
+red_fill = styles.PatternFill (start_color=red_color, end_color=red_color, fill_type='solid')	=> Define red_fill with color red / fill type solid
+
+=> Define conditional formating for area, <0, => fill with red background
+""
+ws.conditional_formatting.add ('A1:Z100',														
 	formatting.rule.CellIsRule (operator='lessThan',formula=['0'],fill=red_fill))
-ws.conditional_formatting.add ('A1:G25',														# Define conditional formating for area, <0, => use red font
+""
+
+=> Define conditional formating for area, <0, => use red font
+""
+ws.conditional_formatting.add ('A1:G25',														
 	formatting.rule.CellIsRule (operator='lessThan',formula=['0'],fill=red_fill,font=red_font))
-for area in ["B1:B100","C2:G100"]:																# Conditional formating for more than one area
+""
+
+=> Conditional formating for more than one area
+""
+for area in ["B1:B100","C2:G100"]:																
 	ws.conditional_formatting.add (area, ...)												
-ws.conditional_formatting.add('E1:E10',															# Conditional formating according to a formula
+""
+
+=> Conditional formating according to a formula
+""
+ws.conditional_formatting.add('E1:E10',															
 	FormulaRule(formula=['ISBLANK(E1)'], stopIfTrue=True, fill=redFill))
-ws.conditional_formatting.add('D2:D10',															# Conditional formating according to a formula
+""
+
+=> Conditional formating according to a formula
+""
+ws.conditional_formatting.add('D2:D10',															
 	FormulaRule(formula=['E1=0'], font=myFont, border=myBorder, fill=redFill))
-----------
+""    
 
 
 
-----------
 ###### MODULE - XLWINNGS
-### Update XLSX in reealtime
-import xlwings as xw                                    # Import module
-wb = xw.Book ("name.xlsx")                              # Read XLSX
-ws = wb.sheets["name_sheet"]                            # Read specific worksheet
-ws["A1"].value = "xyz"                                  # Updates specific cell
-for i in ws.range("A3:A7"): i.value = ""				# Iterate trough cells an set them to "" / None
-l = ws.range("A2:A100").value                           # Read specific cells to list
-cells = ws.range("A2:A100")								# Read cells
-cells[1].value = "new value"                            # Update the value of a cell
-ws.range("A2:A100").value = l                           # Writeback the updates to cells
-xl_col_sort(ws,1)                                       # Sort worksheet in the first col (function see below)
-ws["C8"].color											# Reads the color of a cell and returns a rgb-tuple eg. (146, 208, 80)
-ws["C8"].color = None									# Remove background from a cell
-ws.Range("A1:C3").color = (255,255,255)					# Assigns background color for a range of cells
+=> Update XLSX in reealtime
+import xlwings as xw                                    => Import module
+wb = xw.Book ("name.xlsx")                              => Read XLSX
+ws = wb.sheets["name_sheet"]                            => Read specific worksheet
+ws["A1"].value = "xyz"                                  => Updates specific cell
+for i in ws.range("A3:A7"): i.value = ""				=> Iterate trough cells an set them to "" / None
+l = ws.range("A2:A100").value                           => Read specific cells to list
+cells = ws.range("A2:A100")								=> Read cells
+cells[1].value = "new value"                            => Update the value of a cell
+ws.range("A2:A100").value = l                           => Writeback the updates to cells
+xl_col_sort(ws,1)                                       => Sort worksheet in the first col (function see below)
+ws["C8"].color											=> Reads the color of a cell and returns a rgb-tuple eg. (146, 208, 80)
+ws["C8"].color = None									=> Remove background from a cell
+ws.Range("A1:C3").color = (255,255,255)					=> Assigns background color for a range of cells
 
 
-### Sorting workssheet in given col
+=> Sorting workssheet in given col
+""
 def xl_col_sort(sheet,col_num):                         
     sheet.range((2,col_num)).api.SortKey1=sheet.range((2,col_num)).api, Order1=1)
     return
-----------
+""
 
 
 
-----------
 ###### MODULE - WIN32COM
-# Create Worksheets as PDF from XLSX
-import win32com.client                                  # Import Module
-import os
-inp = os.getcwd() + "\\" +"excel.xlsx"                  # Define Input-XLSX
-out = os.getcwd() + "\\" +"ws.pdf"                      # Define Output-PDF
-o = win32com.client.Dispatch("Excel.Application")       # Initialize Excel Application
-o.Visible = False                                       # Do everything hidden
-wb = o.Workbooks.Open(inp)                              # Open XLSX
-wb.ActiveSheet.ExportAsFixedFormat (0, out)             # Create PDF from the active worksheet in the xlsx
-wb.Close(True)                                          # Close XLSX
-# Optional / Additonal
-wb.Sheets.Count                                         # Number of Worksheets
-wb.WorkSheets ([3,4,8]).Select()                        # Select 3 different worksheets by number (for exporting afterwards)
-ws = wb.Worksheets[4]                                   # Assign worksheet 4
-ws.PageSetup.Zoom = False                               # No Zooming
-ws.PageSetup.FitToPagesTall = 1                         # Fit to 1 height
-ws.PageSetup.FitToPagesWide = 1                         # Fit to 1 width
-ws.PageSetup.PrintArea = "A1:G50"                       # Select specific print area
-----------
+=> Create Worksheets as PDF from XLSX
+import win32com.client                                  => Import Win32 Module
+import os                                               => Import OS Module
+inp = os.getcwd() + "\\" +"excel.xlsx"                  => Define Input-XLSX
+out = os.getcwd() + "\\" +"ws.pdf"                      => Define Output-PDF
+o = win32com.client.Dispatch("Excel.Application")       => Initialize Excel Application
+o.Visible = False                                       => Do everything hidden
+wb = o.Workbooks.Open(inp)                              => Open XLSX
+wb.ActiveSheet.ExportAsFixedFormat (0, out)             => Create PDF from the active worksheet in the xlsx
+wb.Close(True)                                          => Close XLSX
+wb.Sheets.Count                                         => Number of Worksheets
+wb.WorkSheets ([3,4,8]).Select()                        => Select 3 different worksheets by number (for exporting afterwards)
+ws = wb.Worksheets[4]                                   => Assign worksheet 4
+ws.PageSetup.Zoom = False                               => No Zooming
+ws.PageSetup.FitToPagesTall = 1                         => Fit to 1 height
+ws.PageSetup.FitToPagesWide = 1                         => Fit to 1 width
+ws.PageSetup.PrintArea = "A1:G50"                       => Select specific print area
 
 
 
-----------
 ###### MODULE - PyPDF2
-(Working with PDFs)
-# Read PDF informations / metadata
+=> Working with PDFs
+=> Read PDF informations / metadata
+""
 from PyPDF2 import PdfFileReader 						# Import Module for PDF Reading
 with open (fn, 'rb') as f:
     pdf = PdfFileReader (f)								# Read PDF informations
@@ -1096,42 +1206,51 @@ with open (fn, 'rb') as f:
 	print(info)											# Outputs all informations
 	print(info.title)									# Outputs title of the pdf
 	print(info.author)									# Outputs author of the pdf
+""
 
-# Read Text from Pdf			
+=> Read Text from Pdf			
+""
 page = pdf.getPage (7)									# Select page 8						
 text = page.extractText ()								# Extract text	
 print (text)											# print (text	
+""
 
-# Split PDFs
+=> Split PDFs
+""
 from PyPDF2 import PdfFileWriter						# Import Module for PDF Writing
 pdf_writer = PdfFileWriter()							# Create new instance of PDF writer
 pdf_writer.addPage(page)                                # Add Page to writer
 with open(output_filename, 'wb') as out:				# Write splitted PDF
 	pdf_writer.write(out)
+""
 
-# Merge PDFs
+=> Merge PDFs
+""
 from PyPDF2 import PdfFileMerger						# Import Module for PDF Merging
 pdf_merger = PdfFileMerger()							# Create new instance of PDF merger
 pdf_merger.append(path)                                 # Append Page for merging
 with open(output_path, 'wb') as fileobj:				# Write merged PDF
 	pdf_merger.write(fileobj)
+""
 
-page.rotateClockwise(90)								# Rotate clockwise
-page.rotateCounterClockwise(90)							# Rotate counter clockwise
-page.mergePage(watermark_page)							# Overlaying / Watermarking two pages
-----------
+page.rotateClockwise(90)								=> Rotate clockwise
+page.rotateCounterClockwise(90)							=> Rotate counter clockwise
+page.mergePage(watermark_page)							=> Overlaying / Watermarking two pages
 
 
 
-----------
 ###### MYSQL / MARIADB / SQL
 import mysql.connector                                     # Import module for mysql access
-mydb = mysql.connector.connect                             # Define connection
-    (host="localhost",user="root",passwd="pwd")
+mydb = mysql.connector.connect (host="localhost",user="root",passwd="pwd")                            # Define connection    
 mycursor = mydb.cursor()                                   # Set Cursor on mySQL
 mycursor.execute("CREATE DATABASE db")                     # Creates database "db"
-mycursor.execute("SHOW DATABASES")                         # Show databases and informations
+
+=> # Show databases and informations
+""
+mycursor.execute("SHOW DATABASES")                         
     for db in mycursor: print(db)
+""
+
 mycursor.execute("CREATE TABLE students                    # Create new table with 2 cols
                 (name VARCHAR(255),age INTEGER(10))")
 mycursor.execute("SHOW TABLES")                            # Show tables and informations
