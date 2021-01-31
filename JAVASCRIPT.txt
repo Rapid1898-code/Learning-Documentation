@@ -331,7 +331,7 @@ function MakeCar (carMake,carModel,carColor){       // Define the constructor fu
     this.carModel = carModel                        // "this" is referencing to the actual object
     this.carColor = carColor
     this.honk = function(){                         // Define a mtehod for the constructor
-        alert("BEEP ${this.carModel} BEEP")         // Alert something when the method is called (with prop this.carModel)
+        alert(`BEEP ${this.carModel} BEEP`)         // Alert something when the method is called (with prop this.carModel)
     }
 }
 let car1 = new MakeCar("Honda","Civic","black")     // Create a new car1 (with codeword "new")
@@ -471,7 +471,6 @@ need to use browserify<br>
 <a href="http://browserify.org/#install" style="font-style: italic">http://browserify.org/#install</a><br>
 so the require can also run with html (otherwise it only works in the IDE)<br>
 parse the JSON-content to an object: let obj = JSON.parse(body)
-
 
 
 ###### JQUERY

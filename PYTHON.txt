@@ -178,6 +178,12 @@ C:\Program Files\MariaDB 10.3\data				=> Data where the MariaDB-database is stor
 C:\ProgramData\MySQL\MYSQL Server 8.0\data		=> Data where the MySQL-database is stored
 HeidiSQL - Datei / Verbindungsmanager			=> Shows the database-version in the column header	
 
+=> Transfer whole table from local db to hosted db
+    right click on table / tables to transfer and select "export database as sql"
+    for "output" select "Server: A2Hosting" (connection to the hosted server)
+    for "database" select "rapidtec_stockdb" (name from the db on the hosted server)
+    for "data" select "replace existing data"
+    press "export" (wait till the rows-column shows 100%)
 
 
 ###### OPERATORS, INPUTS, ARGUMENTS
