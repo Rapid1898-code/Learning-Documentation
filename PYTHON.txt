@@ -1246,10 +1246,10 @@ page.mergePage(watermark_page)							=> Overlaying / Watermarking two pages
 
 
 ###### MYSQL / MARIADB / SQL
-import mysql.connector                                     # Import module for mysql access
-mydb = mysql.connector.connect (host="localhost",user="root",passwd="pwd")                            # Define connection    
-mycursor = mydb.cursor()                                   # Set Cursor on mySQL
-mycursor.execute("CREATE DATABASE db")                     # Creates database "db"
+import mysql.connector                                     => Import module for mysql access
+mydb = mysql.connector.connect (host="localhost",user="root",passwd="pwd")                            => Define connection    
+mycursor = mydb.cursor()                                   => Set Cursor on mySQL
+mycursor.execute("CREATE DATABASE db")                     => Creates database "db"
 
 => # Show databases and informations
 ""
@@ -1257,57 +1257,54 @@ mycursor.execute("SHOW DATABASES")
     for db in mycursor: print(db)
 ""
 
-mycursor.execute("CREATE TABLE students                    # Create new table with 2 cols
-                (name VARCHAR(255),age INTEGER(10))")
-mycursor.execute("SHOW TABLES")                            # Show tables and informations
-    for tb in mycursor: print(tb)
-sqlFormula = "INSERT INTO students                         # Insert row in table with the 2 values using sql injection
-                (name, age) VALUES (%s, %s)"
-student1 = ("Rachel", 22)                                  # Define a row with values to insert
-mycursor.execute(sqlFormula,student1)                      # Execute the sql statement to add one row
-mydb.commit()                                              # Commit the change (otherwise no update will be saved to db)
-students = [("Tom", 22),("Mark", 29),("Clara", 52)]        # Define more rows with values
-mycursor.executemany(sqlFormula,students)                  # Execute the sql statement to add more row (from list / tuple)   
-mycursor.execute("SELECT age FROM students")               # Select col "age" from table "students"
-myresult = mycursor.fetchall()                             # Read all rows according the above select statement
-myresult = mycursor.fetchone()                             # Read one / first row according the above select statement
-for row in myresult: print(row)                            # Output the read row / table informations
-sql = "SELECT * FROM students WHERE age > 25"              # Define select (greater than)
-sql = "SELECT * FROM students WHERE name LIKE 'M%'"        # Define select (with like clausel)
-mycursor.execute(sql)                                      # Execute SQL
-sql = "SELECT * FROM students WHERE name = %s"             # Define select (with sql injection)
-mycursor.execute(sql, ("Mike", ))                          # Execute SQL with parameters
-sql = "UPDATE students SET age = 82 WHERE name='xyz'"      # Update row where name = "xyz"
-sql = "SELECT * FROM students LIMIT 5"                     # Limit the output to 5 rows
-sql = "SELECT * FROM students LIMIT 5 OFFSET 2             # Limit the output toi 5 rows and starting with element 2
-sql = "SELECT * FROM students ORDER BY name"               # Output content - ascending order
-sql = "SELECT * FROM students ORDER BY name DESC"          # Output content - descending order
-sql = "DELETE FROM students WHERE name = 'xyz'"            # Delete row with name "xyz"
-sql = "DROP TABLE IF EXISTS students"                      # Drop whole table (if exists helps if there no table anymore)  
+mycursor.execute("CREATE TABLE students (name VARCHAR(255),age INTEGER(10))")                    => Create new table with 2 cols                
+mycursor.execute("SHOW TABLES") for tb in mycursor: print(tb)                          => Show tables and informations    
+sqlFormula = "INSERT INTO students (name, age) VALUES (%s, %s)"                         => Insert row in table with the 2 values using sql injection                
+student1 = ("Rachel", 22)                                  => Define a row with values to insert
+mycursor.execute(sqlFormula,student1)                      => Execute the sql statement to add one row
+mydb.commit()                                              => Commit the change (otherwise no update will be saved to db)
+students = [("Tom", 22),("Mark", 29),("Clara", 52)]        => Define more rows with values
+mycursor.executemany(sqlFormula,students)                  => Execute the sql statement to add more row (from list / tuple)   
+mycursor.execute("SELECT age FROM students")               => Select col "age" from table "students"
+myresult = mycursor.fetchall()                             => Read all rows according the above select statement
+myresult = mycursor.fetchone()                             => Read one / first row according the above select statement
+for row in myresult: print(row)                            => Output the read row / table informations
+sql = "SELECT * FROM students WHERE age > 25"              => Define select (greater than)
+sql = "SELECT * FROM students WHERE name LIKE 'M%'"        => Define select (with like clausel)
+mycursor.execute(sql)                                      => Execute SQL
+sql = "SELECT * FROM students WHERE name = %s"             => Define select (with sql injection)
+mycursor.execute(sql, ("Mike", ))                          => Execute SQL with parameters
+sql = "UPDATE students SET age = 82 WHERE name='xyz'"      => Update row where name = "xyz"
+sql = "SELECT * FROM students LIMIT 5"                     => Limit the output to 5 rows
+sql = "SELECT * FROM students LIMIT 5 OFFSET 2             => Limit the output toi 5 rows and starting with element 2
+sql = "SELECT * FROM students ORDER BY name"               => Output content - ascending order
+sql = "SELECT * FROM students ORDER BY name DESC"          => Output content - descending order
+sql = "DELETE FROM students WHERE name = 'xyz'"            => Delete row with name "xyz"
+sql = "DROP TABLE IF EXISTS students"                      => Drop whole table (if exists helps if there no table anymore)  
 
-###Read ticker for specific ticker                 
+=>Read ticker for specific ticker                 
+""
 sql = "SELECT ticker FROM stock_main where ticker=%s"      # Or Select * to get all values from the table
 cont = [(summary["symbol"])]
 c.execute(sql,cont)
 data = c.fetchall()                 
-----------
+""
 
 
 
-----------
 ###### MYSQL / MARIADB / SQL ALCHEMY ######
-from sqlalchemy import create_engine                       # Import MODULE
-engine = create_engine("mysql+pymysql:                     # Define access to the MySQL-DB (username, pw, dbname)
-//user:pw@localhost/dbname?host=localhost?port=3306")
-conn = engine.connect()                                    # Establish connection
-engine.table_names()                                       # Read all existing tables from the databasen - returns list
-conn.execute("SELECT * FROM actor").fetchall()             # Read data from db - returns list with tupels as rows
-conn.close()											   # Close connection at the end
-engine.dispose()										   # Close sql engine at the end
+from sqlalchemy import create_engine                       => Import MODULE
+engine = create_engine("mysql+pymysql: //user:pw@localhost/dbname?host=localhost?port=3306")                     => Define access to the MySQL-DB (username, pw, dbname)
+conn = engine.connect()                                    => Establish connection
+engine.table_names()                                       => Read all existing tables from the databasen - returns list
+conn.execute("SELECT * FROM actor").fetchall()             => Read data from db - returns list with tupels as rows
+conn.close()											   => Close connection at the end
+engine.dispose()										   => Close sql engine at the end
 
-### Tabelle anlegen in MySQL DB
+=> Tabelle anlegen in MySQL DB
+""
 from sqlalchemy import Table, Column, Integer, String, Float, MetaData
-meta = MetaData()                                          # Tabelle anlegen in MySQL DB
+meta = MetaData()                                          
 students = Table(
    'students', meta,
    Column('id', Integer, primary_key = True),
@@ -1315,8 +1312,10 @@ students = Table(
    Column('lastname', String(45)),
 )
 meta.create_all(engine)
+""
 
-### Create INSERT / UPDATE / DELETE / SELECT statements
+=> Create INSERT / UPDATE / DELETE / SELECT statements
+""
 students.insert()                                           # Creates INSERT Statement according due the whole students structure
 	=> shows: INSERT INTO students (id, name, lastname, floatvar) VALUES (:id, :name, :lastname, :floatvar)
 students.insert().values(name = 'Karan')                    # Creates INSERT Statement for specific attribute
@@ -1327,8 +1326,10 @@ students.delete()                                           # Creates DELETE Sta
 	=> shows: DELETE FROM students
 students.select()                                           # Creates SELECT Statement
 	=> shows: SELECT students.id, students.name, students.lastname, students.floatvar  FROM students
+""
 
-### Execute SQL command - INSERT                             # Insert rows in table
+=> Execute SQL command - INSERT               
+""
 conn = engine.connect()                                     # Insert one row
 ins = students.insert().values name = 'Brauneder', lastname = 'Karl')
 result = conn.execute(ins)
@@ -1337,113 +1338,131 @@ conn.execute(students.insert(), [                           # Insert more rows
    {'name':'Krankl', 'lastname' : 'Hans'},
    {'name':'Herzog','lastname' : 'Andreas'},
 ])
+""
 
-### Execute SQL command - SELECT                             # Select rows from table
+=> Execute SQL command - SELECT                             
+""
 s = students.select()                                       # Creates select statement for SELECT *
 result = conn.execute(s)                                    # Excenute select statement
 for row in result: print(row)                               # Outputs the result rows for select
 s = students.select().where(students.c.id > 10)             # Creates select statement with WHERE clausel
+""
 
-### Execute SQL with Textual SQL                             # Select Statement with textual SQL
+=> Execute SQL with Textual SQL                             
+""
 from sqlalchemy.sql import text
 t = text("SELECT name FROM students")
 result = conn.execute(t)
 for row in result: print(row)
 t = text("select students.name, students.lastname from students where students.name between :x and :y")
 result = conn.execute(t, x = 'A', y = 'L')                  # Select statement with where-parameters
+""
 
-### Using Aliases
+=> Using Aliases
+""
 from sqlalchemy.sql import alias, select
 st = students.alias("a")
 s = select([st]).where(st.c.id > 2)
 conn.execute(s).fetchall()
+""
 
-### Execute UPDATE statement
+=> Execute UPDATE statement
+""
 conn = engine.connect()
 stmt=students.update().where(students.c.lastname=='Khanna').values(lastname='Kapoor')
 conn.execute(stmt)
 s = students.select()
 conn.execute(s).fetchall()
+""
 
-### Execute DELETE statementconn = engine.connect()
+=> Execute DELETE statementconn = engine.connect()
+""
 stmt = students.delete().where(students.c.lastname == 'Khanna')
 conn.execute(stmt)
 s = students.select()
 conn.execute(s).fetchall()
-----------
+""
 
 
 
-----------
 ###### SQLITE3 SQL ######
-conn = sqlite3.connect("address_book.db")		# Create a database or connect to one
-c = conn.cursor()								# Create a cursor (for working with the db)
-c.execute("""CREATE TABLE tbl (					# Create a table in the database
+conn = sqlite3.connect("address_book.db")		=> Create a database or connect to one
+c = conn.cursor()								=> Create a cursor (for working with the db)
+=> Create a table in the database
+""
+c.execute("""CREATE TABLE tbl (					
 		attr1 text,
 		attr2 text,
 		attr3 integer)""")
+""
+
+=> Insert rows into database	
+""
 c.execute(INSERT INTO tbl VALUES (:attr1,:attr2,:attr3)",
-		{										# Insert rows into database	
+		{										
 			"attr1": field1.get(),
 			"attr2": field2.get(),
 			"attr3": field3.get()
 		})
-c.execute"SELECT * FROM adresses")				# Select rows from database
-c.execute("DELETE from addresses WHERE			# Delte row from database - get key from delete_box widget (eg. tkinter-module)
-		oid = " + delete_box.get())
-records = c.fetchall()							# Fetch all rows
-records = list
-c.fetchone()							# Fetch only one row
-records = c.fetchmany(50)						# Fetch the first 50 rows
-conn.commit()									# Commit Changes
-conn.close()									# Close Connection
-----------
+""
+
+c.execute"SELECT * FROM adresses")				=> Select rows from database
+c.execute("DELETE from addresses WHERE oid = " + delete_box.get())			=> Delete row from database - get key from delete_box widget (eg. tkinter-module)		
+records = c.fetchall()							=> Fetch all rows
+c.fetchone()							=> Fetch only one row
+records = c.fetchmany(50)						=> Fetch the first 50 rows
+conn.commit()									=> Commit Changes
+conn.close()									=> Close Connection
 
 
 
-
-----------
 ###### MODULES - DATES, DATETIME, CALENDAR, TIMEIT, TIME, SYS, CTYPES
-# Standardmodules from python no pip install necessary
-https://www.programiz.com/python-programming/datetime/strptime      # Overview % parsing commands
+=> Standardmodules from python no pip install necessary
+=> Overview % parsing commands
+https://www.programiz.com/python-programming/datetime/strptime      
 https://rdrr.io/r/base/strptime.html
-from datetime import datetime, timedelta                     # Import module datetime and timedelta
-from datetime import date                                    # Import module dat
-datetime.strptime(s, "%Y-%m-%d")                             # Conversion string to datetime in format dd.mm.jjjj
-datetime.strftime(dt, "%Y-%m-%d")                            # Conversion datetime to string in format  dd.mm.jjjj
-dt.strftime((dt.strptime(tmp,"%m/%d/%Y")),"%Y-%m-%d")      	# Convert dateformat from string in one line (1st from - 2nd to)
-isinstance(x, date)											 # Check if variable is of type datetime.date or datetime.datetime                   
-isinstance(x, datetime)										 # Check if variable is of type datetime.datetime
-date = date(2020,7,24)                                       # Define date as "2020-07-24"
-dt = datetime(2020,3,5,19,27,23)                      		 # Define date+time as "2020-03-05 19:27:23"
-now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")           # Actual date+time in format 2020-06-09 20:11:13
-now = datetime.now().strftime("%Y-%m-%d") 			         # Actual date in format 2020-06-09
-tday = datetime.today()                                      # Actual date in datetime format
-tday = datetime.today().date()								 # Actual date as date format
-dt.year, dt.month, dt.day                              		 # Year / month / day from the datetime
-tday.isoweekday()                                            # Returns weekday (monday=1, sunday=7)
-last_friday = day - timedelta(days=tday.isoweekday() + 2)    # Calculates last friday (+2 for FR, +1 SA, 0 SU, -1 MO, -2 TU, -3 WE, -4 TH)
-tdelta = timedelta(days=7)                                   # Creates timedelta for 7 days
-tdelta = timedelta(seconds=60)                               # Creates timedelta for 1 minute
-tday + tdelta                                                # 7 days are added to the actual day
-newdate = date - timedelta(days=1)                           # Previous 1-day-back-date for date
-date2-date1                                                  # Timedelta for two dates
-daysDiff = abs(dt2-dt1).days								 # Difference in days
-minDiff = (date2-date1).total_seconds() / 60                 # Difference in minutes
-datetime.fromisoformat('2020-07-10 02:00:00').timestamp()    # Generate ISO-format from datetime
-iso_dt = datetime.fromisoformat(str(datetime.now())).timestamp()   # Generate ISO-format from actual date
-date = datetime.fromtimestamp(1594339200000 / 1e3)           # Generate Datetime from ISO-format#
-sys.getsizeof(l) or sys.getsizeof(t)						 # Shows size of the list / tuple in bytes
+from datetime import datetime, timedelta                     => Import module datetime and timedelta
+from datetime import date                                    => Import module dat
+datetime.strptime(s, "%Y-%m-%d")                             => Conversion string to datetime in format dd.mm.jjjj
+datetime.strftime(dt, "%Y-%m-%d")                            => Conversion datetime to string in format  dd.mm.jjjj
+dt.strftime((dt.strptime(tmp,"%m/%d/%Y")),"%Y-%m-%d")      	=> Convert dateformat from string in one line (1st from - 2nd to)
+isinstance(x, date)											 => Check if variable is of type datetime.date or datetime.datetime                   
+isinstance(x, datetime)										 => Check if variable is of type datetime.datetime
+date = date(2020,7,24)                                       => Define date as "2020-07-24"
+dt = datetime(2020,3,5,19,27,23)                      		 => Define date+time as "2020-03-05 19:27:23"
+now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")           => Actual date+time in format 2020-06-09 20:11:13
+now = datetime.now().strftime("%Y-%m-%d") 			         => Actual date in format 2020-06-09
+tday = datetime.today()                                      => Actual date in datetime format
+tday = datetime.today().date()								 => Actual date as date format
+dt.year, dt.month, dt.day                              		 => Year / month / day from the datetime
+tday.isoweekday()                                            => Returns weekday (monday=1, sunday=7)
+last_friday = day - timedelta(days=tday.isoweekday() + 2)    => Calculates last friday (+2 for FR, +1 SA, 0 SU, -1 MO, -2 TU, -3 WE, -4 TH)
+tdelta = timedelta(days=7)                                   => Creates timedelta for 7 days
+tdelta = timedelta(seconds=60)                               => Creates timedelta for 1 minute
+tday + tdelta                                                => 7 days are added to the actual day
+newdate = date - timedelta(days=1)                           => Previous 1-day-back-date for date
+date2-date1                                                  => Timedelta for two dates
+daysDiff = abs(dt2-dt1).days								 => Difference in days
+minDiff = (date2-date1).total_seconds() / 60                 => Difference in minutes
+datetime.fromisoformat('2020-07-10 02:00:00').timestamp()    => Generate ISO-format from datetime
+iso_dt = datetime.fromisoformat(str(datetime.now())).timestamp()   => Generate ISO-format from actual date
+date = datetime.fromtimestamp(1594339200000 / 1e3)           => Generate Datetime from ISO-format=>
+sys.getsizeof(l) or sys.getsizeof(t)						 => Shows size of the list / tuple in bytes
 
-###Using german names / deutsche namen for month- and day-names
+=> Using german names / deutsche namen for month- and day-names
+""
 import locale
 locale.setlocale(category=locale.LC_ALL,locale="German")
+""
 
-### Check last day of month & first weekday of month
+=> Check last day of month & first weekday of month
+""
 import calendar
 calendar.monthrange(year,month)                         # return tuple - 1st: weekday first day - 2nd: ultimo day
+""
 
-### Check if date and timezone has summmer time / daylight time
+=> Check if date and timezone has summmer time / daylight time
+""
 import pytz
 def is_dst(dt=None, timezone="UTC"):
     if dt is None:
@@ -1456,159 +1475,159 @@ is_dst(datetime(2019, 1, 1), timezone="US/Eastern")			# False => at this date US
 is_dst(datetime(2019, 4, 1), timezone="US/Eastern")			# True => at this date US/Eastern has daylight time
 is_dst(datetime(2019, 1, 1), timezone="CET")				# False => at this date CET has no daylight time
 is_dst(datetime(2019, 4, 1), timezone="CET")				# True => at this date CET has daylight time	
+""
 
-### Timing a specific activity
+=> Timing a specific activity
+""
 import timeit
 start = timeit.default_timer()                          # Start timer
 stop = timeit.default_timer()                           # Stop timer
 round(stop-start,2)										# Stopped time in seconds and rounded to 2 decimals
 round((stop-start)/60,2)                                # Stopped time in minutes and rounded to 2 decimals
 timeit.timeit(stmt="[0,1,2]",number=1000000)     		# Checking the time for creating the list for 1mio times
+""
 
-### Countdown while waiting
+=> Countdown while waiting
+""
 import time, import sys                                    
 time.sleep(3)                                           # Delay for 3 seconds
 for i in range (30, 0, -1):                             # Delay for 30 seconds - countdown in one row
     sys.stdout.write (str (i) + ' ')                    # Countdown output
     sys.stdout.flush ()
     time.sleep (1)
+""
 
-### Check which os system running    
+=> Check which os system running    
+""
 from sys import platform
 if platform == "linux"                                  # Program is excecuting from Linux
 if platform == "win32":                                 # Program ix excecuting from Windows
 if platform == "darwin":                                # Program is excecuting from Mac
+""
     
-### Read monitor resolution
+=> Read monitor resolution
+""
 import ctypes
 user32 = ctypes.windll.user32
 screensize = user32.GetSystemMetrics(0),                # 1st parameter is width, 2nd parameter is height
     user32.GetSystemMetrics(1)
-----------
+""
 
 
-
-----------
 ###### MODULE - Currencyconverter
-from currency_converter import CurrencyConverter		# Import Module
-from datetime import date								# Import Module for rate-checks for specific date
-c = CurrencyConverter()
-c.convert(100, 'USD', 'AUD')							# Convert 100 USD to AUD with for actual date
-c.convert(100, 'USD', 'AUD', date=date(2013, 3, 21))	# Convert 100 USD to AUD for date 2013-03-21
-first_date, last_date = c.bounds['BGN']					# Check begin and end-date for all rates for BGN
-c.currencies											# Read all possible currencies in a set	
-----------
+from currency_converter import CurrencyConverter		=> Import Module
+from datetime import date								=> Import Module for rate-checks for specific date
+c = CurrencyConverter()                                 => Read Function CurrencyConverter
+c.convert(100, 'USD', 'AUD')							=> Convert 100 USD to AUD with for actual date
+c.convert(100, 'USD', 'AUD', date=date(2013, 3, 21))	=> Convert 100 USD to AUD for date 2013-03-21
+first_date, last_date = c.bounds['BGN']					=> Check begin and end-date for all rates for BGN
+c.currencies											=> Read all possible currencies in a set	
 
 
 
-----------
 ###### MODULE - Countries, Currency, Language
-https://pypi.org/project/pycountry/				# Description about the module
-# Problems with some added python modules (eg. pycountry) with pyinstaller => see pyinstaller description
-import pycountry								# Install moduel
-list(pycountry.countries)                       # List of all countries with several informations
-c = pycountry.countries.get(alpha_2='DE')       # Searching for country-informatns for "DE"
-c.alpha_2                                       # Outputs => DE
-c.alpha_3										# Outputs => DEU
-c.numeric                                       # Outputs number of the coutnry => 276
-c.name                                          # Outputs full name of the country => Germany	
-c.official_name                                 # Outputs the official name => "Federal Republic of Germany!
-list(pycountry.currencies)						# List of all currencies
-list(pycountry.languages)						# List of all languages                            
-list(pycountry.historic_countries)              # List of all historic countries which not more exists
-list(pycountry.subdivisiones)                   # List of all subdivided countries
+https://pypi.org/project/pycountry/				=> Description about the module
+=> Problems with some added python modules (eg. pycountry) with pyinstaller => see pyinstaller description
+import pycountry								=> Install moduel
+list(pycountry.countries)                       => List of all countries with several informations
+c = pycountry.countries.get(alpha_2='DE')       => Searching for country-informatns for "DE"
+c.alpha_2                                       => Outputs => DE
+c.alpha_3										=> Outputs => DEU
+c.numeric                                       => Outputs number of the coutnry => 276
+c.name                                          => Outputs full name of the country => Germany	
+c.official_name                                 => Outputs the official name => "Federal Republic of Germany!
+list(pycountry.currencies)						=> List of all currencies
+list(pycountry.languages)						=> List of all languages                            
+list(pycountry.historic_countries)              => List of all historic countries which not more exists
+list(pycountry.subdivisiones)                   => List of all subdivided countries
 ----------
 
 
 
 ----------
 ####### MODULES - SMTPLIB, MIMEText
-# sending emails
-# if you have 2-Factor-Authentification you must generate a App-Password for GMail
-import smtplib
-from email.mime.text import MIMEText
-s = smtplib.SMTP('smtp.gmail.com', 587)                      # SMTP-Server and port number from the mail provider (e.g. GMail)
-print(s.ehlo())                                              # Response 250 means connection is ok
-print(s.starttls())                                
-print(s.login('sender@gmail.com', 'xyz123'))                 # Not the real pw - only the app-generated pw from gmail
-msg = MIMEText("This is the text of the mail")               # Message of the email
-sender = ['sender@gmail.com']                                # One recipient
-recipients = ['recip1@gmail.com']                            # One or more recipient
-recipients = ['recip1@gmail.com','recip2@r-software.at']     # Or more recipients 
-msg['Subject'] = "Subject of Mail"                           # Subject
-msg['From'] = sender                                         # From
-msg['To'] = ", ".join(recipients)                            # One or more recipients
-s.sendmail(sender, recipients, msg.as_string())              # Sending email
-s.quit()                                                     # Closing connection
-----------
+=> sending emails
+=> if you have 2-Factor-Authentification you must generate a App-Password for GMail
+import smtplib                                               => Import smtplib
+from email.mime.text import MIMEText                         => Import MIMEText
+s = smtplib.SMTP('smtp.gmail.com', 587)                      => SMTP-Server and port number from the mail provider (e.g. GMail)
+print(s.ehlo())                                              => Response 250 means connection is ok
+print(s.starttls())                                          => Response 250 means connection is ok
+print(s.login('sender@gmail.com', 'xyz123'))                 => Not the real pw - only the app-generated pw from gmail
+msg = MIMEText("This is the text of the mail")               => Message of the email
+sender = ['sender@gmail.com']                                => One recipient
+recipients = ['recip1@gmail.com']                            => One or more recipient
+recipients = ['recip1@gmail.com','recip2@r-software.at']     => Or more recipients 
+msg['Subject'] = "Subject of Mail"                           => Subject
+msg['From'] = sender                                         => From
+msg['To'] = ", ".join(recipients)                            => One or more recipients
+s.sendmail(sender, recipients, msg.as_string())              => Sending email
+s.quit()                                                     => Closing connection
 
 
 
-----------
 ###### MODULE - PATHLIB
-# interacting with the operating system
-from pathlib import Path									# Import module
-Path.cwd()													# Current working directory
-Path("folder").mkdir(parents=True, exist_ok=True)			# Creates new folder (no error message if folder allready exists with exist_ok=True)
-
-
+=> interacting with the operating system
+from pathlib import Path									=> Import module
+Path.cwd()													=> Current working directory
+Path("folder").mkdir(parents=True, exist_ok=True)			=> Creates new folder (no error message if folder allready exists with exist_ok=True)
 ----------
 
 
 
 ----------
 ###### MODULE - OS
-# interacting with the operating system
-import os												    # Import module
-print(dir(os))                                              # Shows alls attributs and methods of the library
-os.chdir("C:/temp")                                         # Change the directory
-os.getcwd()                                                 # Current working directory
-for f in os.listdir(): print(f)                             # Outputs the entire content of the current working dir
-for f in os.listdir(): fn, ext = os.path.splitext(f)        # Outputs the elements seperated in name + extension
-os.rename(filename, new_name)                               # Change the filenmae
-os.rename(path1+fn, path2+fn)							    # Cut and paste file from path1 to path2
-os.system("copy source.txt destination.txt")			    # Copy file from source to destination
-os.mkdir("folder")                                          # Creates new folder (also possible with makedirs => is prefered)
-os.makedirs("folder/subfolder")                             # Creates new folder and subfolders
-os.remove (file)											# Delete file
-os.rmdir ("folder")                                        	# Delete folder (prefered cause deleting ist dangerous)
-os.removedirs ("folder/subfolder")                          # Delete folder and subfolders
-os.stat("file")                                             # Outputs the statistics of the file (size, modification time,...)
-for dirpath,dir,fileos in os.walk()                         # Outputs dirpath - all the dirs - and all the files
-os.environ.get("HOME")                                      # Get home dir of the actual user
-os.path.basename("temp/file.txt")                           # Outputs only the filename => file.txt
-os.path.dirname("temp/file.txt")                            # Outputs only the dir => temp/  
-os.path.split("temp/file.txt")                              # Outputs filename and dir as a tupel => ("temp/","file.txt")
-os.path.exists("temp/file.txt")                             # Checks if filename exists in the filesystem
-os.path.isdir("xyz")                                        # Checks if folder exists
-os.path.isfile("xyz")                                       # Checks if element is a file
-os.listdir()											    # Put all filenames to a list from the actual working dir
-os.popen('attrib +h ' + fn).read().close()					# Change file to hidden
+=> interacting with the operating system
+import os												    => Import module
+print(dir(os))                                              => Shows alls attributs and methods of the library
+os.chdir("C:/temp")                                         => Change the directory
+os.getcwd()                                                 => Current working directory
+for f in os.listdir(): print(f)                             => Outputs the entire content of the current working dir
+for f in os.listdir(): fn, ext = os.path.splitext(f)        => Outputs the elements seperated in name + extension
+os.rename(filename, new_name)                               => Change the filenmae
+os.rename(path1+fn, path2+fn)							    => Cut and paste file from path1 to path2
+os.system("copy source.txt destination.txt")			    => Copy file from source to destination
+os.mkdir("folder")                                          => Creates new folder (also possible with makedirs => is prefered)
+os.makedirs("folder/subfolder")                             => Creates new folder and subfolders
+os.remove (file)											=> Delete file
+os.rmdir ("folder")                                        	=> Delete folder (prefered cause deleting ist dangerous)
+os.removedirs ("folder/subfolder")                          => Delete folder and subfolders
+os.stat("file")                                             => Outputs the statistics of the file (size, modification time,...)
+for dirpath,dir,fileos in os.walk()                         => Outputs dirpath - all the dirs - and all the files
+os.environ.get("HOME")                                      => Get home dir of the actual user
+os.path.basename("temp/file.txt")                           => Outputs only the filename => file.txt
+os.path.dirname("temp/file.txt")                            => Outputs only the dir => temp/  
+os.path.split("temp/file.txt")                              => Outputs filename and dir as a tupel => ("temp/","file.txt")
+os.path.exists("temp/file.txt")                             => Checks if filename exists in the filesystem
+os.path.isdir("xyz")                                        => Checks if folder exists
+os.path.isfile("xyz")                                       => Checks if element is a file
+os.listdir()											    => Put all filenames to a list from the actual working dir
+os.popen('attrib +h ' + fn).read().close()					=> Change file to hidden
 
-# find home-directory for the actual user
+=> find home-directory for the actual user
+""
 from os.path import expanduser								
 home = expanduser("~")
-----------
+""
 
 
 
-----------
 ###### MODULE - LOGGING
-# general Logging Layers: debug => info => warning => error => critical
-import logging                                               # importing module 
-logging.basicConfig(filename="fn.log",format='%(asctime)s    # Create & Config - w overwrites every time
-                    %(message)s', filemode='w')                                       
-logging.basicConfig(filename="fn.log",level=logging.INFO)    # Level every log > INFO possible (but not DEBUG)
-...format="%(name)"s-%(levelname)s:%(asctime)s-%(message)s   # getLogger-Name / Level / Time / Message
-logger=logging.getLogger(logname)                            # Creating an object with specific name
-logger.setLevel(logging.DEBUG)                               # Setting the threshold of logger to DEBUG 
-logger.debug("Harmless debug Message")                       # Debug message
-logger.info("Just an information")                           # Info message
-logger.warning("Its a Warning")                              # Warning message
-logger.error("Did you try to divide by zero")                # Error message
-logger.critical("Internet is down")                          # Critical error message
+=> general Logging Layers: debug => info => warning => error => critical
+import logging                                               => importing module 
+logging.basicConfig(filename="fn.log",format='%(asctime)s %(message)s', filemode='w')     => Create & Config - w overwrites every time                                                         
+logging.basicConfig(filename="fn.log",level=logging.INFO)    => Level every log > INFO possible (but not DEBUG)
+...format="%(name)"s-%(levelname)s:%(asctime)s-%(message)s   => getLogger-Name / Level / Time / Message
+logger=logging.getLogger(logname)                            => Creating an object with specific name
+logger.setLevel(logging.DEBUG)                               => Setting the threshold of logger to DEBUG 
+logger.debug("Harmless debug Message")                       => Debug message
+logger.info("Just an information")                           => Info message
+logger.warning("Its a Warning")                              => Warning message
+logger.error("Did you try to divide by zero")                => Error message
+logger.critical("Internet is down")                          => Critical error message
 
-###Example with 2 logging levels
+=> Example with 2 logging levels
+""
 logger=logging.getLogger(__name__)							 # Creating an object with the name of the py-file	
 stream_h = logging.StreamHandler()							 # Defining a handler for streamdata in the console
 file_h = logging FileHandler("file.log"						 # Defining a handler for logging to a file
@@ -1621,9 +1640,11 @@ stream_h.setFormatter(formatter)							 # Setting format for stream-logging
 file_h.setFormatter(formatter)								 # Setting format for file-logging
 logger.addHandler(stream_h)									 # Adding Stream-handler to logger
 logger.addHandler(file_h)									 # Adding File-handler to logger                   
+""
 
-### logging using RotatingFileHandler
-https://stackoverflow.com/questions/24505145/how-to-limit-log-file-size-in-python	# Explanation about handling
+=> logging using RotatingFileHandler
+=> https://stackoverflow.com/questions/24505145/how-to-limit-log-file-size-in-python	# Explanation about handling
+""
 from logging.handlers import RotatingFileHandler             # importing file handler
 log_formatter = logging.Formatter('%(asctime)s               # Define format for output in logfile
     %(levelname)s %(funcName)s(%(lineno)d) %(message)s')                    
@@ -1635,237 +1656,232 @@ my_handler.setLevel(logging.INFO)                            # Setting the thres
 logger = logging.getLogger('root')                           # Creating an object with name
 logger.setLevel(logging.INFO)                                # Setting the threshold of logger to INFO
 logger.addHandler(my_handler)                                # Define handler with definition above
-----------
+""
 
 
-
-----------
 ###### MODULE - UNITTEST
-import unittest                                              # Importing module
-from prg import func                                         # Import the function which will be tested
-class TestFunc(unittest.TestCase):                           # Define the class for testing the function
-    def testcase1(self):                                     # Define the first testcase - must begin with test*
-        erg = func("x",3)                                    # call the function
-        self.assertEqual("3x")                               # check if result is ok
-if __name__ == '__main__': unittest.main()                   # starting the unittest
-### many methods: https://docs.python.org/3/library/unittest.html
-self.assertEqual(a,b)                                        # Check if equal
-self.assertNotEquale(a,b)                                    # Check if not equal
-self.assertTrue(x)                                           # Check if true
-self.assertFalse(x)                                          # Check if false
-self.assertIn(i,list)                                        # Check if i in list
-self.assertNotIn(i,list)                                     # Check if i not in list
-----------
+import unittest                                              => Importing module
+from prg import func                                         => Import the function which will be tested
+class TestFunc(unittest.TestCase):                           => Define the class for testing the function
+    def testcase1(self):                                     => Define the first testcase - must begin with test*
+        erg = func("x",3)                                    => call the function
+        self.assertEqual("3x")                               => check if result is ok
+if __name__ == '__main__': unittest.main()                   => starting the unittest
+=> many methods: https://docs.python.org/3/library/unittest.html
+self.assertEqual(a,b)                                        => Check if equal
+self.assertNotEquale(a,b)                                    => Check if not equal
+self.assertTrue(x)                                           => Check if true
+self.assertFalse(x)                                          => Check if false
+self.assertIn(i,list)                                        => Check if i in list
+self.assertNotIn(i,list)                                     => Check if i not in list
 
 
 
-----------
 ###### MOUDLE - ITERTOOLS
-# product, permutations, combinations, accumulate, groupby, infinite iterators
-from itertools import product, permutations, combinations, combinations_with_replacement, accumulate, groupby
-from itertools import count, cycle, repeat
-import operator 							# necessary for the func-operator
-product([1,2],[3,4])						# all combis for carthesian product => [(1,3),(1,4),(2,3),(2,4)]
-product([0, 1], repeat=3)               	# all with 3 elements => (0,0,0),(0,0,1),(0,1,0),(0,1,1), aso.
-product('ab', '12')                     	# all combis of this 2 strings => [("a","1"),("a","2"),("b","1"),("b","2")]
-permutations ([1,2,3])						# all different orderings => [(1,2,3),(1,3,2),(2,1,3),(2,3,1),(3,1,2),(3,2,1)]
-permutations([1,2,3],2)						# all different orderings with 2 elements => [(1,2),(1,3),(2,1),(2,3),(3,1),(3,2)]
-combinations([1,2,3,4],2)					# all possible combis for a defined length => [(1,2),(1,3),(1,4),(2,3),(2,4),(3,4)]
-combinations_with_replacement([1,2,3],2)	# all combis also with itself => [(1,1),(1,2),(1,3),(2,2),(2,3),(3,3)]
-accumulate([1,2,3,4])						# accumulates every number with the next => [1,3,6,10]
-accumulate([1,2,3,4], func=operator.mul) 	# using operator .mul for multiplication every number the next => [1,2,6,24]
-accumulate([1,2,5,3,4], func=max)			# compares every entry to the maximum => [1,2,5,5,5]	
-groupby([1,2,3],key=func_smaller3)          # gives interabel - groups by the func => True[1,2], False[3]
-grougpy([1,2,3],key=lambda x: x<3)			# same thing - with a lambda operation => True[1,2], False[3] 
-for i in count(10)							# infinite loop starting at 10 (has to be ended with break sometimes)
-for i in cycle([1,2,3])						# infinite cycle through the list (has to be ended with break sometimes)
-for i in repeat(1)							# infinite loop with 1
-for i in repeat(1,4)						# loop with 1 for 4 times
-----------
+=> product, permutations, combinations, accumulate, groupby, infinite iterators
+=> from itertools import product, permutations, combinations, combinations_with_replacement, accumulate, groupby
+=> from itertools import count, cycle, repeat
+import operator 							=> necessary for the func-operator
+product([1,2],[3,4])						=> all combis for carthesian product => [(1,3),(1,4),(2,3),(2,4)]
+product([0, 1], repeat=3)               	=> all with 3 elements => (0,0,0),(0,0,1),(0,1,0),(0,1,1), aso.
+product('ab', '12')                     	=> all combis of this 2 strings => [("a","1"),("a","2"),("b","1"),("b","2")]
+permutations ([1,2,3])						=> all different orderings => [(1,2,3),(1,3,2),(2,1,3),(2,3,1),(3,1,2),(3,2,1)]
+permutations([1,2,3],2)						=> all different orderings with 2 elements => [(1,2),(1,3),(2,1),(2,3),(3,1),(3,2)]
+combinations([1,2,3,4],2)					=> all possible combis for a defined length => [(1,2),(1,3),(1,4),(2,3),(2,4),(3,4)]
+combinations_with_replacement([1,2,3],2)	=> all combis also with itself => [(1,1),(1,2),(1,3),(2,2),(2,3),(3,3)]
+accumulate([1,2,3,4])						=> accumulates every number with the next => [1,3,6,10]
+accumulate([1,2,3,4], func=operator.mul) 	=> using operator .mul for multiplication every number the next => [1,2,6,24]
+accumulate([1,2,5,3,4], func=max)			=> compares every entry to the maximum => [1,2,5,5,5]	
+groupby([1,2,3],key=func_smaller3)          => gives interabel - groups by the func => True[1,2], False[3]
+grougpy([1,2,3],key=lambda x: x<3)			=> same thing - with a lambda operation => True[1,2], False[3] 
+for i in count(10)							=> infinite loop starting at 10 (has to be ended with break sometimes)
+for i in cycle([1,2,3])						=> infinite cycle through the list (has to be ended with break sometimes)
+for i in repeat(1)							=> infinite loop with 1
+for i in repeat(1,4)						=> loop with 1 for 4 times
 
 
 
-----------
 ###### NUMPY
-# memory efficient, working in the background used by other modules
-# using only the bits which are necessary for each column (1 is stored in python with 24bytes - in numpy with 1byte or lesser)
-# shape of array has to be consistent - otherwise it just fall back to regular python objects eg. [[12,11],[13]]
-import numpy as np						# Import numpy module with np abbreviation
-# Using arrays, types and slicing
-a = np.array([1,2,3,4])					# Define a numpy array (automatically with type int)
-a[[0,2,-1]]								# Multiindexing in arrays possible => gives array/[0.,1.,2.])
-np.array([1,2,3,4]),dtype=np.float)		# Defines a numpy array with datatype float (and not int)
-a = np.array([[1,2,3],[4,5,6],[7,8,9])	# Defines a 2d numpy array
-a.shape									# Returns dimension shape => (3,3)
-a.ndim									# Returns number of dimensions => 2
-a.size									# Returns total number of elements => 9
-a[1]									# Gives / slices the second row => [4,5,6]
-a[1,0]									# Gives / slices the second row and first element => 4
-a[0:2]									# Slices the first 2 rows => array([[1,2,3],[4,5,6]])
-a[:,:2]									# Slices all row with first 2 elements => array([[1,2],[4,5],[7,8]])
-a[:2,:2]								# Slices first 2 rows and first 2 elements => array([[1,2],[4,5]])
-a[:2,2:]								# Slices first 2 rows and last element => array([[3],[6]])
-a[1] = np.array([9,9,9])				# Changes content of second row => array([[1,2,3],[9,9,9],[7,8,9])
-a[2] = 8								# Changes content of third row (for all elements) => array([[1,2,3],[4,5,6],[8,8,8])
-a.sum()									# Builds the sum of all elements => 45
-a.mean()								# => 5.0
-a.std()									# Return standard deviation => 2.58198889774344
-a.sum(axis=0)							# Builds sum per columns => array([12,15,18])	
-a.sum(axis=1)							# Builds sum per rows => array([6,15,24])	
-np.zeroes(5)							# Initialize numpy array with 5 zeros => array([0.,0.,0.,0.,0.])
-np.ones((2,3),dtype="int32")			# Initialize numpy array with 2x3 ones with int32 => array([[0,0,0],[0,0,0]])
-np.full((2,2,),99)						# Initialize np array with 2x2 with the value 99 => array([[99,99],[99,99]])
-np.identity(3)							# Initialize a square matrix with len 3 => array([[1.,0.,0.],[0.,1.,0.],[0.,0.,1.]])
-arr_b = arr_a.copy()					# Separate individual copy of the numpy array (no updates in both arrays)
-c = np.array([[1,2,3,4],[5,6,7,8]])		# Define 2d numpy array with 2,4 dimension
-c.reshape((4,2))						# Reshape the numpy array to 4,2 dimension => [[1,2],[3,4],[5,6],[7,8]]
-c.reshape((2,2,2))						# Reshape the numpy array to 3d with 2,2,2 dimension => [[[1,2],[3,4]],[5,6],[7,8]]]
+=> memory efficient, working in the background used by other modules
+=> using only the bits which are necessary for each column (1 is stored in python with 24bytes - in numpy with 1byte or lesser)
+=> shape of array has to be consistent - otherwise it just fall back to regular python objects eg. [[12,11],[13]]
+import numpy as np						=> Import numpy module with np abbreviation
+=> Using arrays, types and slicing
+a = np.array([1,2,3,4])					=> Define a numpy array (automatically with type int)
+a[[0,2,-1]]								=> Multiindexing in arrays possible => gives array/[0.,1.,2.])
+np.array([1,2,3,4]),dtype=np.float)		=> Defines a numpy array with datatype float (and not int)
+a = np.array([[1,2,3],[4,5,6],[7,8,9])	=> Defines a 2d numpy array
+a.shape									=> Returns dimension shape => (3,3)
+a.ndim									=> Returns number of dimensions => 2
+a.size									=> Returns total number of elements => 9
+a[1]									=> Gives / slices the second row => [4,5,6]
+a[1,0]									=> Gives / slices the second row and first element => 4
+a[0:2]									=> Slices the first 2 rows => array([[1,2,3],[4,5,6]])
+a[:,:2]									=> Slices all row with first 2 elements => array([[1,2],[4,5],[7,8]])
+a[:2,:2]								=> Slices first 2 rows and first 2 elements => array([[1,2],[4,5]])
+a[:2,2:]								=> Slices first 2 rows and last element => array([[3],[6]])
+a[1] = np.array([9,9,9])				=> Changes content of second row => array([[1,2,3],[9,9,9],[7,8,9])
+a[2] = 8								=> Changes content of third row (for all elements) => array([[1,2,3],[4,5,6],[8,8,8])
+a.sum()									=> Builds the sum of all elements => 45
+a.mean()								=> => 5.0
+a.std()									=> Return standard deviation => 2.58198889774344
+a.sum(axis=0)							=> Builds sum per columns => array([12,15,18])	
+a.sum(axis=1)							=> Builds sum per rows => array([6,15,24])	
+np.zeroes(5)							=> Initialize numpy array with 5 zeros => array([0.,0.,0.,0.,0.])
+np.ones((2,3),dtype="int32")			=> Initialize numpy array with 2x3 ones with int32 => array([[0,0,0],[0,0,0]])
+np.full((2,2,),99)						=> Initialize np array with 2x2 with the value 99 => array([[99,99],[99,99]])
+np.identity(3)							=> Initialize a square matrix with len 3 => array([[1.,0.,0.],[0.,1.,0.],[0.,0.,1.]])
+arr_b = arr_a.copy()					=> Separate individual copy of the numpy array (no updates in both arrays)
+c = np.array([[1,2,3,4],[5,6,7,8]])		=> Define 2d numpy array with 2,4 dimension
+c.reshape((4,2))						=> Reshape the numpy array to 4,2 dimension => [[1,2],[3,4],[5,6],[7,8]]
+c.reshape((2,2,2))						=> Reshape the numpy array to 3d with 2,2,2 dimension => [[[1,2],[3,4]],[5,6],[7,8]]]
 
-# Vector handling
-a = np.array(4)							# Build array with this range => array([0,1,2,3])	
-a + 10									# Changes +10 to each element => array([10,11,12,13]) (creates new array - no changing a)
-a * 10									# Changes *10 to each element => array([0,10,20,30]) (creates new array - no changing a)
-a += 100								# Changes the existing array a => array([100,101,102,103])
-b = np.array([10,10,10,10])				# Defines second array babab6
-a + b									# Sums the 2 arrays to new array => array([10,11,12,13)
-a * b									# Multiplicates the 2 arrays to new array => array([0,10,20,30)
-np.sin(b)								# Make sinus of all entries
-np.cos(b)								# Make cosinus of all entries
+=> Vector handling
+a = np.array(4)							=> Build array with this range => array([0,1,2,3])	
+a + 10									=> Changes +10 to each element => array([10,11,12,13]) (creates new array - no changing a)
+a * 10									=> Changes *10 to each element => array([0,10,20,30]) (creates new array - no changing a)
+a += 100								=> Changes the existing array a => array([100,101,102,103])
+b = np.array([10,10,10,10])				=> Defines second array babab6
+a + b									=> Sums the 2 arrays to new array => array([10,11,12,13)
+a * b									=> Multiplicates the 2 arrays to new array => array([0,10,20,30)
+np.sin(b)								=> Make sinus of all entries
+np.cos(b)								=> Make cosinus of all entries
 
-# Boolean Array Operations
-a = np.array(4)							# Build array with this range => array([0,1,2,3])	
-a[True,False,False,True]				# Selecting items with boolean expressions - returns first and last element => array([0,3])
-a >= 2									# Use operation on the array => array([False,False,True,True])
-a[a >= 2]								# Using operation for slicing => array([2,3])
-a[a > a.mean()]				 			# Gives back all elements which are greater than the mean => array([2,3])
-a[~(a > a.mean())]						# Gives back all elements which are NOT greater than the mean => array([0,1])
-a[(a==0) | (a==1)]						# Gives back all elements which are equal to 0 OR 1 => array([0,1])
-a[(a <= 2) & (a % 2 == 0)]				# Gives back all elements which are <=2 and have no rest divided by 2 => array([0,2])
+=> Boolean Array Operations
+a = np.array(4)							=> Build array with this range => array([0,1,2,3])	
+a[True,False,False,True]				=> Selecting items with boolean expressions - returns first and last element => array([0,3])
+a >= 2									=> Use operation on the array => array([False,False,True,True])
+a[a >= 2]								=> Using operation for slicing => array([2,3])
+a[a > a.mean()]				 			=> Gives back all elements which are greater than the mean => array([2,3])
+a[~(a > a.mean())]						=> Gives back all elements which are NOT greater than the mean => array([0,1])
+a[(a==0) | (a==1)]						=> Gives back all elements which are equal to 0 OR 1 => array([0,1])
+a[(a <= 2) & (a % 2 == 0)]				=> Gives back all elements which are <=2 and have no rest divided by 2 => array([0,2])
 
-# Creating random arrays
-np.random.rand(3)						# Random 1d float array with 3 entries => eg. (0.8377, 0.8720, 0,7784)
-np.random.rand(3,3)						# Random 2d array 3 entries => [[0.27,0.91,0.54],[0.68,0.87,0.36],[0.05,0.64,0.16]]
-np.random.randint(0,10,3)				# Random 1d int array 3 entries => [0,8,8]
-np.random.randint(0,10,(3,4))			# Random 2d int array 3x4 entries => [[2,6,4,5],[7,6,7,3],[7,0,4,0]]
-np.random.randint(100, size(3,3))		# Random 2d int array 3x3 entries with values from 0 to 99	
-np.random.randint(-4,8,size(3,3))		# Random 2d int array 3x3 entries with values from -4 to 7
-np.random.shuffle(lst)					# Shuffeling a 2d list but only the first axes
-np.random.seed(1)						# Can reproduce the same results 
-
-----------
+=> Creating random arrays
+np.random.rand(3)						=> Random 1d float array with 3 entries => eg. (0.8377, 0.8720, 0,7784)
+np.random.rand(3,3)						=> Random 2d array 3 entries => [[0.27,0.91,0.54],[0.68,0.87,0.36],[0.05,0.64,0.16]]
+np.random.randint(0,10,3)				=> Random 1d int array 3 entries => [0,8,8]
+np.random.randint(0,10,(3,4))			=> Random 2d int array 3x4 entries => [[2,6,4,5],[7,6,7,3],[7,0,4,0]]
+np.random.randint(100, size(3,3))		=> Random 2d int array 3x3 entries with values from 0 to 99	
+np.random.randint(-4,8,size(3,3))		=> Random 2d int array 3x3 entries with values from -4 to 7
+np.random.shuffle(lst)					=> Shuffeling a 2d list but only the first axes
+np.random.seed(1)						=> Can reproduce the same results 
 
 
 
-----------
 ###### MODULE - PANDAS
-https://gist.github.com/why-not/4582705                     # examples
-import pandas as pd                                         # Import Module
-import numpy as np											# Also importing numpy-module necessary
-pd.set_option('display.max_columns',11)						# Show more information - count of the shown columns
-pd.set_option('display.width', None)						# Show more information - None is using the maximum width of the IDE
+https://gist.github.com/why-not/4582705                     => examples
+import pandas as pd                                         => Import Module
+import numpy as np											=> Also importing numpy-module necessary
+pd.set_option('display.max_columns',11)						=> Show more information - count of the shown columns
+pd.set_option('display.width', None)						=> Show more information - None is using the maximum width of the IDE
 
-# SERIES
-s = pd.Series([35,63,81,61,127,65,319])						# Define a series
-print(s)													# Shows default-index in 1 row / values in 2 row - also the dtype: int64 at the bottom
-s.name = "G7 population in millions"						# Name the series (shows the name also when series i printed at the bottom
-s.dtype														# Shows the dtype of the series => dtype("int64")
-s.values													# Values of the series => array([35,63,81,61,127,65,319])
-s[0]														# Slicing element => 35
-s.index														# Shows the index of the series => RangeIndex(start=0, stop=7, step=1)
-s.index[0]													# Shows first index-value
-s.index=["CAN","FRA","GER","ITA","JPN","UK","USA]			# Change the index of the series from default 0-6 to country-names
-s["GER"]													# Accessing now with the new index possible => 81
-s.iloc[0]													# Access with index still possible using iloc => 35
-s.iloc[-1]													# Access with index still possible using iloc => 319
-s.["GER","JPN"]												# Multiple selecting possible => GER 81 and JPN 127
-s.iloc[0,-1]												# Multiple selecting with index using iloc possible => CAN 35 and USA 319
-s.["CAN":"GER"]												# Multiple selecting with ":" - upper element is included => CAN 35, FRA 63, GER 81
-s + 10														# Add 10 for the every element in the series => ([45,73,91,71,137,75,329])
-s[s > 70]													# Using boolean operation to output every element => GER 81, JPN 127, USA 319
-s[s > s.mean()]												# Using boolean operation to output countries > mean => JPN 127, USA 319
-logical operator which can be used							# ~ for not, | for or, & for and
-s["CAN"] = 40												# Changing the value of a series element => CAN 40
-s.iloc[-1] = 500											# Changing the value of the last element => USA 500
-s[s < 70] = 99												# Changing the value with a specific operation => CAN,FRA,ITA,UK are changed to 99
-s = pd.Series([1,np.nan,7]									# Define a series with NaN values
-d.isnull()													# Check for NaN values in the series => False,True,False
-s.notnull()													# Check for NOT NaN values in the series => True,False,True
-s.notnull().sum()											# Sum of not NaN values in the series => 2
-s.isnull().sum()											# Sum of NaN values in the series => 1
-s.[s.notnull()]												# Outputs all entries which are not NaN	
-s.dropna()													# Delete all entries with NaN
-s.fillna(0)													# Replace the NaN-values with 0
-s.fillna(s.mean())											# Replace the NaN-values with the meanvalue of the serie
-s.fillna(method="ffill")									# With forward-fill the NaN-values are replaced with the value before (if the first i gets NaN)	
-s.fillna(method="bfill")									# With backward-fill the NaN-values are replaced with the value after (if the last i gets NaN)
-s.duplicated()												# Returns the duplicates (only the first entry for the same is no duplicate - rest gets True)
-s.duplicated(keep="last")									# Returns the duplicates (only the last entry for the same value is no duplicate - rest gets True)
-s.duplicated(keep=False)									# Returns the duplicates (when there are more than one value - all get flagged as duplicate with True)
-s.drop_duplicates()											# Duplicates get dropped (only the first entry remains)
-s.drop_duplicates(keep="last")					 			# Duplicates get dropped (only the last entry remains)
-s.drop_duplicates(keep=False)								# Duplicates get dropped (no entry remains if there are duplicate entries for the value)
-s.sort_values() 		                        	        # Sorting by value ascending
-s.sort_values(ascending=False)      			            # Sorting by value descending
+=> SERIES
+s = pd.Series([35,63,81,61,127,65,319])						=> Define a series
+print(s)													=> Shows default-index in 1 row / values in 2 row - also the dtype: int64 at the bottom
+s.name = "G7 population in millions"						=> Name the series (shows the name also when series i printed at the bottom
+s.dtype														=> Shows the dtype of the series => dtype("int64")
+s.values													=> Values of the series => array([35,63,81,61,127,65,319])
+s[0]														=> Slicing element => 35
+s.index														=> Shows the index of the series => RangeIndex(start=0, stop=7, step=1)
+s.index[0]													=> Shows first index-value
+s.index=["CAN","FRA","GER","ITA","JPN","UK","USA]			=> Change the index of the series from default 0-6 to country-names
+s["GER"]													=> Accessing now with the new index possible => 81
+s.iloc[0]													=> Access with index still possible using iloc => 35
+s.iloc[-1]													=> Access with index still possible using iloc => 319
+s.["GER","JPN"]												=> Multiple selecting possible => GER 81 and JPN 127
+s.iloc[0,-1]												=> Multiple selecting with index using iloc possible => CAN 35 and USA 319
+s.["CAN":"GER"]												=> Multiple selecting with ":" - upper element is included => CAN 35, FRA 63, GER 81
+s + 10														=> Add 10 for the every element in the series => ([45,73,91,71,137,75,329])
+s[s > 70]													=> Using boolean operation to output every element => GER 81, JPN 127, USA 319
+s[s > s.mean()]												=> Using boolean operation to output countries > mean => JPN 127, USA 319
+logical operator which can be used							=> ~ for not, | for or, & for and
+s["CAN"] = 40												=> Changing the value of a series element => CAN 40
+s.iloc[-1] = 500											=> Changing the value of the last element => USA 500
+s[s < 70] = 99												=> Changing the value with a specific operation => CAN,FRA,ITA,UK are changed to 99
+s = pd.Series([1,np.nan,7]									=> Define a series with NaN values
+d.isnull()													=> Check for NaN values in the series => False,True,False
+s.notnull()													=> Check for NOT NaN values in the series => True,False,True
+s.notnull().sum()											=> Sum of not NaN values in the series => 2
+s.isnull().sum()											=> Sum of NaN values in the series => 1
+s.[s.notnull()]												=> Outputs all entries which are not NaN	
+s.dropna()													=> Delete all entries with NaN
+s.fillna(0)													=> Replace the NaN-values with 0
+s.fillna(s.mean())											=> Replace the NaN-values with the meanvalue of the serie
+s.fillna(method="ffill")									=> With forward-fill the NaN-values are replaced with the value before (if the first i gets NaN)	
+s.fillna(method="bfill")									=> With backward-fill the NaN-values are replaced with the value after (if the last i gets NaN)
+s.duplicated()												=> Returns the duplicates (only the first entry for the same is no duplicate - rest gets True)
+s.duplicated(keep="last")									=> Returns the duplicates (only the last entry for the same value is no duplicate - rest gets True)
+s.duplicated(keep=False)									=> Returns the duplicates (when there are more than one value - all get flagged as duplicate with True)
+s.drop_duplicates()											=> Duplicates get dropped (only the first entry remains)
+s.drop_duplicates(keep="last")					 			=> Duplicates get dropped (only the last entry remains)
+s.drop_duplicates(keep=False)								=> Duplicates get dropped (no entry remains if there are duplicate entries for the value)
+s.sort_values() 		                        	        => Sorting by value ascending
+s.sort_values(ascending=False)      			            => Sorting by value descending
 
-# DATAFRAMES 
-# are immutable, column is a series, dataframe = combination of multiple series
-# reading data
-# possible reader: read_csv,read_excel,read_json,read_html,read_sql
-# possible writer: to_csv,to_excel,to_json,to_html,to_sql
-# CSV
-pf.read_csv?												# Shows all parameters for the reader
-df = pd.read_csv("fn.csv")              	                # Read csv into dataframe - first line will be col-names of the dataframe
-df = pd.read_csv("fn.csv",header=None)	                    # Read csv into dataframe - no headerline (col names will be default numeric)
-df = pd.read_csv("fn.csv",sep="#")							# Read csv with sepeartor "#" instead of the default ";"
-df = pd.read_csv("fn.csv",									# Many operations can be directly done when reading the csv-file
-	header=None												# => no header in the csv available
-	names=["Timestamp","Price"],							# => name the columns
-	index_col=0,							 	 	 	 	# => define which column will be the index
-	parse_dates=True,										# => read dates as date - and not as string
-	na_values["?","-",""],									# => treat this chars as NaN-values
-	dtype={"Price":"float"},								# => assign specific datatype to the column "Price"
-	decimal=",",											# => decimal-point is "," (and not ".")
-	skip_blank_lines=False),								# => read also blank lines (as default they are ignored)
-	usecols=[0,1,2],										# => use only the three columns when reading the csv (by position)
-	usecols=["first","last","age"])							# => use only the three columns when reading the csv (selected by name)
-df.to_csv("fn2.csv")										# Write dataframe to csv
-# XLSX
-df = pd.read_excel("file.xlsx")                             # Read xlsx (first worksheet) into dataframe
-df = pd.read_excel("file.xlsx",header=None)                 # Read xlsx (first worksheet) into dataframe - without headers
-df = pd.read_excel("file.xlsx",index_col=[0])				# Read xlsx and define the first column as index of the dataframe
-df = pd.read_excel("file.xlsx",sheet_name="Prod")			# Read xlsx (worksheet "Prod") into dataframe
-ef = pd.ExcelFile("file.xlsx")								# Read xlsx with the ExcelFile method
-ef.sheet_names												# Shows alle worksheet-names as a list => eg. ["Prod","Desc"]
-df = ef.parse("Prod")										# Read/Parse the worksheet "Prod" in a dataframe
-df.to_excel("file2.xlsx",									# Write dataframe to xlsx
-	sheet_name="Prod",										# Write to worksheet "Prod"
-	startrow=1,												# Start writing at row 1
-	startcol=2)												# Start writing at col 2
-w = pd.ExcelWriter("file2.xlsx")							# Write dataframe to xlsx with the ExcelWriter method
-with w: df.to_excel(w,sheet_name="Prod"						# Write dataframe to xlsx worksheet "Prod" with the ExcelWriter method 
-with pd.ExcelWriter("file2.xlsx") as writer:				# Write multiple worksheet to xlsx from dataframes
-	df1.to_excel(w, sheet_name="Prod")						# Dataframe1 stored in worksheet "Prod"
-	df2.to_excel(w, sheet_name="Desc")						# Dataframe2 stored in worksheet "Desc"
-# SQL
-conn = sqlite3.connect("data.db")							# Establish connection to the sql-db
-df = pd.read_sql("SELECT * FROM empl;",conn)				# Read data from sql-db into dataframe
-df = pd.read_sql("SELECT * FROM empl;",conn,				# Many operations can be directly done when reading the sql-db
-	index_col="EmplID",										# => define which column will be the index				
-	parse_dates["BirthDate","HireDate"])					# => read this columns as date
-from sqlalchemy import create_engine						# It is easier to read a complete table using sqlalechmy
-engine = create_engine("data.db")							# Create SQL Alchemy engine
-connection = engine.connect()								# Establish connection with SQL Alchemy
-df = pd.read_sql_table("empl",con=connection)				# Read whole table with SQL-Alechmy (many things are auto-done - e.g. Indexing,Parsing)
-df.to_sql("data.db",conn)									# Writes dataframe to the sql-db (breaks when table allready exists)
-df.to_sql("data.db",conn,if_exists="replace")				# Writes dataframe to the sql-db (with droping the table before inserting)
-df.to_sql("data.db",conn,if_exists="append")				# Writes dataframe to the sql-db (with inserting new values to existing table)
-# HTML
-df = pd.read_html(html_string)								# Read html into dataframe
-html_url"https://www.xyz.com"								# Assign html-varialbe
-df = pd.read_html(html_url)									# Read html-link to dataframe	
+=> DATAFRAMES 
+=> are immutable, column is a series, dataframe = combination of multiple series
+=> reading data
+=> possible reader: read_csv,read_excel,read_json,read_html,read_sql
+=> possible writer: to_csv,to_excel,to_json,to_html,to_sql
 
-# EXAMPLE
-#https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-course/pandas-condtitional-selection-and-modifying-dataframes
+=> CSV
+pf.read_csv?												=> Shows all parameters for the reader
+df = pd.read_csv("fn.csv")              	                => Read csv into dataframe - first line will be col-names of the dataframe
+df = pd.read_csv("fn.csv",header=None)	                    => Read csv into dataframe - no headerline (col names will be default numeric)
+df = pd.read_csv("fn.csv",sep="=>")							=> Read csv with sepeartor "=>" instead of the default ";"
+df = pd.read_csv("fn.csv",									=> Many operations can be directly done when reading the csv-file
+	header=None												=> => no header in the csv available
+	names=["Timestamp","Price"],							=> => name the columns
+	index_col=0,							 	 	 	 	=> => define which column will be the index
+	parse_dates=True,										=> => read dates as date - and not as string
+	na_values["?","-",""],									=> => treat this chars as NaN-values
+	dtype={"Price":"float"},								=> => assign specific datatype to the column "Price"
+	decimal=",",											=> => decimal-point is "," (and not ".")
+	skip_blank_lines=False),								=> => read also blank lines (as default they are ignored)
+	usecols=[0,1,2],										=> => use only the three columns when reading the csv (by position)
+	usecols=["first","last","age"])							=> => use only the three columns when reading the csv (selected by name)
+df.to_csv("fn2.csv")										=> Write dataframe to csv
+
+=> XLSX
+df = pd.read_excel("file.xlsx")                             => Read xlsx (first worksheet) into dataframe
+df = pd.read_excel("file.xlsx",header=None)                 => Read xlsx (first worksheet) into dataframe - without headers
+df = pd.read_excel("file.xlsx",index_col=[0])				=> Read xlsx and define the first column as index of the dataframe
+df = pd.read_excel("file.xlsx",sheet_name="Prod")			=> Read xlsx (worksheet "Prod") into dataframe
+ef = pd.ExcelFile("file.xlsx")								=> Read xlsx with the ExcelFile method
+ef.sheet_names												=> Shows alle worksheet-names as a list => eg. ["Prod","Desc"]
+df = ef.parse("Prod")										=> Read/Parse the worksheet "Prod" in a dataframe
+df.to_excel("file2.xlsx",									=> Write dataframe to xlsx
+	sheet_name="Prod",										=> Write to worksheet "Prod"
+	startrow=1,												=> Start writing at row 1
+	startcol=2)												=> Start writing at col 2
+w = pd.ExcelWriter("file2.xlsx")							=> Write dataframe to xlsx with the ExcelWriter method
+with w: df.to_excel(w,sheet_name="Prod"						=> Write dataframe to xlsx worksheet "Prod" with the ExcelWriter method 
+with pd.ExcelWriter("file2.xlsx") as writer:				=> Write multiple worksheet to xlsx from dataframes
+	df1.to_excel(w, sheet_name="Prod")						=> Dataframe1 stored in worksheet "Prod"
+	df2.to_excel(w, sheet_name="Desc")						=> Dataframe2 stored in worksheet "Desc"
+
+=> SQL
+conn = sqlite3.connect("data.db")							=> Establish connection to the sql-db
+df = pd.read_sql("SELECT * FROM empl;",conn)				=> Read data from sql-db into dataframe
+df = pd.read_sql("SELECT * FROM empl;",conn,				=> Many operations can be directly done when reading the sql-db
+	index_col="EmplID",										=> => define which column will be the index				
+	parse_dates["BirthDate","HireDate"])					=> => read this columns as date
+from sqlalchemy import create_engine						=> It is easier to read a complete table using sqlalechmy
+engine = create_engine("data.db")							=> Create SQL Alchemy engine
+connection = engine.connect()								=> Establish connection with SQL Alchemy
+df = pd.read_sql_table("empl",con=connection)				=> Read whole table with SQL-Alechmy (many things are auto-done - e.g. Indexing,Parsing)
+df.to_sql("data.db",conn)									=> Writes dataframe to the sql-db (breaks when table allready exists)
+df.to_sql("data.db",conn,if_exists="replace")				=> Writes dataframe to the sql-db (with droping the table before inserting)
+df.to_sql("data.db",conn,if_exists="append")				=> Writes dataframe to the sql-db (with inserting new values to existing table)
+
+=> HTML
+df = pd.read_html(html_string)								=> Read html into dataframe
+html_url"https://www.xyz.com"								=> Assign html-varialbe
+df = pd.read_html(html_url)									=> Read html-link to dataframe	
+
+=> EXAMPLE
+=> https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-course/pandas-condtitional-selection-and-modifying-dataframes
 		Popl	HDI		Continent
 	CAN	35		0,913	America
 	FRA	64		0,888	Europe
@@ -2069,14 +2085,14 @@ driver.switch_to.window(act_window)								  # Switch (back) to active window (e
 # Use Selenium with chrome windows hidden
 from selenium.webdriver.chrome.options import Options
 options = Options()
-options.add_argument('--headless')                                          # Window Hidden
+options.add_argument('--headless')                                          # Window Hidden (only used this for the final program - not during devleopment / testing!)
 if platform == "win32": options.add_argument('--start-maximized')           # Window Started Maximized (for Windows)
 elif platform in ["linux","darwin"]: options.add_argument('--kiosk')        # Window Started Maximized (for Linux and Mac)
 
 options.add_experimental_option ('excludeSwitches', ['enable-logging'])     # No error messagegs when exec in cmd
 driver = webdriver.Chrome(os.getcwd() + '/chromedriver', options=options)
 
-# Scroll to the very botom of a site - eg. Twitter, Facebook, Stocktwits,...
+# Scroll to the very bottom of a site - eg. Twitter, Facebook, Stocktwits,...
 lenOfPage = driver.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
 match=False
 while(match==False):
@@ -2093,6 +2109,18 @@ webdriver.ActionChains(driver).move_to_element(element ).click(element ).perform
 Method2:
 element = driver.find_element_by_css('div[class*="loadingWhiteBox"]')
 driver.execute_script("arguments[0].click();", element)
+
+# Wait till a specific element is loaded
+WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.NAME, "agree"))).click()
+WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, "YDC-Col1")))
+
+# Take a screenshot when something fails in headless mode
+try:
+    ...
+    do the whole selenium work...
+    ...
+except:
+    driver.get_screenshot_as_file("a.jpeg")
 ----------
 
 
