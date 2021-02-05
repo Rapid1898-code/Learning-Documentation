@@ -137,6 +137,16 @@ arr.forEach(function(elem,idx) {
 })
 ""
 
+=> Iterate trough an array with 1sec pause at every element
+""
+names.forEach((name, i) => {
+  setTimeout(() => {
+    display(name);
+  }, i * 1000);
+});
+""
+
+
 newarr = arr.map(x => x * 2);                   *> Maps a functionality to all elements of the array - every element multiplicated by 2
 arr.join(" ")                                   *> Concatenate the array to a string seperated by " "
 

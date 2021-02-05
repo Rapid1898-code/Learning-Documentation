@@ -11,16 +11,17 @@
 - INIT, STATUS, ADD, COMMIT, LOG
 
 sudo apt-get install git 					=> Installation (linux)
+git config --global user.name "Rapid1898"   => Config name for the repository (onetime setting)
+git config --global user.email "x@gmx.com"  => Config mail for the repository (onetime setting - use the mail using for github.com)
 git init									=> Create repository in the actual directory
-git config --global user.name "Rapid1898"   => Config name for the repository
-git config --global user.email "x@gmx.com"  => Config mail for the repository
-git add file.xyz							=> Add file to the repository (prepared for later commit)
-git rm --cached file.xyz					=> Remove file from the repository (not planned for later commit)
-git add *.html 								=> Add alle html-files to the repo
-git add . 									=> Add everything to the repository from the directory
-git add *   								=> 2nd way to add everything to the repository from the directory
+git add file.xyz							=> Add file to the repository / staging area (prepared for later commit)
+git add *.html 								=> Add all html-files to the repo / staging area
+git add . 									=> Add everything to the repository / staging area from the directory
+git add *   								=> 2nd way to add everything to the repository / staging area from the directory
+git add README.md                           => Add readme-file
+git rm --cached index.html                  => remove specific file from the repository / staging area (before commiting!)
 git status 									=> Actual status in the git-directoy (eg. added files, changed files, not added,...)
-git commit -m "comment"						=> Commit files which are added / changed in the repo (with comment)
+git commit -m "comment"						=> Commit files which are added / changed in the repo (with comment) - taking a "snapshot"
 git log 									=> Show overview about the last activities
 git clone github-link										=> Clone a repository in the actual path
 git remote add origin https://github.com/link/Test.git  	=> Link the acutal folder/repo to the github-repo
@@ -31,7 +32,6 @@ git push -u origin master   								=> Push (update) files on GitHub
 ""
 git pull -u origin master  									
 ""
-
 
 
 
@@ -52,6 +52,7 @@ git branch newFeature    					=> Create a new branch with the name "newFeature"
 git checkout newFeature 					=> Change to branch "newFeature" (from the master-branch)
 git checkout master							=> Return to the master-branch
 git branch -d newFeature	 				=> Delete branch
+git branch -m main                          => Change name of the branch - eg. for renaming branch "master" to "main"
 git checkout -b new 						=> Create a new branch named "new"
 git diff head								=> Show the difference in the files
 git diff --staged							=> Show only the differences for the files which are not commited yet
