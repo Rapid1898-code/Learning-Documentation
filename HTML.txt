@@ -91,6 +91,7 @@ index.html                                  => Should be the first site
 <hr>, </hr>                                 => htmlbreak (not good - should be done by css)
 <em> Stress Emphasis </em>                  => Emphasis some text - but only for accessibility reason (not styling!)
 <strong> Strong Importance </strong>        => Bold some text - but only for accessibility reason (not styling!)
+<iframe src="" frameborder="0"></iframe>    => Insert / embedd video with iframe
 
 => Insert video 
 ""
@@ -100,6 +101,7 @@ index.html                                  => Should be the first site
   Your browser does not support HTML video.
 </video>
 ""
+
 
 => Unordered List with anchor links
 ""
