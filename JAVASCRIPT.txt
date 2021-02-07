@@ -15,6 +15,7 @@
 #> JQUERY
 #> DATE
 #> MATH
+#> LOCAL STORAGE
 
 
 ###### OPERATOR, INPUT, OUTPUT
@@ -213,6 +214,15 @@ default:                        // When no case is mathing - then do this
 for (let i=1; i<=5; i++) {}                     => Iteration from 1 to 5 with for-loop
 for (let i=3; i>=0; i--) {}                     => Iteration backwards from 3 to 0 with for-loop
 for (let i=0; i<arr.length; i++) {}             => Iterate through an array
+
+=> For loop with pause at any iteration
+""
+for (let i = 0; i < 5; i++) {
+  setTimeout(() => {                            // Pause at any iteration for 5 seconds / 5000 ms
+    console.log("hey");
+  }, i * 5000);
+}
+""
 
 => While loop with break condition
 ""
@@ -519,6 +529,13 @@ Math.min(1,2,3)                             => Returns the Minimum of the values
 Math.max(1,2,3)                             => Returns the Maximum of the values => 3
 
 
+
+###### LOCAL STORAGE
+=> Allows to store data across browser sessions
+localStorage.setItem ("name","Bob")         => Set item to local storage (name is the key and Bob is the value)
+localStorage.getItem ("name")               => Get item from local storage (name is the key)
+localStorage.delItem ("name")               => Delete item from local storage (name is the key)
+localStorage.clear()                        => Delete the whole local storage
 
 
 
