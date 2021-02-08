@@ -199,7 +199,7 @@ if !(a > 13)                                    => If structure with logical not
 Switch Expression
 ""
 switch (expression) {           // Switch expression for multiple options
-case value1:                    // Do something when expression is value1
+case value1: case value 4       // Do something when expression is value1 or value4
     // Do something
     break;                      // Break necessary for any case / value
 case value2:                    // Do something when expression is value2
@@ -426,6 +426,7 @@ const c = document.querySelectorAll("h2")       => Select all elements which hav
 .value                                          => Read the value/text of the field
 .id                                             => Show the ID of the selected element  
 .src                                            => Set the src of a image
+.className = "MyClass";							=> Change class of the element to "MyClass"
 .classList                                      => Manipulate classes informations
 .classList.toggle("hidden")                     => Toggle the class hidden (when triggered class is deleted OR added (when the next click occured)
 .classList.add("hidden")                        => Add the class hidden
