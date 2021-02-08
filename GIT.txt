@@ -24,10 +24,10 @@ git rm --cached index.html                  => remove specific file from the rep
 git status 									=> Actual status in the git-directoy (eg. added files, changed files, not added,...)
 git commit -m "comment"						=> Commit files which are added / changed in the repo (with comment) - taking a "snapshot"
 git log 									=> Show overview about the last activities
-git clone github-link										=> Clone a repository in the actual path
-git remote add origin https://github.com/link/Test.git  	=> Link the acutal folder/repo to the github-repo
-git push -u origin master   								=> Push (update) files on GitHub (to the master)
-git push --set -upstream origin answer                      => Push with upstream definition (to the branch "answer")
+git clone github-link									=> Clone a repository in the actual path
+git remote add origin https://github.com/link/Test.git  => Link the acutal folder/repo to the github-repo
+git push -u origin master   							=> Push with upstream definition (shorthand - to the master)
+git push --set -upstream origin answer                	=> Push with upstream definition (longhand - to the branch "answer")
 
 => Pull (update) files from GitHub<br>
 (-u saves the paths - so at the next push - it must be only typed push)
