@@ -2,58 +2,60 @@
 ### TOC ###
 ###########
 
-# MODULE, GENERAL
-# VIRTUALENV
-# SHORTCUTS INTELLIJ IDEA IDE, GITHUB, CHROME, WINDOWS
-# MYSQL, MARIADB, HEIDISQL
-# OPERATORS, INPUTS, ARGUMENTS
-# RANDOM, SECRETS
-# STRING
-# REGEX
-# LISTS and TUPELS
-# DICTIONARY
-# SETS  
-# CONTROL STRUCTURES and ITERATIONS (if, for, while)
-# FUNCTIONS, DECORATORS
-# GENERATORS, YIELD
-# LAMBDA
-# CLASSES, DATACLASSES
-# TXT (handling txt files)
-# JSON (handling JSON)
-# XML (handling XML)
-# URLLIB (handling URLs,links)
-# MODULE - CSV (handling CSV)soap
-# MOUDLE - ZIPFILE (handling ZIP files)
-# MODULE - GSPREAD (API for Google Sheets)
-# MODULE - OPENPYXL (working with excel worksheets)
-# MODULE - XLWINNGS (working on the fly with open excel worksheets)
-# MODULE - WIN32COM (creating worksheets as pdf from xlsx)
-# MODULE - PyPDF2 (working with pdfs)
-# SQL (working with MySQL / MariaDB)
-# SQL ALCHEMY
-# DATES, DATETIME, CALENDAR, TIMEIT, TIME, SYS, CTYPES
-# MODULE - Currencyconverter (currency conversion)
-# MODULE - Countries, Currency, Language (handling codes for countries, currency, language)
-# MODULES - SMTPLIB, MIMEText (sending emails)
-# MODULE - PATHLIB (interacting with the operating system)
-# MODULE - OS (interacting with the operating system)
-# MODULE - LOGGING
-# MODULE - UNITTEST
-# MODULE - COLLECTIONS (counter, defaultdic)
-# MOUULE - ITERTOOLS (products, combinations)
-# MODULE - NUMPY (basis for different other modules)
-# MODULE - PANDAS (analyzing and working with data)
-# MODULE - MATPLOTLIB (working with charts)
-# MODULE - SELENIUM (browser automatization)
-# MODULE - BEAUTIFUL SOAP (webscraping)
-# MODULE - REQUESTS (workings with APIs)
-# MODULE - PYQT (making GUIs)
-# MODULE - TKinter (making GUIs)
-# MODULE - PYGAME (making games)
-# MODULE - PYTHONCOM (make new formula in excel with python-function)
-# MODULE - FLASK, ZAPPA, AWS (making an API)
-# MODULE - ICECREAM (print for debugging)
-# PYINSTALLER (generate python programs to executables)
+#> MODULE, GENERAL
+#> VIRTUALENV
+#> SHORTCUTS INTELLIJ IDEA IDE, GITHUB, CHROME, WINDOWS
+#> OPERATORS, INPUTS, ARGUMENTS
+#> RANDOM, SECRETS
+#> STRING
+#> REGEX
+#> LIST
+#> TUPEL
+#> DICTIONARY
+#> SETS  
+#> CONTROL STRUCTURES and ITERATIONS
+#> FUNCTIONS, DECORATORS
+#> GENERATORS, YIELD
+#> LAMBDA, MAP, FILTER
+#> CLASSES, DATACLASSES
+#> TXT FILES
+#> JSON FORMAT
+#> XML FORMAT
+#> URLLIB
+#> MODULE - CSV
+#> MOUDLE - ZIPFILE - handling ZIP files
+#> MODULE - GSPREAD - API for Google Sheets
+#> MODULE - OPENPYXL - working with excel worksheets
+#> MODULE - XLWINNGS - working on the fly with open excel worksheets
+#> MODULE - WIN32COM - creating worksheets as pdf from xlsx
+#> MODULE - PyPDF2 - working with pdfs
+#> MYSQL - MARIADB - HEIDISQL
+#> MYSQL - MARIADB - SQL
+#> SQL ALCHEMY
+#> SQLITE3 SQL
+#> MODULES - DATES, DATETIME, CALENDAR, TIMEIT, TIME, SYS, CTYPES
+#> MODULE - CURRENCYCONVERTER - currency conversion
+#> MODULE - PYCOUNTRY - Countries, Currency, Language
+#> MODULES - SMTPLIB, MIMEText - sending emails
+#> MODULE - PATHLIB - interacting with the operating system
+#> MODULE - OS - interacting with the operating system
+#> MODULE - LOGGING
+#> MODULE - UNITTEST
+#> MODULE - COLLECTIONS - counter, defaultdic
+#> MODULE - ITERTOOLS - products, combinations
+#> MODULE - NUMPY - basis for different other modules
+#> MODULE - PANDAS - analyzing and working with data
+#> MODULE - MATPLOTLIB - working with charts
+#> MODULE - SELENIUM - browser automatization
+#> MODULE - BEAUTIFUL SOAP - webscraping
+#> MODULE - REQUESTS - workings with APIs
+#> MODULE - PYQT - making GUIs
+#> MODULE - TKinter - making GUIs
+#> MODULE - PYGAME - making games
+#> MODULE - PYTHONCOM - make new formula in excel with python-function
+#> MODULE - FLASK, ZAPPA, AWS - making an API
+#> MODULE - ICECREAM - print for debugging
+#> PYINSTALLER - generate python programs to executables
 
 
 
@@ -68,7 +70,7 @@ python --version				 =>  Check which python version is installed
 ""
 import sys, os
 sys.path.append(os.path.join('C:/', 'Users\path_to_module'))	# Create Path to module
-import RapidTechTools as rtt									# Import Module RapidTechTools
+import RapidTechTools as rtt        # Import Module RapidTechTools
 ""
 
 
@@ -83,8 +85,8 @@ virtualenv env                                         	   =>  Create new virtua
 => Activate environment 
 ""
 venv\Scripts\activate                              		   
-    when activated: pip list                               =>  Now only shows the installed modules for the virtual environment
-    pip install package                                    =>  Only installs in the activated virtual environment
+    when activated: pip list    #  Now only shows the installed modules for the virtual environment
+    pip install package         #  Only installs in the activated virtual environment
 ""	
 	
 pip freeze --local > requirements.txt                      =>  Extracts all the modules / dependencies to a txt-file 
@@ -100,55 +102,55 @@ pip install -r requirements.txt                            =>  Install all the p
 => Shortcuts Intellij Idea
 => https://www.shortcutfoo.com/app/dojos/intellij-idea-win/cheatsheet
 ""
-Ctrl /						# Comment / Uncomment line ("/" on numblock)
-Ctrl Alt F7					# Find usages
-Ctrl F 		   				# Find in File
-Ctrl R  	   				# Replace in File
-Ctrl Shift R				# Replace in Path (in all Files)
-F2							# Jump to the next error
-F3							# Find next
-Ctrl G						# Goto line
-Ctrl D						# Copy / Duplicate lines	
-Alt Shift Down/Up			# Move line
-Ctrl E						# Recent opened files
-Ctrl TAB					# Switch windows in IDE
-Ctrl (Shift) W				# Select / deselect parts of the code step by step
-Alt Enter					# Suggestions for fix error, function informations
-Alt 1						# Open the project windows (on the left side)
-Alt F7						# Show usage of the variable, function, class
-Esc							# Focus back on the editor window
-Ctrl Shift -	   			# Collapse all functions
-Ctrl -						# Collapse block ("-" on numblock)
-Ctrl +						# Expand block ("+" on numblock)
-Ctrl A						# Select whole file
-Ctrl (Shift) Z				# Undo (backwards) / Redo (forwards)
-Ctrl Shift Left				# Select word to the beginning
-Ctrl Shift Right			# Select word to the end 
-Ctrl Left					# Go one word left
-Ctrl Right					# Go one word right
-Ctrl Y						# Delete current line
-Ctrl Del					# Delete to end of word
-Ctrl Backspace				# Delete to beginning of word
-lorem + TAB					# Create lorem text for html-code
-p>lorem + TAB				# Create lorem text inside <p>-tags
+Ctrl /					# Comment / Uncomment line ("/" on numblock)
+Ctrl Alt F7				# Find usages
+Ctrl F 		   			# Find in File
+Ctrl R  	   			# Replace in File
+Ctrl Shift R			# Replace in Path (in all Files)
+F2						# Jump to the next error
+F3						# Find next
+Ctrl G					# Goto line
+Ctrl D					# Copy / Duplicate lines	
+Alt Shift Down/Up		# Move line
+Ctrl E					# Recent opened files
+Ctrl TAB				# Switch windows in IDE
+Ctrl (Shift) W			# Select / deselect parts of the code step by step
+Alt Enter				# Suggestions for fix error, function informations
+Alt 1					# Open the project windows (on the left side)
+Alt F7					# Show usage of the variable, function, class
+Esc						# Focus back on the editor window
+Ctrl Shift -	   		# Collapse all functions
+Ctrl -					# Collapse block ("-" on numblock)
+Ctrl +					# Expand block ("+" on numblock)
+Ctrl A					# Select whole file
+Ctrl (Shift) Z			# Undo (backwards) / Redo (forwards)
+Ctrl Shift Left			# Select word to the beginning
+Ctrl Shift Right		# Select word to the end 
+Ctrl Left				# Go one word left
+Ctrl Right				# Go one word right
+Ctrl Y                  # Delete current line
+Ctrl Del                # Delete to end of word
+Ctrl Backspace          # Delete to beginning of word
+lorem + TAB             # Create lorem text for html-code
+p>lorem + TAB           # Create lorem text inside <p>-tags
 ""
 
 => Shortcuts Chrome
 => https://www.makeuseof.com/tag/google-chrome-shortcuts-pdf/
 ""
-F5							# Refresh site
-Ctrl Tab					# Go tab right
-Ctrl Shift Tab				# Go tab left
-Ctrl F5						# Clear Cache and reload page
+F5                  # Refresh site
+Ctrl Tab            # Go tab right
+Ctrl Shift Tab      # Go tab left
+Ctrl F5             # Clear Cache and reload page
 ""
 
 => Shortcuts Win10
 => https://fossbytes.com/windows-keyboard-shortcuts-cheat-sheet-for-windows-10/
 ""
-Alt Tab 					# Focus on other window
-Ctrl C						# Copy
-Ctrl X						# Cut
-Ctrl VALUES					# Paste	
+Alt Tab         # Focus on other window
+Ctrl C          # Copy
+Ctrl X          # Cut
+Ctrl VALUES     # Paste	
 ""
 
 => Git Ignore Files/Folders:
@@ -171,19 +173,6 @@ Commit the files / new directory
 select repository => settings => rename
 ""
 
-
-
-###### MYSQL, MARIADB, HEIDISQL
-C:\Program Files\MariaDB 10.3\data				=> Data where the MariaDB-database is stored
-C:\ProgramData\MySQL\MYSQL Server 8.0\data		=> Data where the MySQL-database is stored
-HeidiSQL - Datei / Verbindungsmanager			=> Shows the database-version in the column header	
-
-=> Transfer whole table from local db to hosted db
-    right click on table / tables to transfer and select "export database as sql"
-    for "output" select "Server: A2Hosting" (connection to the hosted server)
-    for "database" select "rapidtec_stockdb" (name from the db on the hosted server)
-    for "data" select "replace existing data"
-    press "export" (wait till the rows-column shows 100%)
 
 
 ###### OPERATORS, INPUTS, ARGUMENTS
@@ -244,7 +233,7 @@ secrets.choice(l)				=> Random choice (which is not reproducable)
 
 
 
-###### STRINGS
+###### STRING
 => ordered, immutable, text representation
 s = "this is a test"							# Define a string
 s = "this \n text"								# String with linebreak \n
@@ -252,8 +241,8 @@ s = "this \t text" 								# String with tab between the words
 
 => Define string over more lines in editor with
 ""
-s = """this \									
-	and this"""
+s = '''this \									
+	and this'''
 ""
 
 c = s[0]										=> first char of a string
@@ -397,7 +386,7 @@ for animal, age in z: ...
 
 
 
-######TUPLE
+###### TUPEL
 => ordered, immutable, allows duplicate elements
 => working can be more efficient than with lists - especially with big data - regarding space and runtime
 t = (4,5,6)										=> Create a tuple
@@ -468,57 +457,6 @@ s2 = s1					=> Copying a set (all changes will be made in BOTH sets)
 s2 = s.copy()			=> Copying a set (set will be handled seperate)
 s2 = set(s)				=> Copying a set 2nd method (set will be handled seperate)
 s = frozenset(1,2,3)	=> Define a frozenset - no changes are possible in the set - union, intersection aso. will work
-----------
-
-
-
-----------
-####### MODULE - COLLECTIONS
-=> Counter, namedtuple, OrderedDict, defaultdict, deque
-
-=> COUNTER
-""
-from collections import Counter
-colors = ['blue', 'blue', 'red', 'red', "red"]
-counter = Counter(colors)									# Creates dict with counts => {'red': 3, 'blue': 2} in ordered form
-counter.most_common(1) 		                           		# Outputs the element with the most counts as tuple
-counter["red"})            		                            # Outputs the occurence of the value "red" => 3
-""
-
-=> NAMEDTUPLE
-""
-from collections import namedtuple
-Point = namedtuple("Point","x,y")							# Creates class with tumple
-pt = Point(1,-4)											# Creates Point(x=1,y=-4)
-print(pt.x, pt.y)											# Shows 1 and -4
-""
-
-=> ORDEREDDICT
-""
-not necessary anymore in the newer python versions
-is allready implemented in the regular dict-type) 
-""
-
-=> DEFAULTDIC
-""
-d = defaultdict(int)	# Create defaultdict and define default-type
-d["xyz"]				# No key error when when key not in the dict => default-type value 0 is outputed
-""
-
-=> DEQUE
-""
-from collections import deque      # import collections deque module
-d = deque()				# Create deque (optimized for working with elements at the end or beginning of the list)
-d.append(1)				# Add element at the end
-d.appendleft(2)			# Add element at the beginning
-d.extend([1,2]			# Add list of elements at the end
-d.extendleft([1,2])		# Add list of elements at the beginning (in reversed order so 2,1)
-d.pop()					# Delete element at the end
-d.popleft()				# Delete element at the beginning
-d.clear()				# Clear entire list
-d.rotate(2)				# Shift all elements 2 places to the right
-d.rotateleft(-1)			# Shift all elements 1 place to the left
-""
 
 
 
@@ -547,13 +485,12 @@ continue                     	=> Break actual loop run - continue with next loop
 ###### FUNCTIONS, DECORATORS
 => description of the function in form of a docstring
 ""
-"""...description..."""
-    def printNumAbbr(value):
-    """	
-    eg. Make abbreviaton for numeric value in thousands (K), millions (M), billions (B) or trillions (T)
-    :param value: numeric value which should be abbreviated
-    :return: string value with maximum possible abbreviation
-    """
+def printNumAbbr(value):
+'''
+eg. Make abbreviaton for numeric value in thousands (K), millions (M), billions (B) or trillions (T)
+:param value: numeric value which should be abbreviated
+:return: string value with maximum possible abbreviation
+'''
 ""
 
 => Define function - with default value 0 if no input is given
@@ -754,7 +691,7 @@ except Exception as e:
    
    
    
-###### JSON format   
+###### JSON FORMAT   
 import json                                         => Import json-module
 fn = "numbers.json"                                 => Assign JSON-filename
 with open(fn) as data: info = json.loads(data)      => Reading informations in json-format
@@ -789,7 +726,7 @@ for item in children:								=> Iterate trough the json-file (eg. many children)
 
 
 
-###### XML format
+###### XML FORMAT
 import xml.etree.ElementTree as ET					=> Import xml-module
 => Example for xml-file
 ""
@@ -814,7 +751,7 @@ for item in lst:
 
 
 
-# URLLIB (handling URLs,links)
+###### URLLIB
 => https://pymotw.com/2/urlparse/
 import from urllib.parse import urlparse			=> Import Module for URL parsing
 => https://docs.python.org/3/library/urllib.request.html#module-urllib.request
@@ -830,7 +767,7 @@ u.netloc											=> Returns "google.com"
 import csv                                                => Import CSV-Module
 => Open csv-file in writemode
 ""
-with open("test.csv","w",newline="") as fp:               
+with open("test.csv","w",newline=" ") as fp:               
     a = csv.writer (fp, delimiter=",")                    # Define csv-writer with ","-delimiter
     data = [["A", "B"],["100", "24"],["120", "33"]]       # Data for writing in nested list form
     a.writerows (data)                                    # Writing individual rows
@@ -847,7 +784,7 @@ csvfile = csv.reader(codecs.iterdecode(ftpstream, 'utf-8'))     # output is nest
 
 
 
-###### MODULE - ZIPFILE
+###### MOUDLE - ZIPFILE - handling ZIP files
 import zipfile                                                  => Import zip module
 zf = zipfile.ZipFile('example.zip', 'r')						=> Read Zip-File
 zf.namelist()													=> List of string with the names of the files in the Zip-File
@@ -855,7 +792,7 @@ zf.open (file_name)												=> Open file vom Zip-File (eg. CSV-File which is 
 
 
 
-###### MODULE - GSPREAD
+###### MODULE - GSPREAD - API for Google Sheets
 =>  API for GoogleSheets / Tutorial explaining handling
 => https://techwithtim.net/tutorials/google-sheets-python-api-tutorial/	
 ""
@@ -923,7 +860,7 @@ worksheet.update_cells(cell_list)                                   => Upate cel
 
 
 
-###### MODULE - OPENPYXL
+###### MODULE - OPENPYXL - working with excel worksheets
 Documentation: => https://openpyxl.readthedocs.io/en/stable/api/openpyxl.worksheet.worksheet.html#openpyxl.worksheet.worksheet.Worksheet.PAPERSIZE_A3
 from openpyxl import load_workbook                      => Import module for loading a workbook
 from openpyxl import Workbook							=> Import module for creating a workbook
@@ -948,26 +885,26 @@ for row in ws["A1":"C3"]:
     for cell in row: print(cell.value)
 ""
 
-for cell in ws["C"]: print(cell.value)                  # Loop trough specific column and print the cell values
-ws.insert_cols(3)                         				# Insert column before col 3
-ws.insert_cols(3,2)                       				# Insert 2 columns before col 3	
-ws.insert_rows(7)                         				# Insert row before row 7
-ws.insert_rows(10,5)                         			# Insert 5 rows before row 10
-ws.delete_cols(3)										# Delete column C
-ws.delete_cols(6,3)										# Delete column F to H
-ws.delete_rows(5)										# Delete row 5
-ws.delete_rows(5,3)										# Delete row 5 to 7
-ws.move_range("D4:F10", rows=-1, cols=2)				# Move the cells from D4:F10 up one row and right two columns
-ws.append([1,"A",2,"C"])								# Append the values at the bottom of the sheet
-ws.dimensions											# Returns dimension of the worksheet eg. "A1:M24"
-ws.max_column / ws.max_row								# Returns max column / row count of the worksheet
-ws.min_column / ws.min_row								# Returns min column / row count of the worksheet (which contains data)
-ws.print_title_rows(1:3)								# Rows 1:3 to be printed at the top of every page 
-del wb["sheet4"]                                        # Delete worksheet in workbook
-ws.auto_filter.ref = "A5:Q5"							# Define filters in columns A5 to Q5
-ws.auto_filter.add_filter_column(2,["X","Y","Z"])		# Set filter to values "X","Y","Z" in column 2
-ws.auto_filter.add_sort_condition("B2:B15")				# Sort elements in filter for columsn B2 to B15
-wb.close()												# Close workbook
+for cell in ws["C"]: print(cell.value)                  => Loop trough specific column and print the cell values
+ws.insert_cols(3)                         				=> Insert column before col 3
+ws.insert_cols(3,2)                       				=> Insert 2 columns before col 3	
+ws.insert_rows(7)                         				=> Insert row before row 7
+ws.insert_rows(10,5)                         			=> Insert 5 rows before row 10
+ws.delete_cols(3)										=> Delete column C
+ws.delete_cols(6,3)										=> Delete column F to H
+ws.delete_rows(5)										=> Delete row 5
+ws.delete_rows(5,3)										=> Delete row 5 to 7
+ws.move_range("D4:F10", rows=-1, cols=2)				=> Move the cells from D4:F10 up one row and right two columns
+ws.append([1,"A",2,"C"])								=> Append the values at the bottom of the sheet
+ws.dimensions											=> Returns dimension of the worksheet eg. "A1:M24"
+ws.max_column / ws.max_row								=> Returns max column / row count of the worksheet
+ws.min_column / ws.min_row								=> Returns min column / row count of the worksheet (which contains data)
+ws.print_title_rows(1:3)								=> Rows 1:3 to be printed at the top of every page 
+del wb["sheet4"]                                        => Delete worksheet in workbook
+ws.auto_filter.ref = "A5:Q5"							=> Define filters in columns A5 to Q5
+ws.auto_filter.add_filter_column(2,["X","Y","Z"])		=> Set filter to values "X","Y","Z" in column 2
+ws.auto_filter.add_sort_condition("B2:B15")				=> Sort elements in filter for columsn B2 to B15
+wb.close()												=> Close workbook
 => Iterate trough worksheet row by row
 ""
 for row in ws.iter_rows():								
@@ -999,7 +936,7 @@ for row in ws.iter_rows ():
     zeile = []
     for cell in row:
         if cell.value is None:
-            zeile.append ("")
+            zeile.append ('')
         else:
             zeile.append (cell.value)
     data_list.append (zeile)
@@ -1153,7 +1090,7 @@ ws.conditional_formatting.add('D2:D10',
 
 
 
-###### MODULE - XLWINNGS
+###### MODULE - XLWINGS - working on the fly with open excel worksheets
 => Update XLSX in reealtime
 import xlwings as xw                                    => Import module
 wb = xw.Book ("name.xlsx")                              => Read XLSX
@@ -1179,7 +1116,7 @@ def xl_col_sort(sheet,col_num):
 
 
 
-###### MODULE - WIN32COM
+###### MODULE - WIN32COM - creating worksheets as pdf from xlsx
 => Create Worksheets as PDF from XLSX
 import win32com.client                                  => Import Win32 Module
 import os                                               => Import OS Module
@@ -1200,42 +1137,42 @@ ws.PageSetup.PrintArea = "A1:G50"                       => Select specific print
 
 
 
-###### MODULE - PyPDF2
+###### MODULE - PyPDF2 - working with pdfs
 => Working with PDFs
 => Read PDF informations / metadata
 ""
-from PyPDF2 import PdfFileReader 						# Import Module for PDF Reading
+from PyPDF2 import PdfFileReader        # Import Module for PDF Reading
 with open (fn, 'rb') as f:
-    pdf = PdfFileReader (f)								# Read PDF informations
-    info = pdf.getDocumentInfo ()						# Read PDF infos^
-    number_of_pages = pdf.getNumPages ()				# Read number of pages
-	print(info)											# Outputs all informations
-	print(info.title)									# Outputs title of the pdf
-	print(info.author)									# Outputs author of the pdf
+    pdf = PdfFileReader (f)				# Read PDF informations
+    info = pdf.getDocumentInfo ()		# Read PDF infos^
+    number_of_pages = pdf.getNumPages ()    # Read number of pages
+	print(info)							# Outputs all informations
+	print(info.title)					# Outputs title of the pdf
+	print(info.author)					# Outputs author of the pdf
 ""
 
 => Read Text from Pdf			
 ""
-page = pdf.getPage (7)									# Select page 8						
-text = page.extractText ()								# Extract text	
-print (text)											# print (text	
+page = pdf.getPage (7)		# Select page 8						
+text = page.extractText ()	# Extract text	
+print (text)				# print (text	
 ""
 
 => Split PDFs
 ""
-from PyPDF2 import PdfFileWriter						# Import Module for PDF Writing
-pdf_writer = PdfFileWriter()							# Create new instance of PDF writer
-pdf_writer.addPage(page)                                # Add Page to writer
-with open(output_filename, 'wb') as out:				# Write splitted PDF
+from PyPDF2 import PdfFileWriter		    # Import Module for PDF Writing
+pdf_writer = PdfFileWriter()				# Create new instance of PDF writer
+pdf_writer.addPage(page)                    # Add Page to writer
+with open(output_filename, 'wb') as out:	# Write splitted PDF
 	pdf_writer.write(out)
 ""
 
 => Merge PDFs
 ""
-from PyPDF2 import PdfFileMerger						# Import Module for PDF Merging
-pdf_merger = PdfFileMerger()							# Create new instance of PDF merger
-pdf_merger.append(path)                                 # Append Page for merging
-with open(output_path, 'wb') as fileobj:				# Write merged PDF
+from PyPDF2 import PdfFileMerger		    # Import Module for PDF Merging
+pdf_merger = PdfFileMerger()				# Create new instance of PDF merger
+pdf_merger.append(path)                     # Append Page for merging
+with open(output_path, 'wb') as fileobj:	# Write merged PDF
 	pdf_merger.write(fileobj)
 ""
 
@@ -1245,7 +1182,23 @@ page.mergePage(watermark_page)							=> Overlaying / Watermarking two pages
 
 
 
-###### MYSQL / MARIADB / SQL
+###### MYSQL - MARIADB - HEIDISQL
+C:\Program Files\MariaDB 10.3\data				=> Data where the MariaDB-database is stored
+C:\ProgramData\MySQL\MYSQL Server 8.0\data		=> Data where the MySQL-database is stored
+HeidiSQL - Datei / Verbindungsmanager			=> Shows the database-version in the column header	
+
+=> Transfer whole table from local db to hosted db
+""
+right click on table / tables to transfer and select "export database as sql"
+for "output" select "Server: A2Hosting" (connection to the hosted server)
+for "database" select "rapidtec_stockdb" (name from the db on the hosted server)
+for "data" select "replace existing data"
+press "export" (wait till the rows-column shows 100%)
+""
+
+
+
+###### MYSQL - MARIADB - SQL
 import mysql.connector                                     => Import module for mysql access
 mydb = mysql.connector.connect (host="localhost",user="root",passwd="pwd")                            => Define connection    
 mycursor = mydb.cursor()                                   => Set Cursor on mySQL
@@ -1292,7 +1245,7 @@ data = c.fetchall()
 
 
 
-###### MYSQL / MARIADB / SQL ALCHEMY ######
+###### SQL ALCHEMY
 from sqlalchemy import create_engine                       => Import MODULE
 engine = create_engine("mysql+pymysql: //user:pw@localhost/dbname?host=localhost?port=3306")                     => Define access to the MySQL-DB (username, pw, dbname)
 conn = engine.connect()                                    => Establish connection
@@ -1385,7 +1338,7 @@ conn.execute(s).fetchall()
 
 
 
-###### SQLITE3 SQL ######
+###### SQLITE3 SQL
 conn = sqlite3.connect("address_book.db")		=> Create a database or connect to one
 c = conn.cursor()								=> Create a cursor (for working with the db)
 => Create a table in the database
@@ -1514,7 +1467,7 @@ screensize = user32.GetSystemMetrics(0),                # 1st parameter is width
 ""
 
 
-###### MODULE - Currencyconverter
+###### MODULE - CURRENCYCONVERTER - currency conversion
 from currency_converter import CurrencyConverter		=> Import Module
 from datetime import date								=> Import Module for rate-checks for specific date
 c = CurrencyConverter()                                 => Read Function CurrencyConverter
@@ -1525,7 +1478,7 @@ c.currencies											=> Read all possible currencies in a set
 
 
 
-###### MODULE - Countries, Currency, Language
+###### MODULE - PYCOUNTRY - Countries, Currency, Language
 https://pypi.org/project/pycountry/				=> Description about the module
 => Problems with some added python modules (eg. pycountry) with pyinstaller => see pyinstaller description
 import pycountry								=> Install moduel
@@ -1543,7 +1496,7 @@ list(pycountry.subdivisiones)                   => List of all subdivided countr
 
 
 
-####### MODULES - SMTPLIB, MIMEText
+###### MODULES - SMTPLIB, MIMEText - sending emails
 => sending emails
 => if you have 2-Factor-Authentification you must generate a App-Password for GMail
 import smtplib                                               => Import smtplib
@@ -1564,18 +1517,14 @@ s.quit()                                                     => Closing connecti
 
 
 
-###### MODULE - PATHLIB
-=> interacting with the operating system
+###### MODULE - PATHLIB - interacting with the operating system
 from pathlib import Path									=> Import module
 Path.cwd()													=> Current working directory
 Path("folder").mkdir(parents=True, exist_ok=True)			=> Creates new folder (no error message if folder allready exists with exist_ok=True)
-----------
 
 
 
-----------
-###### MODULE - OS
-=> interacting with the operating system
+###### MODULE - OS - interacting with the operating system
 import os												    => Import module
 print(dir(os))                                              => Shows alls attributs and methods of the library
 os.chdir("C:/temp")                                         => Change the directory
@@ -1675,10 +1624,59 @@ self.assertNotIn(i,list)                                     => Check if i not i
 
 
 
-###### MOUDLE - ITERTOOLS
-=> product, permutations, combinations, accumulate, groupby, infinite iterators
-=> from itertools import product, permutations, combinations, combinations_with_replacement, accumulate, groupby
-=> from itertools import count, cycle, repeat
+###### MODULE - COLLECTIONS - counter, defaultdic
+=> Counter, namedtuple, OrderedDict, defaultdict, deque
+
+=> COUNTER
+""
+from collections import Counter
+colors = ['blue', 'blue', 'red', 'red', "red"]
+counter = Counter(colors)									# Creates dict with counts => {'red': 3, 'blue': 2} in ordered form
+counter.most_common(1) 		                           		# Outputs the element with the most counts as tuple
+counter["red"})            		                            # Outputs the occurence of the value "red" => 3
+""
+
+=> NAMEDTUPLE
+""
+from collections import namedtuple
+Point = namedtuple("Point","x,y")							# Creates class with tumple
+pt = Point(1,-4)											# Creates Point(x=1,y=-4)
+print(pt.x, pt.y)											# Shows 1 and -4
+""
+
+=> ORDEREDDICT
+""
+not necessary anymore in the newer python versions
+is allready implemented in the regular dict-type) 
+""
+
+=> DEFAULTDIC
+""
+d = defaultdict(int)	# Create defaultdict and define default-type
+d["xyz"]				# No key error when when key not in the dict => default-type value 0 is outputed
+""
+
+=> DEQUE
+""
+from collections import deque      # import collections deque module
+d = deque()				# Create deque (optimized for working with elements at the end or beginning of the list)
+d.append(1)				# Add element at the end
+d.appendleft(2)			# Add element at the beginning
+d.extend([1,2]			# Add list of elements at the end
+d.extendleft([1,2])		# Add list of elements at the beginning (in reversed order so 2,1)
+d.pop()					# Delete element at the end
+d.popleft()				# Delete element at the beginning
+d.clear()				# Clear entire list
+d.rotate(2)				# Shift all elements 2 places to the right
+d.rotateleft(-1)			# Shift all elements 1 place to the left
+""
+
+
+
+###### MODULE - ITERTOOLS - products, combinations
+=> - product, permutations, combinations, accumulate, groupby, infinite iterators
+=> - from itertools import product, permutations, combinations, combinations_with_replacement, accumulate, groupby
+=> - from itertools import count, cycle, repeat
 import operator 							=> necessary for the func-operator
 product([1,2],[3,4])						=> all combis for carthesian product => [(1,3),(1,4),(2,3),(2,4)]
 product([0, 1], repeat=3)               	=> all with 3 elements => (0,0,0),(0,0,1),(0,1,0),(0,1,1), aso.
@@ -1699,10 +1697,10 @@ for i in repeat(1,4)						=> loop with 1 for 4 times
 
 
 
-###### NUMPY
-=> memory efficient, working in the background used by other modules
-=> using only the bits which are necessary for each column (1 is stored in python with 24bytes - in numpy with 1byte or lesser)
-=> shape of array has to be consistent - otherwise it just fall back to regular python objects eg. [[12,11],[13]]
+###### MODULE - NUMPY - basis for different other modules
+=> - memory efficient, working in the background used by other modules
+=> - using only the bits which are necessary for each column (1 is stored in python with 24bytes - in numpy with 1byte or lesser)
+=> - shape of array has to be consistent - otherwise it just fall back to regular python objects eg. [[12,11],[13]]
 import numpy as np						=> Import numpy module with np abbreviation
 => Using arrays, types and slicing
 a = np.array([1,2,3,4])					=> Define a numpy array (automatically with type int)
@@ -1767,7 +1765,7 @@ np.random.seed(1)						=> Can reproduce the same results
 
 
 
-###### MODULE - PANDAS
+###### MODULE - PANDAS - analyzing and working with data
 https://gist.github.com/why-not/4582705                     => examples
 import pandas as pd                                         => Import Module
 import numpy as np											=> Also importing numpy-module necessary
@@ -1879,15 +1877,18 @@ html_url"https://www.xyz.com"								=> Assign html-varialbe
 df = pd.read_html(html_url)									=> Read html-link to dataframe	
 
 => EXAMPLE
-=> https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-course/pandas-condtitional-selection-and-modifying-dataframes
-		Popl	HDI		Continent
-	CAN	35		0,913	America
-	FRA	64		0,888	Europe
-	GER	81		0,916	Europe	
-	ITA 61		0,873	Europe
-	JPN 127		0,891	Asia
-	UK  65		0,907	Europe
-	USA 319		0,915	America
+""
+https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-course/pandas-condtitional-selection-and-modifying-dataframes
+    Popl	HDI		Continent
+CAN	35		0,913	America
+FRA	64		0,888	Europe
+GER	81		0,916	Europe	
+ITA 61		0,873	Europe
+JPN 127		0,891	Asia
+UK  65		0,907	Europe
+USA 319		0,915	America
+""
+
 df = pd.DataFrame(np.random.randint(0,5,size=(5, 2)), columns=list('AB'))	=> Initialize a dataframe with random ints with 5 rows and 2 columns
 df.shape                                                    => Show the shape of the dataframe (rows, columns) => (7,3)
 df.info()                                                   => Info for columns (index,name,dtype) also count of NaN-values per column
@@ -2018,7 +2019,7 @@ df["c"]=[1 if (x/y>9) else 0 for x,y in zip(df["c1"],df["c2])]	=> Add/change col
 
 
 
-###### MATPLOTLIB
+###### MODULE - MATPLOTLIB - working with charts
 import matplotlib.pyplot as plt                                     => Import module as plotter plt
 plt.plot(x, x **2 )													=> Plot a line
 plt.plot(x, -1 * (x ** 2))											=> Plot another line (in the other direction)
@@ -2043,7 +2044,7 @@ plt.savefig("example.png",bbox_inches="tight")                      => Save diag
 
 
 
-####### MODULE - SELENIUM
+###### MODULE - SELENIUM - browser automatization
 => chromedriver.exe in Ordner von py-file speichern
 https://selenium-python.readthedocs.io/locating-elements.html	  => Different methods for locating elements	
 from selenium import webdriver                                    => Import WebDriver für Zugriff auf URL
@@ -2051,7 +2052,7 @@ import time                                                       => Import Time
 from selenium.webdriver.common.keys import Keys                   => Import Keys to send Key-strokes
 driver = webdriver.Chrome(os.getcwd() + '/chromedriver')          => Driver für Chrome definieren - mit akt. Ordner os.getcwd
 driver.get("url")                                                 => Zugriff auf die URL
-driver.find_element_by_xpath('//*[@id="button"]/input').click()   => KLick auf ein ELement (Copy ) - mit Untersuchen - Copy XPath
+driver.find_element_by_xpath('//*[@id="button"]/input').click()   => Click auf ein ELement (Copy ) - mit Untersuchen - Copy XPath
 time.sleep(1)                                                     => Manchmal notwendig um Verarbeitung abzuwarten
 driver.find_element_by_xpath('//*[@id="name"]').send_keys("x"])   => Feld Name wird mit Inhalt x befüllt
 driver.find_element_by_name("q").send_keys("txt")         		  => Text wird in Feld eingetragen
@@ -2127,8 +2128,7 @@ except:
 
 
 
-####### MODULE - BEAUTIFUL SOAP
-=> see also details in BEAUTIFUL SOAP.ipynb
+###### MODULE - BEAUTIFUL SOAP - webscraping
 from bs4 import BeautifulSoap									=> Import module for beautiul soap
 from fake_useragent import UserAgent							=> Import moduel for fake useragent
 ua = UserAgent()												=> Define UserAgent
@@ -2195,8 +2195,7 @@ driver.find_element_by_css_selector('p.content')						# Search for tag and selec
 
 
 
-###### MODULE - REQUESTS (workings with APIs)
-=> working with APIs
+###### MODULE - REQUESTS - workings with APIs
 import requests										=> import module requests
 import json                                         => import module json
 api_request = requests.get ("apilink.html")			=> Request api from the generated api-link
@@ -2205,7 +2204,7 @@ result = api[0]["xyz"]								=> Read the value for the 1 element and the attrib
 
 
 
-###### MODULE - PYQT
+###### MODULE - PYQT - making GUIs
 pip install pyqt5                                      => Installation
 from PyQt5.QtWidgets import QApplication               => Defines Application
 from PyQt5.QtWidgets import QLabel                     => Defines Label
@@ -2248,7 +2247,7 @@ class Window(QMainWindow):                             => Defines a class Window
 
 
 
-###### MODULE - TKinter
+###### MODULE - TKinter - making GUIs
 https://www.youtube.com/watch?v=YXPyB4XeYLA					=> Tutorial with deep explanation
 from tkinter import *										=> Import tkinter module
 root = Tk()													=> Create root window
@@ -2278,66 +2277,88 @@ root.mainloop()												=> Mainloop of the program
 ...command=wind.destroy										=> Close window "wind"
 
 => Pics in Tkinter-Windows
-from PIL import ImageTk,Image								=> Additional module Pillow neede (install with <pip install Pillow>
-my_img = ImageTk.PhotoImage(Image.open("demo.png"))			=> Reads Image wiht Pillow-module (Tkinter can not read png/jpg files)
-my_label = Label(image=my_img)								=> Creating a Label with the image
-my_label.pack()												=> Showing the pic
+""
+from PIL import ImageTk,Image								# Additional module Pillow neede (install with <pip install Pillow>
+my_img = ImageTk.PhotoImage(Image.open("demo.png"))			# Reads Image wiht Pillow-module (Tkinter can not read png/jpg files)
+my_label = Label(image=my_img)								# Creating a Label with the image
+my_label.pack()												# Showing the pic
+""
 
 => Define Frame
-frame = LabelFrame(root,text="Name_Frame",padx=5,padx=5)	=> Creating a frame with padding 5/5 (inside the frame)
-frame.pack(padx=10,pady=10)									=> Showing the frame with padding 10/10 (outside the frame)	
-button = Button(frame,text="Name_Button")					=> Creating button in the frame (not root window)
-button.grid(row=0, column=0)								=> Showing the button in the frame as grid (with frames is mixing between pack and grid possible)
+""
+frame = LabelFrame(root,text="Name_Frame",padx=5,padx=5)	# Creating a frame with padding 5/5 (inside the frame)
+frame.pack(padx=10,pady=10)									# Showing the frame with padding 10/10 (outside the frame)	
+button = Button(frame,text="Name_Button")					# Creating button in the frame (not root window)
+button.grid(row=0, column=0)								# Showing the button in the frame as grid (with frames is mixing between pack and grid possible)
+""
 
 => RadioButtons
-r = IntVar()												=> Define variable for radio button - when string use StringVar()
-r.set("2")													=> Choose default radio button	
-Radiobutton(root,text="Opt1",variable=r,value=1).pack()		=> Define and show radiobutton 1
-Radiobutton(root,text="Opt2",variable=r,value=2).pack()		=> Define and show radiobutton 2
-r.get()														=> Get value from choosen radio button
+""
+r = IntVar()												# Define variable for radio button - when string use StringVar()
+r.set("2")													# Choose default radio button	
+Radiobutton(root,text="Opt1",variable=r,value=1).pack()		# Define and show radiobutton 1
+Radiobutton(root,text="Opt2",variable=r,value=2).pack()		# Define and show radiobutton 2
+r.get()														# Get value from choosen radio button
+""
 
 => MessageBox
-messagebox.showinfo("Title of PopUp", "Hello World!")		=> Show Messagebox
+""
+messagebox.showinfo("Title of PopUp", "Hello World!")		# Show Messagebox
 different boxes available: showinfo, showwarning, showerror, askquestion, askokcancel, askyesno
-response = messagebox.askquestion ("Bla", "BlaBla!")		=> Show AskQuestion Box and store response
-if response == 1: Label(root, text= "YES").pack()			=> Check about response of user in message box
+response = messagebox.askquestion ("Bla", "BlaBla!")		# Show AskQuestion Box and store response
+""
+
+=> Check about response of user in message box
+""
+if response == 1: Label(root, text= "YES").pack()			
 elif response == 0: Label(root, text= "NO").pack()
+""
 
 => More Windows
-def open()													=> Function for opening the 2nd window
-	global my_img											=> Global definition necessary - otherwise no pic would be drawn
-	sec = TopLevel()										=> Define 2nd window
-	sec.title("2nd Window")									=> Title for 2nd window
-    img = ImageTk.PhotoImage(Image.open("demo.png"))		=> Define image
-    Label (top, image=img).pack()							=> Show image in 2nd window	
-btn=Button(root,text="Open 2nd Window",command=open).pack()	=> Button for opening 2nd window per click
+""
+def open()													# Function for opening the 2nd window
+	global my_img											# Global definition necessary - otherwise no pic would be drawn
+	sec = TopLevel()										# Define 2nd window
+	sec.title("2nd Window")									# Title for 2nd window
+    img = ImageTk.PhotoImage(Image.open("demo.png"))		# Define image
+    Label (top, image=img).pack()							# Show image in 2nd window	
+btn=Button(root,text="Open 2nd Window",command=open).pack()	# Button for opening 2nd window per click
+""
 
 => FileDialog
-root.filename = filedialog.askopenfilename(					=> Define filname dialog
-    initialdir="/Users/Bla/images",							=> Define initial dir for the file dialog				
-    title="Select file",									=> Title of the file dialog
-    filetypes=(("png files","*.png"),("all files","*.*")))	=> Define filetypes in dialog (first name, second which files, default first entry)
-my_label = Label(root, text=root.filename).pack()			=> After choosing a file - show the filename + filepath
+""
+root.filename = filedialog.askopenfilename(					# Define filname dialog
+    initialdir="/Users/Bla/images",							# Define initial dir for the file dialog				
+    title="Select file",									# Title of the file dialog
+    filetypes=(("png files","*.png"),("all files","*.*")))	# Define filetypes in dialog (first name, second which files, default first entry)
+my_label = Label(root, text=root.filename).pack()			# After choosing a file - show the filename + filepath
+""
 
 => Slider
-vertical = Scale(root,from_=0,to=200)						=> Define vertical slider
-vertical.pack()												=> Showing vertical slider
-horizontal = Scale(root,from_=0,to=200,orient=HORIZONTAL)	=> Define horizontal slider
-horizontal.pack()											=> Showing horizontal slider
+""
+vertical = Scale(root,from_=0,to=200)						# Define vertical slider
+vertical.pack()												# Showing vertical slider
+horizontal = Scale(root,from_=0,to=200,orient=HORIZONTAL)	# Define horizontal slider
+horizontal.pack()											# Showing horizontal slider
+""
 
 => Checkboxes
-Checkbutton(root,text="Check1",variable=var).pack(			=> Define and Show a checkbox
-c.select() or c.deselect()									=> Select or Deselect per default the checkbox
+""
+Checkbutton(root,text="Check1",variable=var).pack(			# Define and Show a checkbox
+c.select() or c.deselect()									# Select or Deselect per default the checkbox
+""
 
 => DropDown
-options=["Mo","Tu","We","Th","Fr"]							=> Define options for dropdown menue
-var = StringVar()											=> Define variable for dropdown menue
-var.set("Mo")												=> Set default for dropdown menue
-OptionMenu(root,var,*options).pack							=> Define dropdown menue
+""
+options=["Mo","Tu","We","Th","Fr"]							# Define options for dropdown menue
+var = StringVar()											# Define variable for dropdown menue
+var.set("Mo")												# Set default for dropdown menue
+OptionMenu(root,var,*options).pack							# Define dropdown menue
+""
 
 
 
-###### MODULE - PYGAME
+###### MODULE - PYGAME - making games
 http://pygame.org/docs/                                  => Pygame documentation
 import pygame as pg                                      => Import of the pygame module
 pg.init()                                                => Initialize and setup screen
@@ -2395,30 +2416,29 @@ screen.blit(msg_img, msg_img_rect)                       => Display the position
 
 
 
-###### MODULE - PYTHONCOM
+###### MODULE - PYTHONCOM - make new formula in excel with python-function
 => https://www.youtube.com/watch?v=cYwn8Pu5eRg&feature=emb_logo
-import pythoncom								# Import necessary modules
-import win32com.client                          # Import client 
-import win32com.server.register                 # Import server
-class PythonObjectLibrary:						# Put everything in a class
-_reg_clsid_ = pythoncom.CreateGuid()            # UniqueID for our object to register it with Windows
-_reg_clsctx = pythoncom.CLSCTX_LOCAL_SERVER     # Register the object as an EXE
-_reg_clsctx = pythoncom.IMPROC_SERVER         	# Register the object as a DLL
-_reg_progid_ = "Python.ObjectLibrary"           # Name of the project library
-_reg_desc_ = "This is our Python Obj Library"   # Optional / Description of the library
-_public_methods_ = ["f1","f2,"f3"]				# Name the functions - this sees the user in excel
-def f1(self, x, y):								# Define the function in the class
-	return x + y								# Return the result of the function (to excel later)
-def f2(self, myRange):							# Another function - this time wie a range (more cells in excel)	
-	rng1 = win32com.client.Dispatch(myRange)	# Create an instance of the range object passed trough
-	rng1val = np.array(list(rng1.Value))		# Change the object to an numpy-array (or an list)
-	return rng1val.sum()						# Return the sum of the range (to excel later)
-if __name__ == "__main__":						# Part of the code in the main-section
-win32com.server.register.UseCommandLine(PythonObjectLibrary)
-	# Register the library
-When the program is started => the Library is registered in Windows
+import pythoncom								=> Import necessary modules
+import win32com.client                          => Import client 
+import win32com.server.register                 => Import server
+class PythonObjectLibrary:						=> Put everything in a class
+_reg_clsid_ = pythoncom.CreateGuid()            => UniqueID for our object to register it with Windows
+_reg_clsctx = pythoncom.CLSCTX_LOCAL_SERVER     => Register the object as an EXE
+_reg_clsctx = pythoncom.IMPROC_SERVER         	=> Register the object as a DLL
+_reg_progid_ = "Python.ObjectLibrary"           => Name of the project library
+_reg_desc_ = "This is our Python Obj Library"   => Optional / Description of the library
+_public_methods_ = ["f1","f2,"f3"]				=> Name the functions - this sees the user in excel
+def f1(self, x, y):								=> Define the function in the class
+	return x + y								=> Return the result of the function (to excel later)
+def f2(self, myRange):							=> Another function - this time wie a range (more cells in excel)	
+	rng1 = win32com.client.Dispatch(myRange)	=> Create an instance of the range object passed trough
+	rng1val = np.array(list(rng1.Value))		=> Change the object to an numpy-array (or an list)
+	return rng1val.sum()						=> Return the sum of the range (to excel later)
+if __name__ == "__main__":						=> Part of the code in the main-section
+win32com.server.register.UseCommandLine(PythonObjectLibrary)  => Register the library (when the program is started => the Library is registered in Windows)
 
-# Part in Excel
+=> Part in Excel
+""
 (in the Visual Basic Editor under Development Tools)
 # Definition of the f1-function - now the user can use the function "f1" in excel
 Function f1(x As Long, y As Long)
@@ -2428,79 +2448,85 @@ End Function
 Function f2(x As Range)
     f2 = VBA.CreateObject("Python.ObjectLibrary").f2(x)
 End Function
-----------
+""
 
 
 
-###### MODULE - FLASK, ZAPPA, AWS
-# https://nordicapis.com/how-to-create-an-api-from-a-dataset-using-python-and-flask/
-	=> create basic api in flask
-# https://pythonforundergradengineers.com/deploy-serverless-web-app-aws-lambda-zappa.html#what-is-zappa
-	=> create basic api in flask, deploy to AWS with zappa and setup on Rapidapi
-# https://towardsdatascience.com/develop-and-sell-a-python-api-from-start-to-end-tutorial-9a038e433966
-	=> create basic api in flask, deploy to AWS with zappa and 
+###### MODULE - FLASK, ZAPPA, AWS - making an API
+https://nordicapis.com/how-to-create-an-api-from-a-dataset-using-python-and-flask/  => create basic api in flask
+https://pythonforundergradengineers.com/deploy-serverless-web-app-aws-lambda-zappa.html#what-is-zappa => create basic api in flask, deploy to AWS with zappa and setup on Rapidapi
+https://towardsdatascience.com/develop-and-sell-a-python-api-from-start-to-end-tutorial-9a038e433966  => create basic api in flask, deploy to AWS with zappa and 
 
-import flask												# Import the module
-app = flask.Flask(__name__)									# Creates a Flask application
-app.config["DEBUG"] = True									# Runs the program in debug mode (no reset necessary when changing a line of code)
-@app.route('/', methods=['GET'])							# "/" indicates where the result in the url will output - GET will read data (POST for writing data)
-app.run()													# Runs the application
+import flask												=> Import the module
+app = flask.Flask(__name__)									=> Creates a Flask application
+app.config["DEBUG"] = True									=> Runs the program in debug mode (no reset necessary when changing a line of code)
+@app.route('/', methods=['GET'])							=> "/" indicates where the result in the url will output - GET will read data (POST for writing data)
+app.run()													=> Runs the application
 
-# Outputs a List with a dict to the server / url
+=> Outputs a List with a dict to the server / url
+""
 @app.route('/api/v1/resources/books/all', methods=['GET'])	# Data will available at: http://127.0.0.1:5000/api/v1/resources/books/all
 def api_all():
-    return jsonify(books)									# Converts and returns the list in JSON-Flask-format
+    return jsonify(books)	    # Converts and returns the list in JSON-Flask-format
 app.run()
-=> results are available under http://127.0.0.1:5000/api/v1/resources/books/all 
+# results are available under http://127.0.0.1:5000/api/v1/resources/books/all 
+""
 
-# Filtering data
+=> Filtering data
+""
 @app.route('/api/v1/resources/books', methods=['GET'])
 def api_id():            
-    if 'id' in request.args:								# Check if an ID was provided as part of the URL
-        id = int(request.args['id'])						# If ID is provided, assign it to a variable
-    else: return "Error: No id field provided"				# If no ID is provided, display an error in the browser.        
-    for book in books:										# Loop through the data and match results that fit the requested ID
+    if 'id' in request.args:					# Check if an ID was provided as part of the URL
+        id = int(request.args['id'])			# If ID is provided, assign it to a variable
+    else: return "Error: No id field provided"	# If no ID is provided, display an error in the browser.        
+    for book in books:							# Loop through the data and match results that fit the requested ID
         if book['id'] == id: results.append(book)
-    return jsonify(results)									# Use the jsonify function from Flask to convert our list of - Python dictionaries to the JSON format
+    return jsonify(results)						# Use the jsonify function from Flask to convert our list of - Python dictionaries to the JSON format
 app.run()
-=> results are available under http://127.0.0.1:5000/api/v1/resources/books?id=1
+# results are available under http://127.0.0.1:5000/api/v1/resources/books?id=1
+""
 
-# Check if API is called from the right access-place (like rapidapi.com)
+=> Check if API is called from the right access-place (like rapidapi.com)
+""
 (key is provided from the platform - eg. here from rapidapi.com)
     if "e6e45ed0-55e5-11eb-963e-ffe9fcdce080" not in request.headers:
         return "Error: Wrong API-Call - use www.rapidapi.com for calling the API!"
+""
 
-# Using zappa and deploying to AWS
-# zappa is only working in a virtual environment	
-pip install zappa											# Install module
-create file credentials in "%UserProfile%\.aws				# Create file and insert the credentials from AWS (creation see second link above)
+=> Using zappa and deploying to AWS (zappa is only working in a virtual environment)
+""
+pip install zappa											=> Install module
+=> Create file and insert the credentials from AWS (creation see second link above)
+create file credentials in "%UserProfile%\.aws				
 	[default]
 	aws_access_key_id = XXXXXXXXXXXXXXXXXXXXXXXXXX
 	aws_secret_access_key = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-virtualenv xyz												# Create an virtual environment
-xyz\Scripts\activate										# Activate virtual environment
+virtualenv xyz									# Create an virtual environment
+xyz\Scripts\activate							# Activate virtual environment
 go back to folder xyz and install all necessary modules with pip install
-pip list													# Check if everything is installed in the folder
+pip list										# Check if everything is installed in the folder
 zappa init (when virutal environement is activated!)		# Create zappa_settings.json File (press return at any prompt)
     "dev": {
-		"app_function": "app.app",							# Name of the py-file
-		"aws_region": "eu-central-1",						# Nearest aws-region
-        "profile_name": "default",							# Same as in aws-credentials at "%UserProfile%/.aws/credentials
+		"app_function": "app.app",				# Name of the py-file
+		"aws_region": "eu-central-1",			# Nearest aws-region
+        "profile_name": "default",				# Same as in aws-credentials at "%UserProfile%/.aws/credentials
         "project_name": "apicheck",
-        "runtime": "python3.7",								# Automatic generated
-        "s3_bucket": "zappa-gsoln7zyl"						# Automatic generated
+        "runtime": "python3.7",					# Automatic generated
+        "s3_bucket": "zappa-gsoln7zyl"			# Automatic generated
     }
-pip freeze > requirements.txt								# Create requirements.txt for all installed modules in the virtual environment
+pip freeze > requirements.txt					# Create requirements.txt for all installed modules in the virtual environment
 zappa deploy dev (when virutal environement is activated!)	# Deploy everything to AWS (when ended with link everything worked fine) (otherwise 502 error - often a module is missing)
 	eg. https://xnujiyxsb1.execute-api.eu-central-1.amazonaws.com/dev/api/v1/incstat?ticker=FB
 		https://xnujiyxsb1.execute-api.eu-central-1.amazonaws.com/dev/api/v1/summary?ticker=CAT
 		https://xnujiyxsb1.execute-api.eu-central-1.amazonaws.com/dev/api/v1/profile?ticker=FB
 zappa update dev (when virutal environement is activated!)	# Update deployment on AWS (when something changed in the pyhton-program)
-zappa undeploy dev											# Undeploy everything on AWS
-zappa status												# Show actual status
-zappa tail													# Show actual loggin (in error cases)
+zappa undeploy dev								# Undeploy everything on AWS
+zappa status									# Show actual status
+zappa tail										# Show actual loggin (in error cases)
+""
 
-# AWS part
+=> AWS part
+""
 see the APIs under AWS Api Geteway => region on the upper right site has to be the same as in the zappa_settings.json file#
 check API-access
 	select API (under API Gateway and APIs)
@@ -2509,46 +2535,49 @@ check API-access
 	select Method Get
 	input path example under {proxy} eg. api/v1/incstat?ticker=FB
 	click Test Button (at the bottom)
-----------	
+""
 
 
 
-----------
-###### MODULE - ICECRAM
-from icecream import ic										# Imort icecream
-ic(var1)													# Show value of the variable in the form: ic| var1: 20
-ic()														# Show when command is reached: ic| icecream_example.py:5 in func() at 01:44:20.394 (line / file / time)
-ic.configureOutput(includeContext=True)						# Set Context Output => also shows line / file / time
-----------
+###### MODULE - ICECREAM - print for debugging
+from icecream import ic										=> Imort icecream
+ic(var1)													=> Show value of the variable in the form: ic| var1: 20
+ic()														=> Show when command is reached: ic| icecream_example.py:5 in func() at 01:44:20.394 (line / file / time)
+ic.configureOutput(includeContext=True)						=> Set Context Output => also shows line / file / time
 
 
 
-----------
-####### PYINSTALLER
-pip install pyinstaller                                       # Installation
-pyinstaller prg.py                                            # Generate the bundle in a subdirectory called dist.
-pyinstaller --onefile prg.py                                  # Generate only one file
---icon=app.ico                                                # Generate file with icon
---hidden-import=pkg_resources.py2_warn                        # Generating under mac os sometimes only work with this params
---hidden-import=pkg_resources.py2_warn                        # Generating under mac os sometimes only work with this params
---hidden-import=pymssql										  # When some modules are making problems - sometimes this helps
---exclude-module matplotlib                                   # when there is a depreciating warning from matlib        
-prg.exe                                                       # Open this file to start the python-program
+###### PYINSTALLER - generate python programs to executables
+pip install pyinstaller                                       => Installation
+pyinstaller prg.py                                            => Generate the bundle in a subdirectory called dist.
+pyinstaller --onefile prg.py                                  => Generate only one file
+--icon=app.ico                                                => Generate file with icon
+--hidden-import=pkg_resources.py2_warn                        => Generating under mac os sometimes only work with this params
+--hidden-import=pkg_resources.py2_warn                        => Generating under mac os sometimes only work with this params
+--hidden-import=pymssql										  => When some modules are making problems - sometimes this helps
+--exclude-module matplotlib                                   => when there is a depreciating warning from matlib        
+prg.exe                                                       => Open this file to start the python-program
 
-### Problems with some added python modules (eg. pycountry)
+=> Problems with some added python modules (eg. pycountry)
+""
 https://groups.google.com/g/pyinstaller/c/OYhJdeZ9010/m/32g3-T8XBAAJ
 Create hook-file hook-pycountry.py with content:
 	from PyInstaller.utils.hooks import copy_metadata, collect_data_files
 	datas = copy_metadata("pycountry") + collect_data_files("pycountry")
 Compile Program with
 	pyinstaller --onefile --exclude-module matplotlib --additional-hooks-dir=. TestPyCountry.py
+""
 
-### Problems with path when executing from py and exe   
+=> Problems with path when executing from py and exe   
+""
 config_name = 'creds.json'                                    # Define the config file name
-### determine if application is a script file or frozen exe
+""
+
+=> determine if application is a script file or frozen exe
+""
 if getattr(sys, 'frozen', False):                             # Get path when starting as executable
     application_path = os.path.dirname(sys.executable)
 elif __file__:                                                # Get path when running from IDE as py-file
     application_path = os.path.dirname(__file__)
 config_path = os.path.join(application_path, config_name)     # Final Config Path   
-----------
+""

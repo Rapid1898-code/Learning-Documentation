@@ -112,7 +112,7 @@ font-style: italic;
 ```
 Defines line-height as 1.5 of the normal height
 ```markdown
-line-height: 1.5,;
+line-height: 1.5;
 ```
 Define text decoration a red underline
 ```markdown
@@ -481,13 +481,16 @@ transition: 1.5s ease;						# make smooth transisition (with ease => slow - than
 https://fonts.google.com/
 <br>taken from google fonts for example (take fonts and then create link in upper right corner for the link
 ```markdown
-<head>                                          # define in html in the header
+<head>                     # define in html in the header
     <link href="https://fonts.googleapis.com/css2?familiy=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylessheet">
 </head>
+```
+
+<br>Helvetica and sans-serif are the fallback fonts when Source Sans Pro is not loading
+```markdown
 p {
-p {
-    font-family: "Source Sans Pro", "Helvetica", sans-serif;    # Helvetica and sans-serif are the fallback fonts when Source Sans Pro is not loading
-	font-weight: 700;											# how thick / bold the font is
+    font-family: "Source Sans Pro", "Helvetica", sans-serif;
+	font-weight: 700;				# how thick / bold the font is
 }
 ```
 
@@ -497,16 +500,19 @@ p {
 [jump to top...](#css)<br><br>
 Using icons directly from https://fontawesome.com/
 ```markdown
-<head>
-	<script src="https://kit.fontawesome.com/bf5e040b82.js" crossorigin="anonymous"></script>   # Definition in the head
+<head>      # Definition in the head
+	<script src="https://kit.fontawesome.com/bf5e040b82.js"
+        crossorigin="anonymous"></script>
 </head>
-<i class="fas fa-search">						# use icon in css (change size, color)
+<i class="fas fa-search">		# use icon in css (change size, color)
 ```
 
 <br>Using svg-files
 ```markdown
 put full svg-code (source) of the svg in a svg-tag
-		like: <svg enable-background="new 0 0 515.91 728.5" height="512" id="Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg"...</svg>
+		like: <svg enable-background="new 0 0 515.91 728.5"
+            height="512" id="Layer_1" version="1.1"
+            xmlns="http://www.w3.org/2000/svg"...</svg>
 		change all fill="#123456" entries to fill=currentColor
 put a div-wrapper around the svg-element (and probably a a-tag for a link around the wrapper too)
 		like: <div class="wrapperSVG"> ... </div>

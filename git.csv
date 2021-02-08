@@ -1,18 +1,20 @@
 Installation (linux);sudo apt-get install git;git
+Config name for the repository (onetime setting);"git config --global user.name ""Rapid1898""";git
+Config mail for the repository (onetime setting - use the mail using for github.com);"git config --global user.email ""x@gmx.com""";git
 Create repository in the actual directory;git init;git
-Config name for the repository;"git config --global user.name ""Rapid1898""";git
-Config mail for the repository;"git config --global user.email ""x@gmx.com""";git
-Add file to the repository (prepared for later commit);git add file.xyz;git
-Remove file from the repository (not planned for later commit);git rm --cached file.xyz;git
-Add alle html-files to the repo;git add *.html;git
-Add everything to the repository from the directory;git add .;git
-2nd way to add everything to the repository from the directory;git add *;git
+Add file to the repository / staging area (prepared for later commit);git add file.xyz;git
+Add all html-files to the repo / staging area;git add *.html;git
+Add everything to the repository / staging area from the directory;git add .;git
+2nd way to add everything to the repository / staging area from the directory;git add *;git
+Add readme-file;git add README.md;git
+remove specific file from the repository / staging area (before commiting!);git rm --cached index.html;git
 Actual status in the git-directoy (eg. added files, changed files, not added,...);git status;git
-Commit files which are added / changed in the repo (with comment);"git commit -m ""comment""";git
+"Commit files which are added / changed in the repo (with comment) - taking a ""snapshot""";"git commit -m ""comment""";git
 Show overview about the last activities;git log;git
 Clone a repository in the actual path;git clone github-link;git
 Link the acutal folder/repo to the github-repo;git remote add origin https://github.com/link/Test.git;git
-Push (update) files on GitHub;git push -u origin master;git
+Push with upstream definition (shorthand - to the master);git push -u origin master;git
+"Push with upstream definition (longhand - to the branch ""answer"")";git push --set -upstream origin answer;git
 Pull (update) files from GitHub;git pull -u origin master;git
 all files in this folder will be ignored;add folder: /prg/dist/*;git
 this specific file will be ignored;add file: /prg.xlsx;git
@@ -20,7 +22,20 @@ this specific file will be ignored;add file: /prg.xlsx;git
 "Change to branch ""newFeature"" (from the master-branch)";git checkout newFeature;git
 Return to the master-branch;git checkout master;git
 Delete branch;git branch -d newFeature;git
+"Change name of the branch - eg. for renaming branch ""master"" to ""main""";git branch -m main;git
 "Create a new branch named ""new""";git checkout -b new;git
 Show the difference in the files;git diff head;git
 Show only the differences for the files which are not commited yet;git diff --staged;git
 Merge the branch with the master;git merge newFeature;git
+fork the initial repository on github (select personal account as target);click fork-button in github;git
+get the forked repository clone;click code-button to grab link;git
+clone the repository to the local folder;git clone github-link;git
+"create branch ""answer""";git branch answer;git
+"set current branch to ""answer""";git checkout answer;git
+see which branch is curently active (eg. main or answer);git status;git
+add all files to the stage (all in the current folder);git add .;git
+shows the actual files on the stage;git status;git
+"commit files from stage (""take snapshot"")";"git commit -m ""Completed""";git
+"push with upstream definition (to the branch ""answer"")";git push --set-upstream origin answer;git
+"change from main to the branch ""answer""";select branch on git hub with button;git
+make an pull request to the original repository;click pull request button;git

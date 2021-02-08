@@ -170,6 +170,10 @@ Bold some text - but only for accessibility reason (not styling!)
 ```markdown
 <strong> Strong Importance </strong>
 ```
+Insert / embedd video with iframe
+```markdown
+<iframe src="" frameborder="0"></iframe>
+```
 
 <br>Insert video
 ```markdown
@@ -179,6 +183,7 @@ Bold some text - but only for accessibility reason (not styling!)
   Your browser does not support HTML video.
 </video>
 ```
+
 
 <br>Unordered List with anchor links
 ```markdown

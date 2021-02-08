@@ -22,7 +22,7 @@ Font bold;"font_weight: bold;";css
 Define when a font is downloaded from eg. google fonts;"font_weight: 700;";css
 Define font size with 25 pixel;"font-size: 25px;";css
 Font italic / cursive;"font-style: italic;";css
-Defines line-height as 1.5 of the normal height;"line-height: 1.5,;";css
+Defines line-height as 1.5 of the normal height;"line-height: 1.5;";css
 Define text decoration a red underline;"text-decoration: underline red;";css
 Define text with line-through;"text-decoration: line-through;";css
 Center text / or list-entries in ul;"text-align: center;";css
@@ -141,20 +141,22 @@ make a obliquely line;".element::before					# define area before the element
 .element::after						# define area after the element
 	height: 100px;					# define heigth for the element
 	transform (skeyY(-3deg);		# make it oblique before / after the element";css
-taken from google fonts for example (take fonts and then create link in upper right corner for the link;"<head>                                          # define in html in the header
+taken from google fonts for example (take fonts and then create link in upper right corner for the link;"<head>                     # define in html in the header
     <link href=""https://fonts.googleapis.com/css2?familiy=Source+Sans+Pro:wght@300;400;700&display=swap"" rel=""stylessheet"">
-</head>
-p {
-p {
-    font-family: ""Source Sans Pro"", ""Helvetica"", sans-serif;    # Helvetica and sans-serif are the fallback fonts when Source Sans Pro is not loading
-	font-weight: 700;											# how thick / bold the font is
+</head>";css
+Helvetica and sans-serif are the fallback fonts when Source Sans Pro is not loading;"p {
+    font-family: ""Source Sans Pro"", ""Helvetica"", sans-serif;
+	font-weight: 700;				# how thick / bold the font is
 }";css
-Using icons directly from https://fontawesome.com/;"<head>
-	<script src=""https://kit.fontawesome.com/bf5e040b82.js"" crossorigin=""anonymous""></script>   # Definition in the head
+Using icons directly from https://fontawesome.com/;"<head>      # Definition in the head
+	<script src=""https://kit.fontawesome.com/bf5e040b82.js""
+        crossorigin=""anonymous""></script>
 </head>
-<i class=""fas fa-search"">						# use icon in css (change size, color)";css
+<i class=""fas fa-search"">		# use icon in css (change size, color)";css
 Using svg-files;"put full svg-code (source) of the svg in a svg-tag
-		like: <svg enable-background=""new 0 0 515.91 728.5"" height=""512"" id=""Layer_1"" version=""1.1"" xmlns=""http://www.w3.org/2000/svg""...</svg>
+		like: <svg enable-background=""new 0 0 515.91 728.5""
+            height=""512"" id=""Layer_1"" version=""1.1""
+            xmlns=""http://www.w3.org/2000/svg""...</svg>
 		change all fill=""#123456"" entries to fill=currentColor
 put a div-wrapper around the svg-element (and probably a a-tag for a link around the wrapper too)
 		like: <div class=""wrapperSVG""> ... </div>

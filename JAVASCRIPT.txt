@@ -480,7 +480,7 @@ fetch(url)
     });
 ""
 
-=> sometimes the URL also hase a search query parameter<br>
+=> sometimes the URL also has a search query parameter<br>
 eg. <a href="https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita" style="font-style: italic">https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita</a><br>
 "s" is the parameter and "margarita" the serach string<br>
 eg. <a href="https:/api.nasa.gov/planetary/apod?api_key=DemoKey&date=2020-10-10" style="font-style: italic">https:/api.nasa.gov/planetary/apod?api_key=DemoKey&date=2020-10-10</a><br>

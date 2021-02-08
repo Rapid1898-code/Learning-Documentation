@@ -14,6 +14,7 @@
 #### JQUERY [jump to...](#jquery)
 #### DATE [jump to...](#date)
 #### MATH [jump to...](#math)
+#### LOCAL STORAGE [jump to...](#local-storage)
 
 
 ---
@@ -187,11 +188,11 @@ s.length
 ```
 Lowercase the whole string
 ```markdown
-s.toLowerCase()
+s = s.toLowerCase()
 ```
 Uppercase the whole string
 ```markdown
-s.toUpperCase()
+s = s.toUpperCase()
 ```
 Returns the second char of a string
 ```markdown
@@ -418,6 +419,16 @@ arr.forEach(function(elem,idx) {
 })
 ```
 
+<br>Iterate trough an array with 1sec pause at every element
+```markdown
+names.forEach((name, i) => {
+  setTimeout(() => {
+    display(name);
+  }, i * 1000);
+});
+```
+
+
 Maps a functionality to all elements of the array - every element multiplicated by 2
 ```markdown
 newarr = arr.map(x => x * 2);
@@ -495,7 +506,7 @@ if !(a > 13)
 Switch Expression
 ```markdown
 switch (expression) {           // Switch expression for multiple options
-case value1:                    // Do something when expression is value1
+case value1: case value 4       // Do something when expression is value1 or value4
     // Do something
     break;                      // Break necessary for any case / value
 case value2:                    // Do something when expression is value2
@@ -518,6 +529,15 @@ for (let i=3; i>=0; i--) {}
 Iterate through an array
 ```markdown
 for (let i=0; i<arr.length; i++) {}
+```
+
+<br>For loop with pause at any iteration
+```markdown
+for (let i = 0; i < 5; i++) {
+  setTimeout(() => {                            // Pause at any iteration for 5 seconds / 5000 ms
+    console.log("hey");
+  }, i * 5000);
+}
 ```
 
 <br>While loop with break condition
@@ -707,7 +727,7 @@ function MakeCar (carMake,carModel,carColor){       // Define the constructor fu
     this.carModel = carModel                        // "this" is referencing to the actual object
     this.carColor = carColor
     this.honk = function(){                         // Define a mtehod for the constructor
-        alert("BEEP ${this.carModel} BEEP")         // Alert something when the method is called (with prop this.carModel)
+        alert(`BEEP ${this.carModel} BEEP`)         // Alert something when the method is called (with prop this.carModel)
     }
 }
 let car1 = new MakeCar("Honda","Civic","black")     // Create a new car1 (with codeword "new")
@@ -823,6 +843,10 @@ Set the src of a image
 ```markdown
 .src
 ```
+Change class of the element to "MyClass"
+```markdown
+.className = "MyClass";
+```
 Manipulate classes informations
 ```markdown
 .classList
@@ -907,7 +931,7 @@ fetch(url)
     });
 ```
 
-<br>sometimes the URL also hase a search query parameter<br>
+<br>sometimes the URL also has a search query parameter<br>
 eg. <a href="https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita" style="font-style: italic">https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita</a><br>
 "s" is the parameter and "margarita" the serach string<br>
 eg. <a href="https:/api.nasa.gov/planetary/apod?api_key=DemoKey&date=2020-10-10" style="font-style: italic">https:/api.nasa.gov/planetary/apod?api_key=DemoKey&date=2020-10-10</a><br>
@@ -919,7 +943,6 @@ need to use browserify<br>
 <a href="http://browserify.org/#install" style="font-style: italic">http://browserify.org/#install</a><br>
 so the require can also run with html (otherwise it only works in the IDE)<br>
 parse the JSON-content to an object: let obj = JSON.parse(body)
-
 
 
 ---
@@ -1021,6 +1044,27 @@ Math.max(1,2,3)
 ```
 
 
+
+---
+## LOCAL STORAGE
+[jump to top...](#javascript)<br><br>
+Allows to store data across browser sessions<br>
+Set item to local storage (name is the key and Bob is the value)
+```markdown
+localStorage.setItem ("name","Bob")
+```
+Get item from local storage (name is the key)
+```markdown
+localStorage.getItem ("name")
+```
+Delete item from local storage (name is the key)
+```markdown
+localStorage.delItem ("name")
+```
+Delete the whole local storage
+```markdown
+localStorage.clear()
+```
 
 
 

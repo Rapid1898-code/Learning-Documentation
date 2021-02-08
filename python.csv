@@ -1,0 +1,1768 @@
+Import python module;import math;python
+Import specific function of a module;from math import ceil;python
+Import a module with abbreviation;import numpy as np;python
+When directly called - programm is running from here;if __name__ == '__main__':;python
+Check which python version is installed;python --version;python
+Use modules / functions from other folder;"import sys, os
+sys.path.append(os.path.join('C:/', 'Users\path_to_module'))	# Create Path to module
+import RapidTechTools as rtt        # Import Module RapidTechTools";python
+Install virtualenv;pip install virtualenv;python
+Global packages installed;pip list;python
+Shows where the python-file is (Windows);where python;python
+Shows where the python-file is (Linux);which python;python
+Create new virtual environment pj1_env;virtualenv env;python
+Activate environment;"venv\Scripts\activate
+    when activated: pip list    #  Now only shows the installed modules for the virtual environment
+    pip install package         #  Only installs in the activated virtual environment";python
+Extracts all the modules / dependencies to a txt-file;pip freeze --local > requirements.txt;python
+Go back to the global environment;deactivate;python
+Create new virtual env with specific python-version;virtualenv -p C:\..path to..\Python37\python.exe py37_env;python
+Activate new virtual env named py37_env;py37_env\Scripts\activate;python
+Shows the used python version in the virtual env;python --version;python
+Install all the packages from requirements.txt;pip install -r requirements.txt;python
+https://www.shortcutfoo.com/app/dojos/intellij-idea-win/cheatsheet;"Ctrl /					# Comment / Uncomment line (""/"" on numblock)
+Ctrl Alt F7				# Find usages
+Ctrl F 		   			# Find in File
+Ctrl R  	   			# Replace in File
+Ctrl Shift R			# Replace in Path (in all Files)
+F2						# Jump to the next error
+F3						# Find next
+Ctrl G					# Goto line
+Ctrl D					# Copy / Duplicate lines
+Alt Shift Down/Up		# Move line
+Ctrl E					# Recent opened files
+Ctrl TAB				# Switch windows in IDE
+Ctrl (Shift) W			# Select / deselect parts of the code step by step
+Alt Enter				# Suggestions for fix error, function informations
+Alt 1					# Open the project windows (on the left side)
+Alt F7					# Show usage of the variable, function, class
+Esc						# Focus back on the editor window
+Ctrl Shift -	   		# Collapse all functions
+Ctrl -					# Collapse block (""-"" on numblock)
+Ctrl +					# Expand block (""+"" on numblock)
+Ctrl A					# Select whole file
+Ctrl (Shift) Z			# Undo (backwards) / Redo (forwards)
+Ctrl Shift Left			# Select word to the beginning
+Ctrl Shift Right		# Select word to the end
+Ctrl Left				# Go one word left
+Ctrl Right				# Go one word right
+Ctrl Y                  # Delete current line
+Ctrl Del                # Delete to end of word
+Ctrl Backspace          # Delete to beginning of word
+lorem + TAB             # Create lorem text for html-code
+p>lorem + TAB           # Create lorem text inside <p>-tags";python
+https://www.makeuseof.com/tag/google-chrome-shortcuts-pdf/;"F5                  # Refresh site
+Ctrl Tab            # Go tab right
+Ctrl Shift Tab      # Go tab left
+Ctrl F5             # Clear Cache and reload page";python
+https://fossbytes.com/windows-keyboard-shortcuts-cheat-sheet-for-windows-10/;"Alt Tab         # Focus on other window
+Ctrl C          # Copy
+Ctrl X          # Cut
+Ctrl VALUES     # Paste";python
+Git Ignore Files/Folders:;"when doing a commit - right click + add to .gitignore		# file will be created when not exists
+individual file will be ignored
+to ignore a whole folder with all files in it - add /* to the folder => eg. /prg/dist/*";python
+Add directory to GitHub;"Select directory => <VCS> => <Import into Version Control> => <Create Git Repository>
+Commit the files / new directory
+<VCS> => <Import into Version Control> => <Share Project on GitHub>
+<VCS> => <Git> => <Push>";python
+Change name of repository on github.com;select repository => settings => rename;python
+Import module for math calculations;import math;python
+Import module for reading arguments from the command line;import sys;python
+Using some numpy functions;import statistics as stat;python
+Result without Decimals (=> 2);5 // 2;python
+Modulo / Rest of the division (=> 1);7 % 2;python
+Assigment of several varaibles;d,e,f = 4,5,6;python
+Change / swap 2 values;a,b = b,a;python
+Increase value by one;a += 1;python
+"For better readability - ""_"" are possible using long num-values (will be ignored)";i = 1_000_000;python
+Value is rounded to two decimal places => 77.23;round (77.2321, 2);python
+Conversion to String / Float / Int;"str(5), float(""5""), int(""5"")";python
+Outputs absolute value => 2;abs(-2);python
+Wait for pressing ENTER (or a keyboard stroke) to follow along;"input(""ENTER to continue"")";python
+Input age and change to int;"int(input(""Alter?""))";python
+Returns the type of a variable;type(var);python
+Shows all available methods and attributes for the object as list;dir(var);python
+Check if x has type format float;isinstance(x,float);python
+Check if x has type format string;isinstance(x,str);python
+Set var to max-value (float infinite);"x = float(""inf"")";python
+Calculates the sqrt of the value => i3;math.sqrt(9);python
+Check if a variable exists;"if ""myVar"" in locals():";python
+Check for argument which is given when starting the program;sys.argv[1:].upper();python
+"Print ""Text"" (with a linebreak \n at the end)";"print(""Text"")";python
+Print with end-statement (next print will be in the same line;"print(""Text"", end=""-"")";python
+Print linebreak \n;print();python
+python test.py arg1 arg2 arg3;example starting program;python
+Show the arguments from the command line when starting the program eg. ['test.py', 'arg1', 'arg2', 'arg3'];str(sys.argv);python
+Len of the arguments - eg. 4 (program test.py itself and 3 arguments following);len(sys.argv);python
+Find the minimum value => 3;min(3,5,7);python
+Find the maximum value => 7;max(3,5,7);python
+Find the mean value => 5 (with statistic-module - input must be given as list);stat.mean([3,5,7]);python
+Stop program at this point (helpful in test-situations);exit();python
+Import random module - fast, but not very secure;import random;python
+Random int number between 1 and 6 like a cube;random.randint(1,6);python
+Random float number between 1 and 3;random.uniform(1,3);python
+Random value between 0 and 1 in float format - eg. 0.16394553;random.random();python
+Random float in the range from 1 to 10;random.uniform(1,10);python
+Random value for standard deviation;random.normal(0,1);python
+Choose random entry from a list;random.choice(list);python
+Choose 3 random (unique) entries from the list;random.sample(list,3);python
+Choose 3 random entries from the list (possible to be the same);random.choices(list,k=3);python
+Shuffle the content of a list;random.shuffle(l);python
+Can reproduce the same results (unsecure);random.seed(1);python
+generate a random uppercase 6-char string;""""".join(random.choices(string.ascii_uppercase, k=6))";python
+Import secrets module - for security reasons (is slower);import secrets;python
+Random int in the range from 0-10 (10 excluded);secrets.randbelow(10);python
+Random int with 4 bits (highest possible value is 15 - 1111);secrets.randbits(4);python
+Random choice (which is not reproducable);secrets.choice(l);python
+Define string over more lines in editor with;"s = '''this \
+	and this'''";python
+first char of a string;c = s[0];python
+last char of a string;c = s[-1];python
+Insert variable in string oldest method (%s for string, %i for int, %f for float, %.2f for 2 decimals);"s = ""text %s bla"" % var";python
+Insert variable in string old method (:.2f for 2 decimals);"s = ""text {} bla"".format(var)";python
+Insert variable in string new method;"s = f""text {var} bla""";python
+Multiple use;"""{0} like, {0} especially {0} but {1}"".format(""Joe"", ""noodles"")";python
+Returns the index where the text is found;"s.find (""ist"")";python
+Counts the occurrence of a text;"s.count (""i"")";python
+"Return all findings of the search string (""/"") in the other string (txt)";[n for n in range(len(txt)) if txt.find('/', n) == n];python
+Returns all indexwa as a list (needs import re);[x.start() for x in re.finditer('ist', s)];python
+Lowercase the whole string;s = s.lower();python
+Capitalize the whole string;s = s.upper();python
+Capitalize the first char;s = s.capitalize();python
+Capitalize the first char of all words;s = s.title();python
+"Check if the string is starting with char ""H""";"s.startswith(""H"")";python
+"Check if the string is ending with char ""H""";"s.endswith(""H"")";python
+Split the words in a list;s.split();python
+"', 1)[0]								=> Split till the first occurence of ""=>""";s.split(';python
+Split sentences after line breaks;s.splitlines();python
+Delete all whitespaces at the beginning and the end;s = s.strip();python
+Replacement of two strings;"s = s.replace(""e"",""X"")";python
+TRUE if the whole string are digits;s.isdigit();python
+True if the whole string are no digits;s.isalpha();python
+TRUE if string2 is in strings1;s2 in s;python
+Change string to list with all single chars;l = list(s);python
+Convert char to ASCII value;ord(char);python
+Convert ASCII value to char (eg. 65=A, 97=a);chr(ascii);python
+Outputs hashvalue oif the string (needs import hashlib);hashlib.md5(s).encode('utf-8')).hexdigest();python
+Execute statement in a string => hello;"exec(print(""hello""))";python
+Gives the value of an expression => 4;"eval(""2+2"")";python
+Reverse a string;my_string[::-1];python
+Print string with special characters;repr(s);python
+import regex module;import re;python
+Information about regex handling;https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285;python
+"Find str with 4xdigits + ""-""char + 2xdigits";"pattern = re.compile(""^[0-9]{4}-[0-9]{2}$"")";python
+Check if pattern matches - <> None when matches;pattern.match(s);python
+"Find str with 4xdigits + ""-""char + 2xdigits";"pattern2 = re.compile(""[0-9]{4}-[0-9]{2}"")";python
+"Find str with 3 to 4 xdigits + ""-""char + 2xdigits";"pattern2 = re.compile(""[0-9]{3,4}-[0-9]{2}"")";python
+Check with fullmatch (^ and $ not necessary) - <> None when matches;pattern.fullmatch(s);python
+"Char ""."" has to cherck with ""\n"" (is a wildcard letter in regex)";"pattern3 = re.compile (""[0-9]{1}\.[0-9]{3}"")";python
+Replace all digits in string with blank;"re.sub(""\d"","""",s)";python
+"Insert blank before every capitalized word eg. ""CostOfRevenue"" => ""Cost Of Revenue""";"re.sub(r'([a-z](?=[A-Z])|[A-Z](?=[A-Z][a-z]))', r'\1 ', ""txt"")";python
+"Define pattern => as many digits (endless) + "" "" + one lowercase cahr + "":"" + as many digits (endless)";"pattern = ""([0-9]+) ([a-z]:([a-z]+)""";python
+"Check if elem fits the pattern => returns <re.Match object; span=(0, 19), match=""3 n: nnnlncrnnnnn"">";match = re.search(pattern, elem);python
+Assign the value of the first group => 3;value = match.group(1);python
+"Show the full string => ""3 n: nnnlncrnnnnn""";all = match.group(0);python
+Define empty list;l = [];python
+Define several empty lists (NOT use l1=l=l3=[] => this would be the SAME list);l1,l2,l3,l4 = ([] for i in range(4));python
+check for True if list has an element;if l;python
+check for False if list is empty (same would be if l == [];if not l;python
+Define list with content;l = [4,5,6];python
+Define list - content is list from 0 to 19;l = list(range(20));python
+Define list with 8 empyt strings;"l = ["""" for x in range(8)]";python
+Uppercase the whole list;l = [x.upper(for x in l)];python
+Define a nested list with 5x5;"l = [["""" for x in range(5)] for x in range(5)]";python
+Add both lists together (to a new list);l1 + l2;python
+Add 1 element to the list at the back;l.append(1);python
+Add several elements to the list at the back;l.extend([6,5,4]);python
+Insert an element at the index-position 3;"l.insert(3, ""xyz"")";python
+"Returns first index position of element ""xyz""";"l.index(""xzy"")";python
+Delete last element from list;l.pop();python
+Delete first element from list;l.pop(0);python
+Sort list ascending;l.sort();python
+Sort list descending;l.sort(reverse=True);python
+Sort list and store it in a different independent list;l_sort = sorted(l);python
+Sort list descending and store it in a different independent list;l_sort = sorted(l, reverse=True);python
+Check if a list is sorted (by ascending);if sorted(l) == l;python
+Check if a list is sorted by descending;if sorted(l, reverse=True) == l;python
+Sort list by len of elements;l.sort(key=len);python
+Define nested list;l = [[1,4,3], [2,2,4], [3,1,5]];python
+Sort the nested list for the 2nd element ascending;l.sort(key=lambda x: x[1]);python
+Sort the nested list for the 2nd element descending;l.sort(key=lambda x: x[1], reverse=True);python
+Reverse the complete list;l.reverse();python
+Reverse complete list and store it in different independent list;l_reverse = reversed(l);python
+Delete element at index position 2;del l[2];python
+Delete first element with this value from the list;"l.remove(""abc"")";python
+Delete complete content of the list (same as l = []);l.clear();python
+Find smallest element in the list;min(l);python
+Find greatest element in the list;max(l);python
+Find longest string in the list;max(mylist, key=len);python
+Find lenght of longest string in the list;len(max(mylist, key=len));python
+Sum of all elements in the list;sum(l);python
+Pair Sorting from 2 lists (1 with 1, 2 with 2, 3 mit 3, aso.);2xls_sum  = [sum(pair) for pair in zip(l1, l2)];python
+Count of elements in list;len(l);python
+"Count of occurence of the element ""a"" in the list";"l.count(""a"")";python
+No seperate copy of the list (updates in both lists);l2 = l1;python
+Separate individual copy of the list (no updates in both lists);l2 = l.copy();python
+Separate individual copy of the list - 2nd variant;l2 = l[:];python
+Separate individual copy of the list - 3rd variant;l2 = list(l);python
+First element;l[0];python
+Last element;l[-1];python
+Last 3 elements;l[-3:];python
+Elements from index position 2 to 3;l[2:4];python
+Elements from 0 to 1 (exclusive index position 2);l[:2];python
+Elements from index position 2 to the end of the list;l[2:];python
+Every second element [start:end:step];l[::2];python
+Check if element is in list;9 in l;python
+Check if any elements from the list are in the string;"if any(x in string for x in [""ab"",""cd"",""de""]):";python
+Check if all elements from the list are in the string;"if all(x in string for x in [""ab"",""cd"",""de""]):";python
+Check if all elements from the list are NOT in the string;"if all(x not in string for x in [""ab"",""cd""""]):";python
+Iterate through list content;for i in l:;python
+Iterate through list with index;for i in range(len(l)):;python
+Iterate through list with index and content;for idx, cont in enumerate(l):;python
+Iterate through 2 lists pair-wise (stops when the shorter list is reached);for x,y in zip(l1,l2):;python
+"Create string with elements joined together with "", "" eg. [""a"",""b"",""c""] => a, b, c";', '.join(l);python
+Define list;a = [1,2,3,4,5];python
+List is mapped with the lambda function => [2,4,6,8,10];list(map(lambda x: x*2, [1,2,3,4,5]));python
+Also possible with list comprehension => [2,4,6,8,10];c=[x*2 for x in [1,2,3,4,5]];python
+List is filtered with lambda for even numbers => [2,4];list(filter(lambda x: x%2==0, [1,2,3,4,5]));python
+Also possible with list comprehension => [2,4];c=[x for x in [1,2,3,4,5] if x%2==0];python
+Build paris as tuple => (1,4),(2,5),(3,6);zip([1,2,3],[4,5,6]);python
+Remove duplicates from a list;list(set(x));python
+Change elements in list to int;list(map(int,l));python
+rotate list for n places;"def rotate(l, n):
+    return l[-n:] + l[:-n]";python
+Iterate over 2 lists at the same time using zip;"animal = ['Cat', 'Dog', 'Fish', 'Goat']
+age = [1, 2, 2, 6]
+z = zip(animal, age)
+for animal, age in z: ...";python
+Create a tuple;t = (4,5,6);python
+Create a tuple from a list;t = tuple([3,4,4];python
+Selection / slicing of elements - same as with lists;t[];python
+Change tuple to list;l = list(t);python
+Change list to tuples;t = tuple(l);python
+Assigning vars to tuple-elements (a=0, b=1, c=2);a,b,c = (0,1,2);python
+Assigning to tuple-values (f=0, m=[1,2,3], l=4);f,*m,l = (0,1,2,3,4);python
+Define empty dict;d = {};python
+Define dict with content;"d = {""one"": 1, ""two"": 2, ""three"": 3}";python
+2nd way to defince a dict with content;d = dict(one=1,two=2,three=3);python
+Define dict with content (with dupels);"d = dict([(""one"",1),(""two"",2),(""three"",3)])";python
+Define dict with content (with pairs in nested list);"d = dict([[""one"",1],[""two"",2],[""three"",3]])";python
+Define dict with 2 different lists (1x keys and 1x values);"d = dict(zip([""one"",""two"",""three""], [1,2,3]))";python
+Access value with key element (error when the key is not in the dict);"d[""two""]";python
+BETTER: Acesss value with get for key element (no error when the key is not in the dict - returns second parameter instead);"d.get(""two"",""N/A"")";python
+Access value - same as get - but also initialize the key when it is not in the dict - with the second parameter);"d.setdefault(""two"",""N/A"")";python
+Find key for specific value (v) in dict;key = list(d.keys())[list(d.values()).index(v)];python
+Read keys from dict to list;list(d.keys());python
+Read values from dict to list;list(d.values());python
+Count of entries in dict;len(d);python
+Check if key is in dict (true / false);"""three"" in d";python
+"New entry for dict (key = ""four"", value = 4)";"d[""four""] = 4";python
+Delete specific key in dict;"del d[""one""]";python
+Rename dict-keyname;mydict[new_key] = mydict.pop(old_key);python
+Combine 2 dicts (if key is in both dicts - the second value will be taken);combined_dict = {**d1, **d2};python
+Check if key is in dict;"if ""xyz"" in d:";python
+Copying a dict (all changes will be made in BOTH dicts);d2 = d;python
+Copying a dict (dicts will be handled seperate);d2 = d.copy();python
+Copying a dict 2nd method (dicts will be handled seperate);d2 = dict(d);python
+Dict d get updated with d2 (all existing keys are overwritten - and new added);d.update(d2);python
+Iterate through dict keys;for key in d.keys():;python
+Iterate through sorted dict keys ascending;for key in sorted(d.keys()):;python
+Iterate through sorted dict keys descending;for key in sorted(d.keys(),reverse=True):;python
+Iterate through dict values;for val in d.values():;python
+Iterate through keys and values of the dict;for key, val in d.items():;python
+Sort dict descending according to values (=item[1]);d = {k: v for k, v in sorted(d.items(), key=lambda item: item[1], reverse=True)};python
+Sort dict ascending according to keys (=item[0]);d = {k: v for k, v in sorted(d.items(), key=lambda item: item[0])};python
+Dict sorted: 1st value-desc (x[0]) - 2nd key-ascnd (-x[0]);d = {k: v for k, v in sorted(d.items(), key=lambda x: (-x[1],x[0]))};python
+Define empty set - {} would define a dict and not a set;s=set();python
+Define set with content;s = {1,1,2,2,3,4};python
+"Define empty set - returns: {""o"",""l"",""H"",""e""}";"s = set(""Hello"")";python
+Define second set;s2 = {1,7,8};python
+Add element in set1;s.add(5);python
+Add several elements to set1;s.update([10,11,12]);python
+Intersection of 2 sets (same as: s.intersection(s2));s & s2;python
+Untion of 2 sets (same as: s.union(s2));s | s2;python
+Difference of 2 sets (same as: s.difference(s2));s - s2;python
+True if s is subset from s2 (same as: s.issubset(s2));s <= s2;python
+Check if element is in set;3 in s;python
+Clear the set;s.clear();python
+Delete lowest elmeent in set;s.pop();python
+Delete element 5 from set - but key error possible;s.remove(5);python
+Delete element 5 from set - NO key error possible;s.discard(5);python
+Iterate through set content;for i in s:;python
+Copying a set (all changes will be made in BOTH sets);s2 = s1;python
+Copying a set (set will be handled seperate);s2 = s.copy();python
+Copying a set 2nd method (set will be handled seperate);s2 = set(s);python
+Define a frozenset - no changes are possible in the set - union, intersection aso. will work;s = frozenset(1,2,3);python
+If / elif / else;"if x > 10: pass
+elif x > 10: pass
+else: pass";python
+Use 2 conditions in one line (instead of (a>10 and a<20);if (10 < a < 20)...;python
+Connecting different control structures with logical and &;if a<10 & b>10 & c==4...;python
+5 iterations from 0 to 4;for i in range(5):;python
+5 iterations from 0 to 4 (start, end, step);for i in range(0, 5, 1);python
+Iterations descending from 4 to 0;for i in range(4, -1, -1);python
+While loop with break condition;while x < 4:;python
+Endless while loop - has to be exited with break;while True:;python
+Break loop completely;break;python
+Break actual loop run - continue with next loop run;continue;python
+description of the function in form of a docstring;"def printNumAbbr(value):
+'''
+eg. Make abbreviaton for numeric value in thousands (K), millions (M), billions (B) or trillions (T)
+:param value: numeric value which should be abbreviated
+:return: string value with maximum possible abbreviation
+'''";python
+Define function - with default value 0 if no input is given;"def add(x=0,y=0):
+    erg = x+y                   	# Calculation in function
+    return erg                  	# Return value from the function";python
+Optional argument in the funtction (first element is must - second optional);"def pet (animal,n1=None,n2=""x"")
+pet(""Cat"")                      	# Calling function with n1=None and n2 = ""x""
+pet(""Cat"",""name"")					# Calling function with n1=name and n2 = ""X""
+pet(""Cat"",n2=""xyz"") 				# Calling function with n1=None and n2 = ""xyz"" (third parameter has to be named when calling)";python
+Function with infinite arguments;"def varargs(*args): print(args)
+varargs(1,2,3)                  	# Outputs (1,2,3)
+
+def keyword_args(**kwargs):
+    print(kwargs)
+keyword_args(""a""=3, ""b""=4)      	# Outputs {""a"":3, ""b"":4}";python
+decorator template;"def my_decorator(func):				# Define decorator
+  @functools.wraps(func)
+  def wrapper(*args,**kwargs):		# Decorator with * arguments
+	  #Do...					 	# Do something before the functions
+	  result=func(*args,**kwargs)	# Run the function
+	  #Do...					 	# Do something after the functions
+	  return result					# Return the results from the function
+  return wrapper";python
+decorator;"extend behaviour of a function with a decorators
+def start_end_decorator(func):		# Define the decorator with function ""func"" as input-parameter
+	def wrapper():					# Inside the decorator a wrapper function has to be defined
+		print(""Start"")				# Decorated code which is executed before the core code from the function
+		func()						# Calling the function itself
+		print(""End"")				# Decorated code which is executed after the core code from the function
+	return wrapper					# Results from the decorator have to be given back
+@start_end_decorator				# Defines this decorator for the following function ""print_name""
+def print_name():					# Normal content of the function
+	print(""xyz"")					# Core functionality of the function
+print_name()						# Now when the function is executed - outputs not only ""xyz"" - also ""Start"" before and ""End"" after";python
+decorator with function arguments;"def start_end_decorator(func):		# Define the decorator with function ""func"" as input-parameter
+	def wrapper(*args,**kwargs):	# Inside the decorator a wrapper function has to be defined
+		print(""Start"")				# Decorated code which is executed before the core code from the function
+		result = (*args,**kwargs)	# Calling the function itself
+		print(""End "")				# Decorated code which is executed after the core code from the function
+		return result
+	return wrapper					# Results from the decorator have to be given back
+@start_end_decorator				# Defines this decorator for the following function ""add5""
+def add5(x):						# Normal content of the function with one argument
+	return x + 5					# Core functionality of the function
+result = add5(10)					# Outputs ""Start"" => ""End"" => 15
+print(result)";python
+Defines the generator with 3 yield statements;"def mygenerator():
+	yield 3
+	yield 2
+	yield 1";python
+Creates the generator and stores in g (=generator type);g = mygenerator();python
+Outputs 3,2,1;for i in g: print(i);python
+Outputs 3;print(next(g));python
+Outputs 2;print(next(g));python
+Sum-Function can also use a generator => result is 6;sum(g);python
+Sorted-Function can use generator => returns list with sorted elements [1,2,3];sorted(g);python
+try / except;"try:
+	a = 5 / 0
+except Exception as e:
+	print(""Exception: "",e)						# Prints exception ""division by zero""";python
+assert / raise;"x = -5
+assert (x>=0), ""x is not positive""				# Checks / Assert some condition => prints ""x is not positive""
+if x<0: raise Exception(""x should positive"")	# Raises an exception => prints ""Exception: x should be positive""";python
+functions with one argument - add10(5) => 15;add10 = lambda x: x+10;python
+functions with two arguments for multiplying - mult(2,7) => 14;mult = lambda x,y: x*y;python
+output is sorted with first element then second element => [(1,2),(5,-1),(10,4),(15,1)];sorted(p);python
+output is sorted by the second element => [(5,-1),(15,1),(1,2),(10,4)];sorted(p,key=lambda x:x[1]);python
+output is sorted by the sum of both => [(1,2),(5,-1),(10,4),(15,1)];sorted(p,key=lambda x:x[0]+x[1]);python
+list is mapped with the lambda function => [2,4,6,8,10];list(map(lambda x: x*2,a));python
+also possible with list comprehension => [2,4,6,8,10];c=[x*2 for x in a];python
+list is filtered with lambda for even numbers => [2,4];list(filter(lambda x: x%2==0,a));python
+also possible with list comprehension => [2,4];c=[x for x in a if x%2==0];python
+Define a class;"class Human(object):
+  species = ""Homo Sapiens""    # Fix variable / class variable for all instances of the class
+  def __init__(self,name):    # Constructor - automatically applied when an instance is created
+      self.name = name		  # Name is assigned to the instance of the classe (self.)
+	  self.tresor = []		  # Tresor is assigned as list to the instance of the class (self.)
+  def say(self, msg):         # Methode of the class
+      return ""{name}: {message}"".format(name=self.name, message=msg)
+	  elf.tresor.append(msg)  # Tesor of the instance gets a new value in the list
+  @classmethod                # Class methode - is used by all instances
+  def get_species(cls):
+      return cls.species
+  @staticmethod               # Static methode - is called without class or method
+  def grunt():
+      return ""*grunt*""";python
+Create instance of the class;"i = Human(name=""Ian"")";python
+"Call the methode of the class (output: ""Ian: Hi"")";"print(i.say(""Hi""))";python
+Create additonal instance of the class;"j = Human(name=""Joel"")";python
+"Call the methode of the class (output: ""Joel: Hallo"")";"print(i.say(""Hallo""))";python
+"Output ""Homo Sapiens""";i.get_species();python
+"Same output  ""Homo Sapiens""";j.get_species();python
+Change of the class variable - applies for all instances;"Human.species = ""Was Neues""";python
+"Aufruf der statischen Methode => Ausgabe: ""*grunt*""";Human.grunt();python
+Dataclasses;"from dataclasses import dataclass		# import dataclass necessary
+@dataclass								# define a dataclass
+class Coordinate:						# class is defined an need NO __init__, __repr__, __eq__
+    x: int								# __init__ no necessary - values get assigned automatically
+    y: int = 10							# __repr__ print for the string-represantion is automatic => Coordinate(x=4, y=5)
+a = Coordinate(4, 5)
+@dataclass (frozen=True)				# defines a unmutable instance
+asdict(dc)								# converts the dataclass to a dict
+astuple(dc)								# converts the dataclass to a tuple";python
+Read textfile - and print it;"with open (""fn.txt"",""r"") as f: print(f.read()";python
+Open File for Read and Write;"with open (""fn.txt"",""r+"") as f: print(f.read()";python
+Read textfile - stored in list per line;"with open(""fn.txt"",""r"") as f:
+    lines = [x.strip() for x in f.readlines()]          # Whitespaces are eliminated with strip()";python
+Writing in textfile;"with open(""fn.txt"",""w"") as obj: obj.write(""Ein neuer Text"")";python
+Append text in the next line;"with open(""fn.txt"",""a"") as obj: obj.write(""\nNoch ein Text"")";python
+Check if file allready exists;if os.path.exists(fn) == False:;python
+Create and initialize file when not exisiting;"with open (fn,""a"") as f: f.write(""init"")";python
+Read content to string;f.read();python
+Set the current postion in the file to beginning;f.seek(0);python
+Write s to the f-file opened;f.write(s);python
+Try/Except - checks if file can be saved;"while True:
+try:                         							# otherwise outputs a error message
+    writer.save ()
+    break
+except Exception as e:
+    print (""Error: "", e)
+	traceback.print_exc()                               # Outputs the detailed error message
+    input (""File Open not possible - pls close and press <Enter>"")";python
+Import json-module;import json;python
+Assign JSON-filename;"fn = ""numbers.json""";python
+Reading informations in json-format;with open(fn) as data: info = json.loads(data);python
+Convert / Encode a dict to a json-file (with indent for better reading);json_format = json.dumps(d,indent=2);python
+Convert / Encode a dict to a json-file (with sorting the keys);json_format = json.dumps(d,sort_keys=True);python
+Writing information in json-format (e.g. after updating the values/format);"with open(fn,""w"") as data: json.dump(person, data)";python
+Convert / Decode a json-file to a dict;person = json.loads(json_format);python
+Reading information in json-format;"with open(fn.json,""r"") as data: d=json.load(file)";python
+Example for json-file;"{
+	""firstName"" : ""Chuck"",
+	""lastName"" : ""Doe"",
+	""hobbies"": [""running"",""swimming"",""singing""],
+	""age"": 28,
+	""hasChildren"": true
+	""children"" = [
+		{
+			""firstName"" : ""Alex""
+			""age"" : 5
+		},
+		{
+			""firstName"" : ""Bob""
+			""age"" : 7
+		}
+	]
+}";python
+"Read name value => ""Chuck""";"info[""firstName""]";python
+Iterate trough the json-file (eg. many children);for item in children:;python
+Import xml-module;import xml.etree.ElementTree as ET;python
+Example for xml-file;"<persons>
+	<person>
+		<name>Chuck</name>
+		<phone type=""int1""> +1 734 555""</phone>
+		<email hide=""yes""/>
+	</person>
+	...
+</persons>";python
+Read xml-file into tree;tree = ET.fromstring(data);python
+"Read name text => ""Chuck""";"tree.find(""name"").text";python
+Read hide value from email => yes;"tree.find(""email"".get(""hide""))";python
+Iterate trough xml-file (eg. many persons);"lst = persons.findall(""persons/person"")
+for item in lst:";python
+Import Module for URL parsing;import from urllib.parse import urlparse;python
+Import Module for request;import urllib.request;python
+Parse HTML-link1;"u = urlparse(""http://google.com/search"")";python
+"Returns ""http""";u.scheme;python
+"Returns ""/search""";u.path;python
+"Returns ""google.com""";u.netloc;python
+Import CSV-Module;import csv;python
+Open csv-file in writemode;"with open(""test.csv"",""w"",newline="" "") as fp:
+    a = csv.writer (fp, delimiter="","")                    # Define csv-writer with "",""-delimiter
+    data = [[""A"", ""B""],[""100"", ""24""],[""120"", ""33""]]       # Data for writing in nested list form
+    a.writerows (data)                                    # Writing individual rows";python
+Read csv-data from a HTML-link;"import urllib.request
+import codecs
+url = link                                                      # direct link to a csv html file
+ftpstream = urllib.request.urlopen(url)
+csvfile = csv.reader(codecs.iterdecode(ftpstream, 'utf-8'))     # output is nested list";python
+Import zip module;import zipfile;python
+Read Zip-File;zf = zipfile.ZipFile('example.zip', 'r');python
+List of string with the names of the files in the Zip-File;zf.namelist();python
+Open file vom Zip-File (eg. CSV-File which is in the Zip-File);zf.open (file_name);python
+https://techwithtim.net/tutorials/google-sheets-python-api-tutorial/;"# Create a project on https://console.cloud.google.com/
+# See further setup in tutorial
+import gspread                                                      # import module
+from oauth2client.service_account import ServiceAccountCredentials  # import module for account credentials
+from pprint import pprint                                           # import module for better output formatting
+scope = [""https://spreadsheets.google.com/feeds"",
+         'https://www.googleapis.com/auth/spreadsheets',
+         ""https://www.googleapis.com/auth/drive.file"",
+         ""https://www.googleapis.com/auth/drive""]
+creds = ServiceAccountCredentials.from_json_keyfile_name
+    (""creds.json"", scope)";python
+Credentials Mgmt for GoogleSheets;client = gspread.authorize(creds);python
+Open the spreadhseet;"sheet = client.open(""testpython"").sheet1";python
+Get a list of all records;data = sheet.get_all_records();python
+Count of all used rows in the sheet;len(data);python
+Show all data with pprint - pretty print;pprint(data);python
+Get row 3 (starts counting from 1 - not 0);row = sheet.row_values(3);python
+Get col E (starts counting from 1 - not 0);col = sheet.col_values(5);python
+Get values from col B rows 4 and 5;col = sheet.col_values(2)[3:5];python
+Get the value from row 1 and col B;cell = sheet.cell(1,2).value;python
+Update cell from row 2 and col B;"sheet.update_cell(2,2, ""CHANGED"")";python
+Insert new row at row number 2;"sheet.insert_row([""new1"",""new2"",""new3""],2)";python
+Append new row at the end;"sheet.append_row([""new1"",""new2"",""new3""])";python
+Sorting the sheet (Range + col1 asc + col2 desc);sheet.sort((1, 'asc'), (2, 'des'), range='A2:G20');python
+Define cell area / cell row;cell_list = worksheet.range('A1:G1');python
+Define new values for area / row;new_values = [1,2,3,4,5];python
+Write new values to cell area / cell row;for i, val in enumerate(new_values): cell_list[i].value = val;python
+Upate cell area / cell row;worksheet.update_cells(cell_list);python
+https://pypi.org/project/gspread-formatting/;"# Set format for area:
+	from gspread_formatting import *
+	fmt = cellFormat(
+		backgroundColor=color(1, 0.9, 0.9),
+		textFormat=textFormat(bold=True, foregroundColor=color(1, 0, 1)),
+		horizontalAlignment='CENTER'
+		)
+	format_cell_range(worksheet, 'A1:J1', fmt)
+# Conditional formatting
+	from gspread_formatting import *
+	worksheet = some_spreadsheet.worksheet('My Worksheet')
+	rule = ConditionalFormatRule(
+		ranges=[GridRange.from_a1_range('A1:A2000', worksheet)],
+		booleanRule=BooleanRule(
+			condition=BooleanCondition('NUMBER_GREATER', ['100']),
+			format=CellFormat(textFormat=textFormat(bold=True), backgroundColor=Color(1,0,0))
+		)
+	)
+	rules = get_conditional_format_rules(worksheet)
+	rules.append(rule)
+	rules.save()
+
+	# or, to replace any existing rules with just your single rule:
+	rules.clear()
+	rules.append(rule)
+	rules.save()";python
+https://openpyxl.readthedocs.io/en/stable/api/openpyxl.worksheet.worksheet.html#openpyxl.worksheet.worksheet.Worksheet.PAPERSIZE_A3;Documentation:;python
+Import module for loading a workbook;from openpyxl import load_workbook;python
+Import module for creating a workbook;from openpyxl import Workbook;python
+Load xlsx;"wb = load_workbook((""Test.xlsx""))";python
+Create new workbook;wb = openpyxl.Workbook();python
+Create new worksheet (at the end);"wb.create_sheet(""ws"")";python
+Create new worksheet (at the beginning);"wb.create_sheet(""ws"",0)";python
+Create new worksheet (at the second last position);"wb.create_sheet(""ws"",-2)";python
+All worksheets from the;wb.sheetnames;python
+Select specific worksheet in workbook;"ws = wb[""sheet1""]";python
+Select active worksheet from workbook;ws = wb.active;python
+Change worksheet name;"ws.title = ""xyz""";python
+Value from specific cell;"ws[""A1""].value";python
+Value from specific cell (other method);ws.cell(row=1, column=1).value;python
+Assign value to specific cell;"ws[""A1""] = 97";python
+"Assign formula to specific cell (only english names for function and arguments must be sepearted by "","" and not "";"")";"ws[""A1""] = ""=SUBTOTAL(1,I6:I10000)""";python
+Save workbook to xlsx;"wb.save(""Test2.xlsx"")";python
+Loop trough specific area and print the cell values;"for row in ws[""A1"":""C3""]:
+    for cell in row: print(cell.value)";python
+Loop trough specific column and print the cell values;"for cell in ws[""C""]: print(cell.value)";python
+Insert column before col 3;ws.insert_cols(3);python
+Insert 2 columns before col 3;ws.insert_cols(3,2);python
+Insert row before row 7;ws.insert_rows(7);python
+Insert 5 rows before row 10;ws.insert_rows(10,5);python
+Delete column C;ws.delete_cols(3);python
+Delete column F to H;ws.delete_cols(6,3);python
+Delete row 5;ws.delete_rows(5);python
+Delete row 5 to 7;ws.delete_rows(5,3);python
+Move the cells from D4:F10 up one row and right two columns;"ws.move_range(""D4:F10"", rows=-1, cols=2)";python
+Append the values at the bottom of the sheet;"ws.append([1,""A"",2,""C""])";python
+"Returns dimension of the worksheet eg. ""A1:M24""";ws.dimensions;python
+Returns max column / row count of the worksheet;ws.max_column / ws.max_row;python
+Returns min column / row count of the worksheet (which contains data);ws.min_column / ws.min_row;python
+Rows 1:3 to be printed at the top of every page;ws.print_title_rows(1:3);python
+Delete worksheet in workbook;"del wb[""sheet4""]";python
+Define filters in columns A5 to Q5;"ws.auto_filter.ref = ""A5:Q5""";python
+"Set filter to values ""X"",""Y"",""Z"" in column 2";"ws.auto_filter.add_filter_column(2,[""X"",""Y"",""Z""])";python
+Sort elements in filter for columsn B2 to B15;"ws.auto_filter.add_sort_condition(""B2:B15"")";python
+Close workbook;wb.close();python
+Iterate trough worksheet row by row;"for row in ws.iter_rows():
+    for cell in row: print(cell.value)";python
+Iterate trough worksheet row by row (from A1 to C6 - 6 lines);"for row in ws.iter_rows
+	(min_row=1,min_col=1,max_row=6,max_col=3):";python
+Iterate trough worksheet col by col;"for col in sheet.iter_cols():
+    for cell in col: print(cell.value)";python
+Iterate trough worksheet col by col (from A1 to C6 - 3 lines);"for col in ws.iter_cols
+	(min_row=1,min_col=1,max_row=6,max_col=3):";python
+Read whole worksheet to a nested list;"data_list = []
+for row in ws.iter_rows ():
+    zeile = []
+    for cell in row:
+        if cell.value is None:
+            zeile.append ('')
+        else:
+            zeile.append (cell.value)
+    data_list.append (zeile)";python
+Saving a nested list in XLSX;"import pandas as pd
+from openpyxl import load_workbook
+cont = [[row1_cell1, row1_cell2], [row2.cell1,row3_cell3]]      # Nested list for saving
+book = load_workbook (""fn.xlsx"")                                # load existing XLSX - skip when overwriting
+writer = pd.ExcelWriter (""fn.xlsx"", engine='openpyxl',          # Define writer from pandas
+                         options={'strings_to_numbers': True})
+pd.DataFrame (cont).to_excel (writer, sheet_name=""WS1"",			# Prepare Data for XLSX and worksheet1
+                              header=False, index=False)
+pd.DataFrame (cont).to_excel (writer, sheet_name=""WS2"",			# Prepare Data for XLSX and worksheet2
+                              header=False, index=False)
+writer.save()                                                   # Save XLSX with the new worksheets
+writer.close()													# Close writer";python
+Checking if xlsx is open while trying to save;"while True:
+    try:
+        writer.save ()
+        writer.close ()
+        break
+    except Exception as e:
+        print (""Error: "", e)
+		traceback.print_exc()
+        input (""Datei kann nicht geöffnet werden - bitte schließen und <Enter> drücken!"")";python
+Read column to a list;"mylist = []
+for col in ws['A']:
+     mylist.append(col.value)";python
+Automatic adjustment of the columns accoring to best fit;"column_widths = []
+ws = writer.sheets[stock]
+for row in content:                                    # Determination of the longest value per column
+    for i, cell in enumerate (row):
+        if len (column_widths) > i:
+            if len (str (cell)) > column_widths[i]:
+                column_widths[i] = len (str (cell))
+        else:
+            column_widths += [len (str (cell))]
+    for i, column_width in enumerate (column_widths):  # Col 0 and 1 with fixed length - rest according to longest value in col
+        if i == 0:
+            ws.column_dimensions[get_column_letter (i + 1)].width = 35
+        elif i == 1:
+            ws.column_dimensions[get_column_letter (i + 1)].width = 32
+        else:
+            ws.column_dimensions[get_column_letter (i + 1)].width = column_width + 2";python
+import openpyxl.styles;from openpyxl.styles import Font, PatternFill, Border, Side, Alignment;python
+import formatting, styles;from openpyxl import formatting, styles;python
+bold font;bold = Font (bold=True);python
+yellow background (use color picker);"bg_yellow = PatternFill (fill_type=""solid"", start_color='fbfce1', end_color='fbfce1')";python
+grey background (use color picker);"bg_grey = PatternFill (fill_type=""solid"", start_color='babab6', end_color='babab6')";python
+blue background (use color picker);"bg_green = PatternFill (fill_type=""solid"", start_color='8af542', end_color='8af542')";python
+define border on very side;"frame_all = Border (left=Side (style='thin'), right=Side (style='thin'),
+                    top=Side (style='thin'), bottom=Side (style='thin'))";python
+border only on top and bottom;frame_upanddown = Border (top=Side (style='thin'), bottom=Side (style='thin'));python
+font size 14;"size14 = Font (bold=True, size=""14"")";python
+define left alignment;"left_allign = Alignment (horizontal=""left"")";python
+define right alignment;"right_allign = Alignment (horizontal=""right"")";python
+define right alignment for area;"for row in ws[""D1"":""G34""]:
+    for cell in row: cell.alignment = right_allign";python
+define full border for several areas;"areas = [""A7:G19"",""A27:G31""]";python
+format area;"for area in areas:
+    for row in ws[area]:
+        for cell in row:
+			cell.border = frame_all
+			cell.number_format = ""0""															=> define number format without decimals
+			cell.number_format = ""0.000E+00""													=> define number format with 3 decimals";python
+set background and size for several specific cells;"for i in [""A6"",""D6"",""E6"",""A26"",""D26"",""E26""]:
+    ws[i].fill = bg_green
+    ws[i].font = size12";python
+freeze worksheet at cell B2 for right and down scrolling;"freeze = ws[""B2""]
+ws.freeze_panes = freeze";python
+fit xlsx to one page for printing - 1st part;ws.sheet_properties.pageSetUpPr.fitToPage = True;python
+fit xlsx to one page for printing - 2nd part;ws.page_setup.fitToHeight = False;python
+set page to landscape horizontal;ws.set_printer_settings(paper_size=1, orientation = 'landscape');python
+set page to landscape horizontal;ws.set_printer_settings(paper_size=1, orientation = 'portrait');python
+Define red color background;red_color = 'ffc7ce';python
+Define red color font;red_color_font = '9c0103';python
+Define red_font with size / bold / red color;red_font = styles.Font (size=14, bold=True, color=red_color_font);python
+Define red_fill with color red / fill type solid;red_fill = styles.PatternFill (start_color=red_color, end_color=red_color, fill_type='solid');python
+Define conditional formating for area, <0, fill with red background;"ws.conditional_formatting.add ('A1:Z100',
+	formatting.rule.CellIsRule (operator='lessThan',formula=['0'],fill=red_fill))";python
+Define conditional formating for area, <0, use red font;"ws.conditional_formatting.add ('A1:G25',
+	formatting.rule.CellIsRule (operator='lessThan',formula=['0'],fill=red_fill,font=red_font))";python
+Conditional formating for more than one area;"for area in [""B1:B100"",""C2:G100""]:
+	ws.conditional_formatting.add (area, ...)";python
+Conditional formating according to a formula;"ws.conditional_formatting.add('E1:E10',
+	FormulaRule(formula=['ISBLANK(E1)'], stopIfTrue=True, fill=redFill))";python
+Conditional formating according to a formula;"ws.conditional_formatting.add('D2:D10',
+	FormulaRule(formula=['E1=0'], font=myFont, border=myBorder, fill=redFill))";python
+Import module;import xlwings as xw;python
+Read XLSX;"wb = xw.Book (""name.xlsx"")";python
+Read specific worksheet;"ws = wb.sheets[""name_sheet""]";python
+Updates specific cell;"ws[""A1""].value = ""xyz""";python
+"Iterate trough cells an set them to """" / None";"for i in ws.range(""A3:A7""): i.value = """"";python
+Read specific cells to list;"l = ws.range(""A2:A100"").value";python
+Read cells;"cells = ws.range(""A2:A100"")";python
+Update the value of a cell;"cells[1].value = ""new value""";python
+Writeback the updates to cells;"ws.range(""A2:A100"").value = l";python
+Sort worksheet in the first col (function see below);xl_col_sort(ws,1);python
+Reads the color of a cell and returns a rgb-tuple eg. (146, 208, 80);"ws[""C8""].color";python
+Remove background from a cell;"ws[""C8""].color = None";python
+Assigns background color for a range of cells;"ws.Range(""A1:C3"").color = (255,255,255)";python
+Sorting workssheet in given col;"def xl_col_sort(sheet,col_num):
+    sheet.range((2,col_num)).api.SortKey1=sheet.range((2,col_num)).api, Order1=1)
+    return";python
+Import Win32 Module;import win32com.client;python
+Import OS Module;import os;python
+Define Input-XLSX;"inp = os.getcwd() + ""\\"" +""excel.xlsx""";python
+Define Output-PDF;"out = os.getcwd() + ""\\"" +""ws.pdf""";python
+Initialize Excel Application;"o = win32com.client.Dispatch(""Excel.Application"")";python
+Do everything hidden;o.Visible = False;python
+Open XLSX;wb = o.Workbooks.Open(inp);python
+Create PDF from the active worksheet in the xlsx;wb.ActiveSheet.ExportAsFixedFormat (0, out);python
+Close XLSX;wb.Close(True);python
+Number of Worksheets;wb.Sheets.Count;python
+Select 3 different worksheets by number (for exporting afterwards);wb.WorkSheets ([3,4,8]).Select();python
+Assign worksheet 4;ws = wb.Worksheets[4];python
+No Zooming;ws.PageSetup.Zoom = False;python
+Fit to 1 height;ws.PageSetup.FitToPagesTall = 1;python
+Fit to 1 width;ws.PageSetup.FitToPagesWide = 1;python
+Select specific print area;"ws.PageSetup.PrintArea = ""A1:G50""";python
+Read PDF informations / metadata;"from PyPDF2 import PdfFileReader        # Import Module for PDF Reading
+with open (fn, 'rb') as f:
+    pdf = PdfFileReader (f)				# Read PDF informations
+    info = pdf.getDocumentInfo ()		# Read PDF infos^
+    number_of_pages = pdf.getNumPages ()    # Read number of pages
+	print(info)							# Outputs all informations
+	print(info.title)					# Outputs title of the pdf
+	print(info.author)					# Outputs author of the pdf";python
+Read Text from Pdf;"page = pdf.getPage (7)		# Select page 8
+text = page.extractText ()	# Extract text
+print (text)				# print (text";python
+Split PDFs;"from PyPDF2 import PdfFileWriter		    # Import Module for PDF Writing
+pdf_writer = PdfFileWriter()				# Create new instance of PDF writer
+pdf_writer.addPage(page)                    # Add Page to writer
+with open(output_filename, 'wb') as out:	# Write splitted PDF
+	pdf_writer.write(out)";python
+Merge PDFs;"from PyPDF2 import PdfFileMerger		    # Import Module for PDF Merging
+pdf_merger = PdfFileMerger()				# Create new instance of PDF merger
+pdf_merger.append(path)                     # Append Page for merging
+with open(output_path, 'wb') as fileobj:	# Write merged PDF
+	pdf_merger.write(fileobj)";python
+Rotate clockwise;page.rotateClockwise(90);python
+Rotate counter clockwise;page.rotateCounterClockwise(90);python
+Overlaying / Watermarking two pages;page.mergePage(watermark_page);python
+Data where the MariaDB-database is stored;C:\Program Files\MariaDB 10.3\data;python
+Data where the MySQL-database is stored;C:\ProgramData\MySQL\MYSQL Server 8.0\data;python
+Shows the database-version in the column header;HeidiSQL - Datei / Verbindungsmanager;python
+Transfer whole table from local db to hosted db;"right click on table / tables to transfer and select ""export database as sql""
+for ""output"" select ""Server: A2Hosting"" (connection to the hosted server)
+for ""database"" select ""rapidtec_stockdb"" (name from the db on the hosted server)
+for ""data"" select ""replace existing data""
+press ""export"" (wait till the rows-column shows 100%)";python
+Import module for mysql access;import mysql.connector;python
+Define connection;"mydb = mysql.connector.connect (host=""localhost"",user=""root"",passwd=""pwd"")";python
+Set Cursor on mySQL;mycursor = mydb.cursor();python
+"Creates database ""db""";"mycursor.execute(""CREATE DATABASE db"")";python
+# Show databases and informations;"mycursor.execute(""SHOW DATABASES"")
+    for db in mycursor: print(db)";python
+Create new table with 2 cols;"mycursor.execute(""CREATE TABLE students (name VARCHAR(255),age INTEGER(10))"")";python
+Show tables and informations;"mycursor.execute(""SHOW TABLES"") for tb in mycursor: print(tb)";python
+Insert row in table with the 2 values using sql injection;"sqlFormula = ""INSERT INTO students (name, age) VALUES (%s, %s)""";python
+Define a row with values to insert;"student1 = (""Rachel"", 22)";python
+Execute the sql statement to add one row;mycursor.execute(sqlFormula,student1);python
+Commit the change (otherwise no update will be saved to db);mydb.commit();python
+Define more rows with values;"students = [(""Tom"", 22),(""Mark"", 29),(""Clara"", 52)]";python
+Execute the sql statement to add more row (from list / tuple);mycursor.executemany(sqlFormula,students);python
+"Select col ""age"" from table ""students""";"mycursor.execute(""SELECT age FROM students"")";python
+Read all rows according the above select statement;myresult = mycursor.fetchall();python
+Read one / first row according the above select statement;myresult = mycursor.fetchone();python
+Output the read row / table informations;for row in myresult: print(row);python
+Define select (greater than);"sql = ""SELECT * FROM students WHERE age > 25""";python
+Define select (with like clausel);"sql = ""SELECT * FROM students WHERE name LIKE 'M%'""";python
+Execute SQL;mycursor.execute(sql);python
+Define select (with sql injection);"sql = ""SELECT * FROM students WHERE name = %s""";python
+Execute SQL with parameters;"mycursor.execute(sql, (""Mike"", ))";python
+"Update row where name = ""xyz""";"sql = ""UPDATE students SET age = 82 WHERE name='xyz'""";python
+Limit the output to 5 rows;"sql = ""SELECT * FROM students LIMIT 5""";python
+Limit the output toi 5 rows and starting with element 2;"sql = ""SELECT * FROM students LIMIT 5 OFFSET 2";python
+Output content - ascending order;"sql = ""SELECT * FROM students ORDER BY name""";python
+Output content - descending order;"sql = ""SELECT * FROM students ORDER BY name DESC""";python
+"Delete row with name ""xyz""";"sql = ""DELETE FROM students WHERE name = 'xyz'""";python
+Drop whole table (if exists helps if there no table anymore);"sql = ""DROP TABLE IF EXISTS students""";python
+"sql = ""DROP TABLE IF EXISTS students""                      Drop whole table (if exists helps if there no table anymore)";"sql = ""SELECT ticker FROM stock_main where ticker=%s""      # Or Select * to get all values from the table
+cont = [(summary[""symbol""])]
+c.execute(sql,cont)
+data = c.fetchall()";python
+Import MODULE;from sqlalchemy import create_engine;python
+Define access to the MySQL-DB (username, pw, dbname);"engine = create_engine(""mysql+pymysql: //user:pw@localhost/dbname?host=localhost?port=3306"")";python
+Establish connection;conn = engine.connect();python
+Read all existing tables from the databasen - returns list;engine.table_names();python
+Read data from db - returns list with tupels as rows;"conn.execute(""SELECT * FROM actor"").fetchall()";python
+Close connection at the end;conn.close();python
+Close sql engine at the end;engine.dispose();python
+Tabelle anlegen in MySQL DB;"from sqlalchemy import Table, Column, Integer, String, Float, MetaData
+meta = MetaData()
+students = Table(
+   'students', meta,
+   Column('id', Integer, primary_key = True),
+   Column('name', String(45)),
+   Column('lastname', String(45)),
+)
+meta.create_all(engine)";python
+Create INSERT / UPDATE / DELETE / SELECT statements;"students.insert()                                           # Creates INSERT Statement according due the whole students structure
+	=> shows: INSERT INTO students (id, name, lastname, floatvar) VALUES (:id, :name, :lastname, :floatvar)
+students.insert().values(name = 'Karan')                    # Creates INSERT Statement for specific attribute
+	=> shows: INSERT INTO students (name) VALUES (:name)
+students.update()                                           # Creates UPDATE Statement
+	=> shows: UPDATE students SET id=:id, name=:name, lastname=:lastname, floatvar=:floatvar
+students.delete()                                           # Creates DELETE Statement
+	=> shows: DELETE FROM students
+students.select()                                           # Creates SELECT Statement
+	=> shows: SELECT students.id, students.name, students.lastname, students.floatvar  FROM students";python
+Execute SQL command - INSERT;"conn = engine.connect()                                     # Insert one row
+ins = students.insert().values name = 'Brauneder', lastname = 'Karl')
+result = conn.execute(ins)
+result.inserted_primary_key                                 # Shows the inserted primary key
+conn.execute(students.insert(), [                           # Insert more rows
+   {'name':'Krankl', 'lastname' : 'Hans'},
+   {'name':'Herzog','lastname' : 'Andreas'},
+])";python
+Execute SQL command - SELECT;"s = students.select()                                       # Creates select statement for SELECT *
+result = conn.execute(s)                                    # Excenute select statement
+for row in result: print(row)                               # Outputs the result rows for select
+s = students.select().where(students.c.id > 10)             # Creates select statement with WHERE clausel";python
+Execute SQL with Textual SQL;"from sqlalchemy.sql import text
+t = text(""SELECT name FROM students"")
+result = conn.execute(t)
+for row in result: print(row)
+t = text(""select students.name, students.lastname from students where students.name between :x and :y"")
+result = conn.execute(t, x = 'A', y = 'L')                  # Select statement with where-parameters";python
+Using Aliases;"from sqlalchemy.sql import alias, select
+st = students.alias(""a"")
+s = select([st]).where(st.c.id > 2)
+conn.execute(s).fetchall()";python
+Execute UPDATE statement;"conn = engine.connect()
+stmt=students.update().where(students.c.lastname=='Khanna').values(lastname='Kapoor')
+conn.execute(stmt)
+s = students.select()
+conn.execute(s).fetchall()";python
+Execute DELETE statementconn = engine.connect();"stmt = students.delete().where(students.c.lastname == 'Khanna')
+conn.execute(stmt)
+s = students.select()
+conn.execute(s).fetchall()";python
+Create a database or connect to one;"conn = sqlite3.connect(""address_book.db"")";python
+Create a cursor (for working with the db);c = conn.cursor();python
+Create a table in the database;;python
+Create a table in the database;;python
+Insert rows into database;"c.execute(INSERT INTO tbl VALUES (:attr1,:attr2,:attr3)"",
+		{
+			""attr1"": field1.get(),
+			""attr2"": field2.get(),
+			""attr3"": field3.get()
+		})";python
+Select rows from database;"c.execute""SELECT * FROM adresses"")";python
+Delete row from database - get key from delete_box widget (eg. tkinter-module);"c.execute(""DELETE from addresses WHERE oid = "" + delete_box.get())";python
+Fetch all rows;records = c.fetchall();python
+Fetch only one row;c.fetchone();python
+Fetch the first 50 rows;records = c.fetchmany(50);python
+Commit Changes;conn.commit();python
+Close Connection;conn.close();python
+Import module datetime and timedelta;from datetime import datetime, timedelta;python
+Import module dat;from datetime import date;python
+Conversion string to datetime in format dd.mm.jjjj;"datetime.strptime(s, ""%Y-%m-%d"")";python
+Conversion datetime to string in format  dd.mm.jjjj;"datetime.strftime(dt, ""%Y-%m-%d"")";python
+Convert dateformat from string in one line (1st from - 2nd to);"dt.strftime((dt.strptime(tmp,""%m/%d/%Y"")),""%Y-%m-%d"")";python
+Check if variable is of type datetime.date or datetime.datetime;isinstance(x, date);python
+Check if variable is of type datetime.datetime;isinstance(x, datetime);python
+"Define date as ""2020-07-24""";date = date(2020,7,24);python
+"Define date+time as ""2020-03-05 19:27:23""";dt = datetime(2020,3,5,19,27,23);python
+Actual date+time in format 2020-06-09 20:11:13;"now = datetime.now().strftime(""%Y-%m-%d %H:%M:%S"")";python
+Actual date in format 2020-06-09;"now = datetime.now().strftime(""%Y-%m-%d"")";python
+Actual date in datetime format;tday = datetime.today();python
+Actual date as date format;tday = datetime.today().date();python
+Year / month / day from the datetime;dt.year, dt.month, dt.day;python
+Returns weekday (monday=1, sunday=7);tday.isoweekday();python
+Calculates last friday (+2 for FR, +1 SA, 0 SU, -1 MO, -2 TU, -3 WE, -4 TH);last_friday = day - timedelta(days=tday.isoweekday() + 2);python
+Creates timedelta for 7 days;tdelta = timedelta(days=7);python
+Creates timedelta for 1 minute;tdelta = timedelta(seconds=60);python
+7 days are added to the actual day;tday + tdelta;python
+Previous 1-day-back-date for date;newdate = date - timedelta(days=1);python
+Timedelta for two dates;date2-date1;python
+Difference in days;daysDiff = abs(dt2-dt1).days;python
+Difference in minutes;minDiff = (date2-date1).total_seconds() / 60;python
+Generate ISO-format from datetime;datetime.fromisoformat('2020-07-10 02:00:00').timestamp();python
+Generate ISO-format from actual date;iso_dt = datetime.fromisoformat(str(datetime.now())).timestamp();python
+Generate Datetime from ISO-format=>;date = datetime.fromtimestamp(1594339200000 / 1e3);python
+Shows size of the list / tuple in bytes;sys.getsizeof(l) or sys.getsizeof(t);python
+Using german names / deutsche namen for month- and day-names;"import locale
+locale.setlocale(category=locale.LC_ALL,locale=""German"")";python
+Check last day of month & first weekday of month;"import calendar
+calendar.monthrange(year,month)                         # return tuple - 1st: weekday first day - 2nd: ultimo day";python
+Check if date and timezone has summmer time / daylight time;"import pytz
+def is_dst(dt=None, timezone=""UTC""):
+    if dt is None:
+        dt = datetime.utcnow()
+    timezone = pytz.timezone(timezone)
+    timezone_aware_date = timezone.localize(dt, is_dst=None)
+    return timezone_aware_date.tzinfo._dst.seconds != 0
+is_dst()													# False => UTC has no daylight time
+is_dst(datetime(2019, 1, 1), timezone=""US/Eastern"")			# False => at this date US/Eastern has no daylight time
+is_dst(datetime(2019, 4, 1), timezone=""US/Eastern"")			# True => at this date US/Eastern has daylight time
+is_dst(datetime(2019, 1, 1), timezone=""CET"")				# False => at this date CET has no daylight time
+is_dst(datetime(2019, 4, 1), timezone=""CET"")				# True => at this date CET has daylight time";python
+Timing a specific activity;"import timeit
+start = timeit.default_timer()                          # Start timer
+stop = timeit.default_timer()                           # Stop timer
+round(stop-start,2)										# Stopped time in seconds and rounded to 2 decimals
+round((stop-start)/60,2)                                # Stopped time in minutes and rounded to 2 decimals
+timeit.timeit(stmt=""[0,1,2]"",number=1000000)     		# Checking the time for creating the list for 1mio times";python
+Countdown while waiting;"import time, import sys
+time.sleep(3)                                           # Delay for 3 seconds
+for i in range (30, 0, -1):                             # Delay for 30 seconds - countdown in one row
+    sys.stdout.write (str (i) + ' ')                    # Countdown output
+    sys.stdout.flush ()
+    time.sleep (1)";python
+Check which os system running;"from sys import platform
+if platform == ""linux""                                  # Program is excecuting from Linux
+if platform == ""win32"":                                 # Program ix excecuting from Windows
+if platform == ""darwin"":                                # Program is excecuting from Mac";python
+Read monitor resolution;"import ctypes
+user32 = ctypes.windll.user32
+screensize = user32.GetSystemMetrics(0),                # 1st parameter is width, 2nd parameter is height
+    user32.GetSystemMetrics(1)";python
+Import Module;from currency_converter import CurrencyConverter;python
+Import Module for rate-checks for specific date;from datetime import date;python
+Read Function CurrencyConverter;c = CurrencyConverter();python
+Convert 100 USD to AUD with for actual date;c.convert(100, 'USD', 'AUD');python
+Convert 100 USD to AUD for date 2013-03-21;c.convert(100, 'USD', 'AUD', date=date(2013, 3, 21));python
+Check begin and end-date for all rates for BGN;first_date, last_date = c.bounds['BGN'];python
+Read all possible currencies in a set;c.currencies;python
+Description about the module;https://pypi.org/project/pycountry/;python
+Install moduel;import pycountry;python
+List of all countries with several informations;list(pycountry.countries);python
+"Searching for country-informatns for ""DE""";c = pycountry.countries.get(alpha_2='DE');python
+Outputs => DE;c.alpha_2;python
+Outputs => DEU;c.alpha_3;python
+Outputs number of the coutnry => 276;c.numeric;python
+Outputs full name of the country => Germany;c.name;python
+"Outputs the official name => ""Federal Republic of Germany!";c.official_name;python
+List of all currencies;list(pycountry.currencies);python
+List of all languages;list(pycountry.languages);python
+List of all historic countries which not more exists;list(pycountry.historic_countries);python
+List of all subdivided countries;list(pycountry.subdivisiones);python
+Import smtplib;import smtplib;python
+Import MIMEText;from email.mime.text import MIMEText;python
+SMTP-Server and port number from the mail provider (e.g. GMail);s = smtplib.SMTP('smtp.gmail.com', 587);python
+Response 250 means connection is ok;print(s.ehlo());python
+Response 250 means connection is ok;print(s.starttls());python
+Not the real pw - only the app-generated pw from gmail;print(s.login('sender@gmail.com', 'xyz123'));python
+Message of the email;"msg = MIMEText(""This is the text of the mail"")";python
+One recipient;sender = ['sender@gmail.com'];python
+One or more recipient;recipients = ['recip1@gmail.com'];python
+Or more recipients;recipients = ['recip1@gmail.com','recip2@r-software.at'];python
+Subject;"msg['Subject'] = ""Subject of Mail""";python
+From;msg['From'] = sender;python
+One or more recipients;"msg['To'] = "", "".join(recipients)";python
+Sending email;s.sendmail(sender, recipients, msg.as_string());python
+Closing connection;s.quit();python
+Import module;from pathlib import Path;python
+Current working directory;Path.cwd();python
+Creates new folder (no error message if folder allready exists with exist_ok=True);"Path(""folder"").mkdir(parents=True, exist_ok=True)";python
+Import module;import os;python
+Shows alls attributs and methods of the library;print(dir(os));python
+Change the directory;"os.chdir(""C:/temp"")";python
+Current working directory;os.getcwd();python
+Outputs the entire content of the current working dir;for f in os.listdir(): print(f);python
+Outputs the elements seperated in name + extension;for f in os.listdir(): fn, ext = os.path.splitext(f);python
+Change the filenmae;os.rename(filename, new_name);python
+Cut and paste file from path1 to path2;os.rename(path1+fn, path2+fn);python
+Copy file from source to destination;"os.system(""copy source.txt destination.txt"")";python
+Creates new folder (also possible with makedirs => is prefered);"os.mkdir(""folder"")";python
+Creates new folder and subfolders;"os.makedirs(""folder/subfolder"")";python
+Delete file;os.remove (file);python
+Delete folder (prefered cause deleting ist dangerous);"os.rmdir (""folder"")";python
+Delete folder and subfolders;"os.removedirs (""folder/subfolder"")";python
+Outputs the statistics of the file (size, modification time,...);"os.stat(""file"")";python
+Outputs dirpath - all the dirs - and all the files;for dirpath,dir,fileos in os.walk();python
+Get home dir of the actual user;"os.environ.get(""HOME"")";python
+Outputs only the filename => file.txt;"os.path.basename(""temp/file.txt"")";python
+Outputs only the dir => temp/;"os.path.dirname(""temp/file.txt"")";python
+"Outputs filename and dir as a tupel => (""temp/"",""file.txt"")";"os.path.split(""temp/file.txt"")";python
+Checks if filename exists in the filesystem;"os.path.exists(""temp/file.txt"")";python
+Checks if folder exists;"os.path.isdir(""xyz"")";python
+Checks if element is a file;"os.path.isfile(""xyz"")";python
+Put all filenames to a list from the actual working dir;os.listdir();python
+Change file to hidden;os.popen('attrib +h ' + fn).read().close();python
+find home-directory for the actual user;"from os.path import expanduser
+home = expanduser(""~"")";python
+importing module;import logging;python
+Create & Config - w overwrites every time;"logging.basicConfig(filename=""fn.log"",format='%(asctime)s %(message)s', filemode='w')";python
+Level every log > INFO possible (but not DEBUG);"logging.basicConfig(filename=""fn.log"",level=logging.INFO)";python
+getLogger-Name / Level / Time / Message;"...format=""%(name)""s-%(levelname)s:%(asctime)s-%(message)s";python
+Creating an object with specific name;logger=logging.getLogger(logname);python
+Setting the threshold of logger to DEBUG;logger.setLevel(logging.DEBUG);python
+Debug message;"logger.debug(""Harmless debug Message"")";python
+Info message;"logger.info(""Just an information"")";python
+Warning message;"logger.warning(""Its a Warning"")";python
+Error message;"logger.error(""Did you try to divide by zero"")";python
+Critical error message;"logger.critical(""Internet is down"")";python
+Example with 2 logging levels;"logger=logging.getLogger(__name__)							 # Creating an object with the name of the py-file
+stream_h = logging.StreamHandler()							 # Defining a handler for streamdata in the console
+file_h = logging FileHandler(""file.log""						 # Defining a handler for logging to a file
+stream_h.setLevel(logging.WARNING)							 # Set Stream-Logging to Warning-Level
+file_h.setLevel(logging.ERROR)								 # Set File-Logging to Error-Level
+	=> Error-Messages will go to both stream and file - Warning-Messages only to stream and not to file
+formatter = logging.formatter								 # Defining the format for outputting
+	""%(name)s - %(levelname)s - %(message)s"")
+stream_h.setFormatter(formatter)							 # Setting format for stream-logging
+file_h.setFormatter(formatter)								 # Setting format for file-logging
+logger.addHandler(stream_h)									 # Adding Stream-handler to logger
+logger.addHandler(file_h)									 # Adding File-handler to logger";python
+https://stackoverflow.com/questions/24505145/how-to-limit-log-file-size-in-python	# Explanation about handling;"from logging.handlers import RotatingFileHandler             # importing file handler
+log_formatter = logging.Formatter('%(asctime)s               # Define format for output in logfile
+    %(levelname)s %(funcName)s(%(lineno)d) %(message)s')
+my_handler = RotatingFileHandler(logFile, mode='a',          # Define handler with maxBytes and backupCount
+    maxBytes=5*1024*1024, backupCount=2, encoding=None,      # When the log grows more then maxBytes...
+    delay=0)                                                 # ...itgenerates a new logfile-version
+my_handler.setFormatter(log_formatter)                       # Setting the format
+my_handler.setLevel(logging.INFO)                            # Setting the threshold of logger to INFO
+logger = logging.getLogger('root')                           # Creating an object with name
+logger.setLevel(logging.INFO)                                # Setting the threshold of logger to INFO
+logger.addHandler(my_handler)                                # Define handler with definition above";python
+Importing module;import unittest;python
+Import the function which will be tested;from prg import func;python
+Define the class for testing the function;class TestFunc(unittest.TestCase):;python
+Define the first testcase - must begin with test*;def testcase1(self):;python
+call the function;"erg = func(""x"",3)";python
+check if result is ok;"self.assertEqual(""3x"")";python
+starting the unittest;if __name__ == '__main__': unittest.main();python
+Check if equal;self.assertEqual(a,b);python
+Check if not equal;self.assertNotEquale(a,b);python
+Check if true;self.assertTrue(x);python
+Check if false;self.assertFalse(x);python
+Check if i in list;self.assertIn(i,list);python
+Check if i not in list;self.assertNotIn(i,list);python
+COUNTER;"from collections import Counter
+colors = ['blue', 'blue', 'red', 'red', ""red""]
+counter = Counter(colors)									# Creates dict with counts => {'red': 3, 'blue': 2} in ordered form
+counter.most_common(1) 		                           		# Outputs the element with the most counts as tuple
+counter[""red""})            		                            # Outputs the occurence of the value ""red"" => 3";python
+NAMEDTUPLE;"from collections import namedtuple
+Point = namedtuple(""Point"",""x,y"")							# Creates class with tumple
+pt = Point(1,-4)											# Creates Point(x=1,y=-4)
+print(pt.x, pt.y)											# Shows 1 and -4";python
+ORDEREDDICT;"not necessary anymore in the newer python versions
+is allready implemented in the regular dict-type)";python
+DEFAULTDIC;"d = defaultdict(int)	# Create defaultdict and define default-type
+d[""xyz""]				# No key error when when key not in the dict => default-type value 0 is outputed";python
+DEQUE;"from collections import deque      # import collections deque module
+d = deque()				# Create deque (optimized for working with elements at the end or beginning of the list)
+d.append(1)				# Add element at the end
+d.appendleft(2)			# Add element at the beginning
+d.extend([1,2]			# Add list of elements at the end
+d.extendleft([1,2])		# Add list of elements at the beginning (in reversed order so 2,1)
+d.pop()					# Delete element at the end
+d.popleft()				# Delete element at the beginning
+d.clear()				# Clear entire list
+d.rotate(2)				# Shift all elements 2 places to the right
+d.rotateleft(-1)			# Shift all elements 1 place to the left";python
+necessary for the func-operator;import operator;python
+all combis for carthesian product => [(1,3),(1,4),(2,3),(2,4)];product([1,2],[3,4]);python
+all with 3 elements => (0,0,0),(0,0,1),(0,1,0),(0,1,1), aso.;product([0, 1], repeat=3);python
+"all combis of this 2 strings => [(""a"",""1""),(""a"",""2""),(""b"",""1""),(""b"",""2"")]";product('ab', '12');python
+all different orderings => [(1,2,3),(1,3,2),(2,1,3),(2,3,1),(3,1,2),(3,2,1)];permutations ([1,2,3]);python
+all different orderings with 2 elements => [(1,2),(1,3),(2,1),(2,3),(3,1),(3,2)];permutations([1,2,3],2);python
+all possible combis for a defined length => [(1,2),(1,3),(1,4),(2,3),(2,4),(3,4)];combinations([1,2,3,4],2);python
+all combis also with itself => [(1,1),(1,2),(1,3),(2,2),(2,3),(3,3)];combinations_with_replacement([1,2,3],2);python
+accumulates every number with the next => [1,3,6,10];accumulate([1,2,3,4]);python
+using operator .mul for multiplication every number the next => [1,2,6,24];accumulate([1,2,3,4], func=operator.mul);python
+compares every entry to the maximum => [1,2,5,5,5];accumulate([1,2,5,3,4], func=max);python
+gives interabel - groups by the func => True[1,2], False[3];groupby([1,2,3],key=func_smaller3);python
+same thing - with a lambda operation => True[1,2], False[3];grougpy([1,2,3],key=lambda x: x<3);python
+infinite loop starting at 10 (has to be ended with break sometimes);for i in count(10);python
+infinite cycle through the list (has to be ended with break sometimes);for i in cycle([1,2,3]);python
+infinite loop with 1;for i in repeat(1);python
+loop with 1 for 4 times;for i in repeat(1,4);python
+Import numpy module with np abbreviation;import numpy as np;python
+Define a numpy array (automatically with type int);a = np.array([1,2,3,4]);python
+Multiindexing in arrays possible => gives array/[0.,1.,2.]);a[[0,2,-1]];python
+Defines a numpy array with datatype float (and not int);np.array([1,2,3,4]),dtype=np.float);python
+Defines a 2d numpy array;a = np.array([[1,2,3],[4,5,6],[7,8,9]);python
+Returns dimension shape => (3,3);a.shape;python
+Returns number of dimensions => 2;a.ndim;python
+Returns total number of elements => 9;a.size;python
+Gives / slices the second row => [4,5,6];a[1];python
+Gives / slices the second row and first element => 4;a[1,0];python
+Slices the first 2 rows => array([[1,2,3],[4,5,6]]);a[0:2];python
+Slices all row with first 2 elements => array([[1,2],[4,5],[7,8]]);a[:,:2];python
+Slices first 2 rows and first 2 elements => array([[1,2],[4,5]]);a[:2,:2];python
+Slices first 2 rows and last element => array([[3],[6]]);a[:2,2:];python
+Changes content of second row => array([[1,2,3],[9,9,9],[7,8,9]);a[1] = np.array([9,9,9]);python
+Changes content of third row (for all elements) => array([[1,2,3],[4,5,6],[8,8,8]);a[2] = 8;python
+Builds the sum of all elements => 45;a.sum();python
+=> 5.0;a.mean();python
+Return standard deviation => 2.58198889774344;a.std();python
+Builds sum per columns => array([12,15,18]);a.sum(axis=0);python
+Builds sum per rows => array([6,15,24]);a.sum(axis=1);python
+Initialize numpy array with 5 zeros => array([0.,0.,0.,0.,0.]);np.zeroes(5);python
+Initialize numpy array with 2x3 ones with int32 => array([[0,0,0],[0,0,0]]);"np.ones((2,3),dtype=""int32"")";python
+Initialize np array with 2x2 with the value 99 => array([[99,99],[99,99]]);np.full((2,2,),99);python
+Initialize a square matrix with len 3 => array([[1.,0.,0.],[0.,1.,0.],[0.,0.,1.]]);np.identity(3);python
+Separate individual copy of the numpy array (no updates in both arrays);arr_b = arr_a.copy();python
+Define 2d numpy array with 2,4 dimension;c = np.array([[1,2,3,4],[5,6,7,8]]);python
+Reshape the numpy array to 4,2 dimension => [[1,2],[3,4],[5,6],[7,8]];c.reshape((4,2));python
+Reshape the numpy array to 3d with 2,2,2 dimension => [[[1,2],[3,4]],[5,6],[7,8]]];c.reshape((2,2,2));python
+Build array with this range => array([0,1,2,3]);a = np.array(4);python
+Changes +10 to each element => array([10,11,12,13]) (creates new array - no changing a);a + 10;python
+Changes *10 to each element => array([0,10,20,30]) (creates new array - no changing a);a * 10;python
+Changes the existing array a => array([100,101,102,103]);a += 100;python
+Defines second array babab6;b = np.array([10,10,10,10]);python
+Sums the 2 arrays to new array => array([10,11,12,13);a + b;python
+Multiplicates the 2 arrays to new array => array([0,10,20,30);a * b;python
+Make sinus of all entries;np.sin(b);python
+Make cosinus of all entries;np.cos(b);python
+Build array with this range => array([0,1,2,3]);a = np.array(4);python
+Selecting items with boolean expressions - returns first and last element => array([0,3]);a[True,False,False,True];python
+Use operation on the array => array([False,False,True,True]);a >= 2;python
+Using operation for slicing => array([2,3]);a[a >= 2];python
+Gives back all elements which are greater than the mean => array([2,3]);a[a > a.mean()];python
+Gives back all elements which are NOT greater than the mean => array([0,1]);a[~(a > a.mean())];python
+Gives back all elements which are equal to 0 OR 1 => array([0,1]);a[(a==0) | (a==1)];python
+Gives back all elements which are <=2 and have no rest divided by 2 => array([0,2]);a[(a <= 2) & (a % 2 == 0)];python
+Random 1d float array with 3 entries => eg. (0.8377, 0.8720, 0,7784);np.random.rand(3);python
+Random 2d array 3 entries => [[0.27,0.91,0.54],[0.68,0.87,0.36],[0.05,0.64,0.16]];np.random.rand(3,3);python
+Random 1d int array 3 entries => [0,8,8];np.random.randint(0,10,3);python
+Random 2d int array 3x4 entries => [[2,6,4,5],[7,6,7,3],[7,0,4,0]];np.random.randint(0,10,(3,4));python
+Random 2d int array 3x3 entries with values from 0 to 99;np.random.randint(100, size(3,3));python
+Random 2d int array 3x3 entries with values from -4 to 7;np.random.randint(-4,8,size(3,3));python
+Shuffeling a 2d list but only the first axes;np.random.shuffle(lst);python
+Can reproduce the same results;np.random.seed(1);python
+examples;https://gist.github.com/why-not/4582705;python
+Import Module;import pandas as pd;python
+Also importing numpy-module necessary;import numpy as np;python
+Show more information - count of the shown columns;pd.set_option('display.max_columns',11);python
+Show more information - None is using the maximum width of the IDE;pd.set_option('display.width', None);python
+Define a series;s = pd.Series([35,63,81,61,127,65,319]);python
+Shows default-index in 1 row / values in 2 row - also the dtype: int64 at the bottom;print(s);python
+Name the series (shows the name also when series i printed at the bottom;"s.name = ""G7 population in millions""";python
+"Shows the dtype of the series => dtype(""int64"")";s.dtype;python
+Values of the series => array([35,63,81,61,127,65,319]);s.values;python
+Slicing element => 35;s[0];python
+Shows the index of the series => RangeIndex(start=0, stop=7, step=1);s.index;python
+Shows first index-value;s.index[0];python
+Change the index of the series from default 0-6 to country-names;"s.index=[""CAN"",""FRA"",""GER"",""ITA"",""JPN"",""UK"",""USA]";python
+Accessing now with the new index possible => 81;"s[""GER""]";python
+Access with index still possible using iloc => 35;s.iloc[0];python
+Access with index still possible using iloc => 319;s.iloc[-1];python
+Multiple selecting possible => GER 81 and JPN 127;"s.[""GER"",""JPN""]";python
+Multiple selecting with index using iloc possible => CAN 35 and USA 319;s.iloc[0,-1];python
+"Multiple selecting with "":"" - upper element is included => CAN 35, FRA 63, GER 81";"s.[""CAN"":""GER""]";python
+Add 10 for the every element in the series => ([45,73,91,71,137,75,329]);s + 10;python
+Using boolean operation to output every element => GER 81, JPN 127, USA 319;s[s > 70];python
+Using boolean operation to output countries > mean => JPN 127, USA 319;s[s > s.mean()];python
+~ for not, | for or, & for and;logical operator which can be used;python
+Changing the value of a series element => CAN 40;"s[""CAN""] = 40";python
+Changing the value of the last element => USA 500;s.iloc[-1] = 500;python
+Changing the value with a specific operation => CAN,FRA,ITA,UK are changed to 99;s[s < 70] = 99;python
+Define a series with NaN values;s = pd.Series([1,np.nan,7];python
+Check for NaN values in the series => False,True,False;d.isnull();python
+Check for NOT NaN values in the series => True,False,True;s.notnull();python
+Sum of not NaN values in the series => 2;s.notnull().sum();python
+Sum of NaN values in the series => 1;s.isnull().sum();python
+Outputs all entries which are not NaN;s.[s.notnull()];python
+Delete all entries with NaN;s.dropna();python
+Replace the NaN-values with 0;s.fillna(0);python
+Replace the NaN-values with the meanvalue of the serie;s.fillna(s.mean());python
+With forward-fill the NaN-values are replaced with the value before (if the first i gets NaN);"s.fillna(method=""ffill"")";python
+With backward-fill the NaN-values are replaced with the value after (if the last i gets NaN);"s.fillna(method=""bfill"")";python
+Returns the duplicates (only the first entry for the same is no duplicate - rest gets True);s.duplicated();python
+Returns the duplicates (only the last entry for the same value is no duplicate - rest gets True);"s.duplicated(keep=""last"")";python
+Returns the duplicates (when there are more than one value - all get flagged as duplicate with True);s.duplicated(keep=False);python
+Duplicates get dropped (only the first entry remains);s.drop_duplicates();python
+Duplicates get dropped (only the last entry remains);"s.drop_duplicates(keep=""last"")";python
+Duplicates get dropped (no entry remains if there are duplicate entries for the value);s.drop_duplicates(keep=False);python
+Sorting by value ascending;s.sort_values();python
+Sorting by value descending;s.sort_values(ascending=False);python
+Shows all parameters for the reader;pf.read_csv?;python
+Read csv into dataframe - first line will be col-names of the dataframe;"df = pd.read_csv(""fn.csv"")";python
+Read csv into dataframe - no headerline (col names will be default numeric);"df = pd.read_csv(""fn.csv"",header=None)";python
+""")							=> Read csv with sepeartor ""=>"" instead of the default "";""";"df = pd.read_csv(""fn.csv"",sep=""";python
+Many operations can be directly done when reading the csv-file;"df = pd.read_csv(""fn.csv"",";python
+=> no header in the csv available;header=None;python
+=> name the columns;"names=[""Timestamp"",""Price""],";python
+=> define which column will be the index;index_col=0,;python
+=> read dates as date - and not as string;parse_dates=True,;python
+=> treat this chars as NaN-values;"na_values[""?"",""-"",""""],";python
+"=> assign specific datatype to the column ""Price""";"dtype={""Price"":""float""},";python
+"=> decimal-point is "","" (and not ""."")";"decimal="","",";python
+=> read also blank lines (as default they are ignored);skip_blank_lines=False),;python
+=> use only the three columns when reading the csv (by position);usecols=[0,1,2],;python
+=> use only the three columns when reading the csv (selected by name);"usecols=[""first"",""last"",""age""])";python
+Write dataframe to csv;"df.to_csv(""fn2.csv"")";python
+Read xlsx (first worksheet) into dataframe;"df = pd.read_excel(""file.xlsx"")";python
+Read xlsx (first worksheet) into dataframe - without headers;"df = pd.read_excel(""file.xlsx"",header=None)";python
+Read xlsx and define the first column as index of the dataframe;"df = pd.read_excel(""file.xlsx"",index_col=[0])";python
+"Read xlsx (worksheet ""Prod"") into dataframe";"df = pd.read_excel(""file.xlsx"",sheet_name=""Prod"")";python
+Read xlsx with the ExcelFile method;"ef = pd.ExcelFile(""file.xlsx"")";python
+"Shows alle worksheet-names as a list => eg. [""Prod"",""Desc""]";ef.sheet_names;python
+"Read/Parse the worksheet ""Prod"" in a dataframe";"df = ef.parse(""Prod"")";python
+Write dataframe to xlsx;"df.to_excel(""file2.xlsx"",";python
+"Write to worksheet ""Prod""";"sheet_name=""Prod"",";python
+Start writing at row 1;startrow=1,;python
+Start writing at col 2;startcol=2);python
+Write dataframe to xlsx with the ExcelWriter method;"w = pd.ExcelWriter(""file2.xlsx"")";python
+"Write dataframe to xlsx worksheet ""Prod"" with the ExcelWriter method";"with w: df.to_excel(w,sheet_name=""Prod""";python
+Write multiple worksheet to xlsx from dataframes;"with pd.ExcelWriter(""file2.xlsx"") as writer:";python
+"Dataframe1 stored in worksheet ""Prod""";"df1.to_excel(w, sheet_name=""Prod"")";python
+"Dataframe2 stored in worksheet ""Desc""";"df2.to_excel(w, sheet_name=""Desc"")";python
+Establish connection to the sql-db;"conn = sqlite3.connect(""data.db"")";python
+Read data from sql-db into dataframe;"df = pd.read_sql(""SELECT * FROM empl;"",conn)";python
+Many operations can be directly done when reading the sql-db;"df = pd.read_sql(""SELECT * FROM empl;"",conn,";python
+=> define which column will be the index;"index_col=""EmplID"",";python
+=> read this columns as date;"parse_dates[""BirthDate"",""HireDate""])";python
+It is easier to read a complete table using sqlalechmy;from sqlalchemy import create_engine;python
+Create SQL Alchemy engine;"engine = create_engine(""data.db"")";python
+Establish connection with SQL Alchemy;connection = engine.connect();python
+Read whole table with SQL-Alechmy (many things are auto-done - e.g. Indexing,Parsing);"df = pd.read_sql_table(""empl"",con=connection)";python
+Writes dataframe to the sql-db (breaks when table allready exists);"df.to_sql(""data.db"",conn)";python
+Writes dataframe to the sql-db (with droping the table before inserting);"df.to_sql(""data.db"",conn,if_exists=""replace"")";python
+Writes dataframe to the sql-db (with inserting new values to existing table);"df.to_sql(""data.db"",conn,if_exists=""append"")";python
+Read html into dataframe;df = pd.read_html(html_string);python
+Assign html-varialbe;"html_url""https://www.xyz.com""";python
+Read html-link to dataframe;df = pd.read_html(html_url);python
+EXAMPLE;"https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-course/pandas-condtitional-selection-and-modifying-dataframes
+    Popl	HDI		Continent
+CAN	35		0,913	America
+FRA	64		0,888	Europe
+GER	81		0,916	Europe
+ITA 61		0,873	Europe
+JPN 127		0,891	Asia
+UK  65		0,907	Europe
+USA 319		0,915	America";python
+Initialize a dataframe with random ints with 5 rows and 2 columns;df = pd.DataFrame(np.random.randint(0,5,size=(5, 2)), columns=list('AB'));python
+Show the shape of the dataframe (rows, columns) => (7,3);df.shape;python
+Info for columns (index,name,dtype) also count of NaN-values per column;df.info();python
+Shows datatype of every column;df.dtpyes();python
+Several statistic for the dataframe (median,max,min,std,...);df.describe();python
+Output of the first 5 rows per default;df.head();python
+Output of the first 22 rows;ead(22);python
+Output of the last 5 rows per default;df.tail();python
+Output of the last 22 rows;df.tail(22);python
+Output of all column names;df.columns;python
+Rename the columns;"df.columns[""POPL"",""hdi"",""CONT""]";python
+Outputs the index;df.index;python
+"Set index to column ""name""";"df.index = df[""name""]";python
+Assigning new index - replaces the default numeric index;"df.index = [""CAN"",""FRA"",""GER"",""ITA"",""JPN"",""UK"",""USA""]";python
+Outputs the size of the dataframe;df.size;python
+Resets the index - with inplace it is permanently saved;df.reset_index(inplace=True);python
+"Define ""Popl"" as new index - with inplace it is permanently saved";"df.set_index(""Popl"", inplace=True)";python
+"Selecting Rows by index - showing the row with the index = ""CAN""";"df.loc[""CAN""]";python
+Selecting Rows by position - showing the last row;df.iloc[-1];python
+"Selecting Columns by title - showing the whole column ""Population"" for all rows";"df[""Popl""]";python
+Output of alle values with their count;"df[""Continent""].value_counts()";python
+Output of alle values with their count in percent;"df[""Continent""].value_counts(normalize=True)";python
+Showing cols Popl,Continent for all rows;"df[[""Popl"",""Continent""]]";python
+Showing cols Popl,Continent for all rows - values divided by 100;"df[[""Popl"",""Continent""]] / 100";python
+Show the rows from index CAN to ITA;"df.loc[""CAN"":""ITA""]";python
+Show the rows from index CAN to ITA - only with the column1;"df.loc[""CAN"":""ITA"",""Popl""]";python
+Show the rows from index CAN to ITA - only with the column1 + column3;"df.loc[""CAN"":""ITA"",[""Popl"",""Continent""]]";python
+Show the columns col1 to col4 for all rows;"df.loc[:,""col1"":""col4""]";python
+Show the columns col1 to col4 for 3 rows from index 0 to 2 (2 included);"df.loc[0:2,""col1"":""col4""]";python
+Show the columns cols 1 and 3 for the rows from index 0 to 2 (2 included);"df.loc[0:2,[""col1"",""col3""]]";python
+Show the 1st and last row => CAN,USA;df.iloc[0,-1];python
+Show 2nd and 3rd row for all cols => FRA,GER / Popl,HDI,Continent;df.iloc[1:3];python
+Show 2nd and 3rd row for 2nd col => FRA,GER / HDI;df.iloc[1:3,1];python
+Show 2nd and 3rd row for 1st and 3rd column => FRA,GER / Popl,Continent;df.iloc[1:3,[0,2]};python
+Show 2nd and 3rd row for the 2nd and 3rd col => FRA,GER / HDI,Continent;df.iloc[1:3,1:3];python
+Returns series with boolean True/False for every row (F,F,T,F,T,F,T);"df[""Popl""] > 70";python
+Returns GER,JPN,USA for all cols;"df.loc[df[""Popl""]] > 70";python
+"Returns GER,JPN,USA for col ""Popl""";"df.loc[df[""Popl""] > 70, ""Popl""]";python
+"Returns GER,JPN,USA for cols ""Popl"" and ""Continent""";"df.loc[df[""Popl""] > 70, [""Popl"",""Continent""]]";python
+Output of 2 columns for the column slice;"df[[""Open"",""Close""]][""2010"":""2020""]";python
+Output specific rows and slice of columns;"df[df.index.isin([""2020"",""2019""])][hist.columns[0:4]]";python
+Output specific rows and columns;"df[df.index.isin([""2020"",""2019""])][[""Open"",""Close""]]";python
+Drops the row CAN;"df.drop(""CAN"")";python
+Drops the rows CAN,JPN;"df.drop([""CAN"",""JPN""])";python
+Drops the rows CAN,JPN (2nd method);"df.drop([""CAN"",""JPN""],axis=0)";python
+Drops the rows CAN,JPN (3rd method);"df.drop([""CAN"",""JPN""],axis=""rows"")";python
+Drops the cols Popl,Continent;"df.drop(columns=[""Popl"",""Continent""])";python
+Drops the cols Popl,Continent (2nd method);"df.drop([""Popl"",""Continent""],axis=1)";python
+Drops the cols Popl,Continent (3rd method);"df.drop([""Popl"",""Continent""],axis=""columns"")";python
+Drops the whole dataframe;df.drop(df.index, inplace=True);python
+Define series with same col-names as in the dataframe - with some correction values;"crisis = pd.Series([-10,-0,3],index=[""Popl"",""HDI""])";python
+"Comines crisis-series to the df => all values in ""Popl"" -10 and ""HDI"" -0,3 in the df";"df[[""Popl"",""HDI""]] + crisis";python
+Define new series for new column in dataframe;langs = pd.Series(;python
+=> values of new column;"[""FR"",""DE"",""IT""],";python
+=> existing index in dataframe;"index=[""FRA"",""GER"",""ITA""],";python
+=> name of the new column;"name= ""lang"")";python
+"Creates new column in the dataframe according to the series ""langs"" - other rows will get ""NaN""";"df[""lang""] = langs";python
+"Values of all rows in the column ""lang"" will be changed to ""GB""";"df[""lang""] = ""GB""";python
+Renames column names;"df.rename(columns={""Popl"":""POPL"",""Continent"":""CONT""})";python
+Renames index names;"df.rename(index={""UK"":""UnKi"",""USA"":""US""})";python
+"Creates new column by dividing col ""Popl"" with col ""HDI""";"df[""Popl_HDI""] = df[""Popl""] / df[""HDI""]";python
+Different operations for the column in the dataframe;"df[""Popl""].median().max().min().sum().mean().qunatile()";python
+Changes Timestamp-String to Timestamp-Type (eg. read from csv-file before);"df[""Timestamp""]=pd.to_datetime(df[""Timestamp""])";python
+Plotting the dataframe using the mathlib-module;df.plot();python
+Plot the dataframe;df.plot(figsize=(12,6));python
+Plot the dataframe for the specific timeframe;"df.loc[""2017-12-01"":""2019-12-01""].plot(figsize=(12,6)))";python
+Check for NaN values in the Dataframe => Matrix with True / False;df.isnull();python
+Check for NOT NaN values in the Series => Matrix with True / False;df.notnull();python
+Sum of NaN values per column;df.isnull().sum();python
+Deleting all rows with at least one NaN value in it;df.dropna();python
+Deleting all columns with at least one NaN value in it;df.dropna(axis=1);python
+Deleting all rows where all columns are NaN;"df.dropna(how=""all"")";python
+Deleting all rows where at least 3 columns are NOT NaN;df.dropna(thresh=3);python
+Replace NaN values with text;"df.fillna(""missing"")";python
+With forward-fill NaN-values are replaced with the value before (axis=0 means vertical / per column);"df.fillna(method=""ffill"",axis=0)";python
+With forward-fill NaN-values are replaced with the value before (axis=0 means horizontal / per row);"df.fillna(method=""ffill"",axis=1)";python
+"Shows the existing values for the column => eg: ""M"",""F"",""D"",""?"" (M/F is correct and D/? is wrong)";"df[""Sex""].unique()";python
+"Shows the count of each existing value in the column => eg. ""M"" 175, ""F"" 132, ""D"" 5, ""?"", 3 => so 8 wrong entries";"df[""Sex""].value_counts()";python
+"Change all ""D"" values in the column to ""F""";"df[""Sex""].replace(""D"",""F"")";python
+"Change all ""D"" to ""F"" and ""N"" to ""M"" in the column";"df[""Sex""].replace({""D"":""F"",""N"":""M""})";python
+Find all the invalid values in the age-column => eg. greater than 100 is invalid entry;"df[df[""Age""] > 100]";python
+Fixing the invalid values for age by dividing it to 100;"df.loc[df[""Age""]>100,""Age""]=df.loc[df[""Age""]>100,""Age""]/100";python
+Defines new filter;"filt = (df[""col1"" == ""col1_val1""])";python
+Defines new filter with several values;"filt2 = (df[""col1""].isin([""val1"",""val2"",""val3""]))";python
+Defines new filter NOT with several values;"filt3 = (~df[""col1""].isin([""val1"",""val2"",""val3""]))";python
+Defines new filter with a > operator;"filt4 = (df[""col1""] > 123)";python
+Outputs the result for the above filter;df[filt];python
+Outputs the result for the above filter with only col2;"df[filt][""col2""]";python
+Filter the elements for the top 2.5% of the dataset (quantile);df= df[(df['value'] >= df['value'].quantile (0.025))];python
+Filter the elements for the bottom 2.5% of the dataset (quantile);df= df[(df['value'] < df['value'].quantile (0.975))];python
+Check duplicates for all rows (only first entry is not flagged as True);df.duplicated();python
+Check duplicates for all rows (only last entry is not flagged as True);"df.duplicated(keep=""last"")";python
+Check duplicates for all rows (every entry is flagged as True);df.duplicated(keep=False);python
+Check duplicates only for subset-col (only first entry is not flagged as True);"df.duplicated(subset=[""Name""])";python
+Check duplicates only for subset-col (only last entry is not flagged as True);"df.duplicated(subset=[""Name""],keep=""last"")";python
+Check duplicates only for subset-col (every entry is flagged as True);"df.duplicated(subset=[""Name""],keep=False)";python
+"Split all the strings in the column at the blank-char ""_"" => eg. results [1987, M, US, 1]";"df[""Data""].str.split(""_"")";python
+Split all the strings in the column at the blank-char and build seperate new columsn in the dataframe;"df[""Data""].str.split(""_"",expand=True)";python
+"Check column if there exists an ""U"" in the string-values (True / False output as series) - also regex possible";"df[""Data""].str.contains(""U"")";python
+Eliminate the whitespaces at the beginning and end for the string-values;"df[""Data""].str.strip()";python
+"Replace / Deletes blanks "" "" in the string-values";"de[""Data""].str.replace("" "","""")";python
+Function lower is used for the whole dataframe;df.apply(lambda x: x.lower());python
+Function lower is used for the first 3 columns;"df.apply(lambda x: x.lower(), axis=""columns"")[0:3]";python
+Sorting the new index ascending;df.sort_index(inplace=True);python
+Sorting the columns in dataframe;df.reindex(sorted(df.columns), axis=1);python
+Sorting by column ascending;"df.sort_values(by=""co1"")";python
+Sorting by column descending;"df.sort_values(by=""co2"",ascending=False)";python
+Sorting by 2 columns descending - first col1 and then col2;"df.sort_values(by=[""col1"",""col2""],ascending=False)";python
+Sorting a series for one specific col descending;"df[""col1""].sort_value(ascending=False)";python
+Change the column titles to uppercase;df.columns =) [x.upper() for x in df.columns];python
+Function lower is used for the whole column;"df[""c1""] = df[""c1""].apply(lambda x: x.lower())";python
+Change the names of the values - all others become NaN;"df[""c1""].map({""val1"":""val1new"",""val2"":""val2new""})";python
+Change the names of the values - all others are not touched;"df[""c1""].replace({""val1"":""val1new"",""val2"":""val2new""})";python
+New column at the end;"df[""cnew1""] = df[""c1""] + df[""c2""]";python
+Deleting 2 columns;"df.drop(columns=[""c1"",""c2""], inplace=True)";python
+Add new row (all other cols are defined as NaN for the row);"df = df.append({""c1"":""val1""},ignore_index=True)";python
+Outputs the 5 highest values in the column - only col1;"df[""col1""].nlargest(5)";python
+Outputs the 5 highest values in the column - all columns;"df.nlargest(5,""col1"")";python
+Outputs the 5 lowest values in the column - all columns;"df.nsmallest(5,""col1"")";python
+Grouping according to col1;"col1_grp = df.groupby(""col1"")";python
+Access to one value from the group;"col1_grp.get_group(""col1_value"")";python
+Grouping col1 and output median for col2;"col1_grp[""col2""].median()";python
+Grouping col1 and output median for col2 only for 3 group-values;"col1_grp[""col2""].median().loc[[""A"",""B"",""C""]]";python
+Filtering all Values with 0;"non_zero = df[df[""col1""]!=0]";python
+"Add new column with Y/N depending if the value in col ""Sales"" is > 50";"df[""newcol""]=[""Y"" if x > 50 else ""N"" for x in df[""Sales""]]";python
+Change existing column with Y/N depending if the value in col is > 50;"df[""col""]=[""Y"" if x > 50 else ""N"" for x in df[""col""]]";python
+Add/change column with 0/1 depending of calc of the variables x/y from 2 cols;"df[""c""]=[1 if (x/y>9) else 0 for x,y in zip(df[""c1""],df[""c2])]";python
+Import module as plotter plt;import matplotlib.pyplot as plt;python
+Plot a line;plt.plot(x, x **2 );python
+Plot another line (in the other direction);plt.plot(x, -1 * (x ** 2));python
+Define x values;x_values = list(range(1000));python
+Define y values / squares;squares = [x**2 for x in x_values];python
+Plot diagram with x- and y-axes;plt.plot(x_values, squares);python
+Plot 1st row, 2nd col in the 2nd diagram (any line after that will only access the 2nd diagram);plt.subplot(1,2,2);python
+Sscatter diagram with x- and y-axes and line strenght = 5;plt.scatter(x_values, squares, s=5);python
+Title with fontsize = 24;"plt.title(""Title"", fontsize=24)";python
+X-Axe title with fontsize = 18;"plt.xlabel(""X-Axe"", fontsize=18)";python
+Y-Axe title with fontsize = 18;"plt.ylabel(""Y-Axe"", fontsize=18)";python
+Params describtion with fontsize = 10;"plt.tick_params(axis=""both"", which=""major"", labelsize=10)";python
+Define scaling of axes;plt.axis([0,1100,0,1100000]);python
+Colors from one shade to another with different params;"plt.scatter(x,y,c=squares,cmap=plt.cm.Blues,edgecolor=""none"", s=10)";python
+Expoit the first point larger in green;"plt.scatter(x[0],y[0],c=""green"",edgecolor=""none"", s=100)";python
+Expoit the last point larger in red;"plt.scatter(x[-1],y[-1],c=""red"",edgecolor=""none"", s=100)";python
+Hide the complete x-axis description;plt.axes().get_xaxis().set_visible(False);python
+Hide the complete y-axis description;plt.axes().get_yaxis().set_visible(False);python
+Define custom figure size;plt.figure(dpi=128, figsize=(10,6));python
+Show diagram;plt.show();python
+Save diagram as png-picture-file;"plt.savefig(""example.png"",bbox_inches=""tight"")";python
+Different methods for locating elements;https://selenium-python.readthedocs.io/locating-elements.html;python
+Import WebDriver für Zugriff auf URL;from selenium import webdriver;python
+Import Time-Library für Verzögerungen wenn notwendig;import time;python
+Import Keys to send Key-strokes;from selenium.webdriver.common.keys import Keys;python
+Driver für Chrome definieren - mit akt. Ordner os.getcwd;driver = webdriver.Chrome(os.getcwd() + '/chromedriver');python
+Zugriff auf die URL;"driver.get(""url"")";python
+Click auf ein ELement (Copy ) - mit Untersuchen - Copy XPath;"driver.find_element_by_xpath('//*[@id=""button""]/input').click()";python
+Manchmal notwendig um Verarbeitung abzuwarten;time.sleep(1);python
+Feld Name wird mit Inhalt x befüllt;"driver.find_element_by_xpath('//*[@id=""name""]').send_keys(""x""])";python
+Text wird in Feld eingetragen;"driver.find_element_by_name(""q"").send_keys(""txt"")";python
+Text wird in Feld eingetragen und Enter gedrückt;"driver.find_element_by_name(""q"").send_keys(""txt"" + u'\ue007')";python
+Feld word nach ID gesucht;"driver.find_element_by_id(""xy-id"")";python
+Felder werdem nach Class gesucht (als Liste);"driver.find_elements_by_class_name(""cl"")[0]";python
+Felder werdem nach Tag gesucht (als Liste);"driver.find_elements_by_tag_name(""tag"")[0]";python
+Send single keyboard-elements <> chars (needs import keys);driver.send_keys(Keys.Backspace,Keys.ARROW_LEFT,Keys.ENTER);python
+Send an Return-keystroke (eg. for enter after data entries in fields);driver.send_keys (u'\ue007');python
+Enter wird gedrückt bzw. die Seite abgeschickt;field.submit();python
+Driver schließen (sonst schließt sich das Fenster nicht);driver.quit();python
+Titel der HTML-Seite;driver.title;python
+Back-Function in browser-history;driver.back();python
+Forward-Function in browser-history;driver.forward();python
+Define an individual cookie;"cookie = {""name"": ""token"", ""value"": ""23874kljdsjhfaökldjs""}";python
+Use Cookie;driver.add_cookie(cookie);python
+Outputs a specific cookie;"driver.get_cookie(""token"")";python
+Outputs all cookies;driver.get_cookies());python
+Read current, actual url;driver.current_url;python
+Swith to a frame-id (eg. a PopUp);"driver.switch_to.frame (""frame_id"")";python
+Read active window name;act_window = driver.current_window_handle;python
+Switch (back) to active window (eg. after working on the popup-frame or popup-window);driver.switch_to.window(act_window);python
+Use Selenium with chrome windows hidden;"from selenium.webdriver.chrome.options import Options
+options = Options()
+options.add_argument('--headless')                                          # Window Hidden (only used this for the final program - not during devleopment / testing!)
+if platform == ""win32"": options.add_argument('--start-maximized')           # Window Started Maximized (for Windows)
+elif platform in [""linux"",""darwin""]: options.add_argument('--kiosk')        # Window Started Maximized (for Linux and Mac)
+options.add_experimental_option ('excludeSwitches', ['enable-logging'])     # No error messagegs when exec in cmd
+driver = webdriver.Chrome(os.getcwd() + '/chromedriver', options=options)";python
+Scroll to the very bottom of a site - eg. Twitter, Facebook, Stocktwits,...;"lenOfPage = driver.execute_script(""window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;"")
+match=False
+while(match==False):
+    lastCount = lenOfPage
+    time.sleep(1)
+    lenOfPage = driver.execute_script(""window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;"")
+    if lastCount==lenOfPage:
+        match=True";python
+When there are problems clicking an element on a page;"Method1:
+element = driver.find_element_by_id('datePickerToggleBtn')
+webdriver.ActionChains(driver).move_to_element(element ).click(element ).perform()
+
+Method2:
+element = driver.find_element_by_css('div[class*=""loadingWhiteBox""]')
+driver.execute_script(""arguments[0].click();"", element)";python
+Wait till a specific element is loaded;"WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.NAME, ""agree""))).click()
+WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, ""YDC-Col1"")))";python
+Take a screenshot when something fails in headless mode;"try:
+    ...
+    do the whole selenium work...
+    ...
+except:
+    driver.get_screenshot_as_file(""a.jpeg"")";python
+Import module for beautiul soap;from bs4 import BeautifulSoap;python
+Import moduel for fake useragent;from fake_useragent import UserAgent;python
+Define UserAgent;ua = UserAgent();python
+Create random useragent;ua.random;python
+Read url as page;"page = requests.get(""https://www.ariva.de/dax-30"")";python
+Read page with html.parser;"soup = BeautifulSoup (page.content,""html.parser"")";python
+Read specific invidual id;"table  = soup.find(id=""result_table_0"")";python
+Read specific class;"name_box = soup.find(""h1"", attrs={""class"": ""99a4824b""})";python
+Read all table data cells;"table.find_all(""td""):";python
+Read all table rows for specific class;"soup.find_all(""tr"", class_=""arrow0""):";python
+Read all table data cells with id and content;"for col_id, col_content in enumerate(result.find_all(""td"")):";python
+Read all divs with specific class;"entries = results.find_all(""div"", class_=""col-xs-6"")";python
+"Find div with id ""lj_div""";"soup.find(""div"", {""id"": ""lj_div""})";python
+"Find (first) p with class ""line""";"soup.find(""p"", {""class"": line}";python
+Check if class has specific content;"if row.get(""class"") == [""ellipsis"", ""nobr"", ""new""]:";python
+Read all links from href element;"for e in soup.find_all(""a""): e.get(""href""))";python
+"Read all number from the field ""value""";"for e in soup.find_all(""a""): e.get(""value""))";python
+Outputs text without whitespaces;content.text.strip();python
+Read url from the image;url_i = rows[0].find('img')['src'];python
+Read image as content;image = requests.get(f'https:{url_i}').content;python
+Formated Output with html indentations;results.prettify();python
+Check if specific text in soup text-output;"if ""Kein Zugriff"" in soup.text:";python
+Read with Selenium when necessary due the specific homepage;"from bs4 import BeautifulSoup
+from selenium import webdriver
+link = ""https://www.gurufocus.com/stock/"" + stock + ""/summary""			# define the homepage to be scraped
+options = Options()
+options.add_argument('--headless')										# webpage will work in the back
+options.add_experimental_option ('excludeSwitches', ['enable-logging'])
+path = os.path.abspath (os.path.dirname (sys.argv[0]))					# works for alle platforms (Win,MacOs,Linux)
+if platform == ""win32"":
+	cd = '/chromedriver.exe'
+elif platform == ""linux"":
+	cd = '/chromedriver_linux'
+elif platform == ""darwin"":
+	cd = '/chromedriver'
+driver = webdriver.Chrome (path + cd, options=options)					# Use chromedriver.exe to read website with the above options
+driver.get (link)  														# Read link
+time.sleep (2)  														# Wait till the full site is loaded";python
+Wait for the specific element to load;"element = driver.find_element_by_id(""analyst-estimate"")
+driver.execute_script(""arguments[0].scrollIntoView();"", element)
+time.sleep (1)";python
+Read page with html.parser and to the further scraping;soup = BeautifulSoup(driver.page_source, 'html.parser');python
+Close the chromedriver window;driver.quit ();python
+all searches also possible for more elements wiht find_elements_*;"driver.find_element_by id												# Search for a id in html
+driver.find_element_by_name												# Search for name-field (eg. in input-tag)
+driver.find_element_by_xpath											# Search by xpath of the element (right mouse blick in Chrome Dev Tools)
+driver.find_element_by_link_text										# Search for (full) text within the tags
+driver.find_element_by_partial_link_text								# Search for (part) text within the tags
+driver.find_element_by_tag_name('h1')									# Search for a tag in html
+driver.find_element_by_class_name(""cont"")								# Search for a specific class name in html
+driver.find_element_by_css_selector('p.content')						# Search for tag and selector";python
+import module requests;import requests;python
+import module json;import json;python
+Request api from the generated api-link;"api_request = requests.get (""apilink.html"")";python
+Read/parse api-data to a json-loadfil;api = json.loads(api_request.content);python
+Read the value for the 1 element and the attribute xyz;"result = api[0][""xyz""]";python
+Installation;pip install pyqt5;python
+Defines Application;from PyQt5.QtWidgets import QApplication;python
+Defines Label;from PyQt5.QtWidgets import QLabel;python
+Defines Widget;from PyQt5.QtWidgets import QWidget;python
+Arranges horizontally from left to right;from PyQt5.QtWidgets import QHBoxLayout;python
+Arranges vertically from top to bottom;from PyQt5.QtWidgets import QVBoxLayout;python
+Arranges in grid from on x and y axes;from PyQt5.QtWidgets import QGridLayout;python
+Field for forms - 1col are titles, 2col are fields,rbs,cb;from PyQt5.QtWidgets import QFormLayout;python
+Defines PushButton;from PyQt5.QtWidgets import QPushButton;python
+Module for dialog windows;from PyQt5.QtWidgets import QDialog;python
+Module for button boxes in dialog windows;from PyQt5.QtWidgets import QDialogButtonBox;python
+Defines input field with text;from PyQt5.QtWidgets import QLineEdit;python
+Module for main windows;from PyQt5.QtWidgets import QMainWindow;python
+Module for status bar;from PyQt5.QtWidgets import QStatusBar;python
+Module for tool bar;from PyQt5.QtWidgets import QToolBar;python
+Create an instance of the application;app = QApplication(sys.argv);python
+Initialize a window;w = QWidget();python
+Title of the windows;w.setWindowTitle('Windows Title');python
+Define windows (1:x-coord,2:y-coord,3:width,4:height);w.setGeometry(200, 200, 380, 180);python
+Place / move windows to coodinates 60,15;w.move(50, 15);python
+Define label / message in format h1;msg = QLabel('<h1>Hello World!</h1>', parent=window);python
+Place / move labe to coordinates 60,15;msg.move(50, 15);python
+Show the application GUI - schedules a paint event;windows.show();python
+Start the app and close it with sys.exit;sys.exit(app.exce_());python
+Defines horzontal box;layout_qh = QHBoxLayout();python
+Defines vertical box;layout_qv = QVBoxLayout();python
+Defines grid layout;layout_qg = QGridLayout();python
+Defines form layout;layout_qf = QFormLayout();python
+Defines one or more buttons;layout_qh.addWidget(QPushButton('Button1'));python
+Defines one or more buttons;layout_qv.addWidget(QPushButton('Button1'));python
+Defines one or more buttons and set it to position 1,0;layout_qg.addWidget(QPushButton('Button1'),1,0);python
+Set buttons to position 2,1 and span it 1row/2cols;layout_qg.addWidget(QPushButton('Button1'),2,1,1,2);python
+Defines input field;"layout_qf.addRow(""text:"", QLineEdit())";python
+Sets layout dimensions to window;w.setLayout(layout_xy);python
+Defines a class dialog which inherits from QDialog;class Dialog(QDialog):;python
+Define buttons for a dialog window;buttons = QDialogButtonBox();python
+Defines a ok button on a dialog window;buttons.setStandardButtons(QDialogButtons.OK);python
+Adds buttons to vertical layout;layout_qv.addWidget(buttons);python
+Defines a class Windows which inherits from QMainWindow;class Window(QMainWindow):;python
+Tutorial with deep explanation;https://www.youtube.com/watch?v=YXPyB4XeYLA;python
+Import tkinter module;from tkinter import *;python
+Create root window;root = Tk();python
+Name of the window in the title;"root.title(""Header Title"")";python
+Define icon for the windows (left upper corner);"root.iconbitmap(""pic.ico"")";python
+Define size of the window;"root.geometry(""400x400"")";python
+Creating a label widget;"myLabel = Label(root,text=""Hello World!"")";python
+Showing myLabel on the screen;myLabel.pack();python
+Showing myLabel on grid place 0/0 (left upper corner) with 10pixel padding from above;myLabel.grid(row=0,column=0,pady=10);python
+Creating a status label widget with border (bd=1), sunken relief and anchor position right (east);"status = Label(root,text=""St"",bd=1,relief=SUNKEN,anchor=E";python
+Showing status bar - with using maximum space from left to right (west to east) with sticky;status.grid(row=2,column=0,columnspan=3,sticky=W+E);python
+Creating a button widget with a name;"myButton = Button(root,text=""Click Me!"")";python
+Creating a deactivated, greyed button widget with a name;"myButton = Button(root,text=""Click Me!"",state=DISABLED)";python
+Creating a button widget with a name and size 50 * 50;"myButton = Button(root,text=""C"",padx=50,pady=50)";python
+Creating a button which will excute the myfunc-function when its clicked;"myButton = Button(root,text=""T"",command=myfunc)";python
+Creating a button which will excute the func-function with a numeric parameter;"myButton = Button(root,text=""T"",command=lambda: func(nr))";python
+Creating a button with background blue and foreground white;"myButton = Button(root,text=""col"",bg=""blue"",fg=""white"")";python
+Create a quit-button on the window;"QuitButton = Button(root,text=""exit"",command=root.quit)";python
+Creating a entry field - with width 50 and borderwidth 5 - and showing the field;myEntry = Entry(root, width=50, borderwidth=5).pack();python
+Showing myEntry as grid in row/col = 0/0 and spanned over 3 columns;myEntry.grid(row=0,column=0,columnspan=3);python
+Showing myEntry as grid in row/col = 0/0 and with pading in x/y-axes;e.grid(row=0,column=0,padx=10,pady=10);python
+Read content of the entry field;myEntry.get();python
+Shows a default value in the entry field;"myEntry.insert(0,""Default-Text"")";python
+Insert a number into the entry field;myEntry.insert(0, number);python
+Delete content of the entry field;myEntry.delete(0,END);python
+Mainloop of the program;root.mainloop();python
+"Close window ""wind""";...command=wind.destroy;python
+Pics in Tkinter-Windows;"from PIL import ImageTk,Image								# Additional module Pillow neede (install with <pip install Pillow>
+my_img = ImageTk.PhotoImage(Image.open(""demo.png""))			# Reads Image wiht Pillow-module (Tkinter can not read png/jpg files)
+my_label = Label(image=my_img)								# Creating a Label with the image
+my_label.pack()												# Showing the pic";python
+Define Frame;"frame = LabelFrame(root,text=""Name_Frame"",padx=5,padx=5)	# Creating a frame with padding 5/5 (inside the frame)
+frame.pack(padx=10,pady=10)									# Showing the frame with padding 10/10 (outside the frame)
+button = Button(frame,text=""Name_Button"")					# Creating button in the frame (not root window)
+button.grid(row=0, column=0)								# Showing the button in the frame as grid (with frames is mixing between pack and grid possible)";python
+RadioButtons;"r = IntVar()												# Define variable for radio button - when string use StringVar()
+r.set(""2"")													# Choose default radio button
+Radiobutton(root,text=""Opt1"",variable=r,value=1).pack()		# Define and show radiobutton 1
+Radiobutton(root,text=""Opt2"",variable=r,value=2).pack()		# Define and show radiobutton 2
+r.get()														# Get value from choosen radio button";python
+MessageBox;"messagebox.showinfo(""Title of PopUp"", ""Hello World!"")		# Show Messagebox
+different boxes available: showinfo, showwarning, showerror, askquestion, askokcancel, askyesno
+response = messagebox.askquestion (""Bla"", ""BlaBla!"")		# Show AskQuestion Box and store response";python
+Check about response of user in message box;"if response == 1: Label(root, text= ""YES"").pack()
+elif response == 0: Label(root, text= ""NO"").pack()";python
+More Windows;"def open()													# Function for opening the 2nd window
+	global my_img											# Global definition necessary - otherwise no pic would be drawn
+	sec = TopLevel()										# Define 2nd window
+	sec.title(""2nd Window"")									# Title for 2nd window
+    img = ImageTk.PhotoImage(Image.open(""demo.png""))		# Define image
+    Label (top, image=img).pack()							# Show image in 2nd window
+btn=Button(root,text=""Open 2nd Window"",command=open).pack()	# Button for opening 2nd window per click";python
+FileDialog;"root.filename = filedialog.askopenfilename(					# Define filname dialog
+    initialdir=""/Users/Bla/images"",							# Define initial dir for the file dialog
+    title=""Select file"",									# Title of the file dialog
+    filetypes=((""png files"",""*.png""),(""all files"",""*.*"")))	# Define filetypes in dialog (first name, second which files, default first entry)
+my_label = Label(root, text=root.filename).pack()			# After choosing a file - show the filename + filepath";python
+Slider;"vertical = Scale(root,from_=0,to=200)						# Define vertical slider
+vertical.pack()												# Showing vertical slider
+horizontal = Scale(root,from_=0,to=200,orient=HORIZONTAL)	# Define horizontal slider
+horizontal.pack()											# Showing horizontal slider";python
+Checkboxes;"Checkbutton(root,text=""Check1"",variable=var).pack(			# Define and Show a checkbox
+c.select() or c.deselect()									# Select or Deselect per default the checkbox";python
+DropDown;"options=[""Mo"",""Tu"",""We"",""Th"",""Fr""]							# Define options for dropdown menue
+var = StringVar()											# Define variable for dropdown menue
+var.set(""Mo"")												# Set default for dropdown menue
+OptionMenu(root,var,*options).pack							# Define dropdown menue";python
+Pygame documentation;http://pygame.org/docs/;python
+Import of the pygame module;import pygame as pg;python
+Initialize and setup screen;pg.init();python
+Define dimension;screen_dim = (1200,800);python
+Show screen with the defined dimensions;screen = pg.display.set_mode(screen_dim);python
+Define background color;bg_color = (230,230,230);python
+Screen filling with defined background color;screen.fill(bg_color);python
+Title of the game in the window;"pg.display.set_caption(""My Super Game"")";python
+Rectangle infos (left,top,width,height - (0,0,1200,800);rect screen.get_rect();python
+Center of the Rectangle as tuple - (600,400);rect.center;python
+Size of the Rectangle as tuple - (1200,800);rect-size;python
+X-Dim left - (0);rect.left;python
+X-Dim right - (1200);rect.right;python
+Y-Dim top - (0);rect.top;python
+Y-Dim bottom - (800);rect.bottom;python
+Middle of X-Dim - (600);rect.centerx;python
+Middle of Y-Dim - (400);rect.centery;python
+Width of the rectangle - (1200);rect.width;python
+Height of the rectangle - (800);rect.height;python
+Define new rectangle;small_rect = pg.Rect(100,100,10,150);python
+Draw small rectangle in screen;pg.draw.rect(screen,(100,100,100,small_rect);python
+Loading an image;"figure = pg.image.load(""ship.png"")";python
+Getting the rect object from an image;figure.get_rect();python
+Positioning an image in the middle of the bottom screen;figure_rect.midbottom = screen_rect.midbottom;python
+Drawing an image to the screen;screen.blit(figure, figure_rect);python
+Check if an event has happend (keystroke, mouseclick);for event in pg.event.get():;python
+Check if key is pressed;event.type == pg.KEYDOWN:;python
+Some action when Right-Key is pressed;event.key == pg.K_RIGHT:;python
+Some action when Space-Key is pressed;event.key == pg.K_SPACE:;python
+Check if mousebutton is clicked;event.type == pg.MOUSEBUTTONDOWN;python
+Findinig the mouse position;mouse_pos = pg.mouse.get_pos();python
+Check if mouse-cursor is ofer an object / rectangle;button_rect.collidepoint(mouse_pos);python
+Group class for working with similar objects;from pygame.sprite import Sprite,Group;python
+Making and filling a group - must inherit from Sprite;def Bullet(Sprite):;python
+Method from the new group;def draw_bullet(self):;python
+Method from the new group;def update(self):;python
+Define group of elements;bullet = Group();python
+Define new instance;new_bullet = Bullet();python
+Add new instance to group;bullets.add(new_bullet);python
+Iterate through group instances and draw;from bullet in bullets.sprites(): bullet.draw_bullet();python
+Calls the methode update() on each member of the group;bullets.update();python
+Remove instance from group;bullets.remove(bullet);python
+Check if single object is overlapping with groupelements;prg.sprite.spritecollideany(obj,group);python
+Result-Dict with all overlapping elements of both groups;pg.sprite.groupcollide(group1,group2,True,True);python
+Define message;"msg = ""Play again!""";python
+Defines message color;msg_col = (100,100,100);python
+Defines background color;bg_col = (230,230,230);python
+Defines font from system font;font = pg.font.SysFont(None,48);python
+Create an image of the message;msg_img = f.render(msg,True,msg_col,bg_col);python
+Read rect from message-image;msg_img_rect = msg_image.get_rect();python
+Pos the message-image in the middle of the window;msg_img_rect.center = screen_rect.center;python
+Display the positioned message-image;screen.blit(msg_img, msg_img_rect);python
+Import necessary modules;import pythoncom;python
+Import client;import win32com.client;python
+Import server;import win32com.server.register;python
+Put everything in a class;class PythonObjectLibrary:;python
+UniqueID for our object to register it with Windows;_reg_clsid_ = pythoncom.CreateGuid();python
+Register the object as an EXE;_reg_clsctx = pythoncom.CLSCTX_LOCAL_SERVER;python
+Register the object as a DLL;_reg_clsctx = pythoncom.IMPROC_SERVER;python
+Name of the project library;"_reg_progid_ = ""Python.ObjectLibrary""";python
+Optional / Description of the library;"_reg_desc_ = ""This is our Python Obj Library""";python
+Name the functions - this sees the user in excel;"_public_methods_ = [""f1"",""f2,""f3""]";python
+Define the function in the class;def f1(self, x, y):;python
+Return the result of the function (to excel later);return x + y;python
+Another function - this time wie a range (more cells in excel);def f2(self, myRange):;python
+Create an instance of the range object passed trough;rng1 = win32com.client.Dispatch(myRange);python
+Change the object to an numpy-array (or an list);rng1val = np.array(list(rng1.Value));python
+Return the sum of the range (to excel later);return rng1val.sum();python
+Part of the code in the main-section;"if __name__ == ""__main__"":";python
+Register the library (when the program is started => the Library is registered in Windows);win32com.server.register.UseCommandLine(PythonObjectLibrary);python
+Part in Excel;"(in the Visual Basic Editor under Development Tools)
+# Definition of the f1-function - now the user can use the function ""f1"" in excel
+Function f1(x As Long, y As Long)
+    f1 = VBA.CreateObject(""Python.ObjectLibrary"").f1(x, y)
+End Function
+# Definition of the f2-function - now the user can use the function ""f2"" in excel
+Function f2(x As Range)
+    f2 = VBA.CreateObject(""Python.ObjectLibrary"").f2(x)
+End Function";python
+create basic api in flask;https://nordicapis.com/how-to-create-an-api-from-a-dataset-using-python-and-flask/;python
+create basic api in flask, deploy to AWS with zappa and setup on Rapidapi;https://pythonforundergradengineers.com/deploy-serverless-web-app-aws-lambda-zappa.html#what-is-zappa;python
+create basic api in flask, deploy to AWS with zappa and;https://towardsdatascience.com/develop-and-sell-a-python-api-from-start-to-end-tutorial-9a038e433966;python
+Import the module;import flask;python
+Creates a Flask application;app = flask.Flask(__name__);python
+Runs the program in debug mode (no reset necessary when changing a line of code);"app.config[""DEBUG""] = True";python
+"""/"" indicates where the result in the url will output - GET will read data (POST for writing data)";@app.route('/', methods=['GET']);python
+Runs the application;app.run();python
+Outputs a List with a dict to the server / url;"@app.route('/api/v1/resources/books/all', methods=['GET'])	# Data will available at: http://127.0.0.1:5000/api/v1/resources/books/all
+def api_all():
+    return jsonify(books)	    # Converts and returns the list in JSON-Flask-format
+app.run()
+# results are available under http://127.0.0.1:5000/api/v1/resources/books/all";python
+Filtering data;"@app.route('/api/v1/resources/books', methods=['GET'])
+def api_id():
+    if 'id' in request.args:					# Check if an ID was provided as part of the URL
+        id = int(request.args['id'])			# If ID is provided, assign it to a variable
+    else: return ""Error: No id field provided""	# If no ID is provided, display an error in the browser.
+    for book in books:							# Loop through the data and match results that fit the requested ID
+        if book['id'] == id: results.append(book)
+    return jsonify(results)						# Use the jsonify function from Flask to convert our list of - Python dictionaries to the JSON format
+app.run()
+# results are available under http://127.0.0.1:5000/api/v1/resources/books?id=1";python
+Check if API is called from the right access-place (like rapidapi.com);"(key is provided from the platform - eg. here from rapidapi.com)
+    if ""e6e45ed0-55e5-11eb-963e-ffe9fcdce080"" not in request.headers:
+        return ""Error: Wrong API-Call - use www.rapidapi.com for calling the API!""";python
+Using zappa and deploying to AWS (zappa is only working in a virtual environment);"pip install zappa											=> Install module
+=> Create file and insert the credentials from AWS (creation see second link above)
+create file credentials in ""%UserProfile%\.aws
+	[default]
+	aws_access_key_id = XXXXXXXXXXXXXXXXXXXXXXXXXX
+	aws_secret_access_key = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+virtualenv xyz									# Create an virtual environment
+xyz\Scripts\activate							# Activate virtual environment
+go back to folder xyz and install all necessary modules with pip install
+pip list										# Check if everything is installed in the folder
+zappa init (when virutal environement is activated!)		# Create zappa_settings.json File (press return at any prompt)
+    ""dev"": {
+		""app_function"": ""app.app"",				# Name of the py-file
+		""aws_region"": ""eu-central-1"",			# Nearest aws-region
+        ""profile_name"": ""default"",				# Same as in aws-credentials at ""%UserProfile%/.aws/credentials
+        ""project_name"": ""apicheck"",
+        ""runtime"": ""python3.7"",					# Automatic generated
+        ""s3_bucket"": ""zappa-gsoln7zyl""			# Automatic generated
+    }
+pip freeze > requirements.txt					# Create requirements.txt for all installed modules in the virtual environment
+zappa deploy dev (when virutal environement is activated!)	# Deploy everything to AWS (when ended with link everything worked fine) (otherwise 502 error - often a module is missing)
+	eg. https://xnujiyxsb1.execute-api.eu-central-1.amazonaws.com/dev/api/v1/incstat?ticker=FB
+		https://xnujiyxsb1.execute-api.eu-central-1.amazonaws.com/dev/api/v1/summary?ticker=CAT
+		https://xnujiyxsb1.execute-api.eu-central-1.amazonaws.com/dev/api/v1/profile?ticker=FB
+zappa update dev (when virutal environement is activated!)	# Update deployment on AWS (when something changed in the pyhton-program)
+zappa undeploy dev								# Undeploy everything on AWS
+zappa status									# Show actual status
+zappa tail										# Show actual loggin (in error cases)";python
+AWS part;"see the APIs under AWS Api Geteway => region on the upper right site has to be the same as in the zappa_settings.json file#
+check API-access
+	select API (under API Gateway and APIs)
+	click on second ANY link
+	click Test (on the left side)
+	select Method Get
+	input path example under {proxy} eg. api/v1/incstat?ticker=FB
+	click Test Button (at the bottom)";python
+Imort icecream;from icecream import ic;python
+Show value of the variable in the form: ic| var1: 20;ic(var1);python
+Show when command is reached: ic| icecream_example.py:5 in func() at 01:44:20.394 (line / file / time);ic();python
+Set Context Output => also shows line / file / time;ic.configureOutput(includeContext=True);python
+Installation;pip install pyinstaller;python
+Generate the bundle in a subdirectory called dist.;pyinstaller prg.py;python
+Generate only one file;pyinstaller --onefile prg.py;python
+Generate file with icon;--icon=app.ico;python
+Generating under mac os sometimes only work with this params;--hidden-import=pkg_resources.py2_warn;python
+Generating under mac os sometimes only work with this params;--hidden-import=pkg_resources.py2_warn;python
+When some modules are making problems - sometimes this helps;--hidden-import=pymssql;python
+when there is a depreciating warning from matlib;--exclude-module matplotlib;python
+Open this file to start the python-program;prg.exe;python
+Problems with some added python modules (eg. pycountry);"https://groups.google.com/g/pyinstaller/c/OYhJdeZ9010/m/32g3-T8XBAAJ
+Create hook-file hook-pycountry.py with content:
+	from PyInstaller.utils.hooks import copy_metadata, collect_data_files
+	datas = copy_metadata(""pycountry"") + collect_data_files(""pycountry"")
+Compile Program with
+	pyinstaller --onefile --exclude-module matplotlib --additional-hooks-dir=. TestPyCountry.py";python
+Problems with path when executing from py and exe;config_name = 'creds.json'                                    # Define the config file name;python
+determine if application is a script file or frozen exe;"if getattr(sys, 'frozen', False):                             # Get path when starting as executable
+    application_path = os.path.dirname(sys.executable)
+elif __file__:                                                # Get path when running from IDE as py-file
+    application_path = os.path.dirname(__file__)
+config_path = os.path.join(application_path, config_name)     # Final Config Path";python

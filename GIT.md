@@ -4,6 +4,7 @@
 #### BASICS, GITHUB [jump to...](#basics-github)
 #### GITIGNORE [jump to...](#gitignore)
 #### BRANCHES [jump to...](#branches)
+#### WORKFLOW EXAMPLE [jump to...](#workflow-example)
 
 
 ---
@@ -15,43 +16,47 @@
 ```markdown
 sudo apt-get install git
 ```
+Config name for the repository (onetime setting)
+```markdown
+git config --global user.name "Rapid1898"
+```
+Config mail for the repository (onetime setting - use the mail using for github.com)
+```markdown
+git config --global user.email "x@gmx.com"
+```
 Create repository in the actual directory
 ```markdown
 git init
 ```
-Config name for the repository
-```markdown
-git config --global user.name "Rapid1898"
-```
-Config mail for the repository
-```markdown
-git config --global user.email "x@gmx.com"
-```
-Add file to the repository (prepared for later commit)
+Add file to the repository / staging area (prepared for later commit)
 ```markdown
 git add file.xyz
 ```
-Remove file from the repository (not planned for later commit)
-```markdown
-git rm --cached file.xyz
-```
-Add alle html-files to the repo
+Add all html-files to the repo / staging area
 ```markdown
 git add *.html
 ```
-Add everything to the repository from the directory
+Add everything to the repository / staging area from the directory
 ```markdown
 git add .
 ```
-2nd way to add everything to the repository from the directory
+2nd way to add everything to the repository / staging area from the directory
 ```markdown
 git add *
+```
+Add readme-file
+```markdown
+git add README.md
+```
+remove specific file from the repository / staging area (before commiting!)
+```markdown
+git rm --cached index.html
 ```
 Actual status in the git-directoy (eg. added files, changed files, not added,...)
 ```markdown
 git status
 ```
-Commit files which are added / changed in the repo (with comment)
+Commit files which are added / changed in the repo (with comment) - taking a "snapshot"
 ```markdown
 git commit -m "comment"
 ```
@@ -67,9 +72,13 @@ Link the acutal folder/repo to the github-repo
 ```markdown
 git remote add origin https://github.com/link/Test.git
 ```
-Push (update) files on GitHub
+Push with upstream definition (shorthand - to the master)
 ```markdown
 git push -u origin master
+```
+Push with upstream definition (longhand - to the branch "answer")
+```markdown
+git push --set -upstream origin answer
 ```
 
 <br>Pull (update) files from GitHub<br>
@@ -77,7 +86,6 @@ git push -u origin master
 ```markdown
 git pull -u origin master
 ```
-
 
 
 
@@ -120,6 +128,10 @@ Delete branch
 ```markdown
 git branch -d newFeature
 ```
+Change name of the branch - eg. for renaming branch "master" to "main"
+```markdown
+git branch -m main
+```
 Create a new branch named "new"
 ```markdown
 git checkout -b new
@@ -136,3 +148,62 @@ Merge the branch with the master
 ```markdown
 git merge newFeature
 ```
+
+
+
+---
+## WORKFLOW EXAMPLE
+[jump to top...](#git)<br><br>
+<br>fork the initial repository on github (select personal account as target)
+```markdown
+click fork-button in github
+```
+get the forked repository clone
+```markdown
+click code-button to grab link
+```
+clone the repository to the local folder
+```markdown
+git clone github-link
+```
+create branch "answer"
+```markdown
+git branch answer
+```
+set current branch to "answer"
+```markdown
+git checkout answer
+```
+see which branch is curently active (eg. main or answer)
+```markdown
+git status
+```
+add all files to the stage (all in the current folder)
+```markdown
+git add .
+```
+shows the actual files on the stage
+```markdown
+git status
+```
+commit files from stage ("take snapshot")
+```markdown
+git commit -m "Completed"
+```
+push with upstream definition (to the branch "answer")
+```markdown
+git push --set-upstream origin answer
+```
+change from main to the branch "answer"
+```markdown
+select branch on git hub with button
+```
+make an pull request to the original repository
+```markdown
+click pull request button
+```
+
+
+
+
+
