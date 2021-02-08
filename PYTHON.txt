@@ -1540,11 +1540,9 @@ list(pycountry.currencies)						=> List of all currencies
 list(pycountry.languages)						=> List of all languages                            
 list(pycountry.historic_countries)              => List of all historic countries which not more exists
 list(pycountry.subdivisiones)                   => List of all subdivided countries
-----------
 
 
 
-----------
 ####### MODULES - SMTPLIB, MIMEText
 => sending emails
 => if you have 2-Factor-Authentification you must generate a App-Password for GMail
@@ -1890,209 +1888,206 @@ df = pd.read_html(html_url)									=> Read html-link to dataframe
 	JPN 127		0,891	Asia
 	UK  65		0,907	Europe
 	USA 319		0,915	America
-df = pd.DataFrame(np.random.randint(0,5,size=(5, 2)), columns=list('AB'))	# Initialize a dataframe with random ints with 5 rows and 2 columns
-df.shape                                                    # Show the shape of the dataframe (rows, columns) => (7,3)
-df.info()                                                   # Info for columns (index,name,dtype) also count of NaN-values per column
-df.dtpyes()													# Shows datatype of every column
-df.describe()                                               # Several statistic for the dataframe (median,max,min,std,...)
-df.head()                                                   # Output of the first 5 rows per default
-df.h
-ead(22)                                                 # Output of the first 22 rows
-df.tail()                                                   # Output of the last 5 rows per default
-df.tail(22)                                                 # Output of the last 22 rows
-df.columns                                                  # Output of all column names
-df.columns["POPL","hdi","CONT"]								# Rename the columns
-df.index													# Outputs the index
-df.index = df["name"]										# Set index to column "name"
-df.index = ["CAN","FRA","GER","ITA","JPN","UK","USA"]		# Assigning new index - replaces the default numeric index
-df.size														# Outputs the size of the dataframe	
-df.reset_index(inplace=True)                                # Resets the index - with inplace it is permanently saved
-df.set_index("Popl", inplace=True)                          # Define "Popl" as new index - with inplace it is permanently saved
-df.loc["CAN"]												# Selecting Rows by index - showing the row with the index = "CAN"
-df.iloc[-1]													# Selecting Rows by position - showing the last row
-df["Popl"]													# Selecting Columns by title - showing the whole column "Population" for all rows
-df["Continent"].value_counts()                              # Output of alle values with their count
-df["Continent"].value_counts(normalize=True)                # Output of alle values with their count in percent
-df[["Popl","Continent"]]									# Showing cols Popl,Continent for all rows
-df[["Popl","Continent"]] / 100								# Showing cols Popl,Continent for all rows - values divided by 100
-df.loc["CAN":"ITA"]											# Show the rows from index CAN to ITA
-df.loc["CAN":"ITA","Popl"]									# Show the rows from index CAN to ITA - only with the column1
-df.loc["CAN":"ITA",["Popl","Continent"]]					# Show the rows from index CAN to ITA - only with the column1 + column3
-df.loc[:,"col1":"col4"]										# Show the columns col1 to col4 for all rows
-df.loc[0:2,"col1":"col4"]									# Show the columns col1 to col4 for 3 rows from index 0 to 2 (2 included)
-df.loc[0:2,["col1","col3"]]									# Show the columns cols 1 and 3 for the rows from index 0 to 2 (2 included)			
-df.iloc[0,-1]												# Show the 1st and last row => CAN,USA
-df.iloc[1:3]												# Show 2nd and 3rd row for all cols => FRA,GER / Popl,HDI,Continent
-df.iloc[1:3,1]	 											# Show 2nd and 3rd row for 2nd col => FRA,GER / HDI
-df.iloc[1:3,[0,2]}											# Show 2nd and 3rd row for 1st and 3rd column => FRA,GER / Popl,Continent
-df.iloc[1:3,1:3]											# Show 2nd and 3rd row for the 2nd and 3rd col => FRA,GER / HDI,Continent
-df["Popl"] > 70												# Returns series with boolean True/False for every row (F,F,T,F,T,F,T)
-df.loc[df["Popl"]] > 70										# Returns GER,JPN,USA for all cols
-df.loc[df["Popl"] > 70, "Popl"]								# Returns GER,JPN,USA for col "Popl"
-df.loc[df["Popl"] > 70, ["Popl","Continent"]]				# Returns GER,JPN,USA for cols "Popl" and "Continent"
-df[["Open","Close"]]["2010":"2020"]                         # Output of 2 columns for the column slice
-df[df.index.isin(["2020","2019"])][hist.columns[0:4]]       # Output specific rows and slice of columns
-df[df.index.isin(["2020","2019"])][["Open","Close"]]        # Output specific rows and columns
-df.drop("CAN")												# Drops the row CAN
-df.drop(["CAN","JPN"])										# Drops the rows CAN,JPN
-df.drop(["CAN","JPN"],axis=0)								# Drops the rows CAN,JPN (2nd method)
-df.drop(["CAN","JPN"],axis="rows")							# Drops the rows CAN,JPN (3rd method)
-df.drop(columns=["Popl","Continent"])						# Drops the cols Popl,Continent
-df.drop(["Popl","Continent"],axis=1)						# Drops the cols Popl,Continent (2nd method)
-df.drop(["Popl","Continent"],axis="columns")				# Drops the cols Popl,Continent (3rd method)
-df.drop(df.index, inplace=True)								# Drops the whole dataframe
-crisis = pd.Series([-10,-0,3],index=["Popl","HDI"])			# Define series with same col-names as in the dataframe - with some correction values
-df[["Popl","HDI"]] + crisis									# Comines crisis-series to the df => all values in "Popl" -10 and "HDI" -0,3 in the df
-langs = pd.Series(											# Define new series for new column in dataframe
-	["FR","DE","IT"],										# => values of new column
-	index=["FRA","GER","ITA"],								# => existing index in dataframe
-	name= "lang")											# => name of the new column
-df["lang"] = langs											# Creates new column in the dataframe according to the series "langs" - other rows will get "NaN"
-df["lang"] = "GB"											# Values of all rows in the column "lang" will be changed to "GB"
-df.rename(columns={"Popl":"POPL","Continent":"CONT"})	    # Renames column names
-df.rename(index={"UK":"UnKi","USA":"US"})					# Renames index names
-df["Popl_HDI"] = df["Popl"] / df["HDI"]						# Creates new column by dividing col "Popl" with col "HDI"
-df["Popl"].median().max().min().sum().mean().qunatile()     # Different operations for the column in the dataframe
-df["Timestamp"]=pd.to_datetime(df["Timestamp"])				# Changes Timestamp-String to Timestamp-Type (eg. read from csv-file before)
-df.plot()													# Plotting the dataframe using the mathlib-module
-df.plot(figsize=(12,6))										# Plot the dataframe
-df.loc["2017-12-01":"2019-12-01"].plot(figsize=(12,6)))		# Plot the dataframe for the specific timeframe
-df.isnull()													# Check for NaN values in the Dataframe => Matrix with True / False
-df.notnull()												# Check for NOT NaN values in the Series => Matrix with True / False
-df.isnull().sum()											# Sum of NaN values per column
-df.dropna()                                                 # Deleting all rows with at least one NaN value in it
-df.dropna(axis=1)											# Deleting all columns with at least one NaN value in it 
-df.dropna(how="all")										# Deleting all rows where all columns are NaN
-df.dropna(thresh=3)											# Deleting all rows where at least 3 columns are NOT NaN
-df.fillna("missing")                                        # Replace NaN values with text     
-df.fillna(method="ffill",axis=0)							# With forward-fill NaN-values are replaced with the value before (axis=0 means vertical / per column)
-df.fillna(method="ffill",axis=1)							# With forward-fill NaN-values are replaced with the value before (axis=0 means horizontal / per row)
-df["Sex"].unique()											# Shows the existing values for the column => eg: "M","F","D","?" (M/F is correct and D/? is wrong)
-df["Sex"].value_counts()									# Shows the count of each existing value in the column => eg. "M" 175, "F" 132, "D" 5, "?", 3 => so 8 wrong entries
-df["Sex"].replace("D","F")									# Change all "D" values in the column to "F"
-df["Sex"].replace({"D":"F","N":"M"})						# Change all "D" to "F" and "N" to "M" in the column
-df[df["Age"] > 100]											# Find all the invalid values in the age-column => eg. greater than 100 is invalid entry
-df.loc[df["Age"]>100,"Age"]=df.loc[df["Age"]>100,"Age"]/100	# Fixing the invalid values for age by dividing it to 100 
-filt = (df["col1" == "col1_val1"])                          # Defines new filter
-filt2 = (df["col1"].isin(["val1","val2","val3"]))           # Defines new filter with several values
-filt3 = (~df["col1"].isin(["val1","val2","val3"]))          # Defines new filter NOT with several values
-filt4 = (df["col1"] > 123)                                  # Defines new filter with a > operator
-df[filt]                                                    # Outputs the result for the above filter
-df[filt]["col2"]                                            # Outputs the result for the above filter with only col2
-df= df[(df['value'] >= df['value'].quantile (0.025))]		# Filter the elements for the top 2.5% of the dataset (quantile)
-df= df[(df['value'] < df['value'].quantile (0.975))]		# Filter the elements for the bottom 2.5% of the dataset (quantile)
-df.duplicated()												# Check duplicates for all rows (only first entry is not flagged as True)
-df.duplicated(keep="last")									# Check duplicates for all rows (only last entry is not flagged as True)
-df.duplicated(keep=False)									# Check duplicates for all rows (every entry is flagged as True)
-df.duplicated(subset=["Name"])								# Check duplicates only for subset-col (only first entry is not flagged as True)
-df.duplicated(subset=["Name"],keep="last")					# Check duplicates only for subset-col (only last entry is not flagged as True)
-df.duplicated(subset=["Name"],keep=False)					# Check duplicates only for subset-col (every entry is flagged as True)
-df["Data"].str.split("_")									# Split all the strings in the column at the blank-char "_" => eg. results [1987, M, US, 1]
-df["Data"].str.split("_",expand=True)						# Split all the strings in the column at the blank-char and build seperate new columsn in the dataframe
-df["Data"].str.contains("U")								# Check column if there exists an "U" in the string-values (True / False output as series) - also regex possible
-df["Data"].str.strip()										# Eliminate the whitespaces at the beginning and end for the string-values
-de["Data"].str.replace(" ","")								# Replace / Deletes blanks " " in the string-values
-df.apply(lambda x: x.lower())                               # Function lower is used for the whole dataframe
-df.apply(lambda x: x.lower(), axis="columns")[0:3]          # Function lower is used for the first 3 columns
-df.sort_index(inplace=True)                                 # Sorting the new index ascending
-df.reindex(sorted(df.columns), axis=1)						# Sorting the columns in dataframe	
-df.sort_values(by="co1")                                    # Sorting by column ascending
-df.sort_values(by="co2",ascending=False)                    # Sorting by column descending
-df.sort_values(by=["col1","col2"],ascending=False)          # Sorting by 2 columns descending - first col1 and then col2
-df["col1"].sort_value(ascending=False)                      # Sorting a series for one specific col descending
-df.columns =) [x.upper() for x in df.columns]               # Change the column titles to uppercase
-df["c1"] = df["c1"].apply(lambda x: x.lower())              # Function lower is used for the whole column
-df["c1"].map({"val1":"val1new","val2":"val2new"})           # Change the names of the values - all others become NaN
-df["c1"].replace({"val1":"val1new","val2":"val2new"})       # Change the names of the values - all others are not touched
-df["cnew1"] = df["c1"] + df["c2"]                           # New column at the end
-df.drop(columns=["c1","c2"], inplace=True)                  # Deleting 2 columns
-df = df.append({"c1":"val1"},ignore_index=True)             # Add new row (all other cols are defined as NaN for the row)
-df["col1"].nlargest(5)                                      # Outputs the 5 highest values in the column - only col1
-df.nlargest(5,"col1")                                       # Outputs the 5 highest values in the column - all columns
-df.nsmallest(5,"col1")                                      # Outputs the 5 lowest values in the column - all columns
-col1_grp = df.groupby("col1")                               # Grouping according to col1
-col1_grp.get_group("col1_value")                            # Access to one value from the group
-col1_grp["col2"].median()                                   # Grouping col1 and output median for col2
-col1_grp["col2"].median().loc[["A","B","C"]]                # Grouping col1 and output median for col2 only for 3 group-values
-non_zero = df[df["col1"]!=0]                                # Filtering all Values with 0
-df["newcol"]=["Y" if x > 50 else "N" for x in df["Sales"]]  # Add new column with Y/N depending if the value in col "Sales" is > 50
-df["col"]=["Y" if x > 50 else "N" for x in df["col"]]  		# Change existing column with Y/N depending if the value in col is > 50
-df["c"]=[1 if (x/y>9) else 0 for x,y in zip(df["c1"],df["c2])]	# Add/change column with 0/1 depending of calc of the variables x/y from 2 cols
-----------
+df = pd.DataFrame(np.random.randint(0,5,size=(5, 2)), columns=list('AB'))	=> Initialize a dataframe with random ints with 5 rows and 2 columns
+df.shape                                                    => Show the shape of the dataframe (rows, columns) => (7,3)
+df.info()                                                   => Info for columns (index,name,dtype) also count of NaN-values per column
+df.dtpyes()													=> Shows datatype of every column
+df.describe()                                               => Several statistic for the dataframe (median,max,min,std,...)
+df.head()                                                   => Output of the first 5 rows per default
+ead(22)                                                     => Output of the first 22 rows
+df.tail()                                                   => Output of the last 5 rows per default
+df.tail(22)                                                 => Output of the last 22 rows
+df.columns                                                  => Output of all column names
+df.columns["POPL","hdi","CONT"]								=> Rename the columns
+df.index													=> Outputs the index
+df.index = df["name"]										=> Set index to column "name"
+df.index = ["CAN","FRA","GER","ITA","JPN","UK","USA"]		=> Assigning new index - replaces the default numeric index
+df.size														=> Outputs the size of the dataframe	
+df.reset_index(inplace=True)                                => Resets the index - with inplace it is permanently saved
+df.set_index("Popl", inplace=True)                          => Define "Popl" as new index - with inplace it is permanently saved
+df.loc["CAN"]												=> Selecting Rows by index - showing the row with the index = "CAN"
+df.iloc[-1]													=> Selecting Rows by position - showing the last row
+df["Popl"]													=> Selecting Columns by title - showing the whole column "Population" for all rows
+df["Continent"].value_counts()                              => Output of alle values with their count
+df["Continent"].value_counts(normalize=True)                => Output of alle values with their count in percent
+df[["Popl","Continent"]]									=> Showing cols Popl,Continent for all rows
+df[["Popl","Continent"]] / 100								=> Showing cols Popl,Continent for all rows - values divided by 100
+df.loc["CAN":"ITA"]											=> Show the rows from index CAN to ITA
+df.loc["CAN":"ITA","Popl"]									=> Show the rows from index CAN to ITA - only with the column1
+df.loc["CAN":"ITA",["Popl","Continent"]]					=> Show the rows from index CAN to ITA - only with the column1 + column3
+df.loc[:,"col1":"col4"]										=> Show the columns col1 to col4 for all rows
+df.loc[0:2,"col1":"col4"]									=> Show the columns col1 to col4 for 3 rows from index 0 to 2 (2 included)
+df.loc[0:2,["col1","col3"]]									=> Show the columns cols 1 and 3 for the rows from index 0 to 2 (2 included)			
+df.iloc[0,-1]												=> Show the 1st and last row => CAN,USA
+df.iloc[1:3]												=> Show 2nd and 3rd row for all cols => FRA,GER / Popl,HDI,Continent
+df.iloc[1:3,1]	 											=> Show 2nd and 3rd row for 2nd col => FRA,GER / HDI
+df.iloc[1:3,[0,2]}											=> Show 2nd and 3rd row for 1st and 3rd column => FRA,GER / Popl,Continent
+df.iloc[1:3,1:3]											=> Show 2nd and 3rd row for the 2nd and 3rd col => FRA,GER / HDI,Continent
+df["Popl"] > 70												=> Returns series with boolean True/False for every row (F,F,T,F,T,F,T)
+df.loc[df["Popl"]] > 70										=> Returns GER,JPN,USA for all cols
+df.loc[df["Popl"] > 70, "Popl"]								=> Returns GER,JPN,USA for col "Popl"
+df.loc[df["Popl"] > 70, ["Popl","Continent"]]				=> Returns GER,JPN,USA for cols "Popl" and "Continent"
+df[["Open","Close"]]["2010":"2020"]                         => Output of 2 columns for the column slice
+df[df.index.isin(["2020","2019"])][hist.columns[0:4]]       => Output specific rows and slice of columns
+df[df.index.isin(["2020","2019"])][["Open","Close"]]        => Output specific rows and columns
+df.drop("CAN")												=> Drops the row CAN
+df.drop(["CAN","JPN"])										=> Drops the rows CAN,JPN
+df.drop(["CAN","JPN"],axis=0)								=> Drops the rows CAN,JPN (2nd method)
+df.drop(["CAN","JPN"],axis="rows")							=> Drops the rows CAN,JPN (3rd method)
+df.drop(columns=["Popl","Continent"])						=> Drops the cols Popl,Continent
+df.drop(["Popl","Continent"],axis=1)						=> Drops the cols Popl,Continent (2nd method)
+df.drop(["Popl","Continent"],axis="columns")				=> Drops the cols Popl,Continent (3rd method)
+df.drop(df.index, inplace=True)								=> Drops the whole dataframe
+crisis = pd.Series([-10,-0,3],index=["Popl","HDI"])			=> Define series with same col-names as in the dataframe - with some correction values
+df[["Popl","HDI"]] + crisis									=> Comines crisis-series to the df => all values in "Popl" -10 and "HDI" -0,3 in the df
+langs = pd.Series(											=> Define new series for new column in dataframe
+	["FR","DE","IT"],										=> => values of new column
+	index=["FRA","GER","ITA"],								=> => existing index in dataframe
+	name= "lang")											=> => name of the new column
+df["lang"] = langs											=> Creates new column in the dataframe according to the series "langs" - other rows will get "NaN"
+df["lang"] = "GB"											=> Values of all rows in the column "lang" will be changed to "GB"
+df.rename(columns={"Popl":"POPL","Continent":"CONT"})	    => Renames column names
+df.rename(index={"UK":"UnKi","USA":"US"})					=> Renames index names
+df["Popl_HDI"] = df["Popl"] / df["HDI"]						=> Creates new column by dividing col "Popl" with col "HDI"
+df["Popl"].median().max().min().sum().mean().qunatile()     => Different operations for the column in the dataframe
+df["Timestamp"]=pd.to_datetime(df["Timestamp"])				=> Changes Timestamp-String to Timestamp-Type (eg. read from csv-file before)
+df.plot()													=> Plotting the dataframe using the mathlib-module
+df.plot(figsize=(12,6))										=> Plot the dataframe
+df.loc["2017-12-01":"2019-12-01"].plot(figsize=(12,6)))		=> Plot the dataframe for the specific timeframe
+df.isnull()													=> Check for NaN values in the Dataframe => Matrix with True / False
+df.notnull()												=> Check for NOT NaN values in the Series => Matrix with True / False
+df.isnull().sum()											=> Sum of NaN values per column
+df.dropna()                                                 => Deleting all rows with at least one NaN value in it
+df.dropna(axis=1)											=> Deleting all columns with at least one NaN value in it 
+df.dropna(how="all")										=> Deleting all rows where all columns are NaN
+df.dropna(thresh=3)											=> Deleting all rows where at least 3 columns are NOT NaN
+df.fillna("missing")                                        => Replace NaN values with text     
+df.fillna(method="ffill",axis=0)							=> With forward-fill NaN-values are replaced with the value before (axis=0 means vertical / per column)
+df.fillna(method="ffill",axis=1)							=> With forward-fill NaN-values are replaced with the value before (axis=0 means horizontal / per row)
+df["Sex"].unique()											=> Shows the existing values for the column => eg: "M","F","D","?" (M/F is correct and D/? is wrong)
+df["Sex"].value_counts()									=> Shows the count of each existing value in the column => eg. "M" 175, "F" 132, "D" 5, "?", 3 => so 8 wrong entries
+df["Sex"].replace("D","F")									=> Change all "D" values in the column to "F"
+df["Sex"].replace({"D":"F","N":"M"})						=> Change all "D" to "F" and "N" to "M" in the column
+df[df["Age"] > 100]											=> Find all the invalid values in the age-column => eg. greater than 100 is invalid entry
+df.loc[df["Age"]>100,"Age"]=df.loc[df["Age"]>100,"Age"]/100	=> Fixing the invalid values for age by dividing it to 100 
+filt = (df["col1" == "col1_val1"])                          => Defines new filter
+filt2 = (df["col1"].isin(["val1","val2","val3"]))           => Defines new filter with several values
+filt3 = (~df["col1"].isin(["val1","val2","val3"]))          => Defines new filter NOT with several values
+filt4 = (df["col1"] > 123)                                  => Defines new filter with a > operator
+df[filt]                                                    => Outputs the result for the above filter
+df[filt]["col2"]                                            => Outputs the result for the above filter with only col2
+df= df[(df['value'] >= df['value'].quantile (0.025))]		=> Filter the elements for the top 2.5% of the dataset (quantile)
+df= df[(df['value'] < df['value'].quantile (0.975))]		=> Filter the elements for the bottom 2.5% of the dataset (quantile)
+df.duplicated()												=> Check duplicates for all rows (only first entry is not flagged as True)
+df.duplicated(keep="last")									=> Check duplicates for all rows (only last entry is not flagged as True)
+df.duplicated(keep=False)									=> Check duplicates for all rows (every entry is flagged as True)
+df.duplicated(subset=["Name"])								=> Check duplicates only for subset-col (only first entry is not flagged as True)
+df.duplicated(subset=["Name"],keep="last")					=> Check duplicates only for subset-col (only last entry is not flagged as True)
+df.duplicated(subset=["Name"],keep=False)					=> Check duplicates only for subset-col (every entry is flagged as True)
+df["Data"].str.split("_")									=> Split all the strings in the column at the blank-char "_" => eg. results [1987, M, US, 1]
+df["Data"].str.split("_",expand=True)						=> Split all the strings in the column at the blank-char and build seperate new columsn in the dataframe
+df["Data"].str.contains("U")								=> Check column if there exists an "U" in the string-values (True / False output as series) - also regex possible
+df["Data"].str.strip()										=> Eliminate the whitespaces at the beginning and end for the string-values
+de["Data"].str.replace(" ","")								=> Replace / Deletes blanks " " in the string-values
+df.apply(lambda x: x.lower())                               => Function lower is used for the whole dataframe
+df.apply(lambda x: x.lower(), axis="columns")[0:3]          => Function lower is used for the first 3 columns
+df.sort_index(inplace=True)                                 => Sorting the new index ascending
+df.reindex(sorted(df.columns), axis=1)						=> Sorting the columns in dataframe	
+df.sort_values(by="co1")                                    => Sorting by column ascending
+df.sort_values(by="co2",ascending=False)                    => Sorting by column descending
+df.sort_values(by=["col1","col2"],ascending=False)          => Sorting by 2 columns descending - first col1 and then col2
+df["col1"].sort_value(ascending=False)                      => Sorting a series for one specific col descending
+df.columns =) [x.upper() for x in df.columns]               => Change the column titles to uppercase
+df["c1"] = df["c1"].apply(lambda x: x.lower())              => Function lower is used for the whole column
+df["c1"].map({"val1":"val1new","val2":"val2new"})           => Change the names of the values - all others become NaN
+df["c1"].replace({"val1":"val1new","val2":"val2new"})       => Change the names of the values - all others are not touched
+df["cnew1"] = df["c1"] + df["c2"]                           => New column at the end
+df.drop(columns=["c1","c2"], inplace=True)                  => Deleting 2 columns
+df = df.append({"c1":"val1"},ignore_index=True)             => Add new row (all other cols are defined as NaN for the row)
+df["col1"].nlargest(5)                                      => Outputs the 5 highest values in the column - only col1
+df.nlargest(5,"col1")                                       => Outputs the 5 highest values in the column - all columns
+df.nsmallest(5,"col1")                                      => Outputs the 5 lowest values in the column - all columns
+col1_grp = df.groupby("col1")                               => Grouping according to col1
+col1_grp.get_group("col1_value")                            => Access to one value from the group
+col1_grp["col2"].median()                                   => Grouping col1 and output median for col2
+col1_grp["col2"].median().loc[["A","B","C"]]                => Grouping col1 and output median for col2 only for 3 group-values
+non_zero = df[df["col1"]!=0]                                => Filtering all Values with 0
+df["newcol"]=["Y" if x > 50 else "N" for x in df["Sales"]]  => Add new column with Y/N depending if the value in col "Sales" is > 50
+df["col"]=["Y" if x > 50 else "N" for x in df["col"]]  		=> Change existing column with Y/N depending if the value in col is > 50
+df["c"]=[1 if (x/y>9) else 0 for x,y in zip(df["c1"],df["c2])]	=> Add/change column with 0/1 depending of calc of the variables x/y from 2 cols
 
 
 
-----------
 ###### MATPLOTLIB
-import matplotlib.pyplot as plt                                     # Import module as plotter plt
-plt.plot(x, x **2 )													# Plot a line
-plt.plot(x, -1 * (x ** 2))											# Plot another line (in the other direction)
-x_values = list(range(1000))                                        # Define x values
-squares = [x**2 for x in x_values]                                  # Define y values / squares
-plt.plot(x_values, squares)                                         # Plot diagram with x- and y-axes
-plt.subplot(1,2,2)													# Plot 1st row, 2nd col in the 2nd diagram (any line after that will only access the 2nd diagram)
-plt.scatter(x_values, squares, s=5)                                 # Sscatter diagram with x- and y-axes and line strenght = 5
-plt.title("Title", fontsize=24)                                     # Title with fontsize = 24
-plt.xlabel("X-Axe", fontsize=18)                                    # X-Axe title with fontsize = 18  
-plt.ylabel("Y-Axe", fontsize=18)                                    # Y-Axe title with fontsize = 18
-plt.tick_params(axis="both", which="major", labelsize=10)           # Params describtion with fontsize = 10
-plt.axis([0,1100,0,1100000])                                        # Define scaling of axes
-plt.scatter(x,y,c=squares,cmap=plt.cm.Blues,edgecolor="none", s=10) # Colors from one shade to another with different params
-plt.scatter(x[0],y[0],c="green",edgecolor="none", s=100)            # Expoit the first point larger in green
-plt.scatter(x[-1],y[-1],c="red",edgecolor="none", s=100)            # Expoit the last point larger in red
-plt.axes().get_xaxis().set_visible(False)                           # Hide the complete x-axis description
-plt.axes().get_yaxis().set_visible(False)                           # Hide the complete y-axis description
-plt.figure(dpi=128, figsize=(10,6))                                 # Define custom figure size
-plt.show()                                                          # Show diagram
-plt.savefig("example.png",bbox_inches="tight")                      # Save diagram as png-picture-file
-----------
+import matplotlib.pyplot as plt                                     => Import module as plotter plt
+plt.plot(x, x **2 )													=> Plot a line
+plt.plot(x, -1 * (x ** 2))											=> Plot another line (in the other direction)
+x_values = list(range(1000))                                        => Define x values
+squares = [x**2 for x in x_values]                                  => Define y values / squares
+plt.plot(x_values, squares)                                         => Plot diagram with x- and y-axes
+plt.subplot(1,2,2)													=> Plot 1st row, 2nd col in the 2nd diagram (any line after that will only access the 2nd diagram)
+plt.scatter(x_values, squares, s=5)                                 => Sscatter diagram with x- and y-axes and line strenght = 5
+plt.title("Title", fontsize=24)                                     => Title with fontsize = 24
+plt.xlabel("X-Axe", fontsize=18)                                    => X-Axe title with fontsize = 18  
+plt.ylabel("Y-Axe", fontsize=18)                                    => Y-Axe title with fontsize = 18
+plt.tick_params(axis="both", which="major", labelsize=10)           => Params describtion with fontsize = 10
+plt.axis([0,1100,0,1100000])                                        => Define scaling of axes
+plt.scatter(x,y,c=squares,cmap=plt.cm.Blues,edgecolor="none", s=10) => Colors from one shade to another with different params
+plt.scatter(x[0],y[0],c="green",edgecolor="none", s=100)            => Expoit the first point larger in green
+plt.scatter(x[-1],y[-1],c="red",edgecolor="none", s=100)            => Expoit the last point larger in red
+plt.axes().get_xaxis().set_visible(False)                           => Hide the complete x-axis description
+plt.axes().get_yaxis().set_visible(False)                           => Hide the complete y-axis description
+plt.figure(dpi=128, figsize=(10,6))                                 => Define custom figure size
+plt.show()                                                          => Show diagram
+plt.savefig("example.png",bbox_inches="tight")                      => Save diagram as png-picture-file
 
 
 
-----------
 ####### MODULE - SELENIUM
-# chromedriver.exe in Ordner von py-file speichern
-https://selenium-python.readthedocs.io/locating-elements.html	  # Different methods for locating elements	
-from selenium import webdriver                                    # Import WebDriver für Zugriff auf URL
-import time                                                       # Import Time-Library für Verzögerungen wenn notwendig
-from selenium.webdriver.common.keys import Keys                   # Import Keys to send Key-strokes
-driver = webdriver.Chrome(os.getcwd() + '/chromedriver')          # Driver für Chrome definieren - mit akt. Ordner os.getcwd
-driver.get("url")                                                 # Zugriff auf die URL
-driver.find_element_by_xpath('//*[@id="button"]/input').click()   # KLick auf ein ELement (Copy ) - mit Untersuchen - Copy XPath
-time.sleep(1)                                                     # Manchmal notwendig um Verarbeitung abzuwarten
-driver.find_element_by_xpath('//*[@id="name"]').send_keys("x"])   # Feld Name wird mit Inhalt x befüllt
-driver.find_element_by_name("q").send_keys("txt")         		  # Text wird in Feld eingetragen
-driver.find_element_by_name("q").send_keys("txt" + u'\ue007')     # Text wird in Feld eingetragen und Enter gedrückt
-driver.find_element_by_id("xy-id")                        		  # Feld word nach ID gesucht
-driver.find_elements_by_class_name("cl")[0]               		  # Felder werdem nach Class gesucht (als Liste)
-driver.find_elements_by_tag_name("tag")[0]                		  # Felder werdem nach Tag gesucht (als Liste)
-driver.send_keys(Keys.Backspace,Keys.ARROW_LEFT,Keys.ENTER)		  # Send single keyboard-elements <> chars (needs import keys)
-driver.send_keys (u'\ue007')									  # Send an Return-keystroke (eg. for enter after data entries in fields)
-field.submit()                                                    # Enter wird gedrückt bzw. die Seite abgeschickt
-driver.quit()                                                     # Driver schließen (sonst schließt sich das Fenster nicht)
-driver.title                                                      # Titel der HTML-Seite
-driver.back()                                                     # Back-Function in browser-history
-driver.forward()                                                  # Forward-Function in browser-history
-cookie = {"name": "token", "value": "23874kljdsjhfaökldjs"}       # Define an individual cookie
-driver.add_cookie(cookie)                                         # Use Cookie
-driver.get_cookie("token")                                        # Outputs a specific cookie
-driver.get_cookies())                                             # Outputs all cookies
-driver.current_url												  # Read current, actual url
-driver.switch_to.frame ("frame_id")								  # Swith to a frame-id (eg. a PopUp)
-act_window = driver.current_window_handle						  # Read active window name
-driver.switch_to.window(act_window)								  # Switch (back) to active window (eg. after working on the popup-frame or popup-window)
+=> chromedriver.exe in Ordner von py-file speichern
+https://selenium-python.readthedocs.io/locating-elements.html	  => Different methods for locating elements	
+from selenium import webdriver                                    => Import WebDriver für Zugriff auf URL
+import time                                                       => Import Time-Library für Verzögerungen wenn notwendig
+from selenium.webdriver.common.keys import Keys                   => Import Keys to send Key-strokes
+driver = webdriver.Chrome(os.getcwd() + '/chromedriver')          => Driver für Chrome definieren - mit akt. Ordner os.getcwd
+driver.get("url")                                                 => Zugriff auf die URL
+driver.find_element_by_xpath('//*[@id="button"]/input').click()   => KLick auf ein ELement (Copy ) - mit Untersuchen - Copy XPath
+time.sleep(1)                                                     => Manchmal notwendig um Verarbeitung abzuwarten
+driver.find_element_by_xpath('//*[@id="name"]').send_keys("x"])   => Feld Name wird mit Inhalt x befüllt
+driver.find_element_by_name("q").send_keys("txt")         		  => Text wird in Feld eingetragen
+driver.find_element_by_name("q").send_keys("txt" + u'\ue007')     => Text wird in Feld eingetragen und Enter gedrückt
+driver.find_element_by_id("xy-id")                        		  => Feld word nach ID gesucht
+driver.find_elements_by_class_name("cl")[0]               		  => Felder werdem nach Class gesucht (als Liste)
+driver.find_elements_by_tag_name("tag")[0]                		  => Felder werdem nach Tag gesucht (als Liste)
+driver.send_keys(Keys.Backspace,Keys.ARROW_LEFT,Keys.ENTER)		  => Send single keyboard-elements <> chars (needs import keys)
+driver.send_keys (u'\ue007')									  => Send an Return-keystroke (eg. for enter after data entries in fields)
+field.submit()                                                    => Enter wird gedrückt bzw. die Seite abgeschickt
+driver.quit()                                                     => Driver schließen (sonst schließt sich das Fenster nicht)
+driver.title                                                      => Titel der HTML-Seite
+driver.back()                                                     => Back-Function in browser-history
+driver.forward()                                                  => Forward-Function in browser-history
+cookie = {"name": "token", "value": "23874kljdsjhfaökldjs"}       => Define an individual cookie
+driver.add_cookie(cookie)                                         => Use Cookie
+driver.get_cookie("token")                                        => Outputs a specific cookie
+driver.get_cookies())                                             => Outputs all cookies
+driver.current_url												  => Read current, actual url
+driver.switch_to.frame ("frame_id")								  => Swith to a frame-id (eg. a PopUp)
+act_window = driver.current_window_handle						  => Read active window name
+driver.switch_to.window(act_window)								  => Switch (back) to active window (eg. after working on the popup-frame or popup-window)
 
-# Use Selenium with chrome windows hidden
-from selenium.webdriver.chrome.options import Options
+=> Use Selenium with chrome windows hidden
+""
+from selenium.webdriver.chrome.options import Options            
 options = Options()
 options.add_argument('--headless')                                          # Window Hidden (only used this for the final program - not during devleopment / testing!)
 if platform == "win32": options.add_argument('--start-maximized')           # Window Started Maximized (for Windows)
 elif platform in ["linux","darwin"]: options.add_argument('--kiosk')        # Window Started Maximized (for Linux and Mac)
-
 options.add_experimental_option ('excludeSwitches', ['enable-logging'])     # No error messagegs when exec in cmd
 driver = webdriver.Chrome(os.getcwd() + '/chromedriver', options=options)
+""
 
-# Scroll to the very bottom of a site - eg. Twitter, Facebook, Stocktwits,...
+=> Scroll to the very bottom of a site - eg. Twitter, Facebook, Stocktwits,...
+""
 lenOfPage = driver.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
 match=False
 while(match==False):
@@ -2101,57 +2096,64 @@ while(match==False):
     lenOfPage = driver.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
     if lastCount==lenOfPage:
         match=True
+""
 
-# When there are problem clicking an element on a page
+=> When there are problems clicking an element on a page
+""
 Method1:
 element = driver.find_element_by_id('datePickerToggleBtn')
 webdriver.ActionChains(driver).move_to_element(element ).click(element ).perform()
+
 Method2:
 element = driver.find_element_by_css('div[class*="loadingWhiteBox"]')
 driver.execute_script("arguments[0].click();", element)
+""
 
-# Wait till a specific element is loaded
+=> Wait till a specific element is loaded
+""
 WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.NAME, "agree"))).click()
 WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, "YDC-Col1")))
+""
 
-# Take a screenshot when something fails in headless mode
+=> Take a screenshot when something fails in headless mode
+""
 try:
     ...
     do the whole selenium work...
     ...
 except:
     driver.get_screenshot_as_file("a.jpeg")
-----------
+""
 
 
 
-----------
 ####### MODULE - BEAUTIFUL SOAP
-# see also details in BEAUTIFUL SOAP.ipynb
-from bs4 import BeautifulSoap									# Import module for beautiul soap
-from fake_useragent import UserAgent							# Import moduel for fake useragent
-ua = UserAgent()												# Define UserAgent
-ua.random														# Create random useragent
-page = requests.get("https://www.ariva.de/dax-30")              # Read url as page
-soup = BeautifulSoup (page.content,"html.parser")               # Read page with html.parser
-table  = soup.find(id="result_table_0")                         # Read specific invidual id
-name_box = soup.find("h1", attrs={"class": "99a4824b"})         # Read specific class
-table.find_all("td"):    			                            # Read all table data cells
-soup.find_all("tr", class_="arrow0"):       			        # Read all table rows for specific class
-for col_id, col_content in enumerate(result.find_all("td")):    # Read all table data cells with id and content
-entries = results.find_all("div", class_="col-xs-6")            # Read all divs with specific class
-soup.find("div", {"id": "lj_div"})								# Find div with id "lj_div"
-soup.find("p", {"class": line}									# Find (first) p with class "line"
-if row.get("class") == ["ellipsis", "nobr", "new"]:             # Check if class has specific content
-for e in soup.find_all("a"): e.get("href"))                     # Read all links from href element    
-for e in soup.find_all("a"): e.get("value"))                    # Read all number from the field "value"
-content.text.strip()                                            # Outputs text without whitespaces
-url_i = rows[0].find('img')['src']                              # Read url from the image
-image = requests.get(f'https:{url_i}').content                  # Read image as content
-results.prettify()                                              # Formated Output with html indentations
-if "Kein Zugriff" in soup.text:                                 # Check if specific text in soup text-output
+=> see also details in BEAUTIFUL SOAP.ipynb
+from bs4 import BeautifulSoap									=> Import module for beautiul soap
+from fake_useragent import UserAgent							=> Import moduel for fake useragent
+ua = UserAgent()												=> Define UserAgent
+ua.random														=> Create random useragent
+page = requests.get("https://www.ariva.de/dax-30")              => Read url as page
+soup = BeautifulSoup (page.content,"html.parser")               => Read page with html.parser
+table  = soup.find(id="result_table_0")                         => Read specific invidual id
+name_box = soup.find("h1", attrs={"class": "99a4824b"})         => Read specific class
+table.find_all("td"):    			                            => Read all table data cells
+soup.find_all("tr", class_="arrow0"):       			        => Read all table rows for specific class
+for col_id, col_content in enumerate(result.find_all("td")):    => Read all table data cells with id and content
+entries = results.find_all("div", class_="col-xs-6")            => Read all divs with specific class
+soup.find("div", {"id": "lj_div"})								=> Find div with id "lj_div"
+soup.find("p", {"class": line}									=> Find (first) p with class "line"
+if row.get("class") == ["ellipsis", "nobr", "new"]:             => Check if class has specific content
+for e in soup.find_all("a"): e.get("href"))                     => Read all links from href element    
+for e in soup.find_all("a"): e.get("value"))                    => Read all number from the field "value"
+content.text.strip()                                            => Outputs text without whitespaces
+url_i = rows[0].find('img')['src']                              => Read url from the image
+image = requests.get(f'https:{url_i}').content                  => Read image as content
+results.prettify()                                              => Formated Output with html indentations
+if "Kein Zugriff" in soup.text:                                 => Check if specific text in soup text-output
     
-# Read with Selenium when necessary due the specific homepage				
+=> Read with Selenium when necessary due the specific homepage				
+""
 from bs4 import BeautifulSoup
 from selenium import webdriver
 link = "https://www.gurufocus.com/stock/" + stock + "/summary"			# define the homepage to be scraped
@@ -2168,15 +2170,19 @@ elif platform == "darwin":
 driver = webdriver.Chrome (path + cd, options=options)					# Use chromedriver.exe to read website with the above options
 driver.get (link)  														# Read link
 time.sleep (2)  														# Wait till the full site is loaded
+""
 
-element = driver.find_element_by_id("analyst-estimate")					# Wait for the specific element to load
+=> Wait for the specific element to load
+""
+element = driver.find_element_by_id("analyst-estimate")					
 driver.execute_script("arguments[0].scrollIntoView();", element)			
 time.sleep (1)
+""
+soup = BeautifulSoup(driver.page_source, 'html.parser')        			=> Read page with html.parser and to the further scraping
+driver.quit ()                                                 			=> Close the chromedriver window
 
-soup = BeautifulSoup(driver.page_source, 'html.parser')        			# Read page with html.parser and to the further scraping
-driver.quit ()                                                 			# Close the chromedriver window
-
-(all searches also possible for more elements wiht find_elements_*)
+=> all searches also possible for more elements wiht find_elements_*
+""
 driver.find_element_by id												# Search for a id in html
 driver.find_element_by_name												# Search for name-field (eg. in input-tag)
 driver.find_element_by_xpath											# Search by xpath of the element (right mouse blick in Chrome Dev Tools)
@@ -2185,222 +2191,215 @@ driver.find_element_by_partial_link_text								# Search for (part) text within 
 driver.find_element_by_tag_name('h1')									# Search for a tag in html
 driver.find_element_by_class_name("cont")								# Search for a specific class name in html
 driver.find_element_by_css_selector('p.content')						# Search for tag and selector
-----------
+""
 
 
 
-----------
-# MODULE - REQUESTS (working with APIs)
-import requests										# import module requests
-import json
-api_request = requests.get ("apilink.html")			# Request api from the generated api-link
-api = json.loads(api_request.content)				# Read/parse api-data to a json-loadfil
-result = api[0]["xyz"]								# Read the value for the 1 element and the attribute xyz
-----------
+###### MODULE - REQUESTS (workings with APIs)
+=> working with APIs
+import requests										=> import module requests
+import json                                         => import module json
+api_request = requests.get ("apilink.html")			=> Request api from the generated api-link
+api = json.loads(api_request.content)				=> Read/parse api-data to a json-loadfil
+result = api[0]["xyz"]								=> Read the value for the 1 element and the attribute xyz
 
 
 
-----------
 ###### MODULE - PYQT
-pip install pyqt5                                      # Installation
-from PyQt5.QtWidgets import QApplication               # Defines Application
-from PyQt5.QtWidgets import QLabel                     # Defines Label
-from PyQt5.QtWidgets import QWidget                    # Defines Widget
-from PyQt5.QtWidgets import QHBoxLayout                # Arranges horizontally from left to right
-from PyQt5.QtWidgets import QVBoxLayout                # Arranges vertically from top to bottom
-from PyQt5.QtWidgets import QGridLayout                # Arranges in grid from on x and y axes
-from PyQt5.QtWidgets import QFormLayout                # Field for forms - 1col are titles, 2col are fields,rbs,cb
-from PyQt5.QtWidgets import QPushButton                # Defines PushButton
-from PyQt5.QtWidgets import QDialog                    # Module for dialog windows
-from PyQt5.QtWidgets import QDialogButtonBox           # Module for button boxes in dialog windows
-from PyQt5.QtWidgets import QLineEdit                  # Defines input field with text
-from PyQt5.QtWidgets import QMainWindow                # Module for main windows
-from PyQt5.QtWidgets import QStatusBar
-from PyQt5.QtWidgets import QToolBar
-app = QApplication(sys.argv)                           # Create an instance of the application
-w = QWidget()                                          # Initialize a window
-w.setWindowTitle('Windows Title')                      # Title of the windows
-w.setGeometry(200, 200, 380, 180)                      # Define windows (1:x-coord,2:y-coord,3:width,4:height)
-w.move(50, 15)                                         # Place / move windows to coodinates 60,15
-msg = QLabel('<h1>Hello World!</h1>', parent=window)   # Define label / message in format h1
-msg.move(50, 15)                                       # Place / move labe to coordinates 60,15
-windows.show()                                         # Show the application GUI - schedules a paint event
-sys.exit(app.exce_())                                  # Start the app and close it with sys.exit
-layout_qh = QHBoxLayout()                              # Defines horzontal box
-layout_qv = QVBoxLayout()                              # Defines vertical box
-layout_qg = QGridLayout()                              # Defines grid layout
-layout_qf = QFormLayout()                              # Defines form layout
-layout_qh.addWidget(QPushButton('Button1'))            # Defines one or more buttons
-layout_qv.addWidget(QPushButton('Button1'))            # Defines one or more buttons
-layout_qg.addWidget(QPushButton('Button1'),1,0)        # Defines one or more buttons and set it to position 1,0
-layout_qg.addWidget(QPushButton('Button1'),2,1,1,2)    # Set buttons to position 2,1 and span it 1row/2cols
-layout_qf.addRow("text:", QLineEdit())                 # Defines input field 
-w.setLayout(layout_xy)                                 # Sets layout dimensions to window
-class Dialog(QDialog):                                 # Defines a class dialog which inherits from QDialog
-buttons = QDialogButtonBox()                           # Define buttons for a dialog window
-buttons.setStandardButtons(QDialogButtons.OK)          # Defines a ok button on a dialog window
-layout_qv.addWidget(buttons)                           # Adds buttons to vertical layout
-class Window(QMainWindow):                             # Defines a class Windows which inherits from QMainWindow
-----------
+pip install pyqt5                                      => Installation
+from PyQt5.QtWidgets import QApplication               => Defines Application
+from PyQt5.QtWidgets import QLabel                     => Defines Label
+from PyQt5.QtWidgets import QWidget                    => Defines Widget
+from PyQt5.QtWidgets import QHBoxLayout                => Arranges horizontally from left to right
+from PyQt5.QtWidgets import QVBoxLayout                => Arranges vertically from top to bottom
+from PyQt5.QtWidgets import QGridLayout                => Arranges in grid from on x and y axes
+from PyQt5.QtWidgets import QFormLayout                => Field for forms - 1col are titles, 2col are fields,rbs,cb
+from PyQt5.QtWidgets import QPushButton                => Defines PushButton
+from PyQt5.QtWidgets import QDialog                    => Module for dialog windows
+from PyQt5.QtWidgets import QDialogButtonBox           => Module for button boxes in dialog windows
+from PyQt5.QtWidgets import QLineEdit                  => Defines input field with text
+from PyQt5.QtWidgets import QMainWindow                => Module for main windows
+from PyQt5.QtWidgets import QStatusBar                 => Module for status bar
+from PyQt5.QtWidgets import QToolBar                   => Module for tool bar
+app = QApplication(sys.argv)                           => Create an instance of the application
+w = QWidget()                                          => Initialize a window
+w.setWindowTitle('Windows Title')                      => Title of the windows
+w.setGeometry(200, 200, 380, 180)                      => Define windows (1:x-coord,2:y-coord,3:width,4:height)
+w.move(50, 15)                                         => Place / move windows to coodinates 60,15
+msg = QLabel('<h1>Hello World!</h1>', parent=window)   => Define label / message in format h1
+msg.move(50, 15)                                       => Place / move labe to coordinates 60,15
+windows.show()                                         => Show the application GUI - schedules a paint event
+sys.exit(app.exce_())                                  => Start the app and close it with sys.exit
+layout_qh = QHBoxLayout()                              => Defines horzontal box
+layout_qv = QVBoxLayout()                              => Defines vertical box
+layout_qg = QGridLayout()                              => Defines grid layout
+layout_qf = QFormLayout()                              => Defines form layout
+layout_qh.addWidget(QPushButton('Button1'))            => Defines one or more buttons
+layout_qv.addWidget(QPushButton('Button1'))            => Defines one or more buttons
+layout_qg.addWidget(QPushButton('Button1'),1,0)        => Defines one or more buttons and set it to position 1,0
+layout_qg.addWidget(QPushButton('Button1'),2,1,1,2)    => Set buttons to position 2,1 and span it 1row/2cols
+layout_qf.addRow("text:", QLineEdit())                 => Defines input field 
+w.setLayout(layout_xy)                                 => Sets layout dimensions to window
+class Dialog(QDialog):                                 => Defines a class dialog which inherits from QDialog
+buttons = QDialogButtonBox()                           => Define buttons for a dialog window
+buttons.setStandardButtons(QDialogButtons.OK)          => Defines a ok button on a dialog window
+layout_qv.addWidget(buttons)                           => Adds buttons to vertical layout
+class Window(QMainWindow):                             => Defines a class Windows which inherits from QMainWindow
 
 
 
-----------
 ###### MODULE - TKinter
-https://www.youtube.com/watch?v=YXPyB4XeYLA					# Tutorial with deep explanation
-from tkinter import *										# Import tkinter module
-root = Tk()													# Create root window
-root.title("Header Title")                              	# Name of the window in the title
-root.iconbitmap("pic.ico")                                  # Define icon for the windows (left upper corner)
-root.geometry("400x400")									# Define size of the window
-myLabel = Label(root,text="Hello World!")               	# Creating a label widget
-myLabel.pack()												# Showing myLabel on the screen
-myLabel.grid(row=0,column=0,pady=10)   						# Showing myLabel on grid place 0/0 (left upper corner) with 10pixel padding from above
-status = Label(root,text="St",bd=1,relief=SUNKEN,anchor=E   # Creating a status label widget with border (bd=1), sunken relief and anchor position right (east)
-status.grid(row=2,column=0,columnspan=3,sticky=W+E)         # Showing status bar - with using maximum space from left to right (west to east) with sticky
-myButton = Button(root,text="Click Me!")  					# Creating a button widget with a name
-myButton = Button(root,text="Click Me!",state=DISABLED) 	# Creating a deactivated, greyed button widget with a name
-myButton = Button(root,text="C",padx=50,pady=50)			# Creating a button widget with a name and size 50 * 50
-myButton = Button(root,text="T",command=myfunc)     		# Creating a button which will excute the myfunc-function when its clicked
-myButton = Button(root,text="T",command=lambda: func(nr))   # Creating a button which will excute the func-function with a numeric parameter
-myButton = Button(root,text="col",bg="blue",fg="white") 	# Creating a button with background blue and foreground white
-QuitButton = Button(root,text="exit",command=root.quit)		# Create a quit-button on the window
-myEntry = Entry(root, width=50, borderwidth=5).pack()       # Creating a entry field - with width 50 and borderwidth 5 - and showing the field
-myEntry.grid(row=0,column=0,columnspan=3)               	# Showing myEntry as grid in row/col = 0/0 and spanned over 3 columns
-e.grid(row=0,column=0,padx=10,pady=10)						# Showing myEntry as grid in row/col = 0/0 and with pading in x/y-axes 
-myEntry.get()												# Read content of the entry field
-myEntry.insert(0,"Default-Text")                        	# Shows a default value in the entry field
-myEntry.insert(0, number)									# Insert a number into the entry field
-myEntry.delete(0,END)										# Delete content of the entry field
-root.mainloop()												# Mainloop of the program
-...command=wind.destroy										# Close window "wind"
+https://www.youtube.com/watch?v=YXPyB4XeYLA					=> Tutorial with deep explanation
+from tkinter import *										=> Import tkinter module
+root = Tk()													=> Create root window
+root.title("Header Title")                              	=> Name of the window in the title
+root.iconbitmap("pic.ico")                                  => Define icon for the windows (left upper corner)
+root.geometry("400x400")									=> Define size of the window
+myLabel = Label(root,text="Hello World!")               	=> Creating a label widget
+myLabel.pack()												=> Showing myLabel on the screen
+myLabel.grid(row=0,column=0,pady=10)   						=> Showing myLabel on grid place 0/0 (left upper corner) with 10pixel padding from above
+status = Label(root,text="St",bd=1,relief=SUNKEN,anchor=E   => Creating a status label widget with border (bd=1), sunken relief and anchor position right (east)
+status.grid(row=2,column=0,columnspan=3,sticky=W+E)         => Showing status bar - with using maximum space from left to right (west to east) with sticky
+myButton = Button(root,text="Click Me!")  					=> Creating a button widget with a name
+myButton = Button(root,text="Click Me!",state=DISABLED) 	=> Creating a deactivated, greyed button widget with a name
+myButton = Button(root,text="C",padx=50,pady=50)			=> Creating a button widget with a name and size 50 * 50
+myButton = Button(root,text="T",command=myfunc)     		=> Creating a button which will excute the myfunc-function when its clicked
+myButton = Button(root,text="T",command=lambda: func(nr))   => Creating a button which will excute the func-function with a numeric parameter
+myButton = Button(root,text="col",bg="blue",fg="white") 	=> Creating a button with background blue and foreground white
+QuitButton = Button(root,text="exit",command=root.quit)		=> Create a quit-button on the window
+myEntry = Entry(root, width=50, borderwidth=5).pack()       => Creating a entry field - with width 50 and borderwidth 5 - and showing the field
+myEntry.grid(row=0,column=0,columnspan=3)               	=> Showing myEntry as grid in row/col = 0/0 and spanned over 3 columns
+e.grid(row=0,column=0,padx=10,pady=10)						=> Showing myEntry as grid in row/col = 0/0 and with pading in x/y-axes 
+myEntry.get()												=> Read content of the entry field
+myEntry.insert(0,"Default-Text")                        	=> Shows a default value in the entry field
+myEntry.insert(0, number)									=> Insert a number into the entry field
+myEntry.delete(0,END)										=> Delete content of the entry field
+root.mainloop()												=> Mainloop of the program
+...command=wind.destroy										=> Close window "wind"
 
-###Pics in Tkinter-Windows
-from PIL import ImageTk,Image								# Additional module Pillow neede (install with <pip install Pillow>
-my_img = ImageTk.PhotoImage(Image.open("demo.png"))			# Reads Image wiht Pillow-module (Tkinter can not read png/jpg files)
-my_label = Label(image=my_img)								# Creating a Label with the image
-my_label.pack()												# Showing the pic
+=> Pics in Tkinter-Windows
+from PIL import ImageTk,Image								=> Additional module Pillow neede (install with <pip install Pillow>
+my_img = ImageTk.PhotoImage(Image.open("demo.png"))			=> Reads Image wiht Pillow-module (Tkinter can not read png/jpg files)
+my_label = Label(image=my_img)								=> Creating a Label with the image
+my_label.pack()												=> Showing the pic
 
-###Define Frame
-frame = LabelFrame(root,text="Name_Frame",padx=5,padx=5)	# Creating a frame with padding 5/5 (inside the frame)
-frame.pack(padx=10,pady=10)									# Showing the frame with padding 10/10 (outside the frame)	
-button = Button(frame,text="Name_Button")					# Creating button in the frame (not root window)
-button.grid(row=0, column=0)								# Showing the button in the frame as grid (with frames is mixing between pack and grid possible)
+=> Define Frame
+frame = LabelFrame(root,text="Name_Frame",padx=5,padx=5)	=> Creating a frame with padding 5/5 (inside the frame)
+frame.pack(padx=10,pady=10)									=> Showing the frame with padding 10/10 (outside the frame)	
+button = Button(frame,text="Name_Button")					=> Creating button in the frame (not root window)
+button.grid(row=0, column=0)								=> Showing the button in the frame as grid (with frames is mixing between pack and grid possible)
 
-###RadioButtons
-r = IntVar()												# Define variable for radio button - when string use StringVar()
-r.set("2")													# Choose default radio button	
-Radiobutton(root,text="Opt1",variable=r,value=1).pack()		# Define and show radiobutton 1
-Radiobutton(root,text="Opt2",variable=r,value=2).pack()		# Define and show radiobutton 2
-r.get()														# Get value from choosen radio button
+=> RadioButtons
+r = IntVar()												=> Define variable for radio button - when string use StringVar()
+r.set("2")													=> Choose default radio button	
+Radiobutton(root,text="Opt1",variable=r,value=1).pack()		=> Define and show radiobutton 1
+Radiobutton(root,text="Opt2",variable=r,value=2).pack()		=> Define and show radiobutton 2
+r.get()														=> Get value from choosen radio button
 
-###MessageBox
-messagebox.showinfo("Title of PopUp", "Hello World!")		# Show Messagebox
+=> MessageBox
+messagebox.showinfo("Title of PopUp", "Hello World!")		=> Show Messagebox
 different boxes available: showinfo, showwarning, showerror, askquestion, askokcancel, askyesno
-response = messagebox.askquestion ("Bla", "BlaBla!")		# Show AskQuestion Box and store response
-if response == 1: Label(root, text= "YES").pack()			# Check about response of user in message box
+response = messagebox.askquestion ("Bla", "BlaBla!")		=> Show AskQuestion Box and store response
+if response == 1: Label(root, text= "YES").pack()			=> Check about response of user in message box
 elif response == 0: Label(root, text= "NO").pack()
 
-###More Windows
-def open()													# Function for opening the 2nd window
-	global my_img											# Global definition necessary - otherwise no pic would be drawn
-	sec = TopLevel()										# Define 2nd window
-	sec.title("2nd Window")									# Title for 2nd window
-    img = ImageTk.PhotoImage(Image.open("demo.png"))		# Define image
-    Label (top, image=img).pack()							# Show image in 2nd window	
-btn=Button(root,text="Open 2nd Window",command=open).pack()	# Button for opening 2nd window per click
+=> More Windows
+def open()													=> Function for opening the 2nd window
+	global my_img											=> Global definition necessary - otherwise no pic would be drawn
+	sec = TopLevel()										=> Define 2nd window
+	sec.title("2nd Window")									=> Title for 2nd window
+    img = ImageTk.PhotoImage(Image.open("demo.png"))		=> Define image
+    Label (top, image=img).pack()							=> Show image in 2nd window	
+btn=Button(root,text="Open 2nd Window",command=open).pack()	=> Button for opening 2nd window per click
 
-###FileDialog
-root.filename = filedialog.askopenfilename(					# Define filname dialog
-    initialdir="/Users/Bla/images",							# Define initial dir for the file dialog				
-    title="Select file",									# Title of the file dialog
-    filetypes=(("png files","*.png"),("all files","*.*")))	# Define filetypes in dialog (first name, second which files, default first entry)
-my_label = Label(root, text=root.filename).pack()			# After choosing a file - show the filename + filepath
+=> FileDialog
+root.filename = filedialog.askopenfilename(					=> Define filname dialog
+    initialdir="/Users/Bla/images",							=> Define initial dir for the file dialog				
+    title="Select file",									=> Title of the file dialog
+    filetypes=(("png files","*.png"),("all files","*.*")))	=> Define filetypes in dialog (first name, second which files, default first entry)
+my_label = Label(root, text=root.filename).pack()			=> After choosing a file - show the filename + filepath
 
-###Slider
-vertical = Scale(root,from_=0,to=200)						# Define vertical slider
-vertical.pack()												# Showing vertical slider
-horizontal = Scale(root,from_=0,to=200,orient=HORIZONTAL)	# Define horizontal slider
-horizontal.pack()											# Showing horizontal slider
+=> Slider
+vertical = Scale(root,from_=0,to=200)						=> Define vertical slider
+vertical.pack()												=> Showing vertical slider
+horizontal = Scale(root,from_=0,to=200,orient=HORIZONTAL)	=> Define horizontal slider
+horizontal.pack()											=> Showing horizontal slider
 
-###Checkboxes
-Checkbutton(root,text="Check1",variable=var).pack(			# Define and Show a checkbox
-c.select() or c.deselect()									# Select or Deselect per default the checkbox
+=> Checkboxes
+Checkbutton(root,text="Check1",variable=var).pack(			=> Define and Show a checkbox
+c.select() or c.deselect()									=> Select or Deselect per default the checkbox
 
-###DropDown
-options=["Mo","Tu","We","Th","Fr"]							# Define options for dropdown menue
-var = StringVar()											# Define variable for dropdown menue
-var.set("Mo")												# Set default for dropdown menue
-OptionMenu(root,var,*options).pack							# Define dropdown menue
-----------
-
+=> DropDown
+options=["Mo","Tu","We","Th","Fr"]							=> Define options for dropdown menue
+var = StringVar()											=> Define variable for dropdown menue
+var.set("Mo")												=> Set default for dropdown menue
+OptionMenu(root,var,*options).pack							=> Define dropdown menue
 
 
-----------
+
 ###### MODULE - PYGAME
-###http://pygame.org/docs/
-import pygame as pg                                      # Import of the pygame module
-pg.init()                                                # Initialize and setup screen
-screen_dim = (1200,800)                                  # Define dimension
-screen = pg.display.set_mode(screen_dim)                 # Show screen with the defined dimensions
-bg_color = (230,230,230)                                 # Define background color
-screen.fill(bg_color)                                    # Screen filling with defined background color
-pg.display.set_caption("My Super Game")                  # Title of the game in the window
-rect screen.get_rect()                                   # Rectangle infos (left,top,width,height - (0,0,1200,800)
-rect.center                                              # Center of the Rectangle as tuple - (600,400)
-rect-size                                                # Size of the Rectangle as tuple - (1200,800)
-rect.left                                                # X-Dim left - (0) 
-rect.right                                               # X-Dim right - (1200)
-rect.top                                                 # Y-Dim top - (0)
-rect.bottom                                              # Y-Dim bottom - (800)
-rect.centerx                                             # Middle of X-Dim - (600)
-rect.centery                                             # Middle of Y-Dim - (400)
-rect.width                                               # Width of the rectangle - (1200)
-rect.height                                              # Height of the rectangle - (800)
-small_rect = pg.Rect(100,100,10,150)                     # Define new rectangle
-pg.draw.rect(screen,(100,100,100,small_rect)             # Draw small rectangle in screen
-figure = pg.image.load("ship.png")                       # Loading an image
-figure.get_rect()                                        # Getting the rect object from an image
-figure_rect.midbottom = screen_rect.midbottom            # Positioning an image in the middle of the bottom screen
-screen.blit(figure, figure_rect)                         # Drawing an image to the screen
-for event in pg.event.get():                             # Check if an event has happend (keystroke, mouseclick)
-event.type == pg.KEYDOWN:                                # Check if key is pressed
-event.key == pg.K_RIGHT:                                 # Some action when Right-Key is pressed
-event.key == pg.K_SPACE:                                 # Some action when Space-Key is pressed
-event.type == pg.MOUSEBUTTONDOWN                         # Check if mousebutton is clicked
-mouse_pos = pg.mouse.get_pos()                           # Findinig the mouse position
-button_rect.collidepoint(mouse_pos)                      # Check if mouse-cursor is ofer an object / rectangle
+http://pygame.org/docs/                                  => Pygame documentation
+import pygame as pg                                      => Import of the pygame module
+pg.init()                                                => Initialize and setup screen
+screen_dim = (1200,800)                                  => Define dimension
+screen = pg.display.set_mode(screen_dim)                 => Show screen with the defined dimensions
+bg_color = (230,230,230)                                 => Define background color
+screen.fill(bg_color)                                    => Screen filling with defined background color
+pg.display.set_caption("My Super Game")                  => Title of the game in the window
+rect screen.get_rect()                                   => Rectangle infos (left,top,width,height - (0,0,1200,800)
+rect.center                                              => Center of the Rectangle as tuple - (600,400)
+rect-size                                                => Size of the Rectangle as tuple - (1200,800)
+rect.left                                                => X-Dim left - (0) 
+rect.right                                               => X-Dim right - (1200)
+rect.top                                                 => Y-Dim top - (0)
+rect.bottom                                              => Y-Dim bottom - (800)
+rect.centerx                                             => Middle of X-Dim - (600)
+rect.centery                                             => Middle of Y-Dim - (400)
+rect.width                                               => Width of the rectangle - (1200)
+rect.height                                              => Height of the rectangle - (800)
+small_rect = pg.Rect(100,100,10,150)                     => Define new rectangle
+pg.draw.rect(screen,(100,100,100,small_rect)             => Draw small rectangle in screen
+figure = pg.image.load("ship.png")                       => Loading an image
+figure.get_rect()                                        => Getting the rect object from an image
+figure_rect.midbottom = screen_rect.midbottom            => Positioning an image in the middle of the bottom screen
+screen.blit(figure, figure_rect)                         => Drawing an image to the screen
+for event in pg.event.get():                             => Check if an event has happend (keystroke, mouseclick)
+event.type == pg.KEYDOWN:                                => Check if key is pressed
+event.key == pg.K_RIGHT:                                 => Some action when Right-Key is pressed
+event.key == pg.K_SPACE:                                 => Some action when Space-Key is pressed
+event.type == pg.MOUSEBUTTONDOWN                         => Check if mousebutton is clicked
+mouse_pos = pg.mouse.get_pos()                           => Findinig the mouse position
+button_rect.collidepoint(mouse_pos)                      => Check if mouse-cursor is ofer an object / rectangle
 
-### Pygame groups
-from pygame.sprite import Sprite,Group                   # Group class for working with similar objects
-def Bullet(Sprite):                                      # Making and filling a group - must inherit from Sprite
-    def draw_bullet(self):                               # Method from the new group
-    def update(self):                                    # Method from the new group  
-bullet = Group()                                         # Define group of elements
-new_bullet = Bullet()                                    # Define new instance
-bullets.add(new_bullet)                                  # Add new instance to group
-from bullet in bullets.sprites(): bullet.draw_bullet()   # Iterate through group instances and draw
-bullets.update()                                         # Calls the methode update() on each member of the group
-bullets.remove(bullet)                                   # Remove instance from group
-prg.sprite.spritecollideany(obj,group)                   # Check if single object is overlapping with groupelements
-pg.sprite.groupcollide(group1,group2,True,True)          # Result-Dict with all overlapping elements of both groups
-msg = "Play again!"                                      # Define message
-msg_col = (100,100,100)                                  # Defines message color
-bg_col = (230,230,230)                                   # Defines background color
-font = pg.font.SysFont(None,48)                          # Defines font from system font
-msg_img = f.render(msg,True,msg_col,bg_col)              # Create an image of the message
-msg_img_rect = msg_image.get_rect()                      # Read rect from message-image
-msg_img_rect.center = screen_rect.center                 # Pos the message-image in the middle of the window
-screen.blit(msg_img, msg_img_rect)                       # Display the positioned message-image
-----------
+=> Pygame groups
+from pygame.sprite import Sprite,Group                   => Group class for working with similar objects
+def Bullet(Sprite):                                      => Making and filling a group - must inherit from Sprite
+    def draw_bullet(self):                               => Method from the new group
+    def update(self):                                    => Method from the new group  
+bullet = Group()                                         => Define group of elements
+new_bullet = Bullet()                                    => Define new instance
+bullets.add(new_bullet)                                  => Add new instance to group
+from bullet in bullets.sprites(): bullet.draw_bullet()   => Iterate through group instances and draw
+bullets.update()                                         => Calls the methode update() on each member of the group
+bullets.remove(bullet)                                   => Remove instance from group
+prg.sprite.spritecollideany(obj,group)                   => Check if single object is overlapping with groupelements
+pg.sprite.groupcollide(group1,group2,True,True)          => Result-Dict with all overlapping elements of both groups
+msg = "Play again!"                                      => Define message
+msg_col = (100,100,100)                                  => Defines message color
+bg_col = (230,230,230)                                   => Defines background color
+font = pg.font.SysFont(None,48)                          => Defines font from system font
+msg_img = f.render(msg,True,msg_col,bg_col)              => Create an image of the message
+msg_img_rect = msg_image.get_rect()                      => Read rect from message-image
+msg_img_rect.center = screen_rect.center                 => Pos the message-image in the middle of the window
+screen.blit(msg_img, msg_img_rect)                       => Display the positioned message-image
 
 
 
 ###### MODULE - PYTHONCOM
-# https://www.youtube.com/watch?v=cYwn8Pu5eRg&feature=emb_logo
+=> https://www.youtube.com/watch?v=cYwn8Pu5eRg&feature=emb_logo
 import pythoncom								# Import necessary modules
-import win32com.client
-import win32com.server.register
+import win32com.client                          # Import client 
+import win32com.server.register                 # Import server
 class PythonObjectLibrary:						# Put everything in a class
 _reg_clsid_ = pythoncom.CreateGuid()            # UniqueID for our object to register it with Windows
 _reg_clsctx = pythoncom.CLSCTX_LOCAL_SERVER     # Register the object as an EXE

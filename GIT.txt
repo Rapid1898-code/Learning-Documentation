@@ -5,6 +5,7 @@
 #> BASICS, GITHUB
 #> GITIGNORE
 #> BRANCHES
+#> WORKFLOW EXAMPLE
 
 
 ###### BASICS, GITHUB
@@ -25,7 +26,8 @@ git commit -m "comment"						=> Commit files which are added / changed in the re
 git log 									=> Show overview about the last activities
 git clone github-link										=> Clone a repository in the actual path
 git remote add origin https://github.com/link/Test.git  	=> Link the acutal folder/repo to the github-repo
-git push -u origin master   								=> Push (update) files on GitHub
+git push -u origin master   								=> Push (update) files on GitHub (to the master)
+git push --set -upstream origin answer                      => Push with upstream definition (to the branch "answer")
 
 => Pull (update) files from GitHub<br>
 (-u saves the paths - so at the next push - it must be only typed push)
@@ -57,3 +59,24 @@ git checkout -b new 						=> Create a new branch named "new"
 git diff head								=> Show the difference in the files
 git diff --staged							=> Show only the differences for the files which are not commited yet
 git merge newFeature						=> Merge the branch with the master
+
+
+
+###### WORKFLOW EXAMPLE
+click fork-button in github                 => fork the initial repository on github (select personal account as target)
+click code-button to grab link              => get the forked repository clone
+git clone github-link                       => clone the repository to the local folder
+git branch answer                           => create branch "answer"
+git checkout answer                         => set current branch to "answer"
+git status                                  => see which branch is curently active (eg. main or answer)
+git add .                                   => add all files to the stage (all in the current folder)
+git status                                  => shows the actual files on the stage
+git commit -m "Completed"                   => commit files from stage ("take snapshot")
+git push --set-upstream origin answer       => push with upstream definition (to the branch "answer")
+select branch on git hub with button        => change from main to the branch "answer"
+click pull request button                   => make an pull request to the original repository
+
+
+
+
+
