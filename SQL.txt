@@ -1,192 +1,273 @@
-//0 Installation MYSQL
-https://www.youtube.com/watch?v=GIRcpjg-3Eg
+#> Installation MYSQL
+#> SELECT, FROM
+#> DISTINCT, WHERE, BETWEEN, IN
+#> AND, OR, ORDER BY, ASC, DESC
+#> INSERT, INTO, VALUES, UPDATE, SET, DELETE
+#> NULL, LIKE, TOP, LIMIT, ROWNUM, PERCENT
+#> IN
+#> Tables and Data-Types
+#> Primary und Foreign Keys, not null
+#> Change Tables, Autoincrement
+#> Joins
+#> SQL Built In Funktionen
 
-//1 Einführung in SQL und Datenbanken
-//SELECT, FROM
-select * from customer      => Ausgabe aller Spalten der Tabelle CUSTOMER (automatisch nach ID sortiert)
-select firstname from customer     => gibt nur die Spalte id aus (keine Sortierung)
-select firstname, lastname from customer => gibt 2 Spalten aus
 
 
-//2 Distinct und Where
-//DISTINCT, WHERE, BETWEEN, IN
-select distinct firstname from customer     => durch distinct erfolgt Ausgabe nur einmal pro firstname
-select distinct id,firstname from customer  => hier wird alles ausgegeben - da ID eindeutig ist und nichts doppelt sein kann
-select distinct firstname,lastname      => nur wenn Vorname und Zuname gleich sind erfolgt Unterdrückung
+###### Installation MYSQL
+https://www.youtube.com/watch?v=GIRcpjg-3Eg     => Installation 
+
+
+
+###### SELECT, FROM
+select * from customer                      => Outputs all columns from the table customer (automatically sorted by id)
+select firstname from customer              => Outputs only the column firstname (no sorting)
+select firstname, lastname from customer    => Outputs 2 columns firstname and lastname
+
+
+
+###### DISTINCT, WHERE, BETWEEN, IN
+select distinct firstname from customer     => With distinct the output occurs only one time if the firstname is the same
+select distinct id,firstname from customer  => Everything will be outputed cause the id is unique
+select distinct firstname,lastname          => Only when firstname and lastname are equal there will be no outputs
+
+=> Outputs the row with the id = 0
+""
 select * from customer
-    where id = 0        => Satz mit id=0 wird ausgegeben
+    where id = 0       
+""
+
+=> Outputs all rows where the firstname is Janet
+""
 select * from customer
-    where firstname = 'Janet'        => Satz oder Sätze mit firstname = Janet werden ausgegeben
+    where firstname = 'Janet'        
+""
+
+=> Outputs all streets which are in the city of Oslo
+""
 select street from customer
-    where city = 'Oslo'        => Alle Straßen von Oslo werden ausgegeben
-...where id >= 40       => alle IDs >= 40
-...where id <> 40       => alle IDs außer 40 (in manchen DBs auch stattdessen !=)
-...where id between 40 and 50   => alles zwischen inkl. von 40 bis 50
-...where id in (43,44,45)       => mehrere Werte könen abgefragt werden
+    where city = 'Oslo'        
+""
+
+...where id >= 40       => all IDs >= 40
+...where id <> 40       => all IDs except 40 (in some DBs you have to use instead !=)
+...where id between 40 and 50   => everything between 40 and 50
+...where id in (43,44,45)       => some values are checked for id
 
 
-//3 And, Or, Order By
-//AND, OR, ORDER BY, ASC, DESC
+
+###### AND, OR, ORDER BY, ASC, DESC
+=> Outputs all rows where id >= 40 and firstname is Robert
+""
 select * from customer
 where id >= 40
-and firstname = "Robert"        => Ausgabe aller Sätze bei denen id >=40 und firstname = "Robert"
-...where id >= 40 or firstname = "Robert"       => eine der beiden Bedingungen müssen erfüllt sein
-...where id >= 40 or firstname = "Robert" and lastname = "Fuller"       => besser Klammern setzen
-    => es gilt entweder >= 40 oder (Name ist Robert Fuller) => and ist stärker als oder
+and firstname = "Robert"        
+""
+
+...where id >= 40 or firstname = "Robert"       => One of the both conditions have to be fullfilled
+...where id >= 40 or firstname = "Robert" and lastname = "Fuller"       => combinaton of logical or and and (better to use parantheses)
+
+=> Outputs rows >=40 sorted ascending for firstname and lastname
+""
 select * from customer
 where id >= 40
-order by firstname, lastname asc    => Ausgabe von ID >=40 dortiert absteigend nach firstname und dann lastname (asc ist Default)
-...order by firstname, lastname desc    =>  Ausgabe erfolgt aufsteigend
+order by firstname, lastname asc    
+""
+
+...order by firstname, lastname desc    =>  Output in descending order
 
 
-//4 Einfügen, Verändern, Löschen
-//INSERT, INTO, VALUES, UPDATE, SET, DELETE
+
+###### INSERT, INTO, VALUES, UPDATE, SET, DELETE
+=> Inserts row in the table with specific values for the columns
+""
 insert into customer
 values (50, 'James', 'Karsen', '107 Upland Pl.', 'Dallas')
-    => legt Satz in der Tabelle customer mit diesen Werten an
+""
+
+=> Inserts row  with streetname = NULL (this is not working for key-columns like id)
+""
 insert into customer (id, firstname, lastname, city)
 values (51, 'James', 'Karsen', 'Dallas')
-    => Satz wird angelegt mit Straße = NULL (funtioniert z.b. nicht bei id weil dort not NULL definiert ist)
+""
+
+=> Update the row with the id = 51 regarding street
+""
 update customer
 set street = '547 Seventh Av.'
 where id = 51
-    => Update des Satzes mit id = 51 betreffend street
-...where firstname = 'James' and lastname = 'Karsen'
-    => Update der Straße überall wo firstname und lastname = James Karsen
+""
+
+...where firstname = 'James' and lastname = 'Karsen'    => Update the strett where firstname James and lastname Karsen
+
+=> Delete row with the id = 51
+""
 delete from customer
 where id = 51
-    => Delete des Satzes mit der id = 51
+""
 
 
-//5 Null and Like
-//NULL, LIKE, TOP, LIMIT, ROWNUM, PERCENT
-select top 5 * from customer    => die ersten 5 Ergebnisse werden ausgegeben (abhängig von der Sortierung)
+
+###### NULL, LIKE, TOP, LIMIT, ROWNUM, PERCENT
+select top 5 * from customer    => Outputs the first 5 results (depending on the sorting)
+
+=> in some DBs also in the following form - oututs the first 10 results
+""
 select * from customer
-limit 10    => in manachen DBs auch in dieser Form - die ersten 10 Sätze werden ausgegeben
+limit 10
+""
+
+=> and also in this form in some DBs
+""
 select * from customer
-where rownum <= 10  => und auch diese Form gibt es bei einigen DBs
-select top 10 percent * from customer       => top 10 Prozent werden ausgegeben
+where rownum <= 10  
+""
+
+select top 10 percent * from customer       => Outputs 10 top percent of the results
+
+=> "_" will be replaced with one char - so the output will be done for eg. Oslo or Oxlo
+""
 select * from computer
-where city like 'O_lo'  => "_" wird durch einen Buchstaben ersetzt - Ausgabe daher von allen Einträgen mit city = Oslo
-... where city like '%lo'   => Ausgabe von allem das mit "lo" aufhört in der Stadt
-... where city like '__l%'  => Ausgabe vo allem das mit 2 Buchstaben anfängt, dann "l" und danach beliebig
-... where city like '__l\%' => wenn nach dem Prozentzeichen gesucht werden soll muss dies mit \% maskiert werden
+where city like 'O_lo'  
+""
+
+... where city like '%lo'   => Outputs all entries which end with "lo" for the column city
+... where city like '__l%'  => Outputs all entries which start with 2 chars and then the char "l"
+... where city like '__l\%' => When there sould be a serach for the percent sign "%" - this has to be masked with \%
+
+=> Outputs all rows where lastname is NULL
+""
 select * from computer
-where lastname is NULL   => Abfrage wo Null als Eintrag im lastname vorhanden ist
-where lastname is NOT NULL  => Abfrage wo ein Eintrag und nicht Null vorhanden ist
+where lastname is NULL   
+""
+
+where lastname is NOT NULL  => Outputs all rows where there is some entry in the column lastname
 
 
-//6 geschachtelte Suchanfragen mit IN
-//IN
+
+###### IN
+=> IDs will be selected from the rechnungen-table and will be used for the aboth where-clausel for select *
+""
 select * from customer
 where id IN
-        (select id from rechnungen      => IDs werden ermittelt aus der Rechnungen-Tabelle...
-        where date <=3)                 => und diese werden dann oben als Input für die Where-Abfrage bei Select * herangezogen
+        (select id from rechnungen      
+        where date <=3)                
+""
 
 
-//7 Tabellen erstellen und Datentypen
-// CREATE, TABLE, INT, VARCHAR, BINARY, BOOLEAN, VARBINARY, SMALLINT, BIGINT, DECIMAL, NUMERIC, DATE, TIME
-create table Rechnung       => Erstellung einer neuen Tabelle mit Name Rechnung
+
+###### Tables and Data-Types
+=> CREATE, TABLE, INT, VARCHAR, BINARY, BOOLEAN, VARBINARY, SMALLINT, BIGINT, DECIMAL, NUMERIC, DATE, TIME
+
+=> Create a new table with name Rechnung
+""
+create table Rechnung       
     (
     RechnungsID int,
     CustomerID, int,
     Betrag int
     )
-insert into Rechnung
-values (1,0,50)     => Anlage eines Satzes in Rechnung mit diesen Werten
-//weitere mögliche Attriubtwerte
+""
+    
+insert into Rechnung values (1,0,50)     => Insert a row in the new table Rechnung with specific values
 value INT   => Integer
-name VARCHAR(255)   => variabler String
+name VARCHAR(255)   => variable Character
 bin BINARY (255)    => Bits
 bool BOOLEAN        => Bool (TRUE / FALSE)
 VARBINARY(255)      => variable Bits
-SMALLINT
-BIGINT
-DECIMAL (5,2)       => Dezimalzahl (GES,NK) - 3 Vorkomma, 2 Nachkommazahl
-NUMERIC (5,2)
+SMALLINT            => SmallInt
+BIGINT              => BigInt
+DECIMAL (5,2)       => Decimal Number (total,decimal places) - 3 beforce decimal places, 2 decimal places
+NUMERIC (5,2)       => Numeric Number
 FLOAT (10)          => Floating Number
-DOUBLE PRECISION
-DATE
-TIME
-TIMESTAMP
+DOUBLE PRECISION    => Double Precision
+DATE                => Date value
+TIME                => Time value
+TIMESTAMP           => Timestamp value
 
 
-//8 Primary und Foreign Keys, not null
-//DROP, UNIQUE, NOT NULL, PRIMARY KEY, FOREIGN KEY, REFERENCES
-drop table Rechnung IF EXISTS   => Tabelle wieder löschen
+
+###### Primary und Foreign Keys, not null
+=> DROP, UNIQUE, NOT NULL, PRIMARY KEY, FOREIGN KEY, REFERENCES
+drop table Rechnung IF EXISTS   => Drop whole table
+
+=> RechnungID is a mandatory field - must be allways available and not empty with NULL - with UNIQUE the ID has to be unique
+=> Define the Primary Key with PRIMARY KEY
+=> Define the Foreign Key with FOREIN KEY (Primary Key in anderer Tabelle) - is referencing to the id in the customer table
+""
 create table Rechnung
     (
-    RechnungsID int NOT NULL UNIQUE
-        //Pflichtfeld - muss immer vorhanden bzw. darf nicht leer gelassen werden mit NULL
-        //durch UNIQUE muss die ID eindeutig sein
+    RechnungsID int NOT NULL UNIQUE        
     CustomerID int NOT NULL
     Betrag int NOT NULL
-    PRIMARY KEY(RechnungsID)        => Definition des Primary Key
+    PRIMARY KEY(RechnungsID)        
     FOREIGN KEY(CustomerID) REFERENCES Customer(ID)
-    => Definition des Foreign Keys (Primary Key in anderer Tabelle)
-    => Referenziert auf die ID in der Tabelle Customer
     )
+""
 
 
-//9 Tabelle ändern, Autoincrement
-//AUTO_INCREMENT, DEFAULT, IDENTITY, ALTER TABLE, ADD, DROP COLUMN, ALTER COLUMN
+###### Change Tables, Autoincrement
+=> AUTO_INCREMENT, DEFAULT, IDENTITY, ALTER TABLE, ADD, DROP COLUMN, ALTER COLUMN
+=> With AUTO_INCREMENT the id will be given automatically - starts with 1 and then ascending (e.g. MYSQL)
+=> In some DBs with: RechnungsID int IDENTITY(0,1) (e.g. MSSQL)
+=> In some DBs with: RechnungsID int IDENTITY (e.g. HSQL)
+=> Using DEFAULT - when something is inserted without specific value - 50 will be used as default value
+""
 create table Rechnung
     (
-    RechnungsID int NOT NULL AUTO_INCREMENT     => ID wird automatisch vergeben - startet bei 1 und dann aufsteigend - bei  MYSQL
-    //in manchen DBs auch: RechnungsID int IDENTITY(0,1)  => Verwendung beim MSSQL-Server
-    //in machen DBs auch: RechnungsID int IDENTITY  => Verwendung z.B. bei HSQL
+    RechnungsID int NOT NULL AUTO_INCREMENT         
     CustomerID int NOT NULL,
-    Betrag int DEFAULT 50,      => wenn nichts eingegeben wird bei der Insertierung dann wird Standardwert 50 genommen
+    Betrag int DEFAULT 50,
     PRIMARY KEY(RechnungsID),
     FOREIGN KEY(CustomerID) REFERENCES Customer(ID)
     )
-alter table Rechnung
-add Datum Date
-drop column betrag
-alter column VARCHAR(255)
+""
+
+alter table Rechnung        => change table Rechnung
+add Datum Date              => add datum-column with datatype date
+drop column betrag          => drop column betrag from the table
+alter column VARCHAR(255)   => change column to VARCHAR(255)
 
 
-//10 Joins
-//INNER JOIN, ON, LEFT JOIN, RIGTH JOIN, FULL JOIN
+
+###### Joins
+=> INNER JOIN, ON, LEFT JOIN, RIGTH JOIN, FULL JOIN
+=> Outputs firstname + lastname from all customers which exists in the rechnung table
+""
 select firstname, lastname from customer
 where id in (select customerID from rechnung)
-    => Ausgabe von firstname+lastname von alle Kunden die in der Rechnungstabelle vorkommen
+""
+
+=> Outputs all attributes from the customers, which have a rechnung (same as aboth - but for all attributes)
+""
 select *
 from customer
 inner join Rechnung
 on customer.ID = rechnung.customerID
-    => Ausgabe von allen Attributen von Kunden die auch eine Rechnung haben
-    => grundsätzlich die gleiche Ausgabe wie oben nur mit allen Attributen
-...left join Rechnung
-    => gibt alle Elemente von der linken Tabelle (customer) gibt alle Sätze aus - wo in Rechnung etwas steht wird etwas ausgegeben, sonst nicht
-...right join Rechnung
-    => alle Einträge von der rechten Tabelle (rechnung) - mit Informationen aus beiden Tabellen
-...full join Rechnung
-    => gibt von beiden Tabellen links und rechts alles aus
+""
+
+...left join Rechnung   => Outputs all elements from the left table (customer) - where in the table Rechnung something is inside it will be outputed
+...right join Rechnung  => Outputs alle elements from the right table (Rechnung) - with informations from both tables
+...full join Rechnung   => Outputs everything from both sides
 
 
-//11 SQL Built In Funktionen
-//AVG, COUNT, TOP,  FIRST, LIMIT, LAST, UCASE, UPPER, LCASE, LOWER
-select avg(betrag) from rechnung    => Durchschnitt wird ausgegeben
-select count(rechnungID) from rechnung  => Anzahl der Sätze wird ausgegeben
+###### SQL Built In Funktionen
+=> AVG, COUNT, TOP,  FIRST, LIMIT, LAST, UCASE, UPPER, LCASE, LOWER
+select avg(betrag) from rechnung    => Outputs the average
+select count(rechnungID) from rechnung  => Returns the count of the rows
+
+=> Outputs the count of the rechnungIDs where the betrag is >= the average in the rechnungs table
+""
 select count(rechnungID) from rechnung
 where betrag >= (select AVB(betrag) from rechnung)
-    => Ausgabe der Anzahl der Rechnungen deren Betrag >= dem Durchschnittsbetrag in der Rechnungstabelle ist
-select top 1 customerID from rechnung   => erster Customer wird ausgegeben
-    //manchmal auch first(customerID)
-    //manchmal auch limit 1 customerID
-select top 1 customer
-order by customerID desc
-    //manchmal auch last(customerID)
-select max(betrag) from rechnung    =>maxmial-Betrag wird ausgegeben
-select min(betrag) from rechnung    =>minimal-Betrag wird ausgegeben
-select sum(betrag) from rechnung    =>Summe aller Beträge
-select ucase(firstname) from customer   => Ausgabe des firstname als Uppercase
-    //manchmal upper(firstname)
-select lcase(firstname) from customer   => Ausgabe des firstname als Lowercase
-    //manchmal lower(firstname)
-select len(firstname) from customer     => Ausgabe der Länge jedes Strings
-select now() from  customer     => Ausgabe des aktuellen Datums + aktuelle Zeit
+""
+
+select max(betrag) from rechnung        => Outputs maximum betrag from the table
+select min(betrag) from rechnung        => Outputs the minimum betrag from the table
+select sum(betrag) from rechnung        => Outputs the sum betrag from the table
+select ucase(firstname) from customer   => Outputs the firstname as uppercase - sometimes also upper(firstname)
+select lcase(firstname) from customer   => Outputs the firstname as lowercase - sometimes also lower(firstname)
+select len(firstname) from customer     => Outputs the length of the string
+select now() from  customer             => Outputs the actual date + time
 
 
 

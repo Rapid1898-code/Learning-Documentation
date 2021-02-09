@@ -1,0 +1,116 @@
+Installation;https://www.youtube.com/watch?v=GIRcpjg-3Eg;sql
+Outputs all columns from the table customer (automatically sorted by id);select * from customer;sql
+Outputs only the column firstname (no sorting);select firstname from customer;sql
+Outputs 2 columns firstname and lastname;select firstname, lastname from customer;sql
+With distinct the output occurs only one time if the firstname is the same;select distinct firstname from customer;sql
+Everything will be outputed cause the id is unique;select distinct id,firstname from customer;sql
+Only when firstname and lastname are equal there will be no outputs;select distinct firstname,lastname;sql
+Outputs the row with the id = 0;"select * from customer
+    where id = 0";sql
+Outputs all rows where the firstname is Janet;"select * from customer
+    where firstname = 'Janet'";sql
+Outputs all streets which are in the city of Oslo;"select street from customer
+    where city = 'Oslo'";sql
+all IDs >= 40;...where id >= 40;sql
+all IDs except 40 (in some DBs you have to use instead !=);...where id <> 40;sql
+everything between 40 and 50;...where id between 40 and 50;sql
+some values are checked for id;...where id in (43,44,45);sql
+Outputs all rows where id >= 40 and firstname is Robert;"select * from customer
+where id >= 40
+and firstname = ""Robert""";sql
+One of the both conditions have to be fullfilled;"...where id >= 40 or firstname = ""Robert""";sql
+combinaton of logical or and and (better to use parantheses);"...where id >= 40 or firstname = ""Robert"" and lastname = ""Fuller""";sql
+Outputs rows >=40 sorted ascending for firstname and lastname;"select * from customer
+where id >= 40
+order by firstname, lastname asc";sql
+Output in descending order;...order by firstname, lastname desc;sql
+Inserts row in the table with specific values for the columns;"insert into customer
+values (50, 'James', 'Karsen', '107 Upland Pl.', 'Dallas')";sql
+Inserts row  with streetname = NULL (this is not working for key-columns like id);"insert into customer (id, firstname, lastname, city)
+values (51, 'James', 'Karsen', 'Dallas')";sql
+Update the row with the id = 51 regarding street;"update customer
+set street = '547 Seventh Av.'
+where id = 51";sql
+Update the strett where firstname James and lastname Karsen;...where firstname = 'James' and lastname = 'Karsen';sql
+Delete row with the id = 51;"delete from customer
+where id = 51";sql
+Outputs the first 5 results (depending on the sorting);select top 5 * from customer;sql
+in some DBs also in the following form - oututs the first 10 results;"select * from customer
+limit 10";sql
+and also in this form in some DBs;"select * from customer
+where rownum <= 10";sql
+Outputs 10 top percent of the results;select top 10 percent * from customer;sql
+"""_"" will be replaced with one char - so the output will be done for eg. Oslo or Oxlo";"select * from computer
+where city like 'O_lo'";sql
+"Outputs all entries which end with ""lo"" for the column city";... where city like '%lo';sql
+"Outputs all entries which start with 2 chars and then the char ""l""";... where city like '__l%';sql
+"When there sould be a serach for the percent sign ""%"" - this has to be masked with \%";... where city like '__l\%';sql
+Outputs all rows where lastname is NULL;"select * from computer
+where lastname is NULL";sql
+Outputs all rows where there is some entry in the column lastname;where lastname is NOT NULL;sql
+IDs will be selected from the rechnungen-table and will be used for the aboth where-clausel for select *;"select * from customer
+where id IN
+        (select id from rechnungen
+        where date <=3)";sql
+Create a new table with name Rechnung;"create table Rechnung
+    (
+    RechnungsID int,
+    CustomerID, int,
+    Betrag int
+    )";sql
+Insert a row in the new table Rechnung with specific values;insert into Rechnung values (1,0,50);sql
+Integer;value INT;sql
+variable Character;name VARCHAR(255);sql
+Bits;bin BINARY (255);sql
+Bool (TRUE / FALSE);bool BOOLEAN;sql
+variable Bits;VARBINARY(255);sql
+SmallInt;SMALLINT;sql
+BigInt;BIGINT;sql
+Decimal Number (total,decimal places) - 3 beforce decimal places, 2 decimal places;DECIMAL (5,2);sql
+Numeric Number;NUMERIC (5,2);sql
+Floating Number;FLOAT (10);sql
+Double Precision;DOUBLE PRECISION;sql
+Date value;DATE;sql
+Time value;TIME;sql
+Timestamp value;TIMESTAMP;sql
+Drop whole table;drop table Rechnung IF EXISTS;sql
+Define the Foreign Key with FOREIN KEY (Primary Key in anderer Tabelle) - is referencing to the id in the customer table;"create table Rechnung
+    (
+    RechnungsID int NOT NULL UNIQUE
+    CustomerID int NOT NULL
+    Betrag int NOT NULL
+    PRIMARY KEY(RechnungsID)
+    FOREIGN KEY(CustomerID) REFERENCES Customer(ID)
+    )";sql
+Using DEFAULT - when something is inserted without specific value - 50 will be used as default value;"create table Rechnung
+    (
+    RechnungsID int NOT NULL AUTO_INCREMENT
+    CustomerID int NOT NULL,
+    Betrag int DEFAULT 50,
+    PRIMARY KEY(RechnungsID),
+    FOREIGN KEY(CustomerID) REFERENCES Customer(ID)
+    )";sql
+change table Rechnung;alter table Rechnung;sql
+add datum-column with datatype date;add Datum Date;sql
+drop column betrag from the table;drop column betrag;sql
+change column to VARCHAR(255);alter column VARCHAR(255);sql
+Outputs firstname + lastname from all customers which exists in the rechnung table;"select firstname, lastname from customer
+where id in (select customerID from rechnung)";sql
+Outputs all attributes from the customers, which have a rechnung (same as aboth - but for all attributes);"select *
+from customer
+inner join Rechnung
+on customer.ID = rechnung.customerID";sql
+Outputs all elements from the left table (customer) - where in the table Rechnung something is inside it will be outputed;...left join Rechnung;sql
+Outputs alle elements from the right table (Rechnung) - with informations from both tables;...right join Rechnung;sql
+Outputs everything from both sides;...full join Rechnung;sql
+Outputs the average;select avg(betrag) from rechnung;sql
+Returns the count of the rows;select count(rechnungID) from rechnung;sql
+Outputs the count of the rechnungIDs where the betrag is >= the average in the rechnungs table;"select count(rechnungID) from rechnung
+where betrag >= (select AVB(betrag) from rechnung)";sql
+Outputs maximum betrag from the table;select max(betrag) from rechnung;sql
+Outputs the minimum betrag from the table;select min(betrag) from rechnung;sql
+Outputs the sum betrag from the table;select sum(betrag) from rechnung;sql
+Outputs the firstname as uppercase - sometimes also upper(firstname);select ucase(firstname) from customer;sql
+Outputs the firstname as lowercase - sometimes also lower(firstname);select lcase(firstname) from customer;sql
+Outputs the length of the string;select len(firstname) from customer;sql
+Outputs the actual date + time;select now() from  customer;sql

@@ -7,7 +7,7 @@
 
 import csv
 
-files = ["GIT","JAVASCRIPT","HTML","CSS","PYTHON"]
+files = ["GIT","JAVASCRIPT","HTML","CSS","PYTHON","SQL"]
 
 for fn in files:
     # read initial txt file
