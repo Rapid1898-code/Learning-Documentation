@@ -36,7 +36,7 @@ num.toString()                              => Convert numeric value to string
 num + ""                                    => 2nd method to convert numeric value to string
 String(n)                                   => 3rd method to convert number / int to a String
 Number(s)                                   => Converts String to Number / Int
-typeof x                                    => Shows the type of the variable (eg. number, string, boolean)
+typeof x                                    => Shows the type of the variable as string (eg. "number", "string", "boolean")
 7 % 2                                       => Modulo / Rest of the division (=> 1)
 x == y                                      => Check 2 values / variables (result in true / false)
 x === y                                     => Equal value and equal type
@@ -119,6 +119,10 @@ for (let i=0; i < arr.lenth; i++) {do smth.}    => Iterate through index of the 
 for (let elem of arr) {alert(arr)}              => Iterate through array elements
 arr=Array.from(document.querySelectorAll("a"))  => Convert a node-list to an array
 arr=[...document.querySelectorAll("a")]         => 2nd method for converting node-list to an array
+arr.join(" ")                                   => Concatenate the array to a string seperated by " "
+arr.sort((a,b) => a > b ? 1 : -1)               => Order array ascending
+arr.sort((a,b) => a > b ? -1 : 1)               => Order array descending
+arr.sort(function(a,b) {return a > b ? 1 : -1}  => Ordering long method with function
 
 => Iterate trough array by index and element (with shortform)<br>
 => Outputs index and Outputs element of array
@@ -149,35 +153,61 @@ names.forEach((name, i) => {
 });
 ""
 
+=> Map Method - Short Method (Maps a functionality to all elements of the array - every element multiplicated by 2)
+""
+    let newarr = arr.map(x => x * 2);                  
+""
 
-newarr = arr.map(x => x * 2);                   *> Maps a functionality to all elements of the array - every element multiplicated by 2
-arr.join(" ")                                   *> Concatenate the array to a string seperated by " "
-
-arr.sort((a,b) => a > b ? 1 : -1)               *> Order array ascending
-arr.sort((a,b) => a > b ? -1 : 1)               *> Order array descending
-arr.sort(function(a,b) {return a > b ? 1 : -1}  *> Ordering long method with function
+=> Map Method - Long Method (for more code)
+""
+    let newarr = arr.map (function(x) {
+        x = x * 2
+    }
+""
     
 => Filter Method - Long Method (Filters all values which are > 6 eg. in a new array)
 ""
-newarr = arr.filter (function(x){               
+let newarr = arr.filter (function(x){               
     if (x > 6) {                                    
         return true
     }
 })
 ""
 
-=> Short Method in one line
+=> Filter Method - Short Method in one line
 ""
-newarr = arr.filter(x => x > 6);                
+let newarr = arr.filter(x => x > 6);                
 ""
 
-=> Reduce Method - for doing something with the array and output / calculate something<br>
-"total" is the new calculation element - result of this is the sum of all elements of the array<br>
-every element is added to total - 0 is the default value of "total"
+=> Reduce Method - for doing something with the array and output / calculate something
+=> "total" is the new calculation element - result of this is the sum of all elements of the array
+=> every element is added to total - 0 is the default value of "total"
 ""
-erg = arr.reduce ((total, element) => {     
-    return total + element                      
+erg = arr.reduce ((total, elem) => {     
+    return total + elem                      
 },0)                                            
+""
+
+=> FindIndex Method - find the index-location of an element in the array (if nothing is found it returns -1)
+""
+let idx = arr.findIndex(x => {
+  return x < 10;
+})
+
+""
+
+=> Some Method - checks whether at least one element in the array passes the test - returns boolean answer
+=> 1st line defines the check function - 2nd line checks the array with the function
+""
+const even = (element) => element % 2 === 0;
+arr.some(even)
+""
+
+=> Every Method - checks whether all elements in the array passed the test by the defined function - return boolean answer
+=> 1st line defines the check function - 2nd line checks the array with the function
+""
+const isLower = (elem) => elem < 40;
+arr.every(isLower)
 ""
 
 
@@ -312,25 +342,33 @@ let obj = {
 }
 ""                   
 
-obj.name                                            => Access property / shows value of the key "name" (1st method) => John
-obj["name"]                                         => Shows value of the key "name" (2nd method) => John
-obj.age                                             => Shows key "age" of the object => 30
+obj.name                                            => Access property / shows value of the key "name" (1st method) => John (dot.notation)
+obj["name"]                                         => Shows value of the key "name" (2nd method) => John (bracket notation)
+obj.age                                             => Shows key "age" of the object => 30 (dot notation)
 obj.newOne = "xyz"                                  => Add a new propertie to the object
 obj.newMethod = function(var) {...do someth...}     => Add a new method to the object
 obj.newMethod(25)                                   => Call the new method
 age in obj                                          => Check if key is in the object
-delete obj.age                                      => Delete a property of an object
-for (let key in obj) {alert(key,alert, obj[key]}    => Iterate through the keys of the object and outputs key and value
+delete obj.age                                      => Delete a property of an object (dot notation)
+delete obj["age nr"]                                => Delete a property of an object (bracket notation)
 Object.keys(obj)                                    => Store all the keys of the object in an array 
 if ("property" in obj) {...}                        => Check if a property / method is in an object
 Object.keys(obj).length === 0 && obj.constructor === Object     => Check if Object is empty
-    
+
+=> Iterate through the keys of the object and outputs key and value
+""
+for (let key in obj) {
+    console.log(key, obj[key]
+}    
+""   
 
 => Other example for an object
+=> teacher count must have quotations cause it contains a space character
 ""
 var school = {
   name: 'The Starter League',
   location: 'Merchandise Mart',
+  "teacher count": 10
   students: 120,
   teachers: ['Jeff', 'Raghu', 'Carolyn', 'Shay']
 };
@@ -349,9 +387,9 @@ var school = {
 => Make a Object with the old method
 ""
 function MakeCar (carMake,carModel,carColor){       // Define the constructor function
-    this.make = carMake                             // Define properties for the constructor
-    this.carModel = carModel                        // "this" is referencing to the actual object
-    this.carColor = carColor
+    this.make = carMake,                            // Define properties for the constructor
+    this.carModel = carModel,                       // "this" is referencing to the actual object
+    this.carColor = carColor,
     this.honk = function(){                         // Define a mtehod for the constructor
         alert(`BEEP ${this.carModel} BEEP`)         // Alert something when the method is called (with prop this.carModel)
     }
@@ -360,7 +398,20 @@ let car1 = new MakeCar("Honda","Civic","black")     // Create a new car1 (with c
 let car2 = new MakeCar("Tesla","Roadster","red")    // Create a new car1
 ""
 
-=> Make a Object with the new class method
+=> Make a Object with the shorthand
+""
+let robotFactory = (model, mobile) => {             // Define constructor with two parameters
+    return {
+        model: model,                               // property1
+        mobile: mobile,                             // property2
+        beep(){                                     // method
+            console.log("Beep Boop")
+        }
+    }
+}
+""
+
+=> Make a Object with the new class method (longhand)
 ""
 class MakeCar{                                      // Define the class
     constructor (carMake,carModel,carColor){        // Define properties for the class
@@ -435,8 +486,8 @@ const c = document.querySelectorAll("h2")       => Select all elements which hav
 .classList.contains("cl")                       => Check if element contains class "cl"
 .classList.remove("wiggle")                     => Remove the class from the element
 setInterval(func1, 1000)                        => Call function "func1" every second (1000ms)
-setInterval(()=> {do something},10000)          *> Do something any 10 seconds
-setTimeout(()=> {do something,1000}]            *> Do something and wait 1 second
+setInterval(()=> {do something},10000)          => Do something any 10 seconds
+setTimeout(()=> {do something,1000}]            => Do something and wait 1 second
 
 => Add some elments to an ul-element
 ""
@@ -455,7 +506,7 @@ let inputs = document.querySelectorAll(".controls input");
 ""
 
     
-inputs.forEach(input => input.addEventListener("change", handleUpdate));    *> Wait for change in any element and call the function "handleUpdate"
+inputs.forEach(input => input.addEventListener("change", handleUpdate));    => Wait for change in any element and call the function "handleUpdate"
 
 => Handle Update<br>
 (For definition and using the variables in CSS have a look at CSS.txt)
@@ -510,7 +561,7 @@ parse the JSON-content to an object: let obj = JSON.parse(body)
 - Events<br>
 - Effects
 
-<script src="=>ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>      *> include before body-tag
+<script src="=>ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>      => include before body-tag
 $(document).ready(function(event){...});        => put all jQuery code in this function (waiting until the the page has loaded an the DOM is ready)
 $('.feature');                                  => Class selector
 $('li strong');                                 => Descendant selector
@@ -522,6 +573,7 @@ $('p:nth-child(2)');                            => Pseudo-class selector
 
 ###### DATE
 let now = new Date()                            => Assign variable to actual date
+let t1 = Date.now()                             => Returns numeric acttual date as number (helpful to calculate some timespans)
 let secondes = now.get.Seconds()                => Assign actual seconds from actual date variable "now"
 
 
