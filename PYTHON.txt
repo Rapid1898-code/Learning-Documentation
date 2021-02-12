@@ -1196,6 +1196,16 @@ for "data" select "replace existing data"
 press "export" (wait till the rows-column shows 100%)
 ""
 
+=> Backup MySQL / MariaDB with HeidiSQL
+=> see: https://manjaro.site/backup-mysql-database-using-heidisql/
+""
+select DB - <Tools>, <Export Database as SQL>
+select Drop-Checkboxes and Create-Checkboxes
+Data: Delete + insert (truncate existing data)
+Output: single .sql file
+Filename: choose destination file and folder
+""
+
 
 
 ###### MYSQL - MARIADB - SQL

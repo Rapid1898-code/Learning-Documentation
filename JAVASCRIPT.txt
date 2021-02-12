@@ -121,7 +121,8 @@ arr=Array.from(document.querySelectorAll("a"))  => Convert a node-list to an arr
 arr=[...document.querySelectorAll("a")]         => 2nd method for converting node-list to an array
 
 => Iterate trough array by index and element (with shortform)<br>
-Outputs index and Outputs element of array
+=> Outputs index and Outputs element of array
+=> (return is not working here - forEach loops are allways running for all elements)
 ""
 arr.forEach((elem,idx) => {                 
     console.log(idx)                            
@@ -130,7 +131,8 @@ arr.forEach((elem,idx) => {
 ""
 
 => Iterate through array by elements and index (with longform)<br>
-Outputs index and Outputs element of array
+=> Outputs index and Outputs element of array
+=> (return is not working here - forEach loops are allways running for all elements)
 ""
 arr.forEach(function(elem,idx) {                
     console.log(idx)                            
@@ -435,6 +437,13 @@ const c = document.querySelectorAll("h2")       => Select all elements which hav
 setInterval(func1, 1000)                        => Call function "func1" every second (1000ms)
 setInterval(()=> {do something},10000)          *> Do something any 10 seconds
 setTimeout(()=> {do something,1000}]            *> Do something and wait 1 second
+
+=> Add some elments to an ul-element
+""
+var li = document.createElement("li")           // create new li-element
+li.textContent = "new text"                     // add text to the new element
+document.querySelector("ul").appendChild(li)    // append the new li-element to the ul-element
+""
 
 
 
