@@ -353,6 +353,9 @@ delete obj.age                                      => Delete a property of an o
 delete obj["age nr"]                                => Delete a property of an object (bracket notation)
 Object.keys(obj)                                    => Store all the keys of the object in an array 
 if ("property" in obj) {...}                        => Check if a property / method is in an object
+Object.keys(obj)                                    => Read the keys of an object into an array
+Object.entries(obj)                                 => Read alle key / value pairs of an object into an (nested) array    
+
 Object.keys(obj).length === 0 && obj.constructor === Object     => Check if Object is empty
 
 => Iterate through the keys of the object and outputs key and value
@@ -413,7 +416,7 @@ let robotFactory = (model, mobile) => {             // Define constructor with t
 
 => Make a Object with the new class method (longhand)
 ""
-class MakeCar{                                      // Define the class
+class MakeCar{                                      // Define the classs
     constructor (carMake,carModel,carColor){        // Define properties for the class
         this.make = carMake                         // Assign the properties of the class to the concrete individual object
         this.carModel = carModel                    // "this" is referencing to the actual object
