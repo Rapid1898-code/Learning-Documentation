@@ -419,7 +419,7 @@ let robotFactory = (model, mobile) => {             // Define constructor with t
 class MakeCar{                                      // Define the classs
     constructor (carMake,carModel,carColor){        // Define properties for the class
         this.make = carMake                         // Assign the properties of the class to the concrete individual object
-        this.carModel = carModel                    // "this" is referencing to the actual object
+        this._carModel = carModel                    // "this" is referencing to the actual object (use "_" to indicate that this properties should only changed with getters)
         this.carColor = carColor
     }
     honk(){                                         // Define a method for the class
@@ -436,6 +436,30 @@ MakeCar.prototype.wash = true                       // Give all the created cars
 MakeCar.prototype.newFunc = function () {           // Give all the created cars from the class "MakeCar" a new function "newFunc"
     console.log("We have a new function!"
 }
+""
+
+=> Define a getter in the class (returns the name-propertie of the class-element
+""
+  get name() {
+    return this._name;
+  }
+""
+
+=> Inherit a class from another class
+=> The class Cat inherits from the class Animal with the keyword "extends"
+=> With super at the name - this name will be passed to the parent class Animal
+""
+class Cat extends Animal {
+  constructor(name, usesLitter) {
+    super(name);
+    this._usesLitter = usesLitter;
+  }
+}
+""
+
+=> Define static function - this can only be could for the classe itself (ot for the instances of the class)
+""
+    static generateName() {...}
 ""
 
 
@@ -604,8 +628,31 @@ localStorage.clear()                        => Delete the whole local storage
 
 
 
+###### MODULE EXPORTS
+=> Define module with Node.js (in a file)
+""
+let Obj = {}            // define an object
+Obj.prop = "xyz"        / define something in the object eg. a function
+module.exports = Obj    // export the file as module to node.js
+""
+
+=> Use a module
+""
+const Obj = require('./module.js');     // import the module for using
+Obj.funcFromModule                      // use the function from the module
+""
+
+=> Define module with export
+""
+let Menu = {};
+export default Menu;
+""
+
+=> Import module with import
+""
+import Menu from './menu';
+""
 
 
 
-
-    
+   
