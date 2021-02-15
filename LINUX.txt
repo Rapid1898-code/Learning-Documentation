@@ -1,141 +1,161 @@
-from Morpheus YouTube Channel
-and added from http://www.linuxcommand.org/
-
-// 0 Important
-NOMODESET: if there are starting problems when booting linux mint => replace quiet splash with nomodeset
-Change Keyboard-Setting to DE: setxkbmap de
-show $PATH variables: sed 's/:/\n/g' <<< "$PATH"
+****** IMPORTANT
+=> from Morpheus YouTube Channel
+=> and added from http://www.linuxcommand.org/
+=> NOMODESET: if there are starting problems when booting linux mint => replace quiet splash with nomodeset
+=> Change Keyboard-Setting to DE: setxkbmap de
+=> show $PATH variables: sed 's/:/\n/g' <<< "$PATH"
 add entry to $PATH: export PATH="/home/bin:$PATH"       => /home/bin will be added
 
-// 1 Installation //
-//SUDO, APT-GET
-Virtual Box donwloaden
-Kali Linux Image downloaden
-USB auf 1.1. ändern
-Tastatur auf Deutsch Ändern (Deutsch hinzufügen - Englisch löschen)
-Linux aktalisieren:
+
+
+****** INSTALLATION
+=> SUDO, APT-GET
+Download Virtual
+Download Kali Linux Image
+Change USB to 1.1.
+Change keyboard to german (Add German - Delete English)
+
+=> Update Linux
+""
 sudo => Superuserzugriff
-- sudo apt-get update
-- sudo apt-get upgrade
-- sudo apg-get dist-upgrade
+sudo apt-get update
+sudo apt-get upgrade
+sudo apg-get dist-upgrade
+""
 
-//6 Terminal - Dateien und Grundbefehle
-//WD, LS, CD, TOUCH, CAT, CLEAR, MAN, HELP, MAN, READLINK
-pwd => zeigt aktuelles Working Directory
-ls --help => description of the command
-man ls => outputs the manual for the command
-ls => listet alle Ordner0 / Dateien des aktuellen Pfades
-ls /bin => list the files in the /bin directory
-ls /bin /etc => list the files in the /bin directory and the /etc directory
-ls -a => auch versteckte Dateien werden angezeigt
-ls -l => List the files in the working directory in ling format
-ls -la .. => list all files in the parent of the working directory
-(row1: file permissions - r read, w write, x exceute/auführen)
-(row2: number of the files in the directory - 1 if it is a file)
-(row3: Owner)
-(row4: Group)
-(row5: Size in bytes)
-(row6: Modification time)
-(row7: file name)
-cd => cd . ist der aktuelle Ordner / cd .. ist immer der darüberliegende Ordner
-readlink -e ./out.txt   => read full path for a file
-touch myFirstFile => erstellen einer (leeren) Datei
-cat myFirstFile => Ausgabe des Inhalts der Datei
-Auführen einer Datei => ./Name
-clear => löschen den Bildschirm
-man => for Manual - zeigt Informatonen zu Linux-Befehlen
-telnet => Userinterface für TELNET-Protocol
 
-//6 Linux Filesystem
-/boot: kernel and boot loader - the kernel is a file called vmlinuz
-/etc: contains the configuation files - all files should be text files
-/etc/passwd: contains essential infos for each users
-/etc/fstab: table of devices that get mounted when the system boots
-/etc/hosts: list the network host names that are known to the system
-/bin: contain most of the programs - essential programs that the system requires to operate
-/usr/bin: contain most of the programs - applications for the systems user
-/sbin and /usr/sbin: contain programs for system admins - mostly for use by the superuser
-/usr: variety of things that support user applications
-/usr/share/X11: support for the x windows system
-/usr/share/dict: dictionaries for the speling checker
-/usr/share/doc: various docu files in different formats
-/usr/share/man: the man pages are kept here
-/usr/src: installed source code files
-/usr/local: are used for installation of individual software from the user
-/usr/local/bin: install folder for individual software
-/var: files which are changing during system running
-/var/log: many logfiles during the system run
-/var/spool: queue for processes like mail or print jobs
-/lib: shared libraries (like DDL in windows)
-/home: place to keep personal work - users are only allowed to write files here
-/root: superusers home directory
-/tmp: directory in which programs can write their temporary files
-/dev: special directory - contains devices that are available to the system - /dev/sda ist the first hard drive
-/proc: special directory - it is entire virtual
-/media: is used for mount points
 
-//7 Rechte und Rechtverwaltung
-//CHMOD
-chmod => ändert Zugriffsrechte von Dateien und Ordnern
-3-stellige Berechtigung read / write / execute
-entsprechend 3-stellige Kürzel 111, 110, 100, usw.
+****** TERMINAL - Folder and Basic Commands
+=> WD, LS, CD, TOUCH, CAT, CLEAR, MAN, HELP, MAN, READLINK
+pwd             => shows actual working directory (print working directory)
+ls --help       => description of the command
+man ls          => outputs the manual for the command
+ls =>           => lists all folders and files for the actual path
+ls /bin         => list all folders / files in the /bin directory
+ls /bin /etc    => list the files in the /bin directory and the /etc directory
+ls -a           => shows also hidden files
+ls -l           => list the files in the working directory in ling format
+ls -la ..       => list all files in the parent of the working directory (with hidden files in ling format)
+
+=> Output columns for -l command
+""
+(col1: file permissions - r read, w write, x exceute/auführen)
+(col2: number of the files in the directory - 1 if it is a file)
+(col3: Owner)
+(col4: Group)
+(col5: Size in bytes)
+(col6: Modification time)
+(col7: file name)
+""
+
+cd .                    => Change to actual folder
+cd ..                   => Change to the folder one level aboth
+readlink -e ./out.txt   => Read full path for a file
+touch myFirstFile       => Create an empty file
+cat myFirstFile         => Outputs the content of a file
+./Name                  => Run a the program "Name"
+clear                   => Clears the terminal screen
+man                     => For manual - shows infos for linux commands
+telnet                  => Userinterface für TELNET-Protocol
+
+
+
+****** LINUX FILESYSTEM
+/boot                   => kernel and boot loader - the kernel is a file called vmlinuz
+/etc:                   => contains the configuation files - all files should be text files
+/etc/passwd:            => contains essential infos for each users
+/etc/fstab:             => table of devices that get mounted when the system boots
+/etc/hosts:             => list the network host names that are known to the system
+/bin:                   => contain most of the programs - essential programs that the system requires to operate
+/usr/bin:               => contain most of the programs - applications for the systems user
+/sbin and /usr/sbin     => contain programs for system admins - mostly for use by the superuser
+/usr:                   => variety of things that support user applications
+/usr/share/X11:         => support for the x windows system
+/usr/share/dict:        => dictionaries for the spelling checker
+/usr/share/doc:         => various docu files in different formats
+/usr/share/man:         => the man pages are kept here
+/usr/src:               => installed source code files
+/usr/local:             => are used for installation of individual software from the user
+/usr/local/bin:         => install folder for individual software
+/var:                   => files which are changing during system running
+/var/log:               => many logfiles during the system run
+/var/spool:             => queue for processes like mail or print jobs
+/lib:                   => shared libraries (like DDL in windows)
+/home:                  => place to keep personal work - users are only allowed to write files here
+/root:                  => superusers home directory
+/tmp:                   => directory in which programs can write their temporary files
+/dev:                   => special directory - contains devices that are available to the system - /dev/sda ist the first hard drive
+/proc:                  => special directory - it is entire virtual
+/media:                 => is used for mount points
+
+
+
+****** PERMISSIONS AND MANAGEMENT
+=> CHMOD
+""
+changes access rights for files and folders
+3 digit persmissions - read / write / execute - eg. 111, 110, 100
 111 => 7, 100 => 4, 101 => 5
-chmod 751 datei => Root hat alle Rechte, akt. Benutzer read + execute, Sonstige nur execute
-touch => ändert das Datum einer Datei
+chmod 751 file => root has all rights, actual user read and excecute, others only execute
+touch => changes the date of the file
+""
 
 
-//8 Verzeichnisse
-//MKDIR, RM, RMDIR, CP, MV
-mkdir => Ordner erzeugen
-g* => all files which begin with the char "g"
-b*.txt => all files which begin with "b" and end with the char ".txt"
-Data??? => files beginning with "Data" followed by exactly 3 more chars
-[abc]* => files beginning with a/b/c
-[[:upper:]]* => files beginning with uppercase letter
-BACKUP.[[:digit:]][[:digit:]] => beginning with "BACKUP" followed by exactly 2 digits
-*[![:lower:]] => files which does not end with a lowercase letter
-rm file1 file2 => File löschen (longname remove) mit Sicherheitsabfrage
-rm -i file1 file2 => User is prompoted before every deletion
-rm -f => File löschen ohne Sicherheitsabfrage
-rm -r Directory => Löschen eines Directory mit Sicherheitsabfrage
-rm -rf => Löschen eines gesamten Directory mit Inhalt OHNE Sicherheitsabfrage
-rmdir => löschen ein Directory
-cp file1 file2 => <source> <destination> kopiert Files (longname copy) - without prompting when overwritten
-cp -i file1 file2 => copying file - but user is prompted before overwriting an existing file
-cp file1 dir1 => copy file1 inside of directory dir1
-cp -r dir1 dir2 => copy the content of dir1 to dir2
-    (if dir2 not exists => creating dir2 with dir1 content)
-    (if dir2 exists => creating dir1 within dir2)
-cp -r => um gesamtes Directory mit Inhalt zu kopieren)
-mv file1 file2 => <source> <destination> verschiebt eine Datei (longname move)
-mv -i file1 file2 => moving file but prompting when file2 exists
-mv file1 file2 file3 dir1 => the 3 files are moved to dir1
-mv dir1 dir2 =>
+
+****** FOLDERS
+=> MKDIR, RM, RMDIR, CP, MV
+mkdir                   => create folder
+g*                      => all files which begin with the char "g"
+b*.txt                  => all files which begin with "b" and end with the char ".txt"
+Data???                 => files beginning with "Data" followed by exactly 3 more chars
+[abc]*                  => files beginning with a/b/c
+[[:upper:]]*            => files beginning with uppercase letter
+BACKUP.[[:digit:]][[:digit:]]       => beginning with "BACKUP" followed by exactly 2 digits
+*[![:lower:]]           => files which does not end with a lowercase letter
+rm file1 file2          => delete files (longname remove) with security prompt
+rm -i file1 file2       => User is prompted before every deletion
+rm -f                   => Delete files without security prompt (danger!)
+rm -r dir1              => Delete a directory with security prompt
+rm -rf                  => Delete a whole directory with the files inside WITHOUT security prompt
+rmdir                   => Delete directory
+cp file1 file2          => <source> <destination> copy file (longname copy) - without prompting when overwritten
+cp -i file1 file2       => copying file - but user is prompted before overwriting an existing file
+cp file1 dir1           => copy file1 inside of directory dir1
+
+=> copy the content of dir1 to dir2
+""
+cp -r dir1 dir2         
+(if dir2 not exists => creating dir2 with dir1 content)
+(if dir2 exists => creating dir1 within dir2)
+""
+
+cp -r                   => copy the whole directory with content
+mv file1 file2          => <source> <destination> move file (longname move)
+mv -i file1 file2       => moving file but prompting when file2 exists
+mv file1 file2 file3 dir1   => the 3 files are moved to dir1
+mv dir1 dir2            => moving everything from dir1 to dir2
 
 
-//9 Prozesse, System
-//CRUNCH, STRG-C, PS, TYPE
-crunch 1 9 1234567890abcdefghijklmnopqrstuv
-=> checkt alls PW-Kombination - extrem langer Prozess
-=> kann mit STRG-C abgebrochen werden
-ps -e => welche Prozesse gerade laufen
-kill nummer des Prozessesff
-STRG-Z => pausieren eines Prozesses
-bg => Prozess in den background versetzen
-jobs => Check welche Jobs aktuell laufen
-fg => Prozess in den Forground holen
-type => displays the kind of command the shell will execute
+
+****** PROCESSES, SYSTEM
+=> CRUNCH, STRG-C, PS, TYPE
+ps -e                   => show which processes are currently running
+STRG-Z                  => pause a process
+bg                      => set process to background
+jobs                    => checks which jobs are currently running
+fg                      => take process to the foreground
+type                    => displays the kind of command the shell will execute
 
 
-//10 Filtern
-//HEAD, TAIL, GREP
-REP
-head -n 3 txtfile => ersten 3 Zeilen der Datei werden ausgegeben
-tail -n 3 txtfile => letzten 3 Zeilen werden ausgegeben
-grep sea txtfile => alle Zeilen wo "sea" vorkommt werden ausgegeben
-grep -i sea txtfile => Suche inkl. ignoriern von Upper- und Lowercase
-grep -n sea txtfile => Zeilennummern werden zusätzlich ausgegeben
-grep -r sea => gesamte Verzeichnis und Unterverzeichnisse werden durchsucht
+
+****** FILTERING
+=> HEAD, TAIL, GREP
+head -n 3 txtfile       => outputs the first 3 lines of the file
+tail -n 3 txtfile       => outputs the last 3 lines of the file
+grep sea txtfile        => return all lines where "sea" is in it
+grep -i sea txtfile     => searching with ignoring lower- or uppercase
+grep -n sea txtfile     => show also line numbers
+grep -r sea             => the whole directory and subdirectory will be searched
 //Regex Regular Expressions
 grep -E s[ei][at] -wgre
 . => für einzelnen Buchstaben;
