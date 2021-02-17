@@ -16,6 +16,8 @@
 #> DATE
 #> MATH
 #> LOCAL STORAGE
+#> MODULE EXPORTS
+#> ASYNCHRONOUS HANDLING
 
 
 ###### OPERATOR, INPUT, OUTPUT
@@ -208,6 +210,16 @@ arr.some(even)
 ""
 const isLower = (elem) => elem < 40;
 arr.every(isLower)
+""
+
+=> example for a setTimeout
+=> the first and second message will appear immediately - the middle message only after 2 seconds
+""
+console.log('First message!');
+setTimeout(() => {
+   console.log('This message will always run last...');
+}, 2000);
+console.log('Second message!');
 ""
 
 
@@ -514,7 +526,8 @@ const c = document.querySelectorAll("h2")       => Select all elements which hav
 .classList.remove("wiggle")                     => Remove the class from the element
 setInterval(func1, 1000)                        => Call function "func1" every second (1000ms)
 setInterval(()=> {do something},10000)          => Do something any 10 seconds
-setTimeout(()=> {do something,1000}]            => Do something and wait 1 second
+setTimeout(func1, 2000)                         => Func1 is running with a delay of at least 2 seconds (with own seperate function)
+setTimeout(()=> {do something},1000)            => Do something and wait 1 second (function direct in the statement)
 
 => Add some elments to an ul-element
 ""
@@ -652,6 +665,143 @@ export default Menu;
 ""
 import Menu from './menu';
 ""
+
+
+
+###### ASYNCHRONOUS HANDLING
+=> create an executor function
+""
+const executorFunction = (resolve, reject) => {
+  if (someCondition) {
+      resolve('I resolved!');
+  } else {
+      reject('I rejected!'); 
+  }
+}
+""
+
+const myFirstPromise = new Promise(executorFunction)    => construct a new variable with "new Promise"
+
+=> example for a promise handling with resolve, reject and .then
+""
+let prom = new Promise((resolve, reject) => {
+  let num = Math.random();
+  if (num < .5 ){
+    resolve('Yay!');
+  } else {
+    reject('Ohhh noooo!');
+  }
+});
+ 
+const handleSuccess = (resolvedValue) => {
+  console.log(resolvedValue);
+};
+ 
+const handleFailure = (rejectionReason) => {
+  console.log(rejectionReason);
+};
+ 
+prom.then(handleSuccess, handleFailure);
+""
+
+=> example using a promise with .then and .catch
+=> .then is handling the resolved part and .catch is handling the rejected part
+""
+prom
+  .then((resolvedValue) => {
+    console.log(resolvedValue);
+  })
+  .catch((rejectionReason) => {
+    console.log(rejectionReason);
+  });
+""
+
+=> define a async-function with function declaration:
+""
+async function myFunc() {
+  // Function body here
+};
+""
+
+=> define a async-function with function expression
+""
+const myFunc = async () => {
+  // Function body here
+};
+""
+
+=> example for handling a async function
+""
+async function withAsync(num){
+  if (num === 0){
+      return 'zero';
+    } else {
+      return 'not zero';
+    }
+}
+""
+
+
+
+###### REQUESTS
+const xhr = new XMLHttpRequest()                    => create xml http request object instances
+const url =  'https://api-to-call.com/endpoint'     => assing the url
+xhr.responseType = 'json'                           => set the resonse type to json
+xhr.onreadystatechange = () => {}                   => 
+
+=> use GET statement for reading an URL
+""
+xhr.onreadystatechange = () => {
+  if (xhr.readyState === XMLHttpRequest.DONE) {
+    return xhr.response;
+  }
+xhr.open('GET', url);
+xhr.send();
+};
+""
+
+=> use POST statement for writing something back to an URL
+""
+const xhr = new XMLHttpRequest();
+const url = 'https://api-to-call.com/endpoint';
+const data = JSON.stringify({id: '200'});
+
+xhr.responseType = 'json';
+
+xhr.onreadystatechange = () => {
+  if(xhr.readyState === XMLHttpRequest.DONE){
+    return xhr.response;
+  }
+}
+
+xhr.open('POST', url);
+xhr.send(data);
+""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
