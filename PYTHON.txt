@@ -2528,10 +2528,10 @@ zappa deploy dev (when virutal environement is activated!)	# Deploy everything t
 	eg. https://xnujiyxsb1.execute-api.eu-central-1.amazonaws.com/dev/api/v1/incstat?ticker=FB
 		https://xnujiyxsb1.execute-api.eu-central-1.amazonaws.com/dev/api/v1/summary?ticker=CAT
 		https://xnujiyxsb1.execute-api.eu-central-1.amazonaws.com/dev/api/v1/profile?ticker=FB
-zappa update dev (when virutal environement is activated!)	# Update deployment on AWS (when something changed in the pyhton-program)
-zappa undeploy dev								# Undeploy everything on AWS
+zappa update dev (when virutal environement is activated! and actual directory is correct where the py-file is!)	# Update deployment on AWS (when something changed in the pyhton-program)
 zappa status									# Show actual status
 zappa tail										# Show actual loggin (in error cases)
+zappa undeploy dev								# Undeploy everything on AWS
 ""
 
 => AWS part
