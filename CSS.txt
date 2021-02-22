@@ -113,6 +113,7 @@ max-width:20%;							=> Resize something eg. img
 max-width:100%;							=> Prevents the eg. image from getting bigger than its original size	
 max-height:20%;							=> Resize something eg. img
 list-style-type: none;					=> no bullets in unordered list (using at ul-element)
+list-style-type: xyz                    => disc (for Bullet), circle, square, decimal, lower-alpha,
 disply: none;							=> hide element	
 display: inline;						=> show element in line - eg. horizontal li-elements - or wrap border only around a paragraph p (and not the whole block)
 display: block;							=> show element as a block (max width of the window) - eg. wrap border around a span element over the whole window (and not only the span)

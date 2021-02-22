@@ -93,6 +93,7 @@ index.html                                  => Should be the first site
 <em> Stress Emphasis </em>                  => Emphasis some text - but only for accessibility reason (not styling!)
 <strong> Strong Importance </strong>        => Bold some text - but only for accessibility reason (not styling!)
 <iframe src="" frameborder="0"></iframe>    => Insert / embedd video with iframe
+<a id="1"></a>                              => Set JumpMark at a specific position in the html-file (jump to with index.html#1)
 
 => Insert video 
 ""
