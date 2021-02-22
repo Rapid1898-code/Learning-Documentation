@@ -301,7 +301,7 @@ all = match.group(0)											=> Show the full string => "3 n: nnnlncrnnnnn"
 
 ###### LIST
 => ordered, mutable, allows duplicate elements
-l = []                                           => Define empty list
+l = []                                           => Define empty list d
 l1,l2,l3,l4 = ([] for i in range(4))		     => Define several empty lists (NOT use l1=l=l3=[] => this would be the SAME list)		
 if l											 => check for True if list has an element
 if not l										 => check for False if list is empty (same would be if l == []
