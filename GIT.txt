@@ -11,7 +11,7 @@
 ###### BASICS, GITHUB
 - INIT, STATUS, ADD, COMMIT, LOG
 
-sudo apt-get install git 					=> Installation (linux)
+sudo apt-get install git 					 => Installation (linux)
 git config --global user.name "Rapid1898"   => Config name for the repository (onetime setting)
 git config --global user.email "x@gmx.com"  => Config mail for the repository (onetime setting - use the mail using for github.com)
 git init									=> Create repository in the actual directory
