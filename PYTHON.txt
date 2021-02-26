@@ -1384,8 +1384,8 @@ https://www.programiz.com/python-programming/datetime/strptime
 https://rdrr.io/r/base/strptime.html
 from datetime import datetime, timedelta                     => Import module datetime and timedelta
 from datetime import date                                    => Import module dat
-datetime.strptime(s, "%Y-%m-%d")                             => Conversion string to datetime in format dd.mm.jjjj
-datetime.strftime(dt, "%Y-%m-%d")                            => Conversion datetime to string in format  dd.mm.jjjj
+datetime.strptime(s, "%Y-%m-%d")                             => Conversion string to datetime in format yyyy-mm-dd
+datetime.strftime(dt, "%Y-%m-%d")                            => Conversion datetime to string in format  yyyy-mm-dd
 dt.strftime((dt.strptime(tmp,"%m/%d/%Y")),"%Y-%m-%d")      	=> Convert dateformat from string in one line (1st from - 2nd to)
 isinstance(x, date)											 => Check if variable is of type datetime.date or datetime.datetime                   
 isinstance(x, datetime)										 => Check if variable is of type datetime.datetime
