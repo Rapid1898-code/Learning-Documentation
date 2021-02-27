@@ -50,7 +50,8 @@
 #> MODULE - BEAUTIFUL SOAP - webscraping
 #> MODULE - REQUESTS - workings with APIs
 #> MODULE - PYQT - making GUIs
-#> MODULE - TKinter - making GUIs
+#> MODULE - TKINTER - making GUIs
+#> MOUULE - KIVY - making GUIs
 #> MODULE - PYGAME - making games
 #> MODULE - PYTHONCOM - make new formula in excel with python-function
 #> MODULE - FLASK, ZAPPA, AWS - making an API
@@ -2255,7 +2256,7 @@ class Window(QMainWindow):                             => Defines a class Window
 
 
 
-###### MODULE - TKinter - making GUIs
+###### MODULE - TKINTER - making GUIs
 https://www.youtube.com/watch?v=YXPyB4XeYLA					=> Tutorial with deep explanation
 from tkinter import *										=> Import tkinter module
 root = Tk()													=> Create root window
@@ -2362,6 +2363,153 @@ options=["Mo","Tu","We","Th","Fr"]							# Define options for dropdown menue
 var = StringVar()											# Define variable for dropdown menue
 var.set("Mo")												# Set default for dropdown menue
 OptionMenu(root,var,*options).pack							# Define dropdown menue
+""
+
+
+
+###### MOUULE - KIVY - making GUIs
+Kivy documentation => https://kivy.org/#home
+Training from => https://www.youtube.com/watch?v=dLgquj0c5_U&list=PLCC34OHNcOtpz7PJQ7Tv7hqFBP_xDDjqg
+Install kivy => python -m pip install kivy[base] kivy_examples
+
+=> Simple Window with Label
+""
+import kivy                         # Import kivy base
+from kivy.app import App            # Import App
+from kivy.uix.label import Label    # Import Label class
+
+class MyApp(App):                   # Define App-Class
+    def build(self):
+        return Label(text="Hello", font_size = 72)  # Print label with font_size 72)
+
+if __name__ == "__main__":          # Start App / draw windows with label
+    MyApp().run()
+""
+
+=> Input fields and button with Grid-Layout
+""
+from kivy.uix.gridlayout import GridLayout      # Import Grid-Layout class
+from kivy.uix.textinput import TextInput        # Import TextInput class
+from kivy.uix.button import Button              # Import Button class
+
+class MyGridLayout(GridLayout):                 # Define Grid Layout
+    def __init__(self, **kwargs):                       # Initialize infinite keywords
+        super(MyGridLayout,self).__init__(**kwargs)     # Call grid layout constructor
+        self.cols = 2                                   # Set columns to 2 (draws all elements in 2 columns)
+      
+        self.add_widget(Label(text="Name: "))           # Add Label-Widget with text="Name" (as one-liner)
+        self.name = TextInput(multiline=False)          # Add Input Box "name" with only one line (multiline = True would me more input lines)
+        self.add_widget(self.name)                      # Assigment as two-liner
+
+        self.submit = Button(text="Submit", font_size=32)   # Add Button-Widget with text="Submit" and font-size 32
+        self.submit.bind(on_press=self.press)               # Bind the button to a function (when pressed the function press will be called)   
+        self.add_widget(self.submit)
+
+    def press(self,instance):
+        print(self.name.text)   # Print the text of the name-input field in the terminal
+        self.add_widget (Label (text=f"New Label with text {self.name.text}")       # Create new Label and write the text to it
+""
+
+=> Combine 2 Grids with 2 columns and 1 column
+""
+    super(MyGridLayout,self).__init__(**kwargs)
+    self.cols = 1                                       # define standard grid with 1 column
+    
+    self.secondGrid = GridLayout()
+    self.secondGrid.cols = 2                            # define second grid with 2 columns
+    
+    self.secondGrid.add_widget(Label(text="Stock: "))   # define content for the secondGrid
+    self.stock = TextInput(multiline=False)
+    self.secondGrid.add_widget(self.stock)
+    self.add_widget (self.topGrid)
+    
+    self.submit = Button(text="Levermann Score", font_size =32)     # define button with only 1 column
+    self.submit.bind(on_press=self.levermannCalc)
+    self.add_widget(self.submit)   
+""
+
+=> Set height and width of the widgets
+""
+    self.row_force_default=True     # necessary - otherwise no adjustment will be done for the widget
+    self.row_default_height=120     # sets the height to 120 pixel
+
+    # set height for the whole widgets in topGrid
+    self.topGrid = GridLayout(
+        row_force_default=True,
+        row_default_height=40
+    )       
+    
+    # set width and heigth for individual widget
+    self.top_grid.add_widget(Label(text="Name: ",       # set the name of the widget
+                                   size_hint_y=None,        
+                                   height=10,           # define height
+                                   size_hint_x=None,
+                                   width=200))          # define width
+""
+
+=> Kivy Design Language
+=> Seperate program in python from the gui-design (in a kv-file)
+""
+# python-file:
+from kivy.uix.widget import Widget              # import widget module
+from kivy.properties import ObjectProperty      # import object property
+class MyGridLayout(Widget):
+    inpfield = ObjectProperty(None)             # define an object and initialize empty
+    def method_function(self):                  # defube a method / function in the the gui (eg. for a button)
+        print(f"something")
+class MyApplication(App):                       # define the application class (kv-file must have the same name = MyApplication.kv)
+    def build(self):
+        return MyGridLayout()                   # name of the first line in the kv-file
+if __name__ == "__main__":
+    MyApplication().run()                       # run the gui
+
+# kv-file (name must be in this case "MyApplication.kv")#
+# intention is here very similar (only tabs - no spaces)
+<MyGridLayout>
+    inpfield : inpfield                         # initialize the input field
+
+    GridLayout:                                 # define the main grid layout with one column
+        cols: 1                                
+        size: root.width, root.height           # take the root width/height (otherwise the objects will be placed in the very left bottom)
+        row_force_default: True                 # necessary - otherwise no adjustment will be done for the widget    
+        row_default_height: 120                 # set the height (of the whole grid) to 120 pixel)
+
+        GridLayout:                             # define second (nested) grid with two columns
+            cols: 2                             
+            row_force_default: True
+            row_default_height: 40              # set the height (of every object in this grid to 40 pixel)
+
+            Label:
+                text: "Stock Ticker"            # name of the label
+            TextInput:
+                id: inpfield                    # if of the inputfield
+                multiline: False                # no multiline input field
+
+        Button:                                 # define button as part of the first gridlayout (so only 1 column)
+        text: "Button Text"                     # button text
+        font_size: 32                           # font-size of the button text
+        on_press: root.method_function()        # on button press call function "method_function" from the py-file    
+        size_hint_y: None                       
+        height: 50                              # set height of the button to 50 pixel    
+""
+
+=> Kivy Builder
+""
+# link kv-files to python-file
+from kivy.lang import Builder       # import builder module
+Builder.load_file("whatever.kv")    # link the kv-file to the python-file (so the App-classname must not be the same as the kv-filename)
+""
+
+=> Coloring buttons and input fields
+""
+# using rgb-color for the coloring
+background_normal: ""                           # necessary to use this - otherwise the color will be mixed with the intial grey default
+background_color: (1,0,0,1)                     # coloring the element in red
+background_color: (238/255,250/255,0/255,1)     # using a rgb-color for the coloring
+
+# using hexadecimal coloring
+#:import utils kivy.utils                               # importing the kivy-utils in the very first line of the kv-file
+background_color: utils.get_color_from_hex("#eefa00")   # coloring the element with this hex-code
 ""
 
 
