@@ -2512,6 +2512,27 @@ background_color: (238/255,250/255,0/255,1)     # using a rgb-color for the colo
 background_color: utils.get_color_from_hex("#eefa00")   # coloring the element with this hex-code
 ""
 
+=> Box Layout
+""
+BoxLayout:
+    orientation: "horizontal"                   # arrange the object horizontal (also vertical possible)
+    size: root.width, root.height               # use the full place of the window
+    spacing: 20                                 # 20 pixels between the elements
+    padding: 50                                 # 50 pixels padding around the elements
+    
+    Button:
+    text: "blablabla"                           # define button in the box-model
+    size_hint: (0.5,0.5)                         # make the button the half-size (x- and y-axes) - working also responsive when the windows size is changed
+
+    size_hint: (None, None)                     # set fixed size for the button (200 pixels width and 50 pixels height)
+    width: 200
+    height: 50    
+    pos_hint: {"center_x": 0.5}                 # center the element horizontal
+""
+
+
+
+
 
 
 ###### MODULE - PYGAME - making games
