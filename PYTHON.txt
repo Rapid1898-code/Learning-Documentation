@@ -328,7 +328,7 @@ l = [[1,4,3], [2,2,4], [3,1,5]]					 => Define nested list
 l.sort(key=lambda x: x[1])						 => Sort the nested list for the 2nd element ascending
 l.sort(key=lambda x: x[1], reverse=True)		 => Sort the nested list for the 2nd element descending
 l.reverse()                                      => Reverse the complete list
-l_reverse = reversed(l)                          => Reverse complete list and store it in different independent list
+l_reverse = list(reversed(l))                    => Reverse complete list and store it in different independent list
 del l[2]                                         => Delete element at index position 2
 l.remove("abc")                                  => Delete first element with this value from the list
 l.clear()                                        => Delete complete content of the list (same as l = [])
@@ -2530,7 +2530,44 @@ BoxLayout:
     pos_hint: {"center_x": 0.5}                 # center the element horizontal
 ""
 
+=> Inheritance, Widget Properties
+""
+# Define the global settings in sepearte section in the kv-file
+<Button>                            # these settings are used for all buttons in the window
+    font_size: 32
+    background_normal: ""
+    background_color: (0,0,1,1)
+<TextInput>                         # this color is used for all input fields in the window
+    background_color: (150/255,150/255,150/255,1)
 
+# But when some individual setting for an element is needed this is possible
+<MyLayout>
+    BoxLayout:
+        TextInput:
+            background_color: (1,0,0,1)     # background color for this input-field will be different then the global settings aboth
+""
+
+=> Color Labels
+""
+# Works a little bit different that the normal coloring of objects like buttons or input fields
+Label:
+    background_color: (0,0,1,1)             # choose the color for the label
+    canvas.before:                          # this whole code-part has to be added - otherwise there will be no label coloring
+        Color:
+            rgba: self.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+# Normal usage of other properties
+    text: "Name"                # name of the label
+    font_size: 45               # font size of the label
+    color: (0,1,0,1)            # color of the text of the label    
+    bold: True                  # text will be bold written    
+    italic: True                # text will be italic written
+    outline_color: (0,0,0)      # set the color for the border of the text
+    outline_width: 2            # width of the border of the text    
+""
 
 
 
