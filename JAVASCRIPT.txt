@@ -390,8 +390,8 @@ var school = {
 ""
 
 => 4 Pillars of Object Orientation
+- Encapsulation = every object should be independent and not dependencies outside (makes changes easier)
 - Abstraction = hide everything internally what is not usable for the user of the object
-- Encapsulation = very object should be independent and not dependencies outside
 - Inheritance = objects can take the properties of existing objects
 - Polymorphism = redefine methods for derived classes (object can behave in different ways)
 

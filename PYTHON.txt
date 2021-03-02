@@ -278,6 +278,15 @@ eval("2+2")                                     => Gives the value of an express
 my_string[::-1]									=> Reverse a string
 repr(s)											=> Print string with special characters
 
+=> check if any string is in another string or all strings are in another string
+""
+checkString = "A string is more than its parts!"
+checks = ["more", "blabla", "nothing"]   
+if any(x in a_string for x in matches):         # check if any elems from checks is in checkstring
+if all(x in a_string for x in matches):         # check if all elems from checks is in checkstring
+""
+
+
 
 
 ###### REGEX
