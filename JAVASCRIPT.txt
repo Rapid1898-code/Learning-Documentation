@@ -450,7 +450,10 @@ MakeCar.prototype.newFunc = function () {           // Give all the created cars
 }
 ""
 
-=> Define a getter in the class (returns the name-propertie of the class-element
+=> Define a getter in the class (returns the name-property of the class-element
+=> So when somebody is requesting for obj.name - the return will be for _name
+=> When somebody is changing with obj.name = "xzy" - nothing happens, cause the property is named _name
+=> Of course with obj._name there would be a change possible - but this is very bad practice cause due the "_" the variable should not be touched
 ""
   get name() {
     return this._name;
@@ -459,17 +462,27 @@ MakeCar.prototype.newFunc = function () {           // Give all the created cars
 
 => Inherit a class from another class
 => The class Cat inherits from the class Animal with the keyword "extends"
-=> With super at the name - this name will be passed to the parent class Animal
+=> With super - the attributes name and age will be taken / inherit from the class Animal
 ""
+class Animal {
+  constructor(name, age){
+	this.name = name
+	this.age = age
+  }
+  speak() {
+	console.log("Blablabla")
+  }
+}
+
 class Cat extends Animal {
-  constructor(name, usesLitter) {
-    super(name);
+  constructor(name, age, usesLitter) {
+    super(name, age);
     this._usesLitter = usesLitter;
   }
 }
 ""
 
-=> Define static function - this can only be could for the classe itself (ot for the instances of the class)
+=> Define static function - this can only be done for the class itself (or for the instances of the class)
 ""
     static generateName() {...}
 ""

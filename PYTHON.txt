@@ -273,7 +273,7 @@ ord(char)                                       => Convert char to ASCII value
 chr(ascii)                                      => Convert ASCII value to char (eg. 65=A, 97=a)
 hashlib.md5(s).encode('utf-8')).hexdigest()     => Outputs hashvalue oif the string (needs import hashlib)
 exec(print("hello"))                            => Execute statement in a string => hello
-eval("2+2")                                     => Gives the value of an expression => 4
+eval("2+2")                                     => Gives the value of an expression => 4 (dangerous - can used for sql-injections)
 my_string[::-1]									=> Reverse a string
 repr(s)											=> Print string with special characters
 
