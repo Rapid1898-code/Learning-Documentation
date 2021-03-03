@@ -1540,6 +1540,11 @@ from pathlib import Path									=> Import module
 Path.cwd()													=> Current working directory
 Path("folder").mkdir(parents=True, exist_ok=True)			=> Creates new folder (no error message if folder allready exists with exist_ok=True)
 
+=> get mac-adress from the actual pc
+""
+from uuid import getnode as get_mac
+mac = get_mac()
+""
 
 
 ###### MODULE - OS - interacting with the operating system
