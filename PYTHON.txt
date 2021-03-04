@@ -1201,6 +1201,7 @@ right click on table / tables to transfer and select "export database as sql"
 for "output" select "Server: A2Hosting" (connection to the hosted server)
 for "database" select "rapidtec_stockdb" (name from the db on the hosted server)
 for "data" select "replace existing data"
+when format of table should be changed also select checkbox "Drop" at table (not database!)
 press "export" (wait till the rows-column shows 100%)
 ""
 
@@ -2583,6 +2584,25 @@ Label:
     outline_width: 2            # width of the border of the text    
 ""
 
+=> Color Background
+""
+# 1st method in kv-file: make a white background color
+<MyLayout>
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+# 2nd method in py-file            
+from kivy.core.window import Window
+
+class AwesomeApp(App):
+    def build(self):
+        Window.clearcolor = (1,1,1,1)
+        return MyLayout()    
+""
 
 
 
