@@ -208,7 +208,7 @@ min(3,5,7)						=> Find the minimum value => 3
 max(3,5,7)						=> Find the maximum value => 7
 stat.mean([3,5,7])				=> Find the mean value => 5 (with statistic-module - input must be given as list)
 exit()							=> Stop program at this point (helpful in test-situations)
-
+(newVal-oldVal)/oldVal * 100	=> Calculate the change from an old value to a new value in percent
 
 
 ###### RANDOM, SECRETS
