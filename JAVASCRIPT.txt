@@ -9,7 +9,7 @@
 #> FUNCTION
 #> OBJECT
 #> CONSTRUCTOR, CLASS
-#> OBJECT ORIENTATION - 4 PILLARS
+#> OBJECT ORIENTATION - 4 PILLARS OOP
 #> DOCUMENT, QUERYSELECTOR, EVENTLISTENER
 #> CSS VARIABLE HANDLING
 #> API ACCESS
@@ -490,7 +490,7 @@ class Cat extends Animal {
 
 
 
-###### OBJECT ORIENTATION - 4 PILLARS
+###### OBJECT ORIENTATION - 4 PILLARS OOP
 => 4 pillars of object orientation in practice
 class Animal {              // ENCAPSULATION - storing properties and methods together in one object
     constructor(name) {     // (made it easier to add new stuff / easier to read)
