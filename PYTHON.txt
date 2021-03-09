@@ -2604,6 +2604,13 @@ class AwesomeApp(App):
         return MyLayout()    
 ""
 
+=> Set window size
+""
+# set windows size to width 550 and height 300
+from kivy.core.window import Window
+class MyLayout(Widget):
+    Window.size = (550, 300)
+""
 
 
 ###### MODULE - PYGAME - making games
