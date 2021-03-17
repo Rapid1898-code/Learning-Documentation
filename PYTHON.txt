@@ -2498,6 +2498,7 @@ if __name__ == "__main__":
                 text: "Stock Ticker"            # name of the label
             TextInput:
                 id: inpfield                    # if of the inputfield
+                text: blablabla                 # default value for the inputfield
                 multiline: False                # no multiline input field
 
         Button:                                 # define button as part of the first gridlayout (so only 1 column)
