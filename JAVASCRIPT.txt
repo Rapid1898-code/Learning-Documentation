@@ -1,4 +1,4 @@
-###########
+-###########
 ### TOC ###
 ###########
 
@@ -9,7 +9,7 @@
 #> FUNCTION
 #> OBJECT
 #> CONSTRUCTOR, CLASS
-#> OBJECT ORIENTATION - 4 PILLARS
+#> OBJECT ORIENTATION - 4 PILLARS OOP
 #> DOCUMENT, QUERYSELECTOR, EVENTLISTENER
 #> CSS VARIABLE HANDLING
 #> API ACCESS
@@ -19,6 +19,9 @@
 #> LOCAL STORAGE
 #> MODULE EXPORTS
 #> ASYNCHRONOUS HANDLING
+#> REQUESTS
+#> NODE.JS
+#> TOOLS OVERVIEW
 
 
 ###### OPERATOR, INPUT, OUTPUT
@@ -490,7 +493,7 @@ class Cat extends Animal {
 
 
 
-###### OBJECT ORIENTATION - 4 PILLARS
+###### OBJECT ORIENTATION - 4 PILLARS OOP
 => 4 pillars of object orientation in practice
 class Animal {              // ENCAPSULATION - storing properties and methods together in one object
     constructor(name) {     // (made it easier to add new stuff / easier to read)
@@ -844,4 +847,160 @@ xhr.onreadystatechange = () => {
 
 xhr.open('POST', url);
 xhr.send(data);
+""
+
+
+
+###### NODE.JS
+home of node.js         => https://nodejs.org/en/
+docu of the modules     => https://nodejs.org/dist/latest-v15.x/docs/api/
+node --version          => check if and which node.js version is installed
+npm --version           => node package manager - show the installed version
+npm init                => create a package.json files with all necessary project informations
+npm install uuid        => install module "uuid" - node_modules folder is created - dependencie is added to package.json
+npm install -D nodemon  => install module as development dependencie
+npm install             => install all modules according to the dependencies in the package.json
+
+=> how to link 2 js-files
+""
+// in the first file:
+const pers = {            // define object in a file
+    name: "John",
+    age: 30
+}
+module.exports = pers     // make object usable for other files
+
+// in the second file:
+const person = require("./person")      // use person from other file
+console.log(person)
+""
+
+=> Module path
+=> The path module provides utilities for working with file and directory paths.
+""
+const path = require("path")    // include module
+console.log(__filename)         // outputs the whole path of the file
+path.basename(__filename)       // outputs only the filename
+path.dirname(__filename)        // outputs the dirname of the file
+path.extname(__filename)        // outputs the extention of the file
+path.parse(__filename)          // outputs several infos as object (root,dir,base,ext,name)
+path.parse(__filename).base     // outputs only the base filename
+path.join(__dirname, "test", "hello.html")  // use dirname and appends the 2 text-infos to the path
+""
+
+=> Module fs
+=> The fs module enables interacting with the file system
+const fs = require("fs")        // include module
+""
+// Create folder
+fs.mkdir(path.join(__dirname, "/test"), {}, (err)  =>  {
+    if (err) throw err;
+    console.log("Folder created...")
+})
+
+// Create and (over)write to file
+// write file to the joined path
+// name of the file is "hello.txt"
+// content of the file is "Hello World!"
+fs.writeFile(path.join(__dirname, "/test", "hello.txt"), "Hello World!", (err)  =>  {
+    if (err) throw err
+    console.log("File written to...")
+})
+
+// Create and append to file
+fs.writeFile(path.join(__dirname, "/test", "hello.txt"), "Hello World!", (err)  => {...})
+
+// Read file
+fs.readFile(path.join(__dirname, "/test", "hello.txt"), "utf8", (err, data)  =>  {
+    if (err) throw err
+    console.log(data)
+})
+
+// Rename file
+fs.rename(path.join(__dirname, "/test", "hello.txt"), 
+            path.join(__dirname, "/test", "hello2.txt"), (err, data)  =>  {
+    if (err) throw err
+    console.log("File renamed...")
+})
+""
+
+=> Module os
+=> The os module provides operating system-related utility methods and properties. 
+const path = require("os")  => include module
+os.platform()               => outputs the os platform (eg. win32 for windows, darwin for macos)          
+os.arch()                   => outputs architecture (eg. x64, x32)
+os.cpus()                   => cpu informations (model,speed,times for every core)
+os.freemem()                => free memory (eg. 18717655040)
+os.totalmem()               => total memory (eg. 34237403136 for 32GB RAM)
+os.homedir()                => home directory of the user (eg. c:\Users\Max)
+os.uptime()                 => uptime of the computer in seconds (eg. 13463)
+""
+
+=> Module url
+=> The url module provides utilities for URL resolution and parsing.
+const url = require("url")  => include module
+const myUrl = new URL("https://www.xyz.com")     => assign URL
+myUrl.href          => the whole url (eg. https://www.rapidtech1898.com/htmlFinanztools/en/aktienbewertungInSekundenEN.html)
+myUrl.toString()    => 2nd method to get the whole url
+myUrl.hostname      => the hostname of the url (eg. www.rapidtech1898.com)
+myUrl.host          => the host of the url (including port number - when it exists in the url)
+myUrl.pathname      => the pathname (eg. /htmlFinanztools/en/aktienbewertungInSekundenEN.html)
+myUrl.search        => the search-parameters of the url (eg. ?id=100&status=active)
+myUrl.searchParams  => show parameters (eg. URLSearchParams { 'id' => '100', 'status' => 'active' }
+myUrl.searchParams.append('abc','123')  => add a parameter with id=abc and value=123
+
+=> Loop through params
+""
+myUrl.serachParams.forEach((value,name) => console.log(`${name}: ${value}`))
+""
+
+=> Module 
+=> The HTTP interfaces in Node.js are designed to support many features of the protocol
+const http = require("http")  => include module
+""
+// Create Server
+// Outputs Hello World! on the link "localhost:5000"
+http.createServer((req, res) => {
+  res.write("Hello World!")
+  res.end()
+}).listen(5000, () => console.log("Server running..."))     // running on port 5000
+""
+
+
+
+###### TOOLS OVERVIEW
+=> Package Managers
+=> to automatically download 3rd party packages
+""
+help automate the process of downloading and upgrading libraries from a central repository
+npm (starting 2015)
+yrn (starting 2016, alternativ to npm - but npm packages under the hood)
+bower (starting 2013 - older one, was in before npm / yarn popular)
+""
+
+=> Module Bundler
+=> to create a single script file
+""
+A JavaScript module bundler is a tool that gets around the problem with a build step 
+(which has access to the file system) to create a final output that is browser compatible 
+(which doesn’t need access to the file system
+browserify (starting 2011)
+webpack (starting 2015)
+""
+
+=> Transpiler
+=> to use future JavaScript features
+""
+Transpiling code means converting the code in one language to code in another similar language.
+for CSS eg. Sass, Less, Stylus
+for JavaScript eg. babel, TypeScript, CoffeeScript (starting 2010)
+
+""
+
+=> Task Runner
+=> to automate different parts of the build process
+""
+For frontend development, tasks include minifying code, optimizing images, running tests, etc.
+npm scripts (nowadays the most popular - use the capabilities built into the npm)
+grunt, gulp (in earlier times)
 ""
