@@ -31,6 +31,8 @@ let intStr = "7"                            => Declare and assign string (possib
 "/n /t"                                     => Linebreak and Tab should not used - is morely css-stuff for formating
 let age = 25                                => Declare a variable and assign int (also signed int like -36) 
 let var                                     => Defining without assigning (var gets value undefined)
+let var, age = 25                           => Define 2 variables (one without value and one with value)
+let [a, b, c] = [5, 8, 12]                  => Define and assign 3 variables (a=5, b=8, c=12)
 const age = 25                              => Declare a constant and assign int (constant can not be changed like variables)
 let float = 5.14876                         => Declare and assign float (also signed float like +4.5763 
 let intNum = parseInt(intStr,10);           => Change String to Int with base 10
@@ -57,6 +59,7 @@ console.table(object)                       => Outputs element as table (eg. for
 alert("Text!")                              => Alert information in a window
 alert(`Bla ${name} bla`)                    => Alert some text with outputing the variable "name" between (using backticks "`"
 n = n.toFixed(2)                            => Round to 2 decimal digits
+[x, y] = [y, x]                             => Swap 2 variables
 
 
 
@@ -129,6 +132,8 @@ arr.join(" ")                                   => Concatenate the array to a st
 arr.sort((a,b) => a > b ? 1 : -1)               => Order array ascending
 arr.sort((a,b) => a > b ? -1 : 1)               => Order array descending
 arr.sort(function(a,b) {return a > b ? 1 : -1}  => Ordering long method with function
+Math.max(...arr)                                => Find max value in an array
+Math.min(...arr)                                => Find min value in an array
 
 => Iterate trough array by index and element (with shortform)<br>
 => Outputs index and Outputs element of array
