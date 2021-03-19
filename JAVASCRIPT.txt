@@ -654,9 +654,15 @@ fetch(url)
 => Using a API using async / await
 ""
 async function getSomethingFromAPI() {
-	const res = await fetch("url")
-	const data = await res.json()
-	console.log(data)
+	const res = await fetch("url").catch(e => {
+		console.log("Error - Fetch not possible...")
+	})
+	if (!data) {
+		console.log("Error - Data / JSON wrong...")
+	} else {
+		const data = await res.json()
+		console.log(data)
+	}
 }
 getSomethingFromAPI()
 ""
@@ -974,6 +980,19 @@ const person = require("./person")      // use person from other file
 console.log(person)
 ""
 
+=> Setup a simple server
+""
+const http = require("http")
+const fs = require("fs")
+http.creatorServer((req,res) => {
+	fs.readFile("demofile.html", (err, data) => {
+		res.writeHead(200, {"Content-Type": "text/html"})
+		res.write(data)
+		res.end()
+	})
+}).listen(8000)
+""
+
 => Module path
 => The path module provides utilities for working with file and directory paths.
 ""
@@ -1053,7 +1072,7 @@ myUrl.searchParams.append('abc','123')  => add a parameter with id=abc and value
 myUrl.serachParams.forEach((value,name) => console.log(`${name}: ${value}`))
 ""
 
-=> Module 
+=> Module http
 => The HTTP interfaces in Node.js are designed to support many features of the protocol
 const http = require("http")  => include module
 ""
@@ -1072,8 +1091,8 @@ http.createServer((req, res) => {
 => to automatically download 3rd party packages
 ""
 help automate the process of downloading and upgrading libraries from a central repository
-npm (starting 2015)
-yrn (starting 2016, alternativ to npm - but npm packages under the hood)
+npm (starting 2015) - node package manager
+yrn (starting 2016, alternative to npm - but npm packages under the hood)
 bower (starting 2013 - older one, was in before npm / yarn popular)
 ""
 
