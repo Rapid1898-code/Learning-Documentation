@@ -1485,6 +1485,21 @@ screensize = user32.GetSystemMetrics(0),                # 1st parameter is width
     user32.GetSystemMetrics(1)
 ""
 
+=> Wait for keystroke or x seconds
+""
+TIMEOUT = 10                # time / seconds for waiting
+startTime = time.time()
+inp = None
+print(f"Program finished - pls press <enter> to close the window or wait {round(TIMEOUT / 60, 2)} minutes...")
+while True:
+    if msvcrt.kbhit():                          # continue when pressing a key
+        inp = msvcrt.getch()                    
+        break
+    elif time.time() - startTime > TIMEOUT:     # continue when the time is running out
+        break
+""
+
+
 
 ###### MODULE - CURRENCYCONVERTER - currency conversion
 from currency_converter import CurrencyConverter		=> Import Module
@@ -2612,6 +2627,21 @@ from kivy.core.window import Window
 class MyLayout(Widget):
     Window.size = (550, 300)
 ""
+
+=> DropDown box with spinner
+""
+kv-file:
+    Spinner:
+        id: spinner_id
+        text: "Favorite"
+        values: ["Pepperoni","Cheese","Mushroom","Pineapple"]
+        on_text: root.spinner_clicked(spinner_id.text)
+
+py-file:
+    def spinner_clicked(self,value):
+        self.ids.click_label.text = f"You selected: {value}"
+""
+
 
 
 ###### MODULE - PYGAME - making games
