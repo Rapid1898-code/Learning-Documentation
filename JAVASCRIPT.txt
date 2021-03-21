@@ -1092,6 +1092,44 @@ http.createServer((req, res) => {
 
 
 ###### TOOLS OVERVIEW
+=> https://zellwk.com/blog/crud-express-mongodb/
+=> NODE.JS
+""
+Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that 
+runs on the V8 engine and executes JavaScript code outside a web browser.
+""
+
+=> Express
+=> https://zellwk.com/blog/crud-express-mongodb/
+""
+Is a framework for building web applications on top.
+It simplifies the server creation process that is already available in Node. 
+""
+
+=> NODEMON
+""
+Nodemon restarts the server automatically when you save a file that’s used by the server.js
+npm install nodemon --save-dev          // insatllation as development dependency
+
+Add this in package.json
+    "scripts": {
+        "dev": "nodemon server.js"
+    }
+now you can start nodemon with: npm run dev    
+""
+
+=> CRUD
+=> is an acronym for Create, Read, Update and Delete.
+""
+It is a set of operations we get servers to execute (POST, GET, PUT and DELETE requests respectively). 
+This is what each operation does:
+    Create (POST) - Make something
+    Read (GET)- Get something
+    Update (PUT) - Change something
+    Delete (DELETE)- Remove something
+POST, GET, PUT, and DELETE requests let us construct Rest APIs.
+""
+
 => Package Managers
 => to automatically download 3rd party packages
 ""
@@ -1127,3 +1165,8 @@ For frontend development, tasks include minifying code, optimizing images, runni
 npm scripts (nowadays the most popular - use the capabilities built into the npm)
 grunt, gulp (in earlier times)
 ""
+
+
+
+
+
