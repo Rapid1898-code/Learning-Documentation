@@ -29,7 +29,7 @@
 /*Text xzy*/                                => Multiline comments
 let intStr = "7"                            => Declare and assign string (possible with "" or '') - "var" was the earlier version in the past for that
 "/n /t"                                     => Linebreak and Tab should not used - is morely css-stuff for formating
-let age = 25                                => Declare a variable and assign int (also signed int like -36) 
+let age = 24                                => Declare a variable and assign int (also signed int like -36) 
 let var                                     => Defining without assigning (var gets value undefined)
 let var, age = 25                           => Define 2 variables (one without value and one with value)
 let [a, b, c] = [5, 8, 12]                  => Define and assign 3 variables (a=5, b=8, c=12)
