@@ -27,7 +27,7 @@
 ###### OPERATOR, INPUT, OUTPUT
 // Comment something                        => Comments in Javascript
 /*Text xzy*/                                => Multiline comments
-let intStr = "8"                            => Declare and assign string (possible with "" or '') - "var" was the earlier version in the past for that
+let intStr = "7"                            => Declare and assign string (possible with "" or '') - "var" was the earlier version in the past for that
 "/n /t"                                     => Linebreak and Tab should not used - is morely css-stuff for formating
 let age = 25                                => Declare a variable and assign int (also signed int like -36) 
 let var                                     => Defining without assigning (var gets value undefined)
