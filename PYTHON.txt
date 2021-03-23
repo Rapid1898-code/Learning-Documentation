@@ -156,6 +156,12 @@ Ctrl X          # Cut
 Ctrl VALUES     # Paste	
 ""
 
+=> Enable pushing with ssh-key in Idea and VSCode
+""
+Enable open ssh agent: https://dev.to/aka_anoop/how-to-enable-openssh-agent-to-access-your-github-repositories-on-windows-powershell-1ab8
+Run commands: https://stackoverflow.com/questions/56490194/vs-code-bitbucket-ssh-permission-denied-publickey
+""
+
 => Git Ignore Files/Folders:
 ""
 when doing a commit - right click + add to .gitignore		# file will be created when not exists
