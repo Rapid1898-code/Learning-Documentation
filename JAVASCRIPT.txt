@@ -1089,6 +1089,19 @@ http.createServer((req, res) => {
 }).listen(5000, () => console.log("Server running..."))     // running on port 5000
 ""
 
+=> Simple Server
+""
+const http = require('http')    // http-module needed
+const fs = require('fs')        // fs-module (filesystem) needed
+http.createServer((req, res) => {
+  fs.readFile('demofile.html', (err, data) => {             // reads file and shows it in browser
+    res.writeHead(200, {'Content-Type': 'text/html'})
+    res.write(data)
+    res.end()
+  })
+}).listen(8000)                 // listening on port 8000 - access with localhost:8000
+""
+
 
 
 ###### TOOLS OVERVIEW
