@@ -1102,6 +1102,26 @@ http.createServer((req, res) => {
 }).listen(8000)                 // listening on port 8000 - access with localhost:8000
 ""
 
+=> Simple GET-API
+""
+initial steps:
+npm init
+touch server.js
+npm install express --save
+
+const express = require("express")                  // use express for CRUD
+const app = express()                               // Create(POST), Read(GET), Update(PUT), Delete(DELETE)
+const PORT = 8000
+
+app.get("/", (request, response) => {
+    response.sendFile(__dirname + "/index.html")    // response is at html-file
+})
+
+app.listen(PORT, () => {                            // server listening on port 8000
+    console.log(`Server running on port ${PORT}`)
+})
+""
+
 
 
 ###### TOOLS OVERVIEW
