@@ -970,6 +970,7 @@ npm init                => create a package.json files with all necessary projec
 npm install uuid        => install module "uuid" - node_modules folder is created - dependencie is added to package.json
 npm install -D nodemon  => install module as development dependencie
 npm install             => install all modules according to the dependencies in the package.json
+npm update              => update the dependencies of the project
 
 => how to link 2 js-files
 ""
@@ -1135,8 +1136,11 @@ let savage = {
     "birthname": "Sayaa Bin Abraham-Joseph",
     "birthLocation": "London, England"
 }
-app.get("/api/savage", (request, response) => {
+app.get("/api/savage", (request, response) => {     // returns the savage object
     response.json(savage)
+})
+app.listen(process.env.PORT || PORT, () => {        // listen on port (first entry for hosting on eg. horuku - second one for localhost)
+    console.log(`Server running on port ${PORT}`)
 })
 
 // Client Main.js:
@@ -1252,3 +1256,17 @@ Pug
 EJS Embedded Java Script
 Nunjucks
 ""
+
+=> Heroku
+=> Hosting APIs in the cloud
+""
+heroku login -i                         // login to heroku
+heroku create simple-rap-api            // create entry on heroku
+echo "web: node server.js" > Procfile   // create profile (tells heroku what the server-file is)
+git add .                               
+git commit -m "changes"
+git push heroku main                    // push everything to heroku
+""
+
+=> Postman
+=> Testing APIs in an web-applicaton
