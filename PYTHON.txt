@@ -136,6 +136,7 @@ Ctrl Del === Ctrl Del                   # Delete to end of word
 Ctrl Backspace === Ctrl Background      # Delete to beginning of word
 lorem + TAB === ???                     # Create lorem text for html-code
 p>lorem + TAB === ???                   # Create lorem text inside <p>-tags
+??? === Ctrl B1							# Hide sidebar
 ""
 
 => Shortcuts Chrome

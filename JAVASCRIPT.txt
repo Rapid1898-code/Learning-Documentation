@@ -1122,6 +1122,53 @@ app.listen(PORT, () => {                            // server listening on port 
 })
 ""
 
+=> Server with Client connection
+""
+//Server server.js:
+const express = require("express")
+const app = express()
+const cors = require("cors")
+const PORT = 8000
+app.use(cors())
+let savage = {
+    "age": 28,
+    "birthname": "Sayaa Bin Abraham-Joseph",
+    "birthLocation": "London, England"
+}
+app.get("/api/savage", (request, response) => {
+    response.json(savage)
+})
+
+// Client Main.js:
+document.querySelector("button").addEventListener("click",getRapName)
+async function getRapName(){
+    try {
+        const res = await fetch("http://localhost:8000/api/savage")
+        const data = await res.json()
+        console.log(data)
+    } catch(err) {
+        console.log(err)
+    }
+}
+
+// Client index.html
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Get Rappers birth name</h1>
+		<h2>Result: </h2>
+		<button>Click Me</button>
+		<script src= "js/main.js"></script>
+	</body>
+</html>
+""
+
 
 
 ###### TOOLS OVERVIEW
