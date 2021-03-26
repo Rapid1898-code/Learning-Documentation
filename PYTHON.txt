@@ -85,7 +85,7 @@ virtualenv env                                         	   =>  Create new virtua
 
 => Activate environment 
 ""
-venv\Scripts\activatee                              		   
+venv\Scripts\activate                             		   
     when activated: pip list    #  Now only shows the installed modules for the virtual environment
     pip install package         #  Only installs in the activated virtual environment
 ""	
