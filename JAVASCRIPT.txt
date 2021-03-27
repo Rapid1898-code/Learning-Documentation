@@ -406,7 +406,6 @@ var school = {
 
 
 
-
 ###### CONSTRUCTOR, CLASS
 => Make a Object with the old method
 ""
@@ -1270,3 +1269,21 @@ git push heroku main                    // push everything to heroku
 
 => Postman
 => Testing APIs in an web-applicaton
+""
+https://www.postman.com/
+""
+
+=> EJS
+=> Embedded Javascript Template
+""
+HTML with Javsscript logic in it
+eg. for flexible li-elements from a db
+<% for (let i=0; i<info.length; i++) {%>
+    <li class="rapper">
+        <span><%= info[i].stageName %></span>
+        <span><%= info[i].birthName %></span>        
+        <span class="del">delete</span>
+    </li>
+<% } %>
+""
+
