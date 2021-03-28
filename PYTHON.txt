@@ -56,6 +56,7 @@
 #> MODULE - PYTHONCOM - make new formula in excel with python-function
 #> MODULE - FLASK, ZAPPA, AWS - making an API
 #> MODULE - ICECREAM - print for debugging
+#> MODULE - TA-LIB - technical analysis of financial market
 #> PYINSTALLER - generate python programs to executables
 
 
@@ -2841,6 +2842,19 @@ from icecream import ic										=> Imort icecream
 ic(var1)													=> Show value of the variable in the form: ic| var1: 20
 ic()														=> Show when command is reached: ic| icecream_example.py:5 in func() at 01:44:20.394 (line / file / time)
 ic.configureOutput(includeContext=True)						=> Set Context Output => also shows line / file / time
+
+
+
+###### MODULE - TA-LIB - technical analysis of financial market
+=> Documentation: https://mrjbq7.github.io/ta-lib/
+
+=> Installation
+""
+Download whl file from here: https://www.lfd.uci.edu/~gohlke/pythonlibs/#ta-lib
+(with corresponding python version (eg. cp39) and os (eg. adm64)
+then: pip install *.whl (eg. pip install TA_Lib-0.4.19-cp39-cp39-win_amd64.whl)
+then: pip install TA-Lib
+""
 
 
 
