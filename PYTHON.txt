@@ -68,6 +68,8 @@ if __name__ == '__main__':       =>  When directly called - programm is running 
 python --version				 =>  Check which python version is installed
 
 => Use modules / functions from other folder
+(not working with eg. yahoocrawler.py and rapidtechtools.py - all modules, wether they are needed or not have to
+imported in the program...)
 ""
 import sys, os
 sys.path.append(os.path.join('C:/', 'Users\path_to_module'))	# Create Path to module
