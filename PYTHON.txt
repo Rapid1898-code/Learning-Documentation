@@ -57,6 +57,7 @@
 #> MODULE - FLASK, ZAPPA, AWS - making an API
 #> MODULE - ICECREAM - print for debugging
 #> MODULE - TA-LIB - technical analysis of financial market
+#> MODULE - YFINANCE - date from Yahoo Finance
 #> PYINSTALLER - generate python programs to executables
 
 
@@ -139,7 +140,9 @@ Ctrl Del === Ctrl Del                   # Delete to end of word
 Ctrl Backspace === Ctrl Background      # Delete to beginning of word
 lorem + TAB === ???                     # Create lorem text for html-code
 p>lorem + TAB === ???                   # Create lorem text inside <p>-tags
-??? === Ctrl B1							# Hide sidebar
+??? === Ctrl B							# Hide/Show sidebar
+??? === Ctrl J1                         # Hide/Show terminal 
+??? === Ctrl P                          # Show command line    
 ""
 
 => Shortcuts Chrome
@@ -2858,6 +2861,10 @@ then: pip install TA-Lib
 
 
 
+
+
+
+
 ###### PYINSTALLER - generate python programs to executables
 pip install pyinstaller                                       => Installation
 pyinstaller prg.py                                            => Generate the bundle in a subdirectory called dist.
@@ -2892,3 +2899,24 @@ elif __file__:                                                # Get path when ru
     application_path = os.path.dirname(__file__)
 config_path = os.path.join(application_path, config_name)     # Final Config Path   
 ""
+
+
+
+###### YFINANCE - date from Yahoo Finance
+import yfinance as yf               => Installation
+dataYF = yf.Ticker(ticker)          => Read data for ticker yahoo finance ticker symbol
+dataYF.info                         => Summary info for stock / cryptopcoin
+yf.download(ticker,"2020-01-01","2021-03-31))   => Price data as dataframe from/to-date
+dataYF.history(period="1mo",interval="2m")      => Intraday price data as dataframe for 1 month and 2 minute interval
+dataYF.financials                   => Financial data         
+dataYF.dividends                    => Dividends (date and amount)
+dataYF.splits                       => Splits (date and split-factor)
+dataYF.major_holders                => Percent major holders
+dataYF.institutional_holders        => Biggest Insitutional holders
+dataYF.balance_sheet                => Balance Sheet Data
+dataYF.cashflow                     => Cashflow Data
+dataYF.earnings                     => Earnings Data (Revenue, Income)
+dataYF.sustainability               => Sustainability Informations (palm oile, military, adult, etc.)
+dataYF.recommendations              => Recommendations from different agencies
+dataYF.calendar                     => Calendar data
+dataYF.isin                         => ISIN-Number
