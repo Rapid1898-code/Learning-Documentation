@@ -1128,7 +1128,7 @@ xl_col_sort(ws,1)                                       => Sort worksheet in the
 ws["C8"].color											=> Reads the color of a cell and returns a rgb-tuple eg. (146, 208, 80)
 ws["C8"].color = None									=> Remove background from a cell
 ws.Range("A1:C3").color = (255,255,255)					=> Assigns background color for a range of cells
-
+ws["D5"].add_hyperlink(link,text_to_display = "Chart")  => Insert a hyperlink and define which text should be shown in the cell
 
 => Sorting workssheet in given col
 ""
@@ -2903,11 +2903,13 @@ config_path = os.path.join(application_path, config_name)     # Final Config Pat
 
 
 ###### YFINANCE - date from Yahoo Finance
+=> Docu and examples: https://aroussi.com/post/python-yahoo-finance
 import yfinance as yf               => Installation
 dataYF = yf.Ticker(ticker)          => Read data for ticker yahoo finance ticker symbol
 dataYF.info                         => Summary info for stock / cryptopcoin
 yf.download(ticker,"2020-01-01","2021-03-31))   => Price data as dataframe from/to-date
-dataYF.history(period="1mo",interval="2m")      => Intraday price data as dataframe for 1 month and 2 minute interval
+dataYF.history(period="1mo",interval="60m")     => Intraday price data as dataframe for 1 month and 60 minute interval
+dataYF.history(period="1d",interval="2m")       => Intraday price data as dataframe for 1 day and 2 minute interval
 dataYF.financials                   => Financial data         
 dataYF.dividends                    => Dividends (date and amount)
 dataYF.splits                       => Splits (date and split-factor)
