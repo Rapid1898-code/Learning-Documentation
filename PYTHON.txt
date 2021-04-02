@@ -2861,20 +2861,40 @@ then: pip install TA-Lib
 
 
 
-
+###### YFINANCE - date from Yahoo Finance
+=> Docu and examples: https://aroussi.com/post/python-yahoo-finance
+import yfinance                     => Installation (yfinance as yf not working - problems with pyinstaller)
+dataYF = yf.Ticker(ticker)          => Read data for ticker yahoo finance ticker symbol
+dataYF.info                         => Summary info for stock / cryptopcoin
+yf.download(ticker,"2020-01-01","2021-03-31))   => Price data as dataframe from/to-date
+dataYF.history(period="1mo",interval="60m")     => Intraday price data as dataframe for 1 month and 60 minute interval
+dataYF.history(period="1d",interval="2m")       => Intraday price data as dataframe for 1 day and 2 minute interval
+dataYF.financials                   => Financial data         
+dataYF.dividends                    => Dividends (date and amount)
+dataYF.splits                       => Splits (date and split-factor)
+dataYF.major_holders                => Percent major holders
+dataYF.institutional_holders        => Biggest Insitutional holders
+dataYF.balance_sheet                => Balance Sheet Data
+dataYF.cashflow                     => Cashflow Data
+dataYF.earnings                     => Earnings Data (Revenue, Income)
+dataYF.sustainability               => Sustainability Informations (palm oile, military, adult, etc.)
+dataYF.recommendations              => Recommendations from different agencies
+dataYF.calendar                     => Calendar data
+dataYF.isin                         => ISIN-Number
 
 
 
 ###### PYINSTALLER - generate python programs to executables
-pip install pyinstaller                                       => Installation
-pyinstaller prg.py                                            => Generate the bundle in a subdirectory called dist.
-pyinstaller --onefile prg.py                                  => Generate only one file
---icon=app.ico                                                => Generate file with icon
---hidden-import=pkg_resources.py2_warn                        => Generating under mac os sometimes only work with this params
---hidden-import=pkg_resources.py2_warn                        => Generating under mac os sometimes only work with this params
---hidden-import=pymssql										  => When some modules are making problems - sometimes this helps
---exclude-module matplotlib                                   => when there is a depreciating warning from matlib        
-prg.exe                                                       => Open this file to start the python-program
+pip install pyinstaller                     => Installation
+pyinstaller prg.py                          => Generate the bundle in a subdirectory called dist.
+pyinstaller --onefile prg.py                => Generate only one file
+--icon=app.ico                              => Generate file with icon
+--hidden-import=pkg_resources.py2_warn      => Generating under mac os sometimes only work with this params
+--hidden-import=pkg_resources.py2_warn      => Generating under mac os sometimes only work with this params
+--hidden-import=pymssql						=> When some modules are making problems - sometimes this helps
+--exclude-module matplotlib                 => when there is a depreciating warning from matlib        
+prg.exe                                     => Open this file to start the python-program
+yfinance module                             => only working with import yfinance (not with import yfinance as yf)
 
 => Problems with some added python modules (eg. pycountry)
 ""
@@ -2902,23 +2922,3 @@ config_path = os.path.join(application_path, config_name)     # Final Config Pat
 
 
 
-###### YFINANCE - date from Yahoo Finance
-=> Docu and examples: https://aroussi.com/post/python-yahoo-finance
-import yfinance as yf               => Installation
-dataYF = yf.Ticker(ticker)          => Read data for ticker yahoo finance ticker symbol
-dataYF.info                         => Summary info for stock / cryptopcoin
-yf.download(ticker,"2020-01-01","2021-03-31))   => Price data as dataframe from/to-date
-dataYF.history(period="1mo",interval="60m")     => Intraday price data as dataframe for 1 month and 60 minute interval
-dataYF.history(period="1d",interval="2m")       => Intraday price data as dataframe for 1 day and 2 minute interval
-dataYF.financials                   => Financial data         
-dataYF.dividends                    => Dividends (date and amount)
-dataYF.splits                       => Splits (date and split-factor)
-dataYF.major_holders                => Percent major holders
-dataYF.institutional_holders        => Biggest Insitutional holders
-dataYF.balance_sheet                => Balance Sheet Data
-dataYF.cashflow                     => Cashflow Data
-dataYF.earnings                     => Earnings Data (Revenue, Income)
-dataYF.sustainability               => Sustainability Informations (palm oile, military, adult, etc.)
-dataYF.recommendations              => Recommendations from different agencies
-dataYF.calendar                     => Calendar data
-dataYF.isin                         => ISIN-Number
