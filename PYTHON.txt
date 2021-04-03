@@ -55,6 +55,7 @@
 #> MODULE - PYGAME - making games
 #> MODULE - PYTHONCOM - make new formula in excel with python-function
 #> MODULE - FLASK, ZAPPA, AWS - making an API
+#> MODULE - FLASK, HEROKU, GUNICORN  - making an API
 #> MODULE - ICECREAM - print for debugging
 #> MODULE - TA-LIB - technical analysis of financial market
 #> MODULE - YFINANCE - date from Yahoo Finance
@@ -1281,6 +1282,7 @@ data = c.fetchall()
 
 ###### SQL ALCHEMY
 from sqlalchemy import create_engine                       => Import MODULE
+pip install pymysql                                        => necessary to install - otherwise problems eg. with api-accesses to the db
 engine = create_engine("mysql+pymysql: //user:pw@localhost/dbname?host=localhost?port=3306")                     => Define access to the MySQL-DB (username, pw, dbname)
 conn = engine.connect()                                    => Establish connection
 engine.table_names()                                       => Read all existing tables from the databasen - returns list
@@ -1868,6 +1870,8 @@ s.drop_duplicates(keep="last")					 			=> Duplicates get dropped (only the last 
 s.drop_duplicates(keep=False)								=> Duplicates get dropped (no entry remains if there are duplicate entries for the value)
 s.sort_values() 		                        	        => Sorting by value ascending
 s.sort_values(ascending=False)      			            => Sorting by value descending
+for index, value in s.items():                              => Iterate through pandas series
+
 
 => DATAFRAMES 
 => are immutable, column is a series, dataframe = combination of multiple series
@@ -2070,6 +2074,7 @@ non_zero = df[df["col1"]!=0]                                => Filtering all Val
 df["newcol"]=["Y" if x > 50 else "N" for x in df["Sales"]]  => Add new column with Y/N depending if the value in col "Sales" is > 50
 df["col"]=["Y" if x > 50 else "N" for x in df["col"]]  		=> Change existing column with Y/N depending if the value in col is > 50
 df["c"]=[1 if (x/y>9) else 0 for x,y in zip(df["c1"],df["c2])]	=> Add/change column with 0/1 depending of calc of the variables x/y from 2 cols
+df = df[~df.index.duplicated(keep='first')]                 => Delte duplicate index entries in the dataframe
 
 
 
@@ -2836,6 +2841,19 @@ check API-access
 	select Method Get
 	input path example under {proxy} eg. api/v1/incstat?ticker=FB
 	click Test Button (at the bottom)
+""
+
+
+###### MODULE - FLASK, HEROKU, GUNICORN  - making an API
+=> https://stackabuse.com/deploying-a-flask-application-to-heroku/
+
+ongoing deployment / update
+""
+git add .               
+git commit -m "upd"
+heroku login -i
+git:remote -a financerapidapi (name of the app on heroku)
+git push heroku master
 ""
 
 
