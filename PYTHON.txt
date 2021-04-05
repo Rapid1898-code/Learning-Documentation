@@ -2849,10 +2849,11 @@ check API-access
 
 ongoing deployment / update
 ""
+git init (when .git is not in the folder of the api)
 git add .               
 git commit -m "upd"
 heroku login -i
-git:remote -a financerapidapi (name of the app on heroku)
+heroku git:remote -a financerapidapi (name of the app on heroku)
 git push heroku master
 ""
 
