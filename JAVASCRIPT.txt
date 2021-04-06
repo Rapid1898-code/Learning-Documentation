@@ -1290,6 +1290,7 @@ eg. for flexible li-elements from a db
 
 
 ###### EXAMPLE FULL STACK
+=> full example see: \DEV\LeonNoel-100Devs\class33\rap-names-express
 => Setting up the project
 ""
 mkdir api-project		// make new directory for project
@@ -1300,33 +1301,211 @@ npm install mongodb/	// install mongodb/
 npm install ejs			// install ejs
 ""
 
-=> Connect to DB
+=> Setup Server / Middleware
 ""
-// define basis for db-connectioni
-let db, 
-    dbConnectionstr = "mongodb+srv://cluster0.ram23.mongodb.net/myFirstDatabase",
-    dbName = "myFirstDatabase"
+const express = require('express')
+const app = express()
+const MongoClient = require('mongodb').MongoClient
+const PORT = 2121       // define port for localhost-access
+require('dotenv').config()
+
+app.set('view engine', 'ejs')
+app.use(express.static('public'))
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+""
+
+=> Connect to DB
+=> database in this example on Atlas MongoDB
+=> under "Database Access": create an user with password (can be different than the normal Atlas MongoDB login)
+=> under "Network Access": whitelist the IP with which the access is be done
+=> store the critical credentials info in a sepearte file called ".env"
+""
+// make an ".env" file where the DB-string is stored - and add .env to the .gitignore so the file get not public on github later
+DB_STRING = mongodb+srv://<Username from Database Access>:<Password for that user>@cluster0.ram23.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+// define basis for db-connection    
+let db,
+    dbConnectionStr = process.env.DB_STRING,
+    dbName = 'rap'
 // connect to mongoDB
-MongoClient.connect(dbConnectionstr, {useUnifiedTopology: true})
+MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
     .then(client => {
         console.log(`Connected to ${dbName} Database`)
         db = client.db(dbName)
-    })
+    })           
 ""
 
+<<<<<<< HEAD
 => Setup Server
+=======
+=> Listen to the Server / Port
+=> process.env.PORT for Heroku-Access and PORT for localhost-access
+>>>>>>> 61569b7546d3c8fea997213d558b450d38fe7f8b
 ""
-app.set("view engine", "ejs")
-app.use(express.static("public"))
-app.use(express.urlencoded({extended: true }))
-app.use(express.json())
 app.listen(process.env.PORT || PORT, ()=> {
     console.log(`Server running on port ${PORT}`)
 })
 ""
 
+=> GET / Read Access example for the API
+=> Read data from the db collection "rappers" - sort them according hte likes - an put it in an array
+=> Call the index.ejs file with the input for "data" (= the array)
+""
+app.get('/',(request, response)=>{
+    db.collection('rappers').find().sort({likes: -1}).toArray()    
+    .then(data => {
+        response.render('index.ejs', { info: data })
+    })
+    .catch(error => console.error(error))
+})
+""
 
+=> POST / Create example for the API
+=> Add element to the db collection "rappers" - 
+=> with the information for stageName / birthName from the form on index.ejs and the field likes with 0
+=> console log on the server and redirect to / for the GET to refreh the page index.ejs (new element get displayed)
+""
+app.post('/addRapper', (request, response) => {
+    db.collection('rappers').insertOne({stageName: request.body.stageName,
+    birthName: request.body.birthName, likes: 0})
+    .then(result => {
+        console.log('Rapper Added')
+        response.redirect('/')
+    })
+    .catch(error => console.error(error))
+})
+""
 
+=> PUT / Update example for the API
+=> Update the element in the db collection "rappers" -
+=> Search for stageName and birthName and update the likes-element with +1
+=> make new sort + console.log informatin and response json
+""
+app.put('/addOneLike', (request, response) => {
+    db.collection('rappers').updateOne({stageName: request.body.stageNameS, birthName: request.body.birthNameS,likes: request.body.likesS},{
+        $set: {
+            likes:request.body.likesS + 1
+          }
+    },{
+        sort: {_id: -1},
+        upsert: true
+    })
+    .then(result => {
+        console.log('Added One Like')
+        response.json('Like Added')
+    })
+    .catch(error => console.error(error))
 
+})
+""
 
+=> DELETE example for the API
+=> Delete the element in the db collection "rappers" -
+=> according to the stageName
+=> console.log informatin and response json
+""
+app.delete('/deleteRapper', (request, response) => {
+    db.collection('rappers').deleteOne({stageName: request.body.stageNameS})
+    .then(result => {
+        console.log('Rapper Deleted')
+        response.json('Rapper Deleted')
+    })
+    .catch(error => console.error(error))
+})
+""
 
+=> HTML example for index.ejs
+=> the css and client-js file is stored in the folder "public" - so it get linked with the ejs-file
+=> all rappers get from the array "info" (is given from data from the server.js file) -
+=> is dynamically written to the html-file (ejs build the html-code and "spits" it out)
+=> in the second part are the form fields for adding new rappers on the html-page
+""
+// Show current rappers
+<h1>Current Rappers</h1>
+<ul class="rappers">
+<% for(let i=0; i < info.length; i++) {%>
+    <li class="rapper">
+        <span><%= info[i].stageName %></span>
+        <span><%= info[i].birthName %></span>
+        <span><%= info[i].likes %></span>
+        <span class='fa fa-thumbs-up'></span>
+        <span class='fa fa-trash'></span>
+    </li>
+<% } %>
+</ul>
+
+// Add a rapper
+<h2>Add A Rapper:</h2>
+<form action="/addRapper" method="POST">
+    <input type="text" placeholder="Stage Name" name="stageName">
+    <input type="text" placeholder="Birth Name" name="birthName">
+    <input type="submit">
+</form>
+""
+
+=> Local JS example (for the index.ejs)
+=> 1st Part: Adenvetlistener for Icons
+=> 2nd Part: Deleting and element
+=> 3rd Part: Updating the likes / +1 like
+""
+// AdventListener for all trash and thumbs-up icons
+const deleteText = document.querySelectorAll('.fa-trash')
+const thumbText = document.querySelectorAll('.fa-thumbs-up')
+Array.from(deleteText).forEach((element)=>{
+    element.addEventListener('click', deleteRapper)
+})
+Array.from(thumbText).forEach((element)=>{
+    element.addEventListener('click', addLike)
+})
+
+// Function for handling deleting locally
+// Read the stageName and birthName for the element which should be deleted
+// and handover this information to the API (server.js)
+// Finally reload the index.ejs with "location.reload()"
+async function deleteRapper(){
+    const sName = this.parentNode.childNodes[1].innerText
+    const bName = this.parentNode.childNodes[3].innerText
+    try{
+        const response = await fetch('deleteRapper', {
+            method: 'delete',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+              'stageNameS': sName,
+              'birthNameS': bName
+            })
+          })
+        const data = await response.json()
+        console.log(data)
+        location.reload()
+    }catch(err){
+        console.log(err)
+    }
+}
+
+// Function for handling a +1 like
+// Read the stageName and birthName for the element which should be +1 liked
+// and handover this information to the API (server.js)
+// Finally reload the index.ejs with "location.reload()"
+async function addLike(){
+    const sName = this.parentNode.childNodes[1].innerText
+    const bName = this.parentNode.childNodes[3].innerText
+    const tLikes = Number(this.parentNode.childNodes[5].innerText)
+    try{
+        const response = await fetch('addOneLike', {
+            method: 'put',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+              'stageNameS': sName,
+              'birthNameS': bName,
+              'likesS': tLikes
+            })
+          })
+        const data = await response.json()
+        console.log(data)
+        location.reload()
+
+    }catch(err){
+        console.log(err)
+    }
+}
+""

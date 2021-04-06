@@ -55,8 +55,10 @@
 #> MODULE - PYGAME - making games
 #> MODULE - PYTHONCOM - make new formula in excel with python-function
 #> MODULE - FLASK, ZAPPA, AWS - making an API
+#> MODULE - FLASK, HEROKU, GUNICORN  - making an API
 #> MODULE - ICECREAM - print for debugging
 #> MODULE - TA-LIB - technical analysis of financial market
+#> MODULE - YFINANCE - date from Yahoo Finance
 #> PYINSTALLER - generate python programs to executables
 
 
@@ -139,7 +141,9 @@ Ctrl Del === Ctrl Del                   # Delete to end of word
 Ctrl Backspace === Ctrl Background      # Delete to beginning of word
 lorem + TAB === ???                     # Create lorem text for html-code
 p>lorem + TAB === ???                   # Create lorem text inside <p>-tags
-??? === Ctrl B1							# Hide sidebar
+??? === Ctrl B							# Hide/Show sidebar
+??? === Ctrl J1                         # Hide/Show terminal 
+??? === Ctrl P                          # Show command line    
 ""
 
 => Shortcuts Chrome
@@ -1126,7 +1130,7 @@ xl_col_sort(ws,1)                                       => Sort worksheet in the
 ws["C8"].color											=> Reads the color of a cell and returns a rgb-tuple eg. (146, 208, 80)
 ws["C8"].color = None									=> Remove background from a cell
 ws.Range("A1:C3").color = (255,255,255)					=> Assigns background color for a range of cells
-
+ws["D5"].add_hyperlink(link,text_to_display = "Chart")  => Insert a hyperlink and define which text should be shown in the cell
 
 => Sorting workssheet in given col
 ""
@@ -1279,6 +1283,7 @@ data = c.fetchall()
 
 ###### SQL ALCHEMY
 from sqlalchemy import create_engine                       => Import MODULE
+pip install pymysql                                        => necessary to install - otherwise problems eg. with api-accesses to the db
 engine = create_engine("mysql+pymysql: //user:pw@localhost/dbname?host=localhost?port=3306")                     => Define access to the MySQL-DB (username, pw, dbname)
 conn = engine.connect()                                    => Establish connection
 engine.table_names()                                       => Read all existing tables from the databasen - returns list
@@ -1866,6 +1871,8 @@ s.drop_duplicates(keep="last")					 			=> Duplicates get dropped (only the last 
 s.drop_duplicates(keep=False)								=> Duplicates get dropped (no entry remains if there are duplicate entries for the value)
 s.sort_values() 		                        	        => Sorting by value ascending
 s.sort_values(ascending=False)      			            => Sorting by value descending
+for index, value in s.items():                              => Iterate through pandas series
+
 
 => DATAFRAMES 
 => are immutable, column is a series, dataframe = combination of multiple series
@@ -2068,6 +2075,7 @@ non_zero = df[df["col1"]!=0]                                => Filtering all Val
 df["newcol"]=["Y" if x > 50 else "N" for x in df["Sales"]]  => Add new column with Y/N depending if the value in col "Sales" is > 50
 df["col"]=["Y" if x > 50 else "N" for x in df["col"]]  		=> Change existing column with Y/N depending if the value in col is > 50
 df["c"]=[1 if (x/y>9) else 0 for x,y in zip(df["c1"],df["c2])]	=> Add/change column with 0/1 depending of calc of the variables x/y from 2 cols
+df = df[~df.index.duplicated(keep='first')]                 => Delte duplicate index entries in the dataframe
 
 
 
@@ -2839,6 +2847,20 @@ check API-access
 ""
 
 
+###### MODULE - FLASK, HEROKU, GUNICORN  - making an API
+=> https://stackabuse.com/deploying-a-flask-application-to-heroku/
+
+ongoing deployment / update
+""
+git init (when .git is not in the folder of the api)
+git add .               
+git commit -m "upd"
+heroku login -i
+heroku git:remote -a financerapidapi (name of the app on heroku)
+git push heroku master
+""
+
+
 
 ###### MODULE - ICECREAM - print for debugging
 from icecream import ic										=> Imort icecream
@@ -2861,16 +2883,40 @@ then: pip install TA-Lib
 
 
 
+###### YFINANCE - date from Yahoo Finance
+=> Docu and examples: https://aroussi.com/post/python-yahoo-finance
+import yfinance                     => Installation (yfinance as yf not working - problems with pyinstaller)
+dataYF = yf.Ticker(ticker)          => Read data for ticker yahoo finance ticker symbol
+dataYF.info                         => Summary info for stock / cryptopcoin
+yf.download(ticker,"2020-01-01","2021-03-31))   => Price data as dataframe from/to-date
+dataYF.history(period="1mo",interval="60m")     => Intraday price data as dataframe for 1 month and 60 minute interval
+dataYF.history(period="1d",interval="2m")       => Intraday price data as dataframe for 1 day and 2 minute interval
+dataYF.financials                   => Financial data         
+dataYF.dividends                    => Dividends (date and amount)
+dataYF.splits                       => Splits (date and split-factor)
+dataYF.major_holders                => Percent major holders
+dataYF.institutional_holders        => Biggest Insitutional holders
+dataYF.balance_sheet                => Balance Sheet Data
+dataYF.cashflow                     => Cashflow Data
+dataYF.earnings                     => Earnings Data (Revenue, Income)
+dataYF.sustainability               => Sustainability Informations (palm oile, military, adult, etc.)
+dataYF.recommendations              => Recommendations from different agencies
+dataYF.calendar                     => Calendar data
+dataYF.isin                         => ISIN-Number
+
+
+
 ###### PYINSTALLER - generate python programs to executables
-pip install pyinstaller                                       => Installation
-pyinstaller prg.py                                            => Generate the bundle in a subdirectory called dist.
-pyinstaller --onefile prg.py                                  => Generate only one file
---icon=app.ico                                                => Generate file with icon
---hidden-import=pkg_resources.py2_warn                        => Generating under mac os sometimes only work with this params
---hidden-import=pkg_resources.py2_warn                        => Generating under mac os sometimes only work with this params
---hidden-import=pymssql										  => When some modules are making problems - sometimes this helps
---exclude-module matplotlib                                   => when there is a depreciating warning from matlib        
-prg.exe                                                       => Open this file to start the python-program
+pip install pyinstaller                     => Installation
+pyinstaller prg.py                          => Generate the bundle in a subdirectory called dist.
+pyinstaller --onefile prg.py                => Generate only one file
+--icon=app.ico                              => Generate file with icon
+--hidden-import=pkg_resources.py2_warn      => Generating under mac os sometimes only work with this params
+--hidden-import=pkg_resources.py2_warn      => Generating under mac os sometimes only work with this params
+--hidden-import=pymssql						=> When some modules are making problems - sometimes this helps
+--exclude-module matplotlib                 => when there is a depreciating warning from matlib        
+prg.exe                                     => Open this file to start the python-program
+yfinance module                             => only working with import yfinance (not with import yfinance as yf)
 
 => Problems with some added python modules (eg. pycountry)
 ""
@@ -2895,3 +2941,6 @@ elif __file__:                                                # Get path when ru
     application_path = os.path.dirname(__file__)
 config_path = os.path.join(application_path, config_name)     # Final Config Path   
 ""
+
+
+
