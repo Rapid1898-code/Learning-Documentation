@@ -1314,7 +1314,7 @@ MongoClient.connect(dbConnectionstr, {useUnifiedTopology: true})
     })
 ""
 
-=> Setup Server / Middleware
+=> Setup Server
 ""
 app.set("view engine", "ejs")
 app.use(express.static("public"))

@@ -171,6 +171,7 @@ Run commands: https://stackoverflow.com/questions/56490194/vs-code-bitbucket-ssh
 when doing a commit - right click + add to .gitignore		# file will be created when not exists
 individual file will be ignored
 to ignore a whole folder with all files in it - add /* to the folder => eg. /prg/dist/*
+or use eg. node_modules/ to exclude all folders in all subfolders
 ""
 
 => Add directory to GitHub
@@ -294,8 +295,8 @@ repr(s)											=> Print string with special characters
 ""
 checkString = "A string is more than its parts!"
 checks = ["more", "blabla", "nothing"]   
-if any(x in a_string for x in matches):         # check if any elems from checks is in checkstring
-if all(x in a_string for x in matches):         # check if all elems from checks is in checkstring
+if any(x in checkstring for x in checks):         # check if any elems from checks is in checkstring
+if all(x in checkstring for x in checks):         # check if all elems from checks is in checkstring
 ""
 
 
@@ -2195,6 +2196,7 @@ entries = results.find_all("div", class_="col-xs-6")            => Read all divs
 soup.find("div", {"id": "lj_div"})								=> Find div with id "lj_div"
 soup.find("p", {"class": line}									=> Find (first) p with class "line"
 if row.get("class") == ["ellipsis", "nobr", "new"]:             => Check if class has specific content
+soup.find("small", class_=re.compile("nameSymbol_"))			=> Check if string nameSymbol_" is part of the class-element
 for e in soup.find_all("a"): e.get("href"))                     => Read all links from href element    
 for e in soup.find_all("a"): e.get("value"))                    => Read all number from the field "value"
 content.text.strip()                                            => Outputs text without whitespaces
@@ -2202,6 +2204,7 @@ url_i = rows[0].find('img')['src']                              => Read url from
 image = requests.get(f'https:{url_i}').content                  => Read image as content
 results.prettify()                                              => Formated Output with html indentations
 if "Kein Zugriff" in soup.text:                                 => Check if specific text in soup text-output
+
     
 => Read with Selenium when necessary due the specific homepage				
 ""
