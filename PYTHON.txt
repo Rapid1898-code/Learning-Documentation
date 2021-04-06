@@ -1414,8 +1414,9 @@ https://rdrr.io/r/base/strptime.html
 from datetime import datetime, timedelta                     => Import module datetime and timedelta
 from datetime import date                                    => Import module dat
 datetime.strptime(s, "%Y-%m-%d")                             => Conversion string to datetime in format yyyy-mm-dd
+datetime.strptime(s, "%b %M, %Y")                            => Conversion for date format eg. "Apr 21, 2020"
 datetime.strftime(dt, "%Y-%m-%d")                            => Conversion datetime to string in format  yyyy-mm-dd
-dt.strftime((dt.strptime(tmp,"%m/%d/%Y")),"%Y-%m-%d")      	=> Convert dateformat from string in one line (1st from - 2nd to)
+dt.strftime((dt.strptime(tmp,"%m/%d/%Y")),"%Y-%m-%d")      	 => Convert dateformat from string in one line (1st from - 2nd to)
 isinstance(x, date)											 => Check if variable is of type datetime.date or datetime.datetime                   
 isinstance(x, datetime)										 => Check if variable is of type datetime.datetime
 date = date(2020,7,24)                                       => Define date as "2020-07-24"
@@ -2141,6 +2142,7 @@ driver.switch_to.window(act_window)								  => Switch (back) to active window (
 from selenium.webdriver.chrome.options import Options            
 options = Options()
 options.add_argument('--headless')                                          # Window Hidden (only used this for the final program - not during devleopment / testing!)
+options.add_argument("start-maximized")                                     # Start window maximized
 if platform == "win32": options.add_argument('--start-maximized')           # Window Started Maximized (for Windows)
 elif platform in ["linux","darwin"]: options.add_argument('--kiosk')        # Window Started Maximized (for Linux and Mac)
 options.add_experimental_option ('excludeSwitches', ['enable-logging'])     # No error messagegs when exec in cmd
