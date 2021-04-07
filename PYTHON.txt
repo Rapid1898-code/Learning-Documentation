@@ -2076,8 +2076,8 @@ non_zero = df[df["col1"]!=0]                                => Filtering all Val
 df["newcol"]=["Y" if x > 50 else "N" for x in df["Sales"]]  => Add new column with Y/N depending if the value in col "Sales" is > 50
 df["col"]=["Y" if x > 50 else "N" for x in df["col"]]  		=> Change existing column with Y/N depending if the value in col is > 50
 df["c"]=[1 if (x/y>9) else 0 for x,y in zip(df["c1"],df["c2])]	=> Add/change column with 0/1 depending of calc of the variables x/y from 2 cols
-df = df[~df.index.duplicated(keep='first')]                 => Delte duplicate index entries in the dataframe
-
+df = df[~df.index.duplicated(keep='first')]                 => Delete duplicate index entries in the dataframe
+df.set_index('timestamp').T.to_dict('list')					=> Convert a dataframe to a dict (https://stackoverflow.com/questions/26716616/convert-a-pandas-dataframe-to-a-dictionary)
 
 
 ###### MODULE - MATPLOTLIB - working with charts
@@ -2142,6 +2142,7 @@ driver.switch_to.window(act_window)								  => Switch (back) to active window (
 from selenium.webdriver.chrome.options import Options            
 options = Options()
 options.add_argument('--headless')                                          # Window Hidden (only used this for the final program - not during devleopment / testing!)
+options.add_argument('window-size=1920x1080')								# (this somtimes helps when headless is not working)	
 options.add_argument("start-maximized")                                     # Start window maximized
 if platform == "win32": options.add_argument('--start-maximized')           # Window Started Maximized (for Windows)
 elif platform in ["linux","darwin"]: options.add_argument('--kiosk')        # Window Started Maximized (for Linux and Mac)
