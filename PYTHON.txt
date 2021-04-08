@@ -41,6 +41,7 @@
 #> MODULE - OS - interacting with the operating system
 #> MODULE - LOGGING
 #> MODULE - UNITTEST
+#> MODULE - DOTENV - hide environment informations
 #> MODULE - COLLECTIONS - counter, defaultdic
 #> MODULE - ITERTOOLS - products, combinations
 #> MODULE - NUMPY - basis for different other modules
@@ -1679,6 +1680,16 @@ self.assertTrue(x)                                           => Check if true
 self.assertFalse(x)                                          => Check if false
 self.assertIn(i,list)                                        => Check if i in list
 self.assertNotIn(i,list)                                     => Check if i not in list
+
+
+
+###### MODULE - DOTENV - hide environment informations
+=> create .env file and store sensible data in the form TOKEN=xyz123
+=> and hide the *.env files in the .gitignore
+from dotenv import load_dotenv, find_dotenv
+import os
+load_dotenv(find_dotenv())
+GMAIL_TOKEN = os.environ.get("GMAIL_TOKEN")
 
 
 

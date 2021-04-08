@@ -971,6 +971,7 @@ npm install uuid        => install module "uuid" - node_modules folder is create
 npm install -D nodemon  => install module as development dependencie
 npm install             => install all modules according to the dependencies in the package.json
 npm update              => update the dependencies of the project
+npm i ejs dotenv        => install several modueles in one line
 
 => how to link 2 js-files
 ""
@@ -1260,12 +1261,23 @@ Nunjucks
 => Heroku
 => Hosting APIs in the cloud
 ""
+// Initial setup
+git init (when .git is not in the folder of the api)
+git add .               
+git commit -m "upd"
 heroku login -i                         // login to heroku
 heroku create simple-rap-api            // create entry on heroku
 echo "web: node server.js" > Procfile   // create profile (tells heroku what the server-file is)
-git add .                               
-git commit -m "changes"
-git push heroku main                    // push everything to heroku
+heroku git:remote -a simple-rap-api     // name of the app on heroku 
+git push heroku master                  // push everything to heroku
+
+// Ongoing updates
+git init (when .git is not in the folder of the api)
+git add .               
+git commit -m "upd"
+heroku login -i
+heroku git:remote -a financerapidapi (name of the app on heroku)
+git push heroku master
 ""
 
 => Postman
@@ -1327,12 +1339,15 @@ DB_STRING = mongodb+srv://<Username from Database Access>:<Password for that use
 let db,
     dbConnectionStr = process.env.DB_STRING,
     dbName = 'rap'
-// connect to mongoDB
+// connect to mongoDB (with error handling)
 MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
     .then(client => {
         console.log(`Connected to ${dbName} Database`)
         db = client.db(dbName)
     })           
+    .catch(err =>{
+        console.log(`Connection to db not possible - error ${err}`)
+    })       
 ""
 
 <<<<<<< HEAD
@@ -1350,6 +1365,10 @@ app.listen(process.env.PORT || PORT, ()=> {
 => GET / Read Access example for the API
 => Read data from the db collection "rappers" - sort them according hte likes - an put it in an array
 => Call the index.ejs file with the input for "data" (= the array)
+=> (1) server.js: app.get
+=> (2) server.js: reads data from mongodb and triggers the index.ejs to render
+=> (3) index.ejs: renders the file with the given data from mongodb 
+=> (4) index.ejs: spits out the actual html
 ""
 app.get('/',(request, response)=>{
     db.collection('rappers').find().sort({likes: -1}).toArray()    
@@ -1364,6 +1383,11 @@ app.get('/',(request, response)=>{
 => Add element to the db collection "rappers" - 
 => with the information for stageName / birthName from the form on index.ejs and the field likes with 0
 => console log on the server and redirect to / for the GET to refreh the page index.ejs (new element get displayed)
+=> (1) index.ejs: form with action ("/insertxyz" and method (POST) - has a text-input and a submit
+=> (2) index.ejs: when submit is clicked the api-action /insertxyz is called with the data
+=> (3) main.js: insert the new collection/dataset in the db 
+=> (4) main.js: call the method "/" again to update the index.ejs with GET
+
 ""
 app.post('/addRapper', (request, response) => {
     db.collection('rappers').insertOne({stageName: request.body.stageName,
@@ -1380,6 +1404,11 @@ app.post('/addRapper', (request, response) => {
 => Update the element in the db collection "rappers" -
 => Search for stageName and birthName and update the likes-element with +1
 => make new sort + console.log informatin and response json
+=> (1) main.js: eventlistener in the client-side js
+=> (2) main.js: when element is clicked call the function and make an fetch to the api-call
+=> (3) main.js: awaits response and gives to the server.js the data (put-method, headers, body with the data)
+=> (4) server.js: get the data from the main.js and updates the db - response to the main.js
+=> (5) main.js: awaits the response and reloads the page - so the updated data can be seen
 ""
 app.put('/addOneLike', (request, response) => {
     db.collection('rappers').updateOne({stageName: request.body.stageNameS, birthName: request.body.birthNameS,likes: request.body.likesS},{
@@ -1403,6 +1432,7 @@ app.put('/addOneLike', (request, response) => {
 => Delete the element in the db collection "rappers" -
 => according to the stageName
 => console.log informatin and response json
+=> (1)-(5): same as the PUT example only with the methode DELETE
 ""
 app.delete('/deleteRapper', (request, response) => {
     db.collection('rappers').deleteOne({stageName: request.body.stageNameS})
