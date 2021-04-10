@@ -1300,6 +1300,29 @@ eg. for flexible li-elements from a db
 <% } %>
 ""
 
+=> Curl
+=> For testing api endpoints
+curl --version                  => Check the installed curl version
+curl https://api.github.com     => show all apis from github
+curl https://api.github.com/users/zellwk/repos      => show all repos from a specific user (zellwk)
+curl https://api.github.com/users/zellwk/repos\?sort\=pushed    => show all repos with parameters ("\" have to be before the "=")
+curl -X POST https://api.github.com/user/repos                  => tries to create an repo via api (use -X before the command)
+curl -H "Content-Type: application/json" https://api.github.com -v      => shows the header of the api
+curl -X POST <URL> -d property1=value1 -d property2=value2              => send data via the api with the -d properties
+curl -x POST -u "username:password" https://api.github.com/user/repos   => send post-request with authentification (use -u property)
+
+=> MVC
+=> Architectural Concept which is used by many frameworks (ruby on rails, django, laravel, etc.)
+=> stands for: Model / View / Controller
+""
+never repeat yourself / structured programming 
+Client (Browser,HTML,CSS,JS) => Server (Linux,Windows,PHP,Ruby,Python) => Database (MySQL,PostgresQL,NoSQL,MongoDB)
+View is the Client (only thing the user sees, speaks only with controller, manly html and css)
+Controller is the Server (processes requests, server-side logic, middle man between view and model)
+Model is the Database (Adding/Retrieving from or to the database, speaks only with the controller)
+""
+
+
 
 ###### EXAMPLE FULL STACK
 => full example see: \DEV\LeonNoel-100Devs\class33\rap-names-express
