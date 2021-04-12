@@ -1408,6 +1408,7 @@ conn.close()									=> Close Connection
 
 
 ###### MODULES - DATES, DATETIME, CALENDAR, TIMEIT, TIME, SYS, CTYPES
+###### MODULES - DATES, DATETIME, CALENDAR, TIMEIT, TIME, SYS, CTYPES
 => Standardmodules from python no pip install necessary
 => Overview % parsing commands
 https://www.programiz.com/python-programming/datetime/strptime      
@@ -1426,6 +1427,7 @@ now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")           => Actual date+time
 now = datetime.now().strftime("%Y-%m-%d") 			         => Actual date in format 2020-06-09
 tday = datetime.today()                                      => Actual date in datetime format
 tday = datetime.today().date()								 => Actual date as date format
+date = datetime.date()                                       => Convert datetime to date
 dt.year, dt.month, dt.day                              		 => Year / month / day from the datetime
 tday.isoweekday()                                            => Returns weekday (monday=1, sunday=7)
 last_friday = day - timedelta(days=tday.isoweekday() + 2)    => Calculates last friday (+2 for FR, +1 SA, 0 SU, -1 MO, -2 TU, -3 WE, -4 TH)
@@ -1884,7 +1886,7 @@ s.drop_duplicates(keep=False)								=> Duplicates get dropped (no entry remains
 s.sort_values() 		                        	        => Sorting by value ascending
 s.sort_values(ascending=False)      			            => Sorting by value descending
 for index, value in s.items():                              => Iterate through pandas series
-
+erg = s.get("Entry","N/A)                                   => Get element from series - if not found is the result "N/A"
 
 => DATAFRAMES 
 => are immutable, column is a series, dataframe = combination of multiple series
@@ -2089,6 +2091,10 @@ df["col"]=["Y" if x > 50 else "N" for x in df["col"]]  		=> Change existing colu
 df["c"]=[1 if (x/y>9) else 0 for x,y in zip(df["c1"],df["c2])]	=> Add/change column with 0/1 depending of calc of the variables x/y from 2 cols
 df = df[~df.index.duplicated(keep='first')]                 => Delete duplicate index entries in the dataframe
 df.set_index('timestamp').T.to_dict('list')					=> Convert a dataframe to a dict (https://stackoverflow.com/questions/26716616/convert-a-pandas-dataframe-to-a-dictionary)
+df.iloc[::5, :]                                             => Select every 5th row
+df = df.reset_index()                                       => Reset index form a dataframe with a new column from 0 to x
+df = df.iloc[:,0]                                           => Get the first row of the dataframe
+
 
 
 ###### MODULE - MATPLOTLIB - working with charts
@@ -2871,7 +2877,7 @@ git add .
 git commit -m "upd"
 heroku login -i
 heroku git:remote -a financerapidapi (name of the app on heroku)
-git push heroku master
+git push heroku main
 ""
 
 
