@@ -2094,7 +2094,7 @@ df.set_index('timestamp').T.to_dict('list')					=> Convert a dataframe to a dict
 df.iloc[::5, :]                                             => Select every 5th row
 df = df.reset_index()                                       => Reset index form a dataframe with a new column from 0 to x
 df = df.iloc[:,0]                                           => Get the first row of the dataframe
-
+for index, row in df.iterrows():                            => Iterate trough dataframe with index and content / row
 
 
 ###### MODULE - MATPLOTLIB - working with charts
