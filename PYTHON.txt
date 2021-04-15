@@ -1132,11 +1132,14 @@ ws["C8"].color											=> Reads the color of a cell and returns a rgb-tuple eg
 ws["C8"].color = None									=> Remove background from a cell
 ws.Range("A1:C3").color = (255,255,255)					=> Assigns background color for a range of cells
 ws["D5"].add_hyperlink(link,text_to_display = "Chart")  => Insert a hyperlink and define which text should be shown in the cell
+ws.api.AutoFilterMode = False                           => Disable auto filter in worksheet
+ws.clear()                                              => Clears the content and formatting of the whole sheet
+ws.clear_contents()                                     => Clears the content but leaves formatting
 
 => Sorting workssheet in given col
 ""
 def xl_col_sort(sheet,col_num):                         
-    sheet.range((2,col_num)).api.SortKey1=sheet.range((2,col_num)).api, Order1=1)
+    sheet.range((2,col_num)).api.Sort(Key1=sheet.range((2,col_num)).api, Order1=1)
     return
 ""
 
