@@ -103,6 +103,11 @@ py37_env\Scripts\activate                                  =>  Activate new virt
 python --version                                           =>  Shows the used python version in the virtual env
 pip install -r requirements.txt                            =>  Install all the packages from requirements.txt
 
+=> install virtual environment with specific python-version
+""
+download and install the python-version - Important: remember the path to the python.exe
+create a venv with: virtualenv envName -p path\to\new_python.exe
+""
 
 
 ###### SHORTCUTS INTELLIJ IDEA IDE, GITHUB, CHROME, WINDOWS
