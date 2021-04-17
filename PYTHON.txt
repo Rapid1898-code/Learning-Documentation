@@ -1694,6 +1694,7 @@ self.assertNotIn(i,list)                                     => Check if i not i
 
 
 ###### MODULE - DOTENV - hide environment informations
+=> Installation: pip install python-dotenv
 => create .env file and store sensible data in the form TOKEN=xyz123
 => and hide the *.env files in the .gitignore
 from dotenv import load_dotenv, find_dotenv
