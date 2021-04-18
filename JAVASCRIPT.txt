@@ -23,7 +23,7 @@
 #> NODE.JS
 #> TOOLS OVERVIEW
 #> EXAMPLE FULL STACK
-
+#> AZURE AUTHENTICATION
 
 ###### OPERATOR, INPUT, OUTPUT
 // Comment something                        => Comments in Javascript
@@ -1565,4 +1565,29 @@ async function addLike(){
         console.log(err)
     }
 }
+""
+
+
+###### AZURE AUTHENTICATION
+""
+Keys to provide in the config.js
+clientID: in Azure Active Directory => App registration => take the id
+clientSecret: in the App-Registrierung => Certificates & secrets => take the value
+
+=> in Azure Active Directory
+- in App registrations
+- New registration and give name eg. TestBlablabla
+- choose "in any organizational directory AND personal microsoft accounts"
+- register
+- copy application client-id to in config.js at client-id
+
+=> in the registered Application and in Authentication
+- redirect uri: http://localhost:2121/auth/openid/return from config.js
+- front-chanell logout URL: https://localhost:2121
+- check ID tokens checkbox
+
+=> in the registered Application and in Certificates & secrets
+- new client secret
+- enter description and expires
+- copy the value (not id!) in config.js at client-secret
 ""
