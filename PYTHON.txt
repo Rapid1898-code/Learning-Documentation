@@ -61,7 +61,7 @@
 #> MODULE - TA-LIB - technical analysis of financial market
 #> MODULE - YFINANCE - date from Yahoo Finance
 #> PYINSTALLER - generate python programs to executables
-
+#> PYTHONANYWHERE - run python scripts in the cloud
 
 
 ###### MODULE, GENERAL
@@ -1223,9 +1223,9 @@ HeidiSQL - Datei / Verbindungsmanager			=> Shows the database-version in the col
 
 => Transfer whole table from local db to hosted db
 ""
-right click on table / tables to transfer and select "export database as sql"
-for "output" select "Server: A2Hosting" (connection to the hosted server)
-for "database" select "rapidtec_stockdb" (name from the db on the hosted server)
+right click on database / table to transfer and select "export database as sql"
+for "output" select eg. "Server: A2Hosting" (connection to the hosted server)
+for "database" select eg. "xyztec_stockdb" (name from the db on the hosted server)
 for "data" select "replace existing data"
 when format of table should be changed also select checkbox "Drop" at table (not database!)
 press "export" (wait till the rows-column shows 100%)
@@ -2970,6 +2970,12 @@ elif __file__:                                                # Get path when ru
     application_path = os.path.dirname(__file__)
 config_path = os.path.join(application_path, config_name)     # Final Config Path   
 ""
+
+
+
+###### PYTHONANYWHERE
+pip3.7 install --user --upgrade selenium    => install python modules in specific version / environment
+
 
 
 

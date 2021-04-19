@@ -1314,6 +1314,11 @@ curl -X POST <URL> -d property1=value1 -d property2=value2              => send 
 curl -x POST -u "username:password" https://api.github.com/user/repos   => send post-request with authentification (use -u property)
 ""
 
+=> Passport
+=> Passport is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to 
+any Express-based web application. A comprehensive set of strategies support authentication using a username and password, 
+Facebook, Twitter, Azure AD and many more
+
 => MVC
 => Architectural Concept which is used by many frameworks (ruby on rails, django, laravel, etc.)
 => stands for: Model / View / Controller
