@@ -1300,18 +1300,23 @@ conn.execute("SELECT * FROM actor").fetchall()             => Read data from db 
 conn.close()											   => Close connection at the end
 engine.dispose()										   => Close sql engine at the end
 
-=> Tabelle anlegen in MySQL DB
+=> Define object / table
 ""
 from sqlalchemy import Table, Column, Integer, String, Float, MetaData
 meta = MetaData()                                          
 students = Table(
-   'students', meta,
+   'students', 
+   meta,
    Column('id', Integer, primary_key = True),
    Column('name', String(45)),
    Column('lastname', String(45)),
 )
-meta.create_all(engine)
 ""
+
+meta.create_all(engine)     => Create the table(s) according to the metadata-definition
+user_table.c.name           => name of the table => students
+user_table.c.keys()         => all column-names / keys as list => ['id', 'name', 'lastname']
+user_table.primary_key      => shows the primary key of the object
 
 => Create INSERT / UPDATE / DELETE / SELECT statements
 ""
@@ -1330,7 +1335,7 @@ students.select()                                           # Creates SELECT Sta
 => Execute SQL command - INSERT               
 ""
 conn = engine.connect()                                     # Insert one row
-ins = students.insert().values name = 'Brauneder', lastname = 'Karl')
+ins = students.insert().values (name = 'Brauneder', lastname = 'Karl')
 result = conn.execute(ins)
 result.inserted_primary_key                                 # Shows the inserted primary key
 conn.execute(students.insert(), [                           # Insert more rows
@@ -2084,6 +2089,7 @@ df.columns =) [x.upper() for x in df.columns]               => Change the column
 df["c1"] = df["c1"].apply(lambda x: x.lower())              => Function lower is used for the whole column
 df["c1"].map({"val1":"val1new","val2":"val2new"})           => Change the names of the values - all others become NaN
 df["c1"].replace({"val1":"val1new","val2":"val2new"})       => Change the names of the values - all others are not touched
+df["cnew1"] = df["c1"] + df["c2"]                           => New column at the end
 df["cnew1"] = df["c1"] + df["c2"]                           => New column at the end
 df.drop(columns=["c1","c2"], inplace=True)                  => Deleting 2 columns
 df = df.append({"c1":"val1"},ignore_index=True)             => Add new row (all other cols are defined as NaN for the row)
@@ -2974,7 +2980,7 @@ config_path = os.path.join(application_path, config_name)     # Final Config Pat
 
 
 ###### PYTHONANYWHERE
-pip3.7 install --user --upgrade selenium    => install python modules in specific version / environment
+pip3.7 install --user --upgrade selenium=> install python modules in specific version / environment
 
 
 
