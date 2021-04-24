@@ -1129,10 +1129,6 @@ wb = xw.Book ("name.xlsx")                              => Read XLSX
 ws = wb.sheets["name_sheet"]                            => Read specific worksheet
 ws["A1"].value = "xyz"                                  => Updates specific cell
 for i in ws.range("A3:A7"): i.value = ""				=> Iterate trough cells an set them to "" / None
-l = ws.range("A2:A100").value                           => Read specific cells to list
-cells = ws.range("A2:A100")								=> Read cells
-cells[1].value = "new value"                            => Update the value of a cell
-ws.range("A2:A100").value = l                           => Writeback the updates to cells
 xl_col_sort(ws,1)                                       => Sort worksheet in the first col (function see below)
 ws["C8"].color											=> Reads the color of a cell and returns a rgb-tuple eg. (146, 208, 80)
 ws["C8"].color = None									=> Remove background from a cell
@@ -1143,6 +1139,22 @@ ws.clear()                                              => Clears the content an
 ws.clear_contents()                                     => Clears the content but leaves formatting
 l = [x.name for x in wb.sheets]							=> Read worksheetnames to list
 wb.sheets.add("NewWS")									=> Add worksheet in workbook
+
+=> Update row / change whole row
+""
+l = ws.range("A2:A6").value                           	=> Read specific cells to list (eg. [2,4,6,7,8])
+l = [0,1,2,3,4]											=> Change list	
+ws.range("A2:A100").value = l                           => Writeback the updates to cells
+""
+
+=> Update cell area / change 3 elements
+""
+v = ws.range("A2:F9").value
+v[3][2] = 9999999
+v[5][1] = 8888888
+v[7][5] = 5555555
+ws.range("A2:F9").value = v
+""
 
 => Sorting workssheet in given col
 ""
@@ -1939,16 +1951,22 @@ df = pd.read_excel("file.xlsx",sheet_name="Prod")			=> Read xlsx (worksheet "Pro
 ef = pd.ExcelFile("file.xlsx")								=> Read xlsx with the ExcelFile method
 ef.sheet_names												=> Shows alle worksheet-names as a list => eg. ["Prod","Desc"]
 df = ef.parse("Prod")										=> Read/Parse the worksheet "Prod" in a dataframe
-df.to_excel("file2.xlsx",									=> Write dataframe to xlsx
-	sheet_name="Prod",										=> Write to worksheet "Prod"
-	startrow=1,												=> Start writing at row 1
-	startcol=2)												=> Start writing at col 2
-w = pd.ExcelWriter("file2.xlsx")							=> Write dataframe to xlsx with the ExcelWriter method
-with w: df.to_excel(w,sheet_name="Prod"						=> Write dataframe to xlsx worksheet "Prod" with the ExcelWriter method 
-with pd.ExcelWriter("file2.xlsx") as writer:				=> Write multiple worksheet to xlsx from dataframes
-	df1.to_excel(w, sheet_name="Prod")						=> Dataframe1 stored in worksheet "Prod"
-	df2.to_excel(w, sheet_name="Desc")						=> Dataframe2 stored in worksheet "Desc"
 
+=> Write several dataframes to excel
+""
+# Create a Pandas Excel writer using XlsxWriter as the engine.
+writer = pd.ExcelWriter('basisReadData.xlsx', engine='xlsxwriter')
+
+# Write each dataframe to a different worksheet.
+quandlMain.to_excel(writer, sheet_name="quandlMain"),	
+quandlMain2.to_excel(writer, sheet_name="quandlMain_From2018_MRT")
+
+# Close the Pandas Excel writer and output the Excel file.
+writer.save()
+""
+	
+	
+	
 => SQL
 conn = sqlite3.connect("data.db")							=> Establish connection to the sql-db
 df = pd.read_sql("SELECT * FROM empl;",conn)				=> Read data from sql-db into dataframe
