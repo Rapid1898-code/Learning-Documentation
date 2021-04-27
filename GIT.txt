@@ -29,6 +29,7 @@ git clone github-link									=> Clone a repository in the actual path
 git remote add origin https://github.com/link/Test.git  => Link the acutal folder/repo to the github-repo
 git push -u origin master   							=> Push with upstream definition (shorthand - to the master)
 git push --set -upstream origin answer                	=> Push with upstream definition (longhand - to the branch "answer")
+git reset HEAD~   			=> undo the last commit
 
 => Pull (update) files from GitHub<br>
 (-u saves the paths - so at the next push - it must be only typed push)

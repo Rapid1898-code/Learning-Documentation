@@ -1961,6 +1961,10 @@ writer = pd.ExcelWriter('basisReadData.xlsx', engine='xlsxwriter')
 quandlMain.to_excel(writer, sheet_name="quandlMain"),	
 quandlMain2.to_excel(writer, sheet_name="quandlMain_From2018_MRT")
 
+# Write also in this form
+with pd.ExcelWriter("example.xlsx") as writer:		
+    df.to_excel(writer, sheet_name="coinPrices")	
+
 # Close the Pandas Excel writer and output the Excel file.
 writer.save()
 ""
@@ -2000,6 +2004,7 @@ USA 319		0,915	America
 ""
 
 df = pd.DataFrame(np.random.randint(0,5,size=(5, 2)), columns=list('AB'))	=> Initialize a dataframe with random ints with 5 rows and 2 columns
+df = pd.DataFrame()                                         => Create an empty dataframe
 df.shape                                                    => Show the shape of the dataframe (rows, columns) => (7,3)
 df.info()                                                   => Info for columns (index,name,dtype) also count of NaN-values per column
 df.dtpyes()													=> Shows datatype of every column
