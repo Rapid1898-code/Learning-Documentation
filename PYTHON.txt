@@ -1969,8 +1969,6 @@ with pd.ExcelWriter("example.xlsx") as writer:
 writer.save()
 ""
 	
-	
-	
 => SQL
 conn = sqlite3.connect("data.db")							=> Establish connection to the sql-db
 df = pd.read_sql("SELECT * FROM empl;",conn)				=> Read data from sql-db into dataframe
@@ -2005,6 +2003,8 @@ USA 319		0,915	America
 
 df = pd.DataFrame(np.random.randint(0,5,size=(5, 2)), columns=list('AB'))	=> Initialize a dataframe with random ints with 5 rows and 2 columns
 df = pd.DataFrame()                                         => Create an empty dataframe
+df = pd.DateFrame(l)                                        => Creates a dataframe from a list of dicts => [{...},{...},{...}]
+df = pd.DataFrame.from_dict(d, orient="index")              => Create a dataframe for a dict
 df.shape                                                    => Show the shape of the dataframe (rows, columns) => (7,3)
 df.info()                                                   => Info for columns (index,name,dtype) also count of NaN-values per column
 df.dtpyes()													=> Shows datatype of every column
@@ -2092,6 +2092,7 @@ filt3 = (~df["col1"].isin(["val1","val2","val3"]))          => Defines new filte
 filt4 = (df["col1"] > 123)                                  => Defines new filter with a > operator
 df[filt]                                                    => Outputs the result for the above filter
 df[filt]["col2"]                                            => Outputs the result for the above filter with only col2
+df[filt1 & filt2]                                           => Use 2 filters
 df= df[(df['value'] >= df['value'].quantile (0.025))]		=> Filter the elements for the top 2.5% of the dataset (quantile)
 df= df[(df['value'] < df['value'].quantile (0.975))]		=> Filter the elements for the bottom 2.5% of the dataset (quantile)
 df.duplicated()												=> Check duplicates for all rows (only first entry is not flagged as True)
