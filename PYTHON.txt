@@ -4,7 +4,8 @@
 
 #> MODULE, GENERAL
 #> VIRTUALENV
-#> SHORTCUTS INTELLIJ IDEA IDE, GITHUB, CHROME, WINDOWS
+#> PIP
+#> SHORTCUTS INTELLIJ IDEA IDE, CHROME, WINDOWS
 #> OPERATORS, INPUTS, ARGUMENTS
 #> RANDOM, SECRETS
 #> STRING
@@ -81,7 +82,6 @@ import RapidTechTools as rtt        # Import Module RapidTechTools
 ""
 
 
-
 ###### VIRTUALENV
 pip install virtualenv                                     =>  Install virtualenv
 pip list                                                   =>  Global packages installed
@@ -110,7 +110,17 @@ create a venv with: virtualenv envName -p path\to\new_python.exe
 ""
 
 
-###### SHORTCUTS INTELLIJ IDEA IDE, GITHUB, CHROME, WINDOWS
+
+###### PIP
+pip install moduleXY				=> install module
+pip install moduleXY --upgrade		=> upgrade module
+pip list							=> show installed modules in actual environment
+pip freeze > requirements.txt		=> output modules in requirements.txt
+pip uninstall module XY
+
+
+
+###### SHORTCUTS INTELLIJ IDEA IDE, CHROME, WINDOWS
 => Shortcuts Intellij Idea vs VS Code
 => https://www.shortcutfoo.com/app/dojos/intellij-idea-win/cheatsheet
 ""
@@ -175,28 +185,6 @@ Ctrl VALUES     # Paste
 Enable open ssh agent: https://dev.to/aka_anoop/how-to-enable-openssh-agent-to-access-your-github-repositories-on-windows-powershell-1ab8
 Run commands: https://stackoverflow.com/questions/56490194/vs-code-bitbucket-ssh-permission-denied-publickey
 ""
-
-=> Git Ignore Files/Folders:
-""
-when doing a commit - right click + add to .gitignore		# file will be created when not exists
-individual file will be ignored
-to ignore a whole folder with all files in it - add /* to the folder => eg. /prg/dist/*
-or use eg. node_modules/ to exclude all folders in all subfolders
-""
-
-=> Add directory to GitHub
-""
-Select directory => <VCS> => <Import into Version Control> => <Create Git Repository>
-Commit the files / new directory
-<VCS> => <Import into Version Control> => <Share Project on GitHub>
-<VCS> => <Git> => <Push>
-""
-
-=> Change name of repository on github.com
-""
-select repository => settings => rename
-""
-
 
 
 ###### OPERATORS, INPUTS, ARGUMENTS
@@ -2005,6 +1993,7 @@ df = pd.DataFrame(np.random.randint(0,5,size=(5, 2)), columns=list('AB'))	=> Ini
 df = pd.DataFrame()                                         => Create an empty dataframe
 df = pd.DateFrame(l)                                        => Creates a dataframe from a list of dicts => [{...},{...},{...}]
 df = pd.DataFrame.from_dict(d, orient="index")              => Create a dataframe for a dict
+if df.empty:												=> Check if datafram is empty
 df.shape                                                    => Show the shape of the dataframe (rows, columns) => (7,3)
 df.info()                                                   => Info for columns (index,name,dtype) also count of NaN-values per column
 df.dtpyes()													=> Shows datatype of every column
@@ -2139,6 +2128,7 @@ df.iloc[::5, :]                                             => Select every 5th 
 df = df.reset_index()                                       => Reset index form a dataframe with a new column from 0 to x
 df = df.iloc[:,0]                                           => Get the first row of the dataframe
 for index, row in df.iterrows():                            => Iterate trough dataframe with index and content / row
+pd.set_option('display.max_rows', None)						=> Show all rows of the dataframe when printed
 
 
 ###### MODULE - MATPLOTLIB - working with charts
@@ -2974,11 +2964,12 @@ dataYF.isin                         => ISIN-Number
 pip install pyinstaller                     => Installation
 pyinstaller prg.py                          => Generate the bundle in a subdirectory called dist.
 pyinstaller --onefile prg.py                => Generate only one file
+--copy-metadata pandas_ta					=> add this when some modules are not found
+--hidden-import=pymssql						=> When some modules are making problems - sometimes this helps
+--exclude-module matplotlib                 => when there is a depreciating warning from matlib 
 --icon=app.ico                              => Generate file with icon
 --hidden-import=pkg_resources.py2_warn      => Generating under mac os sometimes only work with this params
---hidden-import=pkg_resources.py2_warn      => Generating under mac os sometimes only work with this params
---hidden-import=pymssql						=> When some modules are making problems - sometimes this helps
---exclude-module matplotlib                 => when there is a depreciating warning from matlib        
+--hidden-import=pkg_resources.py2_warn      => Generating under mac os sometimes only work with this params   
 prg.exe                                     => Open this file to start the python-program
 yfinance module                             => only working with import yfinance (not with import yfinance as yf)
 
