@@ -1819,6 +1819,8 @@ arr_b = arr_a.copy()					=> Separate individual copy of the numpy array (no upda
 c = np.array([[1,2,3,4],[5,6,7,8]])		=> Define 2d numpy array with 2,4 dimension
 c.reshape((4,2))						=> Reshape the numpy array to 4,2 dimension => [[1,2],[3,4],[5,6],[7,8]]
 c.reshape((2,2,2))						=> Reshape the numpy array to 3d with 2,2,2 dimension => [[[1,2],[3,4]],[5,6],[7,8]]]
+dt = str(dt64).split("T")[0]            => Convert numpy datetime64 to str (can afterwards be converted with strptime to datetime
+
 
 => Vector handling
 a = np.array(4)							=> Build array with this range => array([0,1,2,3])	
@@ -1976,6 +1978,10 @@ df = pd.read_html(html_string)								=> Read html into dataframe
 html_url"https://www.xyz.com"								=> Assign html-varialbe
 df = pd.read_html(html_url)									=> Read html-link to dataframe	
 
+=> DICT, LIST
+df = pd.DateFrame(l)                                        => Creates a dataframe from a list of dicts => [{...},{...},{...}]
+df = pd.DataFrame.from_dict(d, orient="index")              => Create a dataframe for a dict
+
 => EXAMPLE
 ""
 https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-course/pandas-condtitional-selection-and-modifying-dataframes
@@ -1991,22 +1997,23 @@ USA 319		0,915	America
 
 df = pd.DataFrame(np.random.randint(0,5,size=(5, 2)), columns=list('AB'))	=> Initialize a dataframe with random ints with 5 rows and 2 columns
 df = pd.DataFrame()                                         => Create an empty dataframe
+<<<<<<< HEAD
 df = pd.DateFrame(l)                                        => Creates a dataframe from a list of dicts => [{...},{...},{...}]
 df = pd.DataFrame.from_dict(d, orient="index")              => Create a dataframe for a dict
 if df.empty:												=> Check if datafram is empty
+=======
+>>>>>>> 8cfdc8f0ea90b259b3c64359b55bd09167cd7539
 df.shape                                                    => Show the shape of the dataframe (rows, columns) => (7,3)
 df.info()                                                   => Info for columns (index,name,dtype) also count of NaN-values per column
 df.dtpyes()													=> Shows datatype of every column
 df.describe()                                               => Several statistic for the dataframe (median,max,min,std,...)
 df.head()                                                   => Output of the first 5 rows per default
-ead(22)                                                     => Output of the first 22 rows
+df.head(22)                                                => Output of the first 22 rows
 df.tail()                                                   => Output of the last 5 rows per default
 df.tail(22)                                                 => Output of the last 22 rows
 df.columns                                                  => Output of all column names
-df.columns["POPL","hdi","CONT"]								=> Rename the columns
 df.index													=> Outputs the index
 df.index = df["name"]										=> Set index to column "name"
-df.index = ["CAN","FRA","GER","ITA","JPN","UK","USA"]		=> Assigning new index - replaces the default numeric index
 df.size														=> Outputs the size of the dataframe	
 df.reset_index(inplace=True)                                => Resets the index - with inplace it is permanently saved
 df.set_index("Popl", inplace=True)                          => Define "Popl" as new index - with inplace it is permanently saved
@@ -2128,7 +2135,11 @@ df.iloc[::5, :]                                             => Select every 5th 
 df = df.reset_index()                                       => Reset index form a dataframe with a new column from 0 to x
 df = df.iloc[:,0]                                           => Get the first row of the dataframe
 for index, row in df.iterrows():                            => Iterate trough dataframe with index and content / row
+<<<<<<< HEAD
 pd.set_option('display.max_rows', None)						=> Show all rows of the dataframe when printed
+=======
+df["col1"] = df["col1"].dt.date                             => Change datetime64 column to datetime
+>>>>>>> 8cfdc8f0ea90b259b3c64359b55bd09167cd7539
 
 
 ###### MODULE - MATPLOTLIB - working with charts
