@@ -150,16 +150,22 @@ Ctrl A === Ctrl A        				# Select whole file
 Ctrl (Shift) Z ===	Ctrl (Shift) Z		# Undo (backwards) / Redo (forwards)
 Ctrl Shift Left === Ctrl Shift Left		# Select word to the beginning
 Ctrl Shift Right === Ctrl Shift Right	# Select word to the end 
-Ctrl Left === Ctrl Left	    			# Go one word left
-Ctrl Right === Ctrl Right				# Go one word right
+Ctrl Left / Right === Ctrl Left / Right	# Go one word left
 Ctrl Y === Ctrl Shift K                 # Delete current line
 Ctrl Del === Ctrl Del                   # Delete to end of word
 Ctrl Backspace === Ctrl Background      # Delete to beginning of word
 lorem + TAB === ???                     # Create lorem text for html-code
 p>lorem + TAB === ???                   # Create lorem text inside <p>-tags
 ??? === Ctrl B							# Hide/Show sidebar
-??? === Ctrl J1                         # Hide/Show terminal 
-??? === Ctrl P                          # Show command line    
+??? === Ctrl J                          # Hide/Show terminal 
+??? === Ctrl P                          # Show command line (eg. open a file where the name is known)
+??? === Ctrl TAB                        # Toggle through the open files in the editor
+??? === Ctrl WARNING                    # Close File
+??? === Ctrl Alt Up/Down                # Select more cursors in rows for multiple change in rows
+??? === Ctrl Shift L                    # Select all occurences of this word in the document and change all with one change
+??? === Ctrl D                          # Select whole word
+??? === Ctrl Click                      # Jump to the function definition
+??? === Ctrl W                          # Close Tab
 ""
 
 => Shortcuts Chrome
@@ -1127,6 +1133,8 @@ ws.clear()                                              => Clears the content an
 ws.clear_contents()                                     => Clears the content but leaves formatting
 l = [x.name for x in wb.sheets]							=> Read worksheetnames to list
 wb.sheets.add("NewWS")									=> Add worksheet in workbook
+[x for x in ws.range("A3:A2000").value if x != None]    => Load elements in list from range which are not None
+
 
 => Update row / change whole row
 ""
@@ -1906,8 +1914,9 @@ s.sort_values() 		                        	        => Sorting by value ascending
 s.sort_values(ascending=False)      			            => Sorting by value descending
 for index, value in s.items():                              => Iterate through pandas series
 erg = s.get("Entry","N/A)                                   => Get element from series - if not found is the result "N/A"
-.to_pydatetime()											=> Convert pandas timestamp to datetime
 .index.tz_localize(None)									=> Delete timezone from timestamp
+dt = dt.to_pydatetime()									    => Convert pandas timestamp to datetime
+dt = pd.Timestamp(dt)                                       => Convert datetime to pandas timestamp
 
 => DATAFRAMES 
 => are immutable, column is a series, dataframe = combination of multiple series
@@ -2008,14 +2017,15 @@ df.info()                                                   => Info for columns 
 df.dtypes()													=> Shows datatype of every column
 df.describe()                                               => Several statistic for the dataframe (median,max,min,std,...)
 df.head()                                                   => Output of the first 5 rows per default
-df.head(22)                                                => Output of the first 22 rows
+df.head(22)                                                 => Output of the first 22 rows
 df.tail()                                                   => Output of the last 5 rows per default
 df.tail(22)                                                 => Output of the last 22 rows
 df.columns                                                  => Output of all column names
 df.index													=> Outputs the index
 df.index = df["name"]										=> Set index to column "name"
 df.size														=> Outputs the size of the dataframe	
-df.reset_index(inplace=True)                                => Resets the index - with inplace it is permanently saved
+df.reset_index(drop=False)                                  => Resets the index to numeric (previous index exists as column)
+df.reset_index(drop=True)                                   => Resets the index to numeric (previous index is deleted)
 df.set_index("Popl", inplace=True)                          => Define "Popl" as new index - with inplace it is permanently saved
 df.loc["CAN"]												=> Selecting Rows by index - showing the row with the index = "CAN"
 df.iloc[-1]													=> Selecting Rows by position - showing the last row
@@ -2073,6 +2083,7 @@ df.dropna(axis=1)											=> Deleting all columns with at least one NaN value 
 df.dropna(how="all")										=> Deleting all rows where all columns are NaN
 df.dropna(thresh=3)											=> Deleting all rows where at least 3 columns are NOT NaN
 df.fillna("missing")                                        => Replace NaN values with text     
+df.fillna(0)                                                => Replace NaN values with 0   
 df.fillna(method="ffill",axis=0)							=> With forward-fill NaN-values are replaced with the value before (axis=0 means vertical / per column)
 df.fillna(method="ffill",axis=1)							=> With forward-fill NaN-values are replaced with the value before (axis=0 means horizontal / per row)
 df["Sex"].unique()											=> Shows the existing values for the column => eg: "M","F","D","?" (M/F is correct and D/? is wrong)
@@ -2134,11 +2145,11 @@ df.iloc[::5, :]                                             => Select every 5th 
 df = df.reset_index()                                       => Reset index form a dataframe with a new column from 0 to x
 df = df.iloc[:,0]                                           => Get the first row of the dataframe
 for index, row in df.iterrows():                            => Iterate trough dataframe with index and content / row
-<<<<<<< HEAD
 pd.set_option('display.max_rows', None)						=> Show all rows of the dataframe when printed
-=======
 df["col1"] = df["col1"].dt.date                             => Change datetime64 column to datetime
->>>>>>> 8cfdc8f0ea90b259b3c64359b55bd09167cd7539
+dt = dt.to_pydatetime()									    => Convert pandas timestamp to datetime
+dt = pd.Timestamp(dt)                                       => Convert datetime to pandas timestamp
+df["max"]=df[["high-low","high-pc","low-pc"]].max(axis=1)   => Get the maximum from the 3 different columns and put it in the column "max"
 
 
 ###### MODULE - MATPLOTLIB - working with charts
