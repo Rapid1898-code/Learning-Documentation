@@ -2151,6 +2151,13 @@ dt = dt.to_pydatetime()									    => Convert pandas timestamp to datetime
 dt = pd.Timestamp(dt)                                       => Convert datetime to pandas timestamp
 df["max"]=df[["high-low","high-pc","low-pc"]].max(axis=1)   => Get the maximum from the 3 different columns and put it in the column "max"
 
+=> When there is some warning like "A value is trying to be set on a copy of a slice from a DataFrame"
+""
+change the access from eg.: df["upperband"][current] = df["upperband"][previous]
+to: df.loc[current, "upperband"] = df.loc[previous, "upperband"]
+(then there will be no more warning)
+""
+
 
 ###### MODULE - MATPLOTLIB - working with charts
 import matplotlib.pyplot as plt                                     => Import module as plotter plt
