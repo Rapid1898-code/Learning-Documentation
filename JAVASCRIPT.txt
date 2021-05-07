@@ -117,6 +117,7 @@ arr.splice(2,1)                                 => Delete 1 element beginning fr
 arr.splice(0,2,10,11)                           => Delete 2 elements beginning from the index 0 - and insert the elements 10 and 11
 arr.splice(-1,0,3,4)                            => From index -1 delete 0 elements and add 3 and 4
 ergArr = arr.splice(0,2)                        => Delete 2 elements beginning from the index 0 - and assign them to ergArr
+arr.every(x => x > 0)                           => Return true if all elements are bigger than 0
 ergArr = arr1.concat(arr2)                      => Concatenate 2 arrays to one
 arr.indexOf("xyz")                              => Returns first index position of element "xyz" (if not exists result is -1)
 arr.lastIndexOf("xyz")                          => Return the last index position of the element "xyz"
