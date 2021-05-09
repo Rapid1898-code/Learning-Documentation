@@ -2092,7 +2092,7 @@ df["Sex"].replace("D","F")									=> Change all "D" values in the column to "F"
 df["Sex"].replace({"D":"F","N":"M"})						=> Change all "D" to "F" and "N" to "M" in the column
 df[df["Age"] > 100]											=> Find all the invalid values in the age-column => eg. greater than 100 is invalid entry
 df.loc[df["Age"]>100,"Age"]=df.loc[df["Age"]>100,"Age"]/100	=> Fixing the invalid values for age by dividing it to 100 
-filt = (df["col1" == "col1_val1"])                          => Defines new filter
+filt = (df["col1"] == "col1_val1")                          => Defines new filter
 filt2 = (df["col1"].isin(["val1","val2","val3"]))           => Defines new filter with several values
 filt3 = (~df["col1"].isin(["val1","val2","val3"]))          => Defines new filter NOT with several values
 filt4 = (df["col1"] > 123)                                  => Defines new filter with a > operator
