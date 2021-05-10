@@ -2187,24 +2187,25 @@ plt.savefig("example.png",bbox_inches="tight")                      => Save diag
 ###### MODULE - SELENIUM - browser automatization
 => chromedriver.exe in Ordner von py-file speichern
 https://selenium-python.readthedocs.io/locating-elements.html	  => Different methods for locating elements	
-from selenium import webdriver                                    => Import WebDriver für Zugriff auf URL
-import time                                                       => Import Time-Library für Verzögerungen wenn notwendig
-from selenium.webdriver.common.keys import Keys                   => Import Keys to send Key-strokes
-driver = webdriver.Chrome(os.getcwd() + '/chromedriver')          => Driver für Chrome definieren - mit akt. Ordner os.getcwd
-driver.get("url")                                                 => Zugriff auf die URL
-driver.find_element_by_xpath('//*[@id="button"]/input').click()   => Click auf ein ELement (Copy ) - mit Untersuchen - Copy XPath
-time.sleep(1)                                                     => Manchmal notwendig um Verarbeitung abzuwarten
-driver.find_element_by_xpath('//*[@id="name"]').send_keys("x"])   => Feld Name wird mit Inhalt x befüllt
-driver.find_element_by_name("q").send_keys("txt")         		  => Text wird in Feld eingetragen
-driver.find_element_by_name("q").send_keys("txt" + u'\ue007')     => Text wird in Feld eingetragen und Enter gedrückt
-driver.find_element_by_id("xy-id")                        		  => Feld word nach ID gesucht
-driver.find_elements_by_class_name("cl")[0]               		  => Felder werdem nach Class gesucht (als Liste)
-driver.find_elements_by_tag_name("tag")[0]                		  => Felder werdem nach Tag gesucht (als Liste)
+from selenium import webdriver                                    => Import WebDriver for url access
+import time                                                       => Import Time-Library when there are delays needed
+from selenium.webdriver.common.keys import Keys                   => Import Keys to send key-strokes
+driver = webdriver.Chrome(os.getcwd() + '/chromedriver')          => Define chrome driver - with actual folder os.getcwd
+driver.get("url")                                                 => Access to the url
+driver.find_element_by_xpath('//*[@id="button"]/input').click()   => Click on element by xpath (investigate - coyp xpath)
+time.sleep(1)                                                     => Somtimes necessary to delay some work in progress
+driver.find_element_by_xpath('//*[@id="name"]').send_keys("x"])   => Fill field "name" with content "x"
+driver.find_element_by_name("q").send_keys("txt")         		  => Fill text in field
+driver.find_element_by_name("q").send_keys("txt" + u'\ue007')     => Fill text in field and press enter
+driver.find_element_by_id("xy-id")                        		  => Search field word for id
+driver.find_elements_by_class_name("cl")[0]               		  => Search field for class (and put in list)
+driver.find_elements_by_tag_name("tag")[0]                		  => Search field for tag (and put in list)
+driver.find_element_by_xpath('//div[@aria-label="Post"]').click() => Find Element according to a specific element eg. "aria-label" with text "Post" in a "div"
 driver.send_keys(Keys.Backspace,Keys.ARROW_LEFT,Keys.ENTER)		  => Send single keyboard-elements <> chars (needs import keys)
 driver.send_keys (u'\ue007')									  => Send an Return-keystroke (eg. for enter after data entries in fields)
-field.submit()                                                    => Enter wird gedrückt bzw. die Seite abgeschickt
-driver.quit()                                                     => Driver schließen (sonst schließt sich das Fenster nicht)
-driver.title                                                      => Titel der HTML-Seite
+field.submit()                                                    => Press enter and submit site
+driver.quit()                                                     => Close driver (otherwise the window will not close)
+driver.title                                                      => Title of the html-site
 driver.back()                                                     => Back-Function in browser-history
 driver.forward()                                                  => Forward-Function in browser-history
 cookie = {"name": "token", "value": "23874kljdsjhfaökldjs"}       => Define an individual cookie
@@ -2212,7 +2213,7 @@ driver.add_cookie(cookie)                                         => Use Cookie
 driver.get_cookie("token")                                        => Outputs a specific cookie
 driver.get_cookies())                                             => Outputs all cookies
 driver.current_url												  => Read current, actual url
-driver.switch_to.frame ("frame_id")								  => Swith to a frame-id (eg. a PopUp)
+driver.switch_to.frame ("frame_id")								  => Switch to a frame-id (eg. a PopUp)
 act_window = driver.current_window_handle						  => Read active window name
 driver.switch_to.window(act_window)								  => Switch (back) to active window (eg. after working on the popup-frame or popup-window)
 
