@@ -1332,6 +1332,9 @@ Controller is the Server (processes requests, server-side logic, middle man betw
 Model is the Database (Adding/Retrieving from or to the database, speaks only with the controller)
 ""
 
+=> MONGOOSE
+Define schemas for the db in the mongoDB
+Define how the data-collection (table) in mongoDB looks like
 
 
 ###### EXAMPLE FULL STACK
