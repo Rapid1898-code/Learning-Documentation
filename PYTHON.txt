@@ -6,7 +6,7 @@
 #> VIRTUALENV
 #> PIP
 #> SHORTCUTS INTELLIJ IDEA IDE, CHROME, WINDOWS
-#> OPERATORS, INPUTS, ARGUMENTS
+#> OPERATORS, INPUTS, OUTPUTS, ARGUMENTS
 #> RANDOM, SECRETS
 #> STRING
 #> REGEX
@@ -63,6 +63,7 @@
 #> MODULE - YFINANCE - date from Yahoo Finance
 #> PYINSTALLER - generate python programs to executables
 #> PYTHONANYWHERE - run python scripts in the cloud
+#> HEROKU - run python scripts in the cloud
 
 
 ###### MODULE, GENERAL
@@ -193,7 +194,7 @@ Run commands: https://stackoverflow.com/questions/56490194/vs-code-bitbucket-ssh
 ""
 
 
-###### OPERATORS, INPUTS, ARGUMENTS
+###### OPERATORS, INPUTS, OUTPUTS, ARGUMENTS, PPRINT
 import math                     => Import module for math calculations
 import sys						=> Import module for reading arguments from the command line
 import statistics as stat		=> Using some numpy functions
@@ -226,6 +227,13 @@ max(3,5,7)						=> Find the maximum value => 7
 stat.mean([3,5,7])				=> Find the mean value => 5 (with statistic-module - input must be given as list)
 exit()							=> Stop program at this point (helpful in test-situations)
 (newVal-oldVal)/oldVal * 100	=> Calculate the change from an old value to a new value in percent
+import pprint as pp             => Import pretty print functionality
+pp.pprint(dict)                 => pretty print dict line by line
+pp.pprint(dict, width=30)       => pretty print with max line-length 30
+pp.pprint(nestedList,depth=1)   => pretty print only level 1 of nested list eg. ['level1', [...]]
+pp.pprint(nestedList,depth=2)   => pretty print only level 2 of nested list eg. ['level1', ['level2', [...]]]
+
+
 
 
 ###### RANDOM, SECRETS
@@ -3030,6 +3038,21 @@ config_path = os.path.join(application_path, config_name)     # Final Config Pat
 
 ###### PYTHONANYWHERE
 pip3.7 install --user --upgrade selenium=> install python modules in specific version / environment
+
+
+
+###### HEROKU - run python scripts in the cloud
+Instruction: https://dev.to/josylad/how-to-deploy-a-python-script-or-bot-to-heroku-in-5-minutes-9dp
+=> using TA-Lib on heroku
+""
+remove TA-Lib from requirtements.text
+Described here: https://stackoverflow.com/questions/43453953/how-to-install-python-library-in-heroku
+GitDoku: https://github.com/numrut/heroku-buildpack-python-talib
+use this commands instead:
+heroku buildpacks:add --index 1 heroku/python
+heroku buildpacks:add --index 2 numrut/ta-lib
+schedule the running time with addon Heroku Scheduler
+""
 
 
 
