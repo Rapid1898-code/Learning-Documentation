@@ -3043,6 +3043,14 @@ pip3.7 install --user --upgrade selenium=> install python modules in specific ve
 
 ###### HEROKU - run python scripts in the cloud
 Instruction: https://dev.to/josylad/how-to-deploy-a-python-script-or-bot-to-heroku-in-5-minutes-9dp
+heroku login                            => login to heroku (login page opens in the browser)
+heroku git:remote -a HEROKU_APP_NAME    => connect to the heroku app
+git add .                               => add files (like in git)
+git commit -am "msg"                    => commit files (like in git
+git push heroku main                    => push the files to heroku for build#
+heroku run                              => run the app which is hosted on heroku
+heroku ps:scale worker=0                => stopps worker (eg. when the app is only sceduled by heroku scheduler addon)
+
 => using TA-Lib on heroku
 ""
 remove TA-Lib from requirtements.text
