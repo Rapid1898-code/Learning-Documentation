@@ -3048,7 +3048,7 @@ heroku git:remote -a HEROKU_APP_NAME    => connect to the heroku app
 git add .                               => add files (like in git)
 git commit -am "msg"                    => commit files (like in git
 git push heroku main                    => push the files to heroku for build#
-heroku run                              => run the app which is hosted on heroku
+heroku run python script.py             => run the app / script which is hosted on heroku
 heroku ps:scale worker=0                => stopps worker (eg. when the app is only sceduled by heroku scheduler addon)
 
 => using TA-Lib on heroku
