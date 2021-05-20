@@ -968,6 +968,7 @@ docu of the modules     => https://nodejs.org/dist/latest-v15.x/docs/api/
 node --version          => check if and which node.js version is installed
 npm --version           => node package manager - show the installed version
 npm init                => create a package.json files with all necessary project informations
+npm init -yarn          => initialize node-project - with the parameter "-y" without prompting for additonal informations
 npm install uuid        => install module "uuid" - node_modules folder is created - dependencie is added to package.json
 npm install -D nodemon  => install module as development dependencie
 npm install             => install all modules according to the dependencies in the package.json
