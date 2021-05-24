@@ -21,6 +21,7 @@
 #> ASYNCHRONOUS HANDLING
 #> REQUESTS
 #> NODE.JS
+#> REACT
 #> TOOLS OVERVIEW
 #> EXAMPLE FULL STACK
 #> AZURE AUTHENTICATION
@@ -80,6 +81,7 @@ s.search("xyz")                             => Search if "xyz" is int the string
 s.includes("ee")                            => Check if string/chars are in 
 sNew = s.replaceAll("abc","xyy)             => Replace "abc" with "xyz" for any occurrences in the string (only working for new browsers!)
 sNew = s.replace(/abc/g,"xyz")              => 2nd method for replacing everything (works for more browsers!)
+sNew = s1.concat(s2)                        => Concatenate 2 strings
 s.trim()                                    => Delete all whitespaces at the beginning and the end
 s.repeat(3)                                 => Repeat string 3 times
 s.split(" ")                                => Split the words in a array
@@ -1175,6 +1177,15 @@ async function getRapName(){
 	</body>
 </html>
 ""
+
+
+
+###### REACT
+=> Javascript library for building user interfaces especially for single-page applications (like facebook, twitter etc.)
+=> React allows developers to create large web applications that can change data, without reloading the page.
+components      => webpage is divided in many components (like on facebook)
+props           => every component has some props (size, color, shape, etc.)
+states          => and components have states (like the counter for likes / dislikes / unread messages etc.)
 
 
 
