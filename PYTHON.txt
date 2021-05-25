@@ -115,10 +115,10 @@ create a venv with: virtualenv envName -p path\to\new_python.exe
 ###### PIP
 pip install moduleXY				=> install module
 pip install moduleXY --upgrade		=> upgrade module
+pip uninstall module XY             => uninstall module XY
 pip list							=> show installed modules in actual environment
 pip freeze > requirements.txt		=> output modules in requirements.txt
-pip uninstall module XY
-
+pip install -r requirements.txt     => install modules from requirements.txt
 
 
 ###### SHORTCUTS INTELLIJ IDEA IDE, CHROME, WINDOWS
