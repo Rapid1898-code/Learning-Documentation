@@ -46,7 +46,7 @@ num.toString()                              => Convert numeric value to string
 num + ""                                    => 2nd method to convert numeric value to string
 String(n)                                   => 3rd method to convert number / int to a String
 Number(s)                                   => Converts String to Number / Int
-typeof x                                    => Shows the type of the variable as string (eg. "number", "string", "boolean")
+typeof (x)                                  => Shows the type of the variable as string (eg. "number", "string", "boolean")
 7 % 2                                       => Modulo / Rest of the division (=> 1)
 x == y                                      => Check 2 values / variables (result in true / false)
 x === y                                     => Equal value and equal type
