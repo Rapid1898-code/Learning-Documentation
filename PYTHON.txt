@@ -2161,6 +2161,7 @@ df["col1"] = df["col1"].dt.date                             => Change datetime64
 dt = dt.to_pydatetime()									    => Convert pandas timestamp to datetime
 dt = pd.Timestamp(dt)                                       => Convert datetime to pandas timestamp
 df["max"]=df[["high-low","high-pc","low-pc"]].max(axis=1)   => Get the maximum from the 3 different columns and put it in the column "max"
+temp = df['name'].apply(lambda x: x.strip())                => Changing a column with this lambda function (over 400x faster then using iterrows)
 
 => When there is some warning like "A value is trying to be set on a copy of a slice from a DataFrame"
 ""

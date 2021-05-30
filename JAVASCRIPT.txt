@@ -46,7 +46,7 @@ num.toString()                              => Convert numeric value to string
 num + ""                                    => 2nd method to convert numeric value to string
 String(n)                                   => 3rd method to convert number / int to a String
 Number(s)                                   => Converts String to Number / Int
-typeof x                                    => Shows the type of the variable as string (eg. "number", "string", "boolean")
+typeof (x)                                  => Shows the type of the variable as string (eg. "number", "string", "boolean")
 7 % 2                                       => Modulo / Rest of the division (=> 1)
 x == y                                      => Check 2 values / variables (result in true / false)
 x === y                                     => Equal value and equal type
@@ -94,8 +94,9 @@ s.substr(s.length-3)                        => 2nd variant: Get the last 3 chars
 s.charCodeAt(0)                             => Return Ascii-Code of the first character of the string
 s.endsWith("?")                             => Returns True if the string end with "?"
 char = String.fromCharCode(65)              => Returns char for specific ascii-code
-char.match(/[A-Z]/i)                        => Check if char is in A-Z
-
+char.match(/[A-Z]i)                         => Check if char is in A-Z
+[...s]                                      => Spread-Operator for string (=> build array with each character)
+s = JSON.stringify(obj)                     => Convert object-element to string
 
 
 ###### ARRAY
@@ -136,8 +137,8 @@ arr.join(" ")                                   => Concatenate the array to a st
 arr.sort((a,b) => a > b ? 1 : -1)               => Order array ascending
 arr.sort((a,b) => a > b ? -1 : 1)               => Order array descending
 arr.sort(function(a,b) {return a > b ? 1 : -1}  => Ordering long method with function
-Math.max(...arr)                                => Find max value in an array
-Math.min(...arr)                                => Find min value in an array
+Math.max(...arr)                                => Find max value in an array with spread operator
+Math.min(...arr)                                => Find min value in an array with spread operator
 
 => Iterate trough array by index and element (with shortform)<br>
 => Outputs index and Outputs element of array
@@ -271,6 +272,8 @@ default:                        // When no case is mathing - then do this
 for (let i=1; i<=5; i++) {}                     => Iteration from 1 to 5 with for-loop
 for (let i=3; i>=0; i--) {}                     => Iteration backwards from 3 to 0 with for-loop
 for (let i=0; i<arr.length; i++) {}             => Iterate through an array
+for (let char of text) {}                       => Iterate through a string
+for (let key in obj) {}                         => Iterate through the keys of an object
 
 => For loop with pause at any iteration
 ""
@@ -376,10 +379,11 @@ obj.newMethod(25)                                   => Call the new method
 age in obj                                          => Check if key is in the object
 delete obj.age                                      => Delete a property of an object (dot notation)
 delete obj["age nr"]                                => Delete a property of an object (bracket notation)
-Object.keys(obj)                                    => Store all the keys of the object in an array 
 if ("property" in obj) {...}                        => Check if a property / method is in an object
-Object.keys(obj)                                    => Read the keys of an object into an array
-Object.entries(obj)                                 => Read alle key / value pairs of an object into an (nested) array    
+arr = Object.keys(obj)                              => Read the keys of an object into an array
+arr = Object.values(obj)                            => Read the values of an object into an array
+arr = Object.entries(obj)                           => Read alle key / value pairs of an object into an (nested) array    
+obj.hasOwnProperty("xyz")                           => Check if xyz i part of the object
 
 Object.keys(obj).length === 0 && obj.constructor === Object     => Check if Object is empty
 
@@ -1182,7 +1186,7 @@ async function getRapName(){
 
 ###### REACT
 => Javascript library for building user interfaces especially for single-page applications (like facebook, twitter etc.)
-=> React allows developers to create large web applications that can change data, without reloading the page.
+=> React allows developers to create large web applications that can change data, without reloading the page.kd
 components      => webpage is divided in many components (like on facebook)
 props           => every component has some props (size, color, shape, etc.)
 states          => and components have states (like the counter for likes / dislikes / unread messages etc.)
