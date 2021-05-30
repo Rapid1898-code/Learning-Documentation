@@ -160,13 +160,16 @@ p>lorem + TAB === ???                   # Create lorem text inside <p>-tags
 ??? === Ctrl B							# Hide/Show sidebar
 ??? === Ctrl J                          # Hide/Show terminal 
 ??? === Ctrl P                          # Show command line (eg. open a file where the name is known)
+??? === Ctrl Shift P					# Open the the command panel
 ??? === Ctrl TAB                        # Toggle through the open files in the editor
 ??? === Ctrl WARNING                    # Close File
-??? === Ctrl Alt Up/Down                # Select more cursors in rows for multiple change in rows
+??? === Ctrl Alt Up/Down (click Left)   # MultiCursor - Select more cursors in rows for multiple change in rows
+??? === Ctrl D							# MultiCursor - Select Cursor at multiple positions for the same name
 ??? === Ctrl Shift L                    # Select all occurences of this word in the document and change all with one change
 ??? === Ctrl D                          # Select whole word
 ??? === Ctrl Click                      # Jump to the function definition
 ??? === Ctrl W                          # Close Tab
+??? === Ctrl Space                      # Show suggestions for the actual code function / method
 ""
 
 => Shortcuts Chrome
@@ -1798,7 +1801,7 @@ for i in count(10)							=> infinite loop starting at 10 (has to be ended with b
 for i in cycle([1,2,3])						=> infinite cycle through the list (has to be ended with break sometimes)
 for i in repeat(1)							=> infinite loop with 1
 for i in repeat(1,4)						=> loop with 1 for 4 times
-
+df = df['col'].apply(lambda x: x.strip())	=> fastest way to change an column in a dataframe (over 400x faster then iterrows)
 
 
 ###### MODULE - NUMPY - basis for different other modules
