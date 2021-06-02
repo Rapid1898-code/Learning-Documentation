@@ -1280,11 +1280,12 @@ Nunjucks
 ""
 // Initial setup
 git init (when .git is not in the folder of the api)
+echo '{}' > composer.json               // for PHP: additional when deploying an PHP-api
+echo "web: node server.js" > Procfile   // for Express: create profile (tells heroku what the server-file is)
 git add .               
 git commit -m "upd"
 heroku login -i                         // login to heroku
 heroku create simple-rap-api            // create entry on heroku
-echo "web: node server.js" > Procfile   // create profile (tells heroku what the server-file is)
 heroku git:remote -a simple-rap-api     // name of the app on heroku 
 git push heroku master                  // push everything to heroku
 
@@ -1293,7 +1294,7 @@ git init (when .git is not in the folder of the api)
 git add .               
 git commit -m "upd"
 heroku login -i
-heroku git:remote -a financerapidapi (name of the app on heroku)
+heroku git:remote -a financerapidapi 
 git push heroku master
 ""
 

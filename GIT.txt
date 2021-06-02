@@ -20,7 +20,6 @@ git add *.html 								=> Add all html-files to the repo / staging area
 git add . 									=> Add everything to the repository / staging area from the directory
 git add *   								=> 2nd way to add everything to the repository / staging area from the directory
 git add README.md                           => Add readme-file
-git reset 				=> undo add command before (all files get set back to the initial state)
 git rm --cached index.html                  => remove specific file from the repository / staging area (before commiting!)
 git status 									=> Actual status in the git-directoy (eg. added files, changed files, not added,...)
 git commit -m "comment"						=> Commit files which are added / changed in the repo (with comment) - taking a "snapshot"
@@ -29,6 +28,7 @@ git clone github-link									=> Clone a repository in the actual path
 git remote add origin https://github.com/link/Test.git  => Link the acutal folder/repo to the github-repo
 git push -u origin master   							=> Push with upstream definition (shorthand - to the master)
 git push --set -upstream origin answer                	=> Push with upstream definition (longhand - to the branch "answer")
+git reset 				                    => undo add command before (all files get set back to the initial state)
 git reset HEAD~   			                => undo the last commit
 
 => Pull (update) files from GitHub<br>

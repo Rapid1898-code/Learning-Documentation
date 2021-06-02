@@ -5,6 +5,7 @@
 #> MODULE, GENERAL
 #> VIRTUALENV
 #> PIP
+#> SHORTCUTS VSCODE
 #> SHORTCUTS INTELLIJ IDEA IDE, CHROME, WINDOWS
 #> OPERATORS, INPUTS, OUTPUTS, ARGUMENTS
 #> RANDOM, SECRETS
@@ -121,55 +122,87 @@ pip freeze > requirements.txt		=> output modules in requirements.txt
 pip install -r requirements.txt     => install modules from requirements.txt
 
 
+
+###### SHORTCUTS VSCODE
+Ctrl K Ctrl C				    => Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
+Ctrl K Ctrl U				    => Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
+Ctrl F   		   			    => Find in File
+Ctrl H        	   			    => Replace in File
+Ctrl Shift H			        => Replace in Path (in all Files)
+F8           					=> Jump to the next error
+F3       						=> Find next
+Ctrl G     				    	=> Goto line
+Shift Alt Up/Down			    => Copy / Duplicate lines	
+Alt Up/Down		                => Move line
+Ctrl E1      				    => Recent opened files
+Ctrl K Left/Right               => Switch windows in IDE
+Alt Enter				        => Suggestions for fix error, function informations
+Alt 1					        => Open the project windows (on the left side)
+Alt F7					        => Show usage of the variable, function, class
+Esc						        => Focus back on the editor window
+Ctrl K Ctrl 0   		        => Collapse everything
+Ctrl K Ctrl J                   => Exapnds everything
+Ctrl K Ctrl L				    => Collapse block ("-" on numblock)
+Ctrl K Ctrl L				    => Expand block ("+" on numblock)
+Ctrl A        				    => Select whole file
+Ctrl (Shift) Z		            => Undo (backwards) / Redo (forwards)
+Ctrl Shift Left		            => Select word to the beginning
+Ctrl Shift Right	            => Select word to the end 
+Ctrl Left / Right	            => Go one word left
+Ctrl Shift K                    => Delete current line
+Ctrl Del                        => Delete to end of word
+Ctrl Background                 => Delete to beginning of word
+Ctrl B							=> Hide/Show sidebar
+Ctrl J                          => Hide/Show terminal 
+Ctrl P                          => Show command line (eg. open a file where the name is known)
+Ctrl Shift P					=> Open the the command panel
+Ctrl TAB                        => Toggle through the open files in the editor
+Ctrl WARNING                    => Close File
+Ctrl Alt Up/Down (click Left)   => MultiCursor - Select more cursors in rows for multiple change in rows
+Ctrl D							=> MultiCursor - Select Cursor at multiple positions for the same name
+Ctrl Shift L                    => Select all occurences of this word in the document and change all with one change
+Ctrl D                          => Select whole word
+Ctrl Click                      => Jump to the function definition
+Ctrl W                          => Close Tab
+Ctrl Space                      => Show suggestions for the actual code function / method
+
+
+
 ###### SHORTCUTS INTELLIJ IDEA IDE, CHROME, WINDOWS
-=> Shortcuts Intellij Idea vs VS Code
 => https://www.shortcutfoo.com/app/dojos/intellij-idea-win/cheatsheet
 ""
-Ctrl / === Ctrl K Ctrl C				# Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
-Ctrl / === Ctrl K Ctrl U				# Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
-Ctrl Alt F7 === ???	                	# Find usages
-Ctrl F === Ctrl F   		   			# Find in File
-Ctrl R === Ctrl H        	   			# Replace in File
-Ctrl Shift R === Ctrl Shift H			# Replace in Path (in all Files)
-F2 === F8           					# Jump to the next error
-F3 === F3       						# Find next
-Ctrl G === Ctrl G     					# Goto line
-Ctrl D === Shift Alt Up/Down			# Copy / Duplicate lines	
-Alt Shift Down/Up === Alt Up/Down		# Move line
-Ctrl E === Ctrl E1      				# Recent opened files
-Ctrl TAB === Ctrl K Left/Right          # Switch windows in IDE
-Ctrl (Shift) W === ???                  # Select / deselect parts of the code step by step
-Alt Enter				                # Suggestions for fix error, function informations
-Alt 1					                # Open the project windows (on the left side)
-Alt F7					                # Show usage of the variable, function, class
-Esc						                # Focus back on the editor window
-Ctrl Shift - === Ctrl K Ctrl 0   		# Collapse everything
-Ctrl Shift + === Ctrl K Ctrl J          # Exapnds everything
-Ctrl - === Ctrl K Ctrl L				# Collapse block ("-" on numblock)
-Ctrl + === Ctrl K Ctrl L				# Expand block ("+" on numblock)
-Ctrl A === Ctrl A        				# Select whole file
-Ctrl (Shift) Z ===	Ctrl (Shift) Z		# Undo (backwards) / Redo (forwards)
-Ctrl Shift Left === Ctrl Shift Left		# Select word to the beginning
-Ctrl Shift Right === Ctrl Shift Right	# Select word to the end 
-Ctrl Left / Right === Ctrl Left / Right	# Go one word left
-Ctrl Y === Ctrl Shift K                 # Delete current line
-Ctrl Del === Ctrl Del                   # Delete to end of word
-Ctrl Backspace === Ctrl Background      # Delete to beginning of word
-lorem + TAB === ???                     # Create lorem text for html-code
-p>lorem + TAB === ???                   # Create lorem text inside <p>-tags
-??? === Ctrl B							# Hide/Show sidebar
-??? === Ctrl J                          # Hide/Show terminal 
-??? === Ctrl P                          # Show command line (eg. open a file where the name is known)
-??? === Ctrl Shift P					# Open the the command panel
-??? === Ctrl TAB                        # Toggle through the open files in the editor
-??? === Ctrl WARNING                    # Close File
-??? === Ctrl Alt Up/Down (click Left)   # MultiCursor - Select more cursors in rows for multiple change in rows
-??? === Ctrl D							# MultiCursor - Select Cursor at multiple positions for the same name
-??? === Ctrl Shift L                    # Select all occurences of this word in the document and change all with one change
-??? === Ctrl D                          # Select whole word
-??? === Ctrl Click                      # Jump to the function definition
-??? === Ctrl W                          # Close Tab
-??? === Ctrl Space                      # Show suggestions for the actual code function / method
+Ctrl / 				# Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
+Ctrl / 				# Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
+Ctrl Alt F7 	    # Find usages
+Ctrl F    		   	# Find in File
+Ctrl R         	   	# Replace in File
+Ctrl Shift R 		# Replace in Path (in all Files)
+F2            		# Jump to the next error
+F3        			# Find next
+Ctrl G      		# Goto line
+Ctrl D 			    # Copy / Duplicate lines	
+Alt Shift Down/Up 	# Move line
+Ctrl E       		# Recent opened files
+Ctrl TAB            # Switch windows in IDE
+Ctrl (Shift) W      # Select / deselect parts of the code step by step
+Alt Enter			# Suggestions for fix error, function informations
+Alt 1				# Open the project windows (on the left side)
+Alt F7				# Show usage of the variable, function, class
+Esc					# Focus back on the editor window
+Ctrl Shift -    	# Collapse everything
+Ctrl Shift +        # Exapnds everything
+Ctrl - 				# Collapse block ("-" on numblock)
+Ctrl + 				# Expand block ("+" on numblock)
+Ctrl A         		# Select whole file
+Ctrl (Shift) Z 		# Undo (backwards) / Redo (forwards)
+Ctrl Shift Left 	# Select word to the beginning
+Ctrl Shift Right 	# Select word to the end 
+Ctrl Left / Right 	# Go one word left
+Ctrl Y              # Delete current line
+Ctrl Del            # Delete to end of word
+Ctrl Backspace      # Delete to beginning of word
+lorem + TAB         # Create lorem text for html-code
+p>lorem + TAB       # Create lorem text inside <p>-tags
 ""
 
 => Shortcuts Chrome
