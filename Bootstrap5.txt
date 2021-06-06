@@ -1,0 +1,69 @@
+###### Installation
+Download compiled CSS and JS from the bootstrap-page
+Minified-version are production - normal versions can be changed in development when necessary
+Include the files in the html-files
+And also include popper-file
+
+###### Grid-System:
+General Structure
+""
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">1</div>
+      <div class="col-sm">2</div>
+    </div>
+  </div>
+""
+container => with space left and right (with lower sizes at a specific time the elements are alligned under each other)
+container-fluid => take the full available space - also on big screens
+continaer-md => when medium size reached (=breakpoint) take the full available space
+col-sm => columns are arranged in one line from bottom to to when the screen-size sm is reached
+col => columns are allways in one row (screen-size doesn´t matter)
+col-8 / col-4 => first column takes 8/12 of the row / second column takes 4/12 of the row
+col-md-8 / col-md-4 => columns take 8/12 or 4/12 - when breakpoint md is reached the columns are shown under each other
+col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12 => can be mixed eg. all 12 in one row on xxl-screens and only 1 in row on xs-screens
+row gx-5 => make big padding (gutter) around the contents in the row in the x-axes (values from 0 to 5 possible)
+row gy-5 => make big padding (gutter) from row to row in the y-axes (values from 0 to 5 possible)
+row g-5 => make big padding on x- and y-axes (values from 0 to 5 possible)
+
+
+###### Breakpoints
+""
+X-Small	None	<576px
+Small	sm	≥576px
+Medium	md	≥768px
+Large	lg	≥992px
+Extra large	xl	≥1200px
+Extra extra large	xxl	≥1400px
+""
+
+###### Cards
+General Structure
+""
+  <div class="card">
+    <div class="card-body">
+		...some longer text...
+    </div>
+  </div>
+""
+card (without style)	=> use the full available space for the card
+card with style="width: 18rem"	=> use only 18rem space for the card-text
+card shadow => use a shadow for the card
+
+Use grid-system for card
+=> use the column defined 6/12 for the card-text
+""
+<div class="row">
+  <div class="col-sm-6">
+	<div class="card">
+	  <div class="card-body">
+		...some longer text...
+	  </div>
+	</div>
+  </div>
+</div>
+""
+
+
+
+
