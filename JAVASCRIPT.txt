@@ -63,6 +63,7 @@ alert(`Bla ${name} bla`)                    => Alert some text with outputing th
 n = n.toFixed(2)                            => Round to 2 decimal digits
 [x, y] = [y, x]                             => Swap 2 variables
 calcDate.toISOString().split('T')[0]        => Convert datetime-object to date in format "yyyy-mm-dd"
+process.exit(1)                             => Exit javascript node program
 
 
 ###### STRING
@@ -1287,10 +1288,9 @@ git commit -m "upd"
 heroku login -i                         // login to heroku
 heroku create simple-rap-api            // create entry on heroku
 heroku git:remote -a simple-rap-api     // name of the app on heroku 
-git push heroku master                  // push everything to heroku
+git push heroku master                  // push everything to heroku (or git push heroku main)
 
 // Ongoing updates
-git init (when .git is not in the folder of the api)
 git add .               
 git commit -m "upd"
 heroku login -i
