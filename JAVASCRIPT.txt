@@ -25,6 +25,7 @@
 #> TOOLS OVERVIEW
 #> EXAMPLE FULL STACK
 #> AZURE AUTHENTICATION
+#> NEXE (create executable from node.js)
 
 ###### OPERATOR, INPUT, OUTPUT
 // Comment something                        => Comments in Javascript
@@ -71,6 +72,7 @@ let s = "this is a test"                    => Define a string
 let s = "this \n text"                      => String with linebreak \n
 s[0]                                        => show the whole string
 s[0,1]                                      => extracht only the first character
+s[-1]                                       => last char of a string
 s[-1]                                       => last char of a string
 s.slice[3,5]                                => slicing 2 chars from pos 3 and 4
 s.slice[3]                                  => slice from pos 3 to the end
@@ -140,6 +142,10 @@ arr.sort((a,b) => a > b ? -1 : 1)               => Order array descending
 arr.sort(function(a,b) {return a > b ? 1 : -1}  => Ordering long method with function
 Math.max(...arr)                                => Find max value in an array with spread operator
 Math.min(...arr)                                => Find min value in an array with spread operator
+let [a,b] = ["Ha","Ho","Hi","He"]               => Array Destrucuring Expl1 (a will be "Ha" and b will be "Ho"
+let [a,,,d] = ["Ha","Ho","Hi","He"]             => Array Destrucuring Expl2 (a will be "Ha" and d will be "He"
+let [a,...rest] = ["Ha","Ho","Hi","He"]         => Array Destrucuring Expl3 (a will be "Ha" and rest will be ["Ho","Hi","He"]
+[a,b] = [b,a]                                   => Swapping values (a will be b and b will be a)
 
 => Iterate trough array by index and element (with shortform)<br>
 => Outputs index and Outputs element of array
@@ -385,6 +391,7 @@ arr = Object.keys(obj)                              => Read the keys of an objec
 arr = Object.values(obj)                            => Read the values of an object into an array
 arr = Object.entries(obj)                           => Read alle key / value pairs of an object into an (nested) array    
 obj.hasOwnProperty("xyz")                           => Check if xyz i part of the object
+
 
 Object.keys(obj).length === 0 && obj.constructor === Object     => Check if Object is empty
 
@@ -1187,11 +1194,13 @@ async function getRapName(){
 
 ###### REACT
 => Javascript library for building user interfaces especially for single-page applications (like facebook, twitter etc.)
-=> React allows developers to create large web applications that can change data, without reloading the page.kd
-components      => webpage is divided in many components (like on facebook)
-props           => every component has some props (size, color, shape, etc.)
-states          => and components have states (like the counter for likes / dislikes / unread messages etc.)
-
+=> React allows developers to create large web applications that can change data, without reloading the page
+components  => webpage is divided in many components (like on facebook)
+props       => every component has some properties (size, color, shape, etc.) - arguments are passed into components
+states      => and components have states (like the counter for likes / dislikes / unread messages etc.) - if state changed => component has to react and re-render
+react       => contains the APIs for creating components
+react-dom   => contains the APIs for rendering to the browser DOM
+JSX         => syntax extension to JS
 
 
 ###### TOOLS OVERVIEW
@@ -1617,3 +1626,17 @@ clientSecret: in the App-Registrierung => Certificates & secrets => take the val
 - enter description and expires
 - copy the value (not id!) in config.js at client-secret
 ""
+
+
+###### NEXE (create executable from node.js)
+
+
+
+
+
+
+
+
+
+
+
