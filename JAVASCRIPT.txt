@@ -25,7 +25,8 @@
 #> TOOLS OVERVIEW
 #> EXAMPLE FULL STACK
 #> AZURE AUTHENTICATION
-#> NEXE (create executable from node.js)
+#> PKG (create executable from node.js)
+#> HEROKU (hosting web-apps, running scripts in the cloud)
 
 ###### OPERATOR, INPUT, OUTPUT
 // Comment something                        => Comments in Javascript
@@ -1202,10 +1203,10 @@ react       => contains the APIs for creating components
 react-dom   => contains the APIs for rendering to the browser DOM
 JSX         => syntax extension to JS
 
-=> Example
+=> Example (with old Class syntax)
 ""
 index.html in folder <public> with: <div id="root"></div>
-    => defnes root-element where all the input goes to
+    => defines initial root-element where all the input goes to
 index.js in folder <src> with: ReactDOM.render(<App />, document.getElementById('root'));
     => renders APP and put this in the div with id=root
 app.js
@@ -1346,28 +1347,6 @@ grunt, gulp (in earlier times)
 Pug
 EJS Embedded Java Script
 Nunjucks
-""
-
-=> Heroku
-=> Hosting APIs in the cloud
-""
-// Initial setup
-git init (when .git is not in the folder of the api)
-echo '{}' > composer.json               // for PHP: additional when deploying an PHP-api
-echo "web: node server.js" > Procfile   // for Express: create profile (tells heroku what the server-file is)
-git add .               
-git commit -m "upd"
-heroku login -i                         // login to heroku
-heroku create simple-rap-api            // create entry on heroku
-heroku git:remote -a simple-rap-api     // name of the app on heroku 
-git push heroku master                  // push everything to heroku (or git push heroku main)
-
-// Ongoing updates
-git add .               
-git commit -m "upd"
-heroku login -i
-heroku git:remote -a financerapidapi 
-git push heroku master
 ""
 
 => Postman
@@ -1691,7 +1670,36 @@ clientSecret: in the App-Registrierung => Certificates & secrets => take the val
 ""
 
 
-###### NEXE (create executable from node.js)
+###### PKG (create executable from node.js)
+https://www.npmjs.com/package/pkg
+
+
+###### HEROKU (hosting web-apps, running scripts in the cloud)
+=> Heroku
+=> Hosting APIs in the cloud
+""
+// Initial setup
+git init (when .git is not in the folder of the api)
+echo '{}' > composer.json               // for PHP: additional when deploying an PHP-api
+echo "web: node server.js" > Procfile   // for Express: create profile (tells heroku what the server-file is)
+git add .               
+git commit -m "upd"
+heroku login -i                         // login to heroku
+heroku create simple-rap-api            // create entry on heroku
+heroku git:remote -a simple-rap-api     // name of the app on heroku 
+git push heroku master                  // push everything to heroku (or git push heroku main)
+set config vars in heroku under <seetings> in the app
+
+// Ongoing updates
+git add .               
+git commit -m "upd"
+heroku login -i
+heroku git:remote -a financerapidapi 
+git push heroku master
+""
+
+
+
 
 
 
