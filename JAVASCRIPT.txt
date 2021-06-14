@@ -1202,6 +1202,69 @@ react       => contains the APIs for creating components
 react-dom   => contains the APIs for rendering to the browser DOM
 JSX         => syntax extension to JS
 
+=> Example
+""
+index.html in folder <public> with: <div id="root"></div>
+    => defnes root-element where all the input goes to
+index.js in folder <src> with: ReactDOM.render(<App />, document.getElementById('root'));
+    => renders APP and put this in the div with id=root
+app.js
+    => Import components with:
+        import React, { Component } from 'react';
+        import './App.css';
+        import Header from './Header';
+        import SectionMain from './SectionMain';
+        import Aside from './Aside';
+        import Footer from './Footer';        
+    => Render components
+        class App extends Component {
+          render() {
+            return (
+              <div className="App">
+                // call Header with the 2 props
+                <Header backColor="green" width="50%"></Header>
+                <SectionMain></SectionMain>
+                <Aside></Aside>
+                <Footer></Footer>
+              </div>
+            );
+          }
+        }
+footer.js
+    => Import react and styling-file
+        import React, { Component } from 'react';
+        import './Footer.css';    
+    => Render components
+        class Footer extends Component {
+          render() {
+            return (
+                <footer className="Footer">
+                </footer>
+
+            );
+          }
+        }
+        export default Footer;    
+""
+header.js
+    class Header extends Component {
+      render() {
+        // header get 2 props
+        const style = {
+          width: this.props.width,
+          backgroundColor: this.props.backColor
+        }
+        // using the style object from above to style the header
+        return (
+            <header style={style} className="Header-main">
+            </header>
+
+        );
+      }
+    }
+
+
+
 
 ###### TOOLS OVERVIEW
 => https://zellwk.com/blog/crud-express-mongodb/
