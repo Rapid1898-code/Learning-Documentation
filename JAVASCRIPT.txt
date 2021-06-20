@@ -27,6 +27,7 @@
 #> AZURE AUTHENTICATION
 #> PKG (create executable from node.js)
 #> HEROKU (hosting web-apps, running scripts in the cloud)
+#> NODEMAILER (send mails)
 
 ###### OPERATOR, INPUT, OUTPUT
 // Comment something                        => Comments in Javascript
@@ -1719,6 +1720,12 @@ heroku login -i
 heroku git:remote -a financerapidapi 
 git push heroku master
 ""
+
+
+
+###### NODEMAILER (send mails)
+https://nodemailer.com/about/
+https://www.freecodecamp.org/news/use-nodemailer-to-send-emails-from-your-node-js-server/
 
 
 
