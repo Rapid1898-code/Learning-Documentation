@@ -1718,7 +1718,7 @@ git add .
 git commit -m "upd"
 heroku login -i
 heroku git:remote -a financerapidapi 
-git push heroku master
+git push heroku main (or git push heroku master)
 ""
 
 
