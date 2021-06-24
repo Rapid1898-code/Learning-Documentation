@@ -2261,6 +2261,7 @@ driver.current_url												  => Read current, actual url
 driver.switch_to.frame ("frame_id")								  => Switch to a frame-id (eg. a PopUp)
 act_window = driver.current_window_handle						  => Read active window name
 driver.switch_to.window(act_window)								  => Switch (back) to active window (eg. after working on the popup-frame or popup-window)
+driver.minimize_window()                                          => Minmize window
 
 => Use Selenium with chrome windows hidden
 ""
