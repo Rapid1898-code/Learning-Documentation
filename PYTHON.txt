@@ -3093,11 +3093,19 @@ pip3.7 install --user --upgrade selenium=> install python modules in specific ve
 
 ###### HEROKU - run python scripts in the cloud
 Instruction: https://dev.to/josylad/how-to-deploy-a-python-script-or-bot-to-heroku-in-5-minutes-9dp
+on Heroku: create App					=> New => Create new app => give name with only lowercases
+on Heroku: set python build path		=> Setting => Add buildpack => choose python
+in App-folder: create Procfile			=> Create Procfile with 2 lines => web: python appname.py, worker: python appname.py 
+in App-folder: create requirements.txt  => Create or Copy the requirements.txt => eg. pip freeze> requirements.txt
+delete not possible modules	in cloud 	=> like xlwings, openpyxl, pywin32
 heroku login                            => login to heroku (login page opens in the browser)
 heroku git:remote -a HEROKU_APP_NAME    => connect to the heroku app
 git add .                               => add files (like in git)
 git commit -am "msg"                    => commit files (like in git
 git push heroku main                    => push the files to heroku for build#
+on Heroku: deselect web + worker		=> in Resources deselect both (otherwise the program will run more times per day) 
+on Heroku: add Add-ons					=> Heroku Scheduler for scheduling the app, Papertrail for logs
+on Heroku / Scheduler					=> Schedule the app run times
 heroku run python script.py             => run the app / script which is hosted on heroku
 heroku ps:scale worker=0                => stopps worker (eg. when the app is only sceduled by heroku scheduler addon)
 
