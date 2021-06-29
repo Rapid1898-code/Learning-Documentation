@@ -27,6 +27,7 @@
 #> AZURE AUTHENTICATION
 #> PKG (create executable from node.js)
 #> HEROKU (hosting web-apps, running scripts in the cloud)
+#> NODEMAILER (send mails)
 
 ###### OPERATOR, INPUT, OUTPUT
 // Comment something                        => Comments in Javascript
@@ -1203,6 +1204,28 @@ react       => contains the APIs for creating components
 react-dom   => contains the APIs for rendering to the browser DOM
 JSX         => syntax extension to JS
 
+npx create-react-app nameProject            => create react app in a folder with the name "nameProject"
+npm install --global yarn                   => install yarn (if not allready installed)
+yarn start                                  => start the react app (default on http://localhost:3000/)
+standard-folder "public" / index.html       => is the base setup for html-file (important is <div id="root"></div> - where everything get rendered from react)
+standard-folder "public" / favicon.ico      => icon of the tab
+standard-folder "public" / manifest.json    => name, shortname of the react-app (description of the application)
+standard-folder "src" / index.js            => entry-point for the react-app (get everything from App and render this to the div-element with the root-id)
+standard-folder "src" / app.js              => main react-app called App
+
+=> Simplest possible App.js file
+""
+import './App.css';
+function App() {
+  return (
+    <div className="App">
+        <p>My website is running!</p>        
+    </div>
+  );
+}
+export default App;
+""
+
 => Example (with old Class syntax)
 ""
 index.html in folder <public> with: <div id="root"></div>
@@ -1695,8 +1718,14 @@ git add .
 git commit -m "upd"
 heroku login -i
 heroku git:remote -a financerapidapi 
-git push heroku master
+git push heroku main (or git push heroku master)
 ""
+
+
+
+###### NODEMAILER (send mails)
+https://nodemailer.com/about/
+https://www.freecodecamp.org/news/use-nodemailer-to-send-emails-from-your-node-js-server/
 
 
 

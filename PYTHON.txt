@@ -2261,6 +2261,7 @@ driver.current_url												  => Read current, actual url
 driver.switch_to.frame ("frame_id")								  => Switch to a frame-id (eg. a PopUp)
 act_window = driver.current_window_handle						  => Read active window name
 driver.switch_to.window(act_window)								  => Switch (back) to active window (eg. after working on the popup-frame or popup-window)
+driver.minimize_window()                                          => Minmize window
 
 => Use Selenium with chrome windows hidden
 ""
@@ -2273,6 +2274,15 @@ if platform == "win32": options.add_argument('--start-maximized')           # Wi
 elif platform in ["linux","darwin"]: options.add_argument('--kiosk')        # Window Started Maximized (for Linux and Mac)
 options.add_experimental_option ('excludeSwitches', ['enable-logging'])     # No error messagegs when exec in cmd
 driver = webdriver.Chrome(os.getcwd() + '/chromedriver', options=options)
+""
+
+=> Define Real User Agent Header
+""
+(avoid being blocked while scraping some data - keep it up to date from time to time)
+see: https://www.scraperapi.com/blog/5-tips-for-web-scraping/
+common user agent list: https://www.networkinghowtos.com/howto/common-user-agent-list/
+latest user agent list: https://www.whatismybrowser.com/guides/the-latest-user-agent/
+options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36")
 ""
 
 => Scroll to the very bottom of a site - eg. Twitter, Facebook, Stocktwits,...
@@ -2333,6 +2343,7 @@ from fake_useragent import UserAgent							=> Import moduel for fake useragent
 ua = UserAgent()												=> Define UserAgent
 ua.random														=> Create random useragent
 page = requests.get("https://www.ariva.de/dax-30")              => Read url as page
+page = requests.get(url,headers=headers,proxy=proxy)            => Read url as page with proxy like eg. "https://10.10.1.11:1080"
 soup = BeautifulSoup (page.content,"html.parser")               => Read page with html.parser
 table  = soup.find(id="result_table_0")                         => Read specific invidual id
 name_box =          											=> Read specific class
@@ -2341,7 +2352,7 @@ soup.find_all("tr", class_="arrow0"):       			        => Read all table rows fo
 for col_id, col_content in enumerate(result.find_all("td")):    => Read all table data cells with id and content
 entries = results.find_all("div", class_="col-xs-6")            => Read all divs with specific class
 soup.find("div", {"id": "lj_div"})								=> Find div with id "lj_div"
-soup.find("p", {"class": line}									=> Find (first) p with class "line"
+soup.find("p", {"class": "line"}								=> Find (first) p with class "line"
 soup.find("dt", string="In-App Purchases")						=> Find element with specific text / string
 erg2 = erg.find_parent("div")									=> Found the parent div-element for a specific before find element
 if row.get("class") == ["ellipsis", "nobr", "new"]:             => Check if class has specific content
@@ -2353,6 +2364,18 @@ url_i = rows[0].find('img')['src']                              => Read url from
 image = requests.get(f'https:{url_i}').content                  => Read image as content
 results.prettify()                                              => Formated Output with html indentations
 if "Kein Zugriff" in soup.text:                                 => Check if specific text in soup text-output
+
+=> Define Real User Agent Header
+""
+(avoid being blocked while scraping some data - keep it up to date from time to time)
+see: https://www.scraperapi.com/blog/5-tips-for-web-scraping/
+common user agent list: https://www.networkinghowtos.com/howto/common-user-agent-list/
+latest user agent list: https://www.whatismybrowser.com/guides/the-latest-user-agent/
+headers = {
+    'User-Agent': '<copy from the above link>',
+}
+response = requests.get(url, headers=headers)
+""
 
     
 => Read with Selenium when necessary due the specific homepage				
@@ -2988,7 +3011,7 @@ check API-access
 ""
 
 
-###### MODULE - FLASK, HEROKU, GUNICORN  - making an API
+###### MODULE - FLASK, heroku, GUNICORN  - making an API
 => https://stackabuse.com/deploying-a-flask-application-to-heroku/
 
 ongoing deployment / update
