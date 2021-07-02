@@ -1213,6 +1213,29 @@ standard-folder "public" / manifest.json    => name, shortname of the react-app 
 standard-folder "src" / index.js            => entry-point for the react-app (get everything from App and render this to the div-element with the root-id)
 standard-folder "src" / app.js              => main react-app called App
 
+<Info></Info>                           => call the component "Info"
+<Info />                                => 2nd method to call the component "Info"
+{title}                                 => JSX: use the variable "title" in the react html code
+{showTitle ? title : ""}                => JSX: show the "title" only when "showtitle" is true using a ternary expression
+<AddItem text="blabla" number={2} />    => Define a prop "text" in a component-call and a numeric prop "number"
+function AddItem(props)                 => Use the props in the component (access with props.text or props.number)
+function AddItem(text, number)          => Or use the props destructured in the component
+function AddItem({text, number=99})     => Define component with default prop for "number"
+<p>{props.number}</p>                   => Render the props.number in a paragraph-tag
+
+
+=> Use component in a seperate file
+""
+Define component in sepearte file: export default function Info() {
+Import the component and use it: import Info from "./Info.js"
+
+or
+
+Define function as normal: function Info() { 
+Export the function at the bottom: export default Info;     
+Import the component and use it: import Info from "./Info.js"
+""
+
 => Simplest possible App.js file
 ""
 import './App.css';
@@ -1225,6 +1248,29 @@ function App() {
 }
 export default App;
 ""
+
+=> Example for a component with class based syntax
+""
+import React from "react"
+
+class Info extends React.Component {
+  render() {
+    const title = "This is my title."
+    const showTitle = true
+  
+    return (    
+      <div>
+        <h1>{showTitle ? title : ""}</h1>
+        <p>Manage your stuff</p>
+      </div>
+    )
+  }    
+}
+
+export default Info;
+""
+
+
 
 => Example (with old Class syntax)
 ""
@@ -1695,7 +1741,8 @@ clientSecret: in the App-Registrierung => Certificates & secrets => take the val
 
 ###### PKG (create executable from node.js)
 https://www.npmjs.com/package/pkg
-
+pkg nameOfFile.js       => create an executable (for all plattforms and standard node-version)
+pkg scrapeAppStore.js --targets node12-win-x64      => create exe with specific node-version for windows
 
 ###### HEROKU (hosting web-apps, running scripts in the cloud)
 => Heroku
