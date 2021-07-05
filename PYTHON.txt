@@ -2308,10 +2308,11 @@ element = driver.find_element_by_css('div[class*="loadingWhiteBox"]')
 driver.execute_script("arguments[0].click();", element)
 ""
 
-=> Wait till a specific element is loaded
+=> Wait till a specific element is loaded / clickable
 ""
 WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.NAME, "agree"))).click()
 WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, "YDC-Col1")))
+WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.XPATH, "//div[text()='Total revenues']"))).click()
 ""
 
 => Take a screenshot when something fails in headless mode
