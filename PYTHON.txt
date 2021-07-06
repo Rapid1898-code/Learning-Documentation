@@ -2285,6 +2285,17 @@ latest user agent list: https://www.whatismybrowser.com/guides/the-latest-user-a
 options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36")
 ""
 
+=> Use Random User Agent Header
+""
+https://stackoverflow.com/questions/49565042/way-to-change-google-chrome-user-agent-in-selenium
+
+from fake_useragent import UserAgent
+options = Options()
+ua = UserAgent()
+userAgent = ua.random
+options.add_argument(f'user-agent={userAgent}')
+""
+
 => Scroll to the very bottom of a site - eg. Twitter, Facebook, Stocktwits,...
 ""
 lenOfPage = driver.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
