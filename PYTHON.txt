@@ -2242,7 +2242,7 @@ time.sleep(1)                                                     => Somtimes ne
 driver.find_element_by_xpath('//*[@id="name"]').send_keys("x"])   => Fill field "name" with content "x"
 driver.find_element_by_name("q").send_keys("txt")         		  => Fill text in field
 driver.find_element_by_name("q").send_keys("txt" + u'\ue007')     => Fill text in field and press enter
-driver.find_element_by_id("xy-id")                        		  => Search field word for id
+driver.find_element_by_id("xy-id").clear()                 		  => Search field word for id and clear it
 driver.find_elements_by_class_name("cl")[0]               		  => Search field for class (and put in list)
 driver.find_elements_by_tag_name("tag")[0]                		  => Search field for tag (and put in list)
 driver.find_element_by_xpath('//div[@aria-label="Post"]').click() => Find Element according to a specific element eg. "aria-label" with text "Post" in a "div"
@@ -2346,12 +2346,13 @@ ua.random														=> Create random useragent
 page = requests.get("https://www.ariva.de/dax-30")              => Read url as page
 page = requests.get(url,headers=headers,proxy=proxy)            => Read url as page with proxy like eg. "https://10.10.1.11:1080"
 soup = BeautifulSoup (page.content,"html.parser")               => Read page with html.parser
-table  = soup.find(id="result_table_0")                         => Read specific invidual id
-name_box =          											=> Read specific class
-table.find_all("td"):    			                            => Read all table data cells
+soup.find(id="result_table_0")                                  => Read specific invidual id
+soup.find("p", {"class": "payamntp"})      			            => Read specific class
+soup.findAll(True, {'class':['class1', 'class2']})              => Find element with 2 / more classes
+soup.find_all("td"):    			                            => Read all table data cells
 soup.find_all("tr", class_="arrow0"):       			        => Read all table rows for specific class
 for col_id, col_content in enumerate(result.find_all("td")):    => Read all table data cells with id and content
-entries = results.find_all("div", class_="col-xs-6")            => Read all divs with specific class
+soup.find_all("div", class_="col-xs-6")                         => Read all divs with specific class
 soup.find("div", {"id": "lj_div"})								=> Find div with id "lj_div"
 soup.find("p", {"class": "line"}								=> Find (first) p with class "line"
 soup.find("dt", string="In-App Purchases")						=> Find element with specific text / string
