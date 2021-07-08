@@ -501,7 +501,8 @@ for key, val in d.items():                           => Iterate through keys and
 d = {k: v for k, v in sorted(d.items(), key=lambda item: item[1], reverse=True)}    => Sort dict descending according to values (=item[1])
 d = {k: v for k, v in sorted(d.items(), key=lambda item: item[0])}      => Sort dict ascending according to keys (=item[0])
 d = {k: v for k, v in sorted(d.items(), key=lambda x: (-x[1],x[0]))}    => Dict sorted: 1st value-desc (x[0]) - 2nd key-ascnd (-x[0])
-
+l = sorted(d.items(), key=lambda e: e[1][2])        => Sort dict and output list, sorted according to the 3rd element of the list in the dict
+l = sorted(d.items(), key=lambda e: e[1][2], reverse=True)      => Sort dict and output list, sorted according to the 3rd element of the list in the dict - descending
 
 
 ###### SETS
@@ -1203,7 +1204,12 @@ def xl_col_sort(sheet,col_num):
     return
 ""
 
-
+=> Delete several rows / columns
+""
+from xlwings.constants import DeleteShiftDirection
+ws.range('2:4').api.Delete(DeleteShiftDirection.xlShiftUp)      # delete rows 2 to 4
+ws.range('A:C').api.Delete(DeleteShiftDirection.xlShiftUp)      # delete cols A to C
+""
 
 ###### MODULE - WIN32COM - creating worksheets as pdf from xlsx
 => Create Worksheets as PDF from XLSX
