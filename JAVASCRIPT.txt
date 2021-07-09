@@ -1223,6 +1223,12 @@ function AddItem(text, number)          => Or use the props destructured in the 
 function AddItem({text, number=99})     => Define component with default prop for "number"
 <p>{props.number}</p>                   => Render the props.number in a paragraph-tag
 
+import { useState } from "react"        => Import useState
+const [title, setTitle] = useState("")  => Define States with default value "" (title is the state, setTitle the state-function)
+const [count, setCount] = useState(0)   => Define States with default value 0 (count is the state, setcount the state-function)
+<p>Title: {title} </p>                  => Use the variable in the tags
+<button onClick={updateCounterClicked}>Update Counter</button>     => function is called when the button is pressed
+const updateCounterClicked = () => {setCount(count + 1)}           => count i incread by one in the function (=when the button is pressed)
 
 => Use component in a seperate file
 ""
