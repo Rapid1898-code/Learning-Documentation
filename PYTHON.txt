@@ -2237,37 +2237,57 @@ plt.savefig("example.png",bbox_inches="tight")                      => Save diag
 
 ###### MODULE - SELENIUM - browser automatization
 => chromedriver.exe in Ordner von py-file speichern
-https://selenium-python.readthedocs.io/locating-elements.html	  => Different methods for locating elements	
-from selenium import webdriver                                    => Import WebDriver for url access
-import time                                                       => Import Time-Library when there are delays needed
-from selenium.webdriver.common.keys import Keys                   => Import Keys to send key-strokes
-driver = webdriver.Chrome(os.getcwd() + '/chromedriver')          => Define chrome driver - with actual folder os.getcwd
-driver.get("url")                                                 => Access to the url
-driver.find_element_by_xpath('//*[@id="button"]/input').click()   => Click on element by xpath (investigate - coyp xpath)
-time.sleep(1)                                                     => Somtimes necessary to delay some work in progress
-driver.find_element_by_xpath('//*[@id="name"]').send_keys("x"])   => Fill field "name" with content "x"
-driver.find_element_by_name("q").send_keys("txt")         		  => Fill text in field
-driver.find_element_by_name("q").send_keys("txt" + u'\ue007')     => Fill text in field and press enter
-driver.find_element_by_id("xy-id").clear()                 		  => Search field word for id and clear it
-driver.find_elements_by_class_name("cl")[0]               		  => Search field for class (and put in list)
-driver.find_elements_by_tag_name("tag")[0]                		  => Search field for tag (and put in list)
-driver.find_element_by_xpath('//div[@aria-label="Post"]').click() => Find Element according to a specific element eg. "aria-label" with text "Post" in a "div"
-driver.send_keys(Keys.Backspace,Keys.ARROW_LEFT,Keys.ENTER)		  => Send single keyboard-elements <> chars (needs import keys)
-driver.send_keys (u'\ue007')									  => Send an Return-keystroke (eg. for enter after data entries in fields)
-field.submit()                                                    => Press enter and submit site
-driver.quit()                                                     => Close driver (otherwise the window will not close)
-driver.title                                                      => Title of the html-site
-driver.back()                                                     => Back-Function in browser-history
-driver.forward()                                                  => Forward-Function in browser-history
-cookie = {"name": "token", "value": "23874kljdsjhfaökldjs"}       => Define an individual cookie
-driver.add_cookie(cookie)                                         => Use Cookie
-driver.get_cookie("token")                                        => Outputs a specific cookie
-driver.get_cookies())                                             => Outputs all cookies
-driver.current_url												  => Read current, actual url
-driver.switch_to.frame ("frame_id")								  => Switch to a frame-id (eg. a PopUp)
-act_window = driver.current_window_handle						  => Read active window name
-driver.switch_to.window(act_window)								  => Switch (back) to active window (eg. after working on the popup-frame or popup-window)
-driver.minimize_window()                                          => Minmize window
+https://selenium-python.readthedocs.io/locating-elements.html	    => Python specific documentation for selenium
+from selenium import webdriver                                      => Import WebDriver for url access
+from selenium.webdriver.chrome.options import Options               => Import Options
+from selenium.webdriver.support.ui import WebDriverWait             => Import WebDriverWait (explizit waiting time)
+from selenium.webdriver.support import expected_conditions as EC    => Import EC (for expected conditions with waiting logic)
+from selenium.webdriver.common.by import By                         => Import By (for finding elements with By-logic)
+from selenium.webdriver.common.keys import Keys                     => Import Keys (for keystroke handling)
+import time                                                         => Import Time-Library when there are delays needed
+from selenium.webdriver.common.keys import Keys                     => Import Keys to send key-strokes
+driver = webdriver.Chrome(os.getcwd() + '/chromedriver')            => Define chrome driver - with actual folder os.getcwd
+driver.get("url")                                                   => Access to the url
+time.sleep(1)                                                       => Somtimes necessary to delay some work in progress
+driver.find_element_by_xpath("//input[@id='passwd-id']")            => Finde element (input-element with id = "passwd-id")
+driver.find_element_by_xpath('//*[@id="button"]/input').click()     => Click on element by xpath (investigate - coyp xpath)
+driver.find_element_by_xpath('//*[@id="name"]').send_keys("x"])     => Fill field "name" with content "x"
+driver.find_element(By.XPATH, '//button[text()="Some text"]')       => Other method to find element per xpath ()
+driver.find_element_by_xpath('//div[@aria-label="Post"]').click()   => Find Element according to a specific element eg. "aria-label" with text "Post" in a "div"
+driver.find_element_by_name("q").send_keys("txt" + u'\ue007')       => Fill text in field and press enter
+drv.find_element_by_css_selector("input#myID").send_keys("txt")     => Fill text in field (use css-selector to find element => input element with id "myID" in it)
+driver.find_element_by_id("xy-id").clear()                 		    => Search field word for id and clear it
+driver.find_elements_by_class_name("cl")                     		=> Search field for class
+driver.find_elements_by_tag_name("tag")                		        => Search field for tag
+driver.find_element_by_link_text('Continue')                        => Search by (exact) link-text in an anchor-tag
+driver.find_element_by_partial_link_text('Conti')                   => Search by (partial) link-text in an ancor-tag
+driver.send_keys(Keys.Backspace,Keys.ARROW_LEFT,Keys.ENTER)		    => Send single keyboard-elements <> chars (needs import keys)
+driver.send_keys (u'\ue007')									    => Send an Return-keystroke (eg. for enter after data entries in fields)
+field.submit()                                                      => Press enter and submit site
+driver.quit()                                                       => Close driver (otherwise the windows will not close)
+driver.close()                                                      => Close the actual window
+driver.title                                                        => Title of the html-site
+driver.back()                                                       => Back-Function in browser-history
+driver.forward()                                                    => Forward-Function in browser-history
+cookie = {"name": "token", "value": "23874kljdsjhfaökldjs"}         => Define an individual cookie
+driver.add_cookie(cookie)                                           => Use Cookie
+driver.get_cookie("token")                                          => Outputs a specific cookie
+driver.get_cookies())                                               => Outputs all cookies
+driver.current_url												    => Read current, actual url
+driver.switch_to.frame ("frame_id")								    => Switch to a frame-id (eg. a PopUp)
+act_window = driver.current_window_handle						    => Read active window name
+driver.switch_to.window(act_window)								    => Switch (back) to active window (eg. after working on the popup-frame or popup-window)
+driver.minimize_window()                                            => Minmize window
+
+=> Wait till a specific element is loaded / clickable
+""
+=> waiting as long as required - better then time.sleep
+=> more possible conditions see https://selenium-python.readthedocs.io/waits.html#explicit-waits
+wait = WebDriverWait (driver, 5)                                        # Define maximum wait time till the element is ready
+wait.until(EC.presence_of_element_located((By.NAME, "agree"))).click()  # Wait till element with name = "agree" is present and click afterwards
+wait.until(EC.presence_of_element_located((By.ID, "YDC-Col1")))         # Wait till element with id = "YDC-Col1" is present
+wait.until(EC.element_to_be_clickable((By.XPATH, "//div[text()='Total revenues']"))).click()    # Wailt till div-element with specific text is pressent and click
+""
 
 => Use Selenium with chrome windows hidden
 ""
@@ -2276,9 +2296,12 @@ options = Options()
 options.add_argument('--headless')                                          # Window Hidden (only used this for the final program - not during devleopment / testing!)
 options.add_argument('window-size=1920x1080')								# (this somtimes helps when headless is not working)	
 options.add_argument("start-maximized")                                     # Start window maximized
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-gpu')   
+options.add_experimental_option ('excludeSwitches', ['enable-logging'])     # No error messagegs when exec in cmd
 if platform == "win32": options.add_argument('--start-maximized')           # Window Started Maximized (for Windows)
 elif platform in ["linux","darwin"]: options.add_argument('--kiosk')        # Window Started Maximized (for Linux and Mac)
-options.add_experimental_option ('excludeSwitches', ['enable-logging'])     # No error messagegs when exec in cmd
+
 driver = webdriver.Chrome(os.getcwd() + '/chromedriver', options=options)
 ""
 
@@ -2302,6 +2325,50 @@ userAgent = ua.random
 options.add_argument(f'user-agent={userAgent}')
 ""
 
+=> Using XPath with Selenium
+""
+https://www.guru99.com/xpath-selenium.html
+Can be used to find the location of any element in a html- or xml document
+Xpath=//tagname[@attribute='value']     
+    // : Select current node
+    Tagname: Tagname of the particular node.
+    @: Select attribute.
+    Attribute: Attribute name of the node.
+    Value: Value of the attribute.    
+
+//input[@name='uid']                    # input-elem with name = "uid"
+//input[@type='text']                   # input-elem with type = "text"
+//label[@id='message23']                # label-elem with id = "message23"
+//input[@value='RESET']                 # input-elem with value = "RESET"
+//*[@class='barone']                    # any elem with class = "barone"
+//td[text()='UserID']	                # td-elem which has the text "User-ID"
+//a[@href='http://demo.guru99.com/']    # anchor with specific link
+//img[@src='//cdn.guru99.com/images/home/java.png']   # img-elem with specific pic-link
+
+//*[@type='submit' or @name='btnReset']         # any elem which has 2 OR conditions (for type and name)
+//input[@type='submit' and @name='btnLogin'     # any elem which has 2 AND conditions (for type and name)
+
+//*[contains(@name,'btn')]              # any elem which has "btn" somewhere in the name
+//*[contains(@id,'message')]            # any elem which has "message" somewhere in the id
+//*[contains(text(),'here')]            # any elem which has "here" somewhere in the text
+//*[contains(@href,'orf')]              # any elem which has "orf" somewhere in the href-link
+//label[starts-with(@id,'message')]     # elem where id starts with "message"
+
+//*[@type='text']//following::input[1]              # select all following-elements which have input as tag and select the first elem
+//*[text()='Enterprise Testing']//ancestor::div[2]  # find ancestor-elements with text and take the second one
+//*[@id='java_technologies']//child::li[23]         # select all child elements with specific id and select the 23th one
+//*[@type='submit']//preceding::input[1]            # select preceding input-elements and take the first one
+//*[@type='submit']//following-sibling::input       # select following sibling which is input
+//*[@id='rt-feature']//parent::div[5]               # select parent of the elem with id = "rt-feature" and take the 5th div
+//*[@type='password']//self::input                  # select elem and use itself (only 1 element can be found)
+//*[@id='rt-feature']//descendant::a[X]             # find all elements below and take the Xth one
+""
+
+
+
+
+
+
 => Scroll to the very bottom of a site - eg. Twitter, Facebook, Stocktwits,...
 ""
 lenOfPage = driver.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
@@ -2323,13 +2390,6 @@ webdriver.ActionChains(driver).move_to_element(element ).click(element ).perform
 Method2:
 element = driver.find_element_by_css('div[class*="loadingWhiteBox"]')
 driver.execute_script("arguments[0].click();", element)
-""
-
-=> Wait till a specific element is loaded / clickable
-""
-WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.NAME, "agree"))).click()
-WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, "YDC-Col1")))
-WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.XPATH, "//div[text()='Total revenues']"))).click()
 ""
 
 => Take a screenshot when something fails in headless mode
