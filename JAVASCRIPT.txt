@@ -65,7 +65,6 @@ alert("Text!")                              => Alert information in a window
 alert(`Bla ${name} bla`)                    => Alert some text with outputing the variable "name" between (using backticks "`"
 n = n.toFixed(2)                            => Round to 2 decimal digits
 [x, y] = [y, x]                             => Swap 2 variables
-calcDate.toISOString().split('T')[0]        => Convert datetime-object to date in format "yyyy-mm-dd"
 process.exit(1)                             => Exit javascript node program
 
 
@@ -102,6 +101,7 @@ char = String.fromCharCode(65)              => Returns char for specific ascii-c
 char.match(/[A-Z]i)                         => Check if char is in A-Z
 [...s]                                      => Spread-Operator for string (=> build array with each character)
 s = JSON.stringify(obj)                     => Convert object-element to string
+calcDate.toISOString().split('T')[0]        => Convert datetime-object to string in format "yyyy-mm-dd"
 
 
 ###### ARRAY
@@ -724,6 +724,7 @@ $('p:nth-child(2)');                            => Pseudo-class selector
 let now = new Date()                            => Assign variable to actual date
 let t1 = Date.now()                             => Returns numeric acttual date as number (helpful to calculate some timespans)
 let secondes = now.get.Seconds()                => Assign actual seconds from actual date variable "now"
+calcDate.toISOString().split('T')[0]            => Convert datetime-object to string in format "yyyy-mm-dd"
 
 
 
