@@ -2258,7 +2258,7 @@ driver.find_element(By.XPATH, '//button[text()="Some text"]')       => Other met
 driver.find_element_by_xpath('//div[@aria-label="Post"]').click()   => Find Element according to a specific element eg. "aria-label" with text "Post" in a "div"
 driver.find_element_by_name("q").send_keys("txt" + u'\ue007')       => Fill text in field and press enter
 drv.find_element_by_css_selector("input#myID").send_keys("txt")     => Fill text in field (use css-selector to find element => input element with id "myID" in it)
-driver.find_element_by_id("xy-id").clear()                 		    => Search field word for id and clear it
+driver.set_window_size(600,1000)
 driver.find_elements_by_class_name("cl")                     		=> Search field for class
 driver.find_elements_by_tag_name("tag")                		        => Search field for tag
 driver.find_element_by_link_text('Continue')                        => Search by (exact) link-text in an anchor-tag
@@ -2279,6 +2279,7 @@ driver.current_url												    => Read current, actual url
 driver.switch_to.frame ("frame_id")								    => Switch to a frame-id (eg. a PopUp)
 act_window = driver.current_window_handle						    => Read active window name
 driver.switch_to.window(act_window)								    => Switch (back) to active window (eg. after working on the popup-frame or popup-window)
+driver.set_window_size(600,1000)                                    => Set window size to 600 wide and 1000 height
 driver.minimize_window()                                            => Minmize window
 
 => Wait till a specific element is loaded / clickable
@@ -2331,6 +2332,12 @@ options.add_argument(f'user-agent={userAgent}')
 ""
 https://www.guru99.com/xpath-selenium.html
 Can be used to find the location of any element in a html- or xml document
+
+Example:
+wait = WebDriverWait(driver, 10)
+tmpElem = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Top Grossing']")))
+tmpElem.click() 
+
 Xpath=//tagname[@attribute='value']     
     // : Select current node
     Tagname: Tagname of the particular node.
@@ -2365,11 +2372,6 @@ Xpath=//tagname[@attribute='value']
 //*[@type='password']//self::input                  # select elem and use itself (only 1 element can be found)
 //*[@id='rt-feature']//descendant::a[X]             # find all elements below and take the Xth one
 ""
-
-
-
-
-
 
 => Scroll to the very bottom of a site - eg. Twitter, Facebook, Stocktwits,...
 ""
@@ -2438,8 +2440,8 @@ soup.find("dt", string="In-App Purchases")						=> Find element with specific te
 erg2 = erg.find_parent("div")									=> Found the parent div-element for a specific before find element
 if row.get("class") == ["ellipsis", "nobr", "new"]:             => Check if class has specific content
 soup.find("small", class_=re.compile("nameSymbol_"))			=> Check if string nameSymbol_" is part of the class-element
-for e in soup.find_all("a"): e.get("href"))                     => Read all links from href element    
-for e in soup.find_all("a"): e.get("value"))                    => Read all number from the field "value"
+for e in soup.find_all("a"): e.get("href")                      => Read all links from href element    
+for e in soup.find_all("a"): e.get("value")                     => Read all number from the field "value"
 content.text.strip()                                            => Outputs text without whitespaces
 url_i = rows[0].find('img')['src']                              => Read url from the image
 image = requests.get(f'https:{url_i}').content                  => Read image as content
