@@ -40,7 +40,7 @@
 #> MODULE - PYCOUNTRY - Countries, Currency, Language
 #> MODULES - SMTPLIB, MIMEText - sending emails
 #> MODULE - PATHLIB - interacting with the operating system
-#> MODULE - OS - interacting with the operating system
+#> MODULE - OS, SHUTIL - interacting with the operating system
 #> MODULE - LOGGING
 #> MODULE - UNITTEST
 #> MODULE - DOTENV - hide environment informations
@@ -1661,7 +1661,7 @@ mac = get_mac()
 ""
 
 
-###### MODULE - OS - interacting with the operating system
+###### MODULE - OS, SHUTIL - interacting with the operating system
 import os												    => Import module
 print(dir(os))                                              => Shows alls attributs and methods of the library
 os.chdir("C:/temp")                                         => Change the directory
@@ -1670,7 +1670,7 @@ for f in os.listdir(): print(f)                             => Outputs the entir
 for f in os.listdir(): fn, ext = os.path.splitext(f)        => Outputs the elements seperated in name + extension
 os.rename(filename, new_name)                               => Change the filenmae
 os.rename(path1+fn, path2+fn)							    => Cut and paste file from path1 to path2
-os.system("copy source.txt destination.txt")			    => Copy file from source to destination
+shutil.copyfile("src","dst")                                => Copy file from source to destination
 os.mkdir("folder")                                          => Creates new folder (also possible with makedirs => is prefered)
 os.makedirs("folder/subfolder")                             => Creates new folder and subfolders
 os.remove (file)											=> Delete file
