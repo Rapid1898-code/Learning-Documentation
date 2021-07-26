@@ -40,7 +40,7 @@
 #> MODULE - PYCOUNTRY - Countries, Currency, Language
 #> MODULES - SMTPLIB, MIMEText - sending emails
 #> MODULE - PATHLIB - interacting with the operating system
-#> MODULE - OS, SHUTIL - interacting with the operating system
+#> MODULE - OS, SHUTIL, FILECMP, DIRCMP - interacting with the operating system
 #> MODULE - LOGGING
 #> MODULE - UNITTEST
 #> MODULE - DOTENV - hide environment informations
@@ -1661,7 +1661,7 @@ mac = get_mac()
 ""
 
 
-###### MODULE - OS, SHUTIL - interacting with the operating system
+###### MODULE - OS, SHUTIL, FILECMP, DIRCMP - interacting with the operating system
 import os												    => Import module
 print(dir(os))                                              => Shows alls attributs and methods of the library
 os.chdir("C:/temp")                                         => Change the directory
@@ -1694,7 +1694,12 @@ from os.path import expanduser
 home = expanduser("~")
 ""
 
-
+=> check if 2 folders are different
+""
+from filecmp import dircmp
+ergDiff = dircmp(path, toPath)          # compare 2 directories
+if ergDiff.left_only: ...               # see all changed files on the left side
+""
 
 ###### MODULE - LOGGING
 => general Logging Layers: debug => info => warning => error => critical
