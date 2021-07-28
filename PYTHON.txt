@@ -52,6 +52,7 @@
 #> MODULE - SELENIUM - browser automatization
 #> MODULE - BEAUTIFUL SOAP - webscraping
 #> MODULE - REQUESTS - workings with APIs
+#> MODULE - SCRAPY - webscraping using spiders
 #> MODULE - PYQT - making GUIs
 #> MODULE - TKINTER - making GUIs
 #> MOUULE - KIVY - making GUIs
@@ -2518,6 +2519,18 @@ result = api[0]["xyz"]								=> Read the value for the 1 element and the attrib
 
 
 
+
+###### MODULE - SCRAPY - webscraping using spiders
+pip install SCRAPY                                  => install the scrapy module
+scrapy shell http://quotes.toscrape.com/random      => scrape a webpage in command line and use the console for further investigations
+print(response.text)                                => shows the full html-code of the page
+response.css("small.author").extract()              => select element "small" with class="author" and shows the html-code
+response.css("small.author::text").extract()[0]     => return only the text for the element+class for the first element
+response.css("span.text::text").extract_first()     => return the text for the first element for span + class="text"
+response.css("a.tag::text").extract()               => return all anchor-tag texts in a list
+
+
+
 ###### MODULE - PYQT - making GUIs
 pip install pyqt5                                      => Installation
 from PyQt5.QtWidgets import QApplication               => Defines Application
@@ -3193,6 +3206,18 @@ if getattr(sys, 'frozen', False):                             # Get path when st
 elif __file__:                                                # Get path when running from IDE as py-file
     application_path = os.path.dirname(__file__)
 config_path = os.path.join(application_path, config_name)     # Final Config Path   
+""
+
+=> Using Inno Setup Compiler for creating a setup.exe for all files
+""
+https://jrsoftware.org/isdl.php
+- Application Information => provide application informations (appName, appVersion, publisher, website)
+- Application Files => select application main executable file and add all necessary folder and files 
+- Application File Association => no selection
+- Application Documentation => select files which should be shown before / after the installation
+- Setup Languages => select which languages should be included during installation
+- Save installation script
+- Final setup.exe is stored in the "Output"-folder
 ""
 
 
