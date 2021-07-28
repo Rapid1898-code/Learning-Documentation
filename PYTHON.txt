@@ -1174,7 +1174,7 @@ ws["C8"].color											=> Reads the color of a cell and returns a rgb-tuple eg
 ws["C8"].color = None									=> Remove background from a cell
 ws.Range("A1:C3").color = (255,255,255)					=> Assigns background color for a range of cells
 ws.range("B1").api.Font.Bold = True                     => Set cell to bold
-xw.Range("D1").api.Font.ColorIndex = 3                  => Set font color to red (see codes: https://access-excel.tips/excel-vba-color-code-list/)
+ws.range("B2").api.Font.ColorIndex = 3                  => Set font color to red (see codes: https://access-excel.tips/excel-vba-color-code-list/)
 ws["D5"].add_hyperlink(link,text_to_display = "Chart")  => Insert a hyperlink and define which text should be shown in the cell
 ws.api.AutoFilterMode = False                           => Disable auto filter in worksheet
 ws.clear()                                              => Clears the content and formatting of the whole sheet
@@ -2521,6 +2521,7 @@ result = api[0]["xyz"]								=> Read the value for the 1 element and the attrib
 
 
 ###### MODULE - SCRAPY - webscraping using spiders
+=> Tutorial: https://docs.scrapy.org/en/latest/intro/tutorial.html
 pip install SCRAPY                                  => install the scrapy module
 scrapy shell http://quotes.toscrape.com/random      => scrape a webpage in command line and use the console for further investigations
 print(response.text)                                => shows the full html-code of the page
@@ -2528,6 +2529,26 @@ response.css("small.author").extract()              => select element "small" wi
 response.css("small.author::text").extract()[0]     => return only the text for the element+class for the first element
 response.css("span.text::text").extract_first()     => return the text for the first element for span + class="text"
 response.css("a.tag::text").extract()               => return all anchor-tag texts in a list
+scrapy genspider quotesNAME toscrape.com            => Create spider skeleton on command line (quotesName = spider-name, toscrape.com = site to scrape)
+scrapy runspider quotesNAME.py                      => run spider from command line
+scrapy runspider quotesNAME.py -o items.json        => run spider and store result into items.json
+
+=> Example spider
+""
+import scrapy
+class QuotesnameSpider(scrapy.Spider):
+    name = 'quotesNAME'                                 # name of the spiders    
+    allowed_domains = ['toscrape.com']                  # allowed domains
+    start_urls = ['http://quotes.toscrape.com/random']  # urls to scrape
+
+    def parse(self, response):
+        self.log("I just visited: " + response.url)     # info-output when program is running
+        yield {                                         # store scraped informations in a dictionary
+            "author_name": response.css("small.author::text").extract()[0],     
+            "text": response.css("span.text::text").extract_first(),
+            "tags": response.css("a.tag::text").extract(),
+        }
+""
 
 
 
