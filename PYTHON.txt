@@ -2529,6 +2529,8 @@ response.css("small.author").extract()              => select element "small" wi
 response.css("small.author::text").extract()[0]     => return only the text for the element+class for the first element
 response.css("span.text::text").extract_first()     => return the text for the first element for span + class="text"
 response.css("a.tag::text").extract()               => return all anchor-tag texts in a list
+response.css("li.next > a::attr(href)").extract_first()     => find elem a in li with class "next" and get the content from the href-element
+response.urljoin("/page/2/")                        => combine the url from the initial scrapy shell with the string-path
 scrapy genspider quotesNAME toscrape.com            => Create spider skeleton on command line (quotesName = spider-name, toscrape.com = site to scrape)
 scrapy runspider quotesNAME.py                      => run spider from command line
 scrapy runspider quotesNAME.py -o items.json        => run spider and store result into items.json
