@@ -166,6 +166,7 @@ Ctrl D                          => Select whole word
 Ctrl Click                      => Jump to the function definition
 Ctrl W                          => Close Tab
 Ctrl Space                      => Show suggestions for the actual code function / method
+                  
 
 
 
@@ -1684,7 +1685,7 @@ os.path.basename("temp/file.txt")                           => Outputs only the 
 os.path.dirname("temp/file.txt")                            => Outputs only the dir => temp/  
 os.path.split("temp/file.txt")                              => Outputs filename and dir as a tupel => ("temp/","file.txt")
 os.path.exists("temp/file.txt")                             => Checks if filename exists in the filesystem
-os.path.isdir("xyz")                                        => Checks if folder exists
+os.path.isdir("xyz")                                        => Checks if folder exists / element is a directory
 os.path.isfile("xyz")                                       => Checks if element is a file
 os.listdir()											    => Put all filenames to a list from the actual working dir
 os.popen('attrib +h ' + fn).read().close()					=> Change file to hidden
@@ -2522,24 +2523,34 @@ result = api[0]["xyz"]								=> Read the value for the 1 element and the attrib
 
 ###### MODULE - SCRAPY - webscraping using spiders
 => Tutorial: https://docs.scrapy.org/en/latest/intro/tutorial.html
+=> Video-Tutorial: https://www.youtube.com/c/zytedata/playlists (Playlist - Learn Scrapy)
 pip install SCRAPY                                  => install the scrapy module
 scrapy shell http://quotes.toscrape.com/random      => scrape a webpage in command line and use the console for further investigations
+fetch("newURL")                                     => fetch a new site from an allready scraped page with "scrapy shell" before
 print(response.text)                                => shows the full html-code of the page
 response.css("small.author").extract()              => select element "small" with class="author" and shows the html-code
 response.css("small.author::text").extract()[0]     => return only the text for the element+class for the first element
 response.css("span.text::text").extract_first()     => return the text for the first element for span + class="text"
 response.css("a.tag::text").extract()               => return all anchor-tag texts in a list
-response.css("li.next > a::attr(href)").extract_first()     => find elem a in li with class "next" and get the content from the href-element
+response.css("li.next > a::attr(href)").extract_first()     => find elems a in li with class "next" and get the content from the href-element
+response.css("div.quote > span > a::attr(href)").extract()  => extract href from all anchor-tags inside div.quote => span => a
 response.urljoin("/page/2/")                        => combine the url from the initial scrapy shell with the string-path
+data = json.loads(response.text)                    => read text-data when the response is i a json-format
+
+
+
 scrapy genspider quotesNAME toscrape.com            => Create spider skeleton on command line (quotesName = spider-name, toscrape.com = site to scrape)
 scrapy runspider quotesNAME.py                      => run spider from command line
 scrapy runspider quotesNAME.py -o items.json        => run spider and store result into items.json
+
+ 'dupefilter/filtered': 50,                         => shows the duplicate elements which are filtered
+
 
 => Example spider
 ""
 import scrapy
 class QuotesnameSpider(scrapy.Spider):
-    name = 'quotesNAME'                                 # name of the spiders    
+    name = 'quotesNAME'                                 # name of the spider
     allowed_domains = ['toscrape.com']                  # allowed domains
     start_urls = ['http://quotes.toscrape.com/random']  # urls to scrape
 
@@ -2551,6 +2562,30 @@ class QuotesnameSpider(scrapy.Spider):
             "tags": response.css("a.tag::text").extract(),
         }
 ""
+
+=> Example spider (with direct api-access on an infinite page)
+""
+import scrapy
+import json
+
+class QuotesScrollSpider(scrapy.Spider):                        
+    name = 'quotesINFINITE'                                     # name of the spider
+    apiURL = "https://quotes.toscrape.com/api/quotes?page={}"   # standard URL with page variable
+    start_urls = [apiURL.format(1)]                             # create the start-url with page = 1
+
+    def parse(self, response):
+        data = json.loads(response.text)                        # read the json-page 
+        for quote in data["quotes"]:                            # iterate trough all quotes
+            yield {                                             # return the needed values
+                "authorName": quote["author"]["name"],          
+                "text": quote["text"],
+                "tags": quote["tags"]
+            }
+        if data["has_next"]:                                    # check if next page has to be read
+            nextPage = data["page"] + 1
+            yield scrapy.Request(url=self.apiURL.format(nextPage), callback=self.parse)
+""
+
 
 
 
