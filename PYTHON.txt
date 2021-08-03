@@ -2065,12 +2065,9 @@ USA 319		0,915	America
 
 df = pd.DataFrame(np.random.randint(0,5,size=(5, 2)), columns=list('AB'))	=> Initialize a dataframe with random ints with 5 rows and 2 columns
 df = pd.DataFrame()                                         => Create an empty dataframe
-<<<<<<< HEAD
 df = pd.DateFrame(l)                                        => Creates a dataframe from a list of dicts => [{...},{...},{...}]
 df = pd.DataFrame.from_dict(d, orient="index")              => Create a dataframe for a dict
 if df.empty:												=> Check if datafram is empty
-=======
->>>>>>> 8cfdc8f0ea90b259b3c64359b55bd09167cd7539
 df.shape                                                    => Show the shape of the dataframe (rows, columns) => (7,3)
 df.info()                                                   => Info for columns (index,name,dtype) also count of NaN-values per column
 df.dtypes()													=> Shows datatype of every column
