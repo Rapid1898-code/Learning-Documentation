@@ -1655,6 +1655,9 @@ s.quit()                                                     => Closing connecti
 from pathlib import Path									=> Import module
 Path.cwd()													=> Current working directory
 Path("folder").mkdir(parents=True, exist_ok=True)			=> Creates new folder (no error message if folder allready exists with exist_ok=True)
+path = Path("some_folder")                                  => define some folder
+path = path / "sub_folder" / "sub_sub_folder"               => add some subfolders (eg. some_folder/sub_folder/sub_sub_folder)
+path = path.resolve()                                       => make path absolute
 
 => get mac-adress from the actual pc
 ""
