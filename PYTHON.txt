@@ -2258,8 +2258,8 @@ from selenium.webdriver.common.keys import Keys                     => Import Ke
 driver = webdriver.Chrome(os.getcwd() + '/chromedriver')            => Define chrome driver - with actual folder os.getcwd
 driver.get("url")                                                   => Access to the url
 time.sleep(1)                                                       => Somtimes necessary to delay some work in progress
-driver.find_element_by_xpath("//input[@id='passwd-id']")            => Finde element (input-element with id = "passwd-id")
-driver.find_element_by_xpath('//*[@id="button"]/input').click()     => Click on element by xpath (investigate - coyp xpath)
+driver.find_element_by_xpath("//input[@id='passwd-id']")            => Find element (input-element with id = "passwd-id")
+driver.find_element_by_xpath('//*[@id="button"]/input').click()     => Click on element by xpath (investigate - copy xpath)
 driver.find_element_by_xpath('//*[@id="name"]').send_keys("x"])     => Fill field "name" with content "x"
 driver.find_element(By.XPATH, '//button[text()="Some text"]')       => Other method to find element per xpath ()
 driver.find_element_by_xpath('//div[@aria-label="Post"]').click()   => Find Element according to a specific element eg. "aria-label" with text "Post" in a "div"
