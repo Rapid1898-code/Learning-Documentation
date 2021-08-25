@@ -328,6 +328,7 @@ s.split()                                       => Split the words in a list
 s.split('=>', 1)[0]								=> Split till the first occurence of "=>"
 s.splitlines()                                  => Split sentences after line breaks
 s = s.strip()                                   => Delete all whitespaces at the beginning and the end
+s = " ".join(s.split())                         => Remove all duplicate spaces in a string
 s = s.replace("e","X")                          => Replacement of two strings
 s.isdigit()                                     => TRUE if the whole string are digits
 s.isalpha()                                     => True if the whole string are no digits
@@ -2542,7 +2543,6 @@ data = json.loads(response.text)                    => read text-data when the r
 scrapy genspider quotesNAME toscrape.com            => Create spider skeleton on command line (quotesName = spider-name, toscrape.com = site to scrape)
 scrapy runspider quotesNAME.py                      => run spider from command line
 scrapy runspider quotesNAME.py -o items.json        => run spider and store result into items.json
-
  'dupefilter/filtered': 50,                         => shows the duplicate elements which are filtered
 
 
@@ -2551,6 +2551,9 @@ scrapy runspider quotesNAME.py -o items.json        => run spider and store resu
 import scrapy
 class QuotesnameSpider(scrapy.Spider):
     name = 'quotesNAME'                                 # name of the spider
+    custom_settings = {                                 # define custom settings - eg. encoding utf-8 for german umlaute
+        "FEED_EXPORT_ENCODING": "utf-8"
+    }    
     allowed_domains = ['toscrape.com']                  # allowed domains
     start_urls = ['http://quotes.toscrape.com/random']  # urls to scrape
 
