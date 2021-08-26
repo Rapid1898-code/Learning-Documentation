@@ -2554,7 +2554,7 @@ class QuotesnameSpider(scrapy.Spider):
     custom_settings = {                                 # define custom settings - eg. encoding utf-8 for german umlaute
         "FEED_EXPORT_ENCODING": "utf-8"
     }    
-    allowed_domains = ['toscrape.com']                  # allowed domains
+    allowed_domains = ['toscrape.com']                  # allowed domains (no http in front of the domain)
     start_urls = ['http://quotes.toscrape.com/random']  # urls to scrape
 
     def parse(self, response):
