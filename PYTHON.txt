@@ -63,7 +63,7 @@
 #> MODULE - ICECREAM - print for debugging
 #> MODULE - TA-LIB - technical analysis of financial market
 #> MODULE - YFINANCE - date from Yahoo Finance
-#> PYINSTALLER - generate python programs to executables
+#> PYINSTALLER, INNO SETUP COMPILER - generate python programs to executables
 #> PYTHONANYWHERE - run python scripts in the cloud
 #> HEROKU - run python scripts in the cloud
 
@@ -3232,7 +3232,7 @@ dataYF.isin                         => ISIN-Number
 
 
 
-###### PYINSTALLER - generate python programs to executables
+###### PYINSTALLER, INNO SETUP COMPILER - generate python programs to executables
 pip install pyinstaller                     => Installation
 pyinstaller prg.py                          => Generate the bundle in a subdirectory called dist.
 pyinstaller --onefile prg.py                => Generate only one file
