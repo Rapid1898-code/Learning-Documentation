@@ -3316,7 +3316,3 @@ heroku buildpacks:add --index 1 heroku/python
 heroku buildpacks:add --index 2 numrut/ta-lib
 schedule the running time with addon Heroku Scheduler
 ""
-
-
-
-
