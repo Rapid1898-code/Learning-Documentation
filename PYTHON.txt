@@ -3294,17 +3294,22 @@ on Heroku: create App					=> New => Create new app => give name with only lowerc
 on Heroku: set python build path		=> Setting => Add buildpack => choose python
 in App-folder: create Procfile			=> Create Procfile with 2 lines => web: python appname.py, worker: python appname.py 
 in App-folder: create requirements.txt  => Create or Copy the requirements.txt => eg. pip freeze> requirements.txt
+in App-folder: git init                 => when there is not git-structure yet
 delete not possible modules	in cloud 	=> like xlwings, openpyxl, pywin32
 heroku login                            => login to heroku (login page opens in the browser)
 heroku git:remote -a HEROKU_APP_NAME    => connect to the heroku app
 git add .                               => add files (like in git)
 git commit -am "msg"                    => commit files (like in git
-git push heroku main                    => push the files to heroku for build#
+git push heroku main                    => push the files to heroku for build (try master instead of main when not working)
 on Heroku: deselect web + worker		=> in Resources deselect both (otherwise the program will run more times per day) 
 on Heroku: add Add-ons					=> Heroku Scheduler for scheduling the app, Papertrail for logs
 on Heroku / Scheduler					=> Schedule the app run times
+heroku ps -a appName                    => Show which dynos are running currently
 heroku run python script.py             => run the app / script which is hosted on heroku
-heroku ps:scale worker=0                => stopps worker (eg. when the app is only sceduled by heroku scheduler addon)
+heroku run -a <appName> python <prg.py> => run the app / script which is hosted on heroku (only possible when no dyno is running)
+heroku ps -a <appName>                  => see all running dynos
+heroku ps:stop scheduler.6436 -a <appN> => stop the running dyno with name "scheduler.6436"
+
 
 => using TA-Lib on heroku
 ""
