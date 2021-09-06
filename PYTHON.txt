@@ -33,6 +33,7 @@
 #> MODULE - PyPDF2 - working with pdfs
 #> MYSQL - MARIADB - HEIDISQL
 #> MYSQL - MARIADB - SQL
+#> MYSQL - MYSQL.CONNECTOR
 #> SQL ALCHEMY
 #> SQLITE3 SQL
 #> MODULES - DATES, DATETIME, CALENDAR, TIMEIT, TIME, SYS, CTYPES
@@ -128,6 +129,7 @@ pip install -r requirements.txt     => install modules from requirements.txt
 Ctrl K Ctrl C				    => Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
 Ctrl K Ctrl U				    => Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
 Ctrl F   		   			    => Find in File
+Ctrl Shift f                    => Search in alle files
 Ctrl H        	   			    => Replace in File
 Ctrl Shift H			        => Replace in Path (in all Files)
 F8           					=> Jump to the next error
@@ -1310,6 +1312,7 @@ Filename: choose destination file and folder
 
 
 ###### MYSQL - MARIADB - SQL
+pip install mysql, mysql.connector                         => Both modules have to be installed
 import mysql.connector                                     => Import module for mysql access
 mydb = mysql.connector.connect (host="localhost",user="root",passwd="pwd")                            => Define connection    
 mycursor = mydb.cursor()                                   => Set Cursor on mySQL
@@ -1345,13 +1348,61 @@ sql = "SELECT * FROM students ORDER BY name"               => Output content - a
 sql = "SELECT * FROM students ORDER BY name DESC"          => Output content - descending order
 sql = "DELETE FROM students WHERE name = 'xyz'"            => Delete row with name "xyz"
 sql = "DROP TABLE IF EXISTS students"                      => Drop whole table (if exists helps if there no table anymore)  
+ALTER TABLE mytable AUTO_INCREMENT=0                       => Reset auto-increment in a table
 
-=>Read ticker for specific ticker                 
+=> SELECT ticker name for specific ticker                 
 ""
-sql = "SELECT ticker FROM stock_main where ticker=%s"      # Or Select * to get all values from the table
-cont = [(summary["symbol"])]
-c.execute(sql,cont)
+sql = "SELECT tickerName FROM stock_main where ticker=%s"   # Or Select * to get all values from the table
+var = [(stockTicker)]
+c.execute(sql,var)
 data = c.fetchall()                 
+""
+
+=> SELECT maximum calcDate for specific ticker
+""
+sql = "SELECT max(calcDate) FROM scores WHERE ticker = %s"
+var = [(stock)]
+c.execute (sql, var)
+lastCalcDate = c.fetchone() 
+""
+
+=> INSERT new row in a table
+""
+sql = "INSERT INTO scores (" \
+    "ticker," \
+    "calcDate," \
+    "stockName," \
+    "profitGrowth)" \
+    "VALUES (%s,%s,%s,%s)"  # as many %s necessary as insert attributes
+cont = [inputList]          # list with 4 elements
+c.executemany (sql, cont)
+mydb.commit () 
+""
+
+=> UPDATE row in a table
+""
+sql = "UPDATE stock_statistics " \
+        "SET " \
+        "marketCap=%s," \
+        "EV=%s," \
+        "Ebitda=%s" \
+        " WHERE ticker=%s AND ultimo=%s"
+cont = [(valMarketCap,
+        valEV,
+        valEbitda,
+        stockTicker,
+        ultimo)]
+c.executemany (sql, cont)
+mydb.commit ()
+""
+
+=> DELETE row in a table
+""
+sql = "DELETE FROM scores" \
+    " WHERE ticker = %s and calcDate = %s"
+cont = [stock,dateElem]
+c.execute (sql, cont)
+mydb.commit () 
 ""
 
 
@@ -3305,7 +3356,6 @@ on Heroku: deselect web + worker		=> in Resources deselect both (otherwise the p
 on Heroku: add Add-ons					=> Heroku Scheduler for scheduling the app, Papertrail for logs
 on Heroku / Scheduler					=> Schedule the app run times
 heroku ps -a appName                    => Show which dynos are running currently
-heroku run python script.py             => run the app / script which is hosted on heroku
 heroku run -a <appName> python <prg.py> => run the app / script which is hosted on heroku (only possible when no dyno is running)
 heroku ps -a <appName>                  => see all running dynos
 heroku ps:stop scheduler.6436 -a <appN> => stop the running dyno with name "scheduler.6436"
