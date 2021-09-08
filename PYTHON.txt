@@ -1351,6 +1351,8 @@ sql = "SELECT * FROM students ORDER BY name DESC"          => Output content - d
 sql = "DELETE FROM students WHERE name = 'xyz'"            => Delete row with name "xyz"
 sql = "DROP TABLE IF EXISTS students"                      => Drop whole table (if exists helps if there no table anymore)  
 ALTER TABLE mytable AUTO_INCREMENT=0                       => Reset auto-increment in a table
+TRUNCATE TABLE tablename                                   => Delete the data inside a table
+DROP TABLE tablename                                       => Delete the data AND the whole table-structure itself
 
 => SELECT ticker name for specific ticker                 
 ""
@@ -3258,7 +3260,8 @@ https://fastapi.tiangolo.com/advanced/templates/
 semantic-ui.com                 => framework for formatting (like bootstrap)
 https://semantic-ui.com/introduction/advanced-usage
 layouts.html                    => for html-templates which can be used in several other html-files
-
+https://www.tradingview.com/widget/advanced-chart/
+javascript-code                 => for interactive candlebars on the webpage
 
 => simplest route
 ""
