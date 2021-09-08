@@ -61,9 +61,11 @@
 #> MODULE - PYTHONCOM - make new formula in excel with python-function
 #> MODULE - FLASK, ZAPPA, AWS - making an API
 #> MODULE - FLASK, HEROKU, GUNICORN  - making an API
+#> MODULE - FASTPI, UVICORN - making an API
 #> MODULE - ICECREAM - print for debugging
 #> MODULE - TA-LIB - technical analysis of financial market
 #> MODULE - YFINANCE - date from Yahoo Finance
+#> MODULE - PLOTLY - data visualization 
 #> PYINSTALLER, INNO SETUP COMPILER - generate python programs to executables
 #> PYTHONANYWHERE - run python scripts in the cloud
 #> HEROKU - run python scripts in the cloud
@@ -1352,7 +1354,7 @@ ALTER TABLE mytable AUTO_INCREMENT=0                       => Reset auto-increme
 
 => SELECT ticker name for specific ticker                 
 ""
-sql = "SELECT tickerName FROM stock_main where ticker=%s"   # Or Select * to get all values from the table
+sql = "SELECT tickerName FROM stock_main WHERE ticker=%s"   # Or Select * to get all values from the table
 var = [(stockTicker)]
 c.execute(sql,var)
 data = c.fetchall()                 
@@ -3239,6 +3241,28 @@ git push heroku main
 
 
 
+###### MODULE - FASTPI, UVICORN - making an app
+=> https://www.youtube.com/watch?v=OFnOEIyqSRg&list=PLvzuUVysUFOuoRna8KhschkVVUo2E2g6G
+=> see Python-Diverse - TradingApp
+from fastapi import FastAPI     => import module
+uvicorn main:app --reload       => start reloading app (refreshed automatically)
+jinja2 templates                => for rendering the html-page
+https://fastapi.tiangolo.com/advanced/templates/
+semantic-ui.com                 => framework for formatting (like bootstrap)
+https://semantic-ui.com/introduction/advanced-usage
+layouts.html                    => for html-templates which can be used in several other html-files
+
+
+=> simplest route
+""
+app = FastAPI()
+@app.get("/")
+def index():
+  return {"message": "hello world!"}
+""
+
+
+
 ###### MODULE - ICECREAM - print for debugging
 from icecream import ic										=> Imort icecream
 ic(var1)													=> Show value of the variable in the form: ic| var1: 20
@@ -3280,6 +3304,13 @@ dataYF.sustainability               => Sustainability Informations (palm oile, m
 dataYF.recommendations              => Recommendations from different agencies
 dataYF.calendar                     => Calendar data
 dataYF.isin                         => ISIN-Number
+
+
+
+###### MODULE - PLOTLY - data visualization 
+pip install plotly                      => installation
+https://plotly.com/python/              => examples of graphing libraries
+Python-Diverses / Plotly / example.py   => see example for candlestick-chart
 
 
 
