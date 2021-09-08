@@ -2507,7 +2507,14 @@ content.text.strip()                                            => Outputs text 
 url_i = rows[0].find('img')['src']                              => Read url from the image
 image = requests.get(f'https:{url_i}').content                  => Read image as content
 results.prettify()                                              => Formated Output with html indentations
-if "Kein Zugriff" in soup.text:                                 => Check if specific text in soup text-output
+if "Kein Zugriff" in soup.text:         => Check if specific text in soup text-output
+soap.tbody                              => Reads everyting what is in the tbody-tag
+tbody.contents                          => Returns all tags in a list which are in the tbody-tag (tbody is result from doc.tbody)
+tbody[0].next_sibling                   => return the next sibling
+tbody[0].previous_sibling               => return the previous sibling
+.parent                                 => return the parent-tag
+.name                                   => returns the name of the tag
+.descendants                            => returns all descendants (as a geneartor object)
 
 => Define Real User Agent Header
 ""
