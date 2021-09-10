@@ -1377,9 +1377,9 @@ sql = "INSERT INTO scores (" \
     "calcDate," \
     "stockName," \
     "profitGrowth)" \
-    "VALUES (%s,%s,%s,%s)"  # as many %s necessary as insert attributes
+    " VALUES (%s,%s,%s,%s)"  # as many %s necessary as insert attributes
 cont = [inputList]          # list with 4 elements
-c.executemany (sql, cont)
+c.execute (sql, cont)
 mydb.commit () 
 ""
 
