@@ -1178,7 +1178,7 @@ for i in ws.range("A3:A7"): i.value = ""				=> Iterate trough cells an set them 
 xl_col_sort(ws,1)                                       => Sort worksheet in the first col (function see below)
 ws["C8"].color											=> Reads the color of a cell and returns a rgb-tuple eg. (146, 208, 80)
 ws["C8"].color = None									=> Remove background from a cell
-ws.Range("A1:C3").color = (255,255,255)					=> Assigns background color for a range of cells
+ws.range("A1:C3").color = (255,255,255)					=> Assigns background color for a range of cells
 ws.range("B1").api.Font.Bold = True                     => Set cell to bold
 ws.range("B2").api.Font.ColorIndex = 3                  => Set font color to red (see codes: https://access-excel.tips/excel-vba-color-code-list/)
 ws["D5"].add_hyperlink(link,text_to_display = "Chart")  => Insert a hyperlink and define which text should be shown in the cell
