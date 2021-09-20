@@ -1166,6 +1166,17 @@ ws.conditional_formatting.add('D2:D10',
 	FormulaRule(formula=['E1=0'], font=myFont, border=myBorder, fill=redFill))
 ""    
 
+=> Color Scale formating
+""
+# Define rule
+ruleBottomGreen = ColorScaleRule(
+                        start_type='percentile', start_value=10, start_color="63BE7B", # green
+                        mid_type='percentile', mid_value=50, mid_color= "FFFB84", # yellow
+                        end_type='percentile', end_value=90, end_color="F8696B") # red 
+# Apply rule
+ws2.conditional_formatting.add(f"K4:K12", ruleBottomGreen)
+""
+
 
 
 ###### MODULE - XLWINGS - working on the fly with open excel worksheets
