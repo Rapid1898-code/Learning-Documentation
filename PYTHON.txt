@@ -134,7 +134,8 @@ Ctrl F   		   			    => Find in File
 Ctrl Shift f                    => Search in alle files
 Ctrl H        	   			    => Replace in File
 Ctrl Shift H			        => Replace in Path (in all Files)
-F8           					=> Jump to the next error
+F8            					=> Jump to the next error
+Shift + F8                      => Jump to the next error (backwards)
 F3       						=> Find next
 Ctrl G     				    	=> Goto line
 Shift Alt Up/Down			    => Copy / Duplicate lines	
@@ -2277,6 +2278,7 @@ dt = dt.to_pydatetime()									    => Convert pandas timestamp to datetime
 dt = pd.Timestamp(dt)                                       => Convert datetime to pandas timestamp
 df["max"]=df[["high-low","high-pc","low-pc"]].max(axis=1)   => Get the maximum from the 3 different columns and put it in the column "max"
 temp = df['name'].apply(lambda x: x.strip())                => Changing a column with this lambda function (over 400x faster then using iterrows)
+df.append(pd.Series(np.nan), ignore_index=True)             => Add empty line to dataframe
 
 => When there is some warning like "A value is trying to be set on a copy of a slice from a DataFrame"
 ""
