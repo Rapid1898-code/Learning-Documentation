@@ -2708,6 +2708,21 @@ buttons.setStandardButtons(QDialogButtons.OK)          => Defines a ok button on
 layout_qv.addWidget(buttons)                           => Adds buttons to vertical layout
 class Window(QMainWindow):                             => Defines a class Windows which inherits from QMainWindow
 
+=> simplest App
+""
+import PyQt5.QtWidgets as qtw
+class MainWindow(qtw.QWidget):
+  def __init__(self):
+    super().__init__()
+    self.setWindowTitle("Check Orphans App")  
+    ...
+    self.show()
+app = qtw.QApplication([])
+mw = MainWindow()
+app.exec_()
+""
+
+
 
 
 ###### MODULE - TKINTER - making GUIs
