@@ -2668,6 +2668,9 @@ class QuotesScrollSpider(scrapy.Spider):
 
 
 ###### MODULE - PYQT - making GUIs
+# see Codemy.com https://www.youtube.com/channel/UCFB0dxMudkws1q8w5NJEAmw
+# see Python-Diverses/PyQt
+https://build-system.fman.io/qt-designer-download      => Install Py Qt Designer
 pip install pyqt5                                      => Installation
 from PyQt5.QtWidgets import QApplication               => Defines Application
 from PyQt5.QtWidgets import QLabel                     => Defines Label
@@ -2707,6 +2710,7 @@ buttons = QDialogButtonBox()                           => Define buttons for a d
 buttons.setStandardButtons(QDialogButtons.OK)          => Defines a ok button on a dialog window
 layout_qv.addWidget(buttons)                           => Adds buttons to vertical layout
 class Window(QMainWindow):                             => Defines a class Windows which inherits from QMainWindow
+pyuic5 -x 6PyQtDesigner.ui -o 6PyQtDesigner.py         => Convert Qt-Designer file to a python-file
 
 => simplest App
 ""
