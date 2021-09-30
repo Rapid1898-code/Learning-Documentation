@@ -1186,20 +1186,22 @@ import xlwings as xw                                    => Import module
 wb = xw.Book ("name.xlsx")                              => Read XLSX
 ws = wb.sheets["name_sheet"]                            => Read specific worksheet
 ws["A1"].value = "xyz"                                  => Updates specific cell
-for i in ws.range("A3:A7"): i.value = ""				=> Iterate trough cells an set them to "" / None
+for i in ws.range("A3:A7"): i.value = ""				        => Iterate trough cells an set them to "" / None
 xl_col_sort(ws,1)                                       => Sort worksheet in the first col (function see below)
-ws["C8"].color											=> Reads the color of a cell and returns a rgb-tuple eg. (146, 208, 80)
-ws["C8"].color = None									=> Remove background from a cell
-ws.range("A1:C3").color = (255,255,255)					=> Assigns background color for a range of cells
+ws["C8"].color											                    => Reads the color of a cell and returns a rgb-tuple eg. (146, 208, 80)
+ws["C8"].color = None									                  => Remove background from a cell
+ws.range("A1:C3").color = (255,255,255)					        => Assigns background color for a range of cells
 ws.range("B1").api.Font.Bold = True                     => Set cell to bold
 ws.range("B2").api.Font.ColorIndex = 3                  => Set font color to red (see codes: https://access-excel.tips/excel-vba-color-code-list/)
 ws["D5"].add_hyperlink(link,text_to_display = "Chart")  => Insert a hyperlink and define which text should be shown in the cell
 ws.api.AutoFilterMode = False                           => Disable auto filter in worksheet
 ws.clear()                                              => Clears the content and formatting of the whole sheet
 ws.clear_contents()                                     => Clears the content but leaves formatting
-l = [x.name for x in wb.sheets]							=> Read worksheetnames to list
-wb.sheets.add("NewWS")									=> Add worksheet in workbook
+l = [x.name for x in wb.sheets]							            => Read worksheetnames to list
+wb.sheets.add("NewWS")									                => Add worksheet in workbook
 [x for x in ws.range("A3:A2000").value if x != None]    => Load elements in list from range which are not None
+ws.range("A1:A10").value = ws2.range("A1:A10").options(ndim=2).value      => copy range from one sheet to another
+
 
 
 => Update row / change whole row
