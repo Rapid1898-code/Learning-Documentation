@@ -2429,6 +2429,7 @@ Xpath=//tagname[@attribute='value']
 //td[text()='UserID']	                # td-elem which has the text "User-ID"
 //a[@href='http://demo.guru99.com/']    # anchor with specific link
 //img[@src='//cdn.guru99.com/images/home/java.png']   # img-elem with specific pic-link
+(//button)[2]                           # select the second button on the page
 
 //*[@type='submit' or @name='btnReset']         # any elem which has 2 OR conditions (for type and name)
 //input[@type='submit' and @name='btnLogin'     # any elem which has 2 AND conditions (for type and name)
