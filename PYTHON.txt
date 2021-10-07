@@ -2375,7 +2375,7 @@ driver.minimize_window()                                            => Minmize w
 wait = WebDriverWait (driver, 5)                                        # Define maximum wait time till the element is ready
 wait.until(EC.presence_of_element_located((By.NAME, "agree"))).click()  # Wait till element with name = "agree" is present and click afterwards
 wait.until(EC.presence_of_element_located((By.ID, "YDC-Col1")))         # Wait till element with id = "YDC-Col1" is present
-wait.until(EC.element_to_be_clickable((By.XPATH, "//div[text()='Total revenues']"))).click()    # Wailt till div-element with specific text is pressent and click
+wait.until(EC.element_to_be_clickable((By.XPATH, "//div[text()='Total revenues']"))).click()    # Wait till div-element with specific text is pressent and click
 ""
 
 => Use Selenium with chrome windows hidden
