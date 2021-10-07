@@ -839,6 +839,14 @@ u.scheme											=> Returns "http"
 u.path												=> Returns "/search"
 u.netloc											=> Returns "google.com"
 
+=> Download picture from a url
+""
+  opener = urllib.request.URLopener()
+  opener.addheader('User-Agent', "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36")
+  filename, headers = opener.retrieve(url, 'Test.jpg')
+""
+
+
 
 
 ###### MODULE - CSV
@@ -2337,12 +2345,12 @@ driver.find_element_by_xpath('//div[@aria-label="Post"]').click()   => Find Elem
 driver.find_element_by_name("q").send_keys("txt" + u'\ue007')       => Fill text in field and press enter
 drv.find_element_by_css_selector("input#myID").send_keys("txt")     => Fill text in field (use css-selector to find element => input element with id "myID" in it)
 driver.set_window_size(600,1000)
-driver.find_elements_by_class_name("cl")                     		=> Search field for class
-driver.find_elements_by_tag_name("tag")                		        => Search field for tag
+driver.find_elements_by_class_name("cl")                     		    => Search field for class
+driver.find_elements_by_tag_name("tag")                		          => Search field for tag
 driver.find_element_by_link_text('Continue')                        => Search by (exact) link-text in an anchor-tag
 driver.find_element_by_partial_link_text('Conti')                   => Search by (partial) link-text in an ancor-tag
-driver.send_keys(Keys.Backspace,Keys.ARROW_LEFT,Keys.ENTER)		    => Send single keyboard-elements <> chars (needs import keys)
-driver.send_keys (u'\ue007')									    => Send an Return-keystroke (eg. for enter after data entries in fields)
+driver.send_keys(Keys.Backspace,Keys.ARROW_LEFT,Keys.ENTER)		      => Send single keyboard-elements <> chars (needs import keys)
+driver.send_keys (u'\ue007')									                      => Send an Return-keystroke (eg. for enter after data entries in fields)
 field.submit()                                                      => Press enter and submit site
 driver.quit()                                                       => Close driver (otherwise the windows will not close)
 driver.close()                                                      => Close the actual window
@@ -2507,7 +2515,7 @@ page = requests.get("https://www.ariva.de/dax-30")              => Read url as p
 page = requests.get(url,headers=headers,proxy=proxy)            => Read url as page with proxy like eg. "https://10.10.1.11:1080"
 soup = BeautifulSoup (page.content,"html.parser")               => Read page with html.parser
 soup.find(id="result_table_0")                                  => Read specific invidual id
-soup.find("p", {"class": "payamntp"})      			            => Read specific class
+soup.find_all("p", {"class": "payamntp"})      			            => Read specific class
 soup.findAll(True, {'class':['class1', 'class2']})              => Find element with 2 / more classes
 soup.find_all("td"):    			                            => Read all table data cells
 soup.find_all("tr", class_="arrow0"):       			        => Read all table rows for specific class
