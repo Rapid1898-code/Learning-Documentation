@@ -1752,11 +1752,11 @@ os.getcwd()                                                 => Current working d
 for f in os.listdir(): print(f)                             => Outputs the entire content of the current working dir
 for f in os.listdir(): fn, ext = os.path.splitext(f)        => Outputs the elements seperated in name + extension
 os.rename(filename, new_name)                               => Change the filenmae
-os.rename(path1+fn, path2+fn)							    => Cut and paste file from path1 to path2
+os.rename(path1+fn, path2+fn)							                  => Cut and paste file from path1 to path2
 shutil.copyfile("src","dst")                                => Copy file from source to destination
 os.mkdir("folder")                                          => Creates new folder (also possible with makedirs => is prefered)
 os.makedirs("folder/subfolder")                             => Creates new folder and subfolders
-os.remove (file)											=> Delete file
+os.remove (file)											                      => Delete file
 os.rmdir ("folder")                                        	=> Delete folder (prefered cause deleting ist dangerous)
 os.removedirs ("folder/subfolder")                          => Delete folder and subfolders
 os.stat("file")                                             => Outputs the statistics of the file (size, modification time,...)
@@ -1766,10 +1766,11 @@ os.path.basename("temp/file.txt")                           => Outputs only the 
 os.path.dirname("temp/file.txt")                            => Outputs only the dir => temp/  
 os.path.split("temp/file.txt")                              => Outputs filename and dir as a tupel => ("temp/","file.txt")
 os.path.exists("temp/file.txt")                             => Checks if filename exists in the filesystem
-os.path.isdir("xyz")                                        => Checks if folder exists / element is a directory
-os.path.isfile("xyz")                                       => Checks if element is a file
-os.listdir()											    => Put all filenames to a list from the actual working dir
-os.popen('attrib +h ' + fn).read().close()					=> Change file to hidden
+os.path.isdir("xyz")                                        => Checks if folder exists / element is a directory (in the actual dir)
+os.path.isfile("xyz")                                       => Checks if files exists / element is a file (in the actual dir)
+os.listdir()											                          => Put all filenames to a list from the actual working dir
+[x[0] for x in os.walk(path)][1:]                           => Put all sub-folders to a list from the actual working dir
+os.popen('attrib +h ' + fn).read().close()					        => Change file to hidden
 
 => find home-directory for the actual user
 ""
