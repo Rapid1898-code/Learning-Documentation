@@ -2384,7 +2384,7 @@ wait.until(EC.element_to_be_clickable((By.XPATH, "//div[text()='Total revenues']
 from selenium.webdriver.chrome.options import Options            
 options = Options()
 options.add_argument('--headless')                                          # Window Hidden (only used this for the final program - not during devleopment / testing!)
-options.add_argument('window-size=1920x1080')								# (this somtimes helps when headless is not working)	
+options.add_argument('window-size=1920x1080')								                # (this somtimes helps when headless is not working)	
 options.add_argument("start-maximized")                                     # Start window maximized
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-gpu')   
