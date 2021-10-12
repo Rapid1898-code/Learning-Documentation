@@ -1,0 +1,8 @@
+Download and install VSCode
+Activate Settings Sync
+Install Python-version
+Set Path-Variable to run python.exe from everywhere - eg. C:\Users\WRSPOL\AppData\Local\Programs\Python\Python39
+Set Path-Variable to run pip.exe from everywhere - eg. C:\Users\WRSPOL\AppData\Local\Programs\Python\Python39\Scripts
+Download and install GitBash
+Set alias for python so it can be used in GitBash: alias python="winpty C:/Users/WRSPOL/AppData/Local/Programs/Python/Python39/python.exe"
+Set alias for pip so it can be used in GitBash: alias pip="winpty C:/Users/WRSPOL/AppData/Local/Programs/Python/Python39/Scripts/pip.exe"
