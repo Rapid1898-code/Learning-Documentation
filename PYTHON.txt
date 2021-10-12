@@ -93,7 +93,7 @@ pip install virtualenv                                     =>  Install virtualen
 pip list                                                   =>  Global packages installed
 where python                                               =>  Shows where the python-file is (Windows)
 which python                                               =>  Shows where the python-file is (Linux)
-virtualenv env                                         	   =>  Create new virtual environment pj1_env
+virtualenv env OR python -m virtualenv env            	   =>  Create new virtual environment pj1_env
 
 => Activate environment 
 ""
