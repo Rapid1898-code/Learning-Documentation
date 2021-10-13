@@ -2189,14 +2189,15 @@ df.loc[df["Popl"] > 70, ["Popl","Continent"]]				=> Returns GER,JPN,USA for cols
 df[["Open","Close"]]["2010":"2020"]                         => Output of 2 columns for the column slice
 df[df.index.isin(["2020","2019"])][hist.columns[0:4]]       => Output specific rows and slice of columns
 df[df.index.isin(["2020","2019"])][["Open","Close"]]        => Output specific rows and columns
-df.drop("CAN")												=> Drops the row CAN
-df.drop(["CAN","JPN"])										=> Drops the rows CAN,JPN
-df.drop(["CAN","JPN"],axis=0)								=> Drops the rows CAN,JPN (2nd method)
-df.drop(["CAN","JPN"],axis="rows")							=> Drops the rows CAN,JPN (3rd method)
-df.drop(columns=["Popl","Continent"])						=> Drops the cols Popl,Continent
-df.drop(["Popl","Continent"],axis=1)						=> Drops the cols Popl,Continent (2nd method)
+df.drop("CAN")												            => Drops the row CAN
+df.drop(["CAN","JPN"])										          => Drops the rows CAN,JPN
+df.drop(["CAN","JPN"],axis=0)								        => Drops the rows CAN,JPN (2nd method)
+df.drop(["CAN","JPN"],axis="rows")							    => Drops the rows CAN,JPN (3rd method)
+df.drop(columns=["Popl","Continent"])						    => Drops the cols Popl,Continent
+df.drop(df.columns[1,2,5,9],axis=1)                 => Drops the cols 
+df.drop(["Popl","Continent"],axis=1)						    => Drops the cols Popl,Continent (2nd method)
 df.drop(["Popl","Continent"],axis="columns")				=> Drops the cols Popl,Continent (3rd method)
-df.drop(df.index, inplace=True)								=> Drops the whole dataframe
+df.drop(df.index, inplace=True)								      => Drops the whole dataframe
 crisis = pd.Series([-10,-0,3],index=["Popl","HDI"])			=> Define series with same col-names as in the dataframe - with some correction values
 df[["Popl","HDI"]] + crisis									=> Comines crisis-series to the df => all values in "Popl" -10 and "HDI" -0,3 in the df
 langs = pd.Series(											=> Define new series for new column in dataframe
@@ -2290,6 +2291,9 @@ dt = pd.Timestamp(dt)                                       => Convert datetime 
 df["max"]=df[["high-low","high-pc","low-pc"]].max(axis=1)   => Get the maximum from the 3 different columns and put it in the column "max"
 temp = df['name'].apply(lambda x: x.strip())                => Changing a column with this lambda function (over 400x faster then using iterrows)
 df.append(pd.Series(np.nan), ignore_index=True)             => Add empty line to dataframe
+df = df[df["col1"].notna()]                                 => Delete rows where col1 = nan
+df = df[df["col1"] < 10]                                    => Delete rows where col1 < 10
+dfFinal = df1.merge(df2, on='order-id')                     => Merge 2 dataframes where the column order-id is ident
 
 => When there is some warning like "A value is trying to be set on a copy of a slice from a DataFrame"
 ""
