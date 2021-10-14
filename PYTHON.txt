@@ -1578,13 +1578,14 @@ dt.strftime((dt.strptime(tmp,"%m/%d/%Y")),"%Y-%m-%d")      	 => Convert dateform
 isinstance(x, date)											 => Check if variable is of type datetime.date or datetime.datetime                   
 isinstance(x, datetime)										 => Check if variable is of type datetime.datetime
 date = date(2020,7,24)                                       => Define date as "2020-07-24"
-dt = datetime(2020,3,5,19,27,23)                      		 => Define date+time as "2020-03-05 19:27:23"
+dt = datetime(2020,3,5,19,27,23)                      		   => Define date+time as "2020-03-05 19:27:23"
 now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")           => Actual date+time in format 2020-06-09 20:11:13
-now = datetime.now().strftime("%Y-%m-%d") 			         => Actual date in format 2020-06-09
+now = datetime.now().strftime("%Y-%m-%d") 			             => Actual date in format 2020-06-09
 tday = datetime.today()                                      => Actual date in datetime format
-tday = datetime.today().date()								 => Actual date as date format
+tday = datetime.today().date()								               => Actual date as date format
+tday = str(datetime.today().date())								           => Actual date as string format
 date = datetime.date()                                       => Convert datetime to date
-dt.year, dt.month, dt.day                              		 => Year / month / day from the datetime
+dt.year, dt.month, dt.day                              		   => Year / month / day from the datetime
 tday.isoweekday()                                            => Returns weekday (monday=1, sunday=7)
 last_friday = day - timedelta(days=tday.isoweekday() + 2)    => Calculates last friday (+2 for FR, +1 SA, 0 SU, -1 MO, -2 TU, -3 WE, -4 TH)
 tdelta = timedelta(days=7)                                   => Creates timedelta for 7 days
@@ -2521,7 +2522,7 @@ page = requests.get(url,headers=headers,proxy=proxy)            => Read url as p
 soup = BeautifulSoup (page.content,"html.parser")               => Read page with html.parser
 soup.find(id="result_table_0")                                  => Read specific invidual id
 soup.find_all("p", {"class": "payamntp"})      			            => Read specific class
-soup.findAll(True, {'class':['class1', 'class2']})              => Find element with 2 / more classes
+soup.findAll("div", {'class':['class1', 'class2']})              => Find element with 2 / more classes
 soup.find_all("td"):    			                            => Read all table data cells
 soup.find_all("tr", class_="arrow0"):       			        => Read all table rows for specific class
 for col_id, col_content in enumerate(result.find_all("td")):    => Read all table data cells with id and content
