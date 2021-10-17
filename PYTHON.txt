@@ -131,7 +131,7 @@ pip install -r requirements.txt     => install modules from requirements.txt
 Ctrl K Ctrl C				    => Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
 Ctrl K Ctrl U				    => Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
 Ctrl F   		   			    => Find in File
-Ctrl Shift f                    => Search in alle files
+Ctrl Shift f                    => Search in all files
 Ctrl H        	   			    => Replace in File
 Ctrl Shift H			        => Replace in Path (in all Files)
 F8            					=> Jump to the next error
@@ -435,17 +435,18 @@ if all(x in string for x in ["ab","cd","de"]):   => Check if all elements from t
 if all(x not in string for x in ["ab","cd""]):   => Check if all elements from the list are NOT in the string    
 for i in l:                                      => Iterate through list content
 for i in range(len(l)):                          => Iterate through list with index
-for idx, cont in enumerate(l):                   => Iterate through list with index and content
-for x,y in zip(l1,l2):							 => Iterate through 2 lists pair-wise (stops when the shorter list is reached)
-', '.join(l)                              		 => Create string with elements joined together with ", " eg. ["a","b","c"] => a, b, c
-a = [1,2,3,4,5]                                  => Define list
-list(map(lambda x: x*2, [1,2,3,4,5]))			 => List is mapped with the lambda function => [2,4,6,8,10]
-c=[x*2 for x in [1,2,3,4,5]]					 => Also possible with list comprehension => [2,4,6,8,10]
-list(filter(lambda x: x%2==0, [1,2,3,4,5]))		 => List is filtered with lambda for even numbers => [2,4]
-c=[x for x in [1,2,3,4,5] if x%2==0]			 => Also possible with list comprehension => [2,4]
-zip([1,2,3],[4,5,6])							 => Build paris as tuple => (1,4),(2,5),(3,6)
-list(set(x))									 => Remove duplicates from a list
-list(map(int,l))								 => Change elements in list to int
+for idx, cont in enumerate(l):                    => Iterate through list with index and content
+for x,y in zip(l1,l2):							              => Iterate through 2 lists pair-wise (stops when the shorter list is reached)
+', '.join(l)                              		    => Create string with elements joined together with ", " eg. ["a","b","c"] => a, b, c
+a = [1,2,3,4,5]                                   => Define list
+list(map(lambda x: x*2, [1,2,3,4,5]))			        => List is mapped with the lambda function => [2,4,6,8,10]
+l=[x*2 for x in [1,2,3,4,5]]					            => Also possible with list comprehension => [2,4,6,8,10]
+l=[x for x in [1,2,3,4,5] if x%2==0]			        => Also possible with list comprehension => [2,4]
+l=[x*2 if x.isdigit() else x for x in [1,"A",2]]  => List comprehension with if and else
+list(filter(lambda x: x%2==0, [1,2,3,4,5]))		    => List is filtered with lambda for even numbers => [2,4]
+zip([1,2,3],[4,5,6])							                => Build paris as tuple => (1,4),(2,5),(3,6)
+list(set(x))									                    => Remove duplicates from a list
+list(map(int,l))								                  => Change elements in list to int
 
 => rotate list for n places
 ""
@@ -1564,7 +1565,6 @@ conn.close()									=> Close Connection
 
 
 ###### MODULES - DATES, DATETIME, CALENDAR, TIMEIT, TIME, SYS, CTYPES
-###### MODULES - DATES, DATETIME, CALENDAR, TIMEIT, TIME, SYS, CTYPES
 => Standardmodules from python no pip install necessary
 => Overview % parsing commands
 https://www.programiz.com/python-programming/datetime/strptime      
@@ -2334,6 +2334,7 @@ plt.savefig("example.png",bbox_inches="tight")                      => Save diag
 https://selenium-python.readthedocs.io/locating-elements.html	    => Python specific documentation for selenium
 from selenium import webdriver                                      => Import WebDriver for url access
 from selenium.webdriver.chrome.options import Options               => Import Options
+from selenium.webdriver.chrome.service import Service               => Import Service
 from selenium.webdriver.support.ui import WebDriverWait             => Import WebDriverWait (explizit waiting time)
 from selenium.webdriver.support import expected_conditions as EC    => Import EC (for expected conditions with waiting logic)
 from selenium.webdriver.common.by import By                         => Import By (for finding elements with By-logic)
@@ -2348,6 +2349,7 @@ driver.find_element_by_xpath('//*[@id="button"]/input').click()     => Click on 
 driver.find_element_by_xpath('//*[@id="name"]').send_keys("x"])     => Fill field "name" with content "x"
 driver.find_element(By.XPATH, '//button[text()="Some text"]')       => Other method to find element per xpath ()
 driver.find_element_by_xpath('//div[@aria-label="Post"]').click()   => Find Element according to a specific element eg. "aria-label" with text "Post" in a "div"
+driver.find_element_by_name("q").clear()                            => Clear / delete input field
 driver.find_element_by_name("q").send_keys("txt" + u'\ue007')       => Fill text in field and press enter
 drv.find_element_by_css_selector("input#myID").send_keys("txt")     => Fill text in field (use css-selector to find element => input element with id "myID" in it)
 driver.set_window_size(600,1000)
@@ -2356,6 +2358,7 @@ driver.find_elements_by_tag_name("tag")                		          => Search fie
 driver.find_element_by_link_text('Continue')                        => Search by (exact) link-text in an anchor-tag
 driver.find_element_by_partial_link_text('Conti')                   => Search by (partial) link-text in an ancor-tag
 driver.send_keys(Keys.Backspace,Keys.ARROW_LEFT,Keys.ENTER)		      => Send single keyboard-elements <> chars (needs import keys)
+driver.send_keys (Keys.PAGE_DOWN)                                   => Send a PageDown-keystroke (eg. for scrolling to the very bottom of a page)
 driver.send_keys (u'\ue007')									                      => Send an Return-keystroke (eg. for enter after data entries in fields)
 field.submit()                                                      => Press enter and submit site
 driver.quit()                                                       => Close driver (otherwise the windows will not close)
@@ -2367,12 +2370,13 @@ cookie = {"name": "token", "value": "23874kljdsjhfaökldjs"}         => Define a
 driver.add_cookie(cookie)                                           => Use Cookie
 driver.get_cookie("token")                                          => Outputs a specific cookie
 driver.get_cookies())                                               => Outputs all cookies
-driver.current_url												    => Read current, actual url
-driver.switch_to.frame ("frame_id")								    => Switch to a frame-id (eg. a PopUp)
-act_window = driver.current_window_handle						    => Read active window name
-driver.switch_to.window(act_window)								    => Switch (back) to active window (eg. after working on the popup-frame or popup-window)
+driver.current_url												                          => Read current, actual url
+driver.switch_to.frame ("frame_id")								                  => Switch to a frame-id (eg. a PopUp)
+act_window = driver.current_window_handle						                => Read active window name
+driver.switch_to.window(act_window)								                  => Switch (back) to active window (eg. after working on the popup-frame or popup-window)
 driver.set_window_size(600,1000)                                    => Set window size to 600 wide and 1000 height
 driver.minimize_window()                                            => Minmize window
+driver.execute_script("window.scrollTo(0, 10000)")                  => ScrollDown in the window (maybe to the bottom of the site) 
 
 => Wait till a specific element is loaded / clickable
 ""
@@ -2388,16 +2392,19 @@ wait.until(EC.element_to_be_clickable((By.XPATH, "//div[text()='Total revenues']
 ""
 from selenium.webdriver.chrome.options import Options            
 options = Options()
-options.add_argument('--headless')                                          # Window Hidden (only used this for the final program - not during devleopment / testing!)
-options.add_argument('window-size=1920x1080')								                # (this somtimes helps when headless is not working)	
-options.add_argument("start-maximized")                                     # Start window maximized
+options.add_argument('--headless')
+options.add_experimental_option ('excludeSwitches', ['enable-logging'])
+options.add_argument("start-maximized")
+options.add_argument('window-size=1920x1080')								  
 options.add_argument('--no-sandbox')
-options.add_argument('--disable-gpu')   
-options.add_experimental_option ('excludeSwitches', ['enable-logging'])     # No error messagegs when exec in cmd
-if platform == "win32": options.add_argument('--start-maximized')           # Window Started Maximized (for Windows)
-elif platform in ["linux","darwin"]: options.add_argument('--kiosk')        # Window Started Maximized (for Linux and Mac)
-
-driver = webdriver.Chrome(os.getcwd() + '/chromedriver', options=options)
+options.add_argument('--disable-gpu')  
+path = os.path.abspath (os.path.dirname (sys.argv[0]))
+if platform == "win32": cd = '/chromedriver.exe'
+elif platform == "linux": cd = '/chromedriver'
+elif platform == "darwin": cd = '/chromedriver'
+srv=Service(path + cd)
+driver = webdriver.Chrome (service=srv, options=options)
+driver.get (link)
 ""
 
 => Define Real User Agent Header

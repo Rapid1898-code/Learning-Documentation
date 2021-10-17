@@ -1,0 +1,3 @@
+- login to emea.flow.microsoft.com
+- install power automate desktop (rechts oben)
+- install datengataway (rechts oben)
