@@ -1195,6 +1195,7 @@ import xlwings as xw                                    => Import module
 wb = xw.Book ("name.xlsx")                              => Read XLSX
 ws = wb.sheets["name_sheet"]                            => Read specific worksheet
 ws["A1"].value = "xyz"                                  => Updates specific cell
+f = ws["A1"].formula                                    => Reads the formula of a cell (not the value)
 for i in ws.range("A3:A7"): i.value = ""				        => Iterate trough cells an set them to "" / None
 xl_col_sort(ws,1)                                       => Sort worksheet in the first col (function see below)
 ws["C8"].color											                    => Reads the color of a cell and returns a rgb-tuple eg. (146, 208, 80)
