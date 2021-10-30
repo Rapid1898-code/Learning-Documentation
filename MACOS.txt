@@ -1,3 +1,7 @@
+Make a screenshot in MacOS:
+Press Shift+Win+5 to adjust settings (like where to store the pictures)
+Press Shift+Win+4 to take select what to screenshot
+
 Task Scheduling in MacOS with Task Till Dawn
 https://www.addictivetips.com/mac-os/how-to-schedule-tasks-on-macos/
 

@@ -2392,6 +2392,9 @@ wait.until(EC.element_to_be_clickable((By.XPATH, "//div[text()='Total revenues']
 => Use Selenium with chrome windows hidden
 ""
 from selenium.webdriver.chrome.options import Options            
+from webdriver_manager.chrome import ChromeDriverManager
+ua = UserAgent()
+userAgent = ua.random
 options = Options()
 options.add_argument('--headless')
 options.add_experimental_option ('excludeSwitches', ['enable-logging'])
@@ -2399,12 +2402,14 @@ options.add_argument("start-maximized")
 options.add_argument('window-size=1920x1080')								  
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-gpu')  
+options.add_argument(f'user-agent={userAgent}')  
 path = os.path.abspath (os.path.dirname (sys.argv[0]))
 if platform == "win32": cd = '/chromedriver.exe'
 elif platform == "linux": cd = '/chromedriver'
 elif platform == "darwin": cd = '/chromedriver'
-srv=Service(path + cd)
-driver = webdriver.Chrome (service=srv, options=options)
+srv=Service(ChromeDriverManager().install())
+driver = webdriver.Chrome (service=srv, options=options)  
+waitWebDriver = WebDriverWait (driver, 5)   
 driver.get (link)
 ""
 
