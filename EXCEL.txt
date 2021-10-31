@@ -1,7 +1,5 @@
 ### Create a filter list without duplicates and empty cells
-https://www.youtube.com/watch?v=LynZiJyV5UQ
-filter all the values and duplicates: SORTIEREN(EINDEUTIG(FILTER(A1:A2000;A1:A2000<>"")))
-make list: Daten - Datenüberprüfung - select the above created area
+see: Excel_HowtoDropBoxWithoutBlanks.xlsx
 
 ### How to call a python-program in excel with VBA
 create button: Entwicklertools - Einfügen - Schaltfläche

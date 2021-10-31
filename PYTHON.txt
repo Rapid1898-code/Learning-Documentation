@@ -2009,9 +2009,12 @@ np.random.seed(1)						=> Can reproduce the same results
 ###### MODULE - PANDAS - analyzing and working with data
 https://gist.github.com/why-not/4582705                     => examples
 import pandas as pd                                         => Import Module
-import numpy as np											=> Also importing numpy-module necessary
-pd.set_option('display.max_columns',11)						=> Show more information - count of the shown columns
-pd.set_option('display.width', None)						=> Show more information - None is using the maximum width of the IDE
+import numpy as np											                    => Also importing numpy-module necessary
+import warnings                                             => Necessary for supressing performance warnings see below
+pd.set_option('display.max_columns',11)						          => Show more information - count of the shown columns
+pd.set_option('display.max_columns',None)						        => Show more information - show all columns
+pd.set_option('display.width', None)						            => Show more information - None is using the maximum width of the IDE
+warnings.simplefilter(action='ignore', category=pd.errors.PerformanceWarning)   => Supress Performance Warnings
 
 => SERIES
 s = pd.Series([35,63,81,61,127,65,319])						=> Define a series
@@ -3390,8 +3393,8 @@ Python-Diverses / Plotly / example.py   => see example for candlestick-chart
 pip install pyinstaller                     => Installation
 pyinstaller prg.py                          => Generate the bundle in a subdirectory called dist.
 pyinstaller --onefile prg.py                => Generate only one file
---copy-metadata pandas_ta					=> add this when some modules are not found
---hidden-import=pymssql						=> When some modules are making problems - sometimes this helps
+--copy-metadata pandas_ta					          => add this when some modules are not found
+--hidden-import=pymssql						          => When some modules are making problems - sometimes this helps
 --exclude-module matplotlib                 => when there is a depreciating warning from matlib 
 --icon=app.ico                              => Generate file with icon
 --hidden-import=pkg_resources.py2_warn      => Generating under mac os sometimes only work with this params
