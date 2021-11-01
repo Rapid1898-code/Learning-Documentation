@@ -402,9 +402,9 @@ l_sort = sorted(l, reverse=True)                 => Sort list descending and sto
 if sorted(l) == l								 => Check if a list is sorted (by ascending)
 if sorted(l, reverse=True) == l					 => Check if a list is sorted by descending
 l.sort(key=len)									 => Sort list by len of elements
-l = [[1,4,3], [2,2,4], [3,1,5]]					 => Define nested list
-l.sort(key=lambda x: x[1])						 => Sort the nested list for the 2nd element ascending
-l.sort(key=lambda x: x[1], reverse=True)		 => Sort the nested list for the 2nd element descending
+l = [[1,4,3], [2,2,4], [3,1,5]]					         => Define nested list
+l.sort(key=lambda x: x[1])						           => Sort the nested list for the 2nd element ascending
+l.sort(key=lambda x: x[1], reverse=True)		     => Sort the nested list for the 2nd element descending
 l.reverse()                                      => Reverse the complete list
 l_reverse = list(reversed(l))                    => Reverse complete list and store it in different independent list
 del l[2]                                         => Delete element at index position 2
@@ -1762,7 +1762,7 @@ os.remove (file)											                      => Delete file
 os.rmdir ("folder")                                        	=> Delete folder (prefered cause deleting ist dangerous)
 os.removedirs ("folder/subfolder")                          => Delete folder and subfolders
 os.stat("file")                                             => Outputs the statistics of the file (size, modification time,...)
-for dirpath,dir,fileos in os.walk()                         => Outputs dirpath - all the dirs - and all the files
+for dirpath,dir,files in os.walk(os.getcwd())               => Outputs dirpath - all the dirs - and all the files
 os.environ.get("HOME")                                      => Get home dir of the actual user
 os.path.basename("temp/file.txt")                           => Outputs only the filename => file.txt
 os.path.dirname("temp/file.txt")                            => Outputs only the dir => temp/  
@@ -1773,6 +1773,14 @@ os.path.isfile("xyz")                                       => Checks if files e
 os.listdir()											                          => Put all filenames to a list from the actual working dir
 [x[0] for x in os.walk(path)][1:]                           => Put all sub-folders to a list from the actual working dir
 os.popen('attrib +h ' + fn).read().close()					        => Change file to hidden
+
+=> put all files in a list from actual directory with all subdirs and Filtering
+listExtensions=["jpg","jpeg","png"]
+listImages = []
+for dirpath,dir,files in os.walk(os.getcwd()):
+  for f in files:
+    if any(x in f.lower() for x in listExtensions):
+      listImages.append(f)
 
 => find home-directory for the actual user
 ""
