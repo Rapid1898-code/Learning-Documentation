@@ -1212,7 +1212,14 @@ wb.sheets.add("NewWS")									                => Add worksheet in workbook
 [x for x in ws.range("A3:A2000").value if x != None]    => Load elements in list from range which are not None
 ws.range("A1:A10").value = ws2.range("A1:A10").options(ndim=2).value      => copy range from one sheet to another
 
-
+=> Make border / frame for cells
+Definiton for linestyles see: https://docs.microsoft.com/en-US/dotnet/api/microsoft.office.interop.excel.xllinestyle?view=excel-pia
+Definiton for border-sites see: https://docs.microsoft.com/en-us/office/vba/api/excel.xlbordersindex
+""
+for e in ws.range("B3:D3"):
+  for site in [7,8,9,10]:
+    e.api.Borders(site).LineStyle = 1
+""
 
 => Update row / change whole row
 ""
@@ -2307,6 +2314,7 @@ df.append(pd.Series(np.nan), ignore_index=True)             => Add empty line to
 df = df[df["col1"].notna()]                                 => Delete rows where col1 = nan
 df = df[df["col1"] < 10]                                    => Delete rows where col1 < 10
 dfFinal = df1.merge(df2, on='order-id')                     => Merge 2 dataframes where the column order-id is ident
+l = df.values.tolist()                                      => Convert a dataframe to a nested list
 
 => When there is some warning like "A value is trying to be set on a copy of a slice from a DataFrame"
 ""
