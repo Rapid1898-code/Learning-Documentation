@@ -2412,6 +2412,7 @@ wait.until(EC.element_to_be_clickable((By.XPATH, "//div[text()='Total revenues']
 ""
 from selenium.webdriver.chrome.options import Options            
 from webdriver_manager.chrome import ChromeDriverManager
+from fake_useragent import UserAgent
 ua = UserAgent()
 userAgent = ua.random
 options = Options()
@@ -2554,7 +2555,7 @@ page = requests.get(url,headers=headers,proxy=proxy)            => Read url as p
 soup = BeautifulSoup (page.content,"html.parser")               => Read page with html.parser
 soup.find(id="result_table_0")                                  => Read specific invidual id
 soup.find_all("p", {"class": "payamntp"})      			            => Read specific class
-soup.findAll("div", {'class':['class1', 'class2']})              => Find element with 2 / more classes
+soup.findAll("div", {'class':['class1', 'class2']})             => Find element with 2 / more classes
 soup.find_all("td"):    			                            => Read all table data cells
 soup.find_all("tr", class_="arrow0"):       			        => Read all table rows for specific class
 for col_id, col_content in enumerate(result.find_all("td")):    => Read all table data cells with id and content
