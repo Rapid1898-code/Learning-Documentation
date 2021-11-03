@@ -2188,7 +2188,12 @@ df.set_index("Popl", inplace=True)                          => Define "Popl" as 
 df.loc["CAN"]												=> Selecting Rows by index - showing the row with the index = "CAN"
 df.iloc[-1]													=> Selecting Rows by position - showing the last row
 df["Popl"]													=> Selecting Columns by title - showing the whole column "Population" for all rows
-df["Continent"].value_counts()                              => Output of alle values with their count
+df["Continent"].value_  # fill motor city input
+  print(f"Create filtering for Motor City Input AM...")
+  filt = (dfInpAM["Lab"] == "US-Motor City")
+  filt2 = (dfInpAM["Status"] == "In Production")
+  dfMCI = dfInpAM[filt & filt2]
+  dfMCI["ReceivedTime"]= dfMCI["ReceivedTime"].astype(str)    counts()                              => Output of alle values with their count
 df["Continent"].value_counts(normalize=True)                => Output of alle values with their count in percent
 df[["Popl","Continent"]]									=> Showing cols Popl,Continent for all rows
 df[["Popl","Continent"]] / 100								=> Showing cols Popl,Continent for all rows - values divided by 100
@@ -2410,6 +2415,7 @@ wait.until(EC.element_to_be_clickable((By.XPATH, "//div[text()='Total revenues']
 
 => Use Selenium with chrome windows hidden
 ""
+import undetected_chromedriver as uc
 from selenium.webdriver.chrome.options import Options            
 from webdriver_manager.chrome import ChromeDriverManager
 from fake_useragent import UserAgent
@@ -2429,9 +2435,9 @@ elif platform == "linux": cd = '/chromedriver'
 elif platform == "darwin": cd = '/chromedriver'
 srv=Service(ChromeDriverManager().install())
 driver = webdriver.Chrome (service=srv, options=options)  
+driver = uc.Chrome(options=options)
 waitWebDriver = WebDriverWait (driver, 5)   
 driver.get (link)
-""
 
 => Define Real User Agent Header
 ""
