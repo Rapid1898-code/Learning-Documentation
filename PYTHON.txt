@@ -2429,15 +2429,12 @@ options.add_argument('window-size=1920x1080')
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-gpu')  
 options.add_argument(f'user-agent={userAgent}')  
-path = os.path.abspath (os.path.dirname (sys.argv[0]))
-if platform == "win32": cd = '/chromedriver.exe'
-elif platform == "linux": cd = '/chromedriver'
-elif platform == "darwin": cd = '/chromedriver'
 srv=Service(ChromeDriverManager().install())
-driver = webdriver.Chrome (service=srv, options=options)  
-driver = uc.Chrome(options=options)
+# driver = webdriver.Chrome (service=srv, options=options)  
+driver = uc.Chrome (service=srv, options=options)  
 waitWebDriver = WebDriverWait (driver, 5)   
-driver.get (link)
+link = "https://www.google.com"
+driver.get (link)  
 
 => Define Real User Agent Header
 ""
