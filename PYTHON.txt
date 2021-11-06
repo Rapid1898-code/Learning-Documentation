@@ -284,7 +284,7 @@ pp.pprint(nestedList,depth=2)   => pretty print only level 2 of nested list eg. 
 => secret: secure, not reproducable
 import random					=> Import random module - fast, but not very secure
 random.randint(1,6)             => Random int number between 1 and 6 like a cube
-random.uniform(1,3)				=> Random float number between 1 and 3 
+<random.uniform(1,3)>				=> Random float number between 1 and 3 
 random.random()					=> Random value between 0 and 1 in float format - eg. 0.16394553
 random.uniform(1,10)			=> Random float in the range from 1 to 10
 random.normal(0,1)				=> Random value for standard deviation
@@ -2476,15 +2476,16 @@ Xpath=//tagname[@attribute='value']
     Attribute: Attribute name of the node.
     Value: Value of the attribute.    
 
-//input[@name='uid']                    # input-elem with name = "uid"
-//input[@type='text']                   # input-elem with type = "text"
-//label[@id='message23']                # label-elem with id = "message23"
-//input[@value='RESET']                 # input-elem with value = "RESET"
-//*[@class='barone']                    # any elem with class = "barone"
-//td[text()='UserID']	                # td-elem which has the text "User-ID"
-//a[@href='http://demo.guru99.com/']    # anchor with specific link
-//img[@src='//cdn.guru99.com/images/home/java.png']   # img-elem with specific pic-link
-(//button)[2]                           # select the second button on the page
+//input[@name='uid']                      # input-elem with name = "uid"
+//input[@type='text']                     # input-elem with type = "text"
+//label[@id='message23']                  # label-elem with id = "message23"
+//input[@value='RESET']                   # input-elem with value = "RESET"
+//*[@class='barone']                      # any elem with class = "barone"
+//td[text()='UserID']	                    # td-elem which has the text "User-ID"
+//a[@href='http://demo.guru99.com/']      # anchor with specific link
+//img[@src='//xyz.com/img/java.png']      # img-elem with specific pic-link
+(//button)[2]                             # select the second button on the page
+(//p[@class='product']/span)[2]           # select the second span in the p-element with class = 
 
 //*[@type='submit' or @name='btnReset']         # any elem which has 2 OR conditions (for type and name)
 //input[@type='submit' and @name='btnLogin'     # any elem which has 2 AND conditions (for type and name)
@@ -2656,26 +2657,51 @@ result = api[0]["xyz"]								=> Read the value for the 1 element and the attrib
 ###### MODULE - SCRAPY - webscraping using spiders
 => Tutorial: https://docs.scrapy.org/en/latest/intro/tutorial.html
 => Video-Tutorial: https://www.youtube.com/c/zytedata/playlists (Playlist - Learn Scrapy)
+=> Video-Tutorial2: https://www.youtube.com/watch?v=s4jtkzHhLzY (Scrape a Whisky-Shop)
 pip install SCRAPY                                  => install the scrapy module
+scrapy startproject indeedScraper                   => creates the project and folder-structure
 scrapy shell http://quotes.toscrape.com/random      => scrape a webpage in command line and use the console for further investigations
 fetch("newURL")                                     => fetch a new site from an allready scraped page with "scrapy shell" before
 print(response.text)                                => shows the full html-code of the page
 response.css("small.author").extract()              => select element "small" with class="author" and shows the html-code
 response.css("small.author::text").extract()[0]     => return only the text for the element+class for the first element
 response.css("span.text::text").extract_first()     => return the text for the first element for span + class="text"
-response.css("a.tag::text").extract()               => return all anchor-tag texts in a list
+response.css("a.tag:lst:text").extract()               => return all anchor-tag texts in a list
 response.css("li.next > a::attr(href)").extract_first()     => find elems a in li with class "next" and get the content from the href-element
 response.css("div.quote > span > a::attr(href)").extract()  => extract href from all anchor-tags inside div.quote => span => a
 response.urljoin("/page/2/")                        => combine the url from the initial scrapy shell with the string-path
 data = json.loads(response.text)                    => read text-data when the response is i a json-format
-
-
 
 scrapy genspider quotesNAME toscrape.com            => Create spider skeleton on command line (quotesName = spider-name, toscrape.com = site to scrape)
 scrapy runspider quotesNAME.py                      => run spider from command line
 scrapy runspider quotesNAME.py -o items.json        => run spider and store result into items.json
  'dupefilter/filtered': 50,                         => shows the duplicate elements which are filtered
 
+# from second video-tutorial above
+scrapy shell                                        => open scrapy shell
+response.css("div.product-item-info").get()         => get the first div-element with that class
+response.css("ul.products li")                      => get the first li-element in the ul-element with class "products"
+products = response.css("div.product-item-info")    => assign all div-elements with that class to the variable "products"
+len(products)                                       => outputs the number of alle div-elements with that class on the loaded page
+p.css("a.product-item-link").get()                  => from the products-variable get the first a-element with this class
+p.css("a.product-item-link::text").get()            => return the text from the element (first a-element with this class)
+p.css("a.product-item-link::text").getall()         => return the text from all elements (all a-elements with this class)
+p.css("span.price::text").getall()                  => return the text from all elements (all span-elements with this class)
+p.css("span.price::text").get().replace("€","")     => return the text from the element (first span with class "price" and replace the €-symbol)
+p.css("a.product-item-link").attrib["href"]         => return the link from the element (first href-link with this class)
+p.css("a.product-item-link::attr(href)").get(       => second way to the the href-value
+p.css("a.button::attr(dpsku)").get()                => return value of attribut "dpsku" in the a-tag with class "button"
+
+scrapy crawl whisky                                 => start scrapy with the spider "whisky"
+scrapy crawl whisky -O whisky.json                  => run spider "whisky" and output result to json-file (overwrite the json-file)
+scrapy crawl whisky -o whisky.json                  => same as above (only appending the results and not overwriting)
+scrapy crawl whisky -O whisky.csv                   => same as above (only outputing as csv)
+response.css("a.action.next").get()                 => find element with class "action  next" (spaces have to be replaced with ".")
+nextPage = response.css("a.action.next").attrib["href"  => store the link for the next page
+yield response.follow(nextPage, callback=self.parse)    => go to next page and do parsing
+setting.py: AUTOTHROTTLE_ENABLED = True             => automatic delay between requests
+setting.py: AUTOTHROTTLE_START_DELAY = 5            => The initial download delay
+setting.py: AUTOTHROTTLE_MAX_DELAY = 60             => The maximum download delay to be set in case of high latencies
 
 => Example spider
 ""
