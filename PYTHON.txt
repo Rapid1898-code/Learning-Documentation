@@ -29,6 +29,7 @@
 #> MODULE - GSPREAD - API for Google Sheets
 #> MODULE - OPENPYXL - working with excel worksheets
 #> MODULE - XLWINNGS - working on the fly with open excel worksheets
+#> MODULE - PYTHON-DOCX - working with word docx
 #> MODULE - WIN32COM - creating worksheets as pdf from xlsx
 #> MODULE - PyPDF2 - working with pdfs
 #> MYSQL - MARIADB - HEIDISQL
@@ -1250,6 +1251,29 @@ from xlwings.constants import DeleteShiftDirection
 ws.range('2:4').api.Delete(DeleteShiftDirection.xlShiftUp)      # delete rows 2 to 4
 ws.range('A:C').api.Delete(DeleteShiftDirection.xlShiftUp)      # delete cols A to C
 ""
+
+
+
+
+####### MODULE - PYTHON-DOCX - working with word docx
+import python-docx                          => Import the module
+from docx import Document                   => Import the library
+doc = Document('file.docx')                 => Read file
+doc.save('file.docx')                       => Save file
+t = doc.tables                              => Read all tables
+t[0].rows[0].cells[0].paragraphs[0].text    => Access specific element in table
+t[0].rows[0].cells[1].paragraphs[0].style   => Assign style to specific paragraph
+p = doc.paragrapsh                          => Read all paragraphs
+
+=> Set the Normal style to specific font and size
+(assigning it to specific paragraph see above)
+style = document.styles['Normal']
+font = style.font
+font.name = 'Arial'
+font.size = Pt(10)
+
+
+
 
 ###### MODULE - WIN32COM - creating worksheets as pdf from xlsx
 => Create Worksheets as PDF from XLSX
@@ -2642,12 +2666,20 @@ driver.find_element_by_css_selector('p.content')						# Search for tag and selec
 
 
 ###### MODULE - REQUESTS - workings with APIs
-import requests										=> import module requests
-import json                                         => import module json
-api_request = requests.get ("apilink.html")			=> Request api from the generated api-link
-api = json.loads(api_request.content)				=> Read/parse api-data to a json-loadfil
-result = api[0]["xyz"]								=> Read the value for the 1 element and the attribute xyz
+import requests										              => import module requests
+import json                                     => import module json
+api_request = requests.get ("apilink.html"      => Request api from the generated api-link
+api = json.loads(api_request.content)				    => Read/parse api-data to a json-loadfil
+result = api[0]["xyz"]								          => Read the value for the 1 element and the attribute xyz
 
+pip install requests-html                         => Install module
+from requests_html import HTMLSession             => Import requests_html
+s = HTMLSession()                                 => Define a html-session
+r = s.get(url, headers=HEADERS)                   => Define response
+r.html.find("title", first=True).text             => title of in the html-tag
+r.html.find("span#wob_tm", first=True).text       => Span-value with id = "wob_tm"
+r.html.find("div.clX", first=True)                => Div-element with class = "clX"
+r.html.find("div.clX span.clY",first=True).text   => Span-element with class="clY" ind Div-element with class="clX"
 
 
 
