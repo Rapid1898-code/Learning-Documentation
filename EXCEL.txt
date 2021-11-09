@@ -1,5 +1,13 @@
 ### Create a filter list without duplicates and empty cells
 see: Excel_HowtoDropBoxWithoutBlanks.xlsx
+- define input-values in eg. column a
+- copy this formula in eg. column c:
+  =IFERROR(INDEX($A$1:$A$100; MATCH(0; COUNTIF($C$1:C1; $A$1:$A$100&"") + IF($A$1:$A$100="";1;0); 0)); "")
+- define List-Name in Formulas => Name Mangaer: eg.
+  =OFFSET(Tabelle1!$C$2;;;COUNTIF(Tabelle1!$C$2:$C$100;"> ");1)
+- define List-Element in Data => Data Validation => List and reference to List-Name from above: eg. 
+  =LIST
+
 
 ### How to call a python-program in excel with VBA
 create button: Entwicklertools - Einfügen - Schaltfläche
@@ -11,4 +19,13 @@ Sub init()
     FN = FN + "\initData.exe"
     Shell FN, vbNormalFocus
 End Sub
+
+
+### How to make a lookup to some other information
+=VLOOKUP(A8;Admin!$A$3:$C$100;2;FALSE)
+A8: key-value what should be checked
+Admin!$A$3:$F$100: area where the detail informations are stored - key-value must be in first column
+2: which column should be taken - in that case the second column of the above list
+FALSE: default value when the key-value is not found
+
 
