@@ -2557,7 +2557,7 @@ try:
     do the whole selenium work...
     ...
 except:
-    driver.get_screenshot_as_file("a.jpeg")
+    driver.save_screenshot("a.png")
 ""
 
 => use locators in this order as suggested by Selenium contributors
