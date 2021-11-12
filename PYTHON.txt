@@ -2590,10 +2590,11 @@ for col_id, col_content in enumerate(result.find_all("td")):    => Read all tabl
 soup.find_all("div", class_="col-xs-6")                         => Read all divs with specific class
 soup.find("div", {"id": "lj_div"})								=> Find div with id "lj_div"
 soup.find("p", {"class": "line"}								=> Find (first) p with class "line"
-soup.find("dt", string="In-App Purchases")						=> Find element with specific text / string
-erg2 = erg.find_parent("div")									=> Found the parent div-element for a specific before find element
+soup.find("dt", string="In-App Purchases")						          => Find element with specific text / string
+soup.find_all(["strong","a","br"])                              => Find elements for several tags
+erg2 = erg.find_parent("div")									                  => Found the parent div-element for a specific before find element
 if row.get("class") == ["ellipsis", "nobr", "new"]:             => Check if class has specific content
-soup.find("small", class_=re.compile("nameSymbol_"))			=> Check if string nameSymbol_" is part of the class-element
+soup.find("small", class_=re.compile("nameSymbol_"))			      => Check if string nameSymbol_" is part of the class-element
 for e in soup.find_all("a"): e.get("href")                      => Read all links from href element    
 for e in soup.find_all("a"): e.get("value")                     => Read all number from the field "value"
 content.text.strip()                                            => Outputs text without whitespaces
