@@ -885,8 +885,22 @@ zf.open (file_name)												=> Open file vom Zip-File (eg. CSV-File which is 
 => https://techwithtim.net/tutorials/google-sheets-python-api-tutorial/	
 ""
 # Create a project on https://console.cloud.google.com/
+# select name + click create + select project
+# 3 lines upper/left - API/Services - Library
+# search for google drive API + enable it
+# search for google sheets api + enable it
+# 3 lines upper/left - API/Services - Credentials
+# create credentials for Service Accounts + define name + press Continue
+# choose role "editor" + press Continue + press Done
+# press on created service account + press keys + Add Key + Create New Key
+# select json + and store json-file with name creds.json
+# copy client_email entry from the json-file
+# in google sheets - got to share in the document
+# paste the email from above + press send
+
 # See further setup in tutorial
 import gspread                                                      # import module
+import oauth2client                                                 # import module
 from oauth2client.service_account import ServiceAccountCredentials  # import module for account credentials
 from pprint import pprint                                           # import module for better output formatting
 scope = ["https://spreadsheets.google.com/feeds",
@@ -897,23 +911,26 @@ creds = ServiceAccountCredentials.from_json_keyfile_name
     ("creds.json", scope)
 ""
         
-client = gspread.authorize(creds)                                   => Credentials Mgmt for GoogleSheets
-sheet = client.open("testpython").sheet1                            => Open the spreadhseet
-data = sheet.get_all_records()                                      => Get a list of all records
-len(data)                                                           => Count of all used rows in the sheet
-pprint(data)                                                        => Show all data with pprint - pretty print
-row = sheet.row_values(3)                                           => Get row 3 (starts counting from 1 - not 0)
-col = sheet.col_values(5)                                           => Get col E (starts counting from 1 - not 0)
-col = sheet.col_values(2)[3:5]                                      => Get values from col B rows 4 and 5
-cell = sheet.cell(1,2).value                                        => Get the value from row 1 and col B
-sheet.update_cell(2,2, "CHANGED")                                   => Update cell from row 2 and col B
-sheet.insert_row(["new1","new2","new3"],2)                          => Insert new row at row number 2
-sheet.append_row(["new1","new2","new3"])                            => Append new row at the end
-sheet.sort((1, 'asc'), (2, 'des'), range='A2:G20')                  => Sorting the sheet (Range + col1 asc + col2 desc)
-cell_list = worksheet.range('A1:G1')                                => Define cell area / cell row
-new_values = [1,2,3,4,5]                                            => Define new values for area / row
-for i, val in enumerate(new_values): cell_list[i].value = val       => Write new values to cell area / cell row
-worksheet.update_cells(cell_list)                                   => Upate cell area / cell row    
+gc = gspread.authorize(creds)                         => Credentials Mgmt for GoogleSheets
+wb1 = gc.open("NameOfSheet)                           => Open the Google Sheet
+ws1 = wb1.get_worksheet(0)                            => Open the first worksheet in the Google Sheet
+listWS = wb1.worksheets()                             => Get all worksheets as worksheet-objects
+listWS = [x.title for x in wb1.worksheets()]          => Get all worksheets by n
+sheet = client.open("testpython").sheet1              => Open the spreadhseet
+dataList = ws1.get_all_values()                       => Get a list of all records
+data = ws1.get('B5:K8')                               => Get specific areaw
+ws1.acell('B1', value_render_option='FORMULA').value  => Get formula of a cell
+ws1.update('A1:Z10', [[1, 2], [3, 4]])                => Update cell range with nested list
+ws1.insert_row(["new1","new2","new3"],2)              => Insert new row at row number 2
+ws1.append_row(["new1","new2","new3"])                => Append new row at the end
+ws1.sort((1, 'asc'), (2, 'des'), range='A2:G20')      => Sorting the sheet (Range + col1 asc + col2 desc)
+row = sheet.row_values(3)                             => Get row 3 (starts counting from 1 - not 0)
+col = sheet.col_values(5)                             => Get col E (starts counting from 1 - not 0)
+col = sheet.col_values(2)[3:5]                        => Get values from col B rows 4 and 5
+cell = sheet.cell(1,2).value                          => Get the value from row 1 and col B
+ws1.update_cell(2,2, "CHANGED")                       => Update cell from row 2 and col B
+cell_list = worksheet.range('A1:G1')                  => Define cell area / cell row
+new_values = [1,2,3,4,5]                              => Define new values for area / row
 
 => Gspread Formatting
 => https://pypi.org/project/gspread-formatting/
