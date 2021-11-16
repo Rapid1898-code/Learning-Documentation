@@ -2707,7 +2707,7 @@ r.html.find("div.clX span.clY",first=True).text   => Span-element with class="cl
 => Video-Tutorial: https://www.youtube.com/c/zytedata/playlists (Playlist - Learn Scrapy)
 => Video-Tutorial2: https://www.youtube.com/watch?v=s4jtkzHhLzY (Scrape a Whisky-Shop)
 pip install SCRAPY                                  => install the scrapy module
-scrapy startproject indeedScraper                   => creates the project and folder-structure
+scrapy streartproject indeedScraper                   => creates the project and folder-structure
 scrapy genspider tilesSpider magnattiles.com        => create tilesSpider.py with scrapy-template              
 scrapy shell http://quotes.toscrape.com/random      => scrape a webpage in command line and use the console for further investigations
 fetch("newURL")                                     => fetch a new site from an allready scraped page with "scrapy shell" before
