@@ -2748,13 +2748,17 @@ scrapy crawl whisky -O whisky.csv                   => same as above (only outpu
 response.css("a.action.next").get()                 => find element with class "action  next" (spaces have to be replaced with ".")
 nextPage = response.css("a.action.next").attrib["href"  => store the link for the next page
 yield response.follow(nextPage, callback=self.parse)    => go to next page and do parsing
-setting.py: AUTOTHROTTLE_ENABLED = True             => automatic delay between requests
-setting.py: AUTOTHROTTLE_START_DELAY = 5            => The initial download delay
-setting.py: AUTOTHROTTLE_MAX_DELAY = 60             => The maximum download delay to be set in case of high latencies
+settings.py: AUTOTHROTTLE_ENABLED = True            => automatic delay between requests
+settings.py: AUTOTHROTTLE_START_DELAY = 5           => The initial download delay
+settings.py: AUTOTHROTTLE_MAX_DELAY = 60            => The maximum download delay to be set in case of high latencies
+settings.py: ROBOTSTXT_OBEY = False                 => ignore robots.txt
 
-response.xpath("//h1/text()").get()                                   => get text (with h1)
+                                  => get text (with h1)
 response.xpath("//div[@class='vendor']//ancestor::a/text()").get()    => get text (with div and a combination)
-response.xpath("//a[@class='next page-numbers']/@href").get()         => get href-element (from a element with class)
+response.xpath("//a[@class='next page-numbers']/@href").get()         => get href-value (from a element with class)
+response.xpath("//a/@aria-label).get()                                => get the aria-label-value
+tmp.xpath(".//a/@href").get()                                         => get href-element (from a element and existing selector "tmp")
+
 
 => Example spider
 ""
