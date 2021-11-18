@@ -2707,7 +2707,7 @@ r.html.find("div.clX span.clY",first=True).text   => Span-element with class="cl
 => Video-Tutorial: https://www.youtube.com/c/zytedata/playlists (Playlist - Learn Scrapy)
 => Video-Tutorial2: https://www.youtube.com/watch?v=s4jtkzHhLzY (Scrape a Whisky-Shop)
 pip install SCRAPY                                  => install the scrapy module
-scrapy streartproject indeedScraper                   => creates the project and folder-structure
+scrapy startproject indeedScraper                   => creates the project and folder-structure
 scrapy genspider tilesSpider magnattiles.com        => create tilesSpider.py with scrapy-template              
 scrapy shell http://quotes.toscrape.com/random      => scrape a webpage in command line and use the console for further investigations
 fetch("newURL")                                     => fetch a new site from an allready scraped page with "scrapy shell" before
@@ -2753,7 +2753,17 @@ settings.py: AUTOTHROTTLE_START_DELAY = 5           => The initial download dela
 settings.py: AUTOTHROTTLE_MAX_DELAY = 60            => The maximum download delay to be set in case of high latencies
 settings.py: ROBOTSTXT_OBEY = False                 => ignore robots.txt
 
-                                  => get text (with h1)
+=> when scraping with scrapy_selenium
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy_selenium.SeleniumMiddleware': 800
+}
+#Selenium
+from shutil import which
+SELENIUM_DRIVER_NAME = 'chrome'
+SELENIUM_DRIVER_EXECUTABLE_PATH = r"C:\Users\Polzi\Documents\DEV\Python-Private\chromedriver.exe"
+# '--headless' if using chrome instead of firefox
+SELENIUM_DRIVER_ARGUMENTS = ['--headless']
+
 response.xpath("//div[@class='vendor']//ancestor::a/text()").get()    => get text (with div and a combination)
 response.xpath("//a[@class='next page-numbers']/@href").get()         => get href-value (from a element with class)
 response.xpath("//a/@aria-label).get()                                => get the aria-label-value
