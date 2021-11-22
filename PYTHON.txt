@@ -1634,7 +1634,7 @@ tday = datetime.today()                                      => Actual date in d
 tday = datetime.today().date()								               => Actual date as date format
 tday = str(datetime.today().date())								           => Actual date as string format
 date = datetime.date()                                       => Convert datetime to date
-dt.year, dt.month, dt.day                              		   => Year / month / day from the datetime
+dt.year, dt.month, dt.day, dt.hour, dt.minute          		   => Year / month / day / hour / minute from the datetime
 tday.isoweekday()                                            => Returns weekday (monday=1, sunday=7)
 last_friday = day - timedelta(days=tday.isoweekday() + 2)    => Calculates last friday (+2 for FR, +1 SA, 0 SU, -1 MO, -2 TU, -3 WE, -4 TH)
 tdelta = timedelta(days=7)                                   => Creates timedelta for 7 days
@@ -2456,6 +2456,7 @@ wait.until(EC.element_to_be_clickable((By.XPATH, "//div[text()='Total revenues']
 
 => Use Selenium with chrome windows hidden
 ""
+os.environ['WDM_LOG_LEVEL'] = '0'     # with this seeting no output of log / messages using webdriver_manager.chrome
 import undetected_chromedriver as uc
 from selenium.webdriver.chrome.options import Options            
 from webdriver_manager.chrome import ChromeDriverManager
@@ -2993,6 +2994,7 @@ OptionMenu(root,var,*options).pack							# Define dropdown menue
 Kivy documentation => https://kivy.org/#home
 Training from => https://www.youtube.com/watch?v=dLgquj0c5_U&list=PLCC34OHNcOtpz7PJQ7Tv7hqFBP_xDDjqg
 Install kivy => python -m pip install kivy[base] kivy_examples
+Create EXE => Use template.spec (create with: pyinstaller *.spec - creation not as onefile possible with pyinstaller)
 
 => Simple Window with Label
 ""
