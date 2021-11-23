@@ -400,9 +400,9 @@ l.sort()                                         => Sort list ascending
 l.sort(reverse=True)                             => Sort list descending
 l_sort = sorted(l)                               => Sort list and store it in a different independent list
 l_sort = sorted(l, reverse=True)                 => Sort list descending and store it in a different independent list
-if sorted(l) == l								 => Check if a list is sorted (by ascending)
-if sorted(l, reverse=True) == l					 => Check if a list is sorted by descending
-l.sort(key=len)									 => Sort list by len of elements
+if sorted(l) == l								                 => Check if a list is sorted (by ascending)
+if sorted(l, reverse=True) == l					         => Check if a list is sorted by descending
+l.sort(key=len)									                 => Sort list by len of elements
 l = [[1,4,3], [2,2,4], [3,1,5]]					         => Define nested list
 l.sort(key=lambda x: x[1])						           => Sort the nested list for the 2nd element ascending
 l.sort(key=lambda x: x[1], reverse=True)		     => Sort the nested list for the 2nd element descending
