@@ -1231,8 +1231,13 @@ ws.clear()                                              => Clears the content an
 ws.clear_contents()                                     => Clears the content but leaves formatting
 l = [x.name for x in wb.sheets]							            => Read worksheetnames to list
 wb.sheets.add("NewWS")									                => Add worksheet in workbook
+wb.sheets["OldWS].delete()                              => Delete worksheet in workbook
+wb.sheets["WS"].api.Visible = False                     => Hide worksheet in workbook
+
+ws.d
 [x for x in ws.range("A3:A2000").value if x != None]    => Load elements in list from range which are not None
 ws.range("A1:A10").value = ws2.range("A1:A10").options(ndim=2).value      => copy range from one sheet to another
+
 
 => Make border / frame for cells
 Definiton for linestyles see: https://docs.microsoft.com/en-US/dotnet/api/microsoft.office.interop.excel.xllinestyle?view=excel-pia
