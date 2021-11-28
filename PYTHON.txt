@@ -336,6 +336,8 @@ s.splitlines()                                  => Split sentences after line br
 s = s.strip()                                   => Delete all whitespaces at the beginning and the end
 s = " ".join(s.split())                         => Remove all duplicate spaces in a string
 s = s.replace("e","X")                          => Replacement of two strings
+s = re.sub('[e0fi]', 'X', s)                    => Replace several chars in a string
+s = re.subn('[e0fi]', 'X', s)                   => Replace several chars in a string (get back a tupple: 1st changed string, 2nd: count of changed chars)
 s.isdigit()                                     => TRUE if the whole string are digits
 s.isalpha()                                     => True if the whole string are no digits
 s2 in s                                         => TRUE if string2 is in strings1
@@ -2754,7 +2756,8 @@ p.css("a.button::attr(dpsku)").get()                => return value of attribut 
 scrapy crawl whisky                                 => start scrapy with the spider "whisky"
 scrapy crawl whisky -O whisky.json                  => run spider "whisky" and output result to json-file (overwrite the json-file)
 scrapy crawl whisky -o whisky.json                  => same as above (only appending the results and not overwriting)
-scrapy crawl whisky -O whisky.csv                   => same as above (only outputing as csv)
+scrapy crawl whisky -O whisky.csv                   => outputing as csv
+scrapy crawl whisky -O whisky.xlsx                  => outputing as xlsx (scrapy-xlsx must be installed + settings.py changed: https://pypi.org/project/scrapy-xlsx/) 
 response.css("a.action.next").get()                 => find element with class "action  next" (spaces have to be replaced with ".")
 nextPage = response.css("a.action.next").attrib["href"  => store the link for the next page
 yield response.follow(nextPage, callback=self.parse)    => go to next page and do parsing
@@ -2762,6 +2765,7 @@ settings.py: AUTOTHROTTLE_ENABLED = True            => automatic delay between r
 settings.py: AUTOTHROTTLE_START_DELAY = 5           => The initial download delay
 settings.py: AUTOTHROTTLE_MAX_DELAY = 60            => The maximum download delay to be set in case of high latencies
 settings.py: ROBOTSTXT_OBEY = False                 => ignore robots.txt
+settings.py: DOWNLOAD_DELAY = 3                     => set download-delay (to prevent site-checkings)
 
 => when scraping with scrapy_selenium
 DOWNLOADER_MIDDLEWARES = {
