@@ -276,7 +276,7 @@ pp.pprint(dict)                 => pretty print dict line by line
 pp.pprint(dict, width=30)       => pretty print with max line-length 30
 pp.pprint(nestedList,depth=1)   => pretty print only level 1 of nested list eg. ['level1', [...]]
 pp.pprint(nestedList,depth=2)   => pretty print only level 2 of nested list eg. ['level1', ['level2', [...]]]
-
+int("1010",2)                   => convert binary value to decimal
 
 
 
