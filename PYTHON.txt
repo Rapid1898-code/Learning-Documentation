@@ -314,11 +314,11 @@ s = '''this \
 	and this'''
 ""
 
-c = s[0]										=> first char of a string
-c = s[-1]										=> last char of a string
-s = "text %s bla" % var							=> Insert variable in string oldest method (%s for string, %i for int, %f for float, %.2f for 2 decimals)
-s = "text {} bla".format(var)					=> Insert variable in string old method (:.2f for 2 decimals)
-s = f"text {var} bla"							=> Insert variable in string new method
+c = s[0]										                    => first char of a string
+c = s[-1]										                    => last char of a string
+s = "text %s bla" % var							            => Insert variable in string oldest method (%s for string, %i for int, %f for float, %.2f for 2 decimals)
+s = "text {} bla".format(var)				    	      => Insert variable in string old method (:.2f for 2 decimals)
+s = f"text {var} bla"							              => Insert variable in string new method
 "{0} like, {0} especially {0} but {1}".format("Joe", "noodles")  	=> Multiple use   							
 s.find ("ist")                                  => Returns the index where the text is found
 s.count ("i")                                   => Counts the occurrence of a text
@@ -328,14 +328,16 @@ s = s.lower()                                   => Lowercase the whole string
 s = s.upper()                                   => Capitalize the whole string
 s = s.capitalize()                              => Capitalize the first char
 s = s.title()                                   => Capitalize the first char of all words
-s.startswith("H")								=> Check if the string is starting with char "H"
-s.endswith("H")	      							=> Check if the string is ending with char "H"
+s.startswith("H")								                => Check if the string is starting with char "H"
+s.endswith("H")	      							            => Check if the string is ending with char "H"
 s.split()                                       => Split the words in a list
-s.split('=>', 1)[0]								=> Split till the first occurence of "=>"
+s.split('=>', 1)[0]								              => Split till the first occurence of "=>"
 s.splitlines()                                  => Split sentences after line breaks
 s = s.strip()                                   => Delete all whitespaces at the beginning and the end
 s = " ".join(s.split())                         => Remove all duplicate spaces in a string
 s = s.replace("e","X")                          => Replacement of two strings
+s = re.sub('[e0fi]', 'X', s)                    => Replace several chars in a string
+s = re.subn('[e0fi]', 'X', s)                   => Replace several chars in a string (get back a tupple: 1st changed string, 2nd: count of changed chars)
 s.isdigit()                                     => TRUE if the whole string are digits
 s.isalpha()                                     => True if the whole string are no digits
 s2 in s                                         => TRUE if string2 is in strings1
@@ -345,8 +347,8 @@ chr(ascii)                                      => Convert ASCII value to char (
 hashlib.md5(s).encode('utf-8')).hexdigest()     => Outputs hashvalue oif the string (needs import hashlib)
 exec(print("hello"))                            => Execute statement in a string => hello
 eval("2+2")                                     => Gives the value of an expression => 4 (dangerous - can used for sql-injections)
-my_string[::-1]									=> Reverse a string
-repr(s)											=> Print string with special characters
+my_string[::-1]									                => Reverse a string
+repr(s)											                    => Print string with special characters
 
 => check if any string is in another string or all strings are in another string
 ""
@@ -967,23 +969,27 @@ new_values = [1,2,3,4,5]                              => Define new values for a
 
 ###### MODULE - OPENPYXL - working with excel worksheets
 Documentation: => https://openpyxl.readthedocs.io/en/stable/api/openpyxl.worksheet.worksheet.html#openpyxl.worksheet.worksheet.Worksheet.PAPERSIZE_A3
-from openpyxl import load_workbook                      => Import module for loading a workbook
-from openpyxl import Workbook							=> Import module for creating a workbook
-wb = load_workbook(("Test.xlsx"))                       => Load xlsx
-wb = openpyxl.Workbook()								=> Create new workbook
-wb.create_sheet("ws")									=> Create new worksheet (at the end)
-wb.create_sheet("ws",0)									=> Create new worksheet (at the beginning)
-wb.create_sheet("ws",-2)								=> Create new worksheet (at the second last position)
-wb.sheetnames                                           => All worksheets from the 
-ws = wb["sheet1"]                                       => Select specific worksheet in workbook
-ws = wb.active                                          => Select active worksheet from workbook		
-ws.title = "xyz"										=> Change worksheet name
-ws["A1"].value                                          => Value from specific cell
-ws.cell(row=1, column=1).value                          => Value from specific cell (other method)
-ws["A1"] = 97                                           => Assign value to specific cell
-ws["A1"] = "=SUBTOTAL(1,I6:I10000)"                     => Assign formula to specific cell (only english names for function and arguments must be sepearted by "," and not ";")
-wb.save("Test2.xlsx")                                   => Save workbook to xlsx
-wb._sheets.sort(key=lambda ws: ws.title)				=> Sort worksheets in workbook
+from openpyxl import load_workbook              => Import module for loading a workbook
+from openpyxl import Workbook							      => Import module for creating a workbook
+wb = load_workbook(("Test.xlsx"))               => Load xlsx
+wb = load_workbook(filename="Test.xlsm",        => Load xlsm
+                  read_only=False,  
+                  keep_vba=True)  
+wb = openpyxl.Workbook()								        => Create new workbook
+wb.create_sheet("ws")									          => Create new worksheet (at the end)
+wb.create_sheet("ws",0)									        => Create new worksheet (at the beginning)
+wb.create_sheet("ws",-2)								        => Create new worksheet (at the second last position)
+wb.sheetnames                                   => All worksheets from the 
+ws = wb["sheet1"]                               => Select specific worksheet in workbook
+ws = wb.active                                  => Select active worksheet from workbook		
+ws.title = "xyz"										            => Change worksheet name
+ws["A1"].value                                  => Value from specific cell
+ws.cell(row=1, column=1).value                  => Value from specific cell (other method)
+ws["A1"] = 97                                   => Assign value to specific cell
+ws["A1"] = "=SUBTOTAL(1,I6:I10000)"             => Assign formula to specific cell (only english names for function and arguments must be sepearted by "," and not ";")
+wb.save("Test2.xlsx")                           => Save workbook to xlsx
+wb._sheets.sort(key=lambda ws: ws.title)			  => Sort worksheets in workbook
+wb.copy_worksheet(ws)                           => Copy worksheet in workbook
 
 => Loop trough specific area and print the cell values
 ""
@@ -1227,8 +1233,13 @@ ws.clear()                                              => Clears the content an
 ws.clear_contents()                                     => Clears the content but leaves formatting
 l = [x.name for x in wb.sheets]							            => Read worksheetnames to list
 wb.sheets.add("NewWS")									                => Add worksheet in workbook
+wb.sheets["OldWS].delete()                              => Delete worksheet in workbook
+wb.sheets["WS"].api.Visible = False                     => Hide worksheet in workbook
+
+ws.d
 [x for x in ws.range("A3:A2000").value if x != None]    => Load elements in list from range which are not None
 ws.range("A1:A10").value = ws2.range("A1:A10").options(ndim=2).value      => copy range from one sheet to another
+
 
 => Make border / frame for cells
 Definiton for linestyles see: https://docs.microsoft.com/en-US/dotnet/api/microsoft.office.interop.excel.xllinestyle?view=excel-pia
@@ -2745,7 +2756,8 @@ p.css("a.button::attr(dpsku)").get()                => return value of attribut 
 scrapy crawl whisky                                 => start scrapy with the spider "whisky"
 scrapy crawl whisky -O whisky.json                  => run spider "whisky" and output result to json-file (overwrite the json-file)
 scrapy crawl whisky -o whisky.json                  => same as above (only appending the results and not overwriting)
-scrapy crawl whisky -O whisky.csv                   => same as above (only outputing as csv)
+scrapy crawl whisky -O whisky.csv                   => outputing as csv
+scrapy crawl whisky -O whisky.xlsx                  => outputing as xlsx (scrapy-xlsx must be installed + settings.py changed: https://pypi.org/project/scrapy-xlsx/) 
 response.css("a.action.next").get()                 => find element with class "action  next" (spaces have to be replaced with ".")
 nextPage = response.css("a.action.next").attrib["href"  => store the link for the next page
 yield response.follow(nextPage, callback=self.parse)    => go to next page and do parsing
@@ -2753,6 +2765,7 @@ settings.py: AUTOTHROTTLE_ENABLED = True            => automatic delay between r
 settings.py: AUTOTHROTTLE_START_DELAY = 5           => The initial download delay
 settings.py: AUTOTHROTTLE_MAX_DELAY = 60            => The maximum download delay to be set in case of high latencies
 settings.py: ROBOTSTXT_OBEY = False                 => ignore robots.txt
+settings.py: DOWNLOAD_DELAY = 3                     => set download-delay (to prevent site-checkings)
 
 => when scraping with scrapy_selenium
 DOWNLOADER_MIDDLEWARES = {
