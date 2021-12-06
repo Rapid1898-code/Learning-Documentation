@@ -336,8 +336,8 @@ s.splitlines()                                  => Split sentences after line br
 s = s.strip()                                   => Delete all whitespaces at the beginning and the end
 s = " ".join(s.split())                         => Remove all duplicate spaces in a string
 s = s.replace("e","X")                          => Replacement of two strings
-s = re.sub('[e0fi]', 'X', s)                    => Replace several chars in a string
-s = re.subn('[e0fi]', 'X', s)                   => Replace several chars in a string (get back a tupple: 1st changed string, 2nd: count of changed chars)
+s = re.sub("[e0fi]", "X", s)                    => Replace several chars in a string
+s = re.subn("[e0fi]", "X", s)                   => Replace several chars in a string (get back a tupple: 1st changed string, 2nd: count of changed chars)
 s.isdigit()                                     => TRUE if the whole string are digits
 s.isalpha()                                     => True if the whole string are no digits
 s2 in s                                         => TRUE if string2 is in strings1
@@ -2549,11 +2549,11 @@ Xpath=//tagname[@attribute='value']
 //*[@type='text']//following::input[1]              # select all following-elements which have input as tag and select the first elem
 //*[text()='Enterprise Testing']//ancestor::div[2]  # find ancestor-elements with text and take the second one
 //*[@id='java_technologies']//child::li[23]         # select all child elements with specific id and select the 23th one
-//*[@type='submit']//preceding::input[1]            # select preceding input-elements and take the first one
+//*[@type='submit']//preceding::input[1]            # select preceding (dt.: vorangegangene) input-elements and take the first one
 //*[@type='submit']//following-sibling::input       # select following sibling which is input
 //*[@id='rt-feature']//parent::div[5]               # select parent of the elem with id = "rt-feature" and take the 5th div
 //*[@type='password']//self::input                  # select elem and use itself (only 1 element can be found)
-//*[@id='rt-feature']//descendant::a[X]             # find all elements below and take the Xth one
+//*[@id='rt-feature']//descendant::a[X]             # find all elements below (dt.: Nachfahren) and take the Xth one
 ""
 
 => Scroll to the very bottom of a site - eg. Twitter, Facebook, Stocktwits,...
