@@ -2618,8 +2618,8 @@ soup.find_all("td"):    			                                  => Read all table d
 soup.find_all("tr", class_="arrow0"):       			              => Read all table rows for specific class
 for col_id, col_content in enumerate(result.find_all("td")):    => Read all table data cells with id and content
 soup.find_all("div", class_="col-xs-6")                         => Read all divs with specific class
-soup.find("div", {"id": "lj_div"})								=> Find div with id "lj_div"
-soup.find("p", {"class": "line"}								=> Find (first) p with class "line"
+soup.find("div", {"id": "lj_div"})								              => Find div with id "lj_div"
+soup.find("p", {"class": "line"})								                => Find (first) p with class "line"
 soup.find("dt", string="In-App Purchases")						          => Find element with specific text / string
 soup.find_all(["strong","a","br"])                              => Find elements for several tags
 erg2 = erg.find_parent("div")									                  => Found the parent div-element for a specific before find element
