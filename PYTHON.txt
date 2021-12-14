@@ -1225,6 +1225,8 @@ xl_col_sort(ws,1)                                       => Sort worksheet in the
 ws["C8"].color											                    => Reads the color of a cell and returns a rgb-tuple eg. (146, 208, 80)
 ws["C8"].color = None									                  => Remove background from a cell
 ws.range("A1:C3").color = (255,255,255)					        => Assigns background color for a range of cells
+ws.range("A1:C3").number_format = "0,00"                => Assign numeric format with 2 decimals
+ws.range("A1:C3").number_format = "0%"                  => Assign percentage format with 2 decimals
 ws.range("B1").api.Font.Bold = True                     => Set cell to bold
 ws.range("B2").api.Font.ColorIndex = 3                  => Set font color to red (see codes: https://access-excel.tips/excel-vba-color-code-list/)
 ws["D5"].add_hyperlink(link,text_to_display = "Chart")  => Insert a hyperlink and define which text should be shown in the cell
@@ -1235,6 +1237,7 @@ l = [x.name for x in wb.sheets]							            => Read worksheetnames to list
 wb.sheets.add("NewWS")									                => Add worksheet in workbook
 wb.sheets["OldWS].delete()                              => Delete worksheet in workbook
 wb.sheets["WS"].api.Visible = False                     => Hide worksheet in workbook
+
 
 ws.d
 [x for x in ws.range("A3:A2000").value if x != None]    => Load elements in list from range which are not None
@@ -2422,10 +2425,10 @@ driver = webdriver.Chrome(os.getcwd() + '/chromedriver')            => Define ch
 driver.get("url")                                                   => Access to the url
 time.sleep(1)                                                       => Somtimes necessary to delay some work in progress
 driver.find_element(By.XPATH, "//input[@id='passwd-id']")            => Find element (input-element with id = "passwd-id")
-driver.find_element(By.XPATH,'//*[@id="button"]/input').click()     => Click on element by xpath (investigate - copy xpath)
-driver.find_element(By.XPATH,'//*[@id="name"]').send_keys("x"])     => Fill field "name" with content "x"
-driver.find_element(By.XPATH, '//button[text()="Some text"]')       => Other method to find element per xpath ()
-driver.find_element(By.XPATH,'//div[@aria-label="Post"]').click()   => Find Element according to a specific element eg. "aria-label" with text "Post" in a "div"
+driver.find_element(By.XPATH,"//*[@id='button']/input").click()     => Click on element by xpath (investigate - copy xpath)
+driver.find_element(By.XPATH,"//*[@id='name']").send_keys("x"])     => Fill field "name" with content "x"
+driver.find_element(By.XPATH, "//button[text()="Some text"]')       => Other method to find element per xpath ()
+driver.find_element(By.XPATH,"//div[@aria-label='Post']").click()   => Find Element according to a specific element eg. "aria-label" with text "Post" in a "div"
 driver.find_element("q").clear()                                    => Clear / delete input field
 driver.find_element("q").send_keys("txt" + u'\ue007')               => Fill text in field and press enter
 drv.find_element_by_css_selector("input#myID").send_keys("txt")     => Fill text in field (use css-selector to find element => input element with id "myID" in it)
