@@ -2616,7 +2616,7 @@ soup = BeautifulSoup (page.content,"html.parser")               => Read page wit
 soup.find(id="result_table_0")                                  => Read specific invidual id
 soup.find_all("p", {"class": "payamntp"})      			            => Read specific class
 soup.find_all("div", {'class':['class1', 'class2']})            => Find element with one of this 2 classes
-soup.select("div.class1.class2)                                 => Find divs which have both classes
+soup.select("div.class1.class2")                                => Find divs which have both classes
 soup.find_all("td"):    			                                  => Read all table data cells
 soup.find_all("tr", class_="arrow0"):       			              => Read all table rows for specific class
 for col_id, col_content in enumerate(result.find_all("td")):    => Read all table data cells with id and content
@@ -2630,7 +2630,7 @@ if row.get("class") == ["ellipsis", "nobr", "new"]:             => Check if clas
 soup.find("small", class_=re.compile("nameSymbol_"))			      => Check if string nameSymbol_" is part of the class-element
 for e in soup.find_all("a"): e.get("href")                      => Read all links from href element    
 for e in soup.find_all("a"): e.get("value")                     => Read all number from the field "value"
-content.text.strip()                                            => Outputs text without whitespaces
+for lb in soup.findAll("br"): lb.replaceWith(" ")               => Change all linebreak <br> in text to blank
 url_i = rows[0].find('img')['src']                              => Read url from the image
 image = requests.get(f'https:{url_i}').content                  => Read image as content
 results.prettify()                                              => Formated Output with html indentations
