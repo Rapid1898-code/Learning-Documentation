@@ -777,11 +777,12 @@ except Exception as e:
 import json                                         => Import json-module
 fn = "numbers.json"                                 => Assign JSON-filename
 with open(fn) as data: info = json.loads(data)      => Reading informations in json-format
-json_format = json.dumps(d,indent=2)				=> Convert / Encode a dict to a json-file (with indent for better reading)
-json_format = json.dumps(d,sort_keys=True)			=> Convert / Encode a dict to a json-file (with sorting the keys)
+json_format = json.dumps(d,indent=2)				        => Convert / Encode a dict to a json-file (with indent for better reading)
+json_format = json.dumps(d,sort_keys=True)			    => Convert / Encode a dict to a json-file (with sorting the keys)
 with open(fn,"w") as data: json.dump(person, data)  => Writing information in json-format (e.g. after updating the values/format)
-person = json.loads(json_format)					=> Convert / Decode a json-file to a dict
-with open(fn.json,"r") as data: d=json.load(file)	=> Reading information in json-format
+person = json.loads(json_format)					          => Convert / Decode a json-file to a dict
+with open(fn.json,"r") as data: d=json.load(file)	  => Reading information in json-format
+print(json.dumps(FN indent=4, sort_keys=True))      => Pretty-Print formatted json-file
 
 => Example for json-file	
 ""
