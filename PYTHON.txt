@@ -784,6 +784,21 @@ person = json.loads(json_format)					          => Convert / Decode a json-file t
 with open(fn.json,"r") as data: d=json.load(file)	  => Reading information in json-format
 print(json.dumps(FN indent=4, sort_keys=True))      => Pretty-Print formatted json-file
 
+=> read JSON from file
+=> ignoring errors and handles multiple json-objects
+""
+with open(fnJSON, errors="ignore") as f:
+  data = [json.loads(line) for line in f]
+""
+
+=> read JSON from website
+=> ignoring errors and handles multiple json-objects
+""
+r = requests.get(tmpJSONWord)
+jsonStrList = r.text.split("\n")
+jsonList = [json.loads(j, errors="ignore") for j in jsonStrList if j != ""]
+""
+
 => Example for json-file	
 ""
 {
