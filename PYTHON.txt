@@ -1633,6 +1633,7 @@ from datetime import datetime, timedelta                     => Import module da
 from datetime import date                                    => Import module dat
 datetime.strptime(s, "%Y-%m-%d")                             => Conversion string to datetime in format yyyy-mm-dd
 datetime.strptime(s, "%b %M, %Y")                            => Conversion for date format eg. "Apr 21, 2020"
+datetime.strptime(s, "%H:%M:%S UTC %Y-%m-%d")                => Conversion for utc format eg. "14:42:46 UTC 2021-12-15
 datetime.strftime(dt, "%Y-%m-%d")                            => Conversion datetime to string in format  yyyy-mm-dd
 dt.strftime((dt.strptime(tmp,"%m/%d/%Y")),"%Y-%m-%d")      	 => Convert dateformat from string in one line (1st from - 2nd to)
 isinstance(x, date)											 => Check if variable is of type datetime.date or datetime.datetime                   
