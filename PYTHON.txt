@@ -260,9 +260,9 @@ x = float("inf")                => Set var to max-value (float infinite)
 math.sqrt(9)                    => Calculates the sqrt of the value => i3
 if "myVar" in locals():         => Check if a variable exists
 sys.argv[1:].upper()            => Check for argument which is given when starting the program
-print("Text")					=> Print "Text" (with a linebreak \n at the end)
-print("Text", end="-")			=> Print with end-statement (next print will be in the same line
-print()							=> Print linebreak \n
+print("Text")					          => Print "Text" (with a linebreak \n at the end)
+print("Text", end="-")			    => Print with end-statement (next print will be in the same line
+print(repr("xyz\n"))            => Print text with linebreaks \n etc
 example starting program 		=> python test.py arg1 arg2 arg3
 str(sys.argv)					=> Show the arguments from the command line when starting the program eg. ['test.py', 'arg1', 'arg2', 'arg3']
 len(sys.argv)					=> Len of the arguments - eg. 4 (program test.py itself and 3 arguments following)
@@ -2628,16 +2628,17 @@ XPath
 from bs4 import BeautifulSoap									=> Import module for beautiul soap
 from fake_useragent import UserAgent							=> Import moduel for fake useragent
 ua = UserAgent()												=> Define UserAgent
-ua.random														=> Create random useragent
+ua.random								"t						=> Create random useragent
 page = requests.get("https://www.ariva.de/dax-30")              => Read url as page
 page = requests.get(url,headers=headers,proxy=proxy)            => Read url as page with proxy like eg. "https://10.10.1.11:1080"
 soup = BeautifulSoup (page.content,"html.parser")               => Read page with html.parser
-soup.find(id="result_table_0")                                  => Read specific invidual id
-soup.find_all("p", {"class": "payamntp"})      			            => Read specific class
+soup.body.a                                                     => find first a-tag in body
+soup.find_all("td"):    			                                  => Find all td-elements
+soup.find_all(["th","td"])                                      => Find alle th- and td-elements
+soup.find_all("tr", class_="arrow0"):       			              => Read all table rows for specific class
+soup.find_all("p", {"class": "payamntp"})      			            => Find all div-elements with specific class
 soup.find_all("div", {'class':['class1', 'class2']})            => Find element with one of this 2 classes
 soup.select("div.class1.class2")                                => Find divs which have both classes
-soup.find_all("td"):    			                                  => Read all table data cells
-soup.find_all("tr", class_="arrow0"):       			              => Read all table rows for specific class
 for col_id, col_content in enumerate(result.find_all("td")):    => Read all table data cells with id and content
 soup.find_all("div", class_="col-xs-6")                         => Read all divs with specific class
 soup.find("div", {"id": "lj_div"})								              => Find div with id "lj_div"
@@ -2655,12 +2656,19 @@ image = requests.get(f'https:{url_i}').content                  => Read image as
 results.prettify()                                              => Formated Output with html indentations
 if "Kein Zugriff" in soup.text:         => Check if specific text in soup text-output
 soap.tbody                              => Reads everyting what is in the tbody-tag
-tbody.contents                          => Returns all tags in a list which are in the tbody-tag (tbody is result from doc.tbody)
-tbody[0].next_sibling                   => return the next sibling
-tbody[0].previous_sibling               => return the previous sibling
+.contents                               => return direct child elements of a an element in a list
+.children                               => returns all direct childrens (as a generator object)
+.descendants                            => returns all descendants (as a generator object)
 .parent                                 => return the parent-tag
+.parents                                => reutrn all parents (as a generator object)
+.next_sibling                           => return the next sibling (going sideways)
+.previous_sibling                       => return the previous sibling
+.next_element                           => return next element
+.next_elements                          => return next elements (as a generator object)
+.previous_element                       => return previous element
+.previous_elements                      => return previous elements (as a generator object)
 .name                                   => returns the name of the tag
-.descendants                            => returns all descendants (as a geneartor object)
+
 
 => Define Real User Agent Header
 ""
