@@ -2464,6 +2464,7 @@ driver.close()                                                      => Close the
 driver.title                                                        => Title of the html-site
 driver.back()                                                       => Back-Function in browser-history
 driver.forward()                                                    => Forward-Function in browser-history
+driver.navigate().refresh()                                         => Refresh website
 cookie = {"name": "token", "value": "23874kljdsjhfaökldjs"}         => Define an individual cookie
 driver.add_cookie(cookie)                                           => Use Cookie
 driver.get_cookie("token")                                          => Outputs a specific cookie
