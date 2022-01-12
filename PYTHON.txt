@@ -1232,6 +1232,7 @@ ws2.conditional_formatting.add(f"K4:K12", ruleBottomGreen)
 ###### MODULE - XLWINGS - working on the fly with open excel worksheets
 => Update XLSX in reealtime
 import xlwings as xw                                    => Import module
+app = xw.App(visible=False)                             => Use xlwings with hidden excel-worksheets
 wb = xw.Book ("name.xlsx")                              => Read XLSX
 ws = wb.sheets["name_sheet"]                            => Read specific worksheet
 ws["A1"].value = "xyz"                                  => Updates specific cell
@@ -1253,7 +1254,9 @@ l = [x.name for x in wb.sheets]							            => Read worksheetnames to list
 wb.sheets.add("NewWS")									                => Add worksheet in workbook
 wb.sheets["OldWS].delete()                              => Delete worksheet in workbook
 wb.sheets["WS"].api.Visible = False                     => Hide worksheet in workbook
-
+wb.save()                                               => Save workbook
+wb.close()                                              => Close workbook
+app.quit()                                              => Quit App when opened at the beginning
 
 ws.d
 [x for x in ws.range("A3:A2000").value if x != None]    => Load elements in list from range which are not None
