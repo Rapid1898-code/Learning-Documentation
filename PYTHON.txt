@@ -2447,7 +2447,7 @@ time.sleep(1)                                                       => Somtimes 
 driver.find_element(By.XPATH, "//input[@id='passwd-id']")           => Find element (input-element with id = "passwd-id")
 driver.find_element(By.XPATH,"//*[@id='button']/input").click()     => Click on element by xpath (investigate - copy xpath)
 driver.find_element(By.XPATH,"//*[@id='name']").send_keys("x")      => Fill field "name" with content "x"
-driver.find_element(By.XPATH, "//button[text()="Some text"]')       => Other method to find element per xpath ()
+driver.find_element(By.XPATH, "//button[text()='Some text']")       => Other method to find element per xpath ()
 driver.find_element(By.XPATH,"//div[@aria-label='Post']").click()   => Find Element according to a specific element eg. "aria-label" with text "Post" in a "div"
 driver.find_element("q").clear()                                    => Clear / delete input field
 driver.find_element("q").send_keys("txt" + u'\ue007')               => Fill text in field and press enter
