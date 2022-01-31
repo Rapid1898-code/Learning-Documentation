@@ -899,6 +899,7 @@ zf.open (file_name)												=> Open file vom Zip-File (eg. CSV-File which is 
 
 
 ###### MODULE - GSPREAD - API for Google Sheets
+see also Python-Diverses / GSpread
 =>  API for GoogleSheets / Tutorial explaining handling
 => https://techwithtim.net/tutorials/google-sheets-python-api-tutorial/	
 ""
@@ -915,6 +916,17 @@ zf.open (file_name)												=> Open file vom Zip-File (eg. CSV-File which is 
 # copy client_email entry from the json-file
 # in google sheets - got to share in the document
 # paste the email from above + press send
+""
+
+=> Hosting and Scheduling on Google Cloud Platform groupcollide
+=> https://jrizmal.medium.com/deploying-a-python-web-scraper-on-google-cloud-platform-12fe24e57bb0
+""
+# select project  (in titlebar right from Google Cloud Platform)
+# create a function (search for cloud functions)
+# set trigger (Cloud Pub/Sub) and create/select topic
+# files needed for hosting: main.py (inside def hello_pubsub), requirements.txt, creds.json
+# create schedule (search for cloud scheduler)
+""
 
 # See further setup in tutorial
 import gspread                                                      # import module
@@ -1658,8 +1670,8 @@ datetime.strptime(s, "%b %M, %Y")                            => Conversion for d
 datetime.strptime(s, "%H:%M:%S UTC %Y-%m-%d")                => Conversion for utc format eg. "14:42:46 UTC 2021-12-15
 datetime.strftime(dt, "%Y-%m-%d")                            => Conversion datetime to string in format  yyyy-mm-dd
 dt.strftime((dt.strptime(tmp,"%m/%d/%Y")),"%Y-%m-%d")      	 => Convert dateformat from string in one line (1st from - 2nd to)
-isinstance(x, date)											 => Check if variable is of type datetime.date or datetime.datetime                   
-isinstance(x, datetime)										 => Check if variable is of type datetime.datetime
+isinstance(x, date)											                     => Check if variable is of type datetime.date or datetime.datetime                   
+isinstance(x, datetime)										                   => Check if variable is of type datetime.datetime
 date = date(2020,7,24)                                       => Define date as "2020-07-24"
 dt = datetime(2020,3,5,19,27,23)                      		   => Define date+time as "2020-03-05 19:27:23"
 now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")           => Actual date+time in format 2020-06-09 20:11:13
