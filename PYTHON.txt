@@ -8,7 +8,7 @@
 #> SHORTCUTS VSCODE
 #> SHORTCUTS INTELLIJ IDEA IDE, CHROME, WINDOWS
 #> OPERATORS, INPUTS, OUTPUTS, ARGUMENTS
-#> RANDOM, SECRETS
+#> RANDOM,
 #> STRING
 #> REGEX
 #> LIST
@@ -2491,6 +2491,13 @@ driver.switch_to.window(act_window)								                  => Switch (back) to
 driver.set_window_size(600,1000)                                    => Set window size to 600 wide and 1000 height
 driver.minimize_window()                                            => Minmize window
 driver.execute_script("window.scrollTo(0, 10000)")                  => ScrollDown in the window (maybe to the bottom of the site) 
+
+=> Switch between iframes
+""
+iframe = driver.find_element_by_xpath("//iframe[@name='DialWin']")  => Use XPath to locate iframe
+driver.switch_to.frame(iframe)                                      => Switch to iframe
+driver.switch_to.default_content()                                  => Switch back to default content
+""
 
 => Wait till a specific element is loaded / clickable
 ""
