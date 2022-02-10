@@ -2682,6 +2682,7 @@ soap.tbody                              => Reads everyting what is in the tbody-
 .next_elements                          => return next elements (as a generator object)
 .previous_element                       => return previous element
 .previous_elements                      => return previous elements (as a generator object)
+.find_next("ul)                         => find the next ul-element
 .name                                   => returns the name of the tag
 
 
