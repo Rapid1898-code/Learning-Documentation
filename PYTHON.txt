@@ -1329,11 +1329,17 @@ p = doc.paragrapsh                          => Read all paragraphs
 
 => Set the Normal style to specific font and size
 (assigning it to specific paragraph see above)
+from docx.shared import Pt
 style = document.styles['Normal']
 font = style.font
 font.name = 'Arial'
 font.size = Pt(10)
 
+=> Replace text and keep the previous style
+(iteration over runs necessary)
+for para in doc.paragraphs:
+  for run in para.runs:
+    run.text = "New Text"
 
 
 
