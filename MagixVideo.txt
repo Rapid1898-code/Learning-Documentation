@@ -1,0 +1,10 @@
+Text einblenden und verschieben im Build
+https://www.amateurfilm-forum.de/digitale-videobearbeitung-post-production/videoschnitt-und-bearbeitung/41412-magix-video-pro-x-titel-laesst-sich-nicht-verschieben/
+- rechte Maustaste und Text einfügen
+- rechts bei Titelbearbeitung kann der Text verändert werden
+- rechts unten bei Größe / Position / Rotation die Position des Textfelds im Bild
+
+Gleich Übergabe bei allen Filmteilen
+- Klick auf einen Übergang 
+- Effekt auswählen
+- auf "alle Objekte in der Spur anwenden" klicken
