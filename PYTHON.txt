@@ -67,6 +67,7 @@
 #> MODULE - TA-LIB - technical analysis of financial market
 #> MODULE - YFINANCE - date from Yahoo Finance
 #> MODULE - PLOTLY - data visualization 
+#> MODULE - DJANGO - framework for webdevelopment
 #> PYINSTALLER, INNO SETUP COMPILER - generate python programs to executables
 #> PYTHONANYWHERE - run python scripts in the cloud
 #> HEROKU - run python scripts in the cloud
@@ -782,7 +783,7 @@ json_format = json.dumps(d,sort_keys=True)			    => Convert / Encode a dict to a
 with open(fn,"w") as data: json.dump(person, data)  => Writing information in json-format (e.g. after updating the values/format)
 person = json.loads(json_format)					          => Convert / Decode a json-file to a dict
 with open(fn.json,"r") as data: d=json.load(file)	  => Reading information in json-format
-print(json.dumps(FN indent=4, sort_keys=True))      => Pretty-Print formatted json-file
+print(json.dumps(erg, indent=4, sort_keys=True))      => Pretty-Print formatted json-file
 
 => read JSON from file
 => ignoring errors and handles multiple json-objects
@@ -3582,6 +3583,37 @@ dataYF.isin                         => ISIN-Number
 pip install plotly                      => installation
 https://plotly.com/python/              => examples of graphing libraries
 Python-Diverses / Plotly / example.py   => see example for candlestick-chart
+
+
+
+###### MODULE - DJANGO - framework for webdevelopment
+see: C:\Users\Polzi\Documents\DEV\Python-Diverses\Django
+pip install django                      => installation
+django-admin startproject pjName        => create a blank django project
+python manage.py runserver              => run django server (start site on http://127.0.0.1:8000/)
+settings.py in django-folder
+  BASE_DIR => directory of the django-project
+  SECRET_KEY => individual key from django-project
+  DEBUG => should be set to False in production
+  INSTALLED_APPS => componente / pieces of the django-project
+  DATABASES => database of the django-project
+python manage.py startapp products      => create a new app / component
+  models.py => create models and link to the database
+  add "products" to INSTALLED_APPS in settings.py
+python manage.py createsuperuser        => create superuser (eg. for login to /admin app/component)
+python manage.py makemigrations         => prepeare migrations (when anything changed in the apps)
+python manage.py migrate                => migrate all changes
+add this: from .models import Product in admin.py of the products app / component
+=> now products can created in the /admin-page
+python manage.py shell                  => open django-sheel (eg. create products from the shell )
+
+=> add a new module / componente
+""
+- python manage.py startapp products
+- create class in models.py of the products-folder
+- import and register at admin-site in admin.py of the products-folder
+- add products to INSTALLED_APPs in settings.py of the project-folder
+""
 
 
 
