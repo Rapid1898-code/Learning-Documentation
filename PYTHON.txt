@@ -68,6 +68,7 @@
 #> MODULE - YFINANCE - date from Yahoo Finance
 #> MODULE - PLOTLY - data visualization 
 #> MODULE - DJANGO - framework for webdevelopment
+#> DOLT - Databases like Repos
 #> PYINSTALLER, INNO SETUP COMPILER - generate python programs to executables
 #> PYTHONANYWHERE - run python scripts in the cloud
 #> HEROKU - run python scripts in the cloud
@@ -3614,6 +3615,20 @@ python manage.py shell                  => open django-sheel (eg. create product
 - import and register at admin-site in admin.py of the products-folder
 - add products to INSTALLED_APPs in settings.py of the project-folder
 ""
+
+
+
+###### DOLT - Databases like Repos
+https://www.dolthub.com/blog/2020-02-03-dolt-and-dolthub-getting-started/
+Install on windows with msi-file from here: https://github.com/dolthub/dolt/releases
+dolt config --global --add user.email YOU@DOMAIN.COM          => Config Mail
+dolt config --global --add user.name "YOUR NAME"              => Config Name
+dolt login                                => Login and the key
+dolt clone dolthub/baseball-databank      => Clone DB-Repos
+dolt lst                                  => Show tables in db
+dolt sql -q "describe Salaries"           => Read column description for table
+dolt sql -q "SELECT * FROM Salaries"      => Run some query on the table
+dolt sql -r csv -q "SELECT * FROM Salaries" > salary-hr.csv   => Write query to table
 
 
 
