@@ -2691,21 +2691,25 @@ for lb in soup.findAll("br"): lb.replaceWith(" ")               => Change all li
 url_i = rows[0].find('img')['src']                              => Read url from the image
 image = requests.get(f'https:{url_i}').content                  => Read image as content
 results.prettify()                                              => Formated Output with html indentations
-if "Kein Zugriff" in soup.text:         => Check if specific text in soup text-output
-soap.tbody                              => Reads everyting what is in the tbody-tag
-.contents                               => return direct child elements of a an element in a list
-.children                               => returns all direct childrens (as a generator object)
-.descendants                            => returns all descendants (as a generator object)
-.parent                                 => return the parent-tag
-.parents                                => reutrn all parents (as a generator object)
-.next_sibling                           => return the next sibling (going sideways)
-.previous_sibling                       => return the previous sibling
-.next_element                           => return next element
-.next_elements                          => return next elements (as a generator object)
-.previous_element                       => return previous element
-.previous_elements                      => return previous elements (as a generator object)
-.find_next("ul)                         => find the next ul-element
-.name                                   => returns the name of the tag
+if "Kein Zugriff" in soup.text:   => Check if specific text in soup text-output
+soap.tbody                        => Reads everyting what is in the tbody-tag
+.contents                         => return direct child elements of a an element in a list
+.children                         => returns all direct childrens (as a generator object)
+.descendants                      => returns all descendants (nachfolger) as iterable
+.parent                           => return the parent-tag
+.parents                          => return all parents (as a generator object)
+.next_sibling                     => return the next sibling (going sideways / have the same parent)
+.previous_sibling                 => return the previous sibling (going sideways / have the same parent)
+.next_siblings                    => all following siblings as iterable
+.previous_siblings                => all previous siblings as iterable
+.next_element                     => return next element
+.next_elements                    => return next elements (as a generator object)
+.previous_element                 => return previous element
+.previous_elements                => return previous elements (as a generator object)
+.find_next("ul)                   => find the next ul-element
+.name                             => returns the name of the tag
+.strings                          => get all strings from a tag in an iterable
+.stripped_strings                 => get all (stripped) strings from a tag in an iterable
 
 
 => Define Real User Agent Header
