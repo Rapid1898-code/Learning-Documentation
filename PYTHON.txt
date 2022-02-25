@@ -1973,6 +1973,7 @@ self.assertNotIn(i,list)                                     => Check if i not i
 => Installation: pip install python-dotenv
 => create .env file and store sensible data in the form TOKEN=xyz123
 => and hide the *.env files in the .gitignore
+pip install python-dotenv
 from dotenv import load_dotenv, find_dotenv
 import os
 load_dotenv(find_dotenv())
