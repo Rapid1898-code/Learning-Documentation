@@ -3613,13 +3613,44 @@ add this: from .models import Product in admin.py of the products app / componen
 => now products can created in the /admin-page
 python manage.py shell                  => open django-sheel (eg. create products from the shell )
 
-=> add a new module / componente
+=> add a new module / component
 ""
-- python manage.py startapp products
+- python manage.py startapp products    # create "products" folder
 - create class in models.py of the products-folder
 - import and register at admin-site in admin.py of the products-folder
 - add products to INSTALLED_APPs in settings.py of the project-folder
 ""
+
+=> add a new website
+""
+# create "pages" folder
+  - python manage.py startapp pages       
+# eg. function with HttpResponse to output html-code  
+# for that function import is necessary with "from django.http import HttpResponse"
+  - add view in views.py of the pages-folder    
+- add pages to INSTALLED_APPS in settings.py of the project-folder
+# import view with "from pages.views import homeView"
+# set path with eg. "path('', homeView, name="home")"
+  - add pages/view in urls.py fo the project-folder    
+""
+
+=> request and show page/view
+""
+# in urls.py the requests are stored
+  eg. path('contact/', contactView)
+# and in the views.py is the html-code stored
+  eg. def contactView(*args, **kwargs):
+        return HttpResponse("<h1>Contacts!</h1>")  
+""
+
+=> using templates
+# render the page in views.py
+  eg. def contactView(request, *args, **kwargs):
+        return render(request, "contact.html", {})  
+# create a folder eg. "templates" and put all html-pages in it
+  eg. about.html, contact.html, home.html
+# change DIRS in TEMPLATES in settings.py   
+  eg. to 'DIRS': [os.path.join(BASE_DIR, "templates")],
 
 
 
