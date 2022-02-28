@@ -3644,6 +3644,7 @@ python manage.py shell                  => open django-sheel (eg. create product
 ""
 
 => using templates
+""
 # render the page in views.py
   eg. def contactView(request, *args, **kwargs):
         return render(request, "contact.html", {})  
@@ -3651,6 +3652,22 @@ python manage.py shell                  => open django-sheel (eg. create product
   eg. about.html, contact.html, home.html
 # change DIRS in TEMPLATES in settings.py   
   eg. to 'DIRS': [os.path.join(BASE_DIR, "templates")],
+""
+
+=> template Inheritance
+""
+# create base-html
+  eg. <h1>This is a navbar</h1>
+      {% block content %}
+        replace me
+      {% endblock %}
+# inside the about-html 
+  eg. {% block content %}
+        <h1>About</h1>
+        <p>This is a template</p>
+      {% endblock %}
+# "replace me" will get replace by the info from about-html from the block content
+""
 
 
 
