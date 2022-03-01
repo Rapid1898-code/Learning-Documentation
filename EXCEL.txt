@@ -10,7 +10,7 @@ see: Excel_HowtoDropBoxWithoutBlanks.xlsx
 
 
 ### How to call a python-program in excel with VBA
-create button: Entwicklertools - Einfügen - Schaltfläche
+create button: Insert - Shapes
 assign macro: right click - Makro zuweisen
 macro for calling the python program:
 Sub init()
