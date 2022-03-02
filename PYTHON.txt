@@ -3594,6 +3594,7 @@ Python-Diverses / Plotly / example.py   => see example for candlestick-chart
 
 
 ###### MODULE - DJANGO - framework for webdevelopment
+see: https://www.youtube.com/watch?v=F5mRW0jo-U4&t=5043s
 see: C:\Users\Polzi\Documents\DEV\Python-Diverses\Django
 pip install django                      => installation
 django-admin startproject pjName        => create a blank django project
@@ -3613,6 +3614,19 @@ python manage.py migrate                => migrate all changes
 add this: from .models import Product in admin.py of the products app / component
 => now products can created in the /admin-page
 python manage.py shell                  => open django-sheel (eg. create products from the shell )
+=> https://docs.djangoproject.com/en/4.0/ref/templates/builtins/
+{% include "navbar.html" %}             => include html in an html-page (navbar.html)
+{% extends "base.html"  %}              => extend html-page (base.html)
+{% block content %} xyz {% endblock %}  => replace this block content
+{{ x|add:"2" }}                         => add 2 to the value
+{{ if x in lst }}                       => if statement
+{{ elif x == 3 }}                       => elif statement     
+{{ else }}                              => else statement
+{{ end if }}                            => close if statement
+{{ x|capfirst }}                        => capitalize first letter
+{{ x|upper }}                           => uppercase whole string
+{{ x|capfirst|upper }}                  => capitalize and upper the whole string
+
 
 => add a new module / component
 ""
@@ -3655,7 +3669,7 @@ python manage.py shell                  => open django-sheel (eg. create product
   eg. to 'DIRS': [os.path.join(BASE_DIR, "templates")],
 ""
 
-=> template Inheritance
+=> extends: template Inheritance
 ""
 # create base-html
   eg. <h1>This is a navbar</h1>
@@ -3663,11 +3677,39 @@ python manage.py shell                  => open django-sheel (eg. create product
         replace me
       {% endblock %}
 # inside the about-html 
-  eg. {% block content %}
+  eg. {% extends "base.html"  %}
+      {% block content %}
         <h1>About</h1>
         <p>This is a template</p>
       {% endblock %}
 # "replace me" will get replace by the info from about-html from the block content
+""
+
+=> include: something in html
+""
+{% include "navbar.html" %}
+""
+
+=> render data in html
+""
+# render html-page with dictionary 
+  define myContext as Dictionary
+  myContext = {
+    "myText": "This is about me",
+    "myNumber": 123,
+    "myList": [123, 4242, 12313]
+  }  
+  eg. return render(request, "about.html", myContext)  
+# access this dict in the html-page
+  eg. {{ myText }}, {{ myNumber }}
+""
+
+=> for loop when rendering
+""
+# get myList from Dictionary in views.py
+  {% for mySubItem in myList %}
+    <li>{{ forloop.counter }} - {{ mySubItem }}</li>
+  {% endfor %}
 ""
 
 
@@ -3690,12 +3732,15 @@ dolt sql -r csv -q "SELECT * FROM Salaries" > salary-hr.csv   => Write query to 
 pip install pyinstaller                     => Installation
 pyinstaller prg.py                          => Generate the bundle in a subdirectory called dist.
 pyinstaller --onefile prg.py                => Generate only one file
+python -m pyinstaller --onefile prg.py      => Generate only one file (to get for sure the pyinstaller from the actual env)
 --copy-metadata pandas_ta					          => add this when some modules are not found
 --hidden-import=pymssql						          => When some modules are making problems - sometimes this helps
 --exclude-module matplotlib                 => when there is a depreciating warning from matlib 
 --icon=app.ico                              => Generate file with icon
 --hidden-import=pkg_resources.py2_warn      => Generating under mac os sometimes only work with this params
 --hidden-import=pkg_resources.py2_warn      => Generating under mac os sometimes only work with this params   
+--collect-data moduleXY                     => Collect data for specific python module
+
 prg.exe                                     => Open this file to start the python-program
 yfinance module                             => only working with import yfinance (not with import yfinance as yf)
 
