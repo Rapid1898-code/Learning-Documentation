@@ -44,6 +44,7 @@ htmlbreak (not good - should be done by css);<hr>, </hr>;html
 Emphasis some text - but only for accessibility reason (not styling!);<em> Stress Emphasis </em>;html
 Bold some text - but only for accessibility reason (not styling!);<strong> Strong Importance </strong>;html
 Insert / embedd video with iframe;"<iframe src="""" frameborder=""0""></iframe>";html
+Set JumpMark at a specific position in the html-file (jump to with index.html#1);"<a id=""1""></a>";html
 Insert video;"<video width=""400"" controls>
   <source src=""mov1.mp4"" type=""video/mp4"">
   <source src=""mov2.ogg"" type=""video/ogg"">

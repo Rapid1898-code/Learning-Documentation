@@ -71,10 +71,8 @@ process.exit(1)                             => Exit javascript node program
 ###### STRING
 let s = "this is a test"                    => Define a string
 let s = "this \n text"                      => String with linebreak \n
-s[0]                                        => show the whole string
-s[0,1]                                      => extracht only the first character
-s[-1]                                       => last char of a string
-s[-1]                                       => last char of a string
+s.slice(0,1)                                => extract only the first character
+s.slice(-1)                                 => last char of a string
 s.slice[3,5]                                => slicing 2 chars from pos 3 and 4
 s.slice[3]                                  => slice from pos 3 to the end
 s.length                                    => shows the length of the string
