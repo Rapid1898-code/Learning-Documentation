@@ -58,6 +58,7 @@ Resize something eg. img;"max-width:20%;";css
 Prevents the eg. image from getting bigger than its original size;"max-width:100%;";css
 Resize something eg. img;"max-height:20%;";css
 no bullets in unordered list (using at ul-element);"list-style-type: none;";css
+disc (for Bullet), circle, square, decimal, lower-alpha,;list-style-type: xyz;css
 hide element;"disply: none;";css
 show element in line - eg. horizontal li-elements - or wrap border only around a paragraph p (and not the whole block);"display: inline;";css
 show element as a block (max width of the window) - eg. wrap border around a span element over the whole window (and not only the span);"display: block;";css

@@ -80,6 +80,14 @@ Push with upstream definition (longhand - to the branch "answer")
 ```markdown
 git push --set -upstream origin answer
 ```
+undo add command before (all files get set back to the initial state)
+```markdown
+git reset
+```
+undo the last commit
+```markdown
+git reset HEAD~
+```
 
 <br>Pull (update) files from GitHub<br>
 (-u saves the paths - so at the next push - it must be only typed push)
@@ -87,6 +95,11 @@ git push --set -upstream origin answer
 git pull -u origin master
 ```
 
+<br>Enable pushing with ssh-key in Idea and VSCode
+```markdown
+Enable open ssh agent: https://dev.to/aka_anoop/how-to-enable-openssh-agent-to-access-your-github-repositories-on-windows-powershell-1ab8
+Run commands: https://stackoverflow.com/questions/56490194/vs-code-bitbucket-ssh-permission-denied-publickey
+```
 
 
 ---
@@ -181,6 +194,10 @@ git status
 add all files to the stage (all in the current folder)
 ```markdown
 git add .
+```
+when something wrong were added (undo the whole add command)
+```markdown
+(git reset)
 ```
 shows the actual files on the stage
 ```markdown

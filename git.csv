@@ -15,7 +15,11 @@ Clone a repository in the actual path;git clone github-link;git
 Link the acutal folder/repo to the github-repo;git remote add origin https://github.com/link/Test.git;git
 Push with upstream definition (shorthand - to the master);git push -u origin master;git
 "Push with upstream definition (longhand - to the branch ""answer"")";git push --set -upstream origin answer;git
+undo add command before (all files get set back to the initial state);git reset;git
+undo the last commit;git reset HEAD~;git
 Pull (update) files from GitHub;git pull -u origin master;git
+Enable pushing with ssh-key in Idea and VSCode;"Enable open ssh agent: https://dev.to/aka_anoop/how-to-enable-openssh-agent-to-access-your-github-repositories-on-windows-powershell-1ab8
+Run commands: https://stackoverflow.com/questions/56490194/vs-code-bitbucket-ssh-permission-denied-publickey";git
 all files in this folder will be ignored;add folder: /prg/dist/*;git
 this specific file will be ignored;add file: /prg.xlsx;git
 "Create a new branch with the name ""newFeature""";git branch newFeature;git
@@ -34,6 +38,7 @@ clone the repository to the local folder;git clone github-link;git
 "set current branch to ""answer""";git checkout answer;git
 see which branch is curently active (eg. main or answer);git status;git
 add all files to the stage (all in the current folder);git add .;git
+when something wrong were added (undo the whole add command);(git reset);git
 shows the actual files on the stage;git status;git
 "commit files from stage (""take snapshot"")";"git commit -m ""Completed""";git
 "push with upstream definition (to the branch ""answer"")";git push --set-upstream origin answer;git

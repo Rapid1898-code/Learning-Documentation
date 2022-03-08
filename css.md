@@ -254,6 +254,10 @@ no bullets in unordered list (using at ul-element)
 ```markdown
 list-style-type: none;
 ```
+disc (for Bullet), circle, square, decimal, lower-alpha,
+```markdown
+list-style-type: xyz
+```
 hide element
 ```markdown
 disply: none;

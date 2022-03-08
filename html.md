@@ -8,6 +8,7 @@
 #### FORMS, BUTTONS [jump to...](#forms-buttons)
 #### TEMPLATE [jump to...](#template)
 #### MARKDOWN FILE INTEGRATION [jump to...](#markdown-file-integration)
+#### CHROME EXTENSION TOOLS [jump to...](#chrome-extension-tools)
 
 
 
@@ -174,6 +175,10 @@ Insert / embedd video with iframe
 ```markdown
 <iframe src="" frameborder="0"></iframe>
 ```
+Set JumpMark at a specific position in the html-file (jump to with index.html#1)
+```markdown
+<a id="1"></a>
+```
 
 <br>Insert video
 ```markdown
@@ -281,3 +286,23 @@ see Learning-Documentation
 - Read MD-File with Markdown Monster - check if formating is ok in the editor
 - Save To - Save to HTML - Choose Zip Archive - store the zip-file somewhere and extract
 - Copy the part from <Markdown Monster Content> to <End Markdown Monster Content> in the HTML-File
+
+
+
+---
+## CHROME EXTENSION TOOLS
+[jump to top...](#html)<br><br>
+- Wappalyzer - tool for showing which CMS is used, which e-commerce platform, marketing automation tool
+- Window Resizer - resize the window for reponsive design
+- Viewport Resizer - resize the window for reponsive design
+- Marmoset - make an eye-catching snapshot form your code
+- CSSViewer - show the css-styles on a site
+- WhatFont - shows the used font on the site
+- Lighthouse - audit the site - gives feedback what can / should be improved
+
+
+
+
+
+
+

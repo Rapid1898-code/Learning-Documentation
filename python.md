@@ -3,8 +3,10 @@
 
 #### MODULE, GENERAL [jump to...](#module-general)
 #### VIRTUALENV [jump to...](#virtualenv)
-#### SHORTCUTS INTELLIJ IDEA IDE, GITHUB, CHROME, WINDOWS [jump to...](#shortcuts-intellij-idea-ide-github-chrome-windows)
-#### OPERATORS, INPUTS, ARGUMENTS [jump to...](#operators-inputs-arguments)
+#### PIP [jump to...](#pip)
+#### SHORTCUTS VSCODE [jump to...](#shortcuts-vscode)
+#### SHORTCUTS INTELLIJ IDEA IDE, CHROME, WINDOWS [jump to...](#shortcuts-intellij-idea-ide-chrome-windows)
+#### OPERATORS, INPUTS, OUTPUTS, ARGUMENTS [jump to...](#operators-inputs-outputs-arguments)
 #### RANDOM, SECRETS [jump to...](#random-secrets)
 #### STRING [jump to...](#string)
 #### REGEX [jump to...](#regex)
@@ -25,11 +27,13 @@
 #### MOUDLE - ZIPFILE - handling ZIP files [jump to...](#moudle---zipfile---handling-zip-files)
 #### MODULE - GSPREAD - API for Google Sheets [jump to...](#module---gspread---api-for-google-sheets)
 #### MODULE - OPENPYXL - working with excel worksheets [jump to...](#module---openpyxl---working-with-excel-worksheets)
-#### MODULE - XLWINNGS - working on the fly with open excel worksheets [jump to...](#module---xlwinngs---working-on-the-fly-with-open-excel-worksheets)
+#### MODULE - XLWINGS - working on the fly with open excel worksheets [jump to...](#module---xlwings---working-on-the-fly-with-open-excel-worksheets)
+#### MODULE - PYTHON-DOCX - working with word docx [jump to...](#module---python-docx---working-with-word-docx)
 #### MODULE - WIN32COM - creating worksheets as pdf from xlsx [jump to...](#module---win32com---creating-worksheets-as-pdf-from-xlsx)
 #### MODULE - PyPDF2 - working with pdfs [jump to...](#module---pypdf2---working-with-pdfs)
 #### MYSQL - MARIADB - HEIDISQL [jump to...](#mysql---mariadb---heidisql)
 #### MYSQL - MARIADB - SQL [jump to...](#mysql---mariadb---sql)
+#### MYSQL - MYSQL.CONNECTOR [jump to...](#mysql---mysql.connector)
 #### SQL ALCHEMY [jump to...](#sql-alchemy)
 #### SQLITE3 SQL [jump to...](#sqlite3-sql)
 #### MODULES - DATES, DATETIME, CALENDAR, TIMEIT, TIME, SYS, CTYPES [jump to...](#modules---dates-datetime-calendar-timeit-time-sys-ctypes)
@@ -37,9 +41,10 @@
 #### MODULE - PYCOUNTRY - Countries, Currency, Language [jump to...](#module---pycountry---countries-currency-language)
 #### MODULES - SMTPLIB, MIMEText - sending emails [jump to...](#modules---smtplib-mimetext---sending-emails)
 #### MODULE - PATHLIB - interacting with the operating system [jump to...](#module---pathlib---interacting-with-the-operating-system)
-#### MODULE - OS - interacting with the operating system [jump to...](#module---os---interacting-with-the-operating-system)
+#### MODULE - OS, SHUTIL, FILECMP, DIRCMP - interacting with the operating system [jump to...](#module---os-shutil-filecmp-dircmp---interacting-with-the-operating-system)
 #### MODULE - LOGGING [jump to...](#module---logging)
 #### MODULE - UNITTEST [jump to...](#module---unittest)
+#### MODULE - DOTENV - hide environment informations [jump to...](#module---dotenv---hide-environment-informations)
 #### MODULE - COLLECTIONS - counter, defaultdic [jump to...](#module---collections---counter-defaultdic)
 #### MODULE - ITERTOOLS - products, combinations [jump to...](#module---itertools---products-combinations)
 #### MODULE - NUMPY - basis for different other modules [jump to...](#module---numpy---basis-for-different-other-modules)
@@ -48,14 +53,24 @@
 #### MODULE - SELENIUM - browser automatization [jump to...](#module---selenium---browser-automatization)
 #### MODULE - BEAUTIFUL SOAP - webscraping [jump to...](#module---beautiful-soap---webscraping)
 #### MODULE - REQUESTS - workings with APIs [jump to...](#module---requests---workings-with-apis)
+#### MODULE - SCRAPY - webscraping using spiders [jump to...](#module---scrapy---webscraping-using-spiders)
 #### MODULE - PYQT - making GUIs [jump to...](#module---pyqt---making-guis)
-#### MODULE - TKinter - making GUIs [jump to...](#module---tkinter---making-guis)
+#### MODULE - TKINTER - making GUIs [jump to...](#module---tkinter---making-guis)
+#### MOUULE - KIVY - making GUIs [jump to...](#mouule---kivy---making-guis)
 #### MODULE - PYGAME - making games [jump to...](#module---pygame---making-games)
 #### MODULE - PYTHONCOM - make new formula in excel with python-function [jump to...](#module---pythoncom---make-new-formula-in-excel-with-python-function)
 #### MODULE - FLASK, ZAPPA, AWS - making an API [jump to...](#module---flask-zappa-aws---making-an-api)
+#### MODULE - FLASK, HEROKU, GUNICORN  - making an API [jump to...](#module---flask-heroku-gunicorn----making-an-api)
+#### MODULE - FASTPI, UVICORN - making an API [jump to...](#module---fastpi-uvicorn---making-an-api)
 #### MODULE - ICECREAM - print for debugging [jump to...](#module---icecream---print-for-debugging)
-#### PYINSTALLER - generate python programs to executables [jump to...](#pyinstaller---generate-python-programs-to-executables)
-
+#### MODULE - TA-LIB - technical analysis of financial market [jump to...](#module---ta-lib---technical-analysis-of-financial-market)
+#### MODULE - YFINANCE - date from Yahoo Finance [jump to...](#module---yfinance---date-from-yahoo-finance)
+#### MODULE - PLOTLY - data visualization [jump to...](#module---plotly---data-visualization)
+#### MODULE - DJANGO - framework for webdevelopment [jump to...](#module---django---framework-for-webdevelopment)
+#### DOLT - Databases like Repos [jump to...](#dolt---databases-like-repos)
+#### PYINSTALLER, INNO SETUP COMPILER - generate python programs to executables [jump to...](#pyinstaller-inno-setup-compiler---generate-python-programs-to-executables)
+#### PYTHONANYWHERE - run python scripts in the cloud [jump to...](#pythonanywhere---run-python-scripts-in-the-cloud)
+#### HEROKU - run python scripts in the cloud [jump to...](#heroku---run-python-scripts-in-the-cloud)
 
 
 ---
@@ -83,12 +98,13 @@ python --version
 ```
 
 <br>Use modules / functions from other folder
+(not working with eg. yahoocrawler.py and rapidtechtools.py - all modules, wether they are needed or not have to
+imported in the program...)
 ```markdown
 import sys, os
 sys.path.append(os.path.join('C:/', 'Users\path_to_module'))	# Create Path to module
 import RapidTechTools as rtt        # Import Module RapidTechTools
 ```
-
 
 
 ---
@@ -112,7 +128,7 @@ which python
 ```
 Create new virtual environment pj1_env
 ```markdown
-virtualenv env
+virtualenv env OR python -m virtualenv env
 ```
 
 <br>Activate environment
@@ -147,45 +163,260 @@ Install all the packages from requirements.txt
 pip install -r requirements.txt
 ```
 
+<br>install virtual environment with specific python-version
+```markdown
+download and install the python-version - Important: remember the path to the python.exe
+create a venv with: virtualenv envName -p path\to\new_python.exe
+```
+
 
 
 ---
-## SHORTCUTS INTELLIJ IDEA IDE, GITHUB, CHROME, WINDOWS
+## PIP
 [jump to top...](#python)<br><br>
-Shortcuts Intellij Idea
-<br>https://www.shortcutfoo.com/app/dojos/intellij-idea-win/cheatsheet
+<br>install module
 ```markdown
-Ctrl /					# Comment / Uncomment line ("/" on numblock)
-Ctrl Alt F7				# Find usages
-Ctrl F 		   			# Find in File
-Ctrl R  	   			# Replace in File
-Ctrl Shift R			# Replace in Path (in all Files)
-F2						# Jump to the next error
-F3						# Find next
-Ctrl G					# Goto line
-Ctrl D					# Copy / Duplicate lines
-Alt Shift Down/Up		# Move line
-Ctrl E					# Recent opened files
-Ctrl TAB				# Switch windows in IDE
-Ctrl (Shift) W			# Select / deselect parts of the code step by step
-Alt Enter				# Suggestions for fix error, function informations
-Alt 1					# Open the project windows (on the left side)
-Alt F7					# Show usage of the variable, function, class
-Esc						# Focus back on the editor window
-Ctrl Shift -	   		# Collapse all functions
-Ctrl -					# Collapse block ("-" on numblock)
-Ctrl +					# Expand block ("+" on numblock)
-Ctrl A					# Select whole file
-Ctrl (Shift) Z			# Undo (backwards) / Redo (forwards)
-Ctrl Shift Left			# Select word to the beginning
-Ctrl Shift Right		# Select word to the end
-Ctrl Left				# Go one word left
-Ctrl Right				# Go one word right
-Ctrl Y                  # Delete current line
-Ctrl Del                # Delete to end of word
-Ctrl Backspace          # Delete to beginning of word
-lorem + TAB             # Create lorem text for html-code
-p>lorem + TAB           # Create lorem text inside <p>-tags
+pip install moduleXY
+```
+upgrade module
+```markdown
+pip install moduleXY --upgrade
+```
+uninstall module XY
+```markdown
+pip uninstall module XY
+```
+show installed modules in actual environment
+```markdown
+pip list
+```
+output modules in requirements.txt
+```markdown
+pip freeze > requirements.txt
+```
+install modules from requirements.txt
+```markdown
+pip install -r requirements.txt
+```
+
+
+
+---
+## SHORTCUTS VSCODE
+[jump to top...](#python)<br><br>
+<br>Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
+```markdown
+Ctrl K Ctrl C
+```
+Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
+```markdown
+Ctrl K Ctrl U
+```
+Find in File
+```markdown
+Ctrl F
+```
+Search in all files
+```markdown
+Ctrl Shift f
+```
+Replace in File
+```markdown
+Ctrl H
+```
+Replace in Path (in all Files)
+```markdown
+Ctrl Shift H
+```
+Jump to the next error
+```markdown
+F8
+```
+Jump to the next error (backwards)
+```markdown
+Shift + F8
+```
+Find next
+```markdown
+F3
+```
+Goto line
+```markdown
+Ctrl G
+```
+Copy / Duplicate lines
+```markdown
+Shift Alt Up/Down
+```
+Move line
+```markdown
+Alt Up/Down
+```
+Recent opened files
+```markdown
+Ctrl E1
+```
+Switch windows in IDE
+```markdown
+Ctrl K Left/Right
+```
+Suggestions for fix error, function informations
+```markdown
+Alt Enter
+```
+Open the project windows (on the left side)
+```markdown
+Alt 1
+```
+Show usage of the variable, function, class
+```markdown
+Alt F7
+```
+Focus back on the editor window
+```markdown
+Esc
+```
+Collapse everything
+```markdown
+Ctrl K Ctrl 0
+```
+Exapnds everything
+```markdown
+Ctrl K Ctrl J
+```
+Collapse block ("-" on numblock)
+```markdown
+Ctrl K Ctrl L
+```
+Expand block ("+" on numblock)
+```markdown
+Ctrl K Ctrl L
+```
+Select whole file
+```markdown
+Ctrl A
+```
+Undo (backwards) / Redo (forwards)
+```markdown
+Ctrl (Shift) Z
+```
+Select word to the beginning
+```markdown
+Ctrl Shift Left
+```
+Select word to the end
+```markdown
+Ctrl Shift Right
+```
+Go one word left
+```markdown
+Ctrl Left / Right
+```
+Delete current line
+```markdown
+Ctrl Shift K
+```
+Delete to end of word
+```markdown
+Ctrl Del
+```
+Delete to beginning of word
+```markdown
+Ctrl Background
+```
+Hide/Show sidebar
+```markdown
+Ctrl B
+```
+Hide/Show terminal
+```markdown
+Ctrl J
+```
+Show command line (eg. open a file where the name is known)
+```markdown
+Ctrl P
+```
+Open the the command panel
+```markdown
+Ctrl Shift P
+```
+Toggle through the open files in the editor
+```markdown
+Ctrl TAB
+```
+Close File
+```markdown
+Ctrl WARNING
+```
+MultiCursor - Select more cursors in rows for multiple change in rows
+```markdown
+Ctrl Alt Up/Down (click Left)
+```
+MultiCursor - Select Cursor at multiple positions for the same name
+```markdown
+Ctrl D
+```
+Select all occurences of this word in the document and change all with one change
+```markdown
+Ctrl Shift L
+```
+Select whole word
+```markdown
+Ctrl D
+```
+Jump to the function definition
+```markdown
+Ctrl Click
+```
+Close Tab
+```markdown
+Ctrl W
+```
+Show suggestions for the actual code function / method
+```markdown
+Ctrl Space
+```
+
+
+
+
+---
+## SHORTCUTS INTELLIJ IDEA IDE, CHROME, WINDOWS
+[jump to top...](#python)<br><br>
+https://www.shortcutfoo.com/app/dojos/intellij-idea-win/cheatsheet
+```markdown
+Ctrl / 				# Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
+Ctrl / 				# Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
+Ctrl Alt F7 	    # Find usages
+Ctrl F    		   	# Find in File
+Ctrl R         	   	# Replace in File
+Ctrl Shift R 		# Replace in Path (in all Files)
+F2            		# Jump to the next error
+F3        			# Find next
+Ctrl G      		# Goto line
+Ctrl D 			    # Copy / Duplicate lines
+Alt Shift Down/Up 	# Move line
+Ctrl E       		# Recent opened files
+Ctrl TAB            # Switch windows in IDE
+Ctrl (Shift) W      # Select / deselect parts of the code step by step
+Alt Enter			# Suggestions for fix error, function informations
+Alt 1				# Open the project windows (on the left side)
+Alt F7				# Show usage of the variable, function, class
+Esc					# Focus back on the editor window
+Ctrl Shift -    	# Collapse everything
+Ctrl Shift +        # Exapnds everything
+Ctrl - 				# Collapse block ("-" on numblock)
+Ctrl + 				# Expand block ("+" on numblock)
+Ctrl A         		# Select whole file
+Ctrl (Shift) Z 		# Undo (backwards) / Redo (forwards)
+Ctrl Shift Left 	# Select word to the beginning
+Ctrl Shift Right 	# Select word to the end
+Ctrl Left / Right 	# Go one word left
+Ctrl Y              # Delete current line
+Ctrl Del            # Delete to end of word
+Ctrl Backspace      # Delete to beginning of word
+lorem + TAB         # Create lorem text for html-code
+p>lorem + TAB       # Create lorem text inside <p>-tags
 ```
 
 <br>Shortcuts Chrome
@@ -206,30 +437,15 @@ Ctrl X          # Cut
 Ctrl VALUES     # Paste
 ```
 
-<br>Git Ignore Files/Folders:
+<br>Enable pushing with ssh-key in Idea and VSCode
 ```markdown
-when doing a commit - right click + add to .gitignore		# file will be created when not exists
-individual file will be ignored
-to ignore a whole folder with all files in it - add /* to the folder => eg. /prg/dist/*
+Enable open ssh agent: https://dev.to/aka_anoop/how-to-enable-openssh-agent-to-access-your-github-repositories-on-windows-powershell-1ab8
+Run commands: https://stackoverflow.com/questions/56490194/vs-code-bitbucket-ssh-permission-denied-publickey
 ```
-
-<br>Add directory to GitHub
-```markdown
-Select directory => <VCS> => <Import into Version Control> => <Create Git Repository>
-Commit the files / new directory
-<VCS> => <Import into Version Control> => <Share Project on GitHub>
-<VCS> => <Git> => <Push>
-```
-
-<br>Change name of repository on github.com
-```markdown
-select repository => settings => rename
-```
-
 
 
 ---
-## OPERATORS, INPUTS, ARGUMENTS
+## OPERATORS, INPUTS, OUTPUTS, ARGUMENTS, PPRINT
 [jump to top...](#python)<br><br>
 <br>Import module for math calculations
 ```markdown
@@ -295,13 +511,9 @@ Shows all available methods and attributes for the object as list
 ```markdown
 dir(var)
 ```
-Check if x has type format float
+Check if x has type format float (others: str,int,list,tuple,range,dict,set,bool)
 ```markdown
 isinstance(x,float)
-```
-Check if x has type format string
-```markdown
-isinstance(x,str)
 ```
 Set var to max-value (float infinite)
 ```markdown
@@ -327,9 +539,9 @@ Print with end-statement (next print will be in the same line
 ```markdown
 print("Text", end="-")
 ```
-Print linebreak \n
+Print text with linebreaks \n etc
 ```markdown
-print()
+print(repr("xyz\n"))
 ```
 python test.py arg1 arg2 arg3
 ```markdown
@@ -359,6 +571,34 @@ Stop program at this point (helpful in test-situations)
 ```markdown
 exit()
 ```
+Calculate the change from an old value to a new value in percent
+```markdown
+(newVal-oldVal)/oldVal * 100
+```
+Import pretty print functionality
+```markdown
+import pprint as pp
+```
+pretty print dict line by line
+```markdown
+pp.pprint(dict)
+```
+pretty print with max line-length 30
+```markdown
+pp.pprint(dict, width=30)
+```
+pretty print only level 1 of nested list eg. ['level1', [...]]
+```markdown
+pp.pprint(nestedList,depth=1)
+```
+pretty print only level 2 of nested list eg. ['level1', ['level2', [...]]]
+```markdown
+pp.pprint(nestedList,depth=2)
+```
+convert binary value to decimal
+```markdown
+int("1010",2)
+```
 
 
 
@@ -377,7 +617,7 @@ random.randint(1,6)
 ```
 Random float number between 1 and 3
 ```markdown
-random.uniform(1,3)
+<random.uniform(1,3)>
 ```
 Random value between 0 and 1 in float format - eg. 0.16394553
 ```markdown
@@ -516,7 +756,7 @@ Split the words in a list
 ```markdown
 s.split()
 ```
-', 1)[0]								=> Split till the first occurence of "=>"
+', 1)[0]								              => Split till the first occurence of "=>"
 ```markdown
 s.split('
 ```
@@ -528,9 +768,21 @@ Delete all whitespaces at the beginning and the end
 ```markdown
 s = s.strip()
 ```
+Remove all duplicate spaces in a string
+```markdown
+s = " ".join(s.split())
+```
 Replacement of two strings
 ```markdown
 s = s.replace("e","X")
+```
+Replace several chars in a string
+```markdown
+s = re.sub("[e0fi]", "X", s)
+```
+Replace several chars in a string (get back a tupple: 1st changed string, 2nd: count of changed chars)
+```markdown
+s = re.subn("[e0fi]", "X", s)
 ```
 TRUE if the whole string are digits
 ```markdown
@@ -564,7 +816,7 @@ Execute statement in a string => hello
 ```markdown
 exec(print("hello"))
 ```
-Gives the value of an expression => 4
+Gives the value of an expression => 4 (dangerous - can used for sql-injections)
 ```markdown
 eval("2+2")
 ```
@@ -576,6 +828,15 @@ Print string with special characters
 ```markdown
 repr(s)
 ```
+
+<br>check if any string is in another string or all strings are in another string
+```markdown
+checkString = "A string is more than its parts!"
+checks = ["more", "blabla", "nothing"]
+if any(x in checkstring for x in checks):         # check if any elems from checks is in checkstring
+if all(x in checkstring for x in checks):         # check if all elems from checks is in checkstring
+```
+
 
 
 
@@ -647,10 +908,6 @@ all = match.group(0)
 ## LIST
 [jump to top...](#python)<br><br>
 ordered, mutable, allows duplicate elements<br>
-Define empty list
-```markdown
-l = []
-```
 Define several empty lists (NOT use l1=l=l3=[] => this would be the SAME list)
 ```markdown
 l1,l2,l3,l4 = ([] for i in range(4))
@@ -743,11 +1000,15 @@ Define nested list
 ```markdown
 l = [[1,4,3], [2,2,4], [3,1,5]]
 ```
-Sort the nested list for the 2nd element ascending
+Sort nested list for the 2nd element ascending
 ```markdown
 l.sort(key=lambda x: x[1])
 ```
-Sort the nested list for the 2nd element descending
+Sort nested list 1st for the 1st elem, then for the 2nd elem
+```markdown
+inpItems.sort(key=lambda x: (x[0], x[1]))
+```
+Sort nested list for the 2nd element descending
 ```markdown
 l.sort(key=lambda x: x[1], reverse=True)
 ```
@@ -757,7 +1018,7 @@ l.reverse()
 ```
 Reverse complete list and store it in different independent list
 ```markdown
-l_reverse = reversed(l)
+l_reverse = list(reversed(l))
 ```
 Delete element at index position 2
 ```markdown
@@ -893,15 +1154,19 @@ list(map(lambda x: x*2, [1,2,3,4,5]))
 ```
 Also possible with list comprehension => [2,4,6,8,10]
 ```markdown
-c=[x*2 for x in [1,2,3,4,5]]
+l=[x*2 for x in [1,2,3,4,5]]
+```
+Also possible with list comprehension => [2,4]
+```markdown
+l=[x for x in [1,2,3,4,5] if x%2==0]
+```
+List comprehension with if and else
+```markdown
+l=[x*2 if x.isdigit() else x for x in [1,"A",2]]
 ```
 List is filtered with lambda for even numbers => [2,4]
 ```markdown
 list(filter(lambda x: x%2==0, [1,2,3,4,5]))
-```
-Also possible with list comprehension => [2,4]
-```markdown
-c=[x for x in [1,2,3,4,5] if x%2==0]
 ```
 Build paris as tuple => (1,4),(2,5),(3,6)
 ```markdown
@@ -1096,7 +1361,14 @@ Dict sorted: 1st value-desc (x[0]) - 2nd key-ascnd (-x[0])
 ```markdown
 d = {k: v for k, v in sorted(d.items(), key=lambda x: (-x[1],x[0]))}
 ```
-
+Sort dict and output list, sorted according to the 3rd element of the list in the dict
+```markdown
+l = sorted(d.items(), key=lambda e: e[1][2])
+```
+Sort dict and output list, sorted according to the 3rd element of the list in the dict - descending
+```markdown
+l = sorted(d.items(), key=lambda e: e[1][2], reverse=True)
+```
 
 
 ---
@@ -1589,6 +1861,25 @@ Reading information in json-format
 ```markdown
 with open(fn.json,"r") as data: d=json.load(file)
 ```
+Pretty-Print formatted json-file
+```markdown
+print(json.dumps(erg, indent=4, sort_keys=True))
+```
+
+<br>read JSON from file
+<br>ignoring errors and handles multiple json-objects
+```markdown
+with open(fnJSON, errors="ignore") as f:
+  data = [json.loads(line) for line in f]
+```
+
+<br>read JSON from website
+<br>ignoring errors and handles multiple json-objects
+```markdown
+r = requests.get(tmpJSONWord)
+jsonStrList = r.text.split("\n")
+jsonList = [json.loads(j, errors="ignore") for j in jsonStrList if j != '']
+```
 
 <br>Example for json-file
 ```markdown
@@ -1690,6 +1981,14 @@ Returns "google.com"
 u.netloc
 ```
 
+<br>Download picture from a url
+```markdown
+  opener = urllib.request.URLopener()
+  opener.addheader('User-Agent', "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36")
+  filename, headers = opener.retrieve(url, 'Test.jpg')
+```
+
+
 
 
 ---
@@ -1743,12 +2042,39 @@ zf.open (file_name)
 ---
 ## MODULE - GSPREAD - API for Google Sheets
 [jump to top...](#python)<br><br>
-API for GoogleSheets / Tutorial explaining handling
+see also Python-Diverses / GSpread
+<br>API for GoogleSheets / Tutorial explaining handling
 <br>https://techwithtim.net/tutorials/google-sheets-python-api-tutorial/
 ```markdown
 # Create a project on https://console.cloud.google.com/
-# See further setup in tutorial
+# select name + click create + select project
+# 3 lines upper/left - API/Services - Library
+# search for google drive API + enable it
+# search for google sheets api + enable it
+# 3 lines upper/left - API/Services - Credentials
+# create credentials for Service Accounts + define name + press Continue
+# choose role "editor" + press Continue + press Done
+# press on created service account + press keys + Add Key + Create New Key
+# select json + and store json-file with name creds.json
+# copy client_email entry from the json-file
+# in google sheets - got to share in the document
+# paste the email from above + press send
+```
+
+<br>Hosting and Scheduling on Google Cloud Platform groupcollide
+<br>https://jrizmal.medium.com/deploying-a-python-web-scraper-on-google-cloud-platform-12fe24e57bb0
+```markdown
+# select project  (in titlebar right from Google Cloud Platform)
+# create a function (search for cloud functions)
+# set trigger (Cloud Pub/Sub) and create/select topic
+# files needed for hosting: main.py (inside def hello_pubsub), requirements.txt, creds.json
+# create schedule (search for cloud scheduler)
+```
+
+<br>See further setup in tutorial
+```markdown
 import gspread                                                      # import module
+import oauth2client                                                 # import module
 from oauth2client.service_account import ServiceAccountCredentials  # import module for account credentials
 from pprint import pprint                                           # import module for better output formatting
 scope = ["https://spreadsheets.google.com/feeds",
@@ -1761,7 +2087,23 @@ creds = ServiceAccountCredentials.from_json_keyfile_name
 
 <br>Credentials Mgmt for GoogleSheets
 ```markdown
-client = gspread.authorize(creds)
+gc = gspread.authorize(creds)
+```
+Open the Google Sheet
+```markdown
+wb1 = gc.open("NameOfSheet)
+```
+Open the first worksheet in the Google Sheet
+```markdown
+ws1 = wb1.get_worksheet(0)
+```
+Get all worksheets as worksheet-objects
+```markdown
+listWS = wb1.worksheets()
+```
+Get all worksheets by n
+```markdown
+listWS = [x.title for x in wb1.worksheets()]
 ```
 Open the spreadhseet
 ```markdown
@@ -1769,15 +2111,31 @@ sheet = client.open("testpython").sheet1
 ```
 Get a list of all records
 ```markdown
-data = sheet.get_all_records()
+dataList = ws1.get_all_values()
 ```
-Count of all used rows in the sheet
+Get specific areaw
 ```markdown
-len(data)
+data = ws1.get('B5:K8')
 ```
-Show all data with pprint - pretty print
+Get formula of a cell
 ```markdown
-pprint(data)
+ws1.acell('B1', value_render_option='FORMULA').value
+```
+Update cell range with nested list
+```markdown
+ws1.update('A1:Z10', [[1, 2], [3, 4]])
+```
+Insert new row at row number 2
+```markdown
+ws1.insert_row(["new1","new2","new3"],2)
+```
+Append new row at the end
+```markdown
+ws1.append_row(["new1","new2","new3"])
+```
+Sorting the sheet (Range + col1 asc + col2 desc)
+```markdown
+ws1.sort((1, 'asc'), (2, 'des'), range='A2:G20')
 ```
 Get row 3 (starts counting from 1 - not 0)
 ```markdown
@@ -1797,19 +2155,7 @@ cell = sheet.cell(1,2).value
 ```
 Update cell from row 2 and col B
 ```markdown
-sheet.update_cell(2,2, "CHANGED")
-```
-Insert new row at row number 2
-```markdown
-sheet.insert_row(["new1","new2","new3"],2)
-```
-Append new row at the end
-```markdown
-sheet.append_row(["new1","new2","new3"])
-```
-Sorting the sheet (Range + col1 asc + col2 desc)
-```markdown
-sheet.sort((1, 'asc'), (2, 'des'), range='A2:G20')
+ws1.update_cell(2,2, "CHANGED")
 ```
 Define cell area / cell row
 ```markdown
@@ -1818,14 +2164,6 @@ cell_list = worksheet.range('A1:G1')
 Define new values for area / row
 ```markdown
 new_values = [1,2,3,4,5]
-```
-Write new values to cell area / cell row
-```markdown
-for i, val in enumerate(new_values): cell_list[i].value = val
-```
-Upate cell area / cell row
-```markdown
-worksheet.update_cells(cell_list)
 ```
 
 <br>Gspread Formatting
@@ -1880,7 +2218,13 @@ Load xlsx
 ```markdown
 wb = load_workbook(("Test.xlsx"))
 ```
-Create new workbook
+Load xlsm
+```markdown
+wb = load_workbook(filename="Test.xlsm",
+```
+read_only=False,
+keep_vba=True)
+<br>Create new workbook
 ```markdown
 wb = openpyxl.Workbook()
 ```
@@ -1931,6 +2275,14 @@ ws["A1"] = "=SUBTOTAL(1,I6:I10000)"
 Save workbook to xlsx
 ```markdown
 wb.save("Test2.xlsx")
+```
+Sort worksheets in workbook
+```markdown
+wb._sheets.sort(key=lambda ws: ws.title)
+```
+Copy worksheet in workbook
+```markdown
+wb.copy_worksheet(ws)
 ```
 
 <br>Loop trough specific area and print the cell values
@@ -2259,6 +2611,17 @@ ws.conditional_formatting.add('D2:D10',
 	FormulaRule(formula=['E1=0'], font=myFont, border=myBorder, fill=redFill))
 ```
 
+<br>Color Scale formating
+```markdown
+# Define rule
+ruleBottomGreen = ColorScaleRule(
+                        start_type='percentile', start_value=10, start_color="63BE7B", # green
+                        mid_type='percentile', mid_value=50, mid_color= "FFFB84", # yellow
+                        end_type='percentile', end_value=90, end_color="F8696B") # red
+# Apply rule
+ws2.conditional_formatting.add(f"K4:K12", ruleBottomGreen)
+```
+
 
 
 ---
@@ -2269,9 +2632,17 @@ Import module
 ```markdown
 import xlwings as xw
 ```
+Use xlwings with hidden excel-worksheets
+```markdown
+app = xw.App(visible=False)
+```
 Read XLSX
 ```markdown
 wb = xw.Book ("name.xlsx")
+```
+Read XLSX with password protection
+```markdown
+wb = xw.Book ("name.xlsx", password("xyz"))
 ```
 Read specific worksheet
 ```markdown
@@ -2281,25 +2652,13 @@ Updates specific cell
 ```markdown
 ws["A1"].value = "xyz"
 ```
+Reads the formula of a cell (not the value)
+```markdown
+f = ws["A1"].formula
+```
 Iterate trough cells an set them to "" / None
 ```markdown
 for i in ws.range("A3:A7"): i.value = ""
-```
-Read specific cells to list
-```markdown
-l = ws.range("A2:A100").value
-```
-Read cells
-```markdown
-cells = ws.range("A2:A100")
-```
-Update the value of a cell
-```markdown
-cells[1].value = "new value"
-```
-Writeback the updates to cells
-```markdown
-ws.range("A2:A100").value = l
 ```
 Sort worksheet in the first col (function see below)
 ```markdown
@@ -2313,19 +2672,197 @@ Remove background from a cell
 ```markdown
 ws["C8"].color = None
 ```
-Assigns background color for a range of cells
+White: Assigns background color for a range of cells
 ```markdown
-ws.Range("A1:C3").color = (255,255,255)
+ws.range("A1:C3").color = (255,255,255)
+```
+Green: Assigns background color green
+```markdown
+ws.range("A1:C3").color = (149,237,173)
+```
+Red: Assigns background color green
+```markdown
+ws.range("A1:C3").color = (237,149,149)
+```
+Yellow: Assigns background color green
+```markdown
+ws.range("A1:C3").color = (240,232,146)
+```
+Orange: Assigns background color green
+```markdown
+ws.range("A1:C3").color = (230,172,80)
+```
+Blue: Assigns background color green
+```markdown
+ws.range("A1:C3").color = (143,157,235)
+```
+Assign numeric format with 2 decimals
+```markdown
+ws.range("A1:C3").number_format = "0,00"
+```
+Assign percentage format with 2 decimals
+```markdown
+ws.range("A1:C3").number_format = "0%"
+```
+Set cell to bold
+```markdown
+ws.range("B1").api.Font.Bold = True
+```
+Set font color to red (see codes: https://access-excel.tips/excel-vba-color-code-list/)
+```markdown
+ws.range("B2").api.Font.ColorIndex = 3
+```
+Insert a hyperlink and define which text should be shown in the cell
+```markdown
+ws["D5"].add_hyperlink(link,text_to_display = "Chart")
+```
+Disable auto filter in worksheet
+```markdown
+ws.api.AutoFilterMode = False
+```
+Clears the content and formatting of the whole sheet
+```markdown
+ws.clear()
+```
+Clears the content but leaves formatting
+```markdown
+ws.clear_contents()
+```
+Read worksheetnames to list
+```markdown
+l = [x.name for x in wb.sheets]
+```
+Add worksheet in workbook
+```markdown
+wb.sheets.add("NewWS")
+```
+Delete worksheet in workbook
+```markdown
+wb.sheets["OldWS].delete()
+```
+Hide worksheet in workbook
+```markdown
+wb.sheets["WS"].api.Visible = False
+```
+Save workbook
+```markdown
+wb.save()
+```
+Close workbook
+```markdown
+wb.close()
+```
+Quit App when opened at the beginning
+```markdown
+app.quit()
 ```
 
+ws.d
+<br>Load elements in list from range which are not None
+```markdown
+[x for x in ws.range("A3:A2000").value if x != None]
+```
+copy range from one sheet to another
+```markdown
+ws.range("A1:A10").value = ws2.range("A1:A10").options(ndim=2).value
+```
+
+
+<br>Make border / frame for cells
+<br>Definiton for linestyles see: https://docs.microsoft.com/en-US/dotnet/api/microsoft.office.interop.excel.xllinestyle?view=excel-pia
+<br>Definiton for border-sites see: https://docs.microsoft.com/en-us/office/vba/api/excel.xlbordersindex
+```markdown
+for e in ws.range("B3:D3"):
+  for site in [7,8,9,10]:
+    e.api.Borders(site).LineStyle = 1
+```
+
+<br>Update row / change whole row
+```markdown
+l = ws.range("A2:A6").value         # Read specific cells to list (eg. [2,4,6,7,8])
+l = [0,1,2,3,4]											# Change list
+ws.range("A2:A100").value = l       # Writeback the updates to cells
+```
+
+<br>Update cell area / change 3 elements
+```markdown
+v = ws.range("A2:F9").value
+v[3][2] = 9999999
+v[5][1] = 8888888
+v[7][5] = 5555555
+ws.range("A2:F9").value = v
+```
 
 <br>Sorting workssheet in given col
 ```markdown
 def xl_col_sort(sheet,col_num):
-    sheet.range((2,col_num)).api.SortKey1=sheet.range((2,col_num)).api, Order1=1)
+    sheet.range((2,col_num)).api.Sort(Key1=sheet.range((2,col_num)).api, Order1=1)
     return
 ```
 
+<br>Delete several rows / columns
+```markdown
+from xlwings.constants import DeleteShiftDirection
+ws.range('2:4').api.Delete(DeleteShiftDirection.xlShiftUp)      # delete rows 2 to 4
+ws.range('A:C').api.Delete(DeleteShiftDirection.xlShiftUp)      # delete cols A to C
+```
+
+
+
+
+---
+## MODULE - PYTHON-DOCX - working with word docx
+[jump to top...](#python)<br><br>
+<br>Import the module
+```markdown
+import python-docx
+```
+Import the library
+```markdown
+from docx import Document
+```
+Read file
+```markdown
+doc = Document('file.docx')
+```
+Save file
+```markdown
+doc.save('file.docx')
+```
+Read all tables
+```markdown
+t = doc.tables
+```
+Access specific element in table
+```markdown
+t[0].rows[0].cells[0].paragraphs[0].text
+```
+Assign style to specific paragraph
+```markdown
+t[0].rows[0].cells[1].paragraphs[0].style
+```
+Read all paragraphs
+```markdown
+p = doc.paragrapsh
+```
+
+<br>Set the Normal style to specific font and size
+```markdown
+(assigning it to specific paragraph see above)
+from docx.shared import Pt
+style = document.styles['Normal']
+font = style.font
+font.name = 'Arial'
+font.size = Pt(10)
+```
+
+<br>Replace text and keep the previous style
+```markdown
+(iteration over runs necessary)
+for para in doc.paragraphs:
+  for run in para.runs:
+    run.text = "New Text"
+```
 
 
 ---
@@ -2473,11 +3010,22 @@ HeidiSQL - Datei / Verbindungsmanager
 
 <br>Transfer whole table from local db to hosted db
 ```markdown
-right click on table / tables to transfer and select "export database as sql"
-for "output" select "Server: A2Hosting" (connection to the hosted server)
-for "database" select "rapidtec_stockdb" (name from the db on the hosted server)
+right click on database / table to transfer and select "export database as sql"
+for "output" select eg. "Server: A2Hosting" (connection to the hosted server)
+for "database" select eg. "xyztec_stockdb" (name from the db on the hosted server)
 for "data" select "replace existing data"
+when format of table should be changed also select checkbox "Drop" at table (not database!)
 press "export" (wait till the rows-column shows 100%)
+```
+
+<br>Backup MySQL / MariaDB with HeidiSQL
+<br>see: https://manjaro.site/backup-mysql-database-using-heidisql/
+```markdown
+select DB - <Tools>, <Export Database as SQL>
+select Drop-Checkboxes and Create-Checkboxes
+Data: Delete + insert (truncate existing data)
+Output: single .sql file
+Filename: choose destination file and folder
 ```
 
 
@@ -2485,7 +3033,11 @@ press "export" (wait till the rows-column shows 100%)
 ---
 ## MYSQL - MARIADB - SQL
 [jump to top...](#python)<br><br>
-<br>Import module for mysql access
+<br>Both modules have to be installed
+```markdown
+pip install mysql, mysql.connector
+```
+Import module for mysql access
 ```markdown
 import mysql.connector
 ```
@@ -2502,7 +3054,7 @@ Creates database "db"
 mycursor.execute("CREATE DATABASE db")
 ```
 
-<br># Show databases and informations
+<br>Show databases and informations
 ```markdown
 mycursor.execute("SHOW DATABASES")
     for db in mycursor: print(db)
@@ -2604,13 +3156,72 @@ Drop whole table (if exists helps if there no table anymore)
 ```markdown
 sql = "DROP TABLE IF EXISTS students"
 ```
-
-=>Read ticker for specific ticker
+Reset auto-increment in a table
 ```markdown
-sql = "SELECT ticker FROM stock_main where ticker=%s"      # Or Select * to get all values from the table
-cont = [(summary["symbol"])]
-c.execute(sql,cont)
+ALTER TABLE mytable AUTO_INCREMENT=0
+```
+Delete the data inside a table
+```markdown
+TRUNCATE TABLE tablename
+```
+Delete the data AND the whole table-structure itself
+```markdown
+DROP TABLE tablename
+```
+
+<br>SELECT ticker name for specific ticker
+```markdown
+sql = "SELECT tickerName FROM stock_main WHERE ticker=%s"   # Or Select * to get all values from the table
+var = [(stockTicker)]
+c.execute(sql,var)
 data = c.fetchall()
+```
+
+<br>SELECT maximum calcDate for specific ticker
+```markdown
+sql = "SELECT max(calcDate) FROM scores WHERE ticker = %s"
+var = [(stock)]
+c.execute (sql, var)
+lastCalcDate = c.fetchone()
+```
+
+<br>INSERT new row in a table
+```markdown
+sql = "INSERT INTO scores (" \
+    "ticker," \
+    "calcDate," \
+    "stockName," \
+    "profitGrowth)" \
+    " VALUES (%s,%s,%s,%s)"  # as many %s necessary as insert attributes
+cont = [inputList]          # list with 4 elements
+c.execute (sql, cont)
+mydb.commit ()
+```
+
+<br>UPDATE row in a table
+```markdown
+sql = "UPDATE stock_statistics " \
+        "SET " \
+        "marketCap=%s," \
+        "EV=%s," \
+        "Ebitda=%s" \
+        " WHERE ticker=%s AND ultimo=%s"
+cont = [(valMarketCap,
+        valEV,
+        valEbitda,
+        stockTicker,
+        ultimo)]
+c.executemany (sql, cont)
+mydb.commit ()
+```
+
+<br>DELETE row in a table
+```markdown
+sql = "DELETE FROM scores" \
+    " WHERE ticker = %s and calcDate = %s"
+cont = [stock,dateElem]
+c.execute (sql, cont)
+mydb.commit ()
 ```
 
 
@@ -2621,6 +3232,10 @@ data = c.fetchall()
 <br>Import MODULE
 ```markdown
 from sqlalchemy import create_engine
+```
+necessary to install - otherwise problems eg. with api-accesses to the db
+```markdown
+pip install pymysql
 ```
 Define access to the MySQL-DB (username, pw, dbname)
 ```markdown
@@ -2647,17 +3262,34 @@ Close sql engine at the end
 engine.dispose()
 ```
 
-<br>Tabelle anlegen in MySQL DB
+<br>Define object / table
 ```markdown
 from sqlalchemy import Table, Column, Integer, String, Float, MetaData
 meta = MetaData()
 students = Table(
-   'students', meta,
+   'students',
+   meta,
    Column('id', Integer, primary_key = True),
    Column('name', String(45)),
    Column('lastname', String(45)),
 )
+```
+
+<br>Create the table(s) according to the metadata-definition
+```markdown
 meta.create_all(engine)
+```
+name of the table => students
+```markdown
+user_table.c.name
+```
+all column-names / keys as list => ['id', 'name', 'lastname']
+```markdown
+user_table.c.keys()
+```
+shows the primary key of the object
+```markdown
+user_table.primary_key
 ```
 
 <br>Create INSERT / UPDATE / DELETE / SELECT statements
@@ -2677,7 +3309,7 @@ students.select()                                           # Creates SELECT Sta
 <br>Execute SQL command - INSERT
 ```markdown
 conn = engine.connect()                                     # Insert one row
-ins = students.insert().values name = 'Brauneder', lastname = 'Karl')
+ins = students.insert().values (name = 'Brauneder', lastname = 'Karl')
 result = conn.execute(ins)
 result.inserted_primary_key                                 # Shows the inserted primary key
 conn.execute(students.insert(), [                           # Insert more rows
@@ -2742,12 +3374,13 @@ Create a cursor (for working with the db)
 ```markdown
 c = conn.cursor()
 ```
+
 <br>Create a table in the database
 ```markdown
-```
-attr1 text,
-attr2 text,
-```markdown
+c.execute('''CREATE TABLE tbl (
+		attr1 text,
+		attr2 text,
+		attr3 integer)''')
 ```
 
 <br>Insert rows into database
@@ -2806,11 +3439,19 @@ Import module dat
 ```markdown
 from datetime import date
 ```
-Conversion string to datetime in format dd.mm.jjjj
+Conversion string to datetime in format yyyy-mm-dd
 ```markdown
 datetime.strptime(s, "%Y-%m-%d")
 ```
-Conversion datetime to string in format  dd.mm.jjjj
+Conversion for date format eg. "Apr 21, 2020"
+```markdown
+datetime.strptime(s, "%b %M, %Y")
+```
+Conversion for utc format eg. "14:42:46 UTC 2021-12-15
+```markdown
+datetime.strptime(s, "%H:%M:%S UTC %Y-%m-%d")
+```
+Conversion datetime to string in format  yyyy-mm-dd
 ```markdown
 datetime.strftime(dt, "%Y-%m-%d")
 ```
@@ -2850,9 +3491,17 @@ Actual date as date format
 ```markdown
 tday = datetime.today().date()
 ```
-Year / month / day from the datetime
+Actual date as string format
 ```markdown
-dt.year, dt.month, dt.day
+tday = str(datetime.today().date())
+```
+Convert datetime to date
+```markdown
+date = datetime.date()
+```
+Year / month / day / hour / minute from the datetime
+```markdown
+dt.year, dt.month, dt.day, dt.hour, dt.minute
 ```
 Returns weekday (monday=1, sunday=7)
 ```markdown
@@ -2970,6 +3619,21 @@ user32 = ctypes.windll.user32
 screensize = user32.GetSystemMetrics(0),                # 1st parameter is width, 2nd parameter is height
     user32.GetSystemMetrics(1)
 ```
+
+<br>Wait for keystroke or x seconds
+```markdown
+TIMEOUT = 10                # time / seconds for waiting
+startTime = time.time()
+inp = None
+print(f"Program finished - pls press <enter> to close the window or wait {round(TIMEOUT / 60, 2)} minutes...")
+while True:
+    if msvcrt.kbhit():                          # continue when pressing a key
+        inp = msvcrt.getch()
+        break
+    elif time.time() - startTime > TIMEOUT:     # continue when the time is running out
+        break
+```
+
 
 
 ---
@@ -3148,11 +3812,28 @@ Creates new folder (no error message if folder allready exists with exist_ok=Tru
 ```markdown
 Path("folder").mkdir(parents=True, exist_ok=True)
 ```
+define some folder
+```markdown
+path = Path("some_folder")
+```
+add some subfolders (eg. some_folder/sub_folder/sub_sub_folder)
+```markdown
+path = path / "sub_folder" / "sub_sub_folder"
+```
+make path absolute
+```markdown
+path = path.resolve()
+```
 
+<br>get mac-adress from the actual pc
+```markdown
+from uuid import getnode as get_mac
+mac = get_mac()
+```
 
 
 ---
-## MODULE - OS - interacting with the operating system
+## MODULE - OS, SHUTIL, FILECMP, DIRCMP - interacting with the operating system
 [jump to top...](#python)<br><br>
 <br>Import module
 ```markdown
@@ -3169,6 +3850,10 @@ os.chdir("C:/temp")
 Current working directory
 ```markdown
 os.getcwd()
+```
+Get actual user name
+```markdown
+os.getlogin()
 ```
 Outputs the entire content of the current working dir
 ```markdown
@@ -3188,7 +3873,7 @@ os.rename(path1+fn, path2+fn)
 ```
 Copy file from source to destination
 ```markdown
-os.system("copy source.txt destination.txt")
+shutil.copyfile("src","dst")
 ```
 Creates new folder (also possible with makedirs => is prefered)
 ```markdown
@@ -3216,7 +3901,7 @@ os.stat("file")
 ```
 Outputs dirpath - all the dirs - and all the files
 ```markdown
-for dirpath,dir,fileos in os.walk()
+for dirpath,dir,files in os.walk(os.getcwd())
 ```
 Get home dir of the actual user
 ```markdown
@@ -3238,11 +3923,11 @@ Checks if filename exists in the filesystem
 ```markdown
 os.path.exists("temp/file.txt")
 ```
-Checks if folder exists
+Checks if folder exists / element is a directory (in the actual dir)
 ```markdown
 os.path.isdir("xyz")
 ```
-Checks if element is a file
+Checks if files exists / element is a file (in the actual dir)
 ```markdown
 os.path.isfile("xyz")
 ```
@@ -3250,15 +3935,36 @@ Put all filenames to a list from the actual working dir
 ```markdown
 os.listdir()
 ```
+Put all sub-folders to a list from the actual working dir
+```markdown
+[x[0] for x in os.walk(path)][1:]
+```
 Change file to hidden
 ```markdown
 os.popen('attrib +h ' + fn).read().close()
 ```
 
-<br>find home-directory for the actual user
+<br>Put all files in a list from actual directory with all subdirs and Filtering
+```markdown
+listExtensions=["jpg","jpeg","png"]
+listImages = []
+for dirpath,dir,files in os.walk(os.getcwd()):
+  for f in files:
+    if any(x in f.lower() for x in listExtensions):
+      listImages.append(f)
+```
+
+<br>Find home-directory for the actual user
 ```markdown
 from os.path import expanduser
 home = expanduser("~")
+```
+
+<br>Check if 2 folders are different
+```markdown
+from filecmp import dircmp
+ergDiff = dircmp(path, toPath)          # compare 2 directories
+if ergDiff.left_only: ...               # see all changed files on the left side
 ```
 
 
@@ -3348,7 +4054,8 @@ logger.addHandler(my_handler)                                # Define handler wi
 ---
 ## MODULE - UNITTEST
 [jump to top...](#python)<br><br>
-<br>Importing module
+many methods: https://docs.python.org/3/library/unittest.html<br>
+Importing module
 ```markdown
 import unittest
 ```
@@ -3376,7 +4083,6 @@ starting the unittest
 ```markdown
 if __name__ == '__main__': unittest.main()
 ```
-many methods: https://docs.python.org/3/library/unittest.html<br>
 Check if equal
 ```markdown
 self.assertEqual(a,b)
@@ -3400,6 +4106,22 @@ self.assertIn(i,list)
 Check if i not in list
 ```markdown
 self.assertNotIn(i,list)
+```
+
+
+
+---
+## MODULE - DOTENV - hide environment informations
+[jump to top...](#python)<br><br>
+Installation: pip install python-dotenv
+<br>create .env file and store sensible data in the form TOKEN=xyz123
+<br>and hide the *.env files in the .gitignore
+```markdown
+pip install python-dotenv
+from dotenv import load_dotenv, find_dotenv
+import os
+load_dotenv(find_dotenv())
+GMAIL_TOKEN = os.environ.get("GMAIL_TOKEN")
 ```
 
 
@@ -3529,7 +4251,10 @@ loop with 1 for 4 times
 ```markdown
 for i in repeat(1,4)
 ```
-
+fastest way to change an column in a dataframe (over 400x faster then iterrows)
+```markdown
+df = df['col'].apply(lambda x: x.strip())
+```
 
 
 ---
@@ -3655,6 +4380,11 @@ Reshape the numpy array to 3d with 2,2,2 dimension => [[[1,2],[3,4]],[5,6],[7,8]
 ```markdown
 c.reshape((2,2,2))
 ```
+Convert numpy datetime64 to str (can afterwards be converted with strptime to datetime
+```markdown
+dt = str(dt64).split("T")[0]
+```
+
 
 Vector handling<br>
 Build array with this range => array([0,1,2,3])
@@ -3779,13 +4509,25 @@ Also importing numpy-module necessary
 ```markdown
 import numpy as np
 ```
+Necessary for supressing performance warnings see below
+```markdown
+import warnings
+```
 Show more information - count of the shown columns
 ```markdown
 pd.set_option('display.max_columns',11)
 ```
+Show more information - show all columns
+```markdown
+pd.set_option('display.max_columns',None)
+```
 Show more information - None is using the maximum width of the IDE
 ```markdown
 pd.set_option('display.width', None)
+```
+Supress Performance Warnings
+```markdown
+warnings.simplefilter(action='ignore', category=pd.errors.PerformanceWarning)
 ```
 
 SERIES<br>
@@ -3953,6 +4695,26 @@ Sorting by value descending
 ```markdown
 s.sort_values(ascending=False)
 ```
+Iterate through pandas series
+```markdown
+for index, value in s.items():
+```
+Get element from series - if not found is the result "N/A"
+```markdown
+erg = s.get("Entry","N/A)
+```
+Delete timezone from timestamp
+```markdown
+.index.tz_localize(None)
+```
+Convert pandas timestamp to datetime
+```markdown
+dt = dt.to_pydatetime()
+```
+Convert datetime to pandas timestamp
+```markdown
+dt = pd.Timestamp(dt)
+```
 
 <br>DATAFRAMES
 <br>are immutable, column is a series, dataframe = combination of multiple series
@@ -4055,41 +4817,22 @@ Read/Parse the worksheet "Prod" in a dataframe
 ```markdown
 df = ef.parse("Prod")
 ```
-Write dataframe to xlsx
+
+<br>Write several dataframes to excel
 ```markdown
-df.to_excel("file2.xlsx",
-```
-Write to worksheet "Prod"
-```markdown
-sheet_name="Prod",
-```
-Start writing at row 1
-```markdown
-startrow=1,
-```
-Start writing at col 2
-```markdown
-startcol=2)
-```
-Write dataframe to xlsx with the ExcelWriter method
-```markdown
-w = pd.ExcelWriter("file2.xlsx")
-```
-Write dataframe to xlsx worksheet "Prod" with the ExcelWriter method
-```markdown
-with w: df.to_excel(w,sheet_name="Prod"
-```
-Write multiple worksheet to xlsx from dataframes
-```markdown
-with pd.ExcelWriter("file2.xlsx") as writer:
-```
-Dataframe1 stored in worksheet "Prod"
-```markdown
-df1.to_excel(w, sheet_name="Prod")
-```
-Dataframe2 stored in worksheet "Desc"
-```markdown
-df2.to_excel(w, sheet_name="Desc")
+# Create a Pandas Excel writer using XlsxWriter as the engine.
+writer = pd.ExcelWriter('basisReadData.xlsx', engine='xlsxwriter')
+
+# Write each dataframe to a different worksheet.
+quandlMain.to_excel(writer, sheet_name="quandlMain"),
+quandlMain2.to_excel(writer, sheet_name="quandlMain_From2018_MRT")
+
+# Write also in this form
+with pd.ExcelWriter("example.xlsx") as writer:
+    df.to_excel(writer, sheet_name="coinPrices")
+
+# Close the Pandas Excel writer and output the Excel file.
+writer.save()
 ```
 
 SQL<br>
@@ -4101,19 +4844,15 @@ Read data from sql-db into dataframe
 ```markdown
 df = pd.read_sql("SELECT * FROM empl;",conn)
 ```
-Many operations can be directly done when reading the sql-db
+
+<br>Many operations can be directly done when reading the sql-db
 ```markdown
 df = pd.read_sql("SELECT * FROM empl;",conn,
+	index_col="EmplID",										    # define which column will be the index
+	parse_dates["BirthDate","HireDate"])			# read this columns as date
 ```
-=> define which column will be the index
-```markdown
-index_col="EmplID",
-```
-=> read this columns as date
-```markdown
-parse_dates["BirthDate","HireDate"])
-```
-It is easier to read a complete table using sqlalechmy
+
+<br>It is easier to read a complete table using sqlalechmy
 ```markdown
 from sqlalchemy import create_engine
 ```
@@ -4156,6 +4895,16 @@ Read html-link to dataframe
 df = pd.read_html(html_url)
 ```
 
+DICT, LIST<br>
+Creates a dataframe from a list of dicts => [{...},{...},{...}]
+```markdown
+df = pd.DateFrame(l)
+```
+Create a dataframe for a dict
+```markdown
+df = pd.DataFrame.from_dict(d, orient="index")
+```
+
 <br>EXAMPLE
 ```markdown
 https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-course/pandas-condtitional-selection-and-modifying-dataframes
@@ -4173,6 +4922,22 @@ USA 319		0,915	America
 ```markdown
 df = pd.DataFrame(np.random.randint(0,5,size=(5, 2)), columns=list('AB'))
 ```
+Create an empty dataframe
+```markdown
+df = pd.DataFrame()
+```
+Creates a dataframe from a list of dicts => [{...},{...},{...}]
+```markdown
+df = pd.DateFrame(l)
+```
+Create a dataframe for a dict
+```markdown
+df = pd.DataFrame.from_dict(d, orient="index")
+```
+Check if datafram is empty
+```markdown
+if df.empty:
+```
 Show the shape of the dataframe (rows, columns) => (7,3)
 ```markdown
 df.shape
@@ -4183,7 +4948,7 @@ df.info()
 ```
 Shows datatype of every column
 ```markdown
-df.dtpyes()
+df.dtypes()
 ```
 Several statistic for the dataframe (median,max,min,std,...)
 ```markdown
@@ -4195,7 +4960,7 @@ df.head()
 ```
 Output of the first 22 rows
 ```markdown
-ead(22)
+df.head(22)
 ```
 Output of the last 5 rows per default
 ```markdown
@@ -4209,10 +4974,6 @@ Output of all column names
 ```markdown
 df.columns
 ```
-Rename the columns
-```markdown
-df.columns["POPL","hdi","CONT"]
-```
 Outputs the index
 ```markdown
 df.index
@@ -4221,17 +4982,17 @@ Set index to column "name"
 ```markdown
 df.index = df["name"]
 ```
-Assigning new index - replaces the default numeric index
-```markdown
-df.index = ["CAN","FRA","GER","ITA","JPN","UK","USA"]
-```
 Outputs the size of the dataframe
 ```markdown
 df.size
 ```
-Resets the index - with inplace it is permanently saved
+Resets the index to numeric (previous index exists as column)
 ```markdown
-df.reset_index(inplace=True)
+df.reset_index(drop=False)
+```
+Resets the index to numeric (previous index is deleted)
+```markdown
+df.reset_index(drop=True)
 ```
 Define "Popl" as new index - with inplace it is permanently saved
 ```markdown
@@ -4249,9 +5010,14 @@ Selecting Columns by title - showing the whole column "Population" for all rows
 ```markdown
 df["Popl"]
 ```
-Output of alle values with their count
+df["Continent"].value_  # fill motor city input
+print(f"Create filtering for Motor City Input AM...")
+filt = (dfInpAM["Lab"] == "US-Motor City")
+filt2 = (dfInpAM["Status"] == "In Production")
+dfMCI = dfInpAM[filt & filt2]
+<br>Output of alle values with their count
 ```markdown
-df["Continent"].value_counts()
+dfMCI["ReceivedTime"]= dfMCI["ReceivedTime"].astype(str)    counts()
 ```
 Output of alle values with their count in percent
 ```markdown
@@ -4309,13 +5075,9 @@ Show 2nd and 3rd row for the 2nd and 3rd col => FRA,GER / HDI,Continent
 ```markdown
 df.iloc[1:3,1:3]
 ```
-Returns series with boolean True/False for every row (F,F,T,F,T,F,T)
-```markdown
-df["Popl"] > 70
-```
 Returns GER,JPN,USA for all cols
 ```markdown
-df.loc[df["Popl"]] > 70
+df.loc[(df["Popl"] > 70	)]
 ```
 Returns GER,JPN,USA for col "Popl"
 ```markdown
@@ -4357,6 +5119,10 @@ Drops the cols Popl,Continent
 ```markdown
 df.drop(columns=["Popl","Continent"])
 ```
+Drops the cols
+```markdown
+df.drop(df.columns[1,2,5,9],axis=1)
+```
 Drops the cols Popl,Continent (2nd method)
 ```markdown
 df.drop(["Popl","Continent"],axis=1)
@@ -4377,23 +5143,16 @@ Comines crisis-series to the df => all values in "Popl" -10 and "HDI" -0,3 in th
 ```markdown
 df[["Popl","HDI"]] + crisis
 ```
-Define new series for new column in dataframe
+
+<br>Define new series for new column in dataframe
 ```markdown
 langs = pd.Series(
+	["FR","DE","IT"],           # values of new column
+	index=["FRA","GER","ITA"],  # existing index in dataframe
+	name= "lang")               # name of the new column
 ```
-=> values of new column
-```markdown
-["FR","DE","IT"],
-```
-=> existing index in dataframe
-```markdown
-index=["FRA","GER","ITA"],
-```
-=> name of the new column
-```markdown
-name= "lang")
-```
-Creates new column in the dataframe according to the series "langs" - other rows will get "NaN"
+
+<br>Creates new column in the dataframe according to the series "langs" - other rows will get "NaN"
 ```markdown
 df["lang"] = langs
 ```
@@ -4465,6 +5224,10 @@ Replace NaN values with text
 ```markdown
 df.fillna("missing")
 ```
+Replace NaN values with 0
+```markdown
+df.fillna(0)
+```
 With forward-fill NaN-values are replaced with the value before (axis=0 means vertical / per column)
 ```markdown
 df.fillna(method="ffill",axis=0)
@@ -4499,7 +5262,7 @@ df.loc[df["Age"]>100,"Age"]=df.loc[df["Age"]>100,"Age"]/100
 ```
 Defines new filter
 ```markdown
-filt = (df["col1" == "col1_val1"])
+filt = (df["col1"] == "col1_val1")
 ```
 Defines new filter with several values
 ```markdown
@@ -4520,6 +5283,10 @@ df[filt]
 Outputs the result for the above filter with only col2
 ```markdown
 df[filt]["col2"]
+```
+Use 2 filters
+```markdown
+df[filt1 & filt2]
 ```
 Filter the elements for the top 2.5% of the dataset (quantile)
 ```markdown
@@ -4625,6 +5392,10 @@ New column at the end
 ```markdown
 df["cnew1"] = df["c1"] + df["c2"]
 ```
+New column at the end
+```markdown
+df["cnew1"] = df["c1"] + df["c2"]
+```
 Deleting 2 columns
 ```markdown
 df.drop(columns=["c1","c2"], inplace=True)
@@ -4677,7 +5448,81 @@ Add/change column with 0/1 depending of calc of the variables x/y from 2 cols
 ```markdown
 df["c"]=[1 if (x/y>9) else 0 for x,y in zip(df["c1"],df["c2])]
 ```
+Delete duplicate index entries in the dataframe
+```markdown
+df = df[~df.index.duplicated(keep='first')]
+```
+Convert a dataframe to a dict (https://stackoverflow.com/questions/26716616/convert-a-pandas-dataframe-to-a-dictionary)
+```markdown
+df.set_index('timestamp').T.to_dict('list')
+```
+Select every 5th row
+```markdown
+df.iloc[::5, :]
+```
+Reset index form a dataframe with a new column from 0 to x
+```markdown
+df = df.reset_index()
+```
+Get the first row of the dataframe
+```markdown
+df = df.iloc[:,0]
+```
+Iterate trough dataframe with index and content / row
+```markdown
+for index, row in df.iterrows():
+```
+Show all rows of the dataframe when printed
+```markdown
+pd.set_option('display.max_rows', None)
+```
+Change datetime64 column to datetime
+```markdown
+df["col1"] = df["col1"].dt.date
+```
+Convert pandas timestamp to datetime
+```markdown
+dt = dt.to_pydatetime()
+```
+Convert datetime to pandas timestamp
+```markdown
+dt = pd.Timestamp(dt)
+```
+Get the maximum from the 3 different columns and put it in the column "max"
+```markdown
+df["max"]=df[["high-low","high-pc","low-pc"]].max(axis=1)
+```
+Changing a column with this lambda function (over 400x faster then using iterrows)
+```markdown
+temp = df['name'].apply(lambda x: x.strip())
+```
+Add empty line to dataframe
+```markdown
+df.append(pd.Series(np.nan), ignore_index=True)
+```
+Delete rows where col1 = nan
+```markdown
+df = df[df["col1"].notna()]
+```
+Delete rows where col1 < 10
+```markdown
+df = df[df["col1"] < 10]
+```
+Merge 2 dataframes where the column order-id is ident
+```markdown
+dfFinal = df1.merge(df2, on='order-id')
+```
+Convert a dataframe to a nested list
+```markdown
+l = df.values.tolist()
+```
 
+<br>When there is some warning like "A value is trying to be set on a copy of a slice from a DataFrame"
+```markdown
+change the access from eg.: df["upperband"][current] = df["upperband"][previous]
+to: df.loc[current, "upperband"] = df.loc[previous, "upperband"]
+(then there will be no more warning)
+```
 
 
 ---
@@ -4774,79 +5619,136 @@ plt.savefig("example.png",bbox_inches="tight")
 ## MODULE - SELENIUM - browser automatization
 [jump to top...](#python)<br><br>
 chromedriver.exe in Ordner von py-file speichern<br>
-Different methods for locating elements
+Python specific documentation for selenium
 ```markdown
 https://selenium-python.readthedocs.io/locating-elements.html
 ```
-Import WebDriver für Zugriff auf URL
+Import WebDriver for url access
 ```markdown
 from selenium import webdriver
 ```
-Import Time-Library für Verzögerungen wenn notwendig
+Import Options
 ```markdown
-import time
+from selenium.webdriver.chrome.options import Options
 ```
-Import Keys to send Key-strokes
+Import Service
+```markdown
+from selenium.webdriver.chrome.service import Service
+```
+Import WebDriverWait (explizit waiting time)
+```markdown
+from selenium.webdriver.support.ui import WebDriverWait
+```
+Import EC (for expected conditions with waiting logic)
+```markdown
+from selenium.webdriver.support import expected_conditions as EC
+```
+Import By (for finding elements with By-logic)
+```markdown
+from selenium.webdriver.common.by import By
+```
+Import Keys (for keystroke handling)
 ```markdown
 from selenium.webdriver.common.keys import Keys
 ```
-Driver für Chrome definieren - mit akt. Ordner os.getcwd
+Import Time-Library when there are delays needed
+```markdown
+import time
+```
+Import Keys to send key-strokes
+```markdown
+from selenium.webdriver.common.keys import Keys
+```
+Define chrome driver - with actual folder os.getcwd
 ```markdown
 driver = webdriver.Chrome(os.getcwd() + '/chromedriver')
 ```
-Zugriff auf die URL
+Access to the url
 ```markdown
 driver.get("url")
 ```
-Click auf ein ELement (Copy ) - mit Untersuchen - Copy XPath
-```markdown
-driver.find_element_by_xpath('//*[@id="button"]/input').click()
-```
-Manchmal notwendig um Verarbeitung abzuwarten
+Somtimes necessary to delay some work in progress
 ```markdown
 time.sleep(1)
 ```
-Feld Name wird mit Inhalt x befüllt
+Find element (input-element with id = "passwd-id")
 ```markdown
-driver.find_element_by_xpath('//*[@id="name"]').send_keys("x"])
+driver.find_element(By.XPATH, "//input[@id='passwd-id']")
 ```
-Text wird in Feld eingetragen
+Click on element by xpath (investigate - copy xpath)
 ```markdown
-driver.find_element_by_name("q").send_keys("txt")
+driver.find_element(By.XPATH,"//*[@id='button']/input").click()
 ```
-Text wird in Feld eingetragen und Enter gedrückt
+Fill field "name" with content "x"
 ```markdown
-driver.find_element_by_name("q").send_keys("txt" + u'\ue007')
+driver.find_element(By.XPATH,"//*[@id='name']").send_keys("x")
 ```
-Feld word nach ID gesucht
+Other method to find element per xpath ()
 ```markdown
-driver.find_element_by_id("xy-id")
+driver.find_element(By.XPATH, "//button[text()='Some text']")
 ```
-Felder werdem nach Class gesucht (als Liste)
+Find Element according to a specific element eg. "aria-label" with text "Post" in a "div"
 ```markdown
-driver.find_elements_by_class_name("cl")[0]
+driver.find_element(By.XPATH,"//div[@aria-label='Post']").click()
 ```
-Felder werdem nach Tag gesucht (als Liste)
+Clear / delete input field
 ```markdown
-driver.find_elements_by_tag_name("tag")[0]
+driver.find_element("q").clear()
+```
+Fill text in field and press enter
+```markdown
+driver.find_element("q").send_keys("txt" + u'\ue007')
+```
+Set text of element to xyz
+```markdown
+driver.execute_script('arguments[0].innerHTML = "xyz";', elem)
+```
+Fill text in field (use css-selector to find element => input element with id "myID" in it)
+```markdown
+drv.find_element_by_css_selector("input#myID").send_keys("txt")
+```
+driver.set_window_size(600,1000)
+<br>Search field for class
+```markdown
+driver.find_elements(By.CLASS_NAME, "cl")
+```
+Search field for tag
+```markdown
+driver.find_elements_by_tag_name("tag")
+```
+Search by (exact) link-text in an anchor-tag
+```markdown
+driver.find_element_by_link_text('Continue')
+```
+Search by (partial) link-text in an ancor-tag
+```markdown
+driver.find_element_by_partial_link_text('Conti')
 ```
 Send single keyboard-elements <> chars (needs import keys)
 ```markdown
 driver.send_keys(Keys.Backspace,Keys.ARROW_LEFT,Keys.ENTER)
 ```
+Send a PageDown-keystroke (eg. for scrolling to the very bottom of a page)
+```markdown
+driver.send_keys (Keys.PAGE_DOWN)
+```
 Send an Return-keystroke (eg. for enter after data entries in fields)
 ```markdown
 driver.send_keys (u'\ue007')
 ```
-Enter wird gedrückt bzw. die Seite abgeschickt
+Press enter and submit site
 ```markdown
 field.submit()
 ```
-Driver schließen (sonst schließt sich das Fenster nicht)
+Close driver (otherwise the windows will not close)
 ```markdown
 driver.quit()
 ```
-Titel der HTML-Seite
+Close the actual window
+```markdown
+driver.close()
+```
+Title of the html-site
 ```markdown
 driver.title
 ```
@@ -4857,6 +5759,10 @@ driver.back()
 Forward-Function in browser-history
 ```markdown
 driver.forward()
+```
+Refresh website
+```markdown
+driver.navigate().refresh()
 ```
 Define an individual cookie
 ```markdown
@@ -4878,7 +5784,7 @@ Read current, actual url
 ```markdown
 driver.current_url
 ```
-Swith to a frame-id (eg. a PopUp)
+Switch to a frame-id (eg. a PopUp)
 ```markdown
 driver.switch_to.frame ("frame_id")
 ```
@@ -4890,16 +5796,126 @@ Switch (back) to active window (eg. after working on the popup-frame or popup-wi
 ```markdown
 driver.switch_to.window(act_window)
 ```
+Set window size to 600 wide and 1000 height
+```markdown
+driver.set_window_size(600,1000)
+```
+Minmize window
+```markdown
+driver.minimize_window()
+```
+ScrollDown in the window (maybe to the bottom of the site)
+```markdown
+driver.execute_script("window.scrollTo(0, 10000)")
+```
+
+<br>Switch between iframes
+```markdown
+iframe = driver.find_element_by_xpath("//iframe[@name='DialWin']")  => Use XPath to locate iframe
+driver.switch_to.frame(iframe)                                      => Switch to iframe
+driver.switch_to.default_content()                                  => Switch back to default content
+```
+
+<br>Wait till a specific element is loaded / clickable
+```markdown
+=> waiting as long as required - better then time.sleep
+=> more possible conditions see https://selenium-python.readthedocs.io/waits.html#explicit-waits
+wait = WebDriverWait (driver, 5)                                        # Define maximum wait time till the element is ready
+wait.until(EC.presence_of_element_located((By.NAME, "agree"))).click()  # Wait till element with name = "agree" is present and click afterwards
+wait.until(EC.presence_of_element_located((By.ID, "YDC-Col1")))         # Wait till element with id = "YDC-Col1" is present
+wait.until(EC.element_to_be_clickable((By.XPATH, "//div[text()='Total revenues']"))).click()    # Wait till div-element with specific text is pressent and click
+```
 
 <br>Use Selenium with chrome windows hidden
 ```markdown
+os.environ['WDM_LOG_LEVEL'] = '0'     # with this seeting no output of log / messages using webdriver_manager.chrome
+import undetected_chromedriver as uc
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+from fake_useragent import UserAgent
+ua = UserAgent()
+userAgent = ua.random
 options = Options()
-options.add_argument('--headless')                                          # Window Hidden (only used this for the final program - not during devleopment / testing!)
-if platform == "win32": options.add_argument('--start-maximized')           # Window Started Maximized (for Windows)
-elif platform in ["linux","darwin"]: options.add_argument('--kiosk')        # Window Started Maximized (for Linux and Mac)
-options.add_experimental_option ('excludeSwitches', ['enable-logging'])     # No error messagegs when exec in cmd
-driver = webdriver.Chrome(os.getcwd() + '/chromedriver', options=options)
+options.add_argument('--headless')
+options.add_experimental_option ('excludeSwitches', ['enable-logging'])
+options.add_argument("start-maximized")
+options.add_argument('window-size=1920x1080')
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-gpu')
+options.add_argument(f'user-agent={userAgent}')
+srv=Service(ChromeDriverManager().install())
+# driver = webdriver.Chrome (service=srv, options=options)
+driver = uc.Chrome (service=srv, options=options)
+waitWebDriver = WebDriverWait (driver, 5)
+link = "https://www.google.com"
+driver.get (link)
+```
+
+<br>Define Real User Agent Header
+```markdown
+(avoid being blocked while scraping some data - keep it up to date from time to time)
+see: https://www.scraperapi.com/blog/5-tips-for-web-scraping/
+common user agent list: https://www.networkinghowtos.com/howto/common-user-agent-list/
+latest user agent list: https://www.whatismybrowser.com/guides/the-latest-user-agent/
+options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36")
+```
+
+<br>Use Random User Agent Header
+```markdown
+https://stackoverflow.com/questions/49565042/way-to-change-google-chrome-user-agent-in-selenium
+
+from fake_useragent import UserAgent
+options = Options()
+ua = UserAgent()
+userAgent = ua.random
+options.add_argument(f'user-agent={userAgent}')
+```
+
+<br>Using XPath with Selenium
+```markdown
+https://www.guru99.com/xpath-selenium.html
+Can be used to find the location of any element in a html- or xml document
+
+Example:
+wait = WebDriverWait(driver, 10)
+tmpElem = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Top Grossing']")))
+tmpElem.click()
+
+Xpath=//tagname[@attribute='value']
+    // : Select current node
+    Tagname: Tagname of the particular node.
+    @: Select attribute.
+    Attribute: Attribute name of the node.
+    Value: Value of the attribute.
+
+//input[@name='uid']                      # input-elem with name = "uid"
+//input[@type='text']                     # input-elem with type = "text"
+//label[@id='message23']                  # label-elem with id = "message23"
+//input[@value='RESET']                   # input-elem with value = "RESET"
+//*[@class='barone']                      # any elem with class = "barone"
+//td[text()='UserID']	                    # td-elem which has the text "User-ID"
+//a[@href='http://demo.guru99.com/']      # anchor with specific link
+//img[@src='//xyz.com/img/java.png']      # img-elem with specific pic-link
+(//button)[2]                             # select the second button on the page
+(//p[@class='product']/span)[2]           # select the second span in the p-element with class =
+
+//*[@type='submit' or @name='btnReset']         # any elem which has 2 OR conditions (for type and name)
+//input[@type='submit' and @name='btnLogin'     # any elem which has 2 AND conditions (for type and name)
+
+//*[contains(@name,'btn')]              # any elem which has "btn" somewhere in the name
+//*[contains(@id,'message')]            # any elem which has "message" somewhere in the id
+//*[contains(text(),'here')]            # any elem which has "here" somewhere in the text
+//*[contains(@href,'orf')]              # any elem which has "orf" somewhere in the href-link
+//label[starts-with(@id,'message')]     # elem where id starts with "message"
+
+//*[@type='text']//following::input[1]              # select all following-elements which have input as tag and select the first elem
+//*[text()='Enterprise Testing']//ancestor::div[2]  # find ancestor-elements with text and take the second one
+//*[@id='java_technologies']//child::li[23]         # select all child elements with specific id and select the 23th one
+//*[@type='submit']//preceding::input[1]            # select preceding (dt.: vorangegangene) input-elements and take the first one
+//*[@type='submit']//following-sibling::input       # select following sibling which is input
+//*[@id='rt-feature']//parent::div[5]               # select parent of the elem with id = "rt-feature" and take the 5th div
+//*[@type='password']//self::input                  # select elem and use itself (only 1 element can be found)
+//*[@id='rt-feature']//descendant::a[X]             # find all elements below (dt.: Nachfahren) and take the Xth one
 ```
 
 <br>Scroll to the very bottom of a site - eg. Twitter, Facebook, Stocktwits,...
@@ -4925,12 +5941,6 @@ element = driver.find_element_by_css('div[class*="loadingWhiteBox"]')
 driver.execute_script("arguments[0].click();", element)
 ```
 
-<br>Wait till a specific element is loaded
-```markdown
-WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.NAME, "agree"))).click()
-WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, "YDC-Col1")))
-```
-
 <br>Take a screenshot when something fails in headless mode
 ```markdown
 try:
@@ -4938,9 +5948,20 @@ try:
     do the whole selenium work...
     ...
 except:
-    driver.get_screenshot_as_file("a.jpeg")
+    driver.save_screenshot("a.png")
 ```
 
+<br>use locators in this order as suggested by Selenium contributors
+```markdown
+ID
+name
+className
+linkText
+partialLinkText
+tagName
+cssSelector
+XPath
+```
 
 
 ---
@@ -4960,31 +5981,47 @@ ua = UserAgent()
 ```
 Create random useragent
 ```markdown
-ua.random
+ua.random								"t
 ```
 Read url as page
 ```markdown
 page = requests.get("https://www.ariva.de/dax-30")
 ```
+Read url as page with proxy like eg. "https://10.10.1.11:1080"
+```markdown
+page = requests.get(url,headers=headers,proxy=proxy)
+```
 Read page with html.parser
 ```markdown
 soup = BeautifulSoup (page.content,"html.parser")
 ```
-Read specific invidual id
+find first a-tag in body
 ```markdown
-table  = soup.find(id="result_table_0")
+soup.body.a
 ```
-Read specific class
+Find all td-elements
 ```markdown
-name_box = soup.find("h1", attrs={"class": "99a4824b"})
+soup.find_all("td"):
 ```
-Read all table data cells
+Find alle th- and td-elements
 ```markdown
-table.find_all("td"):
+soup.find_all(["th","td"])
 ```
 Read all table rows for specific class
 ```markdown
 soup.find_all("tr", class_="arrow0"):
+```
+Find all div-elements with specific class
+```markdown
+soup.find_all("p", {"class": "payamntp"})
+```
+Find element with one of this 2 classes
+```markdown
+soup.find_all("div", {'class':['class1', 'class2']})
+```
+Find divs which have both classes
+```markdown
+soup.select("div.class1.class2")
 ```
 Read all table data cells with id and content
 ```markdown
@@ -4992,7 +6029,7 @@ for col_id, col_content in enumerate(result.find_all("td")):
 ```
 Read all divs with specific class
 ```markdown
-entries = results.find_all("div", class_="col-xs-6")
+soup.find_all("div", class_="col-xs-6")
 ```
 Find div with id "lj_div"
 ```markdown
@@ -5000,23 +6037,39 @@ soup.find("div", {"id": "lj_div"})
 ```
 Find (first) p with class "line"
 ```markdown
-soup.find("p", {"class": line}
+soup.find("p", {"class": "line"})
+```
+Find element with specific text / string
+```markdown
+soup.find("dt", string="In-App Purchases")
+```
+Find elements for several tags
+```markdown
+soup.find_all(["strong","a","br"])
+```
+Found the parent div-element for a specific before find element
+```markdown
+erg2 = erg.find_parent("div")
 ```
 Check if class has specific content
 ```markdown
 if row.get("class") == ["ellipsis", "nobr", "new"]:
 ```
+Check if string nameSymbol_" is part of the class-element
+```markdown
+soup.find("small", class_=re.compile("nameSymbol_"))
+```
 Read all links from href element
 ```markdown
-for e in soup.find_all("a"): e.get("href"))
+for e in soup.find_all("a"): e.get("href")
 ```
 Read all number from the field "value"
 ```markdown
-for e in soup.find_all("a"): e.get("value"))
+for e in soup.find_all("a"): e.get("value")
 ```
-Outputs text without whitespaces
+Change all linebreak <br> in text to blank
 ```markdown
-content.text.strip()
+for lb in soup.findAll("br"): lb.replaceWith(" ")
 ```
 Read url from the image
 ```markdown
@@ -5034,6 +6087,92 @@ Check if specific text in soup text-output
 ```markdown
 if "Kein Zugriff" in soup.text:
 ```
+Reads everyting what is in the tbody-tag
+```markdown
+soap.tbody
+```
+return direct child elements of a an element in a list
+```markdown
+.contents
+```
+returns all direct childrens (as a generator object)
+```markdown
+.children
+```
+returns all descendants (nachfolger) as iterable
+```markdown
+.descendants
+```
+return the parent-tag
+```markdown
+.parent
+```
+return all parents (as a generator object)
+```markdown
+.parents
+```
+return the next sibling (going sideways / have the same parent)
+```markdown
+.next_sibling
+```
+return the previous sibling (going sideways / have the same parent)
+```markdown
+.previous_sibling
+```
+all following siblings as iterable
+```markdown
+.next_siblings
+```
+all previous siblings as iterable
+```markdown
+.previous_siblings
+```
+return next element
+```markdown
+.next_element
+```
+return next elements (as a generator object)
+```markdown
+.next_elements
+```
+return previous element
+```markdown
+.previous_element
+```
+return previous elements (as a generator object)
+```markdown
+.previous_elements
+```
+find the next ul-element
+```markdown
+.find_next("ul)
+```
+returns the name of the tag
+```markdown
+.name
+```
+get all strings from a tag in an iterable
+```markdown
+.strings
+```
+get all (stripped) strings from a tag in an iterable
+```markdown
+.stripped_strings
+```
+
+
+<br>Define Real User Agent Header
+```markdown
+(avoid being blocked while scraping some data - keep it up to date from time to time)
+see: https://www.scraperapi.com/blog/5-tips-for-web-scraping/
+common user agent list: https://www.networkinghowtos.com/howto/common-user-agent-list/
+latest user agent list: https://www.whatismybrowser.com/guides/the-latest-user-agent/
+headers = {
+    'User-Agent': '<copy from the above link>',
+}
+response = requests.get(url, headers=headers)
+```
+
 
 <br>Read with Selenium when necessary due the specific homepage
 ```markdown
@@ -5087,7 +6226,8 @@ driver.find_element_by_css_selector('p.content')						# Search for tag and selec
 ---
 ## MODULE - REQUESTS - workings with APIs
 [jump to top...](#python)<br><br>
-<br>import module requests
+https://realpython.com/python-api/<br>
+import module requests
 ```markdown
 import requests
 ```
@@ -5097,23 +6237,373 @@ import json
 ```
 Request api from the generated api-link
 ```markdown
-api_request = requests.get ("apilink.html")
+resp = requests.get (url)
 ```
-Read/parse api-data to a json-loadfil
+
+<br>GET-request with payload and headers
 ```markdown
-api = json.loads(api_request.content)
+resp = requests.request("GET", url,
+                        json=payload,
+                        headers=headers)
 ```
-Read the value for the 1 element and the attribute xyz
+
+<br>Return the statuscode of the response
+```markdown
+resp.status_code
+    # 200: ok
+    # 201: resource created
+    # 400: bad request (wrong or missing some informations)
+    # 401: Unauthorized (requires some additonal permissions)
+    # 404: Not Found (requested resource does not exist)
+    # 405: Method Not Allowed (wrong HTTP Method - eg. POST instead of GET)
+    # 500: Internal Server Error: something broken on the server site
+```
+
+<br>shows the statuscode in textform (eg. OK, Not Found)
+```markdown
+resp.reasons
+```
+used headers for the request
+```markdown
+resp.request.headers
+```
+header from the response
+```markdown
+resp.headers
+```
+show the content-type of the resonse (eg. json, image/jpeg)
+```markdown
+resp.headers["Content-Type"]
+```
+response in text-form
+```markdown
+resp.text
+```
+response in json-form
+```markdown
+resp.json()
+```
+Pretty-Print formatted json-file
+```markdown
+print(json.dumps(respJSON,
+```
+indent=4,
+sort_keys=True))
+<br>Read the value for the 1 element and the attribute xyz
 ```markdown
 result = api[0]["xyz"]
 ```
+
+
+<br>Install module
+```markdown
+pip install requests-html
+```
+Import requests_html
+```markdown
+from requests_html import HTMLSession
+```
+Define a html-session
+```markdown
+s = HTMLSession()
+```
+Define response
+```markdown
+r = s.get(url, headers=HEADERS)
+```
+title of in the html-tag
+```markdown
+r.html.find("title", first=True).text
+```
+Span-value with id = "wob_tm"
+```markdown
+r.html.find("span#wob_tm", first=True).text
+```
+Div-element with class = "clX"
+```markdown
+r.html.find("div.clX", first=True)
+```
+Span-element with class="clY" ind Div-element with class="clX"
+```markdown
+r.html.find("div.clX span.clY",first=True).text
+```
+
+
+
+---
+## MODULE - SCRAPY - webscraping using spiders
+[jump to top...](#python)<br><br>
+Tutorial: https://docs.scrapy.org/en/latest/intro/tutorial.html
+<br>Video-Tutorial: https://www.youtube.com/c/zytedata/playlists (Playlist - Learn Scrapy)
+Video-Tutorial2: https://www.youtube.com/watch?v=s4jtkzHhLzY (Scrape a Whisky-Shop)<br>
+install the scrapy module
+```markdown
+pip install SCRAPY
+```
+creates the project and folder-structure
+```markdown
+scrapy startproject indeedScraper
+```
+create tilesSpider.py with scrapy-template
+```markdown
+scrapy genspider tilesSpider magnattiles.com
+```
+scrape a webpage in command line and use the console for further investigations
+```markdown
+scrapy shell http://quotes.toscrape.com/random
+```
+fetch a new site from an allready scraped page with "scrapy shell" before
+```markdown
+fetch("newURL")
+```
+shows the full html-code of the page
+```markdown
+print(response.text)
+```
+select element "small" with class="author" and shows the html-code
+```markdown
+response.css("small.author").extract()
+```
+return only the text for the element+class for the first element
+```markdown
+response.css("small.author::text").extract()[0]
+```
+return the text for the first element for span + class="text"
+```markdown
+response.css("span.text::text").extract_first()
+```
+return all anchor-tag texts in a list
+```markdown
+response.css("a.tag:lst:text").extract()
+```
+find elems a in li with class "next" and get the content from the href-element
+```markdown
+response.css("li.next > a::attr(href)").extract_first()
+```
+extract href from all anchor-tags inside div.quote => span => a
+```markdown
+response.css("div.quote > span > a::attr(href)").extract()
+```
+combine the url from the initial scrapy shell with the string-path
+```markdown
+response.urljoin("/page/2/")
+```
+read text-data when the response is i a json-format
+```markdown
+data = json.loads(response.text)
+```
+
+<br>Create spider skeleton on command line (quotesName = spider-name, toscrape.com = site to scrape)
+```markdown
+scrapy genspider quotesNAME toscrape.com
+```
+run spider from command line
+```markdown
+scrapy runspider quotesNAME.py
+```
+run spider and store result into items.json
+```markdown
+scrapy runspider quotesNAME.py -o items.json
+```
+shows the duplicate elements which are filtered
+```markdown
+'dupefilter/filtered': 50,
+```
+
+from second video-tutorial above<br>
+open scrapy shell
+```markdown
+scrapy shell
+```
+get the first div-element with that class
+```markdown
+response.css("div.product-item-info").get()
+```
+get the first li-element in the ul-element with class "products"
+```markdown
+response.css("ul.products li")
+```
+assign all div-elements with that class to the variable "products"
+```markdown
+products = response.css("div.product-item-info")
+```
+outputs the number of alle div-elements with that class on the loaded page
+```markdown
+len(products)
+```
+from the products-variable get the first a-element with this class
+```markdown
+p.css("a.product-item-link").get()
+```
+return the text from the element (first a-element with this class)
+```markdown
+p.css("a.product-item-link::text").get()
+```
+return the text from all elements (all a-elements with this class)
+```markdown
+p.css("a.product-item-link::text").getall()
+```
+return the text from all elements (all span-elements with this class)
+```markdown
+p.css("span.price::text").getall()
+```
+return the text from the element (first span with class "price" and replace the €-symbol)
+```markdown
+p.css("span.price::text").get().replace("€","")
+```
+return the link from the element (first href-link with this class)
+```markdown
+p.css("a.product-item-link").attrib["href"]
+```
+second way to the the href-value
+```markdown
+p.css("a.product-item-link::attr(href)").get(
+```
+return value of attribut "dpsku" in the a-tag with class "button"
+```markdown
+p.css("a.button::attr(dpsku)").get()
+```
+
+<br>start scrapy with the spider "whisky"
+```markdown
+scrapy crawl whisky
+```
+run spider "whisky" and output result to json-file (overwrite the json-file)
+```markdown
+scrapy crawl whisky -O whisky.json
+```
+same as above (only appending the results and not overwriting)
+```markdown
+scrapy crawl whisky -o whisky.json
+```
+outputing as csv
+```markdown
+scrapy crawl whisky -O whisky.csv
+```
+outputing as xlsx (scrapy-xlsx must be installed + settings.py changed: https://pypi.org/project/scrapy-xlsx/)
+```markdown
+scrapy crawl whisky -O whisky.xlsx
+```
+find element with class "action  next" (spaces have to be replaced with ".")
+```markdown
+response.css("a.action.next").get()
+```
+store the link for the next page
+```markdown
+nextPage = response.css("a.action.next").attrib["href"
+```
+go to next page and do parsing
+```markdown
+yield response.follow(nextPage, callback=self.parse)
+```
+automatic delay between requests
+```markdown
+settings.py: AUTOTHROTTLE_ENABLED = True
+```
+The initial download delay
+```markdown
+settings.py: AUTOTHROTTLE_START_DELAY = 5
+```
+The maximum download delay to be set in case of high latencies
+```markdown
+settings.py: AUTOTHROTTLE_MAX_DELAY = 60
+```
+ignore robots.txt
+```markdown
+settings.py: ROBOTSTXT_OBEY = False
+```
+set download-delay (to prevent site-checkings)
+```markdown
+settings.py: DOWNLOAD_DELAY = 3
+```
+
+<br>when scraping with scrapy_selenium
+```markdown
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy_selenium.SeleniumMiddleware': 800
+}
+#Selenium
+from shutil import which
+SELENIUM_DRIVER_NAME = 'chrome'
+SELENIUM_DRIVER_EXECUTABLE_PATH = r"C:\Users\Polzi\Documents\DEV\Python-Private\chromedriver.exe"
+# '--headless' if using chrome instead of firefox
+SELENIUM_DRIVER_ARGUMENTS = ['--headless']
+```
+
+<br>get text (with div and a combination)
+```markdown
+response.xpath("//div[@class='vendor']//ancestor::a/text()").get()
+```
+get href-value (from a element with class)
+```markdown
+response.xpath("//a[@class='next page-numbers']/@href").get()
+```
+get the aria-label-value
+```markdown
+response.xpath("//a/@aria-label).get()
+```
+get href-element (from a element and existing selector "tmp")
+```markdown
+tmp.xpath(".//a/@href").get()
+```
+
+
+<br>Example spider
+```markdown
+import scrapy
+class QuotesnameSpider(scrapy.Spider):
+    name = 'quotesNAME'                                 # name of the spider
+    custom_settings = {                                 # define custom settings - eg. encoding utf-8 for german umlaute
+        "FEED_EXPORT_ENCODING": "utf-8"
+    }
+    allowed_domains = ['toscrape.com']                  # allowed domains (no http in front of the domain)
+    start_urls = ['http://quotes.toscrape.com/random']  # urls to scrape
+
+    def parse(self, response):
+        self.log("I just visited: " + response.url)     # info-output when program is running
+        yield {                                         # store scraped informations in a dictionary
+            "author_name": response.css("small.author::text").extract()[0],
+            "text": response.css("span.text::text").extract_first(),
+            "tags": response.css("a.tag::text").extract(),
+        }
+```
+
+<br>Example spider (with direct api-access on an infinite page)
+```markdown
+import scrapy
+import json
+
+class QuotesScrollSpider(scrapy.Spider):
+    name = 'quotesINFINITE'                                     # name of the spider
+    apiURL = "https://quotes.toscrape.com/api/quotes?page={}"   # standard URL with page variable
+    start_urls = [apiURL.format(1)]                             # create the start-url with page = 1
+
+    def parse(self, response):
+        data = json.loads(response.text)                        # read the json-page
+        for quote in data["quotes"]:                            # iterate trough all quotes
+            yield {                                             # return the needed values
+                "authorName": quote["author"]["name"],
+                "text": quote["text"],
+                "tags": quote["tags"]
+            }
+        if data["has_next"]:                                    # check if next page has to be read
+            nextPage = data["page"] + 1
+            yield scrapy.Request(url=self.apiURL.format(nextPage), callback=self.parse)
+```
+
 
 
 
 ---
 ## MODULE - PYQT - making GUIs
 [jump to top...](#python)<br><br>
-<br>Installation
+see Codemy.com https://www.youtube.com/channel/UCFB0dxMudkws1q8w5NJEAmw
+see Python-Diverses/PyQt<br>
+Install Py Qt Designer
+```markdown
+https://build-system.fman.io/qt-designer-download
+```
+Installation
 ```markdown
 pip install pyqt5
 ```
@@ -5269,11 +6759,29 @@ Defines a class Windows which inherits from QMainWindow
 ```markdown
 class Window(QMainWindow):
 ```
+Convert Qt-Designer file to a python-file
+```markdown
+pyuic5 -x 6PyQtDesigner.ui -o 6PyQtDesigner.py
+```
+
+<br>simplest App
+```markdown
+import PyQt5.QtWidgets as qtw
+class MainWindow(qtw.QWidget):
+  def __init__(self):
+    super().__init__()
+    self.setWindowTitle("Check Orphans App")
+    ...
+    self.show()
+app = qtw.QApplication([])
+mw = MainWindow()
+app.exec_()
+```
 
 
 
 ---
-## MODULE - TKinter - making GUIs
+## MODULE - TKINTER - making GUIs
 [jump to top...](#python)<br><br>
 <br>Tutorial with deep explanation
 ```markdown
@@ -5462,6 +6970,268 @@ options=["Mo","Tu","We","Th","Fr"]							# Define options for dropdown menue
 var = StringVar()											# Define variable for dropdown menue
 var.set("Mo")												# Set default for dropdown menue
 OptionMenu(root,var,*options).pack							# Define dropdown menue
+```
+
+
+
+---
+## MOUULE - KIVY - making GUIs
+[jump to top...](#python)<br><br>
+<br>https://kivy.org/#home
+```markdown
+Kivy documentation
+```
+https://www.youtube.com/watch?v=dLgquj0c5_U&list=PLCC34OHNcOtpz7PJQ7Tv7hqFBP_xDDjqg
+```markdown
+Training from
+```
+python -m pip install kivy[base] kivy_examples
+```markdown
+Install kivy
+```
+Use template.spec (create with: pyinstaller *.spec - creation not as onefile possible with pyinstaller)
+```markdown
+Create EXE
+```
+
+<br>Simple Window with Label
+```markdown
+import kivy                         # Import kivy base
+from kivy.app import App            # Import App
+from kivy.uix.label import Label    # Import Label class
+
+class MyApp(App):                   # Define App-Class
+    def build(self):
+        return Label(text="Hello", font_size = 72)  # Print label with font_size 72)
+
+if __name__ == "__main__":          # Start App / draw windows with label
+    MyApp().run()
+```
+
+<br>Input fields and button with Grid-Layout
+```markdown
+from kivy.uix.gridlayout import GridLayout      # Import Grid-Layout class
+from kivy.uix.textinput import TextInput        # Import TextInput class
+from kivy.uix.button import Button              # Import Button class
+
+class MyGridLayout(GridLayout):                 # Define Grid Layout
+    def __init__(self, **kwargs):                       # Initialize infinite keywords
+        super(MyGridLayout,self).__init__(**kwargs)     # Call grid layout constructor
+        self.cols = 2                                   # Set columns to 2 (draws all elements in 2 columns)
+
+        self.add_widget(Label(text="Name: "))           # Add Label-Widget with text="Name" (as one-liner)
+        self.name = TextInput(multiline=False)          # Add Input Box "name" with only one line (multiline = True would me more input lines)
+        self.add_widget(self.name)                      # Assigment as two-liner
+
+        self.submit = Button(text="Submit", font_size=32)   # Add Button-Widget with text="Submit" and font-size 32
+        self.submit.bind(on_press=self.press)               # Bind the button to a function (when pressed the function press will be called)
+        self.add_widget(self.submit)
+
+    def press(self,instance):
+        print(self.name.text)   # Print the text of the name-input field in the terminal
+        self.add_widget (Label (text=f"New Label with text {self.name.text}")       # Create new Label and write the text to it
+```
+
+<br>Combine 2 Grids with 2 columns and 1 column
+```markdown
+    super(MyGridLayout,self).__init__(**kwargs)
+    self.cols = 1                                       # define standard grid with 1 column
+
+    self.secondGrid = GridLayout()
+    self.secondGrid.cols = 2                            # define second grid with 2 columns
+
+    self.secondGrid.add_widget(Label(text="Stock: "))   # define content for the secondGrid
+    self.stock = TextInput(multiline=False)
+    self.secondGrid.add_widget(self.stock)
+    self.add_widget (self.topGrid)
+
+    self.submit = Button(text="Levermann Score", font_size =32)     # define button with only 1 column
+    self.submit.bind(on_press=self.levermannCalc)
+    self.add_widget(self.submit)
+```
+
+<br>Set height and width of the widgets
+```markdown
+    self.row_force_default=True     # necessary - otherwise no adjustment will be done for the widget
+    self.row_default_height=120     # sets the height to 120 pixel
+
+    # set height for the whole widgets in topGrid
+    self.topGrid = GridLayout(
+        row_force_default=True,
+        row_default_height=40
+    )
+
+    # set width and heigth for individual widget
+    self.top_grid.add_widget(Label(text="Name: ",       # set the name of the widget
+                                   size_hint_y=None,
+                                   height=10,           # define height
+                                   size_hint_x=None,
+                                   width=200))          # define width
+```
+
+<br>Kivy Design Language
+<br>Seperate program in python from the gui-design (in a kv-file)
+```markdown
+# python-file:
+from kivy.uix.widget import Widget              # import widget module
+from kivy.properties import ObjectProperty      # import object property
+class MyGridLayout(Widget):
+    inpfield = ObjectProperty(None)             # define an object and initialize empty
+    def method_function(self):                  # defube a method / function in the the gui (eg. for a button)
+        print(f"something")
+class MyApplication(App):                       # define the application class (kv-file must have the same name = MyApplication.kv)
+    def build(self):
+        return MyGridLayout()                   # name of the first line in the kv-file
+if __name__ == "__main__":
+    MyApplication().run()                       # run the gui
+
+# kv-file (name must be in this case "MyApplication.kv")#
+# intention is here very similar (only tabs - no spaces)
+<MyGridLayout>
+    inpfield : inpfield                         # initialize the input field
+
+    GridLayout:                                 # define the main grid layout with one column
+        cols: 1
+        size: root.width, root.height           # take the root width/height (otherwise the objects will be placed in the very left bottom)
+        row_force_default: True                 # necessary - otherwise no adjustment will be done for the widget
+        row_default_height: 120                 # set the height (of the whole grid) to 120 pixel)
+
+        GridLayout:                             # define second (nested) grid with two columns
+            cols: 2
+            row_force_default: True
+            row_default_height: 40              # set the height (of every object in this grid to 40 pixel)
+
+            Label:
+                text: "Stock Ticker"            # name of the label
+            TextInput:
+                id: inpfield                    # if of the inputfield
+                text: blablabla                 # default value for the inputfield
+                multiline: False                # no multiline input field
+
+        Button:                                 # define button as part of the first gridlayout (so only 1 column)
+        text: "Button Text"                     # button text
+        font_size: 32                           # font-size of the button text
+        on_press: root.method_function()        # on button press call function "method_function" from the py-file
+        size_hint_y: None
+        height: 50                              # set height of the button to 50 pixel
+```
+
+<br>Kivy Builder
+```markdown
+# link kv-files to python-file
+from kivy.lang import Builder       # import builder module
+Builder.load_file("whatever.kv")    # link the kv-file to the python-file (so the App-classname must not be the same as the kv-filename)
+```
+
+<br>Coloring buttons and input fields
+```markdown
+# using rgb-color for the coloring
+background_normal: ''                           # necessary to use this - otherwise the color will be mixed with the intial grey default
+background_color: (1,0,0,1)                     # coloring the element in red
+background_color: (238/255,250/255,0/255,1)     # using a rgb-color for the coloring
+
+# using hexadecimal coloring
+#:import utils kivy.utils                               # importing the kivy-utils in the very first line of the kv-file
+background_color: utils.get_color_from_hex("#eefa00")   # coloring the element with this hex-code
+```
+
+<br>Box Layout
+```markdown
+BoxLayout:
+    orientation: "horizontal"                   # arrange the object horizontal (also vertical possible)
+    size: root.width, root.height               # use the full place of the window
+    spacing: 20                                 # 20 pixels between the elements
+    padding: 50                                 # 50 pixels padding around the elements
+
+    Button:
+    text: "blablabla"                           # define button in the box-model
+    size_hint: (0.5,0.5)                         # make the button the half-size (x- and y-axes) - working also responsive when the windows size is changed
+
+    size_hint: (None, None)                     # set fixed size for the button (200 pixels width and 50 pixels height)
+    width: 200
+    height: 50
+    pos_hint: {"center_x": 0.5}                 # center the element horizontal
+```
+
+<br>Inheritance, Widget Properties
+```markdown
+# Define the global settings in sepearte section in the kv-file
+<Button>                            # these settings are used for all buttons in the window
+    font_size: 32
+    background_normal: ''
+    background_color: (0,0,1,1)
+<TextInput>                         # this color is used for all input fields in the window
+    background_color: (150/255,150/255,150/255,1)
+
+# But when some individual setting for an element is needed this is possible
+<MyLayout>
+    BoxLayout:
+        TextInput:
+            background_color: (1,0,0,1)     # background color for this input-field will be different then the global settings aboth
+```
+
+<br>Color Labels
+```markdown
+# Works a little bit different that the normal coloring of objects like buttons or input fields
+Label:
+    background_color: (0,0,1,1)             # choose the color for the label
+    canvas.before:                          # this whole code-part has to be added - otherwise there will be no label coloring
+        Color:
+            rgba: self.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+# Normal usage of other properties
+    text: "Name"                # name of the label
+    font_size: 45               # font size of the label
+    color: (0,1,0,1)            # color of the text of the label
+    bold: True                  # text will be bold written
+    italic: True                # text will be italic written
+    outline_color: (0,0,0)      # set the color for the border of the text
+    outline_width: 2            # width of the border of the text
+```
+
+<br>Color Background
+```markdown
+# 1st method in kv-file: make a white background color
+<MyLayout>
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+# 2nd method in py-file
+from kivy.core.window import Window
+
+class AwesomeApp(App):
+    def build(self):
+        Window.clearcolor = (1,1,1,1)
+        return MyLayout()
+```
+
+<br>Set window size
+```markdown
+# set windows size to width 550 and height 300
+from kivy.core.window import Window
+class MyLayout(Widget):
+    Window.size = (550, 300)
+```
+
+<br>DropDown box with spinner
+```markdown
+kv-file:
+    Spinner:
+        id: spinner_id
+        text: "Favorite"
+        values: ["Pepperoni","Cheese","Mushroom","Pineapple"]
+        on_text: root.spinner_clicked(spinner_id.text)
+
+py-file:
+    def spinner_clicked(self,value):
+        self.ids.click_label.text = f"You selected: {value}"
 ```
 
 
@@ -5867,10 +7637,10 @@ zappa deploy dev (when virutal environement is activated!)	# Deploy everything t
 	eg. https://xnujiyxsb1.execute-api.eu-central-1.amazonaws.com/dev/api/v1/incstat?ticker=FB
 		https://xnujiyxsb1.execute-api.eu-central-1.amazonaws.com/dev/api/v1/summary?ticker=CAT
 		https://xnujiyxsb1.execute-api.eu-central-1.amazonaws.com/dev/api/v1/profile?ticker=FB
-zappa update dev (when virutal environement is activated!)	# Update deployment on AWS (when something changed in the pyhton-program)
-zappa undeploy dev								# Undeploy everything on AWS
+zappa update dev (when virutal environement is activated! and actual directory is correct where the py-file is!)	# Update deployment on AWS (when something changed in the pyhton-program)
 zappa status									# Show actual status
 zappa tail										# Show actual loggin (in error cases)
+zappa undeploy dev								# Undeploy everything on AWS
 ```
 
 <br>AWS part
@@ -5883,6 +7653,65 @@ check API-access
 	select Method Get
 	input path example under {proxy} eg. api/v1/incstat?ticker=FB
 	click Test Button (at the bottom)
+```
+
+
+---
+## MODULE - FLASK, heroku, GUNICORN  - making an API
+[jump to top...](#python)<br><br>
+https://stackabuse.com/deploying-a-flask-application-to-heroku/
+
+ongoing deployment / update
+```markdown
+git init (when .git is not in the folder of the api)
+git add .
+git commit -m "upd"
+heroku login -i
+heroku git:remote -a financerapidapi (name of the app on heroku)
+git push heroku main
+```
+
+
+
+---
+## MODULE - FASTPI, UVICORN - making an app
+[jump to top...](#python)<br><br>
+https://www.youtube.com/watch?v=OFnOEIyqSRg&list=PLvzuUVysUFOuoRna8KhschkVVUo2E2g6G
+see Python-Diverse - TradingApp<br>
+import module
+```markdown
+from fastapi import FastAPI
+```
+start reloading app (refreshed automatically)
+```markdown
+uvicorn main:app --reload
+```
+for rendering the html-page
+```markdown
+jinja2 templates
+```
+https://fastapi.tiangolo.com/advanced/templates/
+<br>framework for formatting (like bootstrap)
+```markdown
+semantic-ui.com
+```
+https://semantic-ui.com/introduction/advanced-usage
+<br>for html-templates which can be used in several other html-files
+```markdown
+layouts.html
+```
+https://www.tradingview.com/widget/advanced-chart/
+<br>for interactive candlebars on the webpage
+```markdown
+javascript-code
+```
+
+<br>simplest route
+```markdown
+app = FastAPI()
+@app.get("/")
+def index():
+  return {"message": "hello world!"}
 ```
 
 
@@ -5910,7 +7739,355 @@ ic.configureOutput(includeContext=True)
 
 
 ---
-## PYINSTALLER - generate python programs to executables
+## MODULE - TA-LIB - technical analysis of financial market
+[jump to top...](#python)<br><br>
+Documentation: https://mrjbq7.github.io/ta-lib/
+
+<br>Installation
+```markdown
+Download whl file from here: https://www.lfd.uci.edu/~gohlke/pythonlibs/#ta-lib
+(with corresponding python version (eg. cp39) and os (eg. adm64)
+then: pip install *.whl (eg. pip install TA_Lib-0.4.19-cp39-cp39-win_amd64.whl)
+then: pip install TA-Lib
+```
+
+
+
+---
+## MODULE - YFINANCE - date from Yahoo Finance
+[jump to top...](#python)<br><br>
+Docu and examples: https://aroussi.com/post/python-yahoo-finance<br>
+Installation (yfinance as yf not working - problems with pyinstaller)
+```markdown
+import yfinance
+```
+Read data for ticker yahoo finance ticker symbol
+```markdown
+dataYF = yf.Ticker(ticker)
+```
+Summary info for stock / cryptopcoin
+```markdown
+dataYF.info
+```
+Price data as dataframe from/to-date
+```markdown
+yf.download(ticker,"2020-01-01","2021-03-31))
+```
+Intraday price data as dataframe for 1 month and 60 minute interval
+```markdown
+dataYF.history(period="1mo",interval="60m")
+```
+Intraday price data as dataframe for 1 day and 2 minute interval
+```markdown
+dataYF.history(period="1d",interval="2m")
+```
+Financial data
+```markdown
+dataYF.financials
+```
+Dividends (date and amount)
+```markdown
+dataYF.dividends
+```
+Splits (date and split-factor)
+```markdown
+dataYF.splits
+```
+Percent major holders
+```markdown
+dataYF.major_holders
+```
+Biggest Insitutional holders
+```markdown
+dataYF.institutional_holders
+```
+Balance Sheet Data
+```markdown
+dataYF.balance_sheet
+```
+Cashflow Data
+```markdown
+dataYF.cashflow
+```
+Earnings Data (Revenue, Income)
+```markdown
+dataYF.earnings
+```
+Sustainability Informations (palm oile, military, adult, etc.)
+```markdown
+dataYF.sustainability
+```
+Recommendations from different agencies
+```markdown
+dataYF.recommendations
+```
+Calendar data
+```markdown
+dataYF.calendar
+```
+ISIN-Number
+```markdown
+dataYF.isin
+```
+
+
+
+---
+## MODULE - PLOTLY - data visualization
+[jump to top...](#python)<br><br>
+<br>installation
+```markdown
+pip install plotly
+```
+examples of graphing libraries
+```markdown
+https://plotly.com/python/
+```
+see example for candlestick-chart
+```markdown
+Python-Diverses / Plotly / example.py
+```
+
+
+
+---
+## MODULE - DJANGO - framework for webdevelopment
+[jump to top...](#python)<br><br>
+<br>Video Training
+```markdown
+https://www.youtube.com/watch?v=F5mRW0jo-U4&t=5043s
+```
+Example
+```markdown
+C:\Users\Polzi\Documents\DEV\Python-Diverses\Django
+```
+installation
+```markdown
+pip install django
+```
+create a blank django project
+```markdown
+django-admin startproject pjName
+```
+run django server (start site on http://127.0.0.1:8000/)
+```markdown
+python manage.py runserver
+```
+
+settings.py in django-folder
+```markdown
+  BASE_DIR => directory of the django-project
+  SECRET_KEY => individual key from django-project
+  DEBUG => should be set to False in production
+  INSTALLED_APPS => componente / pieces of the django-project
+  DATABASES => database of the django-project
+```
+
+python manage.py startapp products
+```markdown
+  # create a new app / component
+  models.py => create models and link to the database
+  add "products" to INSTALLED_APPS in settings.py
+```
+
+<br>create superuser (eg. for login to /admin app/component)
+```markdown
+python manage.py createsuperuser
+```
+prepeare migrations (when anything changed in the apps)
+```markdown
+python manage.py makemigrations
+```
+migrate all changes
+```markdown
+python manage.py migrate
+```
+now products can created in the /admin-page
+```markdown
+add this: from .models import Product in admin.py of the products app / component
+```
+open django-sheel (eg. create products from the shell )
+```markdown
+python manage.py shell
+```
+overview builtins
+```markdown
+https://docs.djangoproject.com/en/4.0/ref/templates/builtins/
+```
+include html in an html-page (navbar.html)
+```markdown
+{% include "navbar.html" %}
+```
+extend html-page (base.html)
+```markdown
+{% extends "base.html"  %}
+```
+replace this block content
+```markdown
+{% block content %} xyz {% endblock %}
+```
+add 2 to the value
+```markdown
+{{ x|add:"2" }}
+```
+if statement
+```markdown
+{{ if x in lst }}
+```
+elif statement
+```markdown
+{{ elif x == 3 }}
+```
+else statement
+```markdown
+{{ else }}
+```
+close if statement
+```markdown
+{{ end if }}
+```
+capitalize first letter
+```markdown
+{{ x|capfirst }}
+```
+uppercase whole string
+```markdown
+{{ x|upper }}
+```
+capitalize and upper the whole string
+```markdown
+{{ x|capfirst|upper }}
+```
+
+
+<br>add a new module / component
+```markdown
+- python manage.py startapp products    # create "products" folder
+- create class in models.py of the products-folder
+- import and register at admin-site in admin.py of the products-folder
+- add products to INSTALLED_APPs in settings.py of the project-folder
+```
+
+<br>add a new website
+```markdown
+# create "pages" folder
+  - python manage.py startapp pages
+# eg. function with HttpResponse to output html-code
+# for that function import is necessary with "from django.http import HttpResponse"
+  - add view in views.py of the pages-folder
+- add pages to INSTALLED_APPS in settings.py of the project-folder
+# import view with "from pages.views import homeView"
+# set path with eg. "path('', homeView, name="home")"
+  - add pages/view in urls.py fo the project-folder
+```
+
+<br>request and show page/view
+```markdown
+# in urls.py the requests are stored
+  eg. path('contact/', contactView)
+# and in the views.py is the html-code stored
+  eg. def contactView(*args, **kwargs):
+        return HttpResponse("<h1>Contacts!</h1>")
+```
+
+<br>using templates
+```markdown
+# render the page in views.py
+  eg. def contactView(request, *args, **kwargs):
+        return render(request, "contact.html", {})
+# create a folder eg. "templates" and put all html-pages in it
+  eg. about.html, contact.html, home.html
+# change DIRS in TEMPLATES in settings.py
+  eg. to 'DIRS': [os.path.join(BASE_DIR, "templates")],
+```
+
+<br>extends: template Inheritance
+```markdown
+# create base-html
+  eg. <h1>This is a navbar</h1>
+      {% block content %}
+        replace me
+      {% endblock %}
+# inside the about-html
+  eg. {% extends "base.html"  %}
+      {% block content %}
+        <h1>About</h1>
+        <p>This is a template</p>
+      {% endblock %}
+# "replace me" will get replace by the info from about-html from the block content
+```
+
+<br>include: something in html
+```markdown
+{% include "navbar.html" %}
+```
+
+<br>render data in html
+```markdown
+# render html-page with dictionary
+  define myContext as Dictionary
+  myContext = {
+    "myText": "This is about me",
+    "myNumber": 123,
+    "myList": [123, 4242, 12313]
+  }
+  eg. return render(request, "about.html", myContext)
+# access this dict in the html-page
+  eg. {{ myText }}, {{ myNumber }}
+```
+
+<br>for loop when rendering
+```markdown
+# get myList from Dictionary in views.py
+  {% for mySubItem in myList %}
+    <li>{{ forloop.counter }} - {{ mySubItem }}</li>
+  {% endfor %}
+```
+
+
+
+---
+## DOLT - Databases like Repos
+[jump to top...](#python)<br><br>
+https://www.dolthub.com/blog/2020-02-03-dolt-and-dolthub-getting-started/
+Install on windows with msi-file from here: https://github.com/dolthub/dolt/releases
+<br>Config Mail
+```markdown
+dolt config --global --add user.email YOU@DOMAIN.COM
+```
+Config Name
+```markdown
+dolt config --global --add user.name "YOUR NAME"
+```
+Login and the key
+```markdown
+dolt login
+```
+Clone DB-Repos
+```markdown
+dolt clone dolthub/baseball-databank
+```
+Show tables in db
+```markdown
+dolt ls
+```
+Read column description for table
+```markdown
+dolt sql -q "describe Salaries"
+```
+Run some query on the table
+```markdown
+dolt sql -q "SELECT * FROM Salaries"
+```
+Write query to table
+```markdown
+dolt sql -r csv -q "SELECT * FROM Salaries" > salary-hr.csv
+```
+
+
+
+---
+## PYINSTALLER, INNO SETUP COMPILER - generate python programs to executables
 [jump to top...](#python)<br><br>
 <br>Installation
 ```markdown
@@ -5924,6 +8101,22 @@ Generate only one file
 ```markdown
 pyinstaller --onefile prg.py
 ```
+Generate only one file (to get for sure the pyinstaller from the actual env)
+```markdown
+python -m pyinstaller --onefile prg.py
+```
+add this when some modules are not found
+```markdown
+--copy-metadata pandas_ta
+```
+When some modules are making problems - sometimes this helps
+```markdown
+--hidden-import=pymssql
+```
+when there is a depreciating warning from matlib
+```markdown
+--exclude-module matplotlib
+```
 Generate file with icon
 ```markdown
 --icon=app.ico
@@ -5936,17 +8129,18 @@ Generating under mac os sometimes only work with this params
 ```markdown
 --hidden-import=pkg_resources.py2_warn
 ```
-When some modules are making problems - sometimes this helps
+Collect data for specific python module
 ```markdown
---hidden-import=pymssql
+--collect-data moduleXY
 ```
-when there is a depreciating warning from matlib
-```markdown
---exclude-module matplotlib
-```
-Open this file to start the python-program
+
+<br>Open this file to start the python-program
 ```markdown
 prg.exe
+```
+only working with import yfinance (not with import yfinance as yf)
+```markdown
+yfinance module
 ```
 
 <br>Problems with some added python modules (eg. pycountry)
@@ -5964,11 +8158,124 @@ Compile Program with
 config_name = 'creds.json'                                    # Define the config file name
 ```
 
-<br>determine if application is a script file or frozen exe
+<br>Determine if application is a script file or frozen exe
 ```markdown
 if getattr(sys, 'frozen', False):                             # Get path when starting as executable
     application_path = os.path.dirname(sys.executable)
 elif __file__:                                                # Get path when running from IDE as py-file
     application_path = os.path.dirname(__file__)
 config_path = os.path.join(application_path, config_name)     # Final Config Path
+```
+
+<br>Using Inno Setup Compiler for creating a setup.exe for all files
+```markdown
+https://jrsoftware.org/isdl.php
+- Application Information => provide application informations (appName, appVersion, publisher, website)
+- Application Files => select application main executable file and add all necessary folder and files
+- Application File Association => no selection
+- Application Documentation => select files which should be shown before / after the installation
+- Setup Languages => select which languages should be included during installation
+- Save installation script
+- Final setup.exe is stored in the "Output"-folder
+```
+
+
+
+---
+## PYTHONANYWHERE
+[jump to top...](#python)<br><br>
+<br>install python modules in specific version / environment
+```markdown
+pip3.7 install --user --upgrade selenium
+```
+
+
+
+---
+## HEROKU - run python scripts in the cloud
+[jump to top...](#python)<br><br>
+Instruction: https://dev.to/josylad/how-to-deploy-a-python-script-or-bot-to-heroku-in-5-minutes-9dp
+<br>New => Create new app => give name with only lowercases
+```markdown
+on Heroku: create App
+```
+Setting => Add buildpack => choose python
+```markdown
+on Heroku: set python build path
+```
+Create Procfile with 2 lines => web: python appname.py, worker: python appname.py
+```markdown
+in App-folder: create Procfile
+```
+Create or Copy the requirements.txt => eg. pip freeze> requirements.txt
+```markdown
+in App-folder: create requirements.txt
+```
+when there is not git-structure yet
+```markdown
+in App-folder: git init
+```
+like xlwings, openpyxl, pywin32
+```markdown
+delete not possible modules	in cloud
+```
+login to heroku (login page opens in the browser)
+```markdown
+heroku login
+```
+connect to the heroku app
+```markdown
+heroku git:remote -a HEROKU_APP_NAME
+```
+add files (like in git)
+```markdown
+git add .
+```
+commit files (like in git
+```markdown
+git commit -am "msg"
+```
+push the files to heroku for build (try master instead of main when not working)
+```markdown
+git push heroku main
+```
+in Resources deselect both (otherwise the program will run more times per day)
+```markdown
+on Heroku: deselect web + worker
+```
+Heroku Scheduler for scheduling the app, Papertrail for logs
+```markdown
+on Heroku: add Add-ons
+```
+Schedule the app run times
+```markdown
+on Heroku / Scheduler
+```
+Show which dynos are running currently
+```markdown
+heroku ps -a appName
+```
+run the app / script which is hosted on heroku (only possible when no dyno is running)
+```markdown
+heroku run -a <appName> python <prg.py>
+```
+see all running dynos
+```markdown
+heroku ps -a <appName>
+```
+stop the running dyno with name "scheduler.6436"
+```markdown
+heroku ps:stop scheduler.6436 -a <appN>
+```
+
+
+<br>using TA-Lib on heroku
+```markdown
+remove TA-Lib from requirtements.text
+Described here: https://stackoverflow.com/questions/43453953/how-to-install-python-library-in-heroku
+GitDoku: https://github.com/numrut/heroku-buildpack-python-talib
+use this commands instead:
+heroku buildpacks:add --index 1 heroku/python
+heroku buildpacks:add --index 2 numrut/ta-lib
+schedule the running time with addon Heroku Scheduler
 ```

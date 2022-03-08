@@ -8,7 +8,7 @@
 #> SHORTCUTS VSCODE
 #> SHORTCUTS INTELLIJ IDEA IDE, CHROME, WINDOWS
 #> OPERATORS, INPUTS, OUTPUTS, ARGUMENTS
-#> RANDOM,
+#> RANDOM, SECRETS
 #> STRING
 #> REGEX
 #> LIST
@@ -28,7 +28,7 @@
 #> MOUDLE - ZIPFILE - handling ZIP files
 #> MODULE - GSPREAD - API for Google Sheets
 #> MODULE - OPENPYXL - working with excel worksheets
-#> MODULE - XLWINNGS - working on the fly with open excel worksheets
+#> MODULE - XLWINGS - working on the fly with open excel worksheets
 #> MODULE - PYTHON-DOCX - working with word docx
 #> MODULE - WIN32COM - creating worksheets as pdf from xlsx
 #> MODULE - PyPDF2 - working with pdfs
@@ -409,8 +409,9 @@ if sorted(l) == l								                 => Check if a list is sorted (by ascen
 if sorted(l, reverse=True) == l					         => Check if a list is sorted by descending
 l.sort(key=len)									                 => Sort list by len of elements
 l = [[1,4,3], [2,2,4], [3,1,5]]					         => Define nested list
-l.sort(key=lambda x: x[1])						           => Sort the nested list for the 2nd element ascending
-l.sort(key=lambda x: x[1], reverse=True)		     => Sort the nested list for the 2nd element descending
+l.sort(key=lambda x: x[1])						           => Sort nested list for the 2nd element ascending
+inpItems.sort(key=lambda x: (x[0], x[1]))        => Sort nested list 1st for the 1st elem, then for the 2nd elem
+l.sort(key=lambda x: x[1], reverse=True)		     => Sort nested list for the 2nd element descending
 l.reverse()                                      => Reverse the complete list
 l_reverse = list(reversed(l))                    => Reverse complete list and store it in different independent list
 del l[2]                                         => Delete element at index position 2
@@ -785,7 +786,7 @@ json_format = json.dumps(d,sort_keys=True)			    => Convert / Encode a dict to a
 with open(fn,"w") as data: json.dump(person, data)  => Writing information in json-format (e.g. after updating the values/format)
 person = json.loads(json_format)					          => Convert / Decode a json-file to a dict
 with open(fn.json,"r") as data: d=json.load(file)	  => Reading information in json-format
-print(json.dumps(erg, indent=4, sort_keys=True))      => Pretty-Print formatted json-file
+print(json.dumps(erg, indent=4, sort_keys=True))    => Pretty-Print formatted json-file
 
 => read JSON from file
 => ignoring errors and handles multiple json-objects
@@ -799,7 +800,7 @@ with open(fnJSON, errors="ignore") as f:
 ""
 r = requests.get(tmpJSONWord)
 jsonStrList = r.text.split("\n")
-jsonList = [json.loads(j, errors="ignore") for j in jsonStrList if j != ""]
+jsonList = [json.loads(j, errors="ignore") for j in jsonStrList if j != '']
 ""
 
 => Example for json-file	
@@ -931,7 +932,8 @@ see also Python-Diverses / GSpread
 # create schedule (search for cloud scheduler)
 ""
 
-# See further setup in tutorial
+=> See further setup in tutorial
+""
 import gspread                                                      # import module
 import oauth2client                                                 # import module
 from oauth2client.service_account import ServiceAccountCredentials  # import module for account credentials
@@ -1285,8 +1287,8 @@ ws.range("A1:A10").value = ws2.range("A1:A10").options(ndim=2).value      => cop
 
 
 => Make border / frame for cells
-Definiton for linestyles see: https://docs.microsoft.com/en-US/dotnet/api/microsoft.office.interop.excel.xllinestyle?view=excel-pia
-Definiton for border-sites see: https://docs.microsoft.com/en-us/office/vba/api/excel.xlbordersindex
+=> Definiton for linestyles see: https://docs.microsoft.com/en-US/dotnet/api/microsoft.office.interop.excel.xllinestyle?view=excel-pia
+=> Definiton for border-sites see: https://docs.microsoft.com/en-us/office/vba/api/excel.xlbordersindex
 ""
 for e in ws.range("B3:D3"):
   for site in [7,8,9,10]:
@@ -1295,9 +1297,9 @@ for e in ws.range("B3:D3"):
 
 => Update row / change whole row
 ""
-l = ws.range("A2:A6").value                           	=> Read specific cells to list (eg. [2,4,6,7,8])
-l = [0,1,2,3,4]											=> Change list	
-ws.range("A2:A100").value = l                           => Writeback the updates to cells
+l = ws.range("A2:A6").value         # Read specific cells to list (eg. [2,4,6,7,8])
+l = [0,1,2,3,4]											# Change list	
+ws.range("A2:A100").value = l       # Writeback the updates to cells
 ""
 
 => Update cell area / change 3 elements
@@ -1337,19 +1339,22 @@ t[0].rows[0].cells[1].paragraphs[0].style   => Assign style to specific paragrap
 p = doc.paragrapsh                          => Read all paragraphs
 
 => Set the Normal style to specific font and size
+""
 (assigning it to specific paragraph see above)
 from docx.shared import Pt
 style = document.styles['Normal']
 font = style.font
 font.name = 'Arial'
 font.size = Pt(10)
+""
 
 => Replace text and keep the previous style
+""
 (iteration over runs necessary)
 for para in doc.paragraphs:
   for run in para.runs:
     run.text = "New Text"
-
+""
 
 
 ###### MODULE - WIN32COM - creating worksheets as pdf from xlsx
@@ -1452,7 +1457,7 @@ mydb = mysql.connector.connect (host="localhost",user="root",passwd="pwd")      
 mycursor = mydb.cursor()                                   => Set Cursor on mySQL
 mycursor.execute("CREATE DATABASE db")                     => Creates database "db"
 
-=> # Show databases and informations
+=> Show databases and informations
 ""
 mycursor.execute("SHOW DATABASES")                         
     for db in mycursor: print(db)
@@ -1645,12 +1650,13 @@ conn.execute(s).fetchall()
 ###### SQLITE3 SQL
 conn = sqlite3.connect("address_book.db")		=> Create a database or connect to one
 c = conn.cursor()								=> Create a cursor (for working with the db)
+
 => Create a table in the database
 ""
-c.execute("""CREATE TABLE tbl (					
+c.execute('''CREATE TABLE tbl (					
 		attr1 text,
 		attr2 text,
-		attr3 integer)""")
+		attr3 integer)''')
 ""
 
 => Insert rows into database	
@@ -1884,26 +1890,30 @@ os.listdir()											                          => Put all filenames to a list 
 [x[0] for x in os.walk(path)][1:]                           => Put all sub-folders to a list from the actual working dir
 os.popen('attrib +h ' + fn).read().close()					        => Change file to hidden
 
-=> put all files in a list from actual directory with all subdirs and Filtering
+=> Put all files in a list from actual directory with all subdirs and Filtering
+""
 listExtensions=["jpg","jpeg","png"]
 listImages = []
 for dirpath,dir,files in os.walk(os.getcwd()):
   for f in files:
     if any(x in f.lower() for x in listExtensions):
       listImages.append(f)
+""
 
-=> find home-directory for the actual user
+=> Find home-directory for the actual user
 ""
 from os.path import expanduser								
 home = expanduser("~")
 ""
 
-=> check if 2 folders are different
+=> Check if 2 folders are different
 ""
 from filecmp import dircmp
 ergDiff = dircmp(path, toPath)          # compare 2 directories
 if ergDiff.left_only: ...               # see all changed files on the left side
 ""
+
+
 
 ###### MODULE - LOGGING
 => general Logging Layers: debug => info => warning => error => critical
@@ -1953,6 +1963,7 @@ logger.addHandler(my_handler)                                # Define handler wi
 
 
 ###### MODULE - UNITTEST
+=> many methods: https://docs.python.org/3/library/unittest.html
 import unittest                                              => Importing module
 from prg import func                                         => Import the function which will be tested
 class TestFunc(unittest.TestCase):                           => Define the class for testing the function
@@ -1960,7 +1971,6 @@ class TestFunc(unittest.TestCase):                           => Define the class
         erg = func("x",3)                                    => call the function
         self.assertEqual("3x")                               => check if result is ok
 if __name__ == '__main__': unittest.main()                   => starting the unittest
-=> many methods: https://docs.python.org/3/library/unittest.html
 self.assertEqual(a,b)                                        => Check if equal
 self.assertNotEquale(a,b)                                    => Check if not equal
 self.assertTrue(x)                                           => Check if true
@@ -1974,11 +1984,13 @@ self.assertNotIn(i,list)                                     => Check if i not i
 => Installation: pip install python-dotenv
 => create .env file and store sensible data in the form TOKEN=xyz123
 => and hide the *.env files in the .gitignore
+""
 pip install python-dotenv
 from dotenv import load_dotenv, find_dotenv
 import os
 load_dotenv(find_dotenv())
 GMAIL_TOKEN = os.environ.get("GMAIL_TOKEN")
+""
 
 
 
@@ -2235,10 +2247,15 @@ writer.save()
 	
 => SQL
 conn = sqlite3.connect("data.db")							=> Establish connection to the sql-db
-df = pd.read_sql("SELECT * FROM empl;",conn)				=> Read data from sql-db into dataframe
-df = pd.read_sql("SELECT * FROM empl;",conn,				=> Many operations can be directly done when reading the sql-db
-	index_col="EmplID",										=> => define which column will be the index				
-	parse_dates["BirthDate","HireDate"])					=> => read this columns as date
+df = pd.read_sql("SELECT * FROM empl;",conn)	=> Read data from sql-db into dataframe
+
+=> Many operations can be directly done when reading the sql-db
+""
+df = pd.read_sql("SELECT * FROM empl;",conn,				
+	index_col="EmplID",										    # define which column will be the index				
+	parse_dates["BirthDate","HireDate"])			# read this columns as date
+""
+
 from sqlalchemy import create_engine						=> It is easier to read a complete table using sqlalechmy
 engine = create_engine("data.db")							=> Create SQL Alchemy engine
 connection = engine.connect()								=> Establish connection with SQL Alchemy
@@ -2329,10 +2346,15 @@ df.drop(["Popl","Continent"],axis="columns")				=> Drops the cols Popl,Continent
 df.drop(df.index, inplace=True)								      => Drops the whole dataframe
 crisis = pd.Series([-10,-0,3],index=["Popl","HDI"])			=> Define series with same col-names as in the dataframe - with some correction values
 df[["Popl","HDI"]] + crisis									=> Comines crisis-series to the df => all values in "Popl" -10 and "HDI" -0,3 in the df
-langs = pd.Series(											=> Define new series for new column in dataframe
-	["FR","DE","IT"],										=> => values of new column
-	index=["FRA","GER","ITA"],								=> => existing index in dataframe
-	name= "lang")											=> => name of the new column
+
+=> Define new series for new column in dataframe
+""
+langs = pd.Series(	
+	["FR","DE","IT"],           # values of new column
+	index=["FRA","GER","ITA"],  # existing index in dataframe
+	name= "lang")               # name of the new column
+""
+
 df["lang"] = langs											=> Creates new column in the dataframe according to the series "langs" - other rows will get "NaN"
 df["lang"] = "GB"											=> Values of all rows in the column "lang" will be changed to "GB"
 df.rename(columns={"Popl":"POPL","Continent":"CONT"})	    => Renames column names
@@ -2548,7 +2570,8 @@ srv=Service(ChromeDriverManager().install())
 driver = uc.Chrome (service=srv, options=options)  
 waitWebDriver = WebDriverWait (driver, 5)   
 link = "https://www.google.com"
-driver.get (link)  
+driver.get (link) 
+"" 
 
 => Define Real User Agent Header
 ""
@@ -2771,11 +2794,41 @@ driver.find_element_by_css_selector('p.content')						# Search for tag and selec
 
 
 ###### MODULE - REQUESTS - workings with APIs
+=> https://realpython.com/python-api/
 import requests										              => import module requests
 import json                                     => import module json
-api_request = requests.get ("apilink.html"      => Request api from the generated api-link
-api = json.loads(api_request.content)				    => Read/parse api-data to a json-loadfil
+resp = requests.get (url)                       => Request api from the generated api-link
+
+=> GET-request with payload and headers
+""
+resp = requests.request("GET", url,             
+                        json=payload, 
+                        headers=headers)    
+""
+
+=> Return the statuscode of the response
+""
+resp.status_code                                
+    # 200: ok
+    # 201: resource created
+    # 400: bad request (wrong or missing some informations)
+    # 401: Unauthorized (requires some additonal permissions)
+    # 404: Not Found (requested resource does not exist)
+    # 405: Method Not Allowed (wrong HTTP Method - eg. POST instead of GET)
+    # 500: Internal Server Error: something broken on the server site
+""
+
+resp.reasons                                    => shows the statuscode in textform (eg. OK, Not Found)
+resp.request.headers                            => used headers for the request
+resp.headers                                    => header from the response
+resp.headers["Content-Type"]                    => show the content-type of the resonse (eg. json, image/jpeg)
+resp.text                                       => response in text-form
+resp.json()                                     => response in json-form
+print(json.dumps(respJSON,                      => Pretty-Print formatted json-file
+                indent=4,
+                sort_keys=True))
 result = api[0]["xyz"]								          => Read the value for the 1 element and the attribute xyz
+
 
 pip install requests-html                         => Install module
 from requests_html import HTMLSession             => Import requests_html
@@ -2812,7 +2865,7 @@ scrapy runspider quotesNAME.py                      => run spider from command l
 scrapy runspider quotesNAME.py -o items.json        => run spider and store result into items.json
  'dupefilter/filtered': 50,                         => shows the duplicate elements which are filtered
 
-# from second video-tutorial above
+=> from second video-tutorial above
 scrapy shell                                        => open scrapy shell
 response.css("div.product-item-info").get()         => get the first div-element with that class
 response.css("ul.products li")                      => get the first li-element in the ul-element with class "products"
@@ -2842,6 +2895,7 @@ settings.py: ROBOTSTXT_OBEY = False                 => ignore robots.txt
 settings.py: DOWNLOAD_DELAY = 3                     => set download-delay (to prevent site-checkings)
 
 => when scraping with scrapy_selenium
+""
 DOWNLOADER_MIDDLEWARES = {
     'scrapy_selenium.SeleniumMiddleware': 800
 }
@@ -2851,6 +2905,7 @@ SELENIUM_DRIVER_NAME = 'chrome'
 SELENIUM_DRIVER_EXECUTABLE_PATH = r"C:\Users\Polzi\Documents\DEV\Python-Private\chromedriver.exe"
 # '--headless' if using chrome instead of firefox
 SELENIUM_DRIVER_ARGUMENTS = ['--headless']
+""
 
 response.xpath("//div[@class='vendor']//ancestor::a/text()").get()    => get text (with div and a combination)
 response.xpath("//a[@class='next page-numbers']/@href").get()         => get href-value (from a element with class)
@@ -2905,8 +2960,8 @@ class QuotesScrollSpider(scrapy.Spider):
 
 
 ###### MODULE - PYQT - making GUIs
-# see Codemy.com https://www.youtube.com/channel/UCFB0dxMudkws1q8w5NJEAmw
-# see Python-Diverses/PyQt
+=> see Codemy.com https://www.youtube.com/channel/UCFB0dxMudkws1q8w5NJEAmw
+=> see Python-Diverses/PyQt
 https://build-system.fman.io/qt-designer-download      => Install Py Qt Designer
 pip install pyqt5                                      => Installation
 from PyQt5.QtWidgets import QApplication               => Defines Application
@@ -3214,7 +3269,7 @@ Builder.load_file("whatever.kv")    # link the kv-file to the python-file (so th
 => Coloring buttons and input fields
 ""
 # using rgb-color for the coloring
-background_normal: ""                           # necessary to use this - otherwise the color will be mixed with the intial grey default
+background_normal: ''                           # necessary to use this - otherwise the color will be mixed with the intial grey default
 background_color: (1,0,0,1)                     # coloring the element in red
 background_color: (238/255,250/255,0/255,1)     # using a rgb-color for the coloring
 
@@ -3246,7 +3301,7 @@ BoxLayout:
 # Define the global settings in sepearte section in the kv-file
 <Button>                            # these settings are used for all buttons in the window
     font_size: 32
-    background_normal: ""
+    background_normal: ''
     background_color: (0,0,1,1)
 <TextInput>                         # this color is used for all input fields in the window
     background_color: (150/255,150/255,150/255,1)
@@ -3563,7 +3618,7 @@ then: pip install TA-Lib
 
 
 
-###### YFINANCE - date from Yahoo Finance
+###### MODULE - YFINANCE - date from Yahoo Finance
 => Docu and examples: https://aroussi.com/post/python-yahoo-finance
 import yfinance                     => Installation (yfinance as yf not working - problems with pyinstaller)
 dataYF = yf.Ticker(ticker)          => Read data for ticker yahoo finance ticker symbol
@@ -3594,27 +3649,34 @@ Python-Diverses / Plotly / example.py   => see example for candlestick-chart
 
 
 ###### MODULE - DJANGO - framework for webdevelopment
-see: https://www.youtube.com/watch?v=F5mRW0jo-U4&t=5043s
-see: C:\Users\Polzi\Documents\DEV\Python-Diverses\Django
-pip install django                      => installation
-django-admin startproject pjName        => create a blank django project
-python manage.py runserver              => run django server (start site on http://127.0.0.1:8000/)
+https://www.youtube.com/watch?v=F5mRW0jo-U4&t=5043s   => Video Training
+C:\Users\Polzi\Documents\DEV\Python-Diverses\Django   => Example
+pip install django                => installation
+django-admin startproject pjName  => create a blank django project
+python manage.py runserver        => run django server (start site on http://127.0.0.1:8000/)
+
 settings.py in django-folder
+""
   BASE_DIR => directory of the django-project
   SECRET_KEY => individual key from django-project
   DEBUG => should be set to False in production
   INSTALLED_APPS => componente / pieces of the django-project
   DATABASES => database of the django-project
-python manage.py startapp products      => create a new app / component
+""
+
+python manage.py startapp products      
+""
+  # create a new app / component
   models.py => create models and link to the database
   add "products" to INSTALLED_APPS in settings.py
+""
+
 python manage.py createsuperuser        => create superuser (eg. for login to /admin app/component)
 python manage.py makemigrations         => prepeare migrations (when anything changed in the apps)
 python manage.py migrate                => migrate all changes
-add this: from .models import Product in admin.py of the products app / component
-=> now products can created in the /admin-page
+add this: from .models import Product in admin.py of the products app / component     => now products can created in the /admin-page
 python manage.py shell                  => open django-sheel (eg. create products from the shell )
-=> https://docs.djangoproject.com/en/4.0/ref/templates/builtins/
+https://docs.djangoproject.com/en/4.0/ref/templates/builtins/     => overview builtins
 {% include "navbar.html" %}             => include html in an html-page (navbar.html)
 {% extends "base.html"  %}              => extend html-page (base.html)
 {% block content %} xyz {% endblock %}  => replace this block content
@@ -3759,7 +3821,7 @@ Compile Program with
 config_name = 'creds.json'                                    # Define the config file name
 ""
 
-=> determine if application is a script file or frozen exe
+=> Determine if application is a script file or frozen exe
 ""
 if getattr(sys, 'frozen', False):                             # Get path when starting as executable
     application_path = os.path.dirname(sys.executable)
