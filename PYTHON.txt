@@ -121,12 +121,13 @@ create a venv with: virtualenv envName -p path\to\new_python.exe
 
 
 ###### PIP
-pip install moduleXY				=> install module
-pip install moduleXY --upgrade		=> upgrade module
-pip uninstall module XY             => uninstall module XY
-pip list							=> show installed modules in actual environment
-pip freeze > requirements.txt		=> output modules in requirements.txt
-pip install -r requirements.txt     => install modules from requirements.txt
+pip install moduleXY				      => install module
+pip install moduleXY --upgrade	  => upgrade module
+pip install -Iv pyinstaller==4.8  => Install specific version
+pip uninstall module XY           => uninstall module XY
+pip list							            => show installed modules in actual environment
+pip freeze > requirements.txt		  => output modules in requirements.txt
+pip install -r requirements.txt   => install modules from requirements.txt
 
 
 
@@ -134,23 +135,23 @@ pip install -r requirements.txt     => install modules from requirements.txt
 Ctrl K Ctrl C				    => Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
 Ctrl K Ctrl U				    => Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
 Ctrl F   		   			    => Find in File
-Ctrl Shift f                    => Search in all files
-Ctrl H        	   			    => Replace in File
-Ctrl Shift H			        => Replace in Path (in all Files)
+Ctrl Shift f            => Search in all files
+Ctrl H        	   			=> Replace in File
+Ctrl Shift H			      => Replace in Path (in all Files)
 F8            					=> Jump to the next error
-Shift + F8                      => Jump to the next error (backwards)
-F3       						=> Find next
+Shift + F8              => Jump to the next error (backwards)
+F3       						    => Find next
 Ctrl G     				    	=> Goto line
-Shift Alt Up/Down			    => Copy / Duplicate lines	
-Alt Up/Down		                => Move line
+Shift Alt Up/Down			  => Copy / Duplicate lines	
+Alt Up/Down		          => Move line
 Ctrl E1      				    => Recent opened files
-Ctrl K Left/Right               => Switch windows in IDE
+Ctrl K Left/Right       => Switch windows in IDE
 Alt Enter				        => Suggestions for fix error, function informations
-Alt 1					        => Open the project windows (on the left side)
+Alt 1					          => Open the project windows (on the left side)
 Alt F7					        => Show usage of the variable, function, class
-Esc						        => Focus back on the editor window
-Ctrl K Ctrl 0   		        => Collapse everything
-Ctrl K Ctrl J                   => Exapnds everything
+Esc						          => Focus back on the editor window
+Ctrl K Ctrl 0   		    => Collapse everything
+Ctrl K Ctrl J            => Exapnds everything
 Ctrl K Ctrl L				    => Collapse block ("-" on numblock)
 Ctrl K Ctrl L				    => Expand block ("+" on numblock)
 Ctrl A        				    => Select whole file
@@ -952,7 +953,7 @@ listWS = wb1.worksheets()                             => Get all worksheets as w
 listWS = [x.title for x in wb1.worksheets()]          => Get all worksheets by n
 sheet = client.open("testpython").sheet1              => Open the spreadhseet
 dataList = ws1.get_all_values()                       => Get a list of all records
-data = ws1.get('B5:K8')                               => Get specific areaw
+data = ws1.get('B5:K8')                               => Get specific area
 ws1.acell('B1', value_render_option='FORMULA').value  => Get formula of a cell
 ws1.update('A1:Z10', [[1, 2], [3, 4]])                => Update cell range with nested list
 ws1.insert_row(["new1","new2","new3"],2)              => Insert new row at row number 2
@@ -2705,10 +2706,10 @@ soup.find_all("div", class_="col-xs-6")                         => Read all divs
 soup.find("div", {"id": "lj_div"})								              => Find div with id "lj_div"
 soup.find("p", {"class": "line"})								                => Find (first) p with class "line"
 soup.find("dt", string="In-App Purchases")						          => Find element with specific text / string
+soup.find("small", class_=re.compile("nameSymbol_"))			      => Check if string nameSymbol_" is part of the class-element
 soup.find_all(["strong","a","br"])                              => Find elements for several tags
 erg2 = erg.find_parent("div")									                  => Found the parent div-element for a specific before find element
 if row.get("class") == ["ellipsis", "nobr", "new"]:             => Check if class has specific content
-soup.find("small", class_=re.compile("nameSymbol_"))			      => Check if string nameSymbol_" is part of the class-element
 for e in soup.find_all("a"): e.get("href")                      => Read all links from href element    
 for e in soup.find_all("a"): e.get("value")                     => Read all number from the field "value"
 for lb in soup.findAll("br"): lb.replaceWith(" ")               => Change all linebreak <br> in text to blank
@@ -2961,60 +2962,150 @@ class QuotesScrollSpider(scrapy.Spider):
 ###### MODULE - PYQT - making GUIs
 => see Codemy.com https://www.youtube.com/channel/UCFB0dxMudkws1q8w5NJEAmw
 => see Python-Diverses/PyQt
-https://build-system.fman.io/qt-designer-download      => Install Py Qt Designer
-pip install pyqt5                                      => Installation
-from PyQt5.QtWidgets import QApplication               => Defines Application
-from PyQt5.QtWidgets import QLabel                     => Defines Label
-from PyQt5.QtWidgets import QWidget                    => Defines Widget
-from PyQt5.QtWidgets import QHBoxLayout                => Arranges horizontally from left to right
-from PyQt5.QtWidgets import QVBoxLayout                => Arranges vertically from top to bottom
-from PyQt5.QtWidgets import QGridLayout                => Arranges in grid from on x and y axes
-from PyQt5.QtWidgets import QFormLayout                => Field for forms - 1col are titles, 2col are fields,rbs,cb
-from PyQt5.QtWidgets import QPushButton                => Defines PushButton
-from PyQt5.QtWidgets import QDialog                    => Module for dialog windows
-from PyQt5.QtWidgets import QDialogButtonBox           => Module for button boxes in dialog windows
-from PyQt5.QtWidgets import QLineEdit                  => Defines input field with text
-from PyQt5.QtWidgets import QMainWindow                => Module for main windows
-from PyQt5.QtWidgets import QStatusBar                 => Module for status bar
-from PyQt5.QtWidgets import QToolBar                   => Module for tool bar
-app = QApplication(sys.argv)                           => Create an instance of the application
-w = QWidget()                                          => Initialize a window
-w.setWindowTitle('Windows Title')                      => Title of the windows
-w.setGeometry(200, 200, 380, 180)                      => Define windows (1:x-coord,2:y-coord,3:width,4:height)
-w.move(50, 15)                                         => Place / move windows to coodinates 60,15
-msg = QLabel('<h1>Hello World!</h1>', parent=window)   => Define label / message in format h1
-msg.move(50, 15)                                       => Place / move labe to coordinates 60,15
-windows.show()                                         => Show the application GUI - schedules a paint event
-sys.exit(app.exce_())                                  => Start the app and close it with sys.exit
-layout_qh = QHBoxLayout()                              => Defines horzontal box
-layout_qv = QVBoxLayout()                              => Defines vertical box
-layout_qg = QGridLayout()                              => Defines grid layout
-layout_qf = QFormLayout()                              => Defines form layout
-layout_qh.addWidget(QPushButton('Button1'))            => Defines one or more buttons
-layout_qv.addWidget(QPushButton('Button1'))            => Defines one or more buttons
-layout_qg.addWidget(QPushButton('Button1'),1,0)        => Defines one or more buttons and set it to position 1,0
-layout_qg.addWidget(QPushButton('Button1'),2,1,1,2)    => Set buttons to position 2,1 and span it 1row/2cols
-layout_qf.addRow("text:", QLineEdit())                 => Defines input field 
-w.setLayout(layout_xy)                                 => Sets layout dimensions to window
-class Dialog(QDialog):                                 => Defines a class dialog which inherits from QDialog
-buttons = QDialogButtonBox()                           => Define buttons for a dialog window
-buttons.setStandardButtons(QDialogButtons.OK)          => Defines a ok button on a dialog window
-layout_qv.addWidget(buttons)                           => Adds buttons to vertical layout
-class Window(QMainWindow):                             => Defines a class Windows which inherits from QMainWindow
-pyuic5 -x 6PyQtDesigner.ui -o 6PyQtDesigner.py         => Convert Qt-Designer file to a python-file
+https://build-system.fman.io/qt-designer-download       => Install Py Qt Designer
+pip install pyqt5                                       => Installation
 
-=> simplest App
+=> QtWidgets / Different Widgets
+""
+import PyQt5.QtWidgets as qtw   => Import QtWidgets
+qtw.QApplication                => Defines Application
+qtw.QLabel                      => Defines Label
+qtw.QWidget                     => Defines Widget
+qtw.QHBoxLayout                 => Arranges horizontally from left to right
+qtw.QVBoxLayout                 => Arranges vertically from top to bottom
+qtw.QGridLayout                 => Arranges in grid from on x and y axes
+qtw.QFormLayout                 => Field for forms - 1col are titles, 2col are fields,rbs,cb
+qtw.QPushButton                 => Defines PushButton
+qtw.QDialog                     => Module for dialog windows
+qtw.QDialogButtonBox            => Module for button boxes in dialog windows
+qtw.QLineEdit                   => Defines input field with text
+qtw.QMainWindow                 => Module for main windows
+qtw.QStatusBar                  => Module for status bar
+qtw.QToolBar                    => Module for tool bar
+""
+
+=> Main Window
+""
+app = QApplication(sys.argv)                            => Create an instance of the application
+w = QWidget()                                           => Initialize a window
+w.setWindowTitle('Windows Title')                       => Title of the windows
+w.setGeometry(200, 200, 380, 180)                       => Define windows (1:x-coord,2:y-coord,3:width,4:height)
+w.move(50, 15)                                          => Place / move windows to coodinates 60,15
+msg = QLabel('<h1>Hello World!</h1>', parent=window)    => Define label / message in format h1
+msg.move(50, 15)                                        => Place / move labe to coordinates 60,15
+windows.show()                                          => Show the application GUI - schedules a paint event
+sys.exit(app.exce_())                                   => Start the app and close it with sys.exit
+""
+
+=> Layouts
+""
+qhLayout = QHBoxLayout()                                => Defines horzontal box layout
+qvLayout = QVBoxLayout()                                => Defines vertical box layout
+qgLayout = QGridLayout()                                => Defines grid layout
+qfLayout = QFormLayout()                                => Defines form layout
+btn1 = qtw.QPushButton(self)                            => Define Push-Button
+qhLayout.addWidget(btn1)                                => Add Button on Layout
+qvLayout.addLayout(qhLayout)                            => Add horizontal Box Layout in vertical Layout
+lbl = qtw.QLabel('Name:', self)                         => Define Label
+inp = qtw.QLineEdit(self)                               => Define Input-Field
+qfLayout.addRow(lbl, inp)                               => Add row in form (Label + Input-Field)
+qgLayout.addWidget(QPushButton('Button1'),1,0)          => Defines one or more buttons and set it to position 1,0
+qgLayout.addWidget(QPushButton('Button1'),2,1,1,2)      => Set buttons to position 2,1 and span it 1row/2cols
+w.setLayout(layoutXY)                                   => Sets layout dimensions to window
+""
+
+=> Button / QPushButton
+""
+btn = qtw.QPushButton(self)                             => Define Push-Button
+layout.addWidget(btn)                                   => Add ComboBox to layout
+btn.setText("Calc")                                     => Set Text of button
+btn.clicked.connect(self.btnPressedCalc)                => Set Function which should run when the button is clicked
+""
+
+=> Label / QLabel
+""
+lbl = qtw.QLabel("Name:", self)                         => Define Label
+layout.addWidget(lbl)                                   => Add Label to layout
+""
+
+=> Input-Field / QLineEdit
+""
+inp = qtw.QLineEdit(self)                               => Define Input-Field
+layout.addWidget(inp)                                   => Add input field to layout
+inp.clear()                                             => Delete content of input-field
+""
+
+=> ComboBox / QComboBox
+""
+cb = qtw.QComboBox(self)                                => Create ComboBox
+l = [("AAPL",23),("BRK",47),("CYP",78)]                 => Define list with shown value and data behind (eg. AAPL and 23)
+cb.addItems(l)                                          => Add list of items to combobox as content
+layout.addWidget(cb)                                    => Add ComboBox to layout
+layout.addRow("Name:",cb)                               => Add ComboBox to form-layout
+cb.currentText()                                        => Actual selected value (AAPL, BRK, CYP)
+cb.currentData()                                        => The data of the selected item (23, 47, 78)
+cb.currentIndex()                                       => Index-number of the selected item
+cb = qtw.QComboBox(self,                                # Create editable ComboBox
+  editable=True,
+  insertPolicy=qtw.QComboBox.InsertAtBottom 
+""
+
+=> SpinBoxes / QSpinBox, QDoubleSpinBox
+""
+sp = qtw.QSpinBox(self,           # create spinbox
+    value=10,                     # start value
+    maximum=100,
+    minimum=0,
+    singleStep=5,                 # steps between values                                                      
+    prefix="#",                   # prefix before the value
+    suffix=" Order"               # suffix behind the value
+layout.addWidget(sp)              => Add SpinBox to layout
+layout.addRow("Name:",sp)         => Add SpinBox to form-layout
+sp = qtx.QDoubleSpinBox (self)    # create spinbox for floats
+""
+
+=> Textfield / QTextEdit
+""
+  txt = qtw.QTextEdit(self)       => create Textfield
+  layout.addWidget(txt)           => add textfield to layout
+  txt = qtw.QTextEdit(self,
+      lineWrapMode = qtw.QTextEdit.FixedColumnWidth,
+      lineWrapColumnOrWidth = 50,
+      placeholderText="ABC",
+      readOnly=False)
+""
+
+class Dialog(QDialog):                                  => Defines a class dialog which inherits from QDialog
+buttons = QDialogButtonBox()                            => Define buttons for a dialog window
+buttons.setStandardButtons(QDialogButtons.OK)           => Defines a ok button on a dialog window
+class Window(QMainWindow):                              => Defines a class Windows which inherits from QMainWindow
+
+
+=> PyQt5Designer
+""
+pip install PyQt5Designer                          => Install PyQt5Designer
+designer.exe                                       => Find designer.exe in installed venv
+pyuic5 -x 6PyQtDesigner.ui -o 6PyQtDesigner.py     => Convert Qt-Designer file to a python-file
+""
+
+=> QtGui / Change GUI like font, size
+""
+import PyQt5.QtGui as qtg                               => Import Gui for changing fontsize
+nameLabel.setFont(qtg.QFont("Helvetica", 18))           => Change font of the label
+""
+
+=> Simplest App
 ""
 import PyQt5.QtWidgets as qtw
 class MainWindow(qtw.QWidget):
   def __init__(self):
     super().__init__()
-    self.setWindowTitle("Check Orphans App")  
-    ...
-    self.show()
-app = qtw.QApplication([])
-mw = MainWindow()
-app.exec_()
+    self.setWindowTitle("Name XY")  
+if __name__ == '__main__':
+  app = qtw.QApplication(sys.argv)
+  mw = MainWindow()
+  mw.show()
+  sys.exit(app.exec_())
 ""
 
 
@@ -3791,6 +3882,7 @@ dolt sql -r csv -q "SELECT * FROM Salaries" > salary-hr.csv   => Write query to 
 
 ###### PYINSTALLER, INNO SETUP COMPILER - generate python programs to executables
 pip install pyinstaller                     => Installation
+pip install -Iv pyinstaller==4.8            => Install specific version
 pyinstaller prg.py                          => Generate the bundle in a subdirectory called dist.
 pyinstaller --onefile prg.py                => Generate only one file
 python -m pyinstaller --onefile prg.py      => Generate only one file (to get for sure the pyinstaller from the actual env)
