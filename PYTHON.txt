@@ -151,21 +151,21 @@ Alt 1					          => Open the project windows (on the left side)
 Alt F7					        => Show usage of the variable, function, class
 Esc						          => Focus back on the editor window
 Ctrl K Ctrl 0   		    => Collapse everything
-Ctrl K Ctrl J            => Exapnds everything
+Ctrl K Ctrl J           => Expands everything
 Ctrl K Ctrl L				    => Collapse block ("-" on numblock)
 Ctrl K Ctrl L				    => Expand block ("+" on numblock)
-Ctrl A        				    => Select whole file
-Ctrl (Shift) Z		            => Undo (backwards) / Redo (forwards)
-Ctrl Shift Left		            => Select word to the beginning
-Ctrl Shift Right	            => Select word to the end 
-Ctrl Left / Right	            => Go one word left
-Ctrl Shift K                    => Delete current line
-Ctrl Del                        => Delete to end of word
-Ctrl Background                 => Delete to beginning of word
-Ctrl B							=> Hide/Show sidebar
-Ctrl J                          => Hide/Show terminal 
-Ctrl P                          => Show command line (eg. open a file where the name is known)
-Ctrl Shift P					=> Open the the command panel
+Ctrl A        				  => Select whole file
+Ctrl (Shift) Z		      => Undo (backwards) / Redo (forwards)
+Ctrl Shift Left		      => Select word to the beginning
+Ctrl Shift Right	      => Select word to the end 
+Ctrl Left / Right	      => Go one word left
+Ctrl Shift K            => Delete current line
+Ctrl Del                => Delete to end of word
+Ctrl Background         => Delete to beginning of word
+Ctrl B							    => Hide/Show sidebar
+Ctrl J                  => Hide/Show terminal 
+Ctrl P                  => Show command line (eg. open a file where the name is known)
+Ctrl Shift P					  => Open the the command panel
 Ctrl TAB                        => Toggle through the open files in the editor
 Ctrl WARNING                    => Close File
 Ctrl Alt Up/Down (click Left)   => MultiCursor - Select more cursors in rows for multiple change in rows
@@ -3020,6 +3020,7 @@ btn = qtw.QPushButton(self)                             => Define Push-Button
 layout.addWidget(btn)                                   => Add ComboBox to layout
 btn.setText("Calc")                                     => Set Text of button
 btn.clicked.connect(self.btnPressedCalc)                => Set Function which should run when the button is clicked
+btn = qtw.QPushButton(self, clicked = lambda: self.btnPressedCalc())   => 2nd method to assign a function (short method)
 ""
 
 => Label / QLabel
@@ -3040,6 +3041,7 @@ inp.clear()                                             => Delete content of inp
 cb = qtw.QComboBox(self)                                => Create ComboBox
 l = [("AAPL",23),("BRK",47),("CYP",78)]                 => Define list with shown value and data behind (eg. AAPL and 23)
 cb.addItems(l)                                          => Add list of items to combobox as content
+cb.addItem(s)                                           => Add one item to combobox as content
 layout.addWidget(cb)                                    => Add ComboBox to layout
 layout.addRow("Name:",cb)                               => Add ComboBox to form-layout
 cb.currentText()                                        => Actual selected value (AAPL, BRK, CYP)
@@ -3049,6 +3051,16 @@ cb = qtw.QComboBox(self,                                # Create editable ComboB
   editable=True,
   insertPolicy=qtw.QComboBox.InsertAtBottom 
 ""
+
+=> List / QListWidget
+""
+lw = qtw.QListWidget(self)            => Create List
+lw.addItems(l)                        => Add list of items to listwidget as content
+lw.addItem(s)                         => Add one item to listwidget as content
+lw.currentRow()                       => Get index of current row
+lw.takeItem(1)                        => Delete / take 2nd item from the list
+""
+
 
 => SpinBoxes / QSpinBox, QDoubleSpinBox
 ""
@@ -3075,6 +3087,12 @@ sp = qtx.QDoubleSpinBox (self)    # create spinbox for floats
       readOnly=False)
 ""
 
+=> Menu or Icon / QAction
+""
+  self.menu = qtw.QAction(MainWindow)
+  self.menu.triggered.connect(self.actPressedOpen)    => Set Function which should run when the menu is clicked
+""
+
 class Dialog(QDialog):                                  => Defines a class dialog which inherits from QDialog
 buttons = QDialogButtonBox()                            => Define buttons for a dialog window
 buttons.setStandardButtons(QDialogButtons.OK)           => Defines a ok button on a dialog window
@@ -3083,9 +3101,10 @@ class Window(QMainWindow):                              => Defines a class Windo
 
 => PyQt5Designer
 ""
-pip install PyQt5Designer                          => Install PyQt5Designer
-designer.exe                                       => Find designer.exe in installed venv
-pyuic5 -x 6PyQtDesigner.ui -o 6PyQtDesigner.py     => Convert Qt-Designer file to a python-file
+pip install PyQt5Designer                 => Install PyQt5Designer
+designer.exe                              => Find designer.exe in installed venv
+<Form><Preview>                           => Show preview of the designed window
+pyuic5 -x filename.ui -o filename.py      => Convert Qt-Designer file to a python-file
 ""
 
 => QtGui / Change GUI like font, size
