@@ -20,6 +20,10 @@ Sub init()
     Shell FN, vbNormalFocus
 End Sub
 
+for testing purposes probably add
+    MsgBox "The value of FN is " & FN, vbInformation
+with that the path to the exe-file will be outputted in an msg-window
+
 
 ### How to make a lookup to some other information
 =VLOOKUP(A8;Admin!$A$3:$C$100;2;FALSE)
@@ -29,3 +33,5 @@ Admin!$A$3:$F$100: area where the detail informations are stored - key-value mus
 FALSE: default value when the key-value is not found
 
 
+### Calculate the growht of 2 values
+()newval - oldval) / oldVal * 100

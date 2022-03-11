@@ -2454,6 +2454,15 @@ to: df.loc[current, "upperband"] = df.loc[previous, "upperband"]
 (then there will be no more warning)
 ""
 
+=> Important
+""
+filt = (tmpDF.index == "Total Assets")   # get specific row with title in index
+tmpDF = tmpDF[filt]                      # get specific row with title in index
+tmpDF[tmpDF.columns[0]][0]               # get the first entry of a series
+
+""
+
+
 
 ###### MODULE - MATPLOTLIB - working with charts
 import matplotlib.pyplot as plt                                     => Import module as plotter plt
