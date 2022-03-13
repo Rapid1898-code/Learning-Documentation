@@ -519,8 +519,11 @@ for key, val in d.items():                           => Iterate through keys and
 d = {k: v for k, v in sorted(d.items(), key=lambda item: item[1], reverse=True)}    => Sort dict descending according to values (=item[1])
 d = {k: v for k, v in sorted(d.items(), key=lambda item: item[0])}      => Sort dict ascending according to keys (=item[0])
 d = {k: v for k, v in sorted(d.items(), key=lambda x: (-x[1],x[0]))}    => Dict sorted: 1st value-desc (x[0]) - 2nd key-ascnd (-x[0])
-l = sorted(d.items(), key=lambda e: e[1][2])        => Sort dict and output list, sorted according to the 3rd element of the list in the dict
-l = sorted(d.items(), key=lambda e: e[1][2], reverse=True)      => Sort dict and output list, sorted according to the 3rd element of the list in the dict - descending
+l = sorted(d.items(), key=lambda e: e[1][2])                            => Sort dict and output list, sorted according to the 3rd element of the list in the dict
+l = sorted(d.items(), key=lambda e: e[1][2], reverse=True)              => Sort dict and output list, sorted according to the 3rd element of the list in the dict - descending
+d3 = {key: d1.get(key,0)+d2.get(key,0) for key in set(d1)|set(d2)}      => Merge 2 dictionaries
+
+
 
 
 ###### SETS
@@ -1271,6 +1274,7 @@ ws.range("A1:C3").number_format = "0,00"                => Assign numeric format
 ws.range("A1:C3").number_format = "0%"                  => Assign percentage format with 2 decimals
 ws.range("B1").api.Font.Bold = True                     => Set cell to bold
 ws.range("B2").api.Font.ColorIndex = 3                  => Set font color to red (see codes: https://access-excel.tips/excel-vba-color-code-list/)
+ws2.range(f"A2:Z10000").api.WrapText = False            => Set wrap text to False
 ws["D5"].add_hyperlink(link,text_to_display = "Chart")  => Insert a hyperlink and define which text should be shown in the cell
 ws.api.AutoFilterMode = False                           => Disable auto filter in worksheet
 ws.clear()                                              => Clears the content and formatting of the whole sheet
@@ -3921,7 +3925,7 @@ python -m pyinstaller --onefile prg.py      => Generate only one file (to get fo
 --exclude-module matplotlib                 => when there is a depreciating warning from matlib 
 --icon=app.ico                              => Generate file with icon
 --hidden-import=pkg_resources.py2_warn      => Generating under mac os sometimes only work with this params
---hidden-import=pkg_resources.py2_warn      => Generating under mac os sometimes only work with this params   
+--hidden-import=cmath                       => Generating under mac os sometimes only work with this params   
 --collect-data moduleXY                     => Collect data for specific python module
 
 prg.exe                                     => Open this file to start the python-program
