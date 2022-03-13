@@ -25,6 +25,12 @@ for testing purposes probably add
 with that the path to the exe-file will be outputted in an msg-window
 
 
+### Check cell-value if MsgBox should be outputed
+If ThisWorkbook.Sheets("PARAM").Range("B4").Value = "y" then
+  MsgBox "The value of FN is " & FN, vbInformation  
+End IF
+
+
 ### How to make a lookup to some other information
 =VLOOKUP(A8;Admin!$A$3:$C$100;2;FALSE)
 A8: key-value what should be checked

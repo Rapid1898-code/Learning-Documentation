@@ -325,6 +325,7 @@ s = f"text {var} bla"							              => Insert variable in string new metho
 "{0} like, {0} especially {0} but {1}".format("Joe", "noodles")  	=> Multiple use   							
 s.find ("ist")                                  => Returns the index where the text is found
 s.count ("i")                                   => Counts the occurrence of a text
+re.findall('[.,’]', s)                          => Counts several chars in a text
 [n for n in range(len(txt)) if txt.find('/', n) == n]	=> Return all findings of the search string ("/") in the other string (txt)
 [x.start() for x in re.finditer('ist', s)]      => Returns all indexwa as a list (needs import re)
 s = s.lower()                                   => Lowercase the whole string
@@ -333,7 +334,8 @@ s = s.capitalize()                              => Capitalize the first char
 s = s.title()                                   => Capitalize the first char of all words
 s.startswith("H")								                => Check if the string is starting with char "H"
 s.endswith("H")	      							            => Check if the string is ending with char "H"
-s.split()                                       => Split the words in a list
+s.split(" ")                                    => Split the words in a list which are seperated by " "
+re.split(" |\n| ,", s)                          => Split for several chars (eg. " " and "\n" and " ,")
 s.split('=>', 1)[0]								              => Split till the first occurence of "=>"
 s.splitlines()                                  => Split sentences after line breaks
 s = s.strip()                                   => Delete all whitespaces at the beginning and the end
