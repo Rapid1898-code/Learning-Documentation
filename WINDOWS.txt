@@ -2,3 +2,6 @@
 Start - Systemsteuerung - System - Erweiterte Systemeinstellungen
 Umgebungsvariablen - Select Path Variable - Select Path in Systemvariablen - Bearbeiten
 Neu - Add eg. C:\Program Files\heroku\bin
+
+###### Shortcut for Changing KeyBoard Layout
+Shift + Alt
