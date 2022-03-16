@@ -3006,6 +3006,7 @@ qtw.QMainWindow                 # Module for main windows
 qtw.QStatusBar                  # Module for status bar
 qtw.QToolBar                    # Module for tool bar
 qtw.QMessageBox                 # Module for Message Boxes
+qtw.QCommandLinkButton          # Module for Command Link Button
 ""
 
 => Main Window
@@ -3036,7 +3037,8 @@ qfLayout.addRow(lbl, inp)                               # Add row in form (Label
 qgLayout.addWidget(QPushButton('Button1'),1,0)          # Defines one or more buttons and set it to position 1,0
 qgLayout.addWidget(QPushButton('Button1'),2,1,1,2)      # Set buttons to position 2,1 and span it 1row/2cols
 w.setLayout(layoutXY)                                   # Sets layout dimensions to window
-""#=> Button / QPushButton
+
+=> Button / QPushButton
 ""
 btn = qtw.QPushButton(self)                             # Define Push-Button
 layout.addWidget(btn)                                   # Add ComboBox to layout
@@ -3049,6 +3051,7 @@ btn = qtw.QPushButton(self, clicked = lambda: self.btnPressedCalc())   => 2nd me
 ""
 lbl = qtw.QLabel("Name:", self)                         # Define Label
 layout.addWidget(lbl)                                   # Add Label to layout
+lbl.setText("xyz")                                      # Set text of label
 ""
 
 => Input-Field / QLineEdit
@@ -3110,6 +3113,27 @@ sp = qtx.QDoubleSpinBox (self)    # create spinbox for floats
       placeholderText="ABC",
       readOnly=False)
 ""
+
+=> RadioButtons / QRadioButton
+""
+  rb = qtw.QRadioButton(self)     # define radio button
+  rb.isChecked()                  # return true if radio-button is selected
+  rb.text()                       # outputs text of the radio button
+  rbHam.setChecked()              # check radio button (eg. for default setting when opening)
+  rb.setText("xyz")               # change name of the radio button to xyz
+  rb.toggled.connect(lambda: self.func())   # call function when radio-button is pressed
+""
+
+
+
+=> Statusbar
+""
+statbar = qtv.QStatusBar(self)    # create Statusbar
+statbar.showmessage("xyz")        # show message in status bar
+
+""
+
+
 
 => MessageBox
 ""
