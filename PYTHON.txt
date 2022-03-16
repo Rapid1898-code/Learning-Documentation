@@ -3007,6 +3007,8 @@ qtw.QStatusBar                  # Module for status bar
 qtw.QToolBar                    # Module for tool bar
 qtw.QMessageBox                 # Module for Message Boxes
 qtw.QCommandLinkButton          # Module for Command Link Button
+qtw.QCheckBox                   # Module for CheckBox
+qtw.QDialog                     # Moduel for Dial Widget
 ""
 
 => Main Window
@@ -3072,6 +3074,7 @@ layout.addRow("Name:",cb)                               # Add ComboBox to form-l
 cb.currentText()                                        # Actual selected value (AAPL, BRK, CYP)
 cb.currentData()                                        # The data of the selected item (23, 47, 78)
 cb.currentIndex()                                       # Index-number of the selected item
+cb.activated.connect(self.funcClicker)                  # Call function when entry in combobox is selected
 cb = qtw.QComboBox(self,                                # Create editable ComboBox
   editable=True,
   insertPolicy=qtw.QComboBox.InsertAtBottom 
@@ -3119,12 +3122,32 @@ sp = qtx.QDoubleSpinBox (self)    # create spinbox for floats
   rb = qtw.QRadioButton(self)     # define radio button
   rb.isChecked()                  # return true if radio-button is selected
   rb.text()                       # outputs text of the radio button
-  rbHam.setChecked()              # check radio button (eg. for default setting when opening)
+  rbHam.setChecked(True)          # check radio button (eg. for default setting when opening)
   rb.setText("xyz")               # change name of the radio button to xyz
   rb.toggled.connect(lambda: self.func())   # call function when radio-button is pressed
 ""
 
+=> CheckBoxes / QCheckBox
+""
+  cb = qtw.QCheckBox(self)      # define checkbox
+  cb.setChecked(True)           # check checkbox
+  cb.isChecked()                # return true if check-box is checked
+  cb.checkState()               # return 0 when unchecked, return 1 when checked
+  cb.stateChanged.connect(lambda: self.checked())   # call function when state of checkbox change
+  cb.toggled.connect(lambda:self.checked())         # call function when checkbox is pressed
+""
 
+=> DialWidget / QDial
+""
+  dw = qtw.QDial              # define dial widget
+  dw.value()                  # get the value of the dial widget
+  dw.setMinimum(10)           # set minimum to 10       
+  dw.setMaximum(360)          # set minimum to 10       
+  dw.setRange(100,200)        # set range (with min and max)
+  dw.setValue(50)             # set (default-)value
+  dw.setNotchesVisible(True)  # put scale on the widget
+  dw.valueChanged.connect(lambda: self.func())      # call function when dial widget is turned around
+""
 
 => Statusbar
 ""
@@ -3132,8 +3155,6 @@ statbar = qtv.QStatusBar(self)    # create Statusbar
 statbar.showmessage("xyz")        # show message in status bar
 
 ""
-
-
 
 => MessageBox
 ""
