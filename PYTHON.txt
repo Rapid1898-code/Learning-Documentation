@@ -800,6 +800,14 @@ person = json.loads(json_format)					          => Convert / Decode a json-file t
 with open(fn.json,"r") as data: d=json.load(file)	  => Reading information in json-format
 print(json.dumps(erg, indent=4, sort_keys=True))    => Pretty-Print formatted json-file
 
+=> UTF8-errors
+=> when there are utf-8 errors pls try to set the system variables
+""
+import sys
+sys.stdin.reconfigure(encoding='utf-8')
+sys.stdout.reconfigure(encoding='utf-8')
+""
+
 => read JSON from file
 => ignoring errors and handles multiple json-objects
 ""
@@ -1262,6 +1270,7 @@ ws2.conditional_formatting.add(f"K4:K12", ruleBottomGreen)
 => Update XLSX in reealtime
 import xlwings as xw                                    => Import module
 app = xw.App(visible=False)                             => Use xlwings with hidden excel-worksheets
+wb = xw.Book()                                          => Create a new workbook
 wb = xw.Book ("name.xlsx")                              => Read XLSX
 wb = xw.Book ("name.xlsx", password("xyz"))             => Read XLSX with password protection
 ws = wb.sheets["name_sheet"]                            => Read specific worksheet
@@ -3175,7 +3184,6 @@ buttons = QDialogButtonBox()                            # Define buttons for a d
 buttons.setStandardButtons(QDialogButtons.OK)           # Defines a ok button on a dialog window
 class Window(QMainWindow):                              # Defines a class Windows which inherits from QMainWindow
 
-
 => PyQt5Designer
 ""
 pip install PyQt5Designer                 # Install PyQt5Designer
@@ -3188,6 +3196,23 @@ pyuic5 -x filename.ui -o filename.py      # Convert Qt-Designer file to a python
 ""
 import PyQt5.QtGui as qtg                               # Import Gui for changing fontsize
 nameLabel.setFont(qtg.QFont("Helvetica", 18))           # Change font of the label
+""
+
+=> Open other Window / Dialog
+=> Click button one window to open another window
+""
+  from Window2from24 import Ui_SubWindow      # import Class / Window from other py-file
+  from Dialog24 import Ui_Dialog              # import Class / Dialog from other py-file
+  ...
+  def openWindow(self):
+    self.window = QtWidgets.QMainWindow()     # Which widget should be opened QMainWindow / QDialog
+    self.ui = Ui_SubWindow()                  # Class Name of the window which sould be opened
+    self.ui.setupUi(self.window)              
+    self.window.show()
+    self.ui.label.setText("New")              # Access some elements on the opened window
+  ...
+  self.pb.clicked.connect(self.openDialog)    # call the function where the window is opened
+  self.pb2.clicked.connect(self.openWindow)   # call the function where the dialog is opened
 ""
 
 => Simplest App
