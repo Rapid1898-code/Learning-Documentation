@@ -530,6 +530,19 @@ l = sorted(d.items(), key=lambda e: e[1][2])                            => Sort 
 l = sorted(d.items(), key=lambda e: e[1][2], reverse=True)              => Sort dict and output list, sorted according to the 3rd element of the list in the dict - descending
 d3 = {key: d1.get(key,0)+d2.get(key,0) for key in set(d1)|set(d2)}      => Merge 2 dictionaries
 
+=> save dict to pkl-file
+""
+import pickle
+with open("fn.pkl", "wb") as f:
+  pickle.dump(dict, f)
+""
+
+=> read dict from pkl-file
+""
+import pickle
+with open('fn.pkl', 'rb') as f:
+  d = pickle.load(f)    
+""
 
 
 
@@ -1274,6 +1287,7 @@ wb = xw.Book()                                          => Create a new workbook
 wb = xw.Book ("name.xlsx")                              => Read XLSX
 wb = xw.Book ("name.xlsx", password("xyz"))             => Read XLSX with password protection
 ws = wb.sheets["name_sheet"]                            => Read specific worksheet
+ws = wb.sheets[0]                                       => Read first worksheet
 ws["A1"].value = "xyz"                                  => Updates specific cell
 f = ws["A1"].formula                                    => Reads the formula of a cell (not the value)
 for i in ws.range("A3:A7"): i.value = ""				        => Iterate trough cells an set them to "" / None
