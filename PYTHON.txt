@@ -3088,17 +3088,18 @@ inp.clear()                                             # Delete content of inpu
 
 => ComboBox / QComboBox
 ""
-cb = qtw.QComboBox(self)                                # Create ComboBox
-l = [("AAPL",23),("BRK",47),("CYP",78)]                 # Define list with shown value and data behind (eg. AAPL and 23)
-cb.addItems(l)                                          # Add list of items to combobox as content
-cb.addItem(s)                                           # Add one item to combobox as content
-layout.addWidget(cb)                                    # Add ComboBox to layout
-layout.addRow("Name:",cb)                               # Add ComboBox to form-layout
-cb.currentText()                                        # Actual selected value (AAPL, BRK, CYP)
-cb.currentData()                                        # The data of the selected item (23, 47, 78)
-cb.currentIndex()                                       # Index-number of the selected item
-cb.activated.connect(self.funcClicker)                  # Call function when entry in combobox is selected
-cb = qtw.QComboBox(self,                                # Create editable ComboBox
+cb = qtw.QComboBox(self)                    # Create ComboBox
+l = [("AAPL",23),("BRK",47),("CYP",78)]     # Define list with shown value and data behind (eg. AAPL and 23)
+cb.addItems(l)                              # Add list of items to combobox as content
+cb.addItem(s)                               # Add one item to combobox as content
+layout.addWidget(cb)                        # Add ComboBox to layout
+layout.addRow("Name:",cb)                   # Add ComboBox to form-layout
+cb.currentText()                            # Actual selected value (AAPL, BRK, CYP)
+cb.currentData()                            # The data of the selected item (23, 47, 78)
+cb.currentIndex()                           # Index-number of the selected ite
+cb.clear()                                  # Clear / empty combo box
+cb.activated.connect(self.funcClicker)      # Call function when entry in combobox is selected
+cb = qtw.QComboBox(self,                    # Create editable ComboBox
   editable=True,
   insertPolicy=qtw.QComboBox.InsertAtBottom 
 ""
@@ -3133,6 +3134,8 @@ sp = qtx.QDoubleSpinBox (self)    # create spinbox for floats
 ""
   txt = qtw.QTextEdit(self)       # create Textfield
   layout.addWidget(txt)           # add textfield to layout
+  txt.toPlainText()               # convert Text to plain text
+  txt.setPlainText("xyz")         # set Textfield to xyz
   txt = qtw.QTextEdit(self,
       lineWrapMode = qtw.QTextEdit.FixedColumnWidth,
       lineWrapColumnOrWidth = 50,
@@ -3227,6 +3230,13 @@ nameLabel.setFont(qtg.QFont("Helvetica", 18))           # Change font of the lab
   ...
   self.pb.clicked.connect(self.openDialog)    # call the function where the window is opened
   self.pb2.clicked.connect(self.openWindow)   # call the function where the dialog is opened
+""
+
+=> Load ui-file in py-file
+""
+uic.loadUi("27LoadUIFile.ui",self)    # load the ui-file
+self.l = self.findChild(qtw.QLabel, "label")    # assign label from ui
+self.btn = self.findChild(qtw.QPushButton, "pushButton")    # assign push button from ui
 ""
 
 => Simplest App
