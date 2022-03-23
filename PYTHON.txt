@@ -3031,7 +3031,8 @@ qtw.QToolBar                    # Module for tool bar
 qtw.QMessageBox                 # Module for Message Boxes
 qtw.QCommandLinkButton          # Module for Command Link Button
 qtw.QCheckBox                   # Module for CheckBox
-qtw.QDialog                     # Moduel for Dial Widget
+qtw.QDialog                     # Module for Dial Widget
+qtw.QFileDialog                 # Module for File Dialog
 ""
 
 => Main Window
@@ -3068,6 +3069,7 @@ w.setLayout(layoutXY)                                   # Sets layout dimensions
 btn = qtw.QPushButton(self)                             # Define Push-Button
 layout.addWidget(btn)                                   # Add ComboBox to layout
 btn.setText("Calc")                                     # Set Text of button
+btn.setEnabled(False)                                   # Deactivate the button
 btn.clicked.connect(self.btnPressedCalc)                # Set Function which should run when the button is clicked
 btn = qtw.QPushButton(self, clicked = lambda: self.btnPressedCalc())   => 2nd method to assign a function (short method)
 ""
@@ -3077,6 +3079,7 @@ btn = qtw.QPushButton(self, clicked = lambda: self.btnPressedCalc())   => 2nd me
 lbl = qtw.QLabel("Name:", self)                         # Define Label
 layout.addWidget(lbl)                                   # Add Label to layout
 lbl.setText("xyz")                                      # Set text of label
+lbl.setPixmap(self.pixMap)                              # Show picture in label
 ""
 
 => Input-Field / QLineEdit
@@ -3186,6 +3189,19 @@ statbar.showmessage("xyz")        # show message in status bar
   msg.setText("Your Todo List has been saved!")   # Set Text of Message-Box
   msg.setIcon(QMessageBox.Information)            # Set Info-Icon for Message-Box
   ""
+
+=> FileDialog / QFileDialog
+""
+  # get Filename, 
+  # 1st parameter: name of the window-filedialog eg. "Open File"
+  # 2nd parameter: name of the folder where openend eg. "" is the actual directory
+  # 3rd parameter: which files can be selected eg. "All Files" for all files
+  # returning a tuple (name of the file and selected extension)
+  fName = qtw.QFileDialog.getOpenFileName(self, "Open File", "", "All Files (*)") 
+  fName = qtw.QFileDialog.getOpenFileName(self, "Open File", "C:\\TEMP", "All Files (*)") 
+  fName = qtw.QFileDialog.getOpenFileName(self, "Open File", "", "All Files (*);;Python Files(*.py)")     
+  fName[0]    # to get only the choosen filename
+""
 
 => Menu or Icon / QAction
 ""
