@@ -1,12 +1,22 @@
-### Create a filter list without duplicates and empty cells
-see: Excel_HowtoDropBoxWithoutBlanks.xlsx
-- define input-values in eg. column a
-- copy this formula in eg. column c:
-  =IFERROR(INDEX($A$1:$A$100; MATCH(0; COUNTIF($C$1:C1; $A$1:$A$100&"") + IF($A$1:$A$100="";1;0); 0)); "")
-- define List-Name in Formulas => Name Mangaer: eg.
-  =OFFSET(Tabelle1!$C$2;;;COUNTIF(Tabelle1!$C$2:$C$100;"> ");1)
-- define List-Element in Data => Data Validation => List and reference to List-Name from above: eg. 
-  =LIST
+### Calculate the growht of 2 values
+()newval - oldval) / oldVal * 100
+
+
+### How to make a lookup to some other information
+=VLOOKUP(A8;Admin!$A$3:$C$100;2;FALSE)      # english version
+=SVERWEIS(A8;Admin!$A$3:$C$100;2;FALSE)     # german version
+A8: key-value what should be checked
+Admin!$A$3:$F$100: area where the detail informations are stored - key-value must be in first column
+2: which column should be taken - in that case the second column of the above list
+FALSE: default value when the key-value is not found
+
+
+### How to create a dependant dropdownbox
+see: C:\Users\Polzi\Documents\DEV\Learning-Documentation\Excel_HowToDependent_Drop_Down_EveryRow.xlsx
+=OFFSET(Work!$A$1;1;MATCH($B2;Work!$A$1:$Z$1;0)-1;COUNTA(OFFSET(Work!$A$1;1;MATCH($B2;Work!$A$1:$Z$1;0)-1;20));1)
+Work!$A$1: erste Überschrift der Abhängigkeitsdaten der 2.Auswahl
+$B2 => Auswahlelement, welche geprüft werden soll
+Work!$A$1:$Z$1 => alle Überschriften, der 2.Auswahl
 
 
 ### How to call a python-program in excel with VBA
@@ -31,14 +41,12 @@ If ThisWorkbook.Sheets("PARAM").Range("B4").Value = "y" then
 End IF
 
 
-### How to make a lookup to some other information
-=VLOOKUP(A8;Admin!$A$3:$C$100;2;FALSE)      # english version
-=SVERWEIS(A8;Admin!$A$3:$C$100;2;FALSE)     # german version
-A8: key-value what should be checked
-Admin!$A$3:$F$100: area where the detail informations are stored - key-value must be in first column
-2: which column should be taken - in that case the second column of the above list
-FALSE: default value when the key-value is not found
-
-
-### Calculate the growht of 2 values
-()newval - oldval) / oldVal * 100
+### Create a filter list without duplicates and empty cells
+see: Excel_HowtoDropBoxWithoutBlanks.xlsx
+- define input-values in eg. column a
+- copy this formula in eg. column c:
+  =IFERROR(INDEX($A$1:$A$100; MATCH(0; COUNTIF($C$1:C1; $A$1:$A$100&"") + IF($A$1:$A$100="";1;0); 0)); "")
+- define List-Name in Formulas => Name Mangaer: eg.
+  =OFFSET(Tabelle1!$C$2;;;COUNTIF(Tabelle1!$C$2:$C$100;"> ");1)
+- define List-Element in Data => Data Validation => List and reference to List-Name from above: eg. 
+  =LIST
