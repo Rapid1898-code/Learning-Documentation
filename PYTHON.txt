@@ -3064,6 +3064,8 @@ btn.setText("Calc")                                     # Set Text of button
 btn.setEnabled(False)                                   # Deactivate the button
 btn.clicked.connect(self.btnPressedCalc)                # Set Function which should run when the button is clicked
 btn = qtw.QPushButton(self, clicked = lambda: self.btnPressedCalc())   => 2nd method to assign a function (short method)
+btn.setStyleSheet("QPushButton {color: red;}")          # Set color of button to red
+btn.setStyleSheet("QPushButton {color: #797979;}")      # Set color of button to hex-code
 ""
 
 => Label / QLabel
