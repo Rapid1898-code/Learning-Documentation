@@ -135,24 +135,15 @@ pip install -r requirements.txt   => install modules from requirements.txt
 Ctrl K Ctrl C				    => Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
 Ctrl K Ctrl U				    => Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
 Ctrl F   		   			    => Find in File
-<<<<<<< HEAD
-Ctrl Shift              => Search in all files
-Ctrl H        F	   			=> Replace in File
-Ctrl Shift H			      => Replace in Path (in all Files)
-Ctrl L                  => Selects whole line
-=======
-Ctrl Shift f            => Search in all files
+Ctrl Shift F            => Search in all files
 Ctrl H        	   			=> Replace in File
 Ctrl Shift H			      => Replace in Path (in all Files)
->>>>>>> 5d687b355efef6a5c81fc23210897eb42a06fed5
-F8            					=> Jump to the next error
-Shift + F8              => Jump to the next error (backwards)
+Ctrl L                  => Selects whole line
+Ctrl 1/2/3              => Jump to this Grouping Window
 F3       						    => Find next
 Ctrl G     				    	=> Goto line
 Shift Alt Up/Down			  => Copy / Duplicate lines	
 Alt Up/Down		          => Move line
-Ctrl E1      				    => Recent opened files
-Ctrl K Left/Right       => Switch windows in IDE
 Alt Enter				        => Suggestions for fix error, function informations
 Alt 1					          => Open the project windows (on the left side)
 Alt F7					        => Show usage of the variable, function, class
@@ -173,48 +164,49 @@ Ctrl B							    => Hide/Show sidebar
 Ctrl J                  => Hide/Show terminal 
 Ctrl P                  => Show command line (eg. open a file where the name is known)
 Ctrl Shift P					  => Open the the command panel
-Ctrl TAB                        => Toggle through the open files in the editor
-Ctrl WARNING                    => Close File
-Ctrl Alt Up/Down (click Left)   => MultiCursor - Select more cursors in rows for multiple change in rows
-Ctrl D							=> MultiCursor - Select Cursor at multiple positions for the same name
-Ctrl Shift L                    => Select all occurences of this word in the document and change all with one change
-Ctrl D                          => Select whole word
-Ctrl Click                      => Jump to the function definition
-Ctrl W                          => Close Tab
-Ctrl Space                      => Show suggestions for the actual code function / method
+Ctrl TAB                => Toggle through the open files in the editor
+Ctrl WARNING            => Close File
+Ctrl Alt Up/Down        => MultiCursor - Select more cursors in rows for multiple change in rows
+Ctrl D							    => MultiCursor - Select Cursor at multiple positions for the same name
+Ctrl Shift L            => Select all occurences of this word in the document and change all with one change
+Ctrl D                  => Select whole word
+Ctrl Click              => Jump to the function definition
+Ctrl W                  => Close Tab
+Ctrl Space              => Show suggestions for the actual code function / method
                   
-
 
 
 ###### SHORTCUTS INTELLIJ IDEA IDE, CHROME, WINDOWS
 => https://www.shortcutfoo.com/app/dojos/intellij-idea-win/cheatsheet
 ""
-Ctrl / 				# Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
-Ctrl / 				# Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
-Ctrl Alt F7 	    # Find usages
-Ctrl F    		   	# Find in File
-Ctrl R         	   	# Replace in File
-Ctrl Shift R 		# Replace in Path (in all Files)
-F2            		# Jump to the next error
-F3        			# Find next
-Ctrl G      		# Goto line
-Ctrl D 			    # Copy / Duplicate lines	
+Ctrl / 				      # Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
+Ctrl / 				      # Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
+Ctrl Alt F7 	      # Find usages
+Ctrl F    		      # Find in File
+Ctrl R         	    # Replace in File
+Ctrl Shift R 		    # Replace in Path (in all Files)
+F2            	    # jump to the next error
+F3        			    # Find next
+Ctrl G      		    # Goto line
+Ctrl D 			        # Copy / Duplicate lines	
+Ctrl X              # Cut line (when nothing selected)
+Ctrl C              # Copy line (when nothing selected)
 Alt Shift Down/Up 	# Move line
-Ctrl E       		# Recent opened files
+Ctrl E       		    # Recent opened files
 Ctrl TAB            # Switch windows in IDE
 Ctrl (Shift) W      # Select / deselect parts of the code step by step
-Alt Enter			# Suggestions for fix error, function informations
-Alt 1				# Open the project windows (on the left side)
-Alt F7				# Show usage of the variable, function, class
-Esc					# Focus back on the editor window
-Ctrl Shift -    	# Collapse everything
+Alt Enter			      # Suggestions for fix error, function informations
+Alt 1				        # Open the project windows (on the left side)
+Alt F7				      # Show usage of the variable, function, class
+Esc					        # Focus back on the editor window
+Ctrl Shift -    	  # Collapse everything
 Ctrl Shift +        # Exapnds everything
-Ctrl - 				# Collapse block ("-" on numblock)
-Ctrl + 				# Expand block ("+" on numblock)
-Ctrl A         		# Select whole file
-Ctrl (Shift) Z 		# Undo (backwards) / Redo (forwards)
-Ctrl Shift Left 	# Select word to the beginning
-Ctrl Shift Right 	# Select word to the end 
+Ctrl - 				      # Collapse block ("-" on numblock)
+Ctrl + 				      # Expand block ("+" on numblock)
+Ctrl A         		  # Select whole file
+Ctrl (Shift) Z 		  # Undo (backwards) / Redo (forwards)
+Ctrl Shift Left 	  # Select word to the beginning
+Ctrl Shift Right 	  # Select word to the end 
 Ctrl Left / Right 	# Go one word left
 Ctrl Y              # Delete current line
 Ctrl Del            # Delete to end of word
@@ -419,7 +411,7 @@ if sorted(l, reverse=True) == l					         => Check if a list is sorted by des
 l.sort(key=len)									                 => Sort list by len of elements
 l = [[1,4,3], [2,2,4], [3,1,5]]					         => Define nested list
 l.sort(key=lambda x: x[1])						           => Sort nested list for the 2nd element ascending
-inpItems.sort(key=lambda x: (x[0], x[1]))        => Sort nested list 1st for the 1st elem, then for the 2nd elem
+l.sort(key=lambda x: (x[0], x[1]))               => Sort nested list 1st for the 1st elem, then for the 2nd elem
 l.sort(key=lambda x: x[1], reverse=True)		     => Sort nested list for the 2nd element descending
 l.reverse()                                      => Reverse the complete list
 l_reverse = list(reversed(l))                    => Reverse complete list and store it in different independent list
@@ -3072,6 +3064,8 @@ btn.setText("Calc")                                     # Set Text of button
 btn.setEnabled(False)                                   # Deactivate the button
 btn.clicked.connect(self.btnPressedCalc)                # Set Function which should run when the button is clicked
 btn = qtw.QPushButton(self, clicked = lambda: self.btnPressedCalc())   => 2nd method to assign a function (short method)
+btn.setStyleSheet("QPushButton {color: red;}")          # Set color of button to red
+btn.setStyleSheet("QPushButton {color: #797979;}")      # Set color of button to hex-code
 ""
 
 => Label / QLabel
