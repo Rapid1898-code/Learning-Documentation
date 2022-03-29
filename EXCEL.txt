@@ -32,7 +32,8 @@ End IF
 
 
 ### How to make a lookup to some other information
-=VLOOKUP(A8;Admin!$A$3:$C$100;2;FALSE)
+=VLOOKUP(A8;Admin!$A$3:$C$100;2;FALSE)      # english version
+=SVERWEIS(A8;Admin!$A$3:$C$100;2;FALSE)     # german version
 A8: key-value what should be checked
 Admin!$A$3:$F$100: area where the detail informations are stored - key-value must be in first column
 2: which column should be taken - in that case the second column of the above list
