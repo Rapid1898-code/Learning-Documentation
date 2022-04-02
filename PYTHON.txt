@@ -2290,7 +2290,7 @@ engine = create_engine("data.db")							=> Create SQL Alchemy engine
 connection = engine.connect()								=> Establish connection with SQL Alchemy
 df = pd.read_sql_table("empl",con=connection)				=> Read whole table with SQL-Alechmy (many things are auto-done - e.g. Indexing,Parsing)
 df.to_sql("data.db",conn)									=> Writes dataframe to the sql-db (breaks when table allready exists)
-df.to_sql("data.db",conn,if_exists="replace")				=> Writes dataframe to the sql-db (with droping the table before inserting)
+df.to_sql("Dadata.db",conn,if_exists="replace")				=> Writes dataframe to the sql-db (with droping the table before inserting)
 df.to_sql("data.db",conn,if_exists="append")				=> Writes dataframe to the sql-db (with inserting new values to existing table)
 
 => HTML
