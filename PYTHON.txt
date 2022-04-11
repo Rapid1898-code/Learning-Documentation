@@ -2724,6 +2724,23 @@ cssSelector
 XPath
 ""
 
+=> Solving some captchas - clicking for 10 seconds
+""
+  element = driver.find_element(By.XPATH,"//div[@id='px-captcha']")
+  action = ActionChains(driver)
+  click = ActionChains(driver)
+  action.click_and_hold(element)
+  action.perform()
+  time.sleep(10)
+  action.release(element)
+  action.perform()
+  time.sleep(0.2)
+  action.release(element)
+""
+
+
+
+
 
 ###### MODULE - BEAUTIFUL SOAP - webscraping
 from bs4 import BeautifulSoap									=> Import module for beautiul soap
