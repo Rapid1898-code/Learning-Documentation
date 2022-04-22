@@ -32,6 +32,7 @@
 #> MODULE - PYTHON-DOCX - working with word docx
 #> MODULE - WIN32COM - creating worksheets as pdf from xlsx
 #> MODULE - PyPDF2 - working with pdfs
+#> MODULE - PYODBC - odbc-access (MS Access)
 #> MYSQL - MARIADB - HEIDISQL
 #> MYSQL - MARIADB - SQL
 #> MYSQL - MYSQL.CONNECTOR
@@ -1451,10 +1452,30 @@ page.mergePage(watermark_page)							=> Overlaying / Watermarking two pages
 
 
 
+MODULE - PYODBC - odbc-access (MS Access)
+import pyodbc       => import the module
+=> Read data from MS Access DB
+""
+FN = "dataOdd.accdb"
+path = os.path.abspath(os.path.dirname(sys.argv[0])) 
+fn = path + "/" + FN
+msAccess = r"{Microsoft Access Driver (*.mdb, *.accdb)}"
+connPath = f'Driver={msAccess};DBQ={fn};'
+
+conn = pyodbc.connect(connPath)
+cursor = conn.cursor()
+cursor.execute('select * from dataOdds')
+
+for row in cursor.fetchall():
+    print (row)
+""
+
+
+
 ###### MYSQL - MARIADB - HEIDISQL
-C:\Program Files\MariaDB 10.3\data				=> Data where the MariaDB-database is stored
+C:\Program Files\MariaDB 10.3\data				    => Data where the MariaDB-database is stored
 C:\ProgramData\MySQL\MYSQL Server 8.0\data		=> Data where the MySQL-database is stored
-HeidiSQL - Datei / Verbindungsmanager			=> Shows the database-version in the column header	
+HeidiSQL - Datei / Verbindungsmanager			    => Shows the database-version in the column header	
 
 => Transfer whole table from local db to hosted db
 ""
