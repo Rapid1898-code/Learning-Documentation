@@ -1454,20 +1454,73 @@ page.mergePage(watermark_page)							=> Overlaying / Watermarking two pages
 
 MODULE - PYODBC - odbc-access (MS Access)
 import pyodbc       => import the module
-=> Read data from MS Access DB
+=> Define connection and cursor for access-db
 ""
 FN = "dataOdd.accdb"
 path = os.path.abspath(os.path.dirname(sys.argv[0])) 
 fn = path + "/" + FN
 msAccess = r"{Microsoft Access Driver (*.mdb, *.accdb)}"
 connPath = f'Driver={msAccess};DBQ={fn};'
-
 conn = pyodbc.connect(connPath)
 cursor = conn.cursor()
-cursor.execute('select * from dataOdds')
+""
 
+=> Read data
+""
+cursor.execute('select * from dataOdds')
 for row in cursor.fetchall():
     print (row)
+""
+
+=> Insert data
+""
+sql = "INSERT INTO dataOdds (" \
+      "[Date]," \
+      "Name," \
+      "Links," \
+      "Fixture) " \
+      "VALUES (?,?,?,?)" 
+cont = [
+        datetime.today().date(),
+        "ABCDEFGH",
+        "ichbineinlink.html",
+        "01:  -  Race Test Race"
+       ]
+cursor.execute(sql, cont)
+conn.commit()
+""
+
+=> Update data
+""
+sql = "UPDATE dataOdds " \
+      "SET Links = ? " \
+      "WHERE Date = ? " \
+      "AND Name = ? " \
+      "AND Fixture = ?"
+cont = [
+        "ABC",
+        "2022-03-24",
+        "Albury",
+        "02:35  -  Race 1 Trackpix maiden showcase plate"
+       ]
+cursor.execute(sql, cont)
+conn.commit()
+""
+
+=> Delete data
+""
+### delete data
+sql = "DELETE FROM dataOdds " \
+      "WHERE Date = ? " \
+      "AND Name = ? " \
+      "AND Fixture = ?"
+cont = [
+        "2022-04-22",
+        "ABCDEFGH",
+        "01:  -  Race Test Race"
+       ]
+cursor.execute(sql, cont)
+conn.commit()
 ""
 
 
