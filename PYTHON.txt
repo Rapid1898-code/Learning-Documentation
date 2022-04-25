@@ -426,8 +426,8 @@ len(max(mylist, key=len))						 => Find lenght of longest string in the list
 sum(l)                                           => Sum of all elements in the list
 2xls_sum  = [sum(pair) for pair in zip(l1, l2)]  => Pair Sorting from 2 lists (1 with 1, 2 with 2, 3 mit 3, aso.) 
 len(l)                                           => Count of elements in list
-l.count("a")									 => Count of occurence of the element "a" in the list	
-l2 = l1											 => No seperate copy of the list (updates in both lists)
+l.count("a")									                   => Count of occurence of the element "a" in the list	
+l2 = l1											                     => No seperate copy of the list (updates in both lists)
 l2 = l.copy()                                    => Separate individual copy of the list (no updates in both lists)
 l2 = l[:]                                        => Separate individual copy of the list - 2nd variant
 l2 = list(l)                                     => Separate individual copy of the list - 3rd variant
