@@ -2901,9 +2901,9 @@ resp.headers                                    => header from the response
 resp.headers["Content-Type"]                    => show the content-type of the resonse (eg. json, image/jpeg)
 resp.text                                       => response in text-form
 resp.json()                                     => response in json-form
-print(json.dumps(respJSON,                      => Pretty-Print formatted json-file
-                indent=4,
-                sort_keys=True))
+print(json.dumps(resp,indent=4,sort_keys=True)) => Pretty-Print formatted json-file
+                
+                
 result = api[0]["xyz"]								          => Read the value for the 1 element and the attribute xyz
 
 
