@@ -3185,7 +3185,7 @@ layout.addWidget(cb)                        # Add ComboBox to layout
 layout.addRow("Name:",cb)                   # Add ComboBox to form-layout
 cb.currentText()                            # Actual selected value (AAPL, BRK, CYP)
 cb.currentData()                            # The data of the selected item (23, 47, 78)
-cb.currentIndex()                           # Index-number of the selected ite
+cb.currentIndex()                           # Index-number of the selected item
 cb.clear()                                  # Clear / empty combo box
 cb.activated.connect(self.funcClicker)      # Call function when entry in combobox is selected
 cb = qtw.QComboBox(self,                    # Create editable ComboBox
@@ -3336,8 +3336,8 @@ nameLabel.setFont(qtg.QFont("Helvetica", 18))           # Change font of the lab
 
 => Load ui-file in py-file
 ""
-uic.loadUi("27LoadUIFile.ui",self)    # load the ui-file
-self.l = self.findChild(qtw.QLabel, "label")    # assign label from ui
+uic.loadUi("27LoadUIFile.ui",self)            # load the ui-file
+self.l = self.findChild(qtw.QLabel, "label")  # assign label from ui
 self.btn = self.findChild(qtw.QPushButton, "pushButton")    # assign push button from ui
 ""
 
