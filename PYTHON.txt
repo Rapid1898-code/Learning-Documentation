@@ -2904,6 +2904,12 @@ time.sleep (2)  														# Wait till the full site is loaded
 ""
 element = driver.find_element_by_id("analyst-estimate")					
 driver.execute_script("arguments[0].scrollIntoView();", element)			
+
+driver.execute_script("return arguments[0].scrollIntoView(true);", 
+  WebDriverWait(driver, 20).until(EC.visibility_of_element_located((
+    By.XPATH, "//div[@class='search-pagination']"))))
+
+
 time.sleep (1)
 ""
 soup = BeautifulSoup(driver.page_source, 'html.parser')        			=> Read page with html.parser and to the further scraping
