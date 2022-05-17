@@ -50,3 +50,11 @@ see: Excel_HowtoDropBoxWithoutBlanks.xlsx
   =OFFSET(Tabelle1!$C$2;;;COUNTIF(Tabelle1!$C$2:$C$100;"> ");1)
 - define List-Element in Data => Data Validation => List and reference to List-Name from above: eg. 
   =LIST
+
+
+  ### Delte empty cells / rows
+  - select empty cell
+  - STRG G und Inhalte...
+  - select Leerzeilen / empty rows
+  - STRG -
+  - select shift cells up
