@@ -1049,6 +1049,7 @@ ws["A1"] = "=SUBTOTAL(1,I6:I10000)"             => Assign formula to specific ce
 wb.save("Test2.xlsx")                           => Save workbook to xlsx
 wb._sheets.sort(key=lambda ws: ws.title)			  => Sort worksheets in workbook
 wb.copy_worksheet(ws)                           => Copy worksheet in workbook
+ws1.range('A1:Z20').copy(wb2.sheets[0].range('A1:Z20'))   => Copy part of the worksheet
 
 => Loop trough specific area and print the cell values
 ""
@@ -3168,17 +3169,19 @@ btn.setStyleSheet("QPushButton {color: #797979;}")      # Set color of button to
 
 => Label / QLabel
 ""
-lbl = qtw.QLabel("Name:", self)                         # Define Label
-layout.addWidget(lbl)                                   # Add Label to layout
-lbl.setText("xyz")                                      # Set text of label
-lbl.setPixmap(self.pixMap)                              # Show picture in label
+lbl = qtw.QLabel("Name:", self)    # Define Label
+layout.addWidget(lbl)              # Add Label to layout
+lbl.setText("xyz")                 # Set text of label
+lbl.setPixmap(self.pixMap)         # Show picture in label
 ""
 
 => Input-Field / QLineEdit
 ""
-inp = qtw.QLineEdit(self)                               # Define Input-Field
-layout.addWidget(inp)                                   # Add input field to layout
-inp.clear()                                             # Delete content of input-field
+inp = qtw.QLineEdit(self)                 # Define Input-Field
+layout.addWidget(inp)                     # Add input field to layout
+inp.clear()                               # Delete content of input-field
+inp.text()                                # Get actual text from the input-field
+inp.textChanged.connect(self.inputName)   # Call function when something is changed
 ""
 
 => ComboBox / QComboBox
@@ -3192,6 +3195,9 @@ layout.addRow("Name:",cb)                   # Add ComboBox to form-layout
 cb.currentText()                            # Actual selected value (AAPL, BRK, CYP)
 cb.currentData()                            # The data of the selected item (23, 47, 78)
 cb.currentIndex()                           # Index-number of the selected item
+idx = cb.findText("xyz")                    # Find index of the element in the combobox
+cb.setCurrentIndex(idx+1)                   # Set element the found element by index
+cb.setEnabled(False)                        # Disable or enable combobox
 cb.clear()                                  # Clear / empty combo box
 cb.activated.connect(self.funcClicker)      # Call function when entry in combobox is selected
 cb = qtw.QComboBox(self,                    # Create editable ComboBox
