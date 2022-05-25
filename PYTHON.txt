@@ -2648,7 +2648,7 @@ driver.execute_script("window.scrollTo(0, 10000)")                  => ScrollDow
 
 => Switch between iframes
 ""
-iframe = driver.find_element_by_xpath("//iframe[@name='DialWin']")  => Use XPath to locate iframe
+iframe = driver.find_element(By.XPATH, "//iframe[@id='mainFrame']") => Use XPath to locate iframe
 driver.switch_to.frame(iframe)                                      => Switch to iframe
 driver.switch_to.default_content()                                  => Switch back to default content
 ""
@@ -2814,7 +2814,12 @@ XPath
   action.release(element)
 ""
 
-
+=> Use only newest fake_useragent
+""
+  see: https://github.com/hellysmile/fake-useragent/pull/122
+  from fake_useragent import UserAgent
+  userAgent = UserAgent(num_newest_uas=2).random
+""
 
 
 
