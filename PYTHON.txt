@@ -1309,7 +1309,9 @@ wb.sheets["OldWS].delete()                              => Delete worksheet in w
 wb.sheets["WS"].api.Visible = False                     => Hide worksheet in workbook
 wb.save()                                               => Save workbook
 wb.close()                                              => Close workbook
-app.quit()                                              => Quit App when opened at the beginning
+wb.quit()                                               => Quit App when opened at the beginning
+wb.activate(steal_focus=True)                        => Bring workbook to the front of the screen
+
 
 ws.d
 [x for x in ws.range("A3:A2000").value if x != None]    => Load elements in list from range which are not None
