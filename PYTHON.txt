@@ -768,8 +768,8 @@ with open ("fn.txt","r+") as f: print(f.read()			=> Open File for Read and Write
 
 => Read textfile - stored in list per line
 ""
-with open("fn.txt","r") as f:                           
-    lines = [x.strip() for x in f.readlines()]          # Whitespaces are eliminated with strip()
+with open('exmplText_www.arsenal.pl', encoding="utf8") as f:
+  lines = f.readlines()
 ""
     
 with open("fn.txt","w") as obj: obj.write("Ein neuer Text")   => Writing in textfile
@@ -779,7 +779,6 @@ with open (fn,"a") as f: f.write("init")				=> Create and initialize file when n
 f.read()												=> Read content to string
 f.seek(0)												=> Set the current postion in the file to beginning
 f.write(s)												=> Write s to the f-file opened
-
     
 => Try/Except - checks if file can be saved
 ""
