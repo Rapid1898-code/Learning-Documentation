@@ -360,6 +360,7 @@ repr(s)											                    => Print string with special characters
 checkString = "A string is more than its parts!"
 checks = ["more", "blabla", "nothing"]   
 if any(x in checkstring for x in checks):         # check if any elems from checks is in checkstring
+if not any(x in checkstring for x in checks):     # check if any elems from checks are NOT in checkstring
 if all(x in checkstring for x in checks):         # check if all elems from checks is in checkstring
 ""
 
