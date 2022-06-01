@@ -829,6 +829,12 @@ jsonStrList = r.text.split("\n")
 jsonList = [json.loads(j, errors="ignore") for j in jsonStrList if j != '']
 ""
 
+=> write JSON to txt-file
+""
+with open('dataDetail.json', 'w', encoding='utf-8') as f:
+  json.dump(ergDetail, f, ensure_ascii=False, indent=4) 
+""
+
 => Example for json-file	
 ""
 {
