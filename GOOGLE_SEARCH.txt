@@ -1,0 +1,6 @@
+# search for something on a specific site:
+Baklava AND "inbox" AND (site:facebook.com OR site:instagram.com)
+HR AND microsoft AND (site:linkedin.com)
+
+# search for something on a specific site with a specific country
+HR AND microsoft AND (site:linkedin.com) AND (gl:us)

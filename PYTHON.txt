@@ -343,7 +343,7 @@ s = " ".join(s.split())                         => Remove all duplicate spaces i
 s = s.replace("e","X")                          => Replacement of two strings
 s = re.sub("[e0fi]", "X", s)                    => Replace several chars in a string
 s = re.subn("[e0fi]", "X", s)                   => Replace several chars in a string (get back a tupple: 1st changed string, 2nd: count of changed chars)
-s.isdigit()                                     => TRUE if the whole string are digits
+s.isdigit()                                     => True if the whole string are digits
 s.isalpha()                                     => True if the whole string are no digits
 s2 in s                                         => TRUE if string2 is in strings1
 l = list(s)                                     => Change string to list with all single chars
@@ -507,11 +507,14 @@ d["four"] = 4                                        => New entry for dict (key 
 del d["one"]                                         => Delete specific key in dict
 mydict[new_key] = mydict.pop(old_key)                => Rename dict-keyname
 combined_dict = {**d1, **d2}                         => Combine 2 dicts (if key is in both dicts - the second value will be taken)
-if "xyz" in d:										 => Check if key is in dict
-d2 = d												 => Copying a dict (all changes will be made in BOTH dicts)
-d2 = d.copy()										 => Copying a dict (dicts will be handled seperate)
-d2 = dict(d)										 => Copying a dict 2nd method (dicts will be handled seperate)
-d.update(d2)										 => Dict d get updated with d2 (all existing keys are overwritten - and new added)
+if "xyz" in d:										                   => Check if key is in dict
+d2 = d												                       => Copying a dict (all changes will be made in BOTH dicts)
+d2 = d.copy()										                     => Copying a dict (NOT WORKING with nested lists in the dict - use deepcopy!)
+d2 = dict(d)										                     => Copying a dict (NOT WORKING with nested lists in the dict - use deepcopy!)
+d2 = copy.deepcopy(d)                                => Copying a dict (dicts will be handled seperate) - import copy necessary 
+
+
+d.update(d2)										                     => Dict d get updated with d2 (all existing keys are overwritten - and new added)
 for key in d.keys():                                 => Iterate through dict keys
 for key in sorted(d.keys()):                         => Iterate through sorted dict keys ascending
 for key in sorted(d.keys(),reverse=True):            => Iterate through sorted dict keys descending
@@ -1288,6 +1291,7 @@ wb = xw.Book ("name.xlsx")                              => Read XLSX
 wb = xw.Book ("name.xlsx", password("xyz"))             => Read XLSX with password protection
 ws = wb.sheets["name_sheet"]                            => Read specific worksheet
 ws = wb.sheets[0]                                       => Read first worksheet
+wb.sheets.add("NewWS")									                => Add worksheet in workbook
 ws["A1"].value = "xyz"                                  => Updates specific cell
 f = ws["A1"].formula                                    => Reads the formula of a cell (not the value)
 for i in ws.range("A3:A7"): i.value = ""				        => Iterate trough cells an set them to "" / None
@@ -1310,7 +1314,6 @@ ws.api.AutoFilterMode = False                           => Disable auto filter i
 ws.clear()                                              => Clears the content and formatting of the whole sheet
 ws.clear_contents()                                     => Clears the content but leaves formatting
 l = [x.name for x in wb.sheets]							            => Read worksheetnames to list
-wb.sheets.add("NewWS")									                => Add worksheet in workbook
 wb.sheets["OldWS].delete()                              => Delete worksheet in workbook
 wb.sheets["WS"].api.Visible = False                     => Hide worksheet in workbook
 wb.save()                                               => Save workbook
