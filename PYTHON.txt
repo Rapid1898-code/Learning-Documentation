@@ -772,7 +772,7 @@ with open ("fn.txt","r+") as f: print(f.read()			=> Open File for Read and Write
 
 => Read textfile - stored in list per line
 ""
-with open('exmplText_www.arsenal.pl', encoding="utf8") as f:
+with open(fn, encoding="utf8", errors="ignore") as f:
   lines = f.readlines()
 ""
     
