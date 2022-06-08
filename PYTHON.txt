@@ -788,10 +788,10 @@ f.write(s)												=> Write s to the f-file opened
 ""
 while True:                  							
 try:                         							# otherwise outputs a error message
-    writer.save ()    
-    break
+  writer.save ()    
+  break
 except Exception as e:
-    print ("Error: ", e)
+  print(f"Error happened: {e}")
 	traceback.print_exc()                               # Outputs the detailed error message
     input ("File Open not possible - pls close and press <Enter>")    
 ""
