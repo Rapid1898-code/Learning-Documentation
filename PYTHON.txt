@@ -910,13 +910,12 @@ u.netloc											=> Returns "google.com"
 
 
 ###### MODULE - CSV
-import csv                                                => Import CSV-Module
-=> Open csv-file in writemode
+import csv                                              
+=> Read csv-file to nested-list
 ""
-with open("test.csv","w",newline=" ") as fp:               
-    a = csv.writer (fp, delimiter=",")                    # Define csv-writer with ","-delimiter
-    data = [["A", "B"],["100", "24"],["120", "33"]]       # Data for writing in nested list form
-    a.writerows (data)                                    # Writing individual rows
+with open("file.txt","r") as f:               
+  csvRead = csv.reader(f)
+  inpData = [x for x in csvRead]                                
 ""
     
 => Read csv-data from a HTML-link
