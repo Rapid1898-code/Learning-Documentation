@@ -43,7 +43,7 @@
 #> MODULE - PYCOUNTRY - Countries, Currency, Language
 #> MODULES - SMTPLIB, MIMEText - sending emails
 #> MODULE - PATHLIB - interacting with the operating system
-#> MODULE - OS, SHUTIL, FILECMP, DIRCMP - interacting with the operating system
+#> MODULE - OS, SHUTIL, FILECMP, DIRCMP, Send2Trash - interacting with the operating system
 #> MODULE - LOGGING
 #> MODULE - UNITTEST
 #> MODULE - DOTENV - hide environment informations
@@ -1975,7 +1975,7 @@ mac = get_mac()
 ""
 
 
-###### MODULE - OS, SHUTIL, FILECMP, DIRCMP - interacting with the operating system
+###### MODULE - OS, SHUTIL, FILECMP, DIRCMP, Send2Trash - interacting with the operating system
 import os												    => Import module
 print(dir(os))                                       => Shows alls attributs and methods of the library
 os.chdir("C:/temp")                                  => Change the directory
@@ -2004,6 +2004,8 @@ os.path.join(path, "URLS", link)                     => Join path together on ev
 os.listdir()											                   => Put all filenames to a list from the actual working dir
 [x[0] for x in os.walk(path)][1:]                    => Put all sub-folders to a list from the actual working dir
 os.popen('attrib +h ' + fn).read().close()					 => Change file to hidden
+send2trash(filename)                                 => Send file to trash (needs:)
+
 
 => Put all files in a list from actual directory with all subdirs and Filtering
 ""
