@@ -408,6 +408,7 @@ l.sort()                                         => Sort list ascending
 l.sort(reverse=True)                             => Sort list descending
 l_sort = sorted(l)                               => Sort list and store it in a different independent list
 l_sort = sorted(l, reverse=True)                 => Sort list descending and store it in a different independent list
+l_sort = os_sorted(l)                            => Sort the same way as the operating system (need: from natsort import os_sorted)
 if sorted(l) == l								                 => Check if a list is sorted (by ascending)
 if sorted(l, reverse=True) == l					         => Check if a list is sorted by descending
 l.sort(key=len)									                 => Sort list by len of elements
