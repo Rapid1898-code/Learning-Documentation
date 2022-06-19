@@ -916,6 +916,11 @@ import csv
 with open("file.txt","r") as f:               
   csvRead = csv.reader(f)
   inpData = [x for x in csvRead]                                
+
+# when this error happens: _csv.Error: line contains NUL
+with open(workFN,"r",encoding="utf-16") as f:               
+  csvRead = csv.reader(f)
+  inpWorkData = [x for x in csvRead]   
 ""
     
 => Read csv-data from a HTML-link
@@ -1815,7 +1820,7 @@ now = datetime.now().strftime("%Y-%m-%d") 			             => Actual date in form
 tday = datetime.today()                                      => Actual date in datetime format
 tday = datetime.today().date()								               => Actual date as date format
 tday = str(datetime.today().date())								           => Actual date as string format
-date = datetime.date()                                       => Convert datetime to date
+date = dt.date()                                             => Convert datetime to date
 dt.year, dt.month, dt.day, dt.hour, dt.minute          		   => Year / month / day / hour / minute from the datetime
 tday.isoweekday()                                            => Returns weekday (monday=1, sunday=7)
 last_friday = day - timedelta(days=tday.isoweekday() + 2)    => Calculates last friday (+2 for FR, +1 SA, 0 SU, -1 MO, -2 TU, -3 WE, -4 TH)
@@ -2319,6 +2324,10 @@ dt = pd.Timestamp(dt)                                       => Convert datetime 
 => possible reader: read_csv,read_excel,read_json,read_html,read_sql
 => possible writer: to_csv,to_excel,to_json,to_html,to_sql
 
+=> Important
+dt = dt.to_pydatetime()									                    => Convert pandas timestamp to datetime
+l = df.reset_index().values.tolist()                        => Convert a dataframe to a nested list including index
+
 => CSV
 pf.read_csv?												=> Shows all parameters for the reader
 df = pd.read_csv("fn.csv")              	                => Read csv into dataframe - first line will be col-names of the dataframe
@@ -2548,14 +2557,13 @@ df["newcol"]=["Y" if x > 50 else "N" for x in df["Sales"]]  => Add new column wi
 df["col"]=["Y" if x > 50 else "N" for x in df["col"]]  		=> Change existing column with Y/N depending if the value in col is > 50
 df["c"]=[1 if (x/y>9) else 0 for x,y in zip(df["c1"],df["c2])]	=> Add/change column with 0/1 depending of calc of the variables x/y from 2 cols
 df = df[~df.index.duplicated(keep='first')]                 => Delete duplicate index entries in the dataframe
-df.set_index('timestamp').T.to_dict('list')					=> Convert a dataframe to a dict (https://stackoverflow.com/questions/26716616/convert-a-pandas-dataframe-to-a-dictionary)
+df.set_index('timestamp').T.to_dict('list')					        => Convert a dataframe to a dict (https://stackoverflow.com/questions/26716616/convert-a-pandas-dataframe-to-a-dictionary)
 df.iloc[::5, :]                                             => Select every 5th row
 df = df.reset_index()                                       => Reset index form a dataframe with a new column from 0 to x
 df = df.iloc[:,0]                                           => Get the first row of the dataframe
 for index, row in df.iterrows():                            => Iterate trough dataframe with index and content / row
-pd.set_option('display.max_rows', None)						=> Show all rows of the dataframe when printed
+pd.set_option('display.max_rows', None)						          => Show all rows of the dataframe when printed
 df["col1"] = df["col1"].dt.date                             => Change datetime64 column to datetime
-dt = dt.to_pydatetime()									    => Convert pandas timestamp to datetime
 dt = pd.Timestamp(dt)                                       => Convert datetime to pandas timestamp
 df["max"]=df[["high-low","high-pc","low-pc"]].max(axis=1)   => Get the maximum from the 3 different columns and put it in the column "max"
 temp = df['name'].apply(lambda x: x.strip())                => Changing a column with this lambda function (over 400x faster then using iterrows)
@@ -2564,6 +2572,8 @@ df = df[df["col1"].notna()]                                 => Delete rows where
 df = df[df["col1"] < 10]                                    => Delete rows where col1 < 10
 dfFinal = df1.merge(df2, on='order-id')                     => Merge 2 dataframes where the column order-id is ident
 l = df.values.tolist()                                      => Convert a dataframe to a nested list
+
+
 
 => When there is some warning like "A value is trying to be set on a copy of a slice from a DataFrame"
 ""
