@@ -93,11 +93,14 @@ import RapidTechTools as rtt        # Import Module RapidTechTools
 
 
 ###### VIRTUALENV
-pip install virtualenv                                     =>  Install virtualenv
-pip list                                                   =>  Global packages installed
-where python                                               =>  Shows where the python-file is (Windows)
-which python                                               =>  Shows where the python-file is (Linux)
-virtualenv env OR python -m virtualenv env            	   =>  Create new virtual environment pj1_env
+pip install virtualenv          =>  Install virtualenv
+pip list                        =>  Global packages installed
+where python                    =>  Shows where the python-file is (Windows)
+which python                    =>  Shows where the python-file is (Linux)
+python -m virtualenv env        =>  Create new virtual environment env
+python3 -m venv env             =>  Create new virtual environment env (for python3)                  
+
+
 
 => Activate environment 
 ""
