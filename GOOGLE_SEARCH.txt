@@ -4,3 +4,6 @@ HR AND microsoft AND (site:linkedin.com)
 
 # search for something on a specific site with a specific country
 HR AND microsoft AND (site:linkedin.com) AND (gl:us)
+
+# search for social Accounts
+tim soulo (site:twitter.com OR site:facebook.com OR site:linkedin.com)
