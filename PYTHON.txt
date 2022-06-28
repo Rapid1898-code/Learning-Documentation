@@ -2330,7 +2330,9 @@ dt = pd.Timestamp(dt)                                       => Convert datetime 
 
 => Important
 dt = dt.to_pydatetime()									                    => Convert pandas timestamp to datetime
+l = df.values.tolist()                                      => Convert a dataframe to a nested list (only values, without index)
 l = df.reset_index().values.tolist()                        => Convert a dataframe to a nested list including index
+df = pd.read_excel(workFN, sheet_name=0)                    => Read first worksheet to dataframe
 
 => CSV
 pf.read_csv?												=> Shows all parameters for the reader
