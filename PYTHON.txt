@@ -1328,13 +1328,17 @@ wb.sheets["WS"].api.Visible = False                     => Hide worksheet in wor
 wb.save()                                               => Save workbook
 wb.close()                                              => Close workbook
 wb.quit()                                               => Quit App when opened at the beginning
-wb.activate(steal_focus=True)                        => Bring workbook to the front of the screen
-
-
-ws.d
+wb.activate(steal_focus=True)                           => Bring workbook to the front of the screen
 [x for x in ws.range("A3:A2000").value if x != None]    => Load elements in list from range which are not None
 ws.range("A1:A10").value = ws2.range("A1:A10").options(ndim=2).value      => copy range from one sheet to another
 
+=> Hide worksheet in windows
+""
+app = xw.App()
+wb = app.books.open(FN)
+app.visible = False
+ws = wb.sheets[0]
+""
 
 => Make border / frame for cells
 => Definiton for linestyles see: https://docs.microsoft.com/en-US/dotnet/api/microsoft.office.interop.excel.xllinestyle?view=excel-pia
