@@ -1,3 +1,5 @@
+# https://ahrefs.com/blog/google-advanced-search-operators/
+
 # search for something on a specific site:
 Baklava AND "inbox" AND (site:facebook.com OR site:instagram.com)
 HR AND microsoft AND (site:linkedin.com)
