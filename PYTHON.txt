@@ -1315,8 +1315,9 @@ ws.range("A1:C3").color = (143,157,235)					        => Blue: Assigns background 
 ws.range("A1:C3").number_format = "0,00"                => Assign numeric format with 2 decimals
 ws.range("A1:C3").number_format = "0%"                  => Assign percentage format with 2 decimals
 ws.range("B1").api.Font.Bold = True                     => Set cell to bold
-ws.range("B2").api.Font.ColorIndex = 1                  => Black: Set font color to black (see codes: https://access-excel.tips/excel-vba-color-code-list/)
-ws.range("B2").api.Font.ColorIndex = 3                  => Red: Set font color to red (see codes: https://access-excel.tips/excel-vba-color-code-list/)
+ws.range("B2").api.Font.ColorIndex = 1                  => Windows: Black: Set font color to black (see codes: https://access-excel.tips/excel-vba-color-code-list/)
+ws.range("B2").api.Font.ColorIndex = 3                  => Windows: Red: Set font color to red (see codes: https://access-excel.tips/excel-vba-color-code-list/)
+ws.range("B2").api.font_object.color.set((105,105,105)) => Mac: Set font color to dark grey
 ws2.range(f"A2:Z10000").api.WrapText = False            => Set wrap text to False
 ws["D5"].add_hyperlink(link,text_to_display = "Chart")  => Insert a hyperlink and define which text should be shown in the cell
 ws.api.AutoFilterMode = False                           => Disable auto filter in worksheet
