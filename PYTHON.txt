@@ -2878,6 +2878,7 @@ soup.find("div", {"id": "lj_div"})								              => Find div with id "lj_
 soup.find("p", {"class": "line"})								                => Find (first) p with class "line"
 soup.find("dt", string="In-App Purchases")						          => Find element with specific text / string
 soup.find("small", class_=re.compile("nameSymbol_"))			      => Check if string nameSymbol_" is part of the class-element
+soup.find(string=re.compile('contributions'))                   => General way to find string
 soup.find_all(["strong","a","br"])                              => Find elements for several tags
 erg2 = erg.find_parent("div")									                  => Found the parent div-element for a specific before find element
 if row.get("class") == ["ellipsis", "nobr", "new"]:             => Check if class has specific content
