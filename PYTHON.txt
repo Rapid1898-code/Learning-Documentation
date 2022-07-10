@@ -922,10 +922,14 @@ with open("file.txt","r") as f:
 
 # when this error happens: _csv.Error: line contains NUL
 with open(workFN,"r",encoding="utf-16") as f:               
-  csvRead = csv.reader(f)
-  inpWorkData = [x for x in csvRead]   
+  ...
 ""
-    
+
+# when this error happens: _csv.Error: character maps to <undefined>
+with open(workFN,"r",encoding="utf-8") as f:               
+  ...
+""
+
 => Read csv-data from a HTML-link
 ""
 import urllib.request
