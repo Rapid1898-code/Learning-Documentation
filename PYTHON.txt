@@ -2003,7 +2003,7 @@ os.getlogin()                                        => Get actual user name
 for f in os.listdir(): print(f)                      => Outputs the entire content of the current working dir
 for f in os.listdir(): fn, ext = os.path.splitext(f) => Outputs the elements seperated in name + extension
 os.rename(filename, new_name)                        => Change the filenmae
-os.rename(path1+fn, path2+fn)							           => Cut and paste file from path1 to path2
+os.rename(src, dst)							                     => Cut and paste file from path1 to path2
 shutil.copyfile("src","dst")                         => Copy file from source to destination
 os.mkdir("folder")                                   => Creates new folder (also possible with makedirs => is prefered)
 os.makedirs("folder/subfolder")                      => Creates new folder and subfolders
@@ -2342,6 +2342,10 @@ dt = dt.to_pydatetime()									                    => Convert pandas timestamp 
 l = df.values.tolist()                                      => Convert a dataframe to a nested list (only values, without index)
 l = df.reset_index().values.tolist()                        => Convert a dataframe to a nested list including index
 df = pd.read_excel(workFN, sheet_name=0)                    => Read first worksheet to dataframe
+filt = (tmpDF.index == "Total Assets")                      => get specific row with title in index
+tmpDF = tmpDF[filt]                                         => get specific row with title in index
+tmpDF[tmpDF.columns[0]][0]                                  => get the first entry of a series
+
 
 => CSV
 pf.read_csv?												=> Shows all parameters for the reader
@@ -2595,14 +2599,6 @@ l = df.values.tolist()                                      => Convert a datafra
 change the access from eg.: df["upperband"][current] = df["upperband"][previous]
 to: df.loc[current, "upperband"] = df.loc[previous, "upperband"]
 (then there will be no more warning)
-""
-
-=> Important
-""
-filt = (tmpDF.index == "Total Assets")   # get specific row with title in index
-tmpDF = tmpDF[filt]                      # get specific row with title in index
-tmpDF[tmpDF.columns[0]][0]               # get the first entry of a series
-
 ""
 
 
