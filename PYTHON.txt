@@ -7,7 +7,7 @@
 #> PIP
 #> SHORTCUTS VSCODE
 #> SHORTCUTS INTELLIJ IDEA IDE, CHROME, WINDOWS
-#> OPERATORS, INPUTS, OUTPUTS, ARGUMENTS
+#> OPERATORS, INPUTS, OUTPUTS, ARGUMENTS, STATISTICS
 #> RANDOM, SECRETS
 #> STRING
 #> REGEX
@@ -244,10 +244,10 @@ Run commands: https://stackoverflow.com/questions/56490194/vs-code-bitbucket-ssh
 ""
 
 
-###### OPERATORS, INPUTS, OUTPUTS, ARGUMENTS, PPRINT
+###### OPERATORS, INPUTS, OUTPUTS, ARGUMENTS, STATISTICS
 import math                     => Import module for math calculations
-import sys						=> Import module for reading arguments from the command line
-import statistics as stat		=> Using some numpy functions
+import sys						          => Import module for reading arguments from the command line
+import statistics as stat		  => Using some numpy functions
 5 // 2                          => Result without Decimals (=> 2)
 7 % 2                           => Modulo / Rest of the division (=> 1)
 d,e,f = 4,5,6                   => Assigment of several varaibles
@@ -269,14 +269,14 @@ sys.argv[1:].upper()            => Check for argument which is given when starti
 print("Text")					          => Print "Text" (with a linebreak \n at the end)
 print("Text", end="-")			    => Print with end-statement (next print will be in the same line
 print(repr("xyz\n"))            => Print text with linebreaks \n etc
-example starting program 		=> python test.py arg1 arg2 arg3
-str(sys.argv)					=> Show the arguments from the command line when starting the program eg. ['test.py', 'arg1', 'arg2', 'arg3']
-len(sys.argv)					=> Len of the arguments - eg. 4 (program test.py itself and 3 arguments following)
-min(3,5,7)						=> Find the minimum value => 3
-max(3,5,7)						=> Find the maximum value => 7
-stat.mean([3,5,7])				=> Find the mean value => 5 (with statistic-module - input must be given as list)
-exit()							=> Stop program at this point (helpful in test-situations)
-(newVal-oldVal)/oldVal * 100	=> Calculate the change from an old value to a new value in percent
+example starting program 		    => python test.py arg1 arg2 arg3
+str(sys.argv)					          => Show the arguments from the command line when starting the program eg. ['test.py', 'arg1', 'arg2', 'arg3']
+len(sys.argv)					          => Len of the arguments - eg. 4 (program test.py itself and 3 arguments following)
+min(3,5,7)						          => Find the minimum value => 3
+max(3,5,7)						          => Find the maximum value => 7
+stat.mean([3,5,7])				      => Find the mean value => 5 (with statistic-module - input must be given as list)
+exit()							            => Stop program at this point (helpful in test-situations)
+(newVal-oldVal)/oldVal * 100	  => Calculate the change from an old value to a new value in percent
 import pprint as pp             => Import pretty print functionality
 pp.pprint(dict)                 => pretty print dict line by line
 pp.pprint(dict, width=30)       => pretty print with max line-length 30
@@ -2003,7 +2003,7 @@ os.getlogin()                                        => Get actual user name
 for f in os.listdir(): print(f)                      => Outputs the entire content of the current working dir
 for f in os.listdir(): fn, ext = os.path.splitext(f) => Outputs the elements seperated in name + extension
 os.rename(filename, new_name)                        => Change the filenmae
-os.rename(path1+fn, path2+fn)							           => Cut and paste file from path1 to path2
+os.rename(src, dst)							                     => Cut and paste file from path1 to path2
 shutil.copyfile("src","dst")                         => Copy file from source to destination
 os.mkdir("folder")                                   => Creates new folder (also possible with makedirs => is prefered)
 os.makedirs("folder/subfolder")                      => Creates new folder and subfolders
@@ -2342,6 +2342,10 @@ dt = dt.to_pydatetime()									                    => Convert pandas timestamp 
 l = df.values.tolist()                                      => Convert a dataframe to a nested list (only values, without index)
 l = df.reset_index().values.tolist()                        => Convert a dataframe to a nested list including index
 df = pd.read_excel(workFN, sheet_name=0)                    => Read first worksheet to dataframe
+filt = (tmpDF.index == "Total Assets")                      => get specific row with title in index
+tmpDF = tmpDF[filt]                                         => get specific row with title in index
+tmpDF[tmpDF.columns[0]][0]                                  => get the first entry of a series
+
 
 => CSV
 pf.read_csv?												=> Shows all parameters for the reader
@@ -2595,14 +2599,6 @@ l = df.values.tolist()                                      => Convert a datafra
 change the access from eg.: df["upperband"][current] = df["upperband"][previous]
 to: df.loc[current, "upperband"] = df.loc[previous, "upperband"]
 (then there will be no more warning)
-""
-
-=> Important
-""
-filt = (tmpDF.index == "Total Assets")   # get specific row with title in index
-tmpDF = tmpDF[filt]                      # get specific row with title in index
-tmpDF[tmpDF.columns[0]][0]               # get the first entry of a series
-
 ""
 
 
