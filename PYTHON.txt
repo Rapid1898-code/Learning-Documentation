@@ -289,22 +289,22 @@ int("1010",2)                   => convert binary value to decimal
 ###### RANDOM, SECRETS
 => random: unsecure, reproducable with seeds
 => secret: secure, not reproducable
-import random					=> Import random module - fast, but not very secure
-random.randint(1,6)             => Random int number between 1 and 6 like a cube
-<random.uniform(1,3)>				=> Random float number between 1 and 3 
-random.random()					=> Random value between 0 and 1 in float format - eg. 0.16394553
+import random					    => Import random module - fast, but not very secure
+random.randint(1,6)       => Random int number between 1 and 6 like a cube
+random.uniform(1,3)				=> Random float number between 1 and 3 
+random.random()					  => Random value between 0 and 1 in float format - eg. 0.16394553
 random.uniform(1,10)			=> Random float in the range from 1 to 10
 random.normal(0,1)				=> Random value for standard deviation
-random.choice(list)             => Choose random entry from a list
-random.sample(list,3)           => Choose 3 random (unique) entries from the list
-random.choices(list,k=3)	    => Choose 3 random entries from the list (possible to be the same)
-random.shuffle(l)				=> Shuffle the content of a list
-random.seed(1)					=> Can reproduce the same results (unsecure)
+random.choice(list)       => Choose random entry from a list
+random.sample(list,3)     => Choose 3 random (unique) entries from the list
+random.choices(list,k=3)	=> Choose 3 random entries from the list (possible to be the same)
+random.shuffle(l)				  => Shuffle the content of a list
+random.seed(1)					  => Can reproduce the same results (unsecure)
 "".join(random.choices(string.ascii_uppercase, k=6))   => 	generate a random uppercase 6-char string
-import secrets					=> Import secrets module - for security reasons (is slower)
+import secrets					  => Import secrets module - for security reasons (is slower)
 secrets.randbelow(10)			=> Random int in the range from 0-10 (10 excluded)
 secrets.randbits(4)				=> Random int with 4 bits (highest possible value is 15 - 1111)
-secrets.choice(l)				=> Random choice (which is not reproducable)
+secrets.choice(l)			  	=> Random choice (which is not reproducable)
 
 
 
