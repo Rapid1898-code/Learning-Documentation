@@ -93,14 +93,19 @@ import RapidTechTools as rtt        # Import Module RapidTechTools
 
 
 ###### VIRTUALENV
-pip install virtualenv          =>  Install virtualenv
-pip list                        =>  Global packages installed
-where python                    =>  Shows where the python-file is (Windows)
-which python                    =>  Shows where the python-file is (Linux)
-python -m virtualenv env        =>  Create new virtual environment env
-python3 -m venv env             =>  Create new virtual environment env (for python3)                  
-
-
+pip install virtualenv          => Install virtualenv
+pip list                        => Global packages installed
+where python                    => Shows where the python-file is (Windows)
+which python                    => Shows where the python-file is (Linux)
+python -m virtualenv env        => Create new virtual environment env
+python3 -m venv env             => Create new virtual environment env (for python3)                  
+pip freeze --local > requirements.txt                      => Extracts all the modules / dependencies to a txt-file 
+deactivate                                                 => Go back to the global environment
+virtualenv -p C:\..path to..\Python37\python.exe py37_env  => Create new virtual env with specific python-version
+py37_env\Scripts\activate                                  => Activate new virtual env named py37_env
+python --version                                           => Shows the used python version in the virtual env
+pip install -r requirements.txt                            => Install all the packages from requirements.txt
+py -0p                                                     => Windows: Show all installed python-versions + paths
 
 => Activate environment 
 ""
@@ -108,13 +113,6 @@ venv\Scripts\activate
     when activated: pip list    #  Now only shows the installed modules for the virtual environment
     pip install package         #  Only installs in the activated virtual environment
 ""	
-	
-pip freeze --local > requirements.txt                      =>  Extracts all the modules / dependencies to a txt-file 
-deactivate                                                 =>  Go back to the global environment
-virtualenv -p C:\..path to..\Python37\python.exe py37_env  =>  Create new virtual env with specific python-version
-py37_env\Scripts\activate                                  =>  Activate new virtual env named py37_env
-python --version                                           =>  Shows the used python version in the virtual env
-pip install -r requirements.txt                            =>  Install all the packages from requirements.txt
 
 => install virtual environment with specific python-version
 ""
@@ -808,7 +806,6 @@ fn = "numbers.json"                                 => Assign JSON-filename
 with open(fn) as data: info = json.loads(data)      => Reading informations in json-format
 json_format = json.dumps(d,indent=2)				        => Convert / Encode a dict to a json-file (with indent for better reading)
 json_format = json.dumps(d,sort_keys=True)			    => Convert / Encode a dict to a json-file (with sorting the keys)
-with open(fn,"w") as data: json.dump(person, data)  => Writing information in json-format (e.g. after updating the values/format)
 person = json.loads(json_format)					          => Convert / Decode a json-file to a dict
 with open(fn.json,"r") as data: d=json.load(file)	  => Reading information in json-format
 print(json.dumps(erg, indent=4, sort_keys=True))    => Pretty-Print formatted json-file
