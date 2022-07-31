@@ -1,0 +1,5 @@
+###### Choose interpreter for running / debugging
+- Ctrl+Shift+P and select "Python:Select Interpreter"
+- there you can select the activate python interpreter including venvs
+- when you want to add a new environment click "+ add path" and then select
+the python-interpreter from the venv-environment
