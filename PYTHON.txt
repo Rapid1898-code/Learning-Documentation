@@ -913,7 +913,7 @@ u.netloc											=> Returns "google.com"
 import csv                                              
 => Read csv-file to nested-list
 ""
-with open("file.txt","r") as f:               
+with open("file.txt", "r", encoding="utf-8") as f:               
   csvRead = csv.reader(f)
   inpData = [x for x in csvRead]                                
 
@@ -922,10 +922,13 @@ with open(workFN,"r",encoding="utf-16") as f:
   ...
 ""
 
-# when this error happens: _csv.Error: character maps to <undefined>
-with open(workFN,"r",encoding="utf-8") as f:               
-  ...
+=> Write csv-file from nested list
 ""
+with open('output.csv', 'w', newline='', encoding="utf-8") as f:
+  writer = csv.writer(f)
+  writer.writerows(l)
+""
+
 
 => Read csv-data from a HTML-link
 ""
