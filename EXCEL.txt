@@ -1,5 +1,10 @@
-### Calculate the growht of 2 values
+### Calculate the growth of 2 values
 ()newval - oldval) / oldVal * 100
+
+
+### Custom Format for Date and Time
+JJJJ-MM-TT hh:mm
+JJJJ-MM-TT hh:mm:ss
 
 
 ### How to make a lookup to some other information
@@ -29,7 +34,6 @@ Sub init()
     FN = FN + "\initData.exe"
     Shell FN, vbNormalFocus
 End Sub
-
 for testing purposes probably add
     MsgBox "The value of FN is " & FN, vbInformation
 with that the path to the exe-file will be outputted in an msg-window
@@ -52,7 +56,7 @@ see: Excel_HowtoDropBoxWithoutBlanks.xlsx
   =LIST
 
 
-  ### Delte empty cells / rows
+  ### Delete empty cells / rows
   - select empty cell
   - STRG G und Inhalte...
   - select Leerzeilen / empty rows

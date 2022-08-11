@@ -434,6 +434,7 @@ l2 = l1											                     => No seperate copy of the list (updates 
 l2 = l.copy()                                    => Separate individual copy of the list (no updates in both lists)
 l2 = l[:]                                        => Separate individual copy of the list - 2nd variant
 l2 = list(l)                                     => Separate individual copy of the list - 3rd variant
+l2 = copy.deepcopy(l)                            => Seperate copying a nested list - import copy necessary 
 l[0]                                             => First element
 l[-1]                                            => Last element
 l[-3:]                                           => Last 3 elements
@@ -472,6 +473,14 @@ animal = ['Cat', 'Dog', 'Fish', 'Goat']
 age = [1, 2, 2, 6]
 z = zip(animal, age)
 for animal, age in z: ...
+""
+
+=> Adjust nested list to the same length
+""
+maxLen = max(map(len, l))
+for row in l:
+  while len(row) < maxLen:
+    row.append(None)
 ""
 
 
@@ -1309,6 +1318,7 @@ f = ws["A1"].formula                                    => Reads the formula of 
 for i in ws.range("A3:A7"): i.value = ""				        => Iterate trough cells an set them to "" / None
 xl_col_sort(ws,1)                                       => Sort worksheet in the first col (function see below)
 ws["C8"].color											                    => Reads the color of a cell and returns a rgb-tuple eg. (146, 208, 80)
+ws["C8].value                                           => Set value for cell
 ws["C8"].color = None									                  => Remove background from a cell
 ws.range("A1:C3").color = (255,255,255)					        => White: Assigns background color for a range of cells
 ws.range("A1:C3").color = (149,237,173)					        => Green: Assigns background color green
@@ -1512,7 +1522,7 @@ sql = "INSERT INTO dataOdds (" \
       "VALUES (?,?,?,?)" 
 cont = [
         datetime.today().date(),
-        "ABCDEFGH",
+        "datetime",
         "ichbineinlink.html",
         "01:  -  Race Test Race"
        ]
@@ -1836,6 +1846,7 @@ tday = str(datetime.today().date())								           => Actual date as string f
 date = dt.date()                                             => Convert datetime to date
 dt.year, dt.month, dt.day, dt.hour, dt.minute          		   => Year / month / day / hour / minute from the datetime
 tday.isoweekday()                                            => Returns weekday (monday=1, sunday=7)
+dt.isocalendar().week                                        => Return the calendar week-number
 last_friday = day - timedelta(days=tday.isoweekday() + 2)    => Calculates last friday (+2 for FR, +1 SA, 0 SU, -1 MO, -2 TU, -3 WE, -4 TH)
 tdelta = timedelta(days=7)                                   => Creates timedelta for 7 days
 tdelta = timedelta(seconds=60)                               => Creates timedelta for 1 minute
@@ -1846,7 +1857,7 @@ daysDiff = abs(dt2-dt1).days								 => Difference in days
 minDiff = (date2-date1).total_seconds() / 60                 => Difference in minutes
 datetime.fromisoformat('2020-07-10 02:00:00').timestamp()    => Generate ISO-format from datetime
 iso_dt = datetime.fromisoformat(str(datetime.now())).timestamp()   => Generate ISO-format from actual date
-date = datetime.fromtimestamp(1594339200000 / 1e3)           => Generate Datetime from ISO-format=>
+date = datetime.fromtimestamp(ts / 1e3)           => Generate Datetime from ISO-format=>
 sys.getsizeof(l) or sys.getsizeof(t)						 => Shows size of the list / tuple in bytes
 
 => Using german names / deutsche namen for month- and day-names
@@ -2345,6 +2356,7 @@ df = pd.read_excel(workFN, sheet_name=0)                    => Read first worksh
 filt = (tmpDF.index == "Total Assets")                      => get specific row with title in index
 tmpDF = tmpDF[filt]                                         => get specific row with title in index
 tmpDF[tmpDF.columns[0]][0]                                  => get the first entry of a series
+df.insert(loc=0, column="A", value="XYZ")                   => add new column in dataframe at position 0 (column is name, value is content)
 
 
 => CSV
