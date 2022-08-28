@@ -938,6 +938,14 @@ with open('output.csv', 'w', newline='', encoding="utf-8") as f:
   writer.writerows(l)
 ""
 
+=> Read csv-file to a dictionary for every line
+""
+with open ("products.csv", "r", encoding="utf-8") as f:
+  dictReader = csv.DictReader(f)
+  for item in dictReader:       
+    for k,v in item.items():
+      print(k,v)
+""
 
 => Read csv-data from a HTML-link
 ""
