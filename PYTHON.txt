@@ -922,8 +922,9 @@ u.netloc											=> Returns "google.com"
 import csv                                              
 => Read csv-file to nested-list
 ""
-with open("file.txt", "r", encoding="utf-8") as f:               
-  csvRead = csv.reader(f)
+FN = os.path.join(path, "inp.csv")
+with open(FN, "r", encoding="utf-8") as f:               
+  csvRead = csv.reader(f, delimiter=";")
   inpData = [x for x in csvRead]                                
 
 # when this error happens: _csv.Error: line contains NUL
@@ -933,11 +934,20 @@ with open(workFN,"r",encoding="utf-16") as f:
 
 => Write csv-file from nested list
 ""
-with open('output.csv', 'w', newline='', encoding="utf-8") as f:
-  writer = csv.writer(f)
+FN = os.path.join(path, "output.csv")
+with open(FN, 'w', newline='', encoding="utf-8") as f:
+  writer = csv.writer(f, delimiter=";")
   writer.writerows(l)
 ""
 
+=> Read csv-file to a dictionary for every line
+""
+with open ("products.csv", "r", encoding="utf-8") as f:
+  dictReader = csv.DictReader(f)
+  for item in dictReader:       
+    for k,v in item.items():
+      print(k,v)
+""
 
 => Read csv-data from a HTML-link
 ""
@@ -2983,7 +2993,7 @@ driver.find_element_by_css_selector('p.content')						# Search for tag and selec
 
 
 
-###### MODULE - REQUESTS - workings with APIs
+###### MODULE - REQUESTS - workings with APIs and reading websites
 => https://realpython.com/python-api/
 import requests										              => import module requests
 import json                                     => import module json
@@ -3014,12 +3024,12 @@ resp.headers                                    => header from the response
 resp.headers["Content-Type"]                    => show the content-type of the resonse (eg. json, image/jpeg)
 resp.text                                       => response in text-form
 resp.json()                                     => response in json-form
-print(json.dumps(resp,indent=4,sort_keys=True)) => Pretty-Print formatted json-file
-                
-                
+print(json.dumps(resp,indent=4,sort_keys=True)) => Pretty-Print formatted json-file                                
 result = api[0]["xyz"]								          => Read the value for the 1 element and the attribute xyz
 
 
+=> Using requests_html
+""
 pip install requests-html                         => Install module
 from requests_html import HTMLSession             => Import requests_html
 s = HTMLSession()                                 => Define a html-session
@@ -3028,6 +3038,17 @@ r.html.find("title", first=True).text             => title of in the html-tag
 r.html.find("span#wob_tm", first=True).text       => Span-value with id = "wob_tm"
 r.html.find("div.clX", first=True)                => Div-element with class = "clX"
 r.html.find("div.clX span.clY",first=True).text   => Span-element with class="clY" ind Div-element with class="clX"
+""
+
+=> Using requests for reading websites
+""
+ua = UserAgent(verify_ssl=False)
+userAgent = ua.random
+HEADERS = {"User-Agent": userAgent}
+page = requests.get (link, headers=HEADERS)
+page = requests.get(site,timeout=5)               => try to read the website for max 5sec
+soup = BeautifulSoup (page.content, "html.parser")
+""
 
 
 
@@ -3145,7 +3166,6 @@ class QuotesScrollSpider(scrapy.Spider):
             nextPage = data["page"] + 1
             yield scrapy.Request(url=self.apiURL.format(nextPage), callback=self.parse)
 ""
-
 
 
 
