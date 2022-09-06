@@ -1698,6 +1698,13 @@ c.execute (sql, cont)
 mydb.commit () 
 ""
 
+=> DELETE everything in a table
+""
+sql = "DELETE FROM scores"
+c.execute (sql)
+mydb.commit () 
+""
+
 
 
 ###### SQL ALCHEMY
