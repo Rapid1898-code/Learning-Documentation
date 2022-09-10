@@ -98,7 +98,11 @@ pip list                        => Global packages installed
 where python                    => Shows where the python-file is (Windows)
 which python                    => Shows where the python-file is (Linux)
 python -m virtualenv env        => Create new virtual environment env
+<<<<<<< HEAD
 vpython3 -m venv en             => Create new virtual environment env (for python3)                  
+=======
+python3 -m venv env             => Create new virtual environment env (for python3 eg. on MacOS)                  
+>>>>>>> 712b3a64409d8896dcd004408f93c470978b17c6
 pip freeze --local > requirements.txt                      => Extracts all the modules / dependencies to a txt-file 
 deactivate                                                 => Go back to the global environment
 virtualenv -p C:\..path to..\Python37\python.exe py37_env  => Create new virtual env with specific python-version
@@ -1695,6 +1699,13 @@ sql = "DELETE FROM scores" \
     " WHERE ticker = %s and calcDate = %s"
 cont = [stock,dateElem]
 c.execute (sql, cont)
+mydb.commit () 
+""
+
+=> DELETE everything in a table
+""
+sql = "DELETE FROM scores"
+c.execute (sql)
 mydb.commit () 
 ""
 
