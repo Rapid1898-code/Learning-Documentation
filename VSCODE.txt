@@ -3,3 +3,6 @@
 - there you can select the activate python interpreter including venvs
 - when you want to add a new environment click "+ add path" and then select
 the python-interpreter from the venv-environment
+
+###### Showing Menu
+- Press F11
