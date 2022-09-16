@@ -2671,6 +2671,7 @@ import time                                                         => Import Ti
 from selenium.webdriver.common.keys import Keys                     => Import Keys to send key-strokes
 driver = webdriver.Chrome(os.getcwd() + '/chromedriver')            => Define chrome driver - with actual folder os.getcwd
 driver.get("url")                                                   => Access to the url
+driver.set_timeout(10)                                              => Throws exception when time for read is over 10 seconds                  
 time.sleep(1)                                                       => Somtimes necessary to delay some work in progress
 driver.page_source                                                  => get full unparsed html-code
 driver.find_element(By.XPATH, "//input[@id='passwd-id']")           => Find element (input-element with id = "passwd-id")
