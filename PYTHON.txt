@@ -98,11 +98,7 @@ pip list                        => Global packages installed
 where python                    => Shows where the python-file is (Windows)
 which python                    => Shows where the python-file is (Linux)
 python -m virtualenv env        => Create new virtual environment env
-<<<<<<< HEAD
-vpython3 -m venv en             => Create new virtual environment env (for python3)                  
-=======
 python3 -m venv env             => Create new virtual environment env (for python3 eg. on MacOS)                  
->>>>>>> 712b3a64409d8896dcd004408f93c470978b17c6
 pip freeze --local > requirements.txt                      => Extracts all the modules / dependencies to a txt-file 
 deactivate                                                 => Go back to the global environment
 virtualenv -p C:\..path to..\Python37\python.exe py37_env  => Create new virtual env with specific python-version
@@ -1332,7 +1328,7 @@ f = ws["A1"].formula                                    => Reads the formula of 
 for i in ws.range("A3:A7"): i.value = ""				        => Iterate trough cells an set them to "" / None
 xl_col_sort(ws,1)                                       => Sort worksheet in the first col (function see below)
 ws["C8"].color											                    => Reads the color of a cell and returns a rgb-tuple eg. (146, 208, 80)
-ws["C8].value                                           => Set value for cell
+ws["C8"].value                                           => Set value for cell
 ws["C8"].color = None									                  => Remove background from a cell
 ws.range("A1:C3").color = (255,255,255)					        => White: Assigns background color for a range of cells
 ws.range("A1:C3").color = (149,237,173)					        => Green: Assigns background color green
@@ -3059,6 +3055,19 @@ HEADERS = {"User-Agent": userAgent}
 page = requests.get (link, headers=HEADERS)
 page = requests.get(site,timeout=5)               => try to read the website for max 5sec
 soup = BeautifulSoup (page.content, "html.parser")
+""
+
+=> Using requests to read image from web, save and build hashValue
+""
+  headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'} # This is chrome, you can set whatever browser you like
+  resp = requests.get(img, headers=headers, stream=True)        
+  print(resp.status_code)
+  with open(workerPic, 'wb') as f:
+    shutil.copyfileobj(resp.raw, f)
+  del resp    
+  img = Image.open(resp.raw)
+  workihashImg = imagehash.average_hash(img) 
+  print(workihashImg)
 ""
 
 
