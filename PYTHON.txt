@@ -4238,7 +4238,7 @@ pip install pyinstaller                     => Installation
 pip install -Iv pyinstaller==4.8            => Install specific version
 pyinstaller prg.py                          => Generate the bundle in a subdirectory called dist.
 pyinstaller --onefile prg.py                => Generate only one file
-python -m pyinstaller --onefile prg.py      => Generate only one file (to get for sure the pyinstaller from the actual env)
+python -m Pyinstaller --onefile prg.py      => Generate only one file (to get for sure the pyinstaller from the actual env)
 --copy-metadata pandas_ta					          => add this when some modules are not found
 --hidden-import=pymssql						          => When some modules are making problems - sometimes this helps
 --exclude-module matplotlib                 => when there is a depreciating warning from matlib 
