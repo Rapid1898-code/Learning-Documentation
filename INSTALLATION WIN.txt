@@ -1,8 +1,17 @@
+Versteckte Dateien anzeigen (winExplorer - ansicht - optionen - ansicht))
+Erweiterungen bei bekannten Dateitypen einschalten (s.o.)
+
 Download and install VSCode
 Activate Settings Sync
-Install Python-version
-Set Path-Variable to run python.exe from everywhere - eg. C:\Users\WRSPOL\AppData\Local\Programs\Python\Python39
-Set Path-Variable to run pip.exe from everywhere - eg. C:\Users\WRSPOL\AppData\Local\Programs\Python\Python39\Scripts
+Install GIT
+a
+
+Install Python-version (https://www.python.org/downloads/)
+  Set option "add python to path" at the bottom
+  Change excecution alias (https://stackoverflow.com/questions/58754860/cmd-opens-windows-store-when-i-type-python  )
+  Set Path-Variable to run python.exe from everywhere - eg. C:\Users\WRSPOL\AppData\Local\Programs\Python\Python39
+  Set Path-Variable to run pip.exe from everywhere - eg. C:\Users\WRSPOL\AppData\Local\Programs\Python\Python39\Scripts
+
 Download and install GitBash
 Set alias for python so it can be used in GitBash: alias python="winpty C:/Users/WRSPOL/AppData/Local/Programs/Python/Python39/python.exe"
 Set alias for pip so it can be used in GitBash: alias pip="winpty C:/Users/WRSPOL/AppData/Local/Programs/Python/Python39/Scripts/pip.exe"
@@ -10,3 +19,5 @@ Install VirtualEnv (with pip install virtualenv)
 Create VirtualEnv under .venv (using the requirements.txt from KeePass): virtualenv Normal
 Activate the virtual environment
 Install everything from the requirments.txt from "PrivateFiles/PythonVENV"
+
+this is a test
