@@ -5,6 +5,7 @@
 #> MODULE, GENERAL
 #> VIRTUALENV
 #> PIP
+#> PYINSTALLER, INNO SETUP COMPILER - generate python programs to executables
 #> SHORTCUTS VSCODE
 #> SHORTCUTS INTELLIJ IDEA IDE, CHROME, WINDOWS
 #> OPERATORS, INPUTS, OUTPUTS, ARGUMENTS, STATISTICS
@@ -70,7 +71,6 @@
 #> MODULE - PLOTLY - data visualization 
 #> MODULE - DJANGO - framework for webdevelopment
 #> DOLT - Databases like Repos
-#> PYINSTALLER, INNO SETUP COMPILER - generate python programs to executables
 #> PYTHONANYWHERE - run python scripts in the cloud
 #> HEROKU - run python scripts in the cloud
 
@@ -130,6 +130,62 @@ pip uninstall module XY           => uninstall module XY
 pip list							            => show installed modules in actual environment
 pip freeze > requirements.txt		  => output modules in requirements.txt
 pip install -r requirements.txt   => install modules from requirements.txt
+
+
+
+###### PYINSTALLER, INNO SETUP COMPILER - generate python programs to executables
+pip install pyinstaller                     => Installation
+pip install -Iv pyinstaller==4.8            => Install specific version
+pyinstaller prg.py                          => Generate the bundle in a subdirectory called dist.
+pyinstaller --onefile prg.py                => Generate only one file
+python -m Pyinstaller --onefile prg.py      => Generate only one file (to get for sure the pyinstaller from the actual env)
+--collect-data moduleXY                     => Collect data for specific python module
+--copy-metadata pandas_ta					          => add this when some modules are not found
+--hidden-import=pymssql						          => When some modules are making problems - sometimes this helps
+--exclude-module matplotlib                 => when there is a depreciating warning from matlib 
+--icon=app.ico                              => Generate file with icon
+--hidden-import=pkg_resources.py2_warn      => Generating under mac os sometimes only work with this params
+--hidden-import=cmath                       => Generating under mac os sometimes only work with this params   
+
+
+prg.exe                                     => Open this file to start the python-program
+yfinance module                             => only working with import yfinance (not with import yfinance as yf)
+
+=> Problems with some added python modules (eg. pycountry)
+""
+https://groups.google.com/g/pyinstaller/c/OYhJdeZ9010/m/32g3-T8XBAAJ
+Create hook-file hook-pycountry.py with content:
+	from PyInstaller.utils.hooks import copy_metadata, collect_data_files
+	datas = copy_metadata("pycountry") + collect_data_files("pycountry")
+Compile Program with
+	pyinstaller --onefile --exclude-module matplotlib --additional-hooks-dir=. TestPyCountry.py
+""
+
+=> Problems with path when executing from py and exe   
+""
+config_name = 'creds.json'                                    # Define the config file name
+""
+
+=> Determine if application is a script file or frozen exe
+""
+if getattr(sys, 'frozen', False):                             # Get path when starting as executable
+    application_path = os.path.dirname(sys.executable)
+elif __file__:                                                # Get path when running from IDE as py-file
+    application_path = os.path.dirname(__file__)
+config_path = os.path.join(application_path, config_name)     # Final Config Path   
+""
+
+=> Using Inno Setup Compiler for creating a setup.exe for all files
+""
+https://jrsoftware.org/isdl.php
+- Application Information => provide application informations (appName, appVersion, publisher, website)
+- Application Files => select application main executable file and add all necessary folder and files 
+- Application File Association => no selection
+- Application Documentation => select files which should be shown before / after the installation
+- Setup Languages => select which languages should be included during installation
+- Save installation script
+- Final setup.exe is stored in the "Output"-folder
+""
 
 
 
@@ -2880,6 +2936,9 @@ XPath
 
 => Use only newest fake_useragent
 ""
+  # install with
+  # pip uninstall fake-useragent
+  # pip install --force-reinstall "git+https://github.com/robertsmd/fake-useragent.git@robertsmd-feature-only-newest-uas"
   see: https://github.com/hellysmile/fake-useragent/pull/122
   from fake_useragent import UserAgent
   userAgent = UserAgent(num_newest_uas=2).random
@@ -2907,8 +2966,8 @@ soup.find_all("div", class_="col-xs-6")                         => Read all divs
 soup.find("div", {"id": "lj_div"})								              => Find div with id "lj_div"
 soup.find("p", {"class": "line"})								                => Find (first) p with class "line"
 soup.find("dt", string="In-App Purchases")						          => Find element with specific text / string
+soup.find("div", string=re.compile('contributions'))            => General way to find string
 soup.find("small", class_=re.compile("nameSymbol_"))			      => Check if string nameSymbol_" is part of the class-element
-soup.find(string=re.compile('contributions'))                   => General way to find string
 soup.find_all(["strong","a","br"])                              => Find elements for several tags
 erg2 = erg.find_parent("div")									                  => Found the parent div-element for a specific before find element
 if row.get("class") == ["ellipsis", "nobr", "new"]:             => Check if class has specific content
@@ -4230,61 +4289,6 @@ dolt ls                                  => Show tables in db
 dolt sql -q "describe Salaries"           => Read column description for table
 dolt sql -q "SELECT * FROM Salaries"      => Run some query on the table
 dolt sql -r csv -q "SELECT * FROM Salaries" > salary-hr.csv   => Write query to table
-
-
-
-###### PYINSTALLER, INNO SETUP COMPILER - generate python programs to executables
-pip install pyinstaller                     => Installation
-pip install -Iv pyinstaller==4.8            => Install specific version
-pyinstaller prg.py                          => Generate the bundle in a subdirectory called dist.
-pyinstaller --onefile prg.py                => Generate only one file
-python -m Pyinstaller --onefile prg.py      => Generate only one file (to get for sure the pyinstaller from the actual env)
---copy-metadata pandas_ta					          => add this when some modules are not found
---hidden-import=pymssql						          => When some modules are making problems - sometimes this helps
---exclude-module matplotlib                 => when there is a depreciating warning from matlib 
---icon=app.ico                              => Generate file with icon
---hidden-import=pkg_resources.py2_warn      => Generating under mac os sometimes only work with this params
---hidden-import=cmath                       => Generating under mac os sometimes only work with this params   
---collect-data moduleXY                     => Collect data for specific python module
-
-prg.exe                                     => Open this file to start the python-program
-yfinance module                             => only working with import yfinance (not with import yfinance as yf)
-
-=> Problems with some added python modules (eg. pycountry)
-""
-https://groups.google.com/g/pyinstaller/c/OYhJdeZ9010/m/32g3-T8XBAAJ
-Create hook-file hook-pycountry.py with content:
-	from PyInstaller.utils.hooks import copy_metadata, collect_data_files
-	datas = copy_metadata("pycountry") + collect_data_files("pycountry")
-Compile Program with
-	pyinstaller --onefile --exclude-module matplotlib --additional-hooks-dir=. TestPyCountry.py
-""
-
-=> Problems with path when executing from py and exe   
-""
-config_name = 'creds.json'                                    # Define the config file name
-""
-
-=> Determine if application is a script file or frozen exe
-""
-if getattr(sys, 'frozen', False):                             # Get path when starting as executable
-    application_path = os.path.dirname(sys.executable)
-elif __file__:                                                # Get path when running from IDE as py-file
-    application_path = os.path.dirname(__file__)
-config_path = os.path.join(application_path, config_name)     # Final Config Path   
-""
-
-=> Using Inno Setup Compiler for creating a setup.exe for all files
-""
-https://jrsoftware.org/isdl.php
-- Application Information => provide application informations (appName, appVersion, publisher, website)
-- Application Files => select application main executable file and add all necessary folder and files 
-- Application File Association => no selection
-- Application Documentation => select files which should be shown before / after the installation
-- Setup Languages => select which languages should be included during installation
-- Save installation script
-- Final setup.exe is stored in the "Output"-folder
-""
 
 
 
