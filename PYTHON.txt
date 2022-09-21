@@ -499,9 +499,9 @@ l[:2]                                            => Elements from 0 to 1 (exclus
 l[2:]                                            => Elements from index position 2 to the end of the list
 l[::2]                                           => Every second element [start:end:step]
 9 in l                                           => Check if element is in list
-if any(x in string for x in ["ab","cd","de"]):   => Check if any elements from the list are in the string
-if all(x in string for x in ["ab","cd","de"]):   => Check if all elements from the list are in the string    
-if all(x not in string for x in ["ab","cd""]):   => Check if all elements from the list are NOT in the string    
+if any(x in st for x in ["ab","cd","de"]):       => Check if any elements from the list are in the string
+if all(x in st for x in ["ab","cd","de"]):       => Check if all elements from the list are in the string    
+if all(x not in str for x in ["ab","cd""]):      => Check if all elements from the list are NOT in the string    
 for i in l:                                      => Iterate through list content
 for i in range(len(l)):                          => Iterate through list with index
 for idx, cont in enumerate(l):                   => Iterate through list with index and content
@@ -2947,13 +2947,14 @@ XPath
 
 
 ###### MODULE - BEAUTIFUL SOAP - webscraping
-from bs4 import BeautifulSoap									=> Import module for beautiul soap
+from bs4 import BeautifulSoup									=> Import module for beautiul soap
 from fake_useragent import UserAgent							=> Import moduel for fake useragent
 ua = UserAgent()												=> Define UserAgent
 ua.random								"t						=> Create random useragent
 page = requests.get("https://www.ariva.de/dax-30")              => Read url as page
 page = requests.get(url,headers=headers,proxy=proxy)            => Read url as page with proxy like eg. "https://10.10.1.11:1080"
-soup = BeautifulSoup (page.content,"html.parser")               => Read page with html.parser
+soup = BeautifulSoup (page.content,"html.parser")               => Read html-page with parser
+soup = BeautifulSoup (page.content,"xml")                       => Read xml-page with parser
 soup.body.a                                                     => find first a-tag in body
 soup.find_all("td"):    			                                  => Find all td-elements
 soup.find_all(["th","td"])                                      => Find alle th- and td-elements
