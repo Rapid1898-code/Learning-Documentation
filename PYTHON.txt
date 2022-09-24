@@ -2092,7 +2092,7 @@ shutil.copyfile("src","dst")                         => Copy file from source to
 os.mkdir("folder")                                   => Creates new folder (also possible with makedirs => is prefered)
 os.makedirs("folder/subfolder")                      => Creates new folder and subfolders
 os.remove (file)											               => Delete file
-os.rmdir ("folder")                                  => Delete folder (prefered cause deleting ist dangerous)
+os.rmdir ("folder")                                  => Delete folder (prefered cause deleting is dangerous)
 os.removedirs ("folder/subfolder")                   => Delete folder and subfolders
 os.stat("file")                                      => Outputs the statistics of the file (size, modification time,...)
 for dirpath,dir,files in os.walk(os.getcwd())        => Outputs dirpath - all the dirs - and all the files
@@ -2942,6 +2942,23 @@ XPath
   see: https://github.com/hellysmile/fake-useragent/pull/122
   from fake_useragent import UserAgent
   userAgent = UserAgent(num_newest_uas=2).random
+""
+
+=> Download PDF-File to folder
+""
+  # create this option-setting when creating the driver
+  ...
+  options = Options()
+  options.add_experimental_option('prefs', {
+    "download.default_directory": PDFPath, 
+    "download.prompt_for_download": False, 
+    "download.directory_upgrade": True,
+    "plugins.always_open_pdf_externally": True 
+    })
+  ...
+  srv=Service(ChromeDriverManager().install())
+  driver = webdriver.Chrome (service=srv, options=options)  
+  driver.get(workerPDF)
 ""
 
 
