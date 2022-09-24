@@ -16,6 +16,7 @@ Install GIT
   Download + Install: https://git-scm.com/downloads
   git config --global user.email "you@example.com"
   git clone repos
+  copy .gitignore
 
 Install Python
   Download + Install: https://www.python.org/downloads/
