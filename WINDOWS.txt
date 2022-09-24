@@ -5,3 +5,6 @@ Neu - Add eg. C:\Program Files\heroku\bin
 
 ###### Shortcut for Changing KeyBoard Layout
 Shift + Alt
+
+###### Show full path of a file
+Shift + RightClick and Select Copy as Path
