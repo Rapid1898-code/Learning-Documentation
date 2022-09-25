@@ -6,3 +6,6 @@ the python-interpreter from the venv-environment
 
 ###### Showing Menu
 - Press F11
+
+###### Open setting.json
+- Press Shift+Ctrl+P - type "settings" - search for Open User Settings"
