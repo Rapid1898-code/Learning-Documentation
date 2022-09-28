@@ -383,7 +383,7 @@ s = f"text {var} bla"							              => Insert variable in string new metho
 s.find ("ist")                                  => Returns the index where the text is found
 s.count ("i")                                   => Counts the occurrence of a text
 re.findall('[.,’]', s)                          => Counts several chars in a text
-[n for n in range(len(txt)) if txt.find('/', n) == n]	=> Return all findings of the search string ("/") in the other string (txt)
+[i for i, ltr in enumerate(workerTitle) if ltr == "/"]	=> Return all findings of the search string ("/") in the other string (txt)
 [x.start() for x in re.finditer('ist', s)]      => Returns all index as a list (needs import re)
 s = s.lower()                                   => Lowercase the whole string
 s = s.upper()                                   => Capitalize the whole string
