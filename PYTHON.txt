@@ -2079,7 +2079,8 @@ mac = get_mac()
 
 
 ###### MODULE - OS, SHUTIL, FILECMP, DIRCMP, Send2Trash - interacting with the operating system
-import os												    => Import module
+import os												                     => Import module
+os.listdir()											                   => Put all filenames to a list from the actual working dir
 print(dir(os))                                       => Shows alls attributs and methods of the library
 os.chdir("C:/temp")                                  => Change the directory
 os.getcwd()                                          => Current working directory
@@ -2104,7 +2105,6 @@ os.path.exists("temp/file.txt")                      => Checks if filename exist
 os.path.isdir("xyz")                                 => Checks if folder exists / element is a directory (in the actual dir)
 os.path.isfile("xyz")                                => Checks if files exists / element is a file (in the actual dir)
 os.path.join(path, "URLS", link)                     => Join path together on every os-system (win,mac,linux)
-os.listdir()											                   => Put all filenames to a list from the actual working dir
 [x[0] for x in os.walk(path)][1:]                    => Put all sub-folders to a list from the actual working dir
 os.popen('attrib +h ' + fn).read().close()					 => Change file to hidden
 send2trash(filename)                                 => Send file to trash (needs:)
