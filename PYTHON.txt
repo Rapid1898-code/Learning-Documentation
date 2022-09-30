@@ -2752,7 +2752,7 @@ driver.close()                                                      => Close the
 driver.title                                                        => Title of the html-site
 driver.back()                                                       => Back-Function in browser-history
 driver.forward()                                                    => Forward-Function in browser-history
-driver.navigate().refresh()                                         => Refresh website
+driver.refresh()                                                    => Refresh website
 cookie = {"name": "token", "value": "23874kljdsjhfaökldjs"}         => Define an individual cookie
 driver.add_cookie(cookie)                                           => Use Cookie
 driver.get_cookie("token")                                          => Outputs a specific cookie
@@ -2978,6 +2978,7 @@ soup.find_all("tr", class_="arrow0"):       			              => Read all table r
 soup.find_all("p", {"class": "payamntp"})      			            => Find all div-elements with specific class
 soup.find_all("div", {'class':['class1', 'class2']})            => Find element with one of this 2 classes
 soup.select("div.class1.class2")                                => Find divs which have both classes
+soup.select("div[class='table-container']")                     => Find divs which have only this class
 for col_id, col_content in enumerate(result.find_all("td")):    => Read all table data cells with id and content
 soup.find_all("div", class_="col-xs-6")                         => Read all divs with specific class
 soup.find("div", {"id": "lj_div"})								              => Find div with id "lj_div"
