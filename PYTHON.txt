@@ -958,11 +958,12 @@ for item in lst:
 => https://pymotw.com/2/urlparse/
 import from urllib.parse import urlparse			=> Import Module for URL parsing
 => https://docs.python.org/3/library/urllib.request.html#module-urllib.request
-import urllib.request                               => Import Module for request
+import urllib.request                         => Import Module for request
+link = urllib.parse.quote_plus(link)          => Encode url
 u = urlparse("http://google.com/search")			=> Parse HTML-link1
-u.scheme											=> Returns "http"
-u.path												=> Returns "/search"
-u.netloc											=> Returns "google.com"
+u.scheme											                => Returns "http"
+u.path												                => Returns "/search"
+u.netloc											                => Returns "google.com"
 
 => Download picture from a url
 ""
@@ -2728,6 +2729,8 @@ from selenium.webdriver.common.keys import Keys                     => Import Ke
 driver = webdriver.Chrome(os.getcwd() + '/chromedriver')            => Define chrome driver - with actual folder os.getcwd
 driver.set_timeout(10)                                              => Throws exception when time for read is over 10 seconds                  
 time.sleep(1)                                                       => Somtimes necessary to delay some work in progress
+link = urllib.parse.quote_plus(link)                                => Encode url
+driver.get(link)                                                    => Open link
 driver.page_source                                                  => get full unparsed html-code
 driver.find_element(By.XPATH, "//input[@id='passwd-id']")           => Find element (input-element with id = "passwd-id")
 driver.find_element(By.XPATH,"//*[@id='button']/input").click()     => Click on element by xpath (investigate - copy xpath)
