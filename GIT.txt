@@ -30,6 +30,7 @@ git push -u origin master   							=> Push with upstream definition (shorthand -
 git push --set -upstream origin answer                	=> Push with upstream definition (longhand - to the branch "answer")
 git reset 				                    => undo add command before (all files get set back to the initial state)
 git reset HEAD~   			                => undo the last commit
+git stash                           => ignore changes eg. for xlsx on the local machine
 
 => Pull (update) files from GitHub<br>
 (-u saves the paths - so at the next push - it must be only typed push)
