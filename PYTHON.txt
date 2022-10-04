@@ -958,11 +958,12 @@ for item in lst:
 => https://pymotw.com/2/urlparse/
 import from urllib.parse import urlparse			=> Import Module for URL parsing
 => https://docs.python.org/3/library/urllib.request.html#module-urllib.request
-import urllib.request                               => Import Module for request
+import urllib.request                         => Import Module for request
+link = urllib.parse.quote_plus(link)          => Encode url
 u = urlparse("http://google.com/search")			=> Parse HTML-link1
-u.scheme											=> Returns "http"
-u.path												=> Returns "/search"
-u.netloc											=> Returns "google.com"
+u.scheme											                => Returns "http"
+u.path												                => Returns "/search"
+u.netloc											                => Returns "google.com"
 
 => Download picture from a url
 ""
@@ -2728,6 +2729,8 @@ from selenium.webdriver.common.keys import Keys                     => Import Ke
 driver = webdriver.Chrome(os.getcwd() + '/chromedriver')            => Define chrome driver - with actual folder os.getcwd
 driver.set_timeout(10)                                              => Throws exception when time for read is over 10 seconds                  
 time.sleep(1)                                                       => Somtimes necessary to delay some work in progress
+link = urllib.parse.quote_plus(link)                                => Encode url
+driver.get(link)                                                    => Open link
 driver.page_source                                                  => get full unparsed html-code
 driver.find_element(By.XPATH, "//input[@id='passwd-id']")           => Find element (input-element with id = "passwd-id")
 driver.find_element(By.XPATH,"//*[@id='button']/input").click()     => Click on element by xpath (investigate - copy xpath)
@@ -2752,7 +2755,7 @@ driver.close()                                                      => Close the
 driver.title                                                        => Title of the html-site
 driver.back()                                                       => Back-Function in browser-history
 driver.forward()                                                    => Forward-Function in browser-history
-driver.navigate().refresh()                                         => Refresh website
+driver.refresh()                                                    => Refresh website
 cookie = {"name": "token", "value": "23874kljdsjhfaökldjs"}         => Define an individual cookie
 driver.add_cookie(cookie)                                           => Use Cookie
 driver.get_cookie("token")                                          => Outputs a specific cookie
@@ -2978,6 +2981,7 @@ soup.find_all("tr", class_="arrow0"):       			              => Read all table r
 soup.find_all("p", {"class": "payamntp"})      			            => Find all div-elements with specific class
 soup.find_all("div", {'class':['class1', 'class2']})            => Find element with one of this 2 classes
 soup.select("div.class1.class2")                                => Find divs which have both classes
+soup.select("div[class='table-container']")                     => Find divs which have only this class
 for col_id, col_content in enumerate(result.find_all("td")):    => Read all table data cells with id and content
 soup.find_all("div", class_="col-xs-6")                         => Read all divs with specific class
 soup.find("div", {"id": "lj_div"})								              => Find div with id "lj_div"

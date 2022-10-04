@@ -11,6 +11,8 @@ VSCode
   Set tab to 2 spaces (https://www.kindacode.com/article/vs-code-how-to-change-indentation-2-spaces-4-spaces/)
   Set ruler for 120 chars (https://stackoverflow.com/questions/29968499/vertical-rulers-in-visual-studio-code)
   Set Auto Closing Brackets in setting to allways
+  Set option in extension Settings Sync: Quiet Sync enabled (otherwise output windows will open permanently)
+  Set default terminal to bash: F1 - "Terminal Select Defaul"
 
 Install GIT
   Download + Install: https://git-scm.com/downloads
