@@ -193,14 +193,15 @@ https://jrsoftware.org/isdl.php
 Ctrl K Ctrl C				    => Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
 Ctrl K Ctrl U				    => Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
 Ctrl F   		   			    => Find in File
-Ctrl Shift F            => Search in all files
 Ctrl H        	   			=> Replace in File
-Ctrl Shift H			      => Replace in Path (in all Files)
 Ctrl L                  => Selects whole line
+Ctrl Shift F            => Search in all files
+Ctrl Shift H			      => Replace in Path (in all Files)
 Ctrl 1/2/3              => Jump to this Grouping Window
 F3       						    => Find next
 Ctrl G     				    	=> Goto line
 Shift Alt Up/Down			  => Copy / Duplicate lines	
+Shift Alt Left/Rigth    => Expand / Shrink selection
 Alt Up/Down		          => Move line
 Alt Enter				        => Suggestions for fix error, function informations
 Alt 1					          => Open the project windows (on the left side)
@@ -1125,6 +1126,14 @@ new_values = [1,2,3,4,5]                              => Define new values for a
 
 ###### MODULE - OPENPYXL - working with excel worksheets
 Documentation: => https://openpyxl.readthedocs.io/en/stable/api/openpyxl.worksheet.worksheet.html#openpyxl.worksheet.worksheet.Worksheet.PAPERSIZE_A3
+import openpyxl as on_text
+wb = ox.load_workbook("test.xlsx")              => Read xlsx
+l = wb.sheetnames     							            => Read worksheetnames to list
+ws = wb["sheet1"]                               => Select specific worksheet in workbook
+ws = wb[wb.sheetnames[0]]                       => Select first worksheet
+ws = wb.active                                  => Select active worksheet from workbook		
+val = ws["A1"].value                            => Value from specific cell
+
 from openpyxl import load_workbook              => Import module for loading a workbook
 from openpyxl import Workbook							      => Import module for creating a workbook
 wb = load_workbook(("Test.xlsx"))               => Load xlsx
@@ -1135,11 +1144,9 @@ wb = openpyxl.Workbook()								        => Create new workbook
 wb.create_sheet("ws")									          => Create new worksheet (at the end)
 wb.create_sheet("ws",0)									        => Create new worksheet (at the beginning)
 wb.create_sheet("ws",-2)								        => Create new worksheet (at the second last position)
-wb.sheetnames                                   => All worksheets from the 
-ws = wb["sheet1"]                               => Select specific worksheet in workbook
-ws = wb.active                                  => Select active worksheet from workbook		
+
 ws.title = "xyz"										            => Change worksheet name
-ws["A1"].value                                  => Value from specific cell
+
 ws.cell(row=1, column=1).value                  => Value from specific cell (other method)
 ws["A1"] = 97                                   => Assign value to specific cell
 ws["A1"] = "=SUBTOTAL(1,I6:I10000)"             => Assign formula to specific cell (only english names for function and arguments must be sepearted by "," and not ";")
