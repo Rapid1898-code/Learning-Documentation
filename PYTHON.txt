@@ -302,14 +302,15 @@ Run commands: https://stackoverflow.com/questions/56490194/vs-code-bitbucket-ssh
 ###### OPERATORS, INPUTS, OUTPUTS, ARGUMENTS, STATISTICS
 import math                     => Import module for math calculations
 import sys						          => Import module for reading arguments from the command line
-import statistics as stat		  => Using some numpy functions
+import statistics as stat		    => Using some numpy functions
 5 // 2                          => Result without Decimals (=> 2)
 7 % 2                           => Modulo / Rest of the division (=> 1)
 d,e,f = 4,5,6                   => Assigment of several varaibles
 a,b = b,a                       => Change / swap 2 values
 a += 1                          => Increase value by one
-i = 1_000_000				    => For better readability - "_" are possible using long num-values (will be ignored)
+i = 1_000_000				            => For better readability - "_" are possible using long num-values (will be ignored)
 round (77.2321, 2)              => Value is rounded to two decimal places => 77.23
+int(v - v%10)                   => Round to tens place
 str(5), float("5"), int("5")    => Conversion to String / Float / Int
 abs(-2)                         => Outputs absolute value => 2
 input("ENTER to continue")      => Wait for pressing ENTER (or a keyboard stroke) to follow along
