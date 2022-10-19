@@ -473,8 +473,9 @@ if sorted(l, reverse=True) == l					         => Check if a list is sorted by des
 l.sort(key=len)									                 => Sort list by len of elements
 l = [[1,4,3], [2,2,4], [3,1,5]]					         => Define nested list
 l.sort(key=lambda x: x[1])						           => Sort nested list for the 2nd element ascending
-l.sort(key=lambda x: (x[0], x[1]))               => Sort nested list 1st for the 1st elem, then for the 2nd elem
 l.sort(key=lambda x: x[1], reverse=True)		     => Sort nested list for the 2nd element descending
+l.sort(key=lambda x: (x[0], x[1]))               => Sort nested list 1st for the 1st elem, then for the 2nd elem
+l.sort(key=lambda x: (x[0], x[1]), reverse=True) => Sort nested list 1st for the 1st elem, then for the 2nd elem descending
 l.reverse()                                      => Reverse the complete list
 l_reverse = list(reversed(l))                    => Reverse complete list and store it in different independent list
 del l[2]                                         => Delete element at index position 2
@@ -2864,6 +2865,7 @@ Xpath=//tagname[@attribute='value']
 //a[@href='http://demo.guru99.com/']      # anchor with specific link
 //img[@src='//xyz.com/img/java.png']      # img-elem with specific pic-link
 (//button)[2]                             # select the second button on the page
+//button[last()]                          # select the last button
 (//p[@class='product']/span)[2]           # select the second span in the p-element with class = 
 
 //*[@type='submit' or @name='btnReset']         # any elem which has 2 OR conditions (for type and name)
