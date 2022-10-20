@@ -2776,6 +2776,10 @@ driver.switch_to.window(act_window)								                  => Switch (back) to
 driver.set_window_size(600,1000)                                    => Set window size to 600 wide and 1000 height
 driver.minimize_window()                                            => Minmize window
 driver.execute_script("window.scrollTo(0, 10000)")                  => ScrollDown in the window (maybe to the bottom of the site) 
+driver.execute_script("window.open('');")                           => Open a new tab
+driver.switch_to.window(driver.window_handles[0])                   => Swich to first tab
+
+
 
 => Switch between iframes
 ""
