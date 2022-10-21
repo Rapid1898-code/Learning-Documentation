@@ -6,6 +6,10 @@
 JJJJ-MM-TT hh:mm
 JJJJ-MM-TT hh:mm:ss
 
+### Custom Format for show value in Thousands / millions
+#.##0.    => show value in thousand
+#.##0..   => show value in millions
+
 
 ### How to make a lookup to some other information
 =VLOOKUP(A8;Admin!$A$3:$C$100;2;FALSE)      # english version
