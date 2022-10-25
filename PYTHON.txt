@@ -2779,8 +2779,6 @@ driver.execute_script("window.scrollTo(0, 10000)")                  => ScrollDow
 driver.execute_script("window.open('');")                           => Open a new tab
 driver.switch_to.window(driver.window_handles[0])                   => Swich to first tab
 
-
-
 => Switch between iframes
 ""
 iframe = driver.find_element(By.XPATH, "//iframe[@id='mainFrame']") => Use XPath to locate iframe
@@ -3029,6 +3027,7 @@ soap.tbody                        => Reads everyting what is in the tbody-tag
 .previous_elements                => return previous elements (as a generator object)
 .find_next("ul")                  => find the next ul-element
 .find_previous("ul")              => find the previous ul-element
+.find_all("div", recursive=False) => find only direct children of an element
 .name                             => returns the name of the tag
 .strings                          => get all strings from a tag in an iterable
 .stripped_strings                 => get all (stripped) strings from a tag in an iterable
