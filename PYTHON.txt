@@ -960,7 +960,7 @@ for item in lst:
 
 ###### URLLIB
 => https://pymotw.com/2/urlparse/
-import from urllib.parse import urlparse			=> Import Module for URL parsing
+from urllib.parse import urlparse			=> Import Module for URL parsing
 => https://docs.python.org/3/library/urllib.request.html#module-urllib.request
 import urllib.request                         => Import Module for request
 link = urllib.parse.quote_plus(link)          => Encode url
@@ -2121,14 +2121,15 @@ os.popen('attrib +h ' + fn).read().close()					 => Change file to hidden
 send2trash(filename)                                 => Send file to trash (needs:)
 
 
-=> Put all files in a list from actual directory with all subdirs and Filtering
+=> Put all files with path in a list from actual directory with all subdirs and Filtering
 ""
 listExtensions=["jpg","jpeg","png"]
 listImages = []
 for dirpath,dir,files in os.walk(os.getcwd()):
   for f in files:
     if any(x in f.lower() for x in listExtensions):
-      listImages.append(f)
+      wFN = os.path.join(dirpath, f)
+      listImages.append(wFN)
 ""
 
 => Find home-directory for the actual user
