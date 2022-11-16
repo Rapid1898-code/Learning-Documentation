@@ -2964,9 +2964,10 @@ XPath
 ""
   # create this option-setting when creating the driver
   ...
+  DOCPath = os.path.join(path, "WORK")
   options = Options()
   options.add_experimental_option('prefs', {
-    "download.default_directory": PDFPath, 
+    "download.default_directory": DOCPath, 
     "download.prompt_for_download": False, 
     "download.directory_upgrade": True,
     "plugins.always_open_pdf_externally": True 
