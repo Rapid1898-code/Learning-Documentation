@@ -977,6 +977,11 @@ u.netloc											                => Returns "google.com"
   filename, headers = opener.retrieve(url, 'Test.jpg')
 ""
 
+=> Download xlsx/csv from a url
+""
+  from urllib.request import urlopen, urlretrieve
+  urlretrieve(hrefLink, filename)
+""
 
 
 
