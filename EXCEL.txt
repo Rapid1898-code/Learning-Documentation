@@ -66,3 +66,8 @@ see: Excel_HowtoDropBoxWithoutBlanks.xlsx
   - select Leerzeilen / empty rows
   - STRG -
   - select shift cells up
+
+
+  ### How to read a csv-file with the best results in excel
+  - Data > Get Data > From File > From Text/CSV
+  - import the file using the UTF-8 Format with the "comma as delimiter"
