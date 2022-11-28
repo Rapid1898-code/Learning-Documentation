@@ -1919,9 +1919,10 @@ https://www.programiz.com/python-programming/datetime/strptime
 https://rdrr.io/r/base/strptime.html
 from datetime import datetime, timedelta                     => Import module datetime and timedelta
 from datetime import date                                    => Import module dat
-datetime.strptime(s, "%Y-%m-%d")                             => Conversion string to datetime in format yyyy-mm-dd
-datetime.strptime(s, "%b %M, %Y")                            => Conversion for date format eg. "Apr 21, 2020"
+datetime.strptime("2021-06-01", "%Y-%m-%d")                  => Conversion string to datetime in format yyyy-mm-dd
+datetime.strptime("Apr 21, 2020", "%b %M, %Y")               => Conversion for date format eg. "Apr 21, 2020"
 datetime.strptime(s, "%H:%M:%S UTC %Y-%m-%d")                => Conversion for utc format eg. "14:42:46 UTC 2021-12-15
+datetime.strptime("05:20:25","%H:%M:%S")                     => Conversion for time format hh:mm:ss
 datetime.strftime(dt, "%Y-%m-%d")                            => Conversion datetime to string in format  yyyy-mm-dd
 dt.strftime((dt.strptime(tmp,"%m/%d/%Y")),"%Y-%m-%d")      	 => Convert dateformat from string in one line (1st from - 2nd to)
 isinstance(x, date)											                     => Check if variable is of type datetime.date or datetime.datetime                   
@@ -1949,6 +1950,11 @@ datetime.fromisoformat('2020-07-10 02:00:00').timestamp()    => Generate UNIX/IS
 iso_dt = datetime.fromisoformat(str(datetime.now())).timestamp()   => Generate UNIX/ISO-format from actual date
 date = datetime.fromtimestamp(ts)                            => Generate Datetime from UNIXISO-format
 sys.getsizeof(l) or sys.getsizeof(t)						             => Shows size of the list / tuple in bytes
+t = timedelta(days=0.786331018518518)                     => Convert float to hh:mm:ss datetime.timedelta
+f = t.total_seconds() / 86400                                => Convert datetime.timedelta to float
+
+
+
 
 => Using german names / deutsche namen for month- and day-names
 ""
