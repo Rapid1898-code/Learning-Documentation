@@ -1950,7 +1950,7 @@ datetime.fromisoformat('2020-07-10 02:00:00').timestamp()    => Generate UNIX/IS
 iso_dt = datetime.fromisoformat(str(datetime.now())).timestamp()   => Generate UNIX/ISO-format from actual date
 date = datetime.fromtimestamp(ts)                            => Generate Datetime from UNIXISO-format
 sys.getsizeof(l) or sys.getsizeof(t)						             => Shows size of the list / tuple in bytes
-t = timedelta(days=0.786331018518518)                     => Convert float to hh:mm:ss datetime.timedelta
+t = timedelta(days=0.786331018518518)                        => Convert float to hh:mm:ss datetime.timedelta
 f = t.total_seconds() / 86400                                => Convert datetime.timedelta to float
 
 
