@@ -143,6 +143,7 @@ python -m Pyinstaller --onefile prg.py      => Generate only one file (to get fo
 --copy-metadata pandas_ta					          => add this when some modules are not found
 --hidden-import=pymssql						          => When some modules are making problems - sometimes this helps
     pyinstaller --onefile --collect-datas=trafilatura xyz.py
+    pyinstaller --onefile --collect-datas=fake_useragent checkMapsSel2.py    
 --exclude-module matplotlib                 => when there is a depreciating warning from matlib 
 --icon=app.ico                              => Generate file with icon
 --hidden-import=pkg_resources.py2_warn      => Generating under mac os sometimes only work with this params
@@ -1416,7 +1417,7 @@ ws.range("B2").api.Font.ColorIndex = 1                  => Windows: Black: Set f
 ws.range("B2").api.Font.ColorIndex = 3                  => Windows: Red: Set font color to red (see codes: https://access-excel.tips/excel-vba-color-code-list/)
 ws.range("B2").api.font_object.color.set((105,105,105)) => Mac: Set font color to dark grey
 ws2.range(f"A2:Z10000").api.WrapText = False            => Set wrap text to False
-ws["D5"].add_hyperlink(link,text_to_display = "Chart")  => Insert a hyperlink and define which text should be shown in the cell
+ws["D5"].add_hyperlink(link, text_to_display = "Chart") => Insert a hyperlink and define which text should be shown in the cell
 ws.api.AutoFilterMode = False                           => Disable auto filter in worksheet
 ws.clear()                                              => Clears the content and formatting of the whole sheet
 ws.clear_contents()                                     => Clears the content but leaves formatting
