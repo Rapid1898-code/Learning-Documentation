@@ -2,30 +2,45 @@
 Press Shift+Win+5 to adjust settings (like where to store the pictures)
 Press Shift+Win+4 to take select what to screenshot
 
+
+### Clone a GitHub-Repo on Mac
+Using git clone with html-link asks for user and pw
+Personal Access Token have to be created on GitHub (Setting / Developer Settings)
+Then login with GitHub-User and created token
+
+
 ### Task Scheduling in MacOS with Task Till Dawn
 https://www.addictivetips.com/mac-os/how-to-schedule-tasks-on-macos/
+
 
 ### Show hidden files
 Press Shift+AppleKey+"."
 
+
 ### pyinstaller on mac os only working in several situations with this command:
 pyinstaller --hidden-import=pkg_resources.py2_warn --onefile example.py
+
 
 ### Mouse Wheel Wrong Direction:
 https://superuser.com/questions/381697/set-mouse-wheel-scrolling-direction-in-mac-os-x-and-windows
 
+
 ### Install Python 3.7:
 https://installpython3.com/mac/
 
+
 ### Installing PyCharm:
 https://web.stanford.edu/class/archive/cs/cs106ap/cs106ap.1196/coursehandouts/installingpycharm.html
+
 
 ### Installing pip:
 https://www.shellhacks.com/python-install-pip-mac-ubuntu-centos/
 (sometimes its only working when pip3 installed in the terminal from pyhcharm)
 
+
 ### @-Zeichen:
 wird mit Alt-L erzeugt
+
 
 ### Virtual Box - MacOs
 Right-Ctrl Home       					# Open Menü in VirtualBox
