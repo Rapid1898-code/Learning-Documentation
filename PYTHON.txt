@@ -962,10 +962,11 @@ for item in lst:
 
 ###### URLLIB
 => https://pymotw.com/2/urlparse/
-from urllib.parse import urlparse			=> Import Module for URL parsing
 => https://docs.python.org/3/library/urllib.request.html#module-urllib.request
+import urllib.parse                           => Import Module for URL parsing
 import urllib.request                         => Import Module for request
 link = urllib.parse.quote_plus(link)          => Encode url
+link = urllib.parse.unquote_plus(link)        => Uncode url
 u = urlparse("http://google.com/search")			=> Parse HTML-link1
 u.scheme											                => Returns "http"
 u.path												                => Returns "/search"
