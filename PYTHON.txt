@@ -1419,11 +1419,15 @@ ws.range("B2").api.Font.ColorIndex = 3                  => Windows: Red: Set fon
 ws.range("B2").api.font_object.color.set((105,105,105)) => Mac: Set font color to dark grey
 ws2.range(f"A2:Z10000").api.WrapText = False            => Set wrap text to False
 ws["D5"].add_hyperlink(link, text_to_display = "Chart") => Insert a hyperlink and define which text should be shown in the cell
+wsInp.pictures.add(imgFN, left=wsInp.range("D20").left, top=wsInp.range("D20").top, height=100)   => add an image at a specific cell
+ws.pictures                                             => Get all the pictures of a worksheet in a list
+ws.pictures[0].delete()                                 => Delete the first picture in the worksheet
+ws.pictures["xyz"].delete()                             => Delete the first picture with the name "xyz"
 ws.api.AutoFilterMode = False                           => Disable auto filter in worksheet
 ws.clear()                                              => Clears the content and formatting of the whole sheet
 ws.clear_contents()                                     => Clears the content but leaves formatting
 l = [x.name for x in wb.sheets]							            => Read worksheetnames to list
-wb.sheets["OldWS].delete()                              => Delete worksheet in workbook
+wb.sheets["OldWS"].delete()                             => Delete worksheet in workbook
 wb.sheets["WS"].api.Visible = False                     => Hide worksheet in workbook
 wb.save()                                               => Save workbook
 wb.close()                                              => Close workbook
