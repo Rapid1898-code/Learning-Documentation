@@ -57,6 +57,7 @@
 #> MODULE - BEAUTIFUL SOAP - webscraping
 #> MODULE - REQUESTS - workings with APIs
 #> MODULE - SCRAPY - webscraping using spiders
+#> MODULE - FTPLIB - ftp data transfer
 #> MODULE - PYQT - making GUIs
 #> MODULE - TKINTER - making GUIs
 #> MOUULE - KIVY - making GUIs
@@ -3301,6 +3302,25 @@ class QuotesScrollSpider(scrapy.Spider):
         if data["has_next"]:                                    # check if next page has to be read
             nextPage = data["page"] + 1
             yield scrapy.Request(url=self.apiURL.format(nextPage), callback=self.parse)
+""
+
+
+
+#> MODULE - FTPLIB - ftp data transfer
+import ftplib                       => Import module          
+ftp = ftplib.FTP()                  => Create FTP instance
+ftp.encoding = "utf-8"              => Define encoding
+ftp.connect(ADDR)                   => Connect to ftp-address
+ftp.login(USERNAME, PW)             => Login with username and password
+ftp.cwd("tmp/")                     => Change working directory eg. to tmp
+ftp.pwd()                           => Show actual working directory
+ftp.dir()                           => Show files in actual working directory
+ftp.quit()                          => Quit ftp instance
+
+=> Upload file with ftp
+""
+with open(fn, "rb") as file:
+  ftp.storbinary('STOR test.png', file) 
 ""
 
 
