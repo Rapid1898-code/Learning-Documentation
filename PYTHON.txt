@@ -144,7 +144,8 @@ python -m Pyinstaller --onefile prg.py      => Generate only one file (to get fo
 --copy-metadata pandas_ta					          => add this when some modules are not found
 --hidden-import=pymssql						          => When some modules are making problems - sometimes this helps
     pyinstaller --onefile --collect-datas=trafilatura xyz.py
-    pyinstaller --onefile --collect-datas=fake_useragent checkMapsSel2.py    
+    pyinstaller --onefile --collect-datas=fake_useragent checkMapsSel2.py  
+    pyinstaller --onefile --collect-data frozendict stockma3.py     => <frozen importlib._bootstrap> error when using yfinance
 --exclude-module matplotlib                 => when there is a depreciating warning from matlib 
 --icon=app.ico                              => Generate file with icon
 --hidden-import=pkg_resources.py2_warn      => Generating under mac os sometimes only work with this params
@@ -419,13 +420,12 @@ repr(s)											                    => Print string with special characters
 
 => check if any string is in another string or all strings are in another string
 ""
-checkString = "A string is more than its parts!"
-checks = ["more", "blabla", "nothing"]   
-if any(x in checkstring for x in checks):         # check if any elems from checks is in checkstring
-if not any(x in checkstring for x in checks):     # check if any elems from checks are NOT in checkstring
-if all(x in checkstring for x in checks):         # check if all elems from checks is in checkstring
+s = "A string is more than its parts!"
+l = ["more", "blabla", "nothing"]   
+if any(x in s for x in l):                    # check if any elems from checks in string s
+if not any(x in s for x in l):                # check if any elems from checks are NOT in string s
+if all(x in s for x in l):                    # check if all elems from checks are in string s
 ""
-
 
 
 
@@ -1418,6 +1418,8 @@ ws.range("B1").api.Font.Bold = True                     => Set cell to bold
 ws.range("B2").api.Font.ColorIndex = 1                  => Windows: Black: Set font color to black (see codes: https://access-excel.tips/excel-vba-color-code-list/)
 ws.range("B2").api.Font.ColorIndex = 3                  => Windows: Red: Set font color to red (see codes: https://access-excel.tips/excel-vba-color-code-list/)
 ws.range("B2").api.font_object.color.set((105,105,105)) => Mac: Set font color to dark grey
+ws2.autofit(axis="columns")                             => Autofit the columns
+ws2.autofit()                                           => Autofit the columns and rows
 ws2.range(f"A2:Z10000").api.WrapText = False            => Set wrap text to False
 ws["D5"].add_hyperlink(link, text_to_display = "Chart") => Insert a hyperlink and define which text should be shown in the cell
 wsInp.pictures.add(imgFN, left=wsInp.range("D20").left, top=wsInp.range("D20").top, height=100)   => add an image at a specific cell
