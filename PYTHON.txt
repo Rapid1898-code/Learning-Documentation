@@ -1,4 +1,4 @@
-###########
+list###########
 ### TOC ###
 ###########
 
@@ -2900,6 +2900,7 @@ Xpath=//tagname[@attribute='value']
 //*[contains(@id,'message')]            # any elem which has "message" somewhere in the id
 //*[contains(text(),'here')]            # any elem which has "here" somewhere in the text
 //*[contains(@href,'orf')]              # any elem which has "orf" somewhere in the href-link
+//select[contains(.,'Division')]        # select-element where some child has the text "Division" in it
 //label[starts-with(@id,'message')]     # elem where id starts with "message"
 
 //*[@type='text']//following::input[1]              # select all following-elements which have input as tag and select the first elem
