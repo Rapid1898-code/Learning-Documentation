@@ -2117,7 +2117,8 @@ mac = get_mac()
 
 ###### MODULE - OS, SHUTIL, FILECMP, DIRCMP, Send2Trash - interacting with the operating system
 import os												                     => Import module
-os.listdir()											                   => Put all filenames to a list from the actual working dir
+path = os.path.abspath(os.path.dirname(sys.argv[0])) => Get the actual path
+os.listdir(path)											               => Put all filenames to a list from the actual path
 print(dir(os))                                       => Shows alls attributs and methods of the library
 os.chdir("C:/temp")                                  => Change the directory
 os.getcwd()                                          => Current working directory
