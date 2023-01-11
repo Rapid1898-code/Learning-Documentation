@@ -1432,12 +1432,17 @@ ws.clear_contents()                                     => Clears the content bu
 l = [x.name for x in wb.sheets]							            => Read worksheetnames to list
 wb.sheets["OldWS"].delete()                             => Delete worksheet in workbook
 wb.sheets["WS"].api.Visible = False                     => Hide worksheet in workbook
+ws.copy(name='copied')                                  => Copy worksheet
 wb.save()                                               => Save workbook
 wb.close()                                              => Close workbook
 wb.quit()                                               => Quit App when opened at the beginning
 wb.activate(steal_focus=True)                           => Bring workbook to the front of the screen
 [x for x in ws.range("A3:A2000").value if x != None]    => Load elements in list from range which are not None
 ws.range("A1:A10").value = ws2.range("A1:A10").options(ndim=2).value      => copy range from one sheet to another
+
+
+
+
 
 => Hide worksheet in windows
 ""
