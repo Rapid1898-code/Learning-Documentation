@@ -144,7 +144,7 @@ python -m Pyinstaller --onefile prg.py      => Generate only one file (to get fo
 --copy-metadata pandas_ta					          => add this when some modules are not found
 --hidden-import=pymssql						          => When some modules are making problems - sometimes this helps
     pyinstaller --onefile --collect-datas=trafilatura xyz.py
-    pyinstaller --onefile --collect-datas=fake_useragent checkMapsSel2.py  
+    pyinstaller --onefile    checkMapsSel2.py  
     pyinstaller --onefile --collect-data frozendict stockma3.py     => <frozen importlib._bootstrap> error when using yfinance
 --exclude-module matplotlib                 => when there is a depreciating warning from matlib 
 --icon=app.ico                              => Generate file with icon
@@ -599,6 +599,7 @@ for key in sorted(d.keys()):                         => Iterate through sorted d
 for key in sorted(d.keys(),reverse=True):            => Iterate through sorted dict keys descending
 for val in d.values():                               => Iterate through dict values
 for key, val in d.items():                           => Iterate through keys and values of the dict
+d = {x[0]: x[1:] for x in l}                         => built dict with dict-comprehension
 d = {k: v for k, v in sorted(d.items(), key=lambda item: item[1], reverse=True)}    => Sort dict descending according to values (=item[1])
 d = {k: v for k, v in sorted(d.items(), key=lambda item: item[0])}      => Sort dict ascending according to keys (=item[0])
 d = {k: v for k, v in sorted(d.items(), key=lambda x: (-x[1],x[0]))}    => Dict sorted: 1st value-desc (x[0]) - 2nd key-ascnd (-x[0])
