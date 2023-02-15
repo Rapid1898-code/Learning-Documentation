@@ -1424,6 +1424,8 @@ ws.range("A1:C3").number_format = "0%"                  => Assign percentage for
 ws.range("B1").api.Font.Bold = True                     => Set cell to bold
 ws.range("B2").api.Font.ColorIndex = 1                  => Windows: Black: Set font color to black (see codes: https://access-excel.tips/excel-vba-color-code-list/)
 ws.range("B2").api.Font.ColorIndex = 3                  => Windows: Red: Set font color to red (see codes: https://access-excel.tips/excel-vba-color-code-list/)
+ws.range("A1").api.Font.Size = 16                       => Windows: Set font size to 16
+ws.range("A1").api.Font.Name = "Arial"                  => Windwos: Set specific font
 ws.range("B2").api.font_object.color.set((105,105,105)) => Mac: Set font color to dark grey
 ws2.autofit(axis="columns")                             => Autofit the columns
 ws2.autofit()                                           => Autofit the columns and rows
