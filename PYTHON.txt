@@ -1448,9 +1448,8 @@ wb.quit()                                               => Quit App when opened 
 wb.activate(steal_focus=True)                           => Bring workbook to the front of the screen
 [x for x in ws.range("A3:A2000").value if x != None]    => Load elements in list from range which are not None
 ws.range("A1:A10").value = ws2.range("A1:A10").options(ndim=2).value      => copy range from one sheet to another
-
-
-
+ws1.api.Move(Before=wsWork.api)                         => Move worksheet at the beginning    
+ws1.api.Move(After=wsWork.api)                          => Move worksheet at the end
 
 
 => Hide worksheet in windows
