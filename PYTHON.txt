@@ -381,11 +381,15 @@ s = '''this \
 	and this'''
 ""
 
-c = s[0]										                    => first char of a string
-c = s[-1]										                    => last char of a string
-s = "text %s bla" % var							            => Insert variable in string oldest method (%s for string, %i for int, %f for float, %.2f for 2 decimals)
-s = "text {} bla".format(var)				    	      => Insert variable in string old method (:.2f for 2 decimals)
-s = f"text {var} bla"							              => Insert variable in string new method
+c = s[0]										        => first char of a string
+c = s[-1]										        => last char of a string
+s = "text %s bla" % var							=> Insert variable in string oldest method (%s for string, %i for int, %f for float, %.2f for 2 decimals)
+s = "text {} bla".format(var)				=> Insert variable in string old method (:.2f for 2 decimals)
+s = f"text {var} bla"							  => Insert variable in string new method
+s = f"{var:02d}"                    => Format int with allways 2 digits
+s = f"{float:0.2f}                  => Format float with allways 2 decimal places
+s = f"{float:09.2f}                 => Format float with 2 decmial places and overall 9 chars with leading 0
+
 "{0} like, {0} especially {0} but {1}".format("Joe", "noodles")  	=> Multiple use   							
 s.find ("ist")                                  => Returns the index where the text is found
 s.count ("i")                                   => Counts the occurrence of a text
