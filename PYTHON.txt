@@ -3186,6 +3186,14 @@ r.html.find("div.clX", first=True)                => Div-element with class = "c
 r.html.find("div.clX span.clY",first=True).text   => Span-element with class="clY" ind Div-element with class="clX"
 ""
 
+=> Using requests to download a file
+""
+url = "https://xyz.mp3"
+doc = requests.get(url)
+with open('work.mp3', 'wb') as f:
+  f.write(doc.content)
+""
+
 => Using requests for reading websites
 ""
 ua = UserAgent(verify_ssl=False)

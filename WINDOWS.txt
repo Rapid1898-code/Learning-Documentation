@@ -2,6 +2,7 @@
 Start - Systemsteuerung - System - Erweiterte Systemeinstellungen
 Umgebungsvariablen - Select Path Variable - Select Path in Systemvariablen - Bearbeiten
 Neu - Add eg. C:\Program Files\heroku\bin
+
 Start - Control Panel - System - Advanced system settings
 Environment Variables - Select Path in SystemVariables - Edit
 New - Add eg. C:\Program Files\heroku\bin
