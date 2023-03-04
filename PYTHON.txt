@@ -596,8 +596,6 @@ d2 = d												                       => Copying a dict (all changes will be 
 d2 = d.copy()										                     => Copying a dict (NOT WORKING with nested lists in the dict - use deepcopy!)
 d2 = dict(d)										                     => Copying a dict (NOT WORKING with nested lists in the dict - use deepcopy!)
 d2 = copy.deepcopy(d)                                => Copying a dict (dicts will be handled seperate) - import copy necessary 
-
-
 d.update(d2)										                     => Dict d get updated with d2 (all existing keys are overwritten - and new added)
 for key in d.keys():                                 => Iterate through dict keys
 for key in sorted(d.keys()):                         => Iterate through sorted dict keys ascending
