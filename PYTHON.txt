@@ -3035,8 +3035,6 @@ soup.find_all(["th","td"])                                      => Find alle th-
 soup.find_all("tr", class_="arrow0"):       			              => Read all table rows for specific class
 soup.find_all("p", {"class": "payamntp"})      			            => Find all div-elements with specific class
 soup.find_all("div", {'class':['class1', 'class2']})            => Find element with one of this 2 classes
-soup.select("div.class1.class2")                                => Find divs which have both classes
-soup.select("div[class='table-container']")                     => Find divs which have only this class
 for col_id, col_content in enumerate(result.find_all("td")):    => Read all table data cells with id and content
 soup.find_all("div", class_="col-xs-6")                         => Read all divs with specific class
 soup.find("div", {"id": "lj_div"})								              => Find div with id "lj_div"
@@ -3074,6 +3072,22 @@ soap.tbody                        => Reads everyting what is in the tbody-tag
 .name                             => returns the name of the tag
 .strings                          => get all strings from a tag in an iterable
 .stripped_strings                 => get all (stripped) strings from a tag in an iterable
+
+=> Using the select selector
+""
+# https://facelessuser.github.io/soupsieve/selectors/
+soup.select("div.class1.class2")                => divs-elem which have both classes
+soup.select("div[class='table-container']")     => div-elem which have only this class
+soup.select('h1, p')                            => all h1- and p-elements        
+soup.select('body p')                           => p-elems in body
+soup.select('div > p')                          => children p-elems in div
+soup.select('h1 ~ p')                           => p-elems on the same level as h1
+soup.select(':any-link')                        => any links which has a href-attribute
+soup.select(':checked')                         => all checked elements (radio-buttons, checkboxes, option)
+soup.select('p:first-child')                    => first child in a group
+soup.select('span:first-of-type')               => firt child of a given type in a group
+
+""
 
 
 => Define Real User Agent Header
