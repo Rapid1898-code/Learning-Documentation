@@ -437,6 +437,7 @@ if all(x in s for x in l):                    # check if all elems from checks a
 ###### REGEX
 import re                                                       => import regex module
 https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285		=> Information about regex handling
+https://regex101.com/     => test regex strings
 pattern = re.compile("^[0-9]{4}-[0-9]{2}$")       => Find str with 4xdigits + "-"char + 2xdigits
 pattern.match(s)                                  => Check if pattern matches - <> None when matches
 pattern2 = re.compile("[0-9]{4}-[0-9]{2}")        => Find str with 4xdigits + "-"char + 2xdigits
@@ -448,6 +449,7 @@ re.sub(r'([a-z](?=[A-Z])|[A-Z](?=[A-Z][a-z]))', r'\1 ', "txt")	=> Insert blank b
 len(re.findall(f'[{cL}"]{w}[{cL}"]', l))          => count all words which start and ends with a char from cL
 len(re.findall(f'^{w}[{charList}"]', l))          => count all words which start with w and ends with a char from cL
 len(re.findall(f'[{charList}"]{w}$', l))          => count all words which start with a char from cL and ends w
+len(re.findall(f'(.*?){w}(.*?)', l))              => count all words which have w in the middle of anything else
 
 
 
@@ -1006,8 +1008,12 @@ with open(FN, "r", encoding="utf-8") as f:
   csvRead = csv.reader(f, delimiter=";")
   inpData = [x for x in csvRead]                                
 
-# when this error happens: _csv.Error: line contains NUL
-with open(workFN,"r",encoding="utf-16") as f:               
+# when this error happens: _csv.Error: line contains NULL
+with open(workFN, "r", encoding="utf-16") as f:               
+  ...
+
+# when this error happens: UnicodeDecodeError: 'utf-8' codec can't decode byte 0x96 
+with open(workFN, "r", encoding="mac_roman") as f:               
   ...
 ""
 
