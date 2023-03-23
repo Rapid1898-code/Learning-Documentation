@@ -1461,6 +1461,12 @@ ws.range("A1:A10").value = ws2.range("A1:A10").options(ndim=2).value      => cop
 ws1.api.Move(Before=wsWork.api)                         => Move worksheet at the beginning    
 ws1.api.Move(After=wsWork.api)                          => Move worksheet at the end
 
+=> Get address and subaddress from hyperlinks
+""
+for l in ws1['H18'].api._inner.Hyperlinks:
+  wAddr = l.address         # brings results for http-links
+  wSubAddr = l.SubAddress   # brings results for internal file-links
+""
 
 => Hide worksheet in windows
 ""
