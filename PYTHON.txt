@@ -2828,9 +2828,10 @@ driver.switch_to.window(driver.window_handles[0])                   => Swich to 
 
 => Switch between iframes
 ""
-iframe = driver.find_element(By.XPATH, "//iframe[@id='mainFrame']") => Use XPath to locate iframe
-driver.switch_to.frame(iframe)                                      => Switch to iframe
-driver.switch_to.default_content()                                  => Switch back to default content
+waitWD.until(EC.presence_of_element_located((By.XPATH,"//iframe[@id='mainFrame']")))
+iframe = driver.find_element(By.XPATH, "//iframe[@id='mainFrame']") 
+driver.switch_to.frame(iframe)                                      
+driver.switch_to.default_content()                                  
 ""
 
 => Wait till a specific element is loaded / clickable
