@@ -519,7 +519,7 @@ l[::2]                                           => Every second element [start:
 9 in l                                           => Check if element is in list
 if any(x in st for x in ["ab","cd","de"]):       => Check if any elements from the list are in the string
 if all(x in st for x in ["ab","cd","de"]):       => Check if all elements from the list are in the string    
-if all(x not in str for x in ["ab","cd"]):      => Check if all elements from the list are NOT in the string    
+if all(x not in str for x in ["ab","cd"]):       => Check if all elements from the list are NOT in the string    
 for i in l:                                      => Iterate through list content
 for i in range(len(l)):                          => Iterate through list with index
 for idx, cont in enumerate(l):                   => Iterate through list with index and content
@@ -527,9 +527,9 @@ for x,y in zip(l1,l2):							             => Iterate through 2 lists pair-wise (
 ', '.join(l)                              		   => Create string with elements joined together with ", " eg. ["a","b","c"] => a, b, c
 a = [1,2,3,4,5]                                  => Define list
 list(map(lambda x: x*2, [1,2,3,4,5]))			       => List is mapped with the lambda function => [2,4,6,8,10]
-l=[x*2 for x in [1,2,3,4,5]]					           => Also possible with list comprehension => [2,4,6,8,10]
-l=[x for x in [1,2,3,4,5] if x%2==0]			       => Also possible with list comprehension => [2,4]
-l=[x*2 if x.isdigit() else x for x in [1,"A",2]] => List comprehension with if and else
+l=[x*2 for x in l]					                     => Also possible with list comprehension => [2,4,6,8,10]
+l=[x for x in l if x%2==0]			                 => Also possible with list comprehension => [2,4]
+l=[x*2 if x.isdigit() else x for x in l]         => List comprehension with if and else
 list(filter(lambda x: x%2==0, [1,2,3,4,5]))		   => List is filtered with lambda for even numbers => [2,4]
 zip([1,2,3],[4,5,6])							               => Build paris as tuple => (1,4),(2,5),(3,6)
 list(set(x))									                   => Remove duplicates from a list
@@ -1003,7 +1003,7 @@ u.netloc											                => Returns "google.com"
 import csv                                              
 => Read csv-file to nested-list
 ""
-FN = os.path.join(path, "inp.csv")
+fn = os.path.join(path, "inp.csv")
 with open(FN, "r", encoding="utf-8") as f:               
   csvRead = csv.reader(f, delimiter=";")
   inpData = [x for x in csvRead]                                
@@ -1015,6 +1015,12 @@ with open(workFN, "r", encoding="utf-16") as f:
 # when this error happens: UnicodeDecodeError: 'utf-8' codec can't decode byte 0x96 
 with open(workFN, "r", encoding="mac_roman") as f:               
   ...
+""
+
+=> Create an empty csv-file
+""
+  with open(fnName, "w") as f:      
+    pass  
 ""
 
 => Write csv-file from nested list

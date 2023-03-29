@@ -14,7 +14,7 @@ https://www.addictivetips.com/mac-os/how-to-schedule-tasks-on-macos/
 
 
 ### Show hidden files
-Press Shift+AppleKey+"."
+Press Shift + AppleKey + "."
 
 
 ### pyinstaller on mac os only working in several situations with this command:
