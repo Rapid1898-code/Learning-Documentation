@@ -1,0 +1,16 @@
+Setup Oracle VM:
+https://levelup.gitconnected.com/a-powerful-server-from-oracle-cloud-always-free-cbc73d9fbfee
+
+Install Python 3.9 and change default interpreter:
+https://docs.oracle.com/en/operating-systems/oracle-linux/8/python/python-InstallingPython.html#installing-python-libraries
+
+Install Git and clone repos:
+https://oracle-base.com/articles/linux/git-2-installation-on-linux
+
+Install PIP:
+https://www.atlantic.net/vps-hosting/how-to-install-and-use-pip-python-package-manager-on-oracle-linux-8/
+
+su rapid1898    => change user
+exit            => exit user (change to root)
+rm -rf dir      => delete folder with all files
+ls -la          => show also hidden files
