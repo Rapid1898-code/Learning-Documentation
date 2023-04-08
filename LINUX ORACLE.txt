@@ -15,3 +15,4 @@ exit            => exit user (change to root)
 rm -rf dir      => delete folder with all files
 ls -la          => show also hidden files
 sudoi -I        => change to root (from opc user)
+df -H           => show free space
