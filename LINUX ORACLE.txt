@@ -1,6 +1,9 @@
 Setup Oracle VM:
 https://levelup.gitconnected.com/a-powerful-server-from-oracle-cloud-always-free-cbc73d9fbfee
 
+SignIn to OracleCloud:
+https://www.oracle.com/cloud/sign-in.html
+
 Install Python 3.9 and change default interpreter:
 https://docs.oracle.com/en/operating-systems/oracle-linux/8/python/python-InstallingPython.html#installing-python-libraries
 
@@ -10,9 +13,31 @@ https://oracle-base.com/articles/linux/git-2-installation-on-linux
 Install PIP:
 https://www.atlantic.net/vps-hosting/how-to-install-and-use-pip-python-package-manager-on-oracle-linux-8/
 
+Install Chrome:
+https://oraclespin.com/2018/01/19/install-chrome-on-oracle-linux-7-rehl7/
+
+Putty:
+Session: Host/IP 140.238.170.208, Port 22
+Connection - Data: Auto-login username: opc
+Connection - SSH - Auth - Credentials: select PPK-key from GoogleDrive Wichtig
+
+Filezilla:
+Protocol: SFTP
+Host: 140.238.170.208
+Port: 22
+Logon Type: Key file
+User: opc
+Key file: select PPK-key from GoogleDrive Wichtig
+
+Commands:
 su rapid1898    => change user
-exit            => exit user (change to root)
+sudo -i         => change to root
 rm -rf dir      => delete folder with all files
 ls -la          => show also hidden files
 sudoi -I        => change to root (from opc user)
 df -H           => show free space
+touch f.txt     => create a file
+vi f.txt        => open file in vi-editor
+ESC + :wq!      => save and close file
+ESC + :qa!      => close file (without saving)
+
