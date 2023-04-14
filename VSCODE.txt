@@ -9,3 +9,31 @@ the python-interpreter from the venv-environment
 
 ###### Open setting.json
 - Press Shift+Ctrl+P - type "settings" - search for Open User Settings"
+
+###### Extensions
+Auto Close Tag
+Auto Rename Tag
+Auto Align
+autoDocstring - Python Docstring Generator
+C/C+ Extension Pack
+change-case
+Code Runner
+Color Picker
+CSS Peak
+Dart
+Doxygen Documentation Generator
+Excel Viewer
+Git History
+GitLink
+HTML CSS Support
+isort
+Jupyter Cell Tags
+Jupyter Slide Show
+open in browser
+Prettier - Code formatter
+Pylance
+Python Remote Explorer
+Setting-Sync
+vscode-icons
+
+
