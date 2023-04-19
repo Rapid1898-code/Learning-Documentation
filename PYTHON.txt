@@ -1965,7 +1965,7 @@ https://rdrr.io/r/base/strptime.html
 from datetime import datetime, timedelta                     => Import module datetime and timedelta
 from datetime import date                                    => Import module dat
 datetime.strptime("2021-06-01", "%Y-%m-%d")                  => Conversion string to datetime in format yyyy-mm-dd
-datetime.strptime("Apr 21, 2020", "%b %M, %Y")               => Conversion for date format eg. "Apr 21, 2020"
+datetime.strptime("Apr 21, 2020", "%b %d. %Y")               => Conversion for date format eg. "Apr 21, 2020"
 datetime.strptime(s, "%H:%M:%S UTC %Y-%m-%d")                => Conversion for utc format eg. "14:42:46 UTC 2021-12-15
 datetime.strptime("05:20:25","%H:%M:%S")                     => Conversion for time format hh:mm:ss
 datetime.strftime(dt, "%Y-%m-%d")                            => Conversion datetime to string in format  yyyy-mm-dd
@@ -3092,6 +3092,7 @@ soap.tbody                        => Reads everyting what is in the tbody-tag
 .name                             => returns the name of the tag
 .strings                          => get all strings from a tag in an iterable
 .stripped_strings                 => get all (stripped) strings from a tag in an iterable
+.find_all(text=True, recursive=False)   => get all text directly below a tag
 
 => Using the select selector
 ""
