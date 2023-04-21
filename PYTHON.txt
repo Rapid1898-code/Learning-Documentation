@@ -1431,11 +1431,11 @@ ws.range ("A2").hyperlink                               => Read hyperlink of cel
 ws.range("A1:C3").value                                 => Set values for specific cell
 ws["C8"].color = None									                  => Remove background from a cell
 ws.range("A1:C3").color = (255,255,255)					        => White: Assigns background color for a range of cells
-ws.range("A1:C3").color = (149,237,173)					        => Green: Assigns background color green
-ws.range("A1:C3").color = (237,149,149)					        => Red: Assigns background color green
-ws.range("A1:C3").color = (240,232,146)					        => Yellow: Assigns background color green
-ws.range("A1:C3").color = (230,172,80)					        => Orange: Assigns background color green
-ws.range("A1:C3").color = (143,157,235)					        => Blue: Assigns background color green
+ws.range("A1:C3").color = (149,237,173)					        => Green: Assigns background color
+ws.range("A1:C3").color = (237,149,149)					        => Red: Assigns background color
+ws.range("A1:C3").color = (240,232,146)					        => Yellow: Assigns background color
+ws.range("A1:C3").color = (230,172,80)					        => Orange: Assigns background color
+ws.range("A1:C3").color = (143,157,235)					        => Blue: Assigns background color
 ws.range("A1:C3").number_format = "0,00"                => Assign numeric format with 2 decimals
 ws.range("A1:C3").number_format = "0%"                  => Assign percentage format with 2 decimals
 ws.range("B1").api.Font.Bold = True                     => Set cell to bold
