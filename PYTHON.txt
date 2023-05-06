@@ -3109,7 +3109,6 @@ soup.select(':any-link')                        => any links which has a href-at
 soup.select(':checked')                         => all checked elements (radio-buttons, checkboxes, option)
 soup.select('p:first-child')                    => first child in a group
 soup.select('span:first-of-type')               => firt child of a given type in a group
-
 ""
 
 
@@ -3173,6 +3172,13 @@ driver.find_element_by_class_name("cont")								# Search for a specific class n
 driver.find_element_by_css_selector('p.content')						# Search for tag and selector
 ""
 
+
+=> Read the whole text of an article / element
+""
+  tmpText = soup.find("article", {"itemprop": "description"})
+  if tmpText != None:
+    wText = "\n".join(list(tmpText.stripped_strings)[1:])
+""
 
 
 ###### MODULE - REQUESTS - workings with APIs and reading websites
