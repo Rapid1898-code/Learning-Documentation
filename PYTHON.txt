@@ -12,7 +12,23 @@
 #> RANDOM, SECRETS
 #> STRING
 #> REGEX
-#> LIST
+#> LISTProvide adds for the following companies - as with the last delivery / last companies
+ElectroLux
+Ericsson
+Essity
+Getinge
+HM
+NordeaBank
+Sandvik
+SEB
+Securitas
+Skanska
+SKF
+Volvo
+Hexagon
+
+Deliverables:
+13 excel-sheets with the data
 #> TUPEL
 #> DICTIONARY
 #> SETS  
@@ -3221,6 +3237,14 @@ r.html.find("span#wob_tm", first=True).text       => Span-value with id = "wob_t
 r.html.find("div.clX", first=True)                => Div-element with class = "clX"
 r.html.find("div.clX span.clY",first=True).text   => Span-element with class="clY" ind Div-element with class="clX"
 ""
+
+
+=> Using request to get the source code or text from a page
+""
+resp = requests.get("https://api.buyproxies.org/?a=showProxies&pid=175649&key=168281a74e7bb3f0dc0feb4f37ec6de5&port=12345")
+proxyList = resp.text.split("\n")
+""
+
 
 => Using requests to download a file
 ""
