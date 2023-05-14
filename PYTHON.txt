@@ -1007,7 +1007,7 @@ import csv
 => Read csv-file to nested-list
 ""
 fn = os.path.join(path, "inp.csv")
-with open(FN, "r", encoding="utf-8") as f:               
+with open(fn, "r", encoding="utf-8") as f:               
   csvRead = csv.reader(f, delimiter=";")
   inpData = [x for x in csvRead]                                
 
