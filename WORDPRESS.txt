@@ -17,6 +17,8 @@ Pagination Settings - Post Count
 
 Question:
 - How to select which post are shown on the homepage?
-- Icons for Apple / Windows / Excel?
-- Same image view when settings are landscape?
+- Same image view when settings are landscape? (service contacted)
 - is there any plugin to resize images?
+- convert to wwww.rapidtech1898.com?
+- Table Of Contents nicht alle fett geschrieben (https://wordpress.rapidtech1898.com/solutions/stock-trendpatterns/)
+- where to store files for downloading
