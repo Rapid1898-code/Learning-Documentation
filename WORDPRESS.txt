@@ -15,10 +15,35 @@ Select Part of the site - eg. Solutions
 Click Block on the right side
 Pagination Settings - Post Count
 
+### Post-Header/Title global settings
+Appearance - Customise
+Post Settings
+Post Header
+Choose "Simple"
+
+### Post-Header/Title specific settings per post
+Post - Edit - tab Post
+Layout Options at the bottom
+
+### Add/Change Feedback Entries
+Testimonials - Add New
+
+### Virtual Sights 
+Posts - Categories
+
+### Setting for changing Feedback
+Testimonials - Views
+Set Order for random
+Select Seconds in Slideshow
+
+### About me infos
+Appearance - Widgets
+Defualt Sidebar in the middle
+
+
+
 Question:
 - How to select which post are shown on the homepage?
 - Same image view when settings are landscape? (service contacted)
-- is there any plugin to resize images?
 - convert to wwww.rapidtech1898.com?
 - Table Of Contents nicht alle fett geschrieben (https://wordpress.rapidtech1898.com/solutions/stock-trendpatterns/)
-- where to store files for downloading
