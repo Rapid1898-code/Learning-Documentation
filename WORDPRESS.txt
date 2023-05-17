@@ -40,10 +40,17 @@ Select Seconds in Slideshow
 Appearance - Widgets
 Defualt Sidebar in the middle
 
+### Sorting the post on the mainpage
+Pages - Homepage
+Block - Query Settings - Order By and Order
 
+### Make image clickable to see full image / bigger image
+Click on image - select Insert Link
+Choose Media File
 
 Question:
-- How to select which post are shown on the homepage?
 - Same image view when settings are landscape? (service contacted)
 - convert to wwww.rapidtech1898.com?
 - Table Of Contents nicht alle fett geschrieben (https://wordpress.rapidtech1898.com/solutions/stock-trendpatterns/)
+- SEO optimization
+- Performance optimization
