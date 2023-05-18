@@ -30,6 +30,7 @@ Testimonials - Add New
 
 ### Virtual Sights 
 Posts - Categories
+Set "Page Header" for Title in every virtual category page
 
 ### Setting for changing Feedback
 Testimonials - Views
@@ -41,8 +42,8 @@ Appearance - Widgets
 Defualt Sidebar in the middle
 
 ### Sorting the post on the mainpage
-Pages - Homepage
-Block - Query Settings - Order By and Order
+Pages - Homepage - Select Block
+Block - Query Settings - Order By and Order (Published Date, Random, Title, etc.)
 
 ### Make image clickable to see full image / bigger image
 Click on image - select Insert Link
