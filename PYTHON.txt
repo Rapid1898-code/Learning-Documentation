@@ -12,23 +12,7 @@
 #> RANDOM, SECRETS
 #> STRING
 #> REGEX
-#> LISTProvide adds for the following companies - as with the last delivery / last companies
-ElectroLux
-Ericsson
-Essity
-Getinge
-HM
-NordeaBank
-Sandvik
-SEB
-Securitas
-Skanska
-SKF
-Volvo
-Hexagon
-
-Deliverables:
-13 excel-sheets with the data
+#> LIST
 #> TUPEL
 #> DICTIONARY
 #> SETS  
@@ -42,7 +26,7 @@ Deliverables:
 #> XML FORMAT
 #> URLLIB
 #> MODULE - CSV
-#> MOUDLE - ZIPFILE - handling ZIP files
+#> MODULE - ZIPFILE - handling ZIP files
 #> MODULE - GSPREAD - API for Google Sheets
 #> MODULE - OPENPYXL - working with excel worksheets
 #> MODULE - XLWINGS - working on the fly with open excel worksheets
