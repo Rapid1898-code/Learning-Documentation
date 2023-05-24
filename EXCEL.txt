@@ -54,7 +54,7 @@ see: Excel_HowtoDropBoxWithoutBlanks.xlsx
 - define input-values in eg. column a
 - copy this formula in eg. column c:
   =IFERROR(INDEX($A$1:$A$100; MATCH(0; COUNTIF($C$1:C1; $A$1:$A$100&"") + IF($A$1:$A$100="";1;0); 0)); "")
-- define List-Name in Formulas => Name Mangaer: eg.
+- define List-Name in Formulas => Name Manager: eg.
   =OFFSET(Tabelle1!$C$2;;;COUNTIF(Tabelle1!$C$2:$C$100;"> ");1)
 - define List-Element in Data => Data Validation => List and reference to List-Name from above: eg. 
   =LIST
@@ -71,6 +71,7 @@ see: Excel_HowtoDropBoxWithoutBlanks.xlsx
 ### How to read a csv-file with the best results in excel
 - Data > Get Data > From File > From Text/CSV
 - import the file using the UTF-8 Format with the "comma as delimiter"
+
 
 ### How to change the column-headers from char to number
 - File - Options - Formulas
