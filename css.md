@@ -1,37 +1,9 @@
-# CSS
----
 
-#### GENERAL [jump to...](#general)
-#### ATTRIBUTES [jump to...](#attributes)
-#### FORMATING SNIPPETS [jump to...](#formating-snippets)
-#### FONT DEFINITION [jump to...](#font-definition)
-#### ICON USE [jump to...](#icon-use)
-#### PARENT CHILD RELATIONSHIP [jump to...](#parent-child-relationship)
-#### SELECTORS AND COMBINATIONS [jump to...](#selectors-and-combinations)
-#### CLASSES [jump to...](#classes)
-#### ID [jump to...](#id)
-#### INLINE STYLE [jump to...](#inline-style)
-#### SPECIFICITY [jump to...](#specificity)
-#### PSEUDO CLASSES [jump to...](#pseudo-classes)
-#### BOX MODEL [jump to...](#box-model)
-#### LAYOUTS, FLOATING [jump to...](#layouts-floating)
-#### LAYOUT FLEXBOX [jump to...](#layout-flexbox)
-#### LAYOUT GRID [jump to...](#layout-grid)
-#### RESPONSIVE DESIGN [jump to...](#responsive-design)
-#### MEDIA QUERIES [jump to...](#media-queries)
-#### ANIMATING, TRANSFORM [jump to...](#animating-transform)
-#### VARIABLES [jump to...](#variables)
-#### TEMPLATE [jump to...](#template)
-#### PERFORMANCE ORGANIZATION [jump to...](#performance-organization)
-#### CHROME HACKS [jump to...](#chrome-hacks)
-#### PREPROCESSORS [jump to...](#preprocessors)
-#### SASS [jump to...](#sass)
 
 
 
 ---
 ## GENERAL
-[jump to top...](#css)<br><br>
 - should go in seperate file (better than inline or in the head)
 - css statements are called "rules"
 - resetting all browser-styles: http://meyerweb.com/eric/tools/css/reset/
@@ -76,7 +48,6 @@ p {
 
 ---
 ## ATTRIBUTES
-[jump to top...](#css)<br><br>
 https://www.w3schools.com/cssref/
 <br>Define red color for element
 ```markdown
@@ -339,7 +310,6 @@ Make copyright-sign
 
 ---
 ## FORMATING SNIPPETS
-[jump to top...](#css)<br><br>
 center an unordered list
 ```markdown
 ul {
@@ -481,7 +451,6 @@ transition: 1.5s ease;						# make smooth transisition (with ease => slow - than
 
 ---
 ## FONT DEFINITION
-[jump to top...](#css)<br><br>
 https://fonts.google.com/
 <br>taken from google fonts for example (take fonts and then create link in upper right corner for the link
 ```markdown
@@ -501,7 +470,6 @@ p {
 
 ---
 ## ICON USE
-[jump to top...](#css)<br><br>
 Using icons directly from https://fontawesome.com/
 ```markdown
 <head>      # Definition in the head
@@ -536,7 +504,6 @@ format the div-wrapper:				# for coloring and positioning the svg-icon (in the w
 
 ---
 ## PARENT CHILD RELATIONSHIP
-[jump to top...](#css)<br><br>
 Overview Complex Selectors see: https://learn.shayhowe.com/advanced-html-css/complex-selectors/
 <br>direct parent/child relationship
 ```markdown
@@ -575,7 +542,6 @@ p + p {					   # format is used when two <p>s are after each other
 
 ---
 ## SELECTORS AND COMBINATIONS
-[jump to top...](#css)<br><br>
 <br>Type Selector - Select one specific type
 ```markdown
 h1 {...}
@@ -637,7 +603,6 @@ body h1 + p .special {...}
 
 ---
 ## CLASSES
-[jump to top...](#css)<br><br>
 class is used for formating many different elements
 ```markdown
 <section>
@@ -687,7 +652,6 @@ aside.aExtra h3
 
 ---
 ## ID
-[jump to top...](#css)<br><br>
 id is used for formating unique elements
 ```markdown
 <section>
@@ -717,7 +681,6 @@ section#aMilk h2
 
 ---
 ## INLINE STYLE
-[jump to top...](#css)<br><br>
 !important
 ```markdown
 .bob {
@@ -729,7 +692,6 @@ section#aMilk h2
 
 ---
 ## SPECIFICITY
-[jump to top...](#css)<br><br>
 https://down4kode.wordpress.com/2014/05/21/css-specificity-calculator/
 <br>defines the priority which styles can overwrite which style
 ```markdown
@@ -765,7 +727,6 @@ section1,section2 .bob { }
 
 ---
 ## PSEUDO CLASSES
-[jump to top...](#css)<br><br>
 overview see: https://learn.shayhowe.com/advanced-html-css/complex-selectors/
 <br>special classes which are dinamically populated as a result of user actions of document structure
 ```markdown
@@ -783,7 +744,6 @@ div p:nth-child(2)						=> Select the second p-child in the div-element
 
 ---
 ## BOX MODEL
-[jump to top...](#css)<br><br>
 https://en.wikipedia.org/wiki/CSS_box_model#/media/File:Boxmodell-detail.png
 <br>every element is a box - box in the middle
 <br>box has a heigth and width - eg. 100px*100px
@@ -808,7 +768,6 @@ With this statement every sizing is included with the border
 
 ---
 ## LAYOUTS, FLOATING
-[jump to top...](#css)<br><br>
 =>old layouting - not state of the art!
 <br>element tries to got as much up to the top - and as much left (or right according if floated left or right)
 <br>normaly everything will float to the left
@@ -865,7 +824,6 @@ footer {
 
 ---
 ## LAYOUT FLEXBOX
-[jump to top...](#css)<br><br>
 css-tricks.com: Complete Guide To Flexbox<br>
 Initialize flexcontainer (parent element as a block)
 ```markdown
@@ -1015,7 +973,6 @@ flex: 10 5 400px								# means 10 for flex-grow, 5 for flex-shrink, 400px for f
 
 ---
 ## LAYOUT GRID
-[jump to top...](#css)<br><br>
 <br>Define grid for the layouting as block)
 ```markdown
 display: grid;
@@ -1152,7 +1109,6 @@ grid-row-end: 3;
 
 ---
 ## RESPONSIVE DESIGN
-[jump to top...](#css)<br><br>
 Running the page on different / smaller devices
 ```markdown
 - Fluid - everything sized with percentage (no fixed measures)
@@ -1191,7 +1147,6 @@ Running the page on different / smaller devices
 
 ---
 ## MEDIA QUERIES
-[jump to top...](#css)<br><br>
 smartphones: this rule get only be used when the device width is between 0 and 600 pixel
 ```markdown
 @media screen and (max-width: 600px) {
@@ -1244,7 +1199,6 @@ main,.bottom {
 
 ---
 ## ANIMATING, TRANSFORM
-[jump to top...](#css)<br><br>
 <br>combines the follwing 6 rules
 ```markdown
 transform: matrix(1,2,3,4,5,6);
@@ -1328,7 +1282,6 @@ animation-fill-mode
 
 ---
 ## VARIABLES
-[jump to top...](#css)<br><br>
 Define variables in css
 ```markdown
 :root {											# Highest possible level of setting a variable
@@ -1352,7 +1305,6 @@ img {											# Eg. using for image-rule
 
 ---
 ## TEMPLATE
-[jump to top...](#css)<br><br>
 see Learning-Documentation
 <a href="../docs/htmlTemplate.zip">link</a>
 
@@ -1360,7 +1312,6 @@ see Learning-Documentation
 
 ---
 ## PERFORMANCE ORGANIZATION
-[jump to top...](#css)<br><br>
 https://learn.shayhowe.com/advanced-html-css/performance-organization/
 <br>keep selector shorthand
 <br>use no or less ids - better classes
@@ -1373,7 +1324,6 @@ https://learn.shayhowe.com/advanced-html-css/performance-organization/
 
 ---
 ## CHROME HACKS
-[jump to top...](#css)<br><br>
 <br>live the selected element in the browser
 ```markdown
 select the width or heigth - press rigth strg - up/down
@@ -1383,7 +1333,6 @@ select the width or heigth - press rigth strg - up/down
 
 ---
 ## PREPROCESSORS
-[jump to top...](#css)<br><br>
 https://learn.shayhowe.com/advanced-html-css/preprocessors/
 <br>Haml: Preprocessor for HTML
 Ruby must be installed before<br>
@@ -1398,7 +1347,6 @@ haml index.haml index.html
 
 ---
 ## SASS
-[jump to top...](#css)<br><br>
 (more like a programming language with expressions, loops, if-statements,...)
 Many other preprocessors like Jade, Slim, LESS, Stylus, CoffeeScript<br>
 Installation of Sass

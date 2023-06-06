@@ -1,15 +1,8 @@
-# GIT
----
 
-#### BASICS, GITHUB [jump to...](#basics-github)
-#### GITIGNORE [jump to...](#gitignore)
-#### BRANCHES [jump to...](#branches)
-#### WORKFLOW EXAMPLE [jump to...](#workflow-example)
 
 
 ---
 ## BASICS, GITHUB
-[jump to top...](#git)<br><br>
 - INIT, STATUS, ADD, COMMIT, LOG
 
 <br>Installation (linux)
@@ -88,6 +81,10 @@ undo the last commit
 ```markdown
 git reset HEAD~
 ```
+ignore changes eg. for xlsx on the local machine
+```markdown
+git stash
+```
 
 <br>Pull (update) files from GitHub<br>
 (-u saves the paths - so at the next push - it must be only typed push)
@@ -104,7 +101,6 @@ Run commands: https://stackoverflow.com/questions/56490194/vs-code-bitbucket-ssh
 
 ---
 ## GITIGNORE
-[jump to top...](#git)<br><br>
 - create a file ".gitignore" in the root-folder of the respository<br>
 - this files / folders will be ignored when comitting (and so for pushing to the remote repository)<br>
 - github has for eg. some problems with files > 100MB<br>
@@ -122,7 +118,6 @@ add file: /prg.xlsx
 
 ---
 ## BRANCHES
-[jump to top...](#git)<br><br>
 - BRANCH, CHECKOUT, DIFF, MERGE)
 
 <br>Create a new branch with the name "newFeature"
@@ -166,7 +161,6 @@ git merge newFeature
 
 ---
 ## WORKFLOW EXAMPLE
-[jump to top...](#git)<br><br>
 <br>fork the initial repository on github (select personal account as target)
 ```markdown
 click fork-button in github

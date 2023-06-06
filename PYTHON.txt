@@ -1,7 +1,3 @@
-###########
-### TOC ###
-###########
-
 #> MODULE, GENERAL
 #> VIRTUALENV
 #> PIP
@@ -394,7 +390,7 @@ s = f"{float:09.2f}                 => Format float with 2 decmial places and ov
 s.find ("ist")                                  => Returns the index where the text is found
 s.count ("i")                                   => Counts the occurrence of a text
 re.findall('[.,’]', s)                          => Counts several chars in a text
-[i for i, ltr in enumerate(workerTitle) if ltr == "/"]	=> Return all findings of the search string ("/") in the other string (txt)
+[i for i, c in enumerate(s) if c == "/"]	      => Return all index of the char "/" in the string
 [x.start() for x in re.finditer('ist', s)]      => Returns all index as a list (needs import re)
 s = s.lower()                                   => Lowercase the whole string
 s = s.upper()                                   => Capitalize the whole string
@@ -1991,7 +1987,7 @@ tdelta = timedelta(seconds=60)                               => Creates timedelt
 tday + tdelta                                                => 7 days are added to the actual day
 newdate = date - timedelta(days=1)                           => Previous 1-day-back-date for date
 date2-date1                                                  => Timedelta for two dates
-daysDiff = abs(dt2-dt1).days								                  => Difference in days
+daysDiff = abs(dt2-dt1).days								                 => Difference in days
 minDiff = (date2-date1).total_seconds() / 60                 => Difference in minutes
 datetime.fromisoformat('2020-07-10 02:00:00').timestamp()    => Generate UNIX/ISO-format from datetime
 iso_dt = datetime.fromisoformat(str(datetime.now())).timestamp()   => Generate UNIX/ISO-format from actual date

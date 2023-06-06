@@ -1,20 +1,9 @@
-# HTML
----
 
-#### OVERVIEW [jump to...](#overview)
-#### STRUCTURE [jump to...](#structure)
-#### GROUPING, LAYOUT [jump to...](#grouping-layout)
-#### ELEMENTS [jump to...](#elements)
-#### FORMS, BUTTONS [jump to...](#forms-buttons)
-#### TEMPLATE [jump to...](#template)
-#### MARKDOWN FILE INTEGRATION [jump to...](#markdown-file-integration)
-#### CHROME EXTENSION TOOLS [jump to...](#chrome-extension-tools)
 
 
 
 ---
 ## OVERVIEW
-[jump to top...](#html)<br><br>
 - HTML = content / structure (core focus...)
 - CSS = style (a little bit...)
 - JS = behaviour / interaction (a little bit...)
@@ -25,7 +14,6 @@
 
 ---
 ## STRUCTURE
-[jump to top...](#html)<br><br>
 - https://in.pinterest.com/pin/345862446359675335/
 
 <br>Should be the first site
@@ -59,7 +47,6 @@ index.html
 
 ---
 ## GROUPING, LAYOUT
-[jump to top...](#html)<br><br>
 - https://www.w3schools.com/html/html_layout.asp
 
 <br>grouping some html-area
@@ -99,7 +86,6 @@ bottom of the document
 
 ---
 ## ELEMENTS
-[jump to top...](#html)<br><br>
 - https://www.w3.org/community/webed/wiki/HTML/Training/Tag_syntax#:~:text=HTML%20is%20using%20tags%20for,to%20compose%20an%20HTML%20element.
 - https://developer.mozilla.org/de/docs/Web/HTML/HTML5/HTML5_element_list
 
@@ -229,7 +215,6 @@ Set JumpMark at a specific position in the html-file (jump to with index.html#1)
 
 ---
 ## FORMS, BUTTONS
-[jump to top...](#html)<br><br>
 <br>Different input fields can be arranged in a form tag
 ```markdown
 <form> ... </form>
@@ -272,7 +257,6 @@ EMail-Inputfield - with id, name and value (default)
 
 ---
 ## TEMPLATE
-[jump to top...](#html)<br><br>
 see Learning-Documentation
 <a href="../docs/htmlTemplate.zip">link</a>
 
@@ -280,7 +264,6 @@ see Learning-Documentation
 
 ---
 ## MARKDOWN FILE INTEGRATION
-[jump to top...](#html)<br><br>
 - Create Text-File
 - Convert Text-File with ConverTXT_MD.py to MD-File
 - Read MD-File with Markdown Monster - check if formating is ok in the editor
@@ -291,7 +274,6 @@ see Learning-Documentation
 
 ---
 ## CHROME EXTENSION TOOLS
-[jump to top...](#html)<br><br>
 - Wappalyzer - tool for showing which CMS is used, which e-commerce platform, marketing automation tool
 - Window Resizer - resize the window for reponsive design
 - Viewport Resizer - resize the window for reponsive design

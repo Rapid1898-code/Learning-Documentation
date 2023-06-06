@@ -1,23 +1,8 @@
-# SQL
----
-#### Installation MYSQL [jump to...](#installation-mysql)
-#### SELECT, FROM [jump to...](#select-from)
-#### DISTINCT, WHERE, BETWEEN, IN [jump to...](#distinct-where-between-in)
-#### AND, OR, ORDER BY, ASC, DESC [jump to...](#and-or-order-by-asc-desc)
-#### INSERT, INTO, VALUES, UPDATE, SET, DELETE [jump to...](#insert-into-values-update-set-delete)
-#### NULL, LIKE, TOP, LIMIT, ROWNUM, PERCENT [jump to...](#null-like-top-limit-rownum-percent)
-#### IN [jump to...](#in)
-#### Tables and Data-Types [jump to...](#tables-and-data-types)
-#### Primary und Foreign Keys, not null [jump to...](#primary-und-foreign-keys-not-null)
-#### Change Tables, Autoincrement [jump to...](#change-tables-autoincrement)
-#### Joins [jump to...](#joins)
-#### SQL Built In Funktionen [jump to...](#sql-built-in-funktionen)
 
 
 
 ---
 ## Installation MYSQL
-[jump to top...](#sql)<br><br>
 <br>Installation
 ```markdown
 https://www.youtube.com/watch?v=GIRcpjg-3Eg
@@ -27,7 +12,6 @@ https://www.youtube.com/watch?v=GIRcpjg-3Eg
 
 ---
 ## SELECT, FROM
-[jump to top...](#sql)<br><br>
 <br>Outputs all columns from the table customer (automatically sorted by id)
 ```markdown
 select * from customer
@@ -45,7 +29,6 @@ select firstname, lastname from customer
 
 ---
 ## DISTINCT, WHERE, BETWEEN, IN
-[jump to top...](#sql)<br><br>
 <br>With distinct the output occurs only one time if the firstname is the same
 ```markdown
 select distinct firstname from customer
@@ -98,7 +81,6 @@ some values are checked for id
 
 ---
 ## AND, OR, ORDER BY, ASC, DESC
-[jump to top...](#sql)<br><br>
 Outputs all rows where id >= 40 and firstname is Robert
 ```markdown
 select * from customer
@@ -131,7 +113,6 @@ order by firstname, lastname asc
 
 ---
 ## INSERT, INTO, VALUES, UPDATE, SET, DELETE
-[jump to top...](#sql)<br><br>
 Inserts row in the table with specific values for the columns
 ```markdown
 insert into customer
@@ -166,7 +147,6 @@ where id = 51
 
 ---
 ## NULL, LIKE, TOP, LIMIT, ROWNUM, PERCENT
-[jump to top...](#sql)<br><br>
 <br>Outputs the first 5 results (depending on the sorting)
 ```markdown
 select top 5 * from customer
@@ -223,7 +203,6 @@ where lastname is NOT NULL
 
 ---
 ## IN
-[jump to top...](#sql)<br><br>
 IDs will be selected from the rechnungen-table and will be used for the aboth where-clausel for select *
 ```markdown
 select * from customer
@@ -236,7 +215,6 @@ where id IN
 
 ---
 ## Tables and Data-Types
-[jump to top...](#sql)<br><br>
 CREATE, TABLE, INT, VARCHAR, BINARY, BOOLEAN, VARBINARY, SMALLINT, BIGINT, DECIMAL, NUMERIC, DATE, TIME
 
 <br>Create a new table with name Rechnung
@@ -314,7 +292,6 @@ TIMESTAMP
 
 ---
 ## Primary und Foreign Keys, not null
-[jump to top...](#sql)<br><br>
 DROP, UNIQUE, NOT NULL, PRIMARY KEY, FOREIGN KEY, REFERENCES<br>
 Drop whole table
 ```markdown
@@ -338,7 +315,6 @@ create table Rechnung
 
 ---
 ## Change Tables, Autoincrement
-[jump to top...](#sql)<br><br>
 AUTO_INCREMENT, DEFAULT, IDENTITY, ALTER TABLE, ADD, DROP COLUMN, ALTER COLUMN
 <br>With AUTO_INCREMENT the id will be given automatically - starts with 1 and then ascending (e.g. MYSQL)
 <br>In some DBs with: RechnungsID int IDENTITY(0,1) (e.g. MSSQL)
@@ -376,7 +352,6 @@ alter column VARCHAR(255)
 
 ---
 ## Joins
-[jump to top...](#sql)<br><br>
 INNER JOIN, ON, LEFT JOIN, RIGTH JOIN, FULL JOIN
 <br>Outputs firstname + lastname from all customers which exists in the rechnung table
 ```markdown
@@ -408,7 +383,6 @@ Outputs everything from both sides
 
 ---
 ## SQL Built In Funktionen
-[jump to top...](#sql)<br><br>
 AVG, COUNT, TOP,  FIRST, LIMIT, LAST, UCASE, UPPER, LCASE, LOWER<br>
 Outputs the average
 ```markdown

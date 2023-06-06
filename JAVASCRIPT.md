@@ -1,36 +1,7 @@
-# JAVASCRIPT
----
 
-#### OPERATOR, INPUT, OUTPUT [jump to...](#operator-input-output)
-#### STRING [jump to...](#string)
-#### ARRAY [jump to...](#array)
-#### CONTROL STRUCTURE AND ITERATION [jump to...](#control-structure-and-iteration)
-#### FUNCTION [jump to...](#function)
-#### OBJECT [jump to...](#object)
-#### CONSTRUCTOR, CLASS [jump to...](#constructor-class)
-#### OBJECT ORIENTATION - 4 PILLARS OOP [jump to...](#object-orientation---4-pillars-oop)
-#### DOCUMENT, QUERYSELECTOR, EVENTLISTENER [jump to...](#document-queryselector-eventlistener)
-#### CSS VARIABLE HANDLING [jump to...](#css-variable-handling)
-#### API ACCESS [jump to...](#api-access)
-#### JQUERY [jump to...](#jquery)
-#### DATE [jump to...](#date)
-#### MATH [jump to...](#math)
-#### LOCAL STORAGE [jump to...](#local-storage)
-#### MODULE EXPORTS [jump to...](#module-exports)
-#### ASYNCHRONOUS HANDLING [jump to...](#asynchronous-handling)
-#### REQUESTS [jump to...](#requests)
-#### NODE.JS [jump to...](#node.js)
-#### REACT [jump to...](#react)
-#### TOOLS OVERVIEW [jump to...](#tools-overview)
-#### EXAMPLE FULL STACK [jump to...](#example-full-stack)
-#### AZURE AUTHENTICATION [jump to...](#azure-authentication)
-#### PKG (create executable from node.js) [jump to...](#pkg-(create-executable-from-node.js))
-#### HEROKU (hosting web-apps, running scripts in the cloud) [jump to...](#heroku-(hosting-web-apps-running-scripts-in-the-cloud))
-#### NODEMAILER (send mails) [jump to...](#nodemailer-(send-mails))
 
 ---
 ## OPERATOR, INPUT, OUTPUT
-[jump to top...](#javascript)<br><br>
 <br>Comments in Javascript
 ```markdown
 // Comment something
@@ -179,7 +150,6 @@ process.exit(1)
 
 ---
 ## STRING
-[jump to top...](#javascript)<br><br>
 <br>Define a string
 ```markdown
 let s = "this is a test"
@@ -308,7 +278,6 @@ calcDate.toISOString().split('T')[0]
 
 ---
 ## ARRAY
-[jump to top...](#javascript)<br><br>
 <br>Define an array
 ```markdown
 let arr = [];
@@ -582,7 +551,6 @@ console.log('Second message!');
 
 ---
 ## CONTROL STRUCTURE AND ITERATION
-[jump to top...](#javascript)<br><br>
 If condition with else if and else
 ```markdown
 if (condition is true) {
@@ -688,7 +656,6 @@ isNight ? s="Night" : s="Day"
 
 ---
 ## FUNCTION
-[jump to top...](#javascript)<br><br>
 Normal Function Decleration
 ```markdown
 function addFunc(x=0,y=0) {    // Define a function    - with default value 0 if no input is given
@@ -734,7 +701,6 @@ document.querySelector("#dayToday").addEventListener("click",function() {   // d
 
 ---
 ## OBJECT
-[jump to top...](#javascript)<br><br>
 properties = attributes of the object (eg. color, shape, minutes, seconds)<br>
 methods = functions of the object (eg. start/stop on a stopclock)<br>
 everything in javascript is an object (with properties / methods)<br>
@@ -852,7 +818,6 @@ var school = {
 
 ---
 ## CONSTRUCTOR, CLASS
-[jump to top...](#javascript)<br><br>
 Make a Object with the old method
 ```markdown
 function MakeCar (carMake,carModel,carColor){       // Define the constructor function
@@ -945,7 +910,6 @@ class Cat extends Animal {
 
 ---
 ## OBJECT ORIENTATION - 4 PILLARS OOP
-[jump to top...](#javascript)<br><br>
 4 pillars of object orientation in practice
 class Animal {              // ENCAPSULATION - storing properties and methods together in one object
 constructor(name) {     // (made it easier to add new stuff / easier to read)
@@ -1001,7 +965,6 @@ a.speak()           // knows how to use it at different objects (eg. barks or me
 
 ---
 ## DOCUMENT, QUERYSELECTOR, EVENTLISTENER
-[jump to top...](#javascript)<br><br>
 Add Eventlistener
 ```markdown
 document.querySelector('#check').addEventListener('click',func1)        // New Method / create an Event Listener / execute function "func1" when mouse is clicked
@@ -1134,7 +1097,6 @@ document.querySelector("ul").appendChild(li)    // append the new li-element to 
 
 ---
 ## CSS VARIABLE HANDLING
-[jump to top...](#javascript)<br><br>
 Read all control- and input-elements<br>
 Output is not an array - its a node-list (does not have all methods like an array)
 ```markdown
@@ -1163,7 +1125,6 @@ function handleUpdate() {
 
 ---
 ## API ACCESS
-[jump to top...](#javascript)<br><br>
 <a href="https://learn.shayhowe.com/advanced-html-css/jquery/" style="font-style: italic">https://learn.shayhowe.com/advanced-html-css/jquery/</a>
 <br>request data from API  get data back in JSON format
 <br>Reading / Fetching the informations from an API-url
@@ -1213,7 +1174,6 @@ parse the JSON-content to an object: let obj = JSON.parse(body)
 
 ---
 ## JQUERY
-[jump to top...](#javascript)<br><br>
 library for javascript<br>
 - Traversing<br>
 - Manipulating<br>
@@ -1253,7 +1213,6 @@ $('p:nth-child(2)');
 
 ---
 ## DATE
-[jump to top...](#javascript)<br><br>
 <br>Assign variable to actual date
 ```markdown
 let now = new Date()
@@ -1275,7 +1234,6 @@ calcDate.toISOString().split('T')[0]
 
 ---
 ## MATH
-[jump to top...](#javascript)<br><br>
 <br>Random number between 1 and 6 like a cube (Math.random returns value between 0 and 1)
 ```markdown
 Math.floor(Math.random()*6) + 1
@@ -1321,7 +1279,6 @@ Math.max(1,2,3)
 
 ---
 ## LOCAL STORAGE
-[jump to top...](#javascript)<br><br>
 Allows to store data across browser sessions<br>
 Set item to local storage (name is the key and Bob is the value)
 ```markdown
@@ -1344,7 +1301,6 @@ localStorage.clear()
 
 ---
 ## MODULE EXPORTS
-[jump to top...](#javascript)<br><br>
 Define module with Node.js (in a file)
 ```markdown
 let Obj = {}            // define an object
@@ -1373,7 +1329,6 @@ import Menu from './menu';
 
 ---
 ## ASYNCHRONOUS HANDLING
-[jump to top...](#javascript)<br><br>
 running synchronous - outputs 1,2,3
 ```markdown
 function houseOne(){ console.log('Paper delivered to house 1')}
@@ -1542,7 +1497,6 @@ async function withAsync(num){
 
 ---
 ## REQUESTS
-[jump to top...](#javascript)<br><br>
 <br>create xml http request object instances
 ```markdown
 const xhr = new XMLHttpRequest()
@@ -1593,7 +1547,6 @@ xhr.send(data);
 
 ---
 ## NODE.JS
-[jump to top...](#javascript)<br><br>
 <br>https://nodejs.org/en/
 ```markdown
 home of node.js
@@ -2049,7 +2002,6 @@ return (
 
 ---
 ## TOOLS OVERVIEW
-[jump to top...](#javascript)<br><br>
 https://zellwk.com/blog/crud-express-mongodb/
 <br>NODE.JS
 ```markdown
@@ -2189,7 +2141,6 @@ Define how the data-collection (table) in mongoDB looks like
 
 ---
 ## EXAMPLE FULL STACK
-[jump to top...](#javascript)<br><br>
 full example see: \DEV\LeonNoel-100Devs\class33\rap-names-express
 <br>Setting up the project
 ```markdown
@@ -2431,7 +2382,6 @@ async function addLike(){
 
 ---
 ## AZURE AUTHENTICATION
-[jump to top...](#javascript)<br><br>
 ```markdown
 Keys to provide in the config.js
 clientID: in Azure Active Directory => App registration => take the id
@@ -2458,7 +2408,6 @@ clientSecret: in the App-Registrierung => Certificates & secrets => take the val
 
 ---
 ## PKG (create executable from node.js)
-[jump to top...](#javascript)<br><br>
 https://www.npmjs.com/package/pkg
 <br>create an executable (for all plattforms and standard node-version)
 ```markdown
@@ -2471,7 +2420,6 @@ pkg scrapeAppStore.js --targets node12-win-x64
 
 ---
 ## HEROKU (hosting web-apps, running scripts in the cloud)
-[jump to top...](#javascript)<br><br>
 Heroku
 <br>Hosting APIs in the cloud
 ```markdown
@@ -2499,7 +2447,6 @@ git push heroku main (or git push heroku master)
 
 ---
 ## NODEMAILER (send mails)
-[jump to top...](#javascript)<br><br>
 https://nodemailer.com/about/
 https://www.freecodecamp.org/news/use-nodemailer-to-send-emails-from-your-node-js-server/
 

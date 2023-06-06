@@ -10,44 +10,81 @@ Install virtualenv;pip install virtualenv;python
 Global packages installed;pip list;python
 Shows where the python-file is (Windows);where python;python
 Shows where the python-file is (Linux);which python;python
-Create new virtual environment pj1_env;virtualenv env OR python -m virtualenv env;python
-Activate environment;"venv\Scripts\activate
-    when activated: pip list    #  Now only shows the installed modules for the virtual environment
-    pip install package         #  Only installs in the activated virtual environment";python
+Create new virtual environment env;python -m virtualenv env;python
+Create new virtual environment env (for python3 eg. on MacOS);python3 -m venv env;python
 Extracts all the modules / dependencies to a txt-file;pip freeze --local > requirements.txt;python
 Go back to the global environment;deactivate;python
 Create new virtual env with specific python-version;virtualenv -p C:\..path to..\Python37\python.exe py37_env;python
 Activate new virtual env named py37_env;py37_env\Scripts\activate;python
 Shows the used python version in the virtual env;python --version;python
 Install all the packages from requirements.txt;pip install -r requirements.txt;python
+Windows: Show all installed python-versions + paths;py -0p;python
+Activate environment;"venv\Scripts\activate
+    when activated: pip list    #  Now only shows the installed modules for the virtual environment
+    pip install package         #  Only installs in the activated virtual environment";python
 install virtual environment with specific python-version;"download and install the python-version - Important: remember the path to the python.exe
 create a venv with: virtualenv envName -p path\to\new_python.exe";python
 install module;pip install moduleXY;python
 upgrade module;pip install moduleXY --upgrade;python
+Install specific version;pip install -Iv pyinstaller==4.8;python
 uninstall module XY;pip uninstall module XY;python
 show installed modules in actual environment;pip list;python
 output modules in requirements.txt;pip freeze > requirements.txt;python
 install modules from requirements.txt;pip install -r requirements.txt;python
+Installation;pip install pyinstaller;python
+Install specific version;pip install -Iv pyinstaller==4.8;python
+Generate the bundle in a subdirectory called dist.;pyinstaller prg.py;python
+Generate only one file;pyinstaller --onefile prg.py;python
+Generate only one file (to get for sure the pyinstaller from the actual env);python -m Pyinstaller --onefile prg.py;python
+Collect data for specific python module;--collect-data moduleXY;python
+add this when some modules are not found;--copy-metadata pandas_ta;python
+When some modules are making problems - sometimes this helps;--hidden-import=pymssql;python
+<frozen importlib._bootstrap> error when using yfinance;pyinstaller --onefile --collect-data frozendict stockma3.py;python
+when there is a depreciating warning from matlib;--exclude-module matplotlib;python
+Generate file with icon;--icon=app.ico;python
+Generating under mac os sometimes only work with this params;--hidden-import=pkg_resources.py2_warn;python
+Generating under mac os sometimes only work with this params;--hidden-import=cmath;python
+Open this file to start the python-program;prg.exe;python
+only working with import yfinance (not with import yfinance as yf);yfinance module;python
+Problems with some added python modules (eg. pycountry);"https://groups.google.com/g/pyinstaller/c/OYhJdeZ9010/m/32g3-T8XBAAJ
+Create hook-file hook-pycountry.py with content:
+	from PyInstaller.utils.hooks import copy_metadata, collect_data_files
+	datas = copy_metadata(""pycountry"") + collect_data_files(""pycountry"")
+Compile Program with
+	pyinstaller --onefile --exclude-module matplotlib --additional-hooks-dir=. TestPyCountry.py";python
+Problems with path when executing from py and exe;config_name = 'creds.json'                                    # Define the config file name;python
+Determine if application is a script file or frozen exe;"if getattr(sys, 'frozen', False):                             # Get path when starting as executable
+    application_path = os.path.dirname(sys.executable)
+elif __file__:                                                # Get path when running from IDE as py-file
+    application_path = os.path.dirname(__file__)
+config_path = os.path.join(application_path, config_name)     # Final Config Path";python
+Using Inno Setup Compiler for creating a setup.exe for all files;"https://jrsoftware.org/isdl.php
+- Application Information => provide application informations (appName, appVersion, publisher, website)
+- Application Files => select application main executable file and add all necessary folder and files
+- Application File Association => no selection
+- Application Documentation => select files which should be shown before / after the installation
+- Setup Languages => select which languages should be included during installation
+- Save installation script
+- Final setup.exe is stored in the ""Output""-folder";python
 "Comment / Uncomment selected lines (""/"" on numblock) (commenting in VS Code)";Ctrl K Ctrl C;python
 "Comment / Uncomment selected lines (""/"" on numblock) (commenting in VS Code)";Ctrl K Ctrl U;python
 Find in File;Ctrl F;python
-Search in all files;Ctrl Shift f;python
 Replace in File;Ctrl H;python
+Selects whole line;Ctrl L;python
+Search in all files;Ctrl Shift F;python
 Replace in Path (in all Files);Ctrl Shift H;python
-Jump to the next error;F8;python
-Jump to the next error (backwards);Shift + F8;python
+Jump to this Grouping Window;Ctrl 1/2/3;python
 Find next;F3;python
 Goto line;Ctrl G;python
 Copy / Duplicate lines;Shift Alt Up/Down;python
+Expand / Shrink selection;Shift Alt Left/Rigth;python
 Move line;Alt Up/Down;python
-Recent opened files;Ctrl E1;python
-Switch windows in IDE;Ctrl K Left/Right;python
 Suggestions for fix error, function informations;Alt Enter;python
 Open the project windows (on the left side);Alt 1;python
 Show usage of the variable, function, class;Alt F7;python
 Focus back on the editor window;Esc;python
 Collapse everything;Ctrl K Ctrl 0;python
-Exapnds everything;Ctrl K Ctrl J;python
+Expands everything;Ctrl K Ctrl J;python
 "Collapse block (""-"" on numblock)";Ctrl K Ctrl L;python
 "Expand block (""+"" on numblock)";Ctrl K Ctrl L;python
 Select whole file;Ctrl A;python
@@ -64,39 +101,41 @@ Show command line (eg. open a file where the name is known);Ctrl P;python
 Open the the command panel;Ctrl Shift P;python
 Toggle through the open files in the editor;Ctrl TAB;python
 Close File;Ctrl WARNING;python
-MultiCursor - Select more cursors in rows for multiple change in rows;Ctrl Alt Up/Down (click Left);python
+MultiCursor - Select more cursors in rows for multiple change in rows;Ctrl Alt Up/Down;python
 MultiCursor - Select Cursor at multiple positions for the same name;Ctrl D;python
 Select all occurences of this word in the document and change all with one change;Ctrl Shift L;python
 Select whole word;Ctrl D;python
 Jump to the function definition;Ctrl Click;python
 Close Tab;Ctrl W;python
 Show suggestions for the actual code function / method;Ctrl Space;python
-https://www.shortcutfoo.com/app/dojos/intellij-idea-win/cheatsheet;"Ctrl / 				# Comment / Uncomment selected lines (""/"" on numblock) (commenting in VS Code)
-Ctrl / 				# Comment / Uncomment selected lines (""/"" on numblock) (commenting in VS Code)
-Ctrl Alt F7 	    # Find usages
-Ctrl F    		   	# Find in File
-Ctrl R         	   	# Replace in File
-Ctrl Shift R 		# Replace in Path (in all Files)
-F2            		# Jump to the next error
-F3        			# Find next
-Ctrl G      		# Goto line
-Ctrl D 			    # Copy / Duplicate lines
+https://www.shortcutfoo.com/app/dojos/intellij-idea-win/cheatsheet;"Ctrl / 				      # Comment / Uncomment selected lines (""/"" on numblock) (commenting in VS Code)
+Ctrl / 				      # Comment / Uncomment selected lines (""/"" on numblock) (commenting in VS Code)
+Ctrl Alt F7 	      # Find usages
+Ctrl F    		      # Find in File
+Ctrl R         	    # Replace in File
+Ctrl Shift R 		    # Replace in Path (in all Files)
+F2            	    # jump to the next error
+F3        			    # Find next
+Ctrl G      		    # Goto line
+Ctrl D 			        # Copy / Duplicate lines
+Ctrl X              # Cut line (when nothing selected)
+Ctrl C              # Copy line (when nothing selected)
 Alt Shift Down/Up 	# Move line
-Ctrl E       		# Recent opened files
+Ctrl E       		    # Recent opened files
 Ctrl TAB            # Switch windows in IDE
 Ctrl (Shift) W      # Select / deselect parts of the code step by step
-Alt Enter			# Suggestions for fix error, function informations
-Alt 1				# Open the project windows (on the left side)
-Alt F7				# Show usage of the variable, function, class
-Esc					# Focus back on the editor window
-Ctrl Shift -    	# Collapse everything
+Alt Enter			      # Suggestions for fix error, function informations
+Alt 1				        # Open the project windows (on the left side)
+Alt F7				      # Show usage of the variable, function, class
+Esc					        # Focus back on the editor window
+Ctrl Shift -    	  # Collapse everything
 Ctrl Shift +        # Exapnds everything
-Ctrl - 				# Collapse block (""-"" on numblock)
-Ctrl + 				# Expand block (""+"" on numblock)
-Ctrl A         		# Select whole file
-Ctrl (Shift) Z 		# Undo (backwards) / Redo (forwards)
-Ctrl Shift Left 	# Select word to the beginning
-Ctrl Shift Right 	# Select word to the end
+Ctrl - 				      # Collapse block (""-"" on numblock)
+Ctrl + 				      # Expand block (""+"" on numblock)
+Ctrl A         		  # Select whole file
+Ctrl (Shift) Z 		  # Undo (backwards) / Redo (forwards)
+Ctrl Shift Left 	  # Select word to the beginning
+Ctrl Shift Right 	  # Select word to the end
 Ctrl Left / Right 	# Go one word left
 Ctrl Y              # Delete current line
 Ctrl Del            # Delete to end of word
@@ -123,6 +162,7 @@ Change / swap 2 values;a,b = b,a;python
 Increase value by one;a += 1;python
 "For better readability - ""_"" are possible using long num-values (will be ignored)";i = 1_000_000;python
 Value is rounded to two decimal places => 77.23;round (77.2321, 2);python
+Round to tens place;int(v - v%10);python
 Conversion to String / Float / Int;"str(5), float(""5""), int(""5"")";python
 Outputs absolute value => 2;abs(-2);python
 Wait for pressing ENTER (or a keyboard stroke) to follow along;"input(""ENTER to continue"")";python
@@ -153,7 +193,7 @@ pretty print only level 2 of nested list eg. ['level1', ['level2', [...]]];pp.pp
 convert binary value to decimal;"int(""1010"",2)";python
 Import random module - fast, but not very secure;import random;python
 Random int number between 1 and 6 like a cube;random.randint(1,6);python
-Random float number between 1 and 3;<random.uniform(1,3)>;python
+Random float number between 1 and 3;random.uniform(1,3);python
 Random value between 0 and 1 in float format - eg. 0.16394553;random.random();python
 Random float in the range from 1 to 10;random.uniform(1,10);python
 Random value for standard deviation;random.normal(0,1);python
@@ -174,18 +214,25 @@ last char of a string;c = s[-1];python
 Insert variable in string oldest method (%s for string, %i for int, %f for float, %.2f for 2 decimals);"s = ""text %s bla"" % var";python
 Insert variable in string old method (:.2f for 2 decimals);"s = ""text {} bla"".format(var)";python
 Insert variable in string new method;"s = f""text {var} bla""";python
+Format int with allways 2 digits;"s = f""{var:02d}""";python
+Format float with allways 2 decimal places;"s = f""{float:0.2f}";python
+Format float with 2 decmial places and overall 9 chars with leading 0;"s = f""{float:09.2f}";python
 Multiple use;"""{0} like, {0} especially {0} but {1}"".format(""Joe"", ""noodles"")";python
 Returns the index where the text is found;"s.find (""ist"")";python
 Counts the occurrence of a text;"s.count (""i"")";python
-"Return all findings of the search string (""/"") in the other string (txt)";[n for n in range(len(txt)) if txt.find('/', n) == n];python
-Returns all indexwa as a list (needs import re);[x.start() for x in re.finditer('ist', s)];python
+Counts several chars in a text;re.findall('[.,’]', s);python
+"Return all index of the char ""/"" in the string";"[i for i, c in enumerate(s) if c == ""/""]";python
+Returns all index as a list (needs import re);[x.start() for x in re.finditer('ist', s)];python
 Lowercase the whole string;s = s.lower();python
 Capitalize the whole string;s = s.upper();python
 Capitalize the first char;s = s.capitalize();python
 Capitalize the first char of all words;s = s.title();python
-"Check if the string is starting with char ""H""";"s.startswith(""H"")";python
-"Check if the string is ending with char ""H""";"s.endswith(""H"")";python
-Split the words in a list;s.split();python
+"Check if string is starting with char ""H""";"s.startswith(""H"")";python
+Check if string starts with several chars;"s.startswith((""H"",""F"",""L""))";python
+"Check if string is ending with char ""H""";"s.endswith(""H"")";python
+Check if string ends with several chars;"s.endwith((""H"",""F"",""L""))";python
+"Split the words in a list which are seperated by "" """;"s.split("" "")";python
+"Split for several chars (eg. "" "" and ""\n"" and "" ,"")";"re.split("" |\n| ,"", s)";python
 "', 1)[0]								              => Split till the first occurence of ""=>""";s.split(';python
 Split sentences after line breaks;s.splitlines();python
 Delete all whitespaces at the beginning and the end;s = s.strip();python
@@ -193,7 +240,7 @@ Remove all duplicate spaces in a string;"s = "" "".join(s.split())";python
 Replacement of two strings;"s = s.replace(""e"",""X"")";python
 Replace several chars in a string;"s = re.sub(""[e0fi]"", ""X"", s)";python
 Replace several chars in a string (get back a tupple: 1st changed string, 2nd: count of changed chars);"s = re.subn(""[e0fi]"", ""X"", s)";python
-TRUE if the whole string are digits;s.isdigit();python
+True if the whole string are digits;s.isdigit();python
 True if the whole string are no digits;s.isalpha();python
 TRUE if string2 is in strings1;s2 in s;python
 Change string to list with all single chars;l = list(s);python
@@ -204,12 +251,14 @@ Execute statement in a string => hello;"exec(print(""hello""))";python
 Gives the value of an expression => 4 (dangerous - can used for sql-injections);"eval(""2+2"")";python
 Reverse a string;my_string[::-1];python
 Print string with special characters;repr(s);python
-check if any string is in another string or all strings are in another string;"checkString = ""A string is more than its parts!""
-checks = [""more"", ""blabla"", ""nothing""]
-if any(x in checkstring for x in checks):         # check if any elems from checks is in checkstring
-if all(x in checkstring for x in checks):         # check if all elems from checks is in checkstring";python
+check if any string is in another string or all strings are in another string;"s = ""A string is more than its parts!""
+l = [""more"", ""blabla"", ""nothing""]
+if any(x in s for x in l):                    # check if any elems from checks in string s
+if not any(x in s for x in l):                # check if any elems from checks are NOT in string s
+if all(x in s for x in l):                    # check if all elems from checks are in string s";python
 import regex module;import re;python
 Information about regex handling;https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285;python
+test regex strings;https://regex101.com/;python
 "Find str with 4xdigits + ""-""char + 2xdigits";"pattern = re.compile(""^[0-9]{4}-[0-9]{2}$"")";python
 Check if pattern matches - <> None when matches;pattern.match(s);python
 "Find str with 4xdigits + ""-""char + 2xdigits";"pattern2 = re.compile(""[0-9]{4}-[0-9]{2}"")";python
@@ -218,6 +267,10 @@ Check with fullmatch (^ and $ not necessary) - <> None when matches;pattern.full
 "Char ""."" has to cherck with ""\n"" (is a wildcard letter in regex)";"pattern3 = re.compile (""[0-9]{1}\.[0-9]{3}"")";python
 Replace all digits in string with blank;"re.sub(""\d"","""",s)";python
 "Insert blank before every capitalized word eg. ""CostOfRevenue"" => ""Cost Of Revenue""";"re.sub(r'([a-z](?=[A-Z])|[A-Z](?=[A-Z][a-z]))', r'\1 ', ""txt"")";python
+count all words which start and ends with a char from cL;"len(re.findall(f'[{cL}""]{w}[{cL}""]', l))";python
+count all words which start with w and ends with a char from cL;"len(re.findall(f'^{w}[{charList}""]', l))";python
+count all words which start with a char from cL and ends w;"len(re.findall(f'[{charList}""]{w}$', l))";python
+count all words which have w in the middle of anything else;len(re.findall(f'(.*?){w}(.*?)', l));python
 "Define pattern => as many digits (endless) + "" "" + one lowercase cahr + "":"" + as many digits (endless)";"pattern = ""([0-9]+) ([a-z]:([a-z]+)""";python
 "Check if elem fits the pattern => returns <re.Match object; span=(0, 19), match=""3 n: nnnlncrnnnnn"">";match = re.search(pattern, elem);python
 Assign the value of the first group => 3;value = match.group(1);python
@@ -241,13 +294,15 @@ Sort list ascending;l.sort();python
 Sort list descending;l.sort(reverse=True);python
 Sort list and store it in a different independent list;l_sort = sorted(l);python
 Sort list descending and store it in a different independent list;l_sort = sorted(l, reverse=True);python
+Sort the same way as the operating system (need: from natsort import os_sorted);l_sort = os_sorted(l);python
 Check if a list is sorted (by ascending);if sorted(l) == l;python
 Check if a list is sorted by descending;if sorted(l, reverse=True) == l;python
 Sort list by len of elements;l.sort(key=len);python
 Define nested list;l = [[1,4,3], [2,2,4], [3,1,5]];python
 Sort nested list for the 2nd element ascending;l.sort(key=lambda x: x[1]);python
-Sort nested list 1st for the 1st elem, then for the 2nd elem;inpItems.sort(key=lambda x: (x[0], x[1]));python
 Sort nested list for the 2nd element descending;l.sort(key=lambda x: x[1], reverse=True);python
+Sort nested list 1st for the 1st elem, then for the 2nd elem;l.sort(key=lambda x: (x[0], x[1]));python
+Sort nested list 1st for the 1st elem, then for the 2nd elem descending;l.sort(key=lambda x: (x[0], x[1]), reverse=True);python
 Reverse the complete list;l.reverse();python
 Reverse complete list and store it in different independent list;l_reverse = list(reversed(l));python
 Delete element at index position 2;del l[2];python
@@ -265,6 +320,7 @@ No seperate copy of the list (updates in both lists);l2 = l1;python
 Separate individual copy of the list (no updates in both lists);l2 = l.copy();python
 Separate individual copy of the list - 2nd variant;l2 = l[:];python
 Separate individual copy of the list - 3rd variant;l2 = list(l);python
+Seperate copying a nested list - import copy necessary;l2 = copy.deepcopy(l);python
 First element;l[0];python
 Last element;l[-1];python
 Last 3 elements;l[-3:];python
@@ -273,9 +329,9 @@ Elements from 0 to 1 (exclusive index position 2);l[:2];python
 Elements from index position 2 to the end of the list;l[2:];python
 Every second element [start:end:step];l[::2];python
 Check if element is in list;9 in l;python
-Check if any elements from the list are in the string;"if any(x in string for x in [""ab"",""cd"",""de""]):";python
-Check if all elements from the list are in the string;"if all(x in string for x in [""ab"",""cd"",""de""]):";python
-Check if all elements from the list are NOT in the string;"if all(x not in string for x in [""ab"",""cd""""]):";python
+Check if any elements from the list are in the string;"if any(x in st for x in [""ab"",""cd"",""de""]):";python
+Check if all elements from the list are in the string;"if all(x in st for x in [""ab"",""cd"",""de""]):";python
+Check if all elements from the list are NOT in the string;"if all(x not in str for x in [""ab"",""cd""]):";python
 Iterate through list content;for i in l:;python
 Iterate through list with index;for i in range(len(l)):;python
 Iterate through list with index and content;for idx, cont in enumerate(l):;python
@@ -283,19 +339,25 @@ Iterate through 2 lists pair-wise (stops when the shorter list is reached);for x
 "Create string with elements joined together with "", "" eg. [""a"",""b"",""c""] => a, b, c";', '.join(l);python
 Define list;a = [1,2,3,4,5];python
 List is mapped with the lambda function => [2,4,6,8,10];list(map(lambda x: x*2, [1,2,3,4,5]));python
-Also possible with list comprehension => [2,4,6,8,10];l=[x*2 for x in [1,2,3,4,5]];python
-Also possible with list comprehension => [2,4];l=[x for x in [1,2,3,4,5] if x%2==0];python
-List comprehension with if and else;"l=[x*2 if x.isdigit() else x for x in [1,""A"",2]]";python
+Also possible with list comprehension => [2,4,6,8,10];l=[x*2 for x in l];python
+Also possible with list comprehension => [2,4];l=[x for x in l if x%2==0];python
+List comprehension with if and else;l=[x*2 if x.isdigit() else x for x in l];python
 List is filtered with lambda for even numbers => [2,4];list(filter(lambda x: x%2==0, [1,2,3,4,5]));python
 Build paris as tuple => (1,4),(2,5),(3,6);zip([1,2,3],[4,5,6]);python
-Remove duplicates from a list;list(set(x));python
+Remove duplicates from a list;list(set(l));python
+Remove duplicates from a list and keep existing order;list(dict.fromkeys(l));python
 Change elements in list to int;list(map(int,l));python
+Transpose nested list (change rows and columns);[[x[i] for x in l] for i in range(len(l[0]))];python
 rotate list for n places;"def rotate(l, n):
     return l[-n:] + l[:-n]";python
 Iterate over 2 lists at the same time using zip;"animal = ['Cat', 'Dog', 'Fish', 'Goat']
 age = [1, 2, 2, 6]
 z = zip(animal, age)
 for animal, age in z: ...";python
+Adjust nested list to the same length;"maxLen = max(map(len, l))
+for row in l:
+  while len(row) < maxLen:
+    row.append(None)";python
 Create a tuple;t = (4,5,6);python
 Create a tuple from a list;t = tuple([3,4,4];python
 Selection / slicing of elements - same as with lists;t[];python
@@ -323,19 +385,28 @@ Rename dict-keyname;mydict[new_key] = mydict.pop(old_key);python
 Combine 2 dicts (if key is in both dicts - the second value will be taken);combined_dict = {**d1, **d2};python
 Check if key is in dict;"if ""xyz"" in d:";python
 Copying a dict (all changes will be made in BOTH dicts);d2 = d;python
-Copying a dict (dicts will be handled seperate);d2 = d.copy();python
-Copying a dict 2nd method (dicts will be handled seperate);d2 = dict(d);python
+Copying a dict (NOT WORKING with nested lists in the dict - use deepcopy!);d2 = d.copy();python
+Copying a dict (NOT WORKING with nested lists in the dict - use deepcopy!);d2 = dict(d);python
+Copying a dict (dicts will be handled seperate) - import copy necessary;d2 = copy.deepcopy(d);python
 Dict d get updated with d2 (all existing keys are overwritten - and new added);d.update(d2);python
 Iterate through dict keys;for key in d.keys():;python
 Iterate through sorted dict keys ascending;for key in sorted(d.keys()):;python
 Iterate through sorted dict keys descending;for key in sorted(d.keys(),reverse=True):;python
 Iterate through dict values;for val in d.values():;python
 Iterate through keys and values of the dict;for key, val in d.items():;python
+built dict with dict-comprehension;d = {x[0]: x[1:] for x in l};python
 Sort dict descending according to values (=item[1]);d = {k: v for k, v in sorted(d.items(), key=lambda item: item[1], reverse=True)};python
 Sort dict ascending according to keys (=item[0]);d = {k: v for k, v in sorted(d.items(), key=lambda item: item[0])};python
 Dict sorted: 1st value-desc (x[0]) - 2nd key-ascnd (-x[0]);d = {k: v for k, v in sorted(d.items(), key=lambda x: (-x[1],x[0]))};python
 Sort dict and output list, sorted according to the 3rd element of the list in the dict;l = sorted(d.items(), key=lambda e: e[1][2]);python
 Sort dict and output list, sorted according to the 3rd element of the list in the dict - descending;l = sorted(d.items(), key=lambda e: e[1][2], reverse=True);python
+Merge 2 dictionaries;d3 = {key: d1.get(key,0)+d2.get(key,0) for key in set(d1)|set(d2)};python
+save dict to pkl-file;"import pickle
+with open(""fn.pkl"", ""wb"") as f:
+  pickle.dump(dict, f)";python
+read dict from pkl-file;"import pickle
+with open('fn.pkl', 'rb') as f:
+  d = pickle.load(f)";python
 Define empty set - {} would define a dict and not a set;s=set();python
 Define set with content;s = {1,1,2,2,3,4};python
 "Define empty set - returns: {""o"",""l"",""H"",""e""}";"s = set(""Hello"")";python
@@ -477,8 +548,8 @@ asdict(dc)								# converts the dataclass to a dict
 astuple(dc)								# converts the dataclass to a tuple";python
 Read textfile - and print it;"with open (""fn.txt"",""r"") as f: print(f.read()";python
 Open File for Read and Write;"with open (""fn.txt"",""r+"") as f: print(f.read()";python
-Read textfile - stored in list per line;"with open(""fn.txt"",""r"") as f:
-    lines = [x.strip() for x in f.readlines()]          # Whitespaces are eliminated with strip()";python
+Read textfile - stored in list per line;"with open(fn, encoding=""utf8"", errors=""ignore"") as f:
+  lines = f.readlines()";python
 Writing in textfile;"with open(""fn.txt"",""w"") as obj: obj.write(""Ein neuer Text"")";python
 Append text in the next line;"with open(""fn.txt"",""a"") as obj: obj.write(""\nNoch ein Text"")";python
 Check if file allready exists;if os.path.exists(fn) == False:;python
@@ -488,10 +559,10 @@ Set the current postion in the file to beginning;f.seek(0);python
 Write s to the f-file opened;f.write(s);python
 Try/Except - checks if file can be saved;"while True:
 try:                         							# otherwise outputs a error message
-    writer.save ()
-    break
+  writer.save ()
+  break
 except Exception as e:
-    print (""Error: "", e)
+  print(f""Error happened: {e}"")
 	traceback.print_exc()                               # Outputs the detailed error message
     input (""File Open not possible - pls close and press <Enter>"")";python
 Import json-module;import json;python
@@ -499,15 +570,19 @@ Assign JSON-filename;"fn = ""numbers.json""";python
 Reading informations in json-format;with open(fn) as data: info = json.loads(data);python
 Convert / Encode a dict to a json-file (with indent for better reading);json_format = json.dumps(d,indent=2);python
 Convert / Encode a dict to a json-file (with sorting the keys);json_format = json.dumps(d,sort_keys=True);python
-Writing information in json-format (e.g. after updating the values/format);"with open(fn,""w"") as data: json.dump(person, data)";python
 Convert / Decode a json-file to a dict;person = json.loads(json_format);python
 Reading information in json-format;"with open(fn.json,""r"") as data: d=json.load(file)";python
 Pretty-Print formatted json-file;print(json.dumps(erg, indent=4, sort_keys=True));python
+when there are utf-8 errors pls try to set the system variables;"import sys
+sys.stdin.reconfigure(encoding='utf-8')
+sys.stdout.reconfigure(encoding='utf-8')";python
 ignoring errors and handles multiple json-objects;"with open(fnJSON, errors=""ignore"") as f:
   data = [json.loads(line) for line in f]";python
 ignoring errors and handles multiple json-objects;"r = requests.get(tmpJSONWord)
 jsonStrList = r.text.split(""\n"")
 jsonList = [json.loads(j, errors=""ignore"") for j in jsonStrList if j != '']";python
+write JSON to txt-file;"with open('dataDetail.json', 'w', encoding='utf-8') as f:
+  json.dump(ergDetail, f, ensure_ascii=False, indent=4)";python
 Example for json-file;"{
 	""firstName"" : ""Chuck"",
 	""lastName"" : ""Doe"",
@@ -541,8 +616,10 @@ Read xml-file into tree;tree = ET.fromstring(data);python
 Read hide value from email => yes;"tree.find(""email"".get(""hide""))";python
 Iterate trough xml-file (eg. many persons);"lst = persons.findall(""persons/person"")
 for item in lst:";python
-Import Module for URL parsing;import from urllib.parse import urlparse;python
+Import Module for URL parsing;import urllib.parse;python
 Import Module for request;import urllib.request;python
+Encode url;link = urllib.parse.quote_plus(link);python
+Uncode url;link = urllib.parse.unquote_plus(link);python
 Parse HTML-link1;"u = urlparse(""http://google.com/search"")";python
 "Returns ""http""";u.scheme;python
 "Returns ""/search""";u.path;python
@@ -550,11 +627,31 @@ Parse HTML-link1;"u = urlparse(""http://google.com/search"")";python
 Download picture from a url;"opener = urllib.request.URLopener()
   opener.addheader('User-Agent', ""Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36"")
   filename, headers = opener.retrieve(url, 'Test.jpg')";python
-Import CSV-Module;import csv;python
-Open csv-file in writemode;"with open(""test.csv"",""w"",newline="" "") as fp:
-    a = csv.writer (fp, delimiter="","")                    # Define csv-writer with "",""-delimiter
-    data = [[""A"", ""B""],[""100"", ""24""],[""120"", ""33""]]       # Data for writing in nested list form
-    a.writerows (data)                                    # Writing individual rows";python
+Download xlsx/csv from a url;"from urllib.request import urlopen, urlretrieve
+  urlretrieve(hrefLink, filename)";python
+Read csv-file to nested-list;"fn = os.path.join(path, ""inp.csv"")
+with open(fn, ""r"", encoding=""utf-8"") as f:
+  csvRead = csv.reader(f, delimiter="";"")
+  inpData = [x for x in csvRead]
+
+# when this error happens: _csv.Error: line contains NULL
+with open(workFN, ""r"", encoding=""utf-16"") as f:
+  ...
+
+# when this error happens: UnicodeDecodeError: 'utf-8' codec can't decode byte 0x96
+with open(workFN, ""r"", encoding=""mac_roman"") as f:
+  ...";python
+Create an empty csv-file;"with open(fnName, ""w"") as f:
+    pass";python
+Write csv-file from nested list;"FN = os.path.join(path, ""output.csv"")
+with open(FN, 'w', newline='', encoding=""utf-8"") as f:
+  writer = csv.writer(f, delimiter="";"")
+  writer.writerows(l)";python
+Read csv-file to a dictionary for every line;"with open (""products.csv"", ""r"", encoding=""utf-8"") as f:
+  dictReader = csv.DictReader(f)
+  for item in dictReader:
+    for k,v in item.items():
+      print(k,v)";python
 Read csv-data from a HTML-link;"import urllib.request
 import codecs
 url = link                                                      # direct link to a csv html file
@@ -599,7 +696,7 @@ Get all worksheets as worksheet-objects;listWS = wb1.worksheets();python
 Get all worksheets by n;listWS = [x.title for x in wb1.worksheets()];python
 Open the spreadhseet;"sheet = client.open(""testpython"").sheet1";python
 Get a list of all records;dataList = ws1.get_all_values();python
-Get specific areaw;data = ws1.get('B5:K8');python
+Get specific area;data = ws1.get('B5:K8');python
 Get formula of a cell;ws1.acell('B1', value_render_option='FORMULA').value;python
 Update cell range with nested list;ws1.update('A1:Z10', [[1, 2], [3, 4]]);python
 Insert new row at row number 2;"ws1.insert_row([""new1"",""new2"",""new3""],2)";python
@@ -639,6 +736,12 @@ https://pypi.org/project/gspread-formatting/;"# Set format for area:
 	rules.append(rule)
 	rules.save()";python
 https://openpyxl.readthedocs.io/en/stable/api/openpyxl.worksheet.worksheet.html#openpyxl.worksheet.worksheet.Worksheet.PAPERSIZE_A3;Documentation:;python
+Read xlsx;"wb = ox.load_workbook(""test.xlsx"")";python
+Read worksheetnames to list;l = wb.sheetnames;python
+Select specific worksheet in workbook;"ws = wb[""sheet1""]";python
+Select first worksheet;ws = wb[wb.sheetnames[0]];python
+Select active worksheet from workbook;ws = wb.active;python
+Value from specific cell;"val = ws[""A1""].value";python
 Import module for loading a workbook;from openpyxl import load_workbook;python
 Import module for creating a workbook;from openpyxl import Workbook;python
 Load xlsx;"wb = load_workbook((""Test.xlsx""))";python
@@ -647,17 +750,14 @@ Create new workbook;wb = openpyxl.Workbook();python
 Create new worksheet (at the end);"wb.create_sheet(""ws"")";python
 Create new worksheet (at the beginning);"wb.create_sheet(""ws"",0)";python
 Create new worksheet (at the second last position);"wb.create_sheet(""ws"",-2)";python
-All worksheets from the;wb.sheetnames;python
-Select specific worksheet in workbook;"ws = wb[""sheet1""]";python
-Select active worksheet from workbook;ws = wb.active;python
 Change worksheet name;"ws.title = ""xyz""";python
-Value from specific cell;"ws[""A1""].value";python
 Value from specific cell (other method);ws.cell(row=1, column=1).value;python
 Assign value to specific cell;"ws[""A1""] = 97";python
 "Assign formula to specific cell (only english names for function and arguments must be sepearted by "","" and not "";"")";"ws[""A1""] = ""=SUBTOTAL(1,I6:I10000)""";python
 Save workbook to xlsx;"wb.save(""Test2.xlsx"")";python
 Sort worksheets in workbook;wb._sheets.sort(key=lambda ws: ws.title);python
 Copy worksheet in workbook;wb.copy_worksheet(ws);python
+Copy part of the worksheet;ws1.range('A1:Z20').copy(wb2.sheets[0].range('A1:Z20'));python
 Loop trough specific area and print the cell values;"for row in ws[""A1"":""C3""]:
     for cell in row: print(cell.value)";python
 Loop trough specific column and print the cell values;"for cell in ws[""C""]: print(cell.value)";python
@@ -790,38 +890,65 @@ ruleBottomGreen = ColorScaleRule(
 ws2.conditional_formatting.add(f""K4:K12"", ruleBottomGreen)";python
 Import module;import xlwings as xw;python
 Use xlwings with hidden excel-worksheets;app = xw.App(visible=False);python
+Create a new workbook;wb = xw.Book();python
 Read XLSX;"wb = xw.Book (""name.xlsx"")";python
 Read XLSX with password protection;"wb = xw.Book (""name.xlsx"", password(""xyz""))";python
 Read specific worksheet;"ws = wb.sheets[""name_sheet""]";python
-Updates specific cell;"ws[""A1""].value = ""xyz""";python
+Read first worksheet;ws = wb.sheets[0];python
+Add worksheet in workbook;"wb.sheets.add(""NewWS"")";python
 Reads the formula of a cell (not the value);"f = ws[""A1""].formula";python
+Assign formula to a cell;"ws[""A1""].formula = string";python
 "Iterate trough cells an set them to """" / None";"for i in ws.range(""A3:A7""): i.value = """"";python
 Sort worksheet in the first col (function see below);xl_col_sort(ws,1);python
 Reads the color of a cell and returns a rgb-tuple eg. (146, 208, 80);"ws[""C8""].color";python
+Set value for cell;"ws[""C8""].value";python
+Read hyperlink of cell;"ws.range (""A2"").hyperlink";python
+Set values for specific cell;"ws.range(""A1:C3"").value";python
 Remove background from a cell;"ws[""C8""].color = None";python
 White: Assigns background color for a range of cells;"ws.range(""A1:C3"").color = (255,255,255)";python
-Green: Assigns background color green;"ws.range(""A1:C3"").color = (149,237,173)";python
-Red: Assigns background color green;"ws.range(""A1:C3"").color = (237,149,149)";python
-Yellow: Assigns background color green;"ws.range(""A1:C3"").color = (240,232,146)";python
-Orange: Assigns background color green;"ws.range(""A1:C3"").color = (230,172,80)";python
-Blue: Assigns background color green;"ws.range(""A1:C3"").color = (143,157,235)";python
+Green: Assigns background color;"ws.range(""A1:C3"").color = (149,237,173)";python
+Red: Assigns background color;"ws.range(""A1:C3"").color = (237,149,149)";python
+Yellow: Assigns background color;"ws.range(""A1:C3"").color = (240,232,146)";python
+Orange: Assigns background color;"ws.range(""A1:C3"").color = (230,172,80)";python
+Blue: Assigns background color;"ws.range(""A1:C3"").color = (143,157,235)";python
 Assign numeric format with 2 decimals;"ws.range(""A1:C3"").number_format = ""0,00""";python
 Assign percentage format with 2 decimals;"ws.range(""A1:C3"").number_format = ""0%""";python
 Set cell to bold;"ws.range(""B1"").api.Font.Bold = True";python
-Set font color to red (see codes: https://access-excel.tips/excel-vba-color-code-list/);"ws.range(""B2"").api.Font.ColorIndex = 3";python
-Insert a hyperlink and define which text should be shown in the cell;"ws[""D5""].add_hyperlink(link,text_to_display = ""Chart"")";python
+Windows: Black: Set font color to black (see codes: https://access-excel.tips/excel-vba-color-code-list/);"ws.range(""B2"").api.Font.ColorIndex = 1";python
+Windows: Red: Set font color to red (see codes: https://access-excel.tips/excel-vba-color-code-list/);"ws.range(""B2"").api.Font.ColorIndex = 3";python
+Windows: Set font size to 16;"ws.range(""A1"").api.Font.Size = 16";python
+Windwos: Set specific font;"ws.range(""A1"").api.Font.Name = ""Arial""";python
+Mac: Set font color to dark grey;"ws.range(""B2"").api.font_object.color.set((105,105,105))";python
+Autofit the columns;"ws2.autofit(axis=""columns"")";python
+Autofit the columns and rows;ws2.autofit();python
+Set wrap text to False;"ws2.range(f""A2:Z10000"").api.WrapText = False";python
+Insert a hyperlink and define which text should be shown in the cell;"ws[""D5""].add_hyperlink(link, text_to_display = ""Chart"")";python
+add an image at a specific cell;"wsInp.pictures.add(imgFN, left=wsInp.range(""D20"").left, top=wsInp.range(""D20"").top, height=100)";python
+Get all the pictures of a worksheet in a list;ws.pictures;python
+Delete the first picture in the worksheet;ws.pictures[0].delete();python
+"Delete the first picture with the name ""xyz""";"ws.pictures[""xyz""].delete()";python
 Disable auto filter in worksheet;ws.api.AutoFilterMode = False;python
 Clears the content and formatting of the whole sheet;ws.clear();python
 Clears the content but leaves formatting;ws.clear_contents();python
 Read worksheetnames to list;l = [x.name for x in wb.sheets];python
-Add worksheet in workbook;"wb.sheets.add(""NewWS"")";python
-Delete worksheet in workbook;"wb.sheets[""OldWS].delete()";python
+Delete worksheet in workbook;"wb.sheets[""OldWS""].delete()";python
 Hide worksheet in workbook;"wb.sheets[""WS""].api.Visible = False";python
+Copy worksheet;ws.copy(name='copied');python
 Save workbook;wb.save();python
 Close workbook;wb.close();python
-Quit App when opened at the beginning;app.quit();python
+Quit App when opened at the beginning;wb.quit();python
+Bring workbook to the front of the screen;wb.activate(steal_focus=True);python
 Load elements in list from range which are not None;"[x for x in ws.range(""A3:A2000"").value if x != None]";python
 copy range from one sheet to another;"ws.range(""A1:A10"").value = ws2.range(""A1:A10"").options(ndim=2).value";python
+Move worksheet at the beginning;ws1.api.Move(Before=wsWork.api);python
+Move worksheet at the end;ws1.api.Move(After=wsWork.api);python
+Get address and subaddress from hyperlinks;"for l in ws1['H18'].api._inner.Hyperlinks:
+  wAddr = l.address         # brings results for http-links
+  wSubAddr = l.SubAddress   # brings results for internal file-links";python
+Hide worksheet in windows;"app = xw.App()
+wb = app.books.open(FN)
+app.visible = False
+ws = wb.sheets[0]";python
 Definiton for border-sites see: https://docs.microsoft.com/en-us/office/vba/api/excel.xlbordersindex;"for e in ws.range(""B3:D3""):
   for site in [7,8,9,10]:
     e.api.Borders(site).LineStyle = 1";python
@@ -897,6 +1024,56 @@ with open(output_path, 'wb') as fileobj:	# Write merged PDF
 Rotate clockwise;page.rotateClockwise(90);python
 Rotate counter clockwise;page.rotateCounterClockwise(90);python
 Overlaying / Watermarking two pages;page.mergePage(watermark_page);python
+import the module;import pyodbc;python
+Define connection and cursor for access-db;"FN = ""dataOdd.accdb""
+path = os.path.abspath(os.path.dirname(sys.argv[0]))
+fn = path + ""/"" + FN
+msAccess = r""{Microsoft Access Driver (*.mdb, *.accdb)}""
+connPath = f'Driver={msAccess};DBQ={fn};'
+conn = pyodbc.connect(connPath)
+cursor = conn.cursor()";python
+Read data;"cursor.execute('select * from dataOdds')
+for row in cursor.fetchall():
+    print (row)";python
+Insert data;"sql = ""INSERT INTO dataOdds ("" \
+      ""[Date],"" \
+      ""Name,"" \
+      ""Links,"" \
+      ""Fixture) "" \
+      ""VALUES (?,?,?,?)""
+cont = [
+        datetime.today().date(),
+        ""datetime"",
+        ""ichbineinlink.html"",
+        ""01:  -  Race Test Race""
+       ]
+cursor.execute(sql, cont)
+conn.commit()";python
+Update data;"sql = ""UPDATE dataOdds "" \
+      ""SET Links = ? "" \
+      ""WHERE Date = ? "" \
+      ""AND Name = ? "" \
+      ""AND Fixture = ?""
+cont = [
+        ""ABC"",
+        ""2022-03-24"",
+        ""Albury"",
+        ""02:35  -  Race 1 Trackpix maiden showcase plate""
+       ]
+cursor.execute(sql, cont)
+conn.commit()";python
+Delete data;"### delete data
+sql = ""DELETE FROM dataOdds "" \
+      ""WHERE Date = ? "" \
+      ""AND Name = ? "" \
+      ""AND Fixture = ?""
+cont = [
+        ""2022-04-22"",
+        ""ABCDEFGH"",
+        ""01:  -  Race Test Race""
+       ]
+cursor.execute(sql, cont)
+conn.commit()";python
 Data where the MariaDB-database is stored;C:\Program Files\MariaDB 10.3\data;python
 Data where the MySQL-database is stored;C:\ProgramData\MySQL\MYSQL Server 8.0\data;python
 Shows the database-version in the column header;HeidiSQL - Datei / Verbindungsmanager;python
@@ -980,6 +1157,9 @@ DELETE row in a table;"sql = ""DELETE FROM scores"" \
 cont = [stock,dateElem]
 c.execute (sql, cont)
 mydb.commit ()";python
+DELETE everything in a table;"sql = ""DELETE FROM scores""
+c.execute (sql)
+mydb.commit ()";python
 Import MODULE;from sqlalchemy import create_engine;python
 necessary to install - otherwise problems eg. with api-accesses to the db;pip install pymysql;python
 Define access to the MySQL-DB (username, pw, dbname);"engine = create_engine(""mysql+pymysql: //user:pw@localhost/dbname?host=localhost?port=3306"")";python
@@ -1042,19 +1222,18 @@ Execute DELETE statementconn = engine.connect();"stmt = students.delete().where(
 conn.execute(stmt)
 s = students.select()
 conn.execute(s).fetchall()";python
-Create a database or connect to one;"conn = sqlite3.connect(""address_book.db"")";python
+Import module;import sqlite3;python
+Create / Connet to a database;"conn = sqlite3.connect(""address_book.db"")";python
 Create a cursor (for working with the db);c = conn.cursor();python
-Create a table in the database;"c.execute('''CREATE TABLE tbl (
-		attr1 text,
-		attr2 text,
-		attr3 integer)''')";python
-Insert rows into database;"c.execute(INSERT INTO tbl VALUES (:attr1,:attr2,:attr3)"",
+Create a table in the database (if it not exists);;python
+Create a table in the database (if it not exists);;python
+Insert rows into database;"c.execute(""INSERT INTO tbl VALUES (:attr1,:attr2,:attr3)"",
 		{
 			""attr1"": field1.get(),
 			""attr2"": field2.get(),
 			""attr3"": field3.get()
 		})";python
-Select rows from database;"c.execute""SELECT * FROM adresses"")";python
+Select rows from database;"c.execute(""SELECT * FROM adresses"")";python
 Delete row from database - get key from delete_box widget (eg. tkinter-module);"c.execute(""DELETE from addresses WHERE oid = "" + delete_box.get())";python
 Fetch all rows;records = c.fetchall();python
 Fetch only one row;c.fetchone();python
@@ -1063,9 +1242,10 @@ Commit Changes;conn.commit();python
 Close Connection;conn.close();python
 Import module datetime and timedelta;from datetime import datetime, timedelta;python
 Import module dat;from datetime import date;python
-Conversion string to datetime in format yyyy-mm-dd;"datetime.strptime(s, ""%Y-%m-%d"")";python
-"Conversion for date format eg. ""Apr 21, 2020""";"datetime.strptime(s, ""%b %M, %Y"")";python
+Conversion string to datetime in format yyyy-mm-dd;"datetime.strptime(""2021-06-01"", ""%Y-%m-%d"")";python
+"Conversion for date format eg. ""Apr 21, 2020""";"datetime.strptime(""Apr 21, 2020"", ""%b %d. %Y"")";python
 "Conversion for utc format eg. ""14:42:46 UTC 2021-12-15";"datetime.strptime(s, ""%H:%M:%S UTC %Y-%m-%d"")";python
+Conversion for time format hh:mm:ss;"datetime.strptime(""05:20:25"",""%H:%M:%S"")";python
 Conversion datetime to string in format  yyyy-mm-dd;"datetime.strftime(dt, ""%Y-%m-%d"")";python
 Convert dateformat from string in one line (1st from - 2nd to);"dt.strftime((dt.strptime(tmp,""%m/%d/%Y"")),""%Y-%m-%d"")";python
 Check if variable is of type datetime.date or datetime.datetime;isinstance(x, date);python
@@ -1077,9 +1257,10 @@ Actual date in format 2020-06-09;"now = datetime.now().strftime(""%Y-%m-%d"")";p
 Actual date in datetime format;tday = datetime.today();python
 Actual date as date format;tday = datetime.today().date();python
 Actual date as string format;tday = str(datetime.today().date());python
-Convert datetime to date;date = datetime.date();python
+Convert datetime to date;date = dt.date();python
 Year / month / day / hour / minute from the datetime;dt.year, dt.month, dt.day, dt.hour, dt.minute;python
 Returns weekday (monday=1, sunday=7);tday.isoweekday();python
+Return the calendar week-number;dt.isocalendar().week;python
 Calculates last friday (+2 for FR, +1 SA, 0 SU, -1 MO, -2 TU, -3 WE, -4 TH);last_friday = day - timedelta(days=tday.isoweekday() + 2);python
 Creates timedelta for 7 days;tdelta = timedelta(days=7);python
 Creates timedelta for 1 minute;tdelta = timedelta(seconds=60);python
@@ -1088,10 +1269,12 @@ Previous 1-day-back-date for date;newdate = date - timedelta(days=1);python
 Timedelta for two dates;date2-date1;python
 Difference in days;daysDiff = abs(dt2-dt1).days;python
 Difference in minutes;minDiff = (date2-date1).total_seconds() / 60;python
-Generate ISO-format from datetime;datetime.fromisoformat('2020-07-10 02:00:00').timestamp();python
-Generate ISO-format from actual date;iso_dt = datetime.fromisoformat(str(datetime.now())).timestamp();python
-Generate Datetime from ISO-format=>;date = datetime.fromtimestamp(1594339200000 / 1e3);python
+Generate UNIX/ISO-format from datetime;datetime.fromisoformat('2020-07-10 02:00:00').timestamp();python
+Generate UNIX/ISO-format from actual date;iso_dt = datetime.fromisoformat(str(datetime.now())).timestamp();python
+Generate Datetime from UNIXISO-format;date = datetime.fromtimestamp(ts);python
 Shows size of the list / tuple in bytes;sys.getsizeof(l) or sys.getsizeof(t);python
+Convert float to hh:mm:ss datetime.timedelta;t = timedelta(days=0.786331018518518);python
+Convert datetime.timedelta to float;f = t.total_seconds() / 86400;python
 Using german names / deutsche namen for month- and day-names;"import locale
 locale.setlocale(category=locale.LC_ALL,locale=""German"")";python
 Check last day of month & first weekday of month;"import calendar
@@ -1182,6 +1365,8 @@ make path absolute;path = path.resolve();python
 get mac-adress from the actual pc;"from uuid import getnode as get_mac
 mac = get_mac()";python
 Import module;import os;python
+Get the actual path;path = os.path.abspath(os.path.dirname(sys.argv[0]));python
+Put all filenames to a list from the actual path;os.listdir(path);python
 Shows alls attributs and methods of the library;print(dir(os));python
 Change the directory;"os.chdir(""C:/temp"")";python
 Current working directory;os.getcwd();python
@@ -1189,12 +1374,12 @@ Get actual user name;os.getlogin();python
 Outputs the entire content of the current working dir;for f in os.listdir(): print(f);python
 Outputs the elements seperated in name + extension;for f in os.listdir(): fn, ext = os.path.splitext(f);python
 Change the filenmae;os.rename(filename, new_name);python
-Cut and paste file from path1 to path2;os.rename(path1+fn, path2+fn);python
+Cut and paste file from path1 to path2;os.rename(src, dst);python
 Copy file from source to destination;"shutil.copyfile(""src"",""dst"")";python
 Creates new folder (also possible with makedirs => is prefered);"os.mkdir(""folder"")";python
 Creates new folder and subfolders;"os.makedirs(""folder/subfolder"")";python
 Delete file;os.remove (file);python
-Delete folder (prefered cause deleting ist dangerous);"os.rmdir (""folder"")";python
+Delete folder (prefered cause deleting is dangerous);"os.rmdir (""folder"")";python
 Delete folder and subfolders;"os.removedirs (""folder/subfolder"")";python
 Outputs the statistics of the file (size, modification time,...);"os.stat(""file"")";python
 Outputs dirpath - all the dirs - and all the files;for dirpath,dir,files in os.walk(os.getcwd());python
@@ -1205,15 +1390,17 @@ Outputs only the dir => temp/;"os.path.dirname(""temp/file.txt"")";python
 Checks if filename exists in the filesystem;"os.path.exists(""temp/file.txt"")";python
 Checks if folder exists / element is a directory (in the actual dir);"os.path.isdir(""xyz"")";python
 Checks if files exists / element is a file (in the actual dir);"os.path.isfile(""xyz"")";python
-Put all filenames to a list from the actual working dir;os.listdir();python
+Join path together on every os-system (win,mac,linux);"os.path.join(path, ""URLS"", link)";python
 Put all sub-folders to a list from the actual working dir;[x[0] for x in os.walk(path)][1:];python
 Change file to hidden;os.popen('attrib +h ' + fn).read().close();python
-Put all files in a list from actual directory with all subdirs and Filtering;"listExtensions=[""jpg"",""jpeg"",""png""]
+Send file to trash (needs:);send2trash(filename);python
+Put all files with path in a list from actual directory with all subdirs and Filtering;"listExtensions=[""jpg"",""jpeg"",""png""]
 listImages = []
 for dirpath,dir,files in os.walk(os.getcwd()):
   for f in files:
     if any(x in f.lower() for x in listExtensions):
-      listImages.append(f)";python
+      wFN = os.path.join(dirpath, f)
+      listImages.append(wFN)";python
 Find home-directory for the actual user;"from os.path import expanduser
 home = expanduser(""~"")";python
 Check if 2 folders are different;"from filecmp import dircmp
@@ -1422,6 +1609,14 @@ Iterate through pandas series;for index, value in s.items():;python
 Delete timezone from timestamp;.index.tz_localize(None);python
 Convert pandas timestamp to datetime;dt = dt.to_pydatetime();python
 Convert datetime to pandas timestamp;dt = pd.Timestamp(dt);python
+Convert pandas timestamp to datetime;dt = dt.to_pydatetime();python
+Convert a dataframe to a nested list (only values, without index);l = df.values.tolist();python
+Convert a dataframe to a nested list including index;l = df.reset_index().values.tolist();python
+Read first worksheet to dataframe;df = pd.read_excel(workFN, sheet_name=0);python
+get specific row with title in index;"filt = (tmpDF.index == ""Total Assets"")";python
+get specific row with title in index;tmpDF = tmpDF[filt];python
+get the first entry of a series;tmpDF[tmpDF.columns[0]][0];python
+add new column in dataframe at position 0 (column is name, value is content);"df.insert(loc=0, column=""A"", value=""XYZ"")";python
 Shows all parameters for the reader;pf.read_csv?;python
 Read csv into dataframe - first line will be col-names of the dataframe;"df = pd.read_csv(""fn.csv"")";python
 Read csv into dataframe - no headerline (col names will be default numeric);"df = pd.read_csv(""fn.csv"",header=None)";python
@@ -1468,7 +1663,7 @@ Create SQL Alchemy engine;"engine = create_engine(""data.db"")";python
 Establish connection with SQL Alchemy;connection = engine.connect();python
 Read whole table with SQL-Alechmy (many things are auto-done - e.g. Indexing,Parsing);"df = pd.read_sql_table(""empl"",con=connection)";python
 Writes dataframe to the sql-db (breaks when table allready exists);"df.to_sql(""data.db"",conn)";python
-Writes dataframe to the sql-db (with droping the table before inserting);"df.to_sql(""data.db"",conn,if_exists=""replace"")";python
+Writes dataframe to the sql-db (with droping the table before inserting);"df.to_sql(""Dadata.db"",conn,if_exists=""replace"")";python
 Writes dataframe to the sql-db (with inserting new values to existing table);"df.to_sql(""data.db"",conn,if_exists=""append"")";python
 Read html into dataframe;df = pd.read_html(html_string);python
 Assign html-varialbe;"html_url""https://www.xyz.com""";python
@@ -1625,7 +1820,6 @@ Get the first row of the dataframe;df = df.iloc[:,0];python
 Iterate trough dataframe with index and content / row;for index, row in df.iterrows():;python
 Show all rows of the dataframe when printed;pd.set_option('display.max_rows', None);python
 Change datetime64 column to datetime;"df[""col1""] = df[""col1""].dt.date";python
-Convert pandas timestamp to datetime;dt = dt.to_pydatetime();python
 Convert datetime to pandas timestamp;dt = pd.Timestamp(dt);python
 "Get the maximum from the 3 different columns and put it in the column ""max""";"df[""max""]=df[[""high-low"",""high-pc"",""low-pc""]].max(axis=1)";python
 Changing a column with this lambda function (over 400x faster then using iterrows);temp = df['name'].apply(lambda x: x.strip());python
@@ -1669,8 +1863,11 @@ Import Keys (for keystroke handling);from selenium.webdriver.common.keys import 
 Import Time-Library when there are delays needed;import time;python
 Import Keys to send key-strokes;from selenium.webdriver.common.keys import Keys;python
 Define chrome driver - with actual folder os.getcwd;driver = webdriver.Chrome(os.getcwd() + '/chromedriver');python
-Access to the url;"driver.get(""url"")";python
+Throws exception when time for read is over 10 seconds;driver.set_timeout(10);python
 Somtimes necessary to delay some work in progress;time.sleep(1);python
+Encode url;link = urllib.parse.quote_plus(link);python
+Open link;driver.get(link);python
+get full unparsed html-code;driver.page_source;python
 "Find element (input-element with id = ""passwd-id"")";"driver.find_element(By.XPATH, ""//input[@id='passwd-id']"")";python
 Click on element by xpath (investigate - copy xpath);"driver.find_element(By.XPATH,""//*[@id='button']/input"").click()";python
 "Fill field ""name"" with content ""x""";"driver.find_element(By.XPATH,""//*[@id='name']"").send_keys(""x"")";python
@@ -1693,7 +1890,7 @@ Close the actual window;driver.close();python
 Title of the html-site;driver.title;python
 Back-Function in browser-history;driver.back();python
 Forward-Function in browser-history;driver.forward();python
-Refresh website;driver.navigate().refresh();python
+Refresh website;driver.refresh();python
 Define an individual cookie;"cookie = {""name"": ""token"", ""value"": ""23874kljdsjhfaökldjs""}";python
 Use Cookie;driver.add_cookie(cookie);python
 Outputs a specific cookie;"driver.get_cookie(""token"")";python
@@ -1705,9 +1902,12 @@ Switch (back) to active window (eg. after working on the popup-frame or popup-wi
 Set window size to 600 wide and 1000 height;driver.set_window_size(600,1000);python
 Minmize window;driver.minimize_window();python
 ScrollDown in the window (maybe to the bottom of the site);"driver.execute_script(""window.scrollTo(0, 10000)"")";python
-Switch between iframes;"iframe = driver.find_element_by_xpath(""//iframe[@name='DialWin']"")  => Use XPath to locate iframe
-driver.switch_to.frame(iframe)                                      => Switch to iframe
-driver.switch_to.default_content()                                  => Switch back to default content";python
+Open a new tab;"driver.execute_script(""window.open('');"")";python
+Swich to first tab;driver.switch_to.window(driver.window_handles[0]);python
+Switch between iframes;"waitWD.until(EC.presence_of_element_located((By.XPATH,""//iframe[@id='mainFrame']"")))
+iframe = driver.find_element(By.XPATH, ""//iframe[@id='mainFrame']"")
+driver.switch_to.frame(iframe)
+driver.switch_to.default_content()";python
 Wait till a specific element is loaded / clickable;"=> waiting as long as required - better then time.sleep
 => more possible conditions see https://selenium-python.readthedocs.io/waits.html#explicit-waits
 wait = WebDriverWait (driver, 5)                                        # Define maximum wait time till the element is ready
@@ -1771,6 +1971,7 @@ Xpath=//tagname[@attribute='value']
 //a[@href='http://demo.guru99.com/']      # anchor with specific link
 //img[@src='//xyz.com/img/java.png']      # img-elem with specific pic-link
 (//button)[2]                             # select the second button on the page
+//button[last()]                          # select the last button
 (//p[@class='product']/span)[2]           # select the second span in the p-element with class =
 
 //*[@type='submit' or @name='btnReset']         # any elem which has 2 OR conditions (for type and name)
@@ -1780,6 +1981,7 @@ Xpath=//tagname[@attribute='value']
 //*[contains(@id,'message')]            # any elem which has ""message"" somewhere in the id
 //*[contains(text(),'here')]            # any elem which has ""here"" somewhere in the text
 //*[contains(@href,'orf')]              # any elem which has ""orf"" somewhere in the href-link
+//select[contains(.,'Division')]        # select-element where some child has the text ""Division"" in it
 //label[starts-with(@id,'message')]     # elem where id starts with ""message""
 
 //*[@type='text']//following::input[1]              # select all following-elements which have input as tag and select the first elem
@@ -1819,29 +2021,60 @@ partialLinkText
 tagName
 cssSelector
 XPath";python
-Import module for beautiul soap;from bs4 import BeautifulSoap;python
+Solving some captchas - clicking for 10 seconds;"element = driver.find_element(By.XPATH,""//div[@id='px-captcha']"")
+  action = ActionChains(driver)
+  click = ActionChains(driver)
+  action.click_and_hold(element)
+  action.perform()
+  time.sleep(10)
+  action.release(element)
+  action.perform()
+  time.sleep(0.2)
+  action.release(element)";python
+Use only newest fake_useragent;"# install with
+  # pip uninstall fake-useragent
+  # pip install --force-reinstall ""git+https://github.com/robertsmd/fake-useragent.git@robertsmd-feature-only-newest-uas""
+  see: https://github.com/hellysmile/fake-useragent/pull/122
+  from fake_useragent import UserAgent
+  userAgent = UserAgent(num_newest_uas=2).random";python
+Download PDF-File to folder;"# create this option-setting when creating the driver
+  ...
+  DOCPath = os.path.join(path, ""WORK"")
+  options = Options()
+  options.add_experimental_option('prefs', {
+    ""download.default_directory"": DOCPath,
+    ""download.prompt_for_download"": False,
+    ""download.directory_upgrade"": True,
+    ""plugins.always_open_pdf_externally"": True
+    })
+  ...
+  srv=Service(ChromeDriverManager().install())
+  driver = webdriver.Chrome (service=srv, options=options)
+  driver.get(workerPDF)";python
+Import module for beautiul soap;from bs4 import BeautifulSoup;python
 Import moduel for fake useragent;from fake_useragent import UserAgent;python
 Define UserAgent;ua = UserAgent();python
 Create random useragent;"ua.random								""t";python
 Read url as page;"page = requests.get(""https://www.ariva.de/dax-30"")";python
 "Read url as page with proxy like eg. ""https://10.10.1.11:1080""";page = requests.get(url,headers=headers,proxy=proxy);python
-Read page with html.parser;"soup = BeautifulSoup (page.content,""html.parser"")";python
+Read html-page with parser;"soup = BeautifulSoup (page.content,""html.parser"")";python
+Read xml-page with parser;"soup = BeautifulSoup (page.content,""xml"")";python
 find first a-tag in body;soup.body.a;python
 Find all td-elements;"soup.find_all(""td""):";python
 Find alle th- and td-elements;"soup.find_all([""th"",""td""])";python
 Read all table rows for specific class;"soup.find_all(""tr"", class_=""arrow0""):";python
 Find all div-elements with specific class;"soup.find_all(""p"", {""class"": ""payamntp""})";python
 Find element with one of this 2 classes;"soup.find_all(""div"", {'class':['class1', 'class2']})";python
-Find divs which have both classes;"soup.select(""div.class1.class2"")";python
 Read all table data cells with id and content;"for col_id, col_content in enumerate(result.find_all(""td"")):";python
 Read all divs with specific class;"soup.find_all(""div"", class_=""col-xs-6"")";python
 "Find div with id ""lj_div""";"soup.find(""div"", {""id"": ""lj_div""})";python
 "Find (first) p with class ""line""";"soup.find(""p"", {""class"": ""line""})";python
 Find element with specific text / string;"soup.find(""dt"", string=""In-App Purchases"")";python
+General way to find string;"soup.find(""div"", string=re.compile('contributions'))";python
+"Check if string nameSymbol_"" is part of the class-element";"soup.find(""small"", class_=re.compile(""nameSymbol_""))";python
 Find elements for several tags;"soup.find_all([""strong"",""a"",""br""])";python
 Found the parent div-element for a specific before find element;"erg2 = erg.find_parent(""div"")";python
 Check if class has specific content;"if row.get(""class"") == [""ellipsis"", ""nobr"", ""new""]:";python
-"Check if string nameSymbol_"" is part of the class-element";"soup.find(""small"", class_=re.compile(""nameSymbol_""))";python
 Read all links from href element;"for e in soup.find_all(""a""): e.get(""href"")";python
 "Read all number from the field ""value""";"for e in soup.find_all(""a""): e.get(""value"")";python
 Change all linebreak <br> in text to blank;"for lb in soup.findAll(""br""): lb.replaceWith("" "")";python
@@ -1863,10 +2096,24 @@ return next element;.next_element;python
 return next elements (as a generator object);.next_elements;python
 return previous element;.previous_element;python
 return previous elements (as a generator object);.previous_elements;python
-find the next ul-element;".find_next(""ul)";python
+find the next ul-element;".find_next(""ul"")";python
+find the previous ul-element;".find_previous(""ul"")";python
+find only direct children of an element;".find_all(""div"", recursive=False)";python
 returns the name of the tag;.name;python
 get all strings from a tag in an iterable;.strings;python
 get all (stripped) strings from a tag in an iterable;.stripped_strings;python
+get all text directly below a tag;.find_all(text=True, recursive=False);python
+Using the select selector;"# https://facelessuser.github.io/soupsieve/selectors/
+soup.select(""div.class1.class2"")                => divs-elem which have both classes
+soup.select(""div[class='table-container']"")     => div-elem which have only this class
+soup.select('h1, p')                            => all h1- and p-elements
+soup.select('body p')                           => p-elems in body
+soup.select('div > p')                          => children p-elems in div
+soup.select('h1 ~ p')                           => p-elems on the same level as h1
+soup.select(':any-link')                        => any links which has a href-attribute
+soup.select(':checked')                         => all checked elements (radio-buttons, checkboxes, option)
+soup.select('p:first-child')                    => first child in a group
+soup.select('span:first-of-type')               => firt child of a given type in a group";python
 Define Real User Agent Header;"(avoid being blocked while scraping some data - keep it up to date from time to time)
 see: https://www.scraperapi.com/blog/5-tips-for-web-scraping/
 common user agent list: https://www.networkinghowtos.com/howto/common-user-agent-list/
@@ -1893,6 +2140,12 @@ driver.get (link)  														# Read link
 time.sleep (2)  														# Wait till the full site is loaded";python
 Wait for the specific element to load;"element = driver.find_element_by_id(""analyst-estimate"")
 driver.execute_script(""arguments[0].scrollIntoView();"", element)
+
+driver.execute_script(""return arguments[0].scrollIntoView(true);"",
+  WebDriverWait(driver, 20).until(EC.visibility_of_element_located((
+    By.XPATH, ""//div[@class='search-pagination']""))))
+
+
 time.sleep (1)";python
 Read page with html.parser and to the further scraping;soup = BeautifulSoup(driver.page_source, 'html.parser');python
 Close the chromedriver window;driver.quit ();python
@@ -1904,6 +2157,9 @@ driver.find_element_by_partial_link_text								# Search for (part) text within 
 driver.find_element_by_tag_name('h1')									# Search for a tag in html
 driver.find_element_by_class_name(""cont"")								# Search for a specific class name in html
 driver.find_element_by_css_selector('p.content')						# Search for tag and selector";python
+Read the whole text of an article / element;"tmpText = soup.find(""article"", {""itemprop"": ""description""})
+  if tmpText != None:
+    wText = ""\n"".join(list(tmpText.stripped_strings)[1:])";python
 import module requests;import requests;python
 import module json;import json;python
 Request api from the generated api-link;resp = requests.get (url);python
@@ -1924,16 +2180,37 @@ header from the response;resp.headers;python
 show the content-type of the resonse (eg. json, image/jpeg);"resp.headers[""Content-Type""]";python
 response in text-form;resp.text;python
 response in json-form;resp.json();python
-Pretty-Print formatted json-file;print(json.dumps(respJSON,;python
+Pretty-Print formatted json-file;print(json.dumps(resp,indent=4,sort_keys=True));python
 Read the value for the 1 element and the attribute xyz;"result = api[0][""xyz""]";python
-Install module;pip install requests-html;python
-Import requests_html;from requests_html import HTMLSession;python
-Define a html-session;s = HTMLSession();python
-Define response;r = s.get(url, headers=HEADERS);python
-title of in the html-tag;"r.html.find(""title"", first=True).text";python
-"Span-value with id = ""wob_tm""";"r.html.find(""span#wob_tm"", first=True).text";python
-"Div-element with class = ""clX""";"r.html.find(""div.clX"", first=True)";python
-"Span-element with class=""clY"" ind Div-element with class=""clX""";"r.html.find(""div.clX span.clY"",first=True).text";python
+Using requests_html;"pip install requests-html                         => Install module
+from requests_html import HTMLSession             => Import requests_html
+s = HTMLSession()                                 => Define a html-session
+r = s.get(url, headers=HEADERS)                   => Define response
+r.html.find(""title"", first=True).text             => title of in the html-tag
+r.html.find(""span#wob_tm"", first=True).text       => Span-value with id = ""wob_tm""
+r.html.find(""div.clX"", first=True)                => Div-element with class = ""clX""
+r.html.find(""div.clX span.clY"",first=True).text   => Span-element with class=""clY"" ind Div-element with class=""clX""";python
+Using request to get the source code or text from a page;"resp = requests.get(""https://api.buyproxies.org/?a=showProxies&pid=175649&key=168281a74e7bb3f0dc0feb4f37ec6de5&port=12345"")
+proxyList = resp.text.split(""\n"")";python
+Using requests to download a file;"url = ""https://xyz.mp3""
+doc = requests.get(url)
+with open('work.mp3', 'wb') as f:
+  f.write(doc.content)";python
+Using requests for reading websites;"ua = UserAgent(verify_ssl=False)
+userAgent = ua.random
+HEADERS = {""User-Agent"": userAgent}
+page = requests.get (link, headers=HEADERS)
+page = requests.get(site,timeout=5)               => try to read the website for max 5sec
+soup = BeautifulSoup (page.content, ""html.parser"")";python
+Using requests to read image from web, save and build hashValue;"headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'} # This is chrome, you can set whatever browser you like
+  resp = requests.get(img, headers=headers, stream=True)
+  print(resp.status_code)
+  with open(workerPic, 'wb') as f:
+    shutil.copyfileobj(resp.raw, f)
+  del resp
+  img = Image.open(resp.raw)
+  workihashImg = imagehash.average_hash(img)
+  print(workihashImg)";python
 install the scrapy module;pip install SCRAPY;python
 creates the project and folder-structure;scrapy startproject indeedScraper;python
 create tilesSpider.py with scrapy-template;scrapy genspider tilesSpider magnattiles.com;python
@@ -2026,57 +2303,114 @@ class QuotesScrollSpider(scrapy.Spider):
         if data[""has_next""]:                                    # check if next page has to be read
             nextPage = data[""page""] + 1
             yield scrapy.Request(url=self.apiURL.format(nextPage), callback=self.parse)";python
+Import module;import ftplib;python
+Create FTP instance;ftp = ftplib.FTP();python
+Define encoding;"ftp.encoding = ""utf-8""";python
+Connect to ftp-address;ftp.connect(ADDR);python
+Login with username and password;ftp.login(USERNAME, PW);python
+Change working directory eg. to tmp;"ftp.cwd(""tmp/"")";python
+Show actual working directory;ftp.pwd();python
+Show files in actual working directory;ftp.dir();python
+Quit ftp instance;ftp.quit();python
+Upload file with ftp;"with open(fn, ""rb"") as file:
+  ftp.storbinary('STOR test.png', file)";python
 Install Py Qt Designer;https://build-system.fman.io/qt-designer-download;python
 Installation;pip install pyqt5;python
-Defines Application;from PyQt5.QtWidgets import QApplication;python
-Defines Label;from PyQt5.QtWidgets import QLabel;python
-Defines Widget;from PyQt5.QtWidgets import QWidget;python
-Arranges horizontally from left to right;from PyQt5.QtWidgets import QHBoxLayout;python
-Arranges vertically from top to bottom;from PyQt5.QtWidgets import QVBoxLayout;python
-Arranges in grid from on x and y axes;from PyQt5.QtWidgets import QGridLayout;python
-Field for forms - 1col are titles, 2col are fields,rbs,cb;from PyQt5.QtWidgets import QFormLayout;python
-Defines PushButton;from PyQt5.QtWidgets import QPushButton;python
-Module for dialog windows;from PyQt5.QtWidgets import QDialog;python
-Module for button boxes in dialog windows;from PyQt5.QtWidgets import QDialogButtonBox;python
-Defines input field with text;from PyQt5.QtWidgets import QLineEdit;python
-Module for main windows;from PyQt5.QtWidgets import QMainWindow;python
-Module for status bar;from PyQt5.QtWidgets import QStatusBar;python
-Module for tool bar;from PyQt5.QtWidgets import QToolBar;python
-Create an instance of the application;app = QApplication(sys.argv);python
-Initialize a window;w = QWidget();python
-Title of the windows;w.setWindowTitle('Windows Title');python
-Define windows (1:x-coord,2:y-coord,3:width,4:height);w.setGeometry(200, 200, 380, 180);python
-Place / move windows to coodinates 60,15;w.move(50, 15);python
-Define label / message in format h1;msg = QLabel('<h1>Hello World!</h1>', parent=window);python
-Place / move labe to coordinates 60,15;msg.move(50, 15);python
-Show the application GUI - schedules a paint event;windows.show();python
-Start the app and close it with sys.exit;sys.exit(app.exce_());python
-Defines horzontal box;layout_qh = QHBoxLayout();python
-Defines vertical box;layout_qv = QVBoxLayout();python
-Defines grid layout;layout_qg = QGridLayout();python
-Defines form layout;layout_qf = QFormLayout();python
-Defines one or more buttons;layout_qh.addWidget(QPushButton('Button1'));python
-Defines one or more buttons;layout_qv.addWidget(QPushButton('Button1'));python
-Defines one or more buttons and set it to position 1,0;layout_qg.addWidget(QPushButton('Button1'),1,0);python
-Set buttons to position 2,1 and span it 1row/2cols;layout_qg.addWidget(QPushButton('Button1'),2,1,1,2);python
-Defines input field;"layout_qf.addRow(""text:"", QLineEdit())";python
-Sets layout dimensions to window;w.setLayout(layout_xy);python
-Defines a class dialog which inherits from QDialog;class Dialog(QDialog):;python
-Define buttons for a dialog window;buttons = QDialogButtonBox();python
-Defines a ok button on a dialog window;buttons.setStandardButtons(QDialogButtons.OK);python
-Adds buttons to vertical layout;layout_qv.addWidget(buttons);python
-Defines a class Windows which inherits from QMainWindow;class Window(QMainWindow):;python
-Convert Qt-Designer file to a python-file;pyuic5 -x 6PyQtDesigner.ui -o 6PyQtDesigner.py;python
-simplest App;"import PyQt5.QtWidgets as qtw
+QtWidgets / Different Widgets;"import PyQt5.QtWidgets as qtw   # Import QtWidgets
+qtw.QApplication                # Defines Application
+qtw.QLabel                      # Defines Label
+qtw.QWidget                     # Defines Widget
+qtw.QHBoxLayout                 # Arranges horizontally from left to right
+qtw.QVBoxLayout                 # Arranges vertically from top to bottom
+qtw.QGridLayout                 # Arranges in grid from on x and y axes
+qtw.QFormLayout                 # Field for forms - 1col are titles, 2col are fields,rbs,cb
+qtw.QPushButton                 # Defines PushButton
+qtw.QDialog                     # Module for dialog windows
+qtw.QDialogButtonBox            # Module for button boxes in dialog windows
+qtw.QLineEdit                   # Defines input field with text
+qtw.QMainWindow                 # Module for main windows
+qtw.QStatusBar                  # Module for status bar
+qtw.QToolBar                    # Module for tool bar
+qtw.QMessageBox                 # Module for Message Boxes
+qtw.QCommandLinkButton          # Module for Command Link Button
+qtw.QCheckBox                   # Module for CheckBox
+qtw.QDialog                     # Module for Dial Widget
+qtw.QFileDialog                 # Module for File Dialog";python
+Main Window;"app = QApplication(sys.argv)                            # Create an instance of the application
+w = QWidget()                                           # Initialize a window
+w.setWindowTitle('Windows Title')                       # Title of the windows
+w.setGeometry(200, 200, 380, 180)                       # Define windows (1:x-coord,2:y-coord,3:width,4:height)
+w.move(50, 15)                                          # Place / move windows to coodinates 60,15
+msg = QLabel('<h1>Hello World!</h1>', parent=window)    # Define label / message in format h1
+msg.move(50, 15)                                        # Place / move labe to coordinates 60,15
+windows.show()                                          # Show the application GUI - schedules a paint event
+sys.exit(app.exce_())                                   # Start the app and close it with sys.exit";python
+Layouts;"qhLayout = QHBoxLayout()                                # Defines horzontal box layout
+qvLayout = QVBoxLayout()                                # Defines vertical box layout
+qgLayout = QGridLayout()                                # Defines grid layout
+qfLayout = QFormLayout()                                # Defines form layout
+btn1 = qtw.QPushButton(self)                            # Define Push-Button
+qhLayout.addWidget(btn1)                                # Add Button on Layout
+qvLayout.addLayout(qhLayout)                            # Add horizontal Box Layout in vertical Layout
+lbl = qtw.QLabel('Name:', self)                         # Define Label
+inp = qtw.QLineEdit(self)                               # Define Input-Field
+qfLayout.addRow(lbl, inp)                               # Add row in form (Label + Input-Field)
+qgLayout.addWidget(QPushButton('Button1'),1,0)          # Defines one or more buttons and set it to position 1,0
+qgLayout.addWidget(QPushButton('Button1'),2,1,1,2)      # Set buttons to position 2,1 and span it 1row/2cols
+w.setLayout(layoutXY)                                   # Sets layout dimensions to window
+
+=> Button / QPushButton";python
+2nd method to assign a function (short method);btn = qtw.QPushButton(self, clicked = lambda: self.btnPressedCalc());python
+btn = qtw.QPushButton(self, clicked = lambda: self.btnPressedCalc())   2nd method to assign a function (short method);=> Label / QLabel;python
+Label / QLabel;=> Input-Field / QLineEdit;python
+Input-Field / QLineEdit;=> ComboBox / QComboBox;python
+Input-Field / QLineEdit;=> List / QListWidget;python
+Input-Field / QLineEdit;=> SpinBoxes / QSpinBox, QDoubleSpinBox;python
+Add SpinBox to layout;layout.addWidget(sp);python
+Add SpinBox to form-layout;"layout.addRow(""Name:"",sp)";python
+"layout.addRow(""Name:"",sp)         Add SpinBox to form-layout";=> Textfield / QTextEdit;python
+"layout.addRow(""Name:"",sp)         Add SpinBox to form-layout";=> RadioButtons / QRadioButton;python
+RadioButtons / QRadioButton;=> CheckBoxes / QCheckBox;python
+CheckBoxes / QCheckBox;=> DialWidget / QDial;python
+CheckBoxes / QCheckBox;=> Statusbar;python
+Statusbar;=> MessageBox;python
+MessageBox;=> FileDialog / QFileDialog;python
+FileDialog / QFileDialog;"# 3rd parameter: which files can be selected eg. ""All Files"" for all files
+  # returning a tuple (name of the file and selected extension)";python
+FileDialog / QFileDialog;fName[0]    # to get only the choosen filename;python
+Menu or Icon / QAction;"self.menu = qtw.QAction(MainWindow)
+  self.menu.triggered.connect(self.actPressedOpen)    => Set Function which should run when the menu is clicked";python
+PyQt5Designer;"pip install PyQt5Designer                 # Install PyQt5Designer
+designer.exe                              # Find designer.exe in installed venv
+<Form><Preview>                           # Show preview of the designed window
+pyuic5 -x filename.ui -o filename.py      # Convert Qt-Designer file to a python-file";python
+QtGui / Change GUI like font, size;"import PyQt5.QtGui as qtg                               # Import Gui for changing fontsize
+nameLabel.setFont(qtg.QFont(""Helvetica"", 18))           # Change font of the label";python
+Click button one window to open another window;"from Window2from24 import Ui_SubWindow      # import Class / Window from other py-file
+  from Dialog24 import Ui_Dialog              # import Class / Dialog from other py-file
+  ...
+  def openWindow(self):
+    self.window = QtWidgets.QMainWindow()     # Which widget should be opened QMainWindow / QDialog
+    self.ui = Ui_SubWindow()                  # Class Name of the window which sould be opened
+    self.ui.setupUi(self.window)
+    self.window.show()
+    self.ui.label.setText(""New"")              # Access some elements on the opened window
+  ...
+  self.pb.clicked.connect(self.openDialog)    # call the function where the window is opened
+  self.pb2.clicked.connect(self.openWindow)   # call the function where the dialog is opened";python
+Load ui-file in py-file;"uic.loadUi(""27LoadUIFile.ui"",self)            # load the ui-file
+self.l = self.findChild(qtw.QLabel, ""label"")  # assign label from ui
+self.btn = self.findChild(qtw.QPushButton, ""pushButton"")    # assign push button from ui";python
+Simplest App;"import PyQt5.QtWidgets as qtw
 class MainWindow(qtw.QWidget):
   def __init__(self):
     super().__init__()
-    self.setWindowTitle(""Check Orphans App"")
-    ...
-    self.show()
-app = qtw.QApplication([])
-mw = MainWindow()
-app.exec_()";python
+    self.setWindowTitle(""Name XY"")
+if __name__ == '__main__':
+  app = qtw.QApplication(sys.argv)
+  mw = MainWindow()
+  mw.show()
+  sys.exit(app.exec_())";python
 Tutorial with deep explanation;https://www.youtube.com/watch?v=YXPyB4XeYLA;python
 Import tkinter module;from tkinter import *;python
 Create root window;root = Tk();python
@@ -2611,39 +2945,6 @@ Show tables in db;dolt ls;python
 Read column description for table;"dolt sql -q ""describe Salaries""";python
 Run some query on the table;"dolt sql -q ""SELECT * FROM Salaries""";python
 Write query to table;"dolt sql -r csv -q ""SELECT * FROM Salaries"" > salary-hr.csv";python
-Installation;pip install pyinstaller;python
-Generate the bundle in a subdirectory called dist.;pyinstaller prg.py;python
-Generate only one file;pyinstaller --onefile prg.py;python
-Generate only one file (to get for sure the pyinstaller from the actual env);python -m pyinstaller --onefile prg.py;python
-add this when some modules are not found;--copy-metadata pandas_ta;python
-When some modules are making problems - sometimes this helps;--hidden-import=pymssql;python
-when there is a depreciating warning from matlib;--exclude-module matplotlib;python
-Generate file with icon;--icon=app.ico;python
-Generating under mac os sometimes only work with this params;--hidden-import=pkg_resources.py2_warn;python
-Generating under mac os sometimes only work with this params;--hidden-import=pkg_resources.py2_warn;python
-Collect data for specific python module;--collect-data moduleXY;python
-Open this file to start the python-program;prg.exe;python
-only working with import yfinance (not with import yfinance as yf);yfinance module;python
-Problems with some added python modules (eg. pycountry);"https://groups.google.com/g/pyinstaller/c/OYhJdeZ9010/m/32g3-T8XBAAJ
-Create hook-file hook-pycountry.py with content:
-	from PyInstaller.utils.hooks import copy_metadata, collect_data_files
-	datas = copy_metadata(""pycountry"") + collect_data_files(""pycountry"")
-Compile Program with
-	pyinstaller --onefile --exclude-module matplotlib --additional-hooks-dir=. TestPyCountry.py";python
-Problems with path when executing from py and exe;config_name = 'creds.json'                                    # Define the config file name;python
-Determine if application is a script file or frozen exe;"if getattr(sys, 'frozen', False):                             # Get path when starting as executable
-    application_path = os.path.dirname(sys.executable)
-elif __file__:                                                # Get path when running from IDE as py-file
-    application_path = os.path.dirname(__file__)
-config_path = os.path.join(application_path, config_name)     # Final Config Path";python
-Using Inno Setup Compiler for creating a setup.exe for all files;"https://jrsoftware.org/isdl.php
-- Application Information => provide application informations (appName, appVersion, publisher, website)
-- Application Files => select application main executable file and add all necessary folder and files
-- Application File Association => no selection
-- Application Documentation => select files which should be shown before / after the installation
-- Setup Languages => select which languages should be included during installation
-- Save installation script
-- Final setup.exe is stored in the ""Output""-folder";python
 install python modules in specific version / environment;pip3.7 install --user --upgrade selenium;python
 New => Create new app => give name with only lowercases;on Heroku: create App;python
 Setting => Add buildpack => choose python;on Heroku: set python build path;python

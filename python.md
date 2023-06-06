@@ -1,81 +1,7 @@
-# PYTHON
----
-
-#### MODULE, GENERAL [jump to...](#module-general)
-#### VIRTUALENV [jump to...](#virtualenv)
-#### PIP [jump to...](#pip)
-#### SHORTCUTS VSCODE [jump to...](#shortcuts-vscode)
-#### SHORTCUTS INTELLIJ IDEA IDE, CHROME, WINDOWS [jump to...](#shortcuts-intellij-idea-ide-chrome-windows)
-#### OPERATORS, INPUTS, OUTPUTS, ARGUMENTS [jump to...](#operators-inputs-outputs-arguments)
-#### RANDOM, SECRETS [jump to...](#random-secrets)
-#### STRING [jump to...](#string)
-#### REGEX [jump to...](#regex)
-#### LIST [jump to...](#list)
-#### TUPEL [jump to...](#tupel)
-#### DICTIONARY [jump to...](#dictionary)
-#### SETS [jump to...](#sets)
-#### CONTROL STRUCTURES and ITERATIONS [jump to...](#control-structures-and-iterations)
-#### FUNCTIONS, DECORATORS [jump to...](#functions-decorators)
-#### GENERATORS, YIELD [jump to...](#generators-yield)
-#### LAMBDA, MAP, FILTER [jump to...](#lambda-map-filter)
-#### CLASSES, DATACLASSES [jump to...](#classes-dataclasses)
-#### TXT FILES [jump to...](#txt-files)
-#### JSON FORMAT [jump to...](#json-format)
-#### XML FORMAT [jump to...](#xml-format)
-#### URLLIB [jump to...](#urllib)
-#### MODULE - CSV [jump to...](#module---csv)
-#### MOUDLE - ZIPFILE - handling ZIP files [jump to...](#moudle---zipfile---handling-zip-files)
-#### MODULE - GSPREAD - API for Google Sheets [jump to...](#module---gspread---api-for-google-sheets)
-#### MODULE - OPENPYXL - working with excel worksheets [jump to...](#module---openpyxl---working-with-excel-worksheets)
-#### MODULE - XLWINGS - working on the fly with open excel worksheets [jump to...](#module---xlwings---working-on-the-fly-with-open-excel-worksheets)
-#### MODULE - PYTHON-DOCX - working with word docx [jump to...](#module---python-docx---working-with-word-docx)
-#### MODULE - WIN32COM - creating worksheets as pdf from xlsx [jump to...](#module---win32com---creating-worksheets-as-pdf-from-xlsx)
-#### MODULE - PyPDF2 - working with pdfs [jump to...](#module---pypdf2---working-with-pdfs)
-#### MYSQL - MARIADB - HEIDISQL [jump to...](#mysql---mariadb---heidisql)
-#### MYSQL - MARIADB - SQL [jump to...](#mysql---mariadb---sql)
-#### MYSQL - MYSQL.CONNECTOR [jump to...](#mysql---mysql.connector)
-#### SQL ALCHEMY [jump to...](#sql-alchemy)
-#### SQLITE3 SQL [jump to...](#sqlite3-sql)
-#### MODULES - DATES, DATETIME, CALENDAR, TIMEIT, TIME, SYS, CTYPES [jump to...](#modules---dates-datetime-calendar-timeit-time-sys-ctypes)
-#### MODULE - CURRENCYCONVERTER - currency conversion [jump to...](#module---currencyconverter---currency-conversion)
-#### MODULE - PYCOUNTRY - Countries, Currency, Language [jump to...](#module---pycountry---countries-currency-language)
-#### MODULES - SMTPLIB, MIMEText - sending emails [jump to...](#modules---smtplib-mimetext---sending-emails)
-#### MODULE - PATHLIB - interacting with the operating system [jump to...](#module---pathlib---interacting-with-the-operating-system)
-#### MODULE - OS, SHUTIL, FILECMP, DIRCMP - interacting with the operating system [jump to...](#module---os-shutil-filecmp-dircmp---interacting-with-the-operating-system)
-#### MODULE - LOGGING [jump to...](#module---logging)
-#### MODULE - UNITTEST [jump to...](#module---unittest)
-#### MODULE - DOTENV - hide environment informations [jump to...](#module---dotenv---hide-environment-informations)
-#### MODULE - COLLECTIONS - counter, defaultdic [jump to...](#module---collections---counter-defaultdic)
-#### MODULE - ITERTOOLS - products, combinations [jump to...](#module---itertools---products-combinations)
-#### MODULE - NUMPY - basis for different other modules [jump to...](#module---numpy---basis-for-different-other-modules)
-#### MODULE - PANDAS - analyzing and working with data [jump to...](#module---pandas---analyzing-and-working-with-data)
-#### MODULE - MATPLOTLIB - working with charts [jump to...](#module---matplotlib---working-with-charts)
-#### MODULE - SELENIUM - browser automatization [jump to...](#module---selenium---browser-automatization)
-#### MODULE - BEAUTIFUL SOAP - webscraping [jump to...](#module---beautiful-soap---webscraping)
-#### MODULE - REQUESTS - workings with APIs [jump to...](#module---requests---workings-with-apis)
-#### MODULE - SCRAPY - webscraping using spiders [jump to...](#module---scrapy---webscraping-using-spiders)
-#### MODULE - PYQT - making GUIs [jump to...](#module---pyqt---making-guis)
-#### MODULE - TKINTER - making GUIs [jump to...](#module---tkinter---making-guis)
-#### MOUULE - KIVY - making GUIs [jump to...](#mouule---kivy---making-guis)
-#### MODULE - PYGAME - making games [jump to...](#module---pygame---making-games)
-#### MODULE - PYTHONCOM - make new formula in excel with python-function [jump to...](#module---pythoncom---make-new-formula-in-excel-with-python-function)
-#### MODULE - FLASK, ZAPPA, AWS - making an API [jump to...](#module---flask-zappa-aws---making-an-api)
-#### MODULE - FLASK, HEROKU, GUNICORN  - making an API [jump to...](#module---flask-heroku-gunicorn----making-an-api)
-#### MODULE - FASTPI, UVICORN - making an API [jump to...](#module---fastpi-uvicorn---making-an-api)
-#### MODULE - ICECREAM - print for debugging [jump to...](#module---icecream---print-for-debugging)
-#### MODULE - TA-LIB - technical analysis of financial market [jump to...](#module---ta-lib---technical-analysis-of-financial-market)
-#### MODULE - YFINANCE - date from Yahoo Finance [jump to...](#module---yfinance---date-from-yahoo-finance)
-#### MODULE - PLOTLY - data visualization [jump to...](#module---plotly---data-visualization)
-#### MODULE - DJANGO - framework for webdevelopment [jump to...](#module---django---framework-for-webdevelopment)
-#### DOLT - Databases like Repos [jump to...](#dolt---databases-like-repos)
-#### PYINSTALLER, INNO SETUP COMPILER - generate python programs to executables [jump to...](#pyinstaller-inno-setup-compiler---generate-python-programs-to-executables)
-#### PYTHONANYWHERE - run python scripts in the cloud [jump to...](#pythonanywhere---run-python-scripts-in-the-cloud)
-#### HEROKU - run python scripts in the cloud [jump to...](#heroku---run-python-scripts-in-the-cloud)
 
 
 ---
 ## MODULE, GENERAL
-[jump to top...](#python)<br><br>
 <br>Import python module
 ```markdown
 import math
@@ -109,7 +35,6 @@ import RapidTechTools as rtt        # Import Module RapidTechTools
 
 ---
 ## VIRTUALENV
-[jump to top...](#python)<br><br>
 <br>Install virtualenv
 ```markdown
 pip install virtualenv
@@ -126,19 +51,15 @@ Shows where the python-file is (Linux)
 ```markdown
 which python
 ```
-Create new virtual environment pj1_env
+Create new virtual environment env
 ```markdown
-virtualenv env OR python -m virtualenv env
+python -m virtualenv env
 ```
-
-<br>Activate environment
+Create new virtual environment env (for python3 eg. on MacOS)
 ```markdown
-venv\Scripts\activate
-    when activated: pip list    #  Now only shows the installed modules for the virtual environment
-    pip install package         #  Only installs in the activated virtual environment
+python3 -m venv env
 ```
-
-<br>Extracts all the modules / dependencies to a txt-file
+Extracts all the modules / dependencies to a txt-file
 ```markdown
 pip freeze --local > requirements.txt
 ```
@@ -162,6 +83,17 @@ Install all the packages from requirements.txt
 ```markdown
 pip install -r requirements.txt
 ```
+Windows: Show all installed python-versions + paths
+```markdown
+py -0p
+```
+
+<br>Activate environment
+```markdown
+venv\Scripts\activate
+    when activated: pip list    #  Now only shows the installed modules for the virtual environment
+    pip install package         #  Only installs in the activated virtual environment
+```
 
 <br>install virtual environment with specific python-version
 ```markdown
@@ -173,7 +105,6 @@ create a venv with: virtualenv envName -p path\to\new_python.exe
 
 ---
 ## PIP
-[jump to top...](#python)<br><br>
 <br>install module
 ```markdown
 pip install moduleXY
@@ -181,6 +112,10 @@ pip install moduleXY
 upgrade module
 ```markdown
 pip install moduleXY --upgrade
+```
+Install specific version
+```markdown
+pip install -Iv pyinstaller==4.8
 ```
 uninstall module XY
 ```markdown
@@ -202,8 +137,113 @@ pip install -r requirements.txt
 
 
 ---
+## PYINSTALLER, INNO SETUP COMPILER - generate python programs to executables
+<br>Installation
+```markdown
+pip install pyinstaller
+```
+Install specific version
+```markdown
+pip install -Iv pyinstaller==4.8
+```
+Generate the bundle in a subdirectory called dist.
+```markdown
+pyinstaller prg.py
+```
+Generate only one file
+```markdown
+pyinstaller --onefile prg.py
+```
+Generate only one file (to get for sure the pyinstaller from the actual env)
+```markdown
+python -m Pyinstaller --onefile prg.py
+```
+Collect data for specific python module
+```markdown
+--collect-data moduleXY
+```
+add this when some modules are not found
+```markdown
+--copy-metadata pandas_ta
+```
+When some modules are making problems - sometimes this helps
+```markdown
+--hidden-import=pymssql
+```
+pyinstaller --onefile --collect-datas=trafilatura xyz.py
+pyinstaller --onefile --collect-data fake_useragent  checkMapsSel2.py
+<br><frozen importlib._bootstrap> error when using yfinance
+```markdown
+pyinstaller --onefile --collect-data frozendict stockma3.py
+```
+
+<br>when there is a depreciating warning from matlib
+```markdown
+--exclude-module matplotlib
+```
+Generate file with icon
+```markdown
+--icon=app.ico
+```
+Generating under mac os sometimes only work with this params
+```markdown
+--hidden-import=pkg_resources.py2_warn
+```
+Generating under mac os sometimes only work with this params
+```markdown
+--hidden-import=cmath
+```
+
+
+<br>Open this file to start the python-program
+```markdown
+prg.exe
+```
+only working with import yfinance (not with import yfinance as yf)
+```markdown
+yfinance module
+```
+
+<br>Problems with some added python modules (eg. pycountry)
+```markdown
+https://groups.google.com/g/pyinstaller/c/OYhJdeZ9010/m/32g3-T8XBAAJ
+Create hook-file hook-pycountry.py with content:
+	from PyInstaller.utils.hooks import copy_metadata, collect_data_files
+	datas = copy_metadata("pycountry") + collect_data_files("pycountry")
+Compile Program with
+	pyinstaller --onefile --exclude-module matplotlib --additional-hooks-dir=. TestPyCountry.py
+```
+
+<br>Problems with path when executing from py and exe
+```markdown
+config_name = 'creds.json'                                    # Define the config file name
+```
+
+<br>Determine if application is a script file or frozen exe
+```markdown
+if getattr(sys, 'frozen', False):                             # Get path when starting as executable
+    application_path = os.path.dirname(sys.executable)
+elif __file__:                                                # Get path when running from IDE as py-file
+    application_path = os.path.dirname(__file__)
+config_path = os.path.join(application_path, config_name)     # Final Config Path
+```
+
+<br>Using Inno Setup Compiler for creating a setup.exe for all files
+```markdown
+https://jrsoftware.org/isdl.php
+- Application Information => provide application informations (appName, appVersion, publisher, website)
+- Application Files => select application main executable file and add all necessary folder and files
+- Application File Association => no selection
+- Application Documentation => select files which should be shown before / after the installation
+- Setup Languages => select which languages should be included during installation
+- Save installation script
+- Final setup.exe is stored in the "Output"-folder
+```
+
+
+
+---
 ## SHORTCUTS VSCODE
-[jump to top...](#python)<br><br>
 <br>Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
 ```markdown
 Ctrl K Ctrl C
@@ -216,25 +256,25 @@ Find in File
 ```markdown
 Ctrl F
 ```
-Search in all files
-```markdown
-Ctrl Shift f
-```
 Replace in File
 ```markdown
 Ctrl H
+```
+Selects whole line
+```markdown
+Ctrl L
+```
+Search in all files
+```markdown
+Ctrl Shift F
 ```
 Replace in Path (in all Files)
 ```markdown
 Ctrl Shift H
 ```
-Jump to the next error
+Jump to this Grouping Window
 ```markdown
-F8
-```
-Jump to the next error (backwards)
-```markdown
-Shift + F8
+Ctrl 1/2/3
 ```
 Find next
 ```markdown
@@ -248,17 +288,13 @@ Copy / Duplicate lines
 ```markdown
 Shift Alt Up/Down
 ```
+Expand / Shrink selection
+```markdown
+Shift Alt Left/Rigth
+```
 Move line
 ```markdown
 Alt Up/Down
-```
-Recent opened files
-```markdown
-Ctrl E1
-```
-Switch windows in IDE
-```markdown
-Ctrl K Left/Right
 ```
 Suggestions for fix error, function informations
 ```markdown
@@ -280,7 +316,7 @@ Collapse everything
 ```markdown
 Ctrl K Ctrl 0
 ```
-Exapnds everything
+Expands everything
 ```markdown
 Ctrl K Ctrl J
 ```
@@ -350,7 +386,7 @@ Ctrl WARNING
 ```
 MultiCursor - Select more cursors in rows for multiple change in rows
 ```markdown
-Ctrl Alt Up/Down (click Left)
+Ctrl Alt Up/Down
 ```
 MultiCursor - Select Cursor at multiple positions for the same name
 ```markdown
@@ -379,38 +415,38 @@ Ctrl Space
 
 
 
-
 ---
 ## SHORTCUTS INTELLIJ IDEA IDE, CHROME, WINDOWS
-[jump to top...](#python)<br><br>
 https://www.shortcutfoo.com/app/dojos/intellij-idea-win/cheatsheet
 ```markdown
-Ctrl / 				# Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
-Ctrl / 				# Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
-Ctrl Alt F7 	    # Find usages
-Ctrl F    		   	# Find in File
-Ctrl R         	   	# Replace in File
-Ctrl Shift R 		# Replace in Path (in all Files)
-F2            		# Jump to the next error
-F3        			# Find next
-Ctrl G      		# Goto line
-Ctrl D 			    # Copy / Duplicate lines
+Ctrl / 				      # Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
+Ctrl / 				      # Comment / Uncomment selected lines ("/" on numblock) (commenting in VS Code)
+Ctrl Alt F7 	      # Find usages
+Ctrl F    		      # Find in File
+Ctrl R         	    # Replace in File
+Ctrl Shift R 		    # Replace in Path (in all Files)
+F2            	    # jump to the next error
+F3        			    # Find next
+Ctrl G      		    # Goto line
+Ctrl D 			        # Copy / Duplicate lines
+Ctrl X              # Cut line (when nothing selected)
+Ctrl C              # Copy line (when nothing selected)
 Alt Shift Down/Up 	# Move line
-Ctrl E       		# Recent opened files
+Ctrl E       		    # Recent opened files
 Ctrl TAB            # Switch windows in IDE
 Ctrl (Shift) W      # Select / deselect parts of the code step by step
-Alt Enter			# Suggestions for fix error, function informations
-Alt 1				# Open the project windows (on the left side)
-Alt F7				# Show usage of the variable, function, class
-Esc					# Focus back on the editor window
-Ctrl Shift -    	# Collapse everything
+Alt Enter			      # Suggestions for fix error, function informations
+Alt 1				        # Open the project windows (on the left side)
+Alt F7				      # Show usage of the variable, function, class
+Esc					        # Focus back on the editor window
+Ctrl Shift -    	  # Collapse everything
 Ctrl Shift +        # Exapnds everything
-Ctrl - 				# Collapse block ("-" on numblock)
-Ctrl + 				# Expand block ("+" on numblock)
-Ctrl A         		# Select whole file
-Ctrl (Shift) Z 		# Undo (backwards) / Redo (forwards)
-Ctrl Shift Left 	# Select word to the beginning
-Ctrl Shift Right 	# Select word to the end
+Ctrl - 				      # Collapse block ("-" on numblock)
+Ctrl + 				      # Expand block ("+" on numblock)
+Ctrl A         		  # Select whole file
+Ctrl (Shift) Z 		  # Undo (backwards) / Redo (forwards)
+Ctrl Shift Left 	  # Select word to the beginning
+Ctrl Shift Right 	  # Select word to the end
 Ctrl Left / Right 	# Go one word left
 Ctrl Y              # Delete current line
 Ctrl Del            # Delete to end of word
@@ -445,8 +481,7 @@ Run commands: https://stackoverflow.com/questions/56490194/vs-code-bitbucket-ssh
 
 
 ---
-## OPERATORS, INPUTS, OUTPUTS, ARGUMENTS, PPRINT
-[jump to top...](#python)<br><br>
+## OPERATORS, INPUTS, OUTPUTS, ARGUMENTS, STATISTICS
 <br>Import module for math calculations
 ```markdown
 import math
@@ -486,6 +521,10 @@ i = 1_000_000
 Value is rounded to two decimal places => 77.23
 ```markdown
 round (77.2321, 2)
+```
+Round to tens place
+```markdown
+int(v - v%10)
 ```
 Conversion to String / Float / Int
 ```markdown
@@ -604,7 +643,6 @@ int("1010",2)
 
 ---
 ## RANDOM, SECRETS
-[jump to top...](#python)<br><br>
 random: unsecure, reproducable with seeds
 secret: secure, not reproducable<br>
 Import random module - fast, but not very secure
@@ -617,7 +655,7 @@ random.randint(1,6)
 ```
 Random float number between 1 and 3
 ```markdown
-<random.uniform(1,3)>
+random.uniform(1,3)
 ```
 Random value between 0 and 1 in float format - eg. 0.16394553
 ```markdown
@@ -676,7 +714,6 @@ secrets.choice(l)
 
 ---
 ## STRING
-[jump to top...](#python)<br><br>
 ordered, immutable, text representation
 s = "this is a test"							# Define a string
 s = "this \n text"								# String with linebreak \n
@@ -708,7 +745,20 @@ Insert variable in string new method
 ```markdown
 s = f"text {var} bla"
 ```
-Multiple use
+Format int with allways 2 digits
+```markdown
+s = f"{var:02d}"
+```
+Format float with allways 2 decimal places
+```markdown
+s = f"{float:0.2f}
+```
+Format float with 2 decmial places and overall 9 chars with leading 0
+```markdown
+s = f"{float:09.2f}
+```
+
+<br>Multiple use
 ```markdown
 "{0} like, {0} especially {0} but {1}".format("Joe", "noodles")
 ```
@@ -720,11 +770,15 @@ Counts the occurrence of a text
 ```markdown
 s.count ("i")
 ```
-Return all findings of the search string ("/") in the other string (txt)
+Counts several chars in a text
 ```markdown
-[n for n in range(len(txt)) if txt.find('/', n) == n]
+re.findall('[.,’]', s)
 ```
-Returns all indexwa as a list (needs import re)
+Return all index of the char "/" in the string
+```markdown
+[i for i, c in enumerate(s) if c == "/"]
+```
+Returns all index as a list (needs import re)
 ```markdown
 [x.start() for x in re.finditer('ist', s)]
 ```
@@ -744,17 +798,29 @@ Capitalize the first char of all words
 ```markdown
 s = s.title()
 ```
-Check if the string is starting with char "H"
+Check if string is starting with char "H"
 ```markdown
 s.startswith("H")
 ```
-Check if the string is ending with char "H"
+Check if string starts with several chars
+```markdown
+s.startswith(("H","F","L"))
+```
+Check if string is ending with char "H"
 ```markdown
 s.endswith("H")
 ```
-Split the words in a list
+Check if string ends with several chars
 ```markdown
-s.split()
+s.endwith(("H","F","L"))
+```
+Split the words in a list which are seperated by " "
+```markdown
+s.split(" ")
+```
+Split for several chars (eg. " " and "\n" and " ,")
+```markdown
+re.split(" |\n| ,", s)
 ```
 ', 1)[0]								              => Split till the first occurence of "=>"
 ```markdown
@@ -784,7 +850,7 @@ Replace several chars in a string (get back a tupple: 1st changed string, 2nd: c
 ```markdown
 s = re.subn("[e0fi]", "X", s)
 ```
-TRUE if the whole string are digits
+True if the whole string are digits
 ```markdown
 s.isdigit()
 ```
@@ -831,18 +897,17 @@ repr(s)
 
 <br>check if any string is in another string or all strings are in another string
 ```markdown
-checkString = "A string is more than its parts!"
-checks = ["more", "blabla", "nothing"]
-if any(x in checkstring for x in checks):         # check if any elems from checks is in checkstring
-if all(x in checkstring for x in checks):         # check if all elems from checks is in checkstring
+s = "A string is more than its parts!"
+l = ["more", "blabla", "nothing"]
+if any(x in s for x in l):                    # check if any elems from checks in string s
+if not any(x in s for x in l):                # check if any elems from checks are NOT in string s
+if all(x in s for x in l):                    # check if all elems from checks are in string s
 ```
-
 
 
 
 ---
 ## REGEX
-[jump to top...](#python)<br><br>
 <br>import regex module
 ```markdown
 import re
@@ -850,6 +915,10 @@ import re
 Information about regex handling
 ```markdown
 https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285
+```
+test regex strings
+```markdown
+https://regex101.com/
 ```
 Find str with 4xdigits + "-"char + 2xdigits
 ```markdown
@@ -883,6 +952,24 @@ Insert blank before every capitalized word eg. "CostOfRevenue" => "Cost Of Reven
 ```markdown
 re.sub(r'([a-z](?=[A-Z])|[A-Z](?=[A-Z][a-z]))', r'\1 ', "txt")
 ```
+count all words which start and ends with a char from cL
+```markdown
+len(re.findall(f'[{cL}"]{w}[{cL}"]', l))
+```
+count all words which start with w and ends with a char from cL
+```markdown
+len(re.findall(f'^{w}[{charList}"]', l))
+```
+count all words which start with a char from cL and ends w
+```markdown
+len(re.findall(f'[{charList}"]{w}$', l))
+```
+count all words which have w in the middle of anything else
+```markdown
+len(re.findall(f'(.*?){w}(.*?)', l))
+```
+
+
 
 Read string an try to match with groups<br>
 Define pattern => as many digits (endless) + " " + one lowercase cahr + ":" + as many digits (endless)
@@ -906,7 +993,6 @@ all = match.group(0)
 
 ---
 ## LIST
-[jump to top...](#python)<br><br>
 ordered, mutable, allows duplicate elements<br>
 Define several empty lists (NOT use l1=l=l3=[] => this would be the SAME list)
 ```markdown
@@ -984,6 +1070,10 @@ Sort list descending and store it in a different independent list
 ```markdown
 l_sort = sorted(l, reverse=True)
 ```
+Sort the same way as the operating system (need: from natsort import os_sorted)
+```markdown
+l_sort = os_sorted(l)
+```
 Check if a list is sorted (by ascending)
 ```markdown
 if sorted(l) == l
@@ -1004,13 +1094,17 @@ Sort nested list for the 2nd element ascending
 ```markdown
 l.sort(key=lambda x: x[1])
 ```
-Sort nested list 1st for the 1st elem, then for the 2nd elem
-```markdown
-inpItems.sort(key=lambda x: (x[0], x[1]))
-```
 Sort nested list for the 2nd element descending
 ```markdown
 l.sort(key=lambda x: x[1], reverse=True)
+```
+Sort nested list 1st for the 1st elem, then for the 2nd elem
+```markdown
+l.sort(key=lambda x: (x[0], x[1]))
+```
+Sort nested list 1st for the 1st elem, then for the 2nd elem descending
+```markdown
+l.sort(key=lambda x: (x[0], x[1]), reverse=True)
 ```
 Reverse the complete list
 ```markdown
@@ -1080,6 +1174,10 @@ Separate individual copy of the list - 3rd variant
 ```markdown
 l2 = list(l)
 ```
+Seperate copying a nested list - import copy necessary
+```markdown
+l2 = copy.deepcopy(l)
+```
 First element
 ```markdown
 l[0]
@@ -1114,15 +1212,15 @@ Check if element is in list
 ```
 Check if any elements from the list are in the string
 ```markdown
-if any(x in string for x in ["ab","cd","de"]):
+if any(x in st for x in ["ab","cd","de"]):
 ```
 Check if all elements from the list are in the string
 ```markdown
-if all(x in string for x in ["ab","cd","de"]):
+if all(x in st for x in ["ab","cd","de"]):
 ```
 Check if all elements from the list are NOT in the string
 ```markdown
-if all(x not in string for x in ["ab","cd""]):
+if all(x not in str for x in ["ab","cd"]):
 ```
 Iterate through list content
 ```markdown
@@ -1154,15 +1252,15 @@ list(map(lambda x: x*2, [1,2,3,4,5]))
 ```
 Also possible with list comprehension => [2,4,6,8,10]
 ```markdown
-l=[x*2 for x in [1,2,3,4,5]]
+l=[x*2 for x in l]
 ```
 Also possible with list comprehension => [2,4]
 ```markdown
-l=[x for x in [1,2,3,4,5] if x%2==0]
+l=[x for x in l if x%2==0]
 ```
 List comprehension with if and else
 ```markdown
-l=[x*2 if x.isdigit() else x for x in [1,"A",2]]
+l=[x*2 if x.isdigit() else x for x in l]
 ```
 List is filtered with lambda for even numbers => [2,4]
 ```markdown
@@ -1174,11 +1272,19 @@ zip([1,2,3],[4,5,6])
 ```
 Remove duplicates from a list
 ```markdown
-list(set(x))
+list(set(l))
+```
+Remove duplicates from a list and keep existing order
+```markdown
+list(dict.fromkeys(l))
 ```
 Change elements in list to int
 ```markdown
 list(map(int,l))
+```
+Transpose nested list (change rows and columns)
+```markdown
+[[x[i] for x in l] for i in range(len(l[0]))]
 ```
 
 <br>rotate list for n places
@@ -1195,11 +1301,18 @@ z = zip(animal, age)
 for animal, age in z: ...
 ```
 
+<br>Adjust nested list to the same length
+```markdown
+maxLen = max(map(len, l))
+for row in l:
+  while len(row) < maxLen:
+    row.append(None)
+```
+
 
 
 ---
 ## TUPEL
-[jump to top...](#python)<br><br>
 ordered, immutable, allows duplicate elements
 working can be more efficient than with lists - especially with big data - regarding space and runtime<br>
 Create a tuple
@@ -1235,7 +1348,6 @@ f,*m,l = (0,1,2,3,4)
 
 ---
 ## DICTIONARY
-[jump to top...](#python)<br><br>
 key-value pairs, unordered (till version 3.7), mutable<br>
 Define empty dict
 ```markdown
@@ -1317,13 +1429,17 @@ Copying a dict (all changes will be made in BOTH dicts)
 ```markdown
 d2 = d
 ```
-Copying a dict (dicts will be handled seperate)
+Copying a dict (NOT WORKING with nested lists in the dict - use deepcopy!)
 ```markdown
 d2 = d.copy()
 ```
-Copying a dict 2nd method (dicts will be handled seperate)
+Copying a dict (NOT WORKING with nested lists in the dict - use deepcopy!)
 ```markdown
 d2 = dict(d)
+```
+Copying a dict (dicts will be handled seperate) - import copy necessary
+```markdown
+d2 = copy.deepcopy(d)
 ```
 Dict d get updated with d2 (all existing keys are overwritten - and new added)
 ```markdown
@@ -1349,6 +1465,10 @@ Iterate through keys and values of the dict
 ```markdown
 for key, val in d.items():
 ```
+built dict with dict-comprehension
+```markdown
+d = {x[0]: x[1:] for x in l}
+```
 Sort dict descending according to values (=item[1])
 ```markdown
 d = {k: v for k, v in sorted(d.items(), key=lambda item: item[1], reverse=True)}
@@ -1369,11 +1489,29 @@ Sort dict and output list, sorted according to the 3rd element of the list in th
 ```markdown
 l = sorted(d.items(), key=lambda e: e[1][2], reverse=True)
 ```
+Merge 2 dictionaries
+```markdown
+d3 = {key: d1.get(key,0)+d2.get(key,0) for key in set(d1)|set(d2)}
+```
+
+<br>save dict to pkl-file
+```markdown
+import pickle
+with open("fn.pkl", "wb") as f:
+  pickle.dump(dict, f)
+```
+
+<br>read dict from pkl-file
+```markdown
+import pickle
+with open('fn.pkl', 'rb') as f:
+  d = pickle.load(f)
+```
+
 
 
 ---
 ## SETS
-[jump to top...](#python)<br><br>
 unordered, mutable, no duplicates<br>
 Define empty set - {} would define a dict and not a set
 ```markdown
@@ -1460,7 +1598,6 @@ s = frozenset(1,2,3)
 
 ---
 ## CONTROL STRUCTURES and ITERATIONS
-[jump to top...](#python)<br><br>
 If / elif / else
 ```markdown
 if x > 10: pass
@@ -1511,7 +1648,6 @@ continue
 
 ---
 ## FUNCTIONS, DECORATORS
-[jump to top...](#python)<br><br>
 description of the function in form of a docstring
 ```markdown
 def printNumAbbr(value):
@@ -1594,7 +1730,6 @@ print(result)
 
 ---
 ## GENERATORS, YIELD
-[jump to top...](#python)<br><br>
 very memory efficient
 <br>Defines the generator with 3 yield statements
 ```markdown
@@ -1633,7 +1768,6 @@ sorted(g)
 
 ---
 ## EXCEPTIONS
-[jump to top...](#python)<br><br>
 try / except
 ```markdown
 try:
@@ -1653,7 +1787,6 @@ if x<0: raise Exception("x should positive")	# Raises an exception => prints "Ex
 
 ---
 ## LAMBDA, MAP, FILTER
-[jump to top...](#python)<br><br>
 <br>functions with one argument - add10(5) => 15
 ```markdown
 add10 = lambda x: x+10
@@ -1697,7 +1830,6 @@ c=[x for x in a if x%2==0]
 
 ---
 ## CLASSES, DATACLASSES
-[jump to top...](#python)<br><br>
 Define a class
 ```markdown
 class Human(object):
@@ -1766,7 +1898,6 @@ astuple(dc)								# converts the dataclass to a tuple
 
 ---
 ## TXT FILES
-[jump to top...](#python)<br><br>
 <br>Read textfile - and print it
 ```markdown
 with open ("fn.txt","r") as f: print(f.read()
@@ -1778,8 +1909,8 @@ with open ("fn.txt","r+") as f: print(f.read()
 
 <br>Read textfile - stored in list per line
 ```markdown
-with open("fn.txt","r") as f:
-    lines = [x.strip() for x in f.readlines()]          # Whitespaces are eliminated with strip()
+with open(fn, encoding="utf8", errors="ignore") as f:
+  lines = f.readlines()
 ```
 
 <br>Writing in textfile
@@ -1811,15 +1942,14 @@ Write s to the f-file opened
 f.write(s)
 ```
 
-
 <br>Try/Except - checks if file can be saved
 ```markdown
 while True:
 try:                         							# otherwise outputs a error message
-    writer.save ()
-    break
+  writer.save ()
+  break
 except Exception as e:
-    print ("Error: ", e)
+  print(f"Error happened: {e}")
 	traceback.print_exc()                               # Outputs the detailed error message
     input ("File Open not possible - pls close and press <Enter>")
 ```
@@ -1828,7 +1958,6 @@ except Exception as e:
 
 ---
 ## JSON FORMAT
-[jump to top...](#python)<br><br>
 <br>Import json-module
 ```markdown
 import json
@@ -1849,10 +1978,6 @@ Convert / Encode a dict to a json-file (with sorting the keys)
 ```markdown
 json_format = json.dumps(d,sort_keys=True)
 ```
-Writing information in json-format (e.g. after updating the values/format)
-```markdown
-with open(fn,"w") as data: json.dump(person, data)
-```
 Convert / Decode a json-file to a dict
 ```markdown
 person = json.loads(json_format)
@@ -1864,6 +1989,14 @@ with open(fn.json,"r") as data: d=json.load(file)
 Pretty-Print formatted json-file
 ```markdown
 print(json.dumps(erg, indent=4, sort_keys=True))
+```
+
+<br>UTF8-errors
+<br>when there are utf-8 errors pls try to set the system variables
+```markdown
+import sys
+sys.stdin.reconfigure(encoding='utf-8')
+sys.stdout.reconfigure(encoding='utf-8')
 ```
 
 <br>read JSON from file
@@ -1879,6 +2012,12 @@ with open(fnJSON, errors="ignore") as f:
 r = requests.get(tmpJSONWord)
 jsonStrList = r.text.split("\n")
 jsonList = [json.loads(j, errors="ignore") for j in jsonStrList if j != '']
+```
+
+<br>write JSON to txt-file
+```markdown
+with open('dataDetail.json', 'w', encoding='utf-8') as f:
+  json.dump(ergDetail, f, ensure_ascii=False, indent=4)
 ```
 
 <br>Example for json-file
@@ -1914,7 +2053,6 @@ for item in children:
 
 ---
 ## XML FORMAT
-[jump to top...](#python)<br><br>
 <br>Import xml-module
 ```markdown
 import xml.etree.ElementTree as ET
@@ -1953,16 +2091,23 @@ for item in lst:
 
 ---
 ## URLLIB
-[jump to top...](#python)<br><br>
-https://pymotw.com/2/urlparse/<br>
+https://pymotw.com/2/urlparse/
+https://docs.python.org/3/library/urllib.request.html#module-urllib.request<br>
 Import Module for URL parsing
 ```markdown
-import from urllib.parse import urlparse
+import urllib.parse
 ```
-https://docs.python.org/3/library/urllib.request.html#module-urllib.request<br>
 Import Module for request
 ```markdown
 import urllib.request
+```
+Encode url
+```markdown
+link = urllib.parse.quote_plus(link)
+```
+Uncode url
+```markdown
+link = urllib.parse.unquote_plus(link)
 ```
 Parse HTML-link1
 ```markdown
@@ -1988,22 +2133,54 @@ u.netloc
   filename, headers = opener.retrieve(url, 'Test.jpg')
 ```
 
+<br>Download xlsx/csv from a url
+```markdown
+  from urllib.request import urlopen, urlretrieve
+  urlretrieve(hrefLink, filename)
+```
 
 
 
 ---
 ## MODULE - CSV
-[jump to top...](#python)<br><br>
-<br>Import CSV-Module
-```markdown
 import csv
-```
-<br>Open csv-file in writemode
+<br>Read csv-file to nested-list
 ```markdown
-with open("test.csv","w",newline=" ") as fp:
-    a = csv.writer (fp, delimiter=",")                    # Define csv-writer with ","-delimiter
-    data = [["A", "B"],["100", "24"],["120", "33"]]       # Data for writing in nested list form
-    a.writerows (data)                                    # Writing individual rows
+fn = os.path.join(path, "inp.csv")
+with open(fn, "r", encoding="utf-8") as f:
+  csvRead = csv.reader(f, delimiter=";")
+  inpData = [x for x in csvRead]
+
+# when this error happens: _csv.Error: line contains NULL
+with open(workFN, "r", encoding="utf-16") as f:
+  ...
+
+# when this error happens: UnicodeDecodeError: 'utf-8' codec can't decode byte 0x96
+with open(workFN, "r", encoding="mac_roman") as f:
+  ...
+```
+
+<br>Create an empty csv-file
+```markdown
+  with open(fnName, "w") as f:
+    pass
+```
+
+<br>Write csv-file from nested list
+```markdown
+FN = os.path.join(path, "output.csv")
+with open(FN, 'w', newline='', encoding="utf-8") as f:
+  writer = csv.writer(f, delimiter=";")
+  writer.writerows(l)
+```
+
+<br>Read csv-file to a dictionary for every line
+```markdown
+with open ("products.csv", "r", encoding="utf-8") as f:
+  dictReader = csv.DictReader(f)
+  for item in dictReader:
+    for k,v in item.items():
+      print(k,v)
 ```
 
 <br>Read csv-data from a HTML-link
@@ -2019,7 +2196,6 @@ csvfile = csv.reader(codecs.iterdecode(ftpstream, 'utf-8'))     # output is nest
 
 ---
 ## MOUDLE - ZIPFILE - handling ZIP files
-[jump to top...](#python)<br><br>
 <br>Import zip module
 ```markdown
 import zipfile
@@ -2041,7 +2217,6 @@ zf.open (file_name)
 
 ---
 ## MODULE - GSPREAD - API for Google Sheets
-[jump to top...](#python)<br><br>
 see also Python-Diverses / GSpread
 <br>API for GoogleSheets / Tutorial explaining handling
 <br>https://techwithtim.net/tutorials/google-sheets-python-api-tutorial/
@@ -2113,7 +2288,7 @@ Get a list of all records
 ```markdown
 dataList = ws1.get_all_values()
 ```
-Get specific areaw
+Get specific area
 ```markdown
 data = ws1.get('B5:K8')
 ```
@@ -2201,12 +2376,37 @@ new_values = [1,2,3,4,5]
 
 ---
 ## MODULE - OPENPYXL - working with excel worksheets
-[jump to top...](#python)<br><br>
 <br>https://openpyxl.readthedocs.io/en/stable/api/openpyxl.worksheet.worksheet.html#openpyxl.worksheet.worksheet.Worksheet.PAPERSIZE_A3
 ```markdown
 Documentation:
 ```
-Import module for loading a workbook
+import openpyxl as on_text
+<br>Read xlsx
+```markdown
+wb = ox.load_workbook("test.xlsx")
+```
+Read worksheetnames to list
+```markdown
+l = wb.sheetnames
+```
+Select specific worksheet in workbook
+```markdown
+ws = wb["sheet1"]
+```
+Select first worksheet
+```markdown
+ws = wb[wb.sheetnames[0]]
+```
+Select active worksheet from workbook
+```markdown
+ws = wb.active
+```
+Value from specific cell
+```markdown
+val = ws["A1"].value
+```
+
+<br>Import module for loading a workbook
 ```markdown
 from openpyxl import load_workbook
 ```
@@ -2240,27 +2440,13 @@ Create new worksheet (at the second last position)
 ```markdown
 wb.create_sheet("ws",-2)
 ```
-All worksheets from the
-```markdown
-wb.sheetnames
-```
-Select specific worksheet in workbook
-```markdown
-ws = wb["sheet1"]
-```
-Select active worksheet from workbook
-```markdown
-ws = wb.active
-```
-Change worksheet name
+
+<br>Change worksheet name
 ```markdown
 ws.title = "xyz"
 ```
-Value from specific cell
-```markdown
-ws["A1"].value
-```
-Value from specific cell (other method)
+
+<br>Value from specific cell (other method)
 ```markdown
 ws.cell(row=1, column=1).value
 ```
@@ -2283,6 +2469,10 @@ wb._sheets.sort(key=lambda ws: ws.title)
 Copy worksheet in workbook
 ```markdown
 wb.copy_worksheet(ws)
+```
+Copy part of the worksheet
+```markdown
+ws1.range('A1:Z20').copy(wb2.sheets[0].range('A1:Z20'))
 ```
 
 <br>Loop trough specific area and print the cell values
@@ -2626,7 +2816,6 @@ ws2.conditional_formatting.add(f"K4:K12", ruleBottomGreen)
 
 ---
 ## MODULE - XLWINGS - working on the fly with open excel worksheets
-[jump to top...](#python)<br><br>
 Update XLSX in reealtime<br>
 Import module
 ```markdown
@@ -2635,6 +2824,10 @@ import xlwings as xw
 Use xlwings with hidden excel-worksheets
 ```markdown
 app = xw.App(visible=False)
+```
+Create a new workbook
+```markdown
+wb = xw.Book()
 ```
 Read XLSX
 ```markdown
@@ -2648,13 +2841,21 @@ Read specific worksheet
 ```markdown
 ws = wb.sheets["name_sheet"]
 ```
-Updates specific cell
+Read first worksheet
 ```markdown
-ws["A1"].value = "xyz"
+ws = wb.sheets[0]
+```
+Add worksheet in workbook
+```markdown
+wb.sheets.add("NewWS")
 ```
 Reads the formula of a cell (not the value)
 ```markdown
 f = ws["A1"].formula
+```
+Assign formula to a cell
+```markdown
+ws["A1"].formula = string
 ```
 Iterate trough cells an set them to "" / None
 ```markdown
@@ -2668,6 +2869,18 @@ Reads the color of a cell and returns a rgb-tuple eg. (146, 208, 80)
 ```markdown
 ws["C8"].color
 ```
+Set value for cell
+```markdown
+ws["C8"].value
+```
+Read hyperlink of cell
+```markdown
+ws.range ("A2").hyperlink
+```
+Set values for specific cell
+```markdown
+ws.range("A1:C3").value
+```
 Remove background from a cell
 ```markdown
 ws["C8"].color = None
@@ -2676,23 +2889,23 @@ White: Assigns background color for a range of cells
 ```markdown
 ws.range("A1:C3").color = (255,255,255)
 ```
-Green: Assigns background color green
+Green: Assigns background color
 ```markdown
 ws.range("A1:C3").color = (149,237,173)
 ```
-Red: Assigns background color green
+Red: Assigns background color
 ```markdown
 ws.range("A1:C3").color = (237,149,149)
 ```
-Yellow: Assigns background color green
+Yellow: Assigns background color
 ```markdown
 ws.range("A1:C3").color = (240,232,146)
 ```
-Orange: Assigns background color green
+Orange: Assigns background color
 ```markdown
 ws.range("A1:C3").color = (230,172,80)
 ```
-Blue: Assigns background color green
+Blue: Assigns background color
 ```markdown
 ws.range("A1:C3").color = (143,157,235)
 ```
@@ -2708,13 +2921,57 @@ Set cell to bold
 ```markdown
 ws.range("B1").api.Font.Bold = True
 ```
-Set font color to red (see codes: https://access-excel.tips/excel-vba-color-code-list/)
+Windows: Black: Set font color to black (see codes: https://access-excel.tips/excel-vba-color-code-list/)
+```markdown
+ws.range("B2").api.Font.ColorIndex = 1
+```
+Windows: Red: Set font color to red (see codes: https://access-excel.tips/excel-vba-color-code-list/)
 ```markdown
 ws.range("B2").api.Font.ColorIndex = 3
 ```
+Windows: Set font size to 16
+```markdown
+ws.range("A1").api.Font.Size = 16
+```
+Windwos: Set specific font
+```markdown
+ws.range("A1").api.Font.Name = "Arial"
+```
+Mac: Set font color to dark grey
+```markdown
+ws.range("B2").api.font_object.color.set((105,105,105))
+```
+Autofit the columns
+```markdown
+ws2.autofit(axis="columns")
+```
+Autofit the columns and rows
+```markdown
+ws2.autofit()
+```
+Set wrap text to False
+```markdown
+ws2.range(f"A2:Z10000").api.WrapText = False
+```
 Insert a hyperlink and define which text should be shown in the cell
 ```markdown
-ws["D5"].add_hyperlink(link,text_to_display = "Chart")
+ws["D5"].add_hyperlink(link, text_to_display = "Chart")
+```
+add an image at a specific cell
+```markdown
+wsInp.pictures.add(imgFN, left=wsInp.range("D20").left, top=wsInp.range("D20").top, height=100)
+```
+Get all the pictures of a worksheet in a list
+```markdown
+ws.pictures
+```
+Delete the first picture in the worksheet
+```markdown
+ws.pictures[0].delete()
+```
+Delete the first picture with the name "xyz"
+```markdown
+ws.pictures["xyz"].delete()
 ```
 Disable auto filter in worksheet
 ```markdown
@@ -2732,17 +2989,17 @@ Read worksheetnames to list
 ```markdown
 l = [x.name for x in wb.sheets]
 ```
-Add worksheet in workbook
-```markdown
-wb.sheets.add("NewWS")
-```
 Delete worksheet in workbook
 ```markdown
-wb.sheets["OldWS].delete()
+wb.sheets["OldWS"].delete()
 ```
 Hide worksheet in workbook
 ```markdown
 wb.sheets["WS"].api.Visible = False
+```
+Copy worksheet
+```markdown
+ws.copy(name='copied')
 ```
 Save workbook
 ```markdown
@@ -2754,11 +3011,13 @@ wb.close()
 ```
 Quit App when opened at the beginning
 ```markdown
-app.quit()
+wb.quit()
 ```
-
-ws.d
-<br>Load elements in list from range which are not None
+Bring workbook to the front of the screen
+```markdown
+wb.activate(steal_focus=True)
+```
+Load elements in list from range which are not None
 ```markdown
 [x for x in ws.range("A3:A2000").value if x != None]
 ```
@@ -2766,7 +3025,29 @@ copy range from one sheet to another
 ```markdown
 ws.range("A1:A10").value = ws2.range("A1:A10").options(ndim=2).value
 ```
+Move worksheet at the beginning
+```markdown
+ws1.api.Move(Before=wsWork.api)
+```
+Move worksheet at the end
+```markdown
+ws1.api.Move(After=wsWork.api)
+```
 
+<br>Get address and subaddress from hyperlinks
+```markdown
+for l in ws1['H18'].api._inner.Hyperlinks:
+  wAddr = l.address         # brings results for http-links
+  wSubAddr = l.SubAddress   # brings results for internal file-links
+```
+
+<br>Hide worksheet in windows
+```markdown
+app = xw.App()
+wb = app.books.open(FN)
+app.visible = False
+ws = wb.sheets[0]
+```
 
 <br>Make border / frame for cells
 <br>Definiton for linestyles see: https://docs.microsoft.com/en-US/dotnet/api/microsoft.office.interop.excel.xllinestyle?view=excel-pia
@@ -2812,7 +3093,6 @@ ws.range('A:C').api.Delete(DeleteShiftDirection.xlShiftUp)      # delete cols A 
 
 ---
 ## MODULE - PYTHON-DOCX - working with word docx
-[jump to top...](#python)<br><br>
 <br>Import the module
 ```markdown
 import python-docx
@@ -2867,7 +3147,6 @@ for para in doc.paragraphs:
 
 ---
 ## MODULE - WIN32COM - creating worksheets as pdf from xlsx
-[jump to top...](#python)<br><br>
 Create Worksheets as PDF from XLSX<br>
 Import Win32 Module
 ```markdown
@@ -2938,7 +3217,6 @@ ws.PageSetup.PrintArea = "A1:G50"
 
 ---
 ## MODULE - PyPDF2 - working with pdfs
-[jump to top...](#python)<br><br>
 Working with PDFs
 <br>Read PDF informations / metadata
 ```markdown
@@ -2992,9 +3270,84 @@ page.mergePage(watermark_page)
 
 
 
+MODULE - PYODBC - odbc-access (MS Access)
+<br>import the module
+```markdown
+import pyodbc
+```
+<br>Define connection and cursor for access-db
+```markdown
+FN = "dataOdd.accdb"
+path = os.path.abspath(os.path.dirname(sys.argv[0]))
+fn = path + "/" + FN
+msAccess = r"{Microsoft Access Driver (*.mdb, *.accdb)}"
+connPath = f'Driver={msAccess};DBQ={fn};'
+conn = pyodbc.connect(connPath)
+cursor = conn.cursor()
+```
+
+<br>Read data
+```markdown
+cursor.execute('select * from dataOdds')
+for row in cursor.fetchall():
+    print (row)
+```
+
+<br>Insert data
+```markdown
+sql = "INSERT INTO dataOdds (" \
+      "[Date]," \
+      "Name," \
+      "Links," \
+      "Fixture) " \
+      "VALUES (?,?,?,?)"
+cont = [
+        datetime.today().date(),
+        "datetime",
+        "ichbineinlink.html",
+        "01:  -  Race Test Race"
+       ]
+cursor.execute(sql, cont)
+conn.commit()
+```
+
+<br>Update data
+```markdown
+sql = "UPDATE dataOdds " \
+      "SET Links = ? " \
+      "WHERE Date = ? " \
+      "AND Name = ? " \
+      "AND Fixture = ?"
+cont = [
+        "ABC",
+        "2022-03-24",
+        "Albury",
+        "02:35  -  Race 1 Trackpix maiden showcase plate"
+       ]
+cursor.execute(sql, cont)
+conn.commit()
+```
+
+<br>Delete data
+```markdown
+### delete data
+sql = "DELETE FROM dataOdds " \
+      "WHERE Date = ? " \
+      "AND Name = ? " \
+      "AND Fixture = ?"
+cont = [
+        "2022-04-22",
+        "ABCDEFGH",
+        "01:  -  Race Test Race"
+       ]
+cursor.execute(sql, cont)
+conn.commit()
+```
+
+
+
 ---
 ## MYSQL - MARIADB - HEIDISQL
-[jump to top...](#python)<br><br>
 <br>Data where the MariaDB-database is stored
 ```markdown
 C:\Program Files\MariaDB 10.3\data
@@ -3032,7 +3385,6 @@ Filename: choose destination file and folder
 
 ---
 ## MYSQL - MARIADB - SQL
-[jump to top...](#python)<br><br>
 <br>Both modules have to be installed
 ```markdown
 pip install mysql, mysql.connector
@@ -3224,11 +3576,17 @@ c.execute (sql, cont)
 mydb.commit ()
 ```
 
+<br>DELETE everything in a table
+```markdown
+sql = "DELETE FROM scores"
+c.execute (sql)
+mydb.commit ()
+```
+
 
 
 ---
 ## SQL ALCHEMY
-[jump to top...](#python)<br><br>
 <br>Import MODULE
 ```markdown
 from sqlalchemy import create_engine
@@ -3365,8 +3723,11 @@ conn.execute(s).fetchall()
 
 ---
 ## SQLITE3 SQL
-[jump to top...](#python)<br><br>
-<br>Create a database or connect to one
+<br>Import module
+```markdown
+import sqlite3
+```
+Create / Connet to a database
 ```markdown
 conn = sqlite3.connect("address_book.db")
 ```
@@ -3375,17 +3736,17 @@ Create a cursor (for working with the db)
 c = conn.cursor()
 ```
 
-<br>Create a table in the database
+<br>Create a table in the database (if it not exists)
 ```markdown
-c.execute('''CREATE TABLE tbl (
-		attr1 text,
-		attr2 text,
-		attr3 integer)''')
+```
+attr1 text,
+attr2 num
+```markdown
 ```
 
 <br>Insert rows into database
 ```markdown
-c.execute(INSERT INTO tbl VALUES (:attr1,:attr2,:attr3)",
+c.execute("INSERT INTO tbl VALUES (:attr1,:attr2,:attr3)",
 		{
 			"attr1": field1.get(),
 			"attr2": field2.get(),
@@ -3395,7 +3756,7 @@ c.execute(INSERT INTO tbl VALUES (:attr1,:attr2,:attr3)",
 
 <br>Select rows from database
 ```markdown
-c.execute"SELECT * FROM adresses")
+c.execute("SELECT * FROM adresses")
 ```
 Delete row from database - get key from delete_box widget (eg. tkinter-module)
 ```markdown
@@ -3426,7 +3787,6 @@ conn.close()
 
 ---
 ## MODULES - DATES, DATETIME, CALENDAR, TIMEIT, TIME, SYS, CTYPES
-[jump to top...](#python)<br><br>
 Standardmodules from python no pip install necessary
 <br>Overview % parsing commands
 https://www.programiz.com/python-programming/datetime/strptime
@@ -3441,15 +3801,19 @@ from datetime import date
 ```
 Conversion string to datetime in format yyyy-mm-dd
 ```markdown
-datetime.strptime(s, "%Y-%m-%d")
+datetime.strptime("2021-06-01", "%Y-%m-%d")
 ```
 Conversion for date format eg. "Apr 21, 2020"
 ```markdown
-datetime.strptime(s, "%b %M, %Y")
+datetime.strptime("Apr 21, 2020", "%b %d. %Y")
 ```
 Conversion for utc format eg. "14:42:46 UTC 2021-12-15
 ```markdown
 datetime.strptime(s, "%H:%M:%S UTC %Y-%m-%d")
+```
+Conversion for time format hh:mm:ss
+```markdown
+datetime.strptime("05:20:25","%H:%M:%S")
 ```
 Conversion datetime to string in format  yyyy-mm-dd
 ```markdown
@@ -3497,7 +3861,7 @@ tday = str(datetime.today().date())
 ```
 Convert datetime to date
 ```markdown
-date = datetime.date()
+date = dt.date()
 ```
 Year / month / day / hour / minute from the datetime
 ```markdown
@@ -3506,6 +3870,10 @@ dt.year, dt.month, dt.day, dt.hour, dt.minute
 Returns weekday (monday=1, sunday=7)
 ```markdown
 tday.isoweekday()
+```
+Return the calendar week-number
+```markdown
+dt.isocalendar().week
 ```
 Calculates last friday (+2 for FR, +1 SA, 0 SU, -1 MO, -2 TU, -3 WE, -4 TH)
 ```markdown
@@ -3539,22 +3907,33 @@ Difference in minutes
 ```markdown
 minDiff = (date2-date1).total_seconds() / 60
 ```
-Generate ISO-format from datetime
+Generate UNIX/ISO-format from datetime
 ```markdown
 datetime.fromisoformat('2020-07-10 02:00:00').timestamp()
 ```
-Generate ISO-format from actual date
+Generate UNIX/ISO-format from actual date
 ```markdown
 iso_dt = datetime.fromisoformat(str(datetime.now())).timestamp()
 ```
-Generate Datetime from ISO-format=>
+Generate Datetime from UNIXISO-format
 ```markdown
-date = datetime.fromtimestamp(1594339200000 / 1e3)
+date = datetime.fromtimestamp(ts)
 ```
 Shows size of the list / tuple in bytes
 ```markdown
 sys.getsizeof(l) or sys.getsizeof(t)
 ```
+Convert float to hh:mm:ss datetime.timedelta
+```markdown
+t = timedelta(days=0.786331018518518)
+```
+Convert datetime.timedelta to float
+```markdown
+f = t.total_seconds() / 86400
+```
+
+
+
 
 <br>Using german names / deutsche namen for month- and day-names
 ```markdown
@@ -3638,7 +4017,6 @@ while True:
 
 ---
 ## MODULE - CURRENCYCONVERTER - currency conversion
-[jump to top...](#python)<br><br>
 <br>Import Module
 ```markdown
 from currency_converter import CurrencyConverter
@@ -3672,7 +4050,6 @@ c.currencies
 
 ---
 ## MODULE - PYCOUNTRY - Countries, Currency, Language
-[jump to top...](#python)<br><br>
 <br>Description about the module
 ```markdown
 https://pypi.org/project/pycountry/
@@ -3731,7 +4108,6 @@ list(pycountry.subdivisiones)
 
 ---
 ## MODULES - SMTPLIB, MIMEText - sending emails
-[jump to top...](#python)<br><br>
 sending emails
 if you have 2-Factor-Authentification you must generate a App-Password for GMail<br>
 Import smtplib
@@ -3799,7 +4175,6 @@ s.quit()
 
 ---
 ## MODULE - PATHLIB - interacting with the operating system
-[jump to top...](#python)<br><br>
 <br>Import module
 ```markdown
 from pathlib import Path
@@ -3833,11 +4208,18 @@ mac = get_mac()
 
 
 ---
-## MODULE - OS, SHUTIL, FILECMP, DIRCMP - interacting with the operating system
-[jump to top...](#python)<br><br>
+## MODULE - OS, SHUTIL, FILECMP, DIRCMP, Send2Trash - interacting with the operating system
 <br>Import module
 ```markdown
 import os
+```
+Get the actual path
+```markdown
+path = os.path.abspath(os.path.dirname(sys.argv[0]))
+```
+Put all filenames to a list from the actual path
+```markdown
+os.listdir(path)
 ```
 Shows alls attributs and methods of the library
 ```markdown
@@ -3869,7 +4251,7 @@ os.rename(filename, new_name)
 ```
 Cut and paste file from path1 to path2
 ```markdown
-os.rename(path1+fn, path2+fn)
+os.rename(src, dst)
 ```
 Copy file from source to destination
 ```markdown
@@ -3887,7 +4269,7 @@ Delete file
 ```markdown
 os.remove (file)
 ```
-Delete folder (prefered cause deleting ist dangerous)
+Delete folder (prefered cause deleting is dangerous)
 ```markdown
 os.rmdir ("folder")
 ```
@@ -3931,9 +4313,9 @@ Checks if files exists / element is a file (in the actual dir)
 ```markdown
 os.path.isfile("xyz")
 ```
-Put all filenames to a list from the actual working dir
+Join path together on every os-system (win,mac,linux)
 ```markdown
-os.listdir()
+os.path.join(path, "URLS", link)
 ```
 Put all sub-folders to a list from the actual working dir
 ```markdown
@@ -3943,15 +4325,21 @@ Change file to hidden
 ```markdown
 os.popen('attrib +h ' + fn).read().close()
 ```
+Send file to trash (needs:)
+```markdown
+send2trash(filename)
+```
 
-<br>Put all files in a list from actual directory with all subdirs and Filtering
+
+<br>Put all files with path in a list from actual directory with all subdirs and Filtering
 ```markdown
 listExtensions=["jpg","jpeg","png"]
 listImages = []
 for dirpath,dir,files in os.walk(os.getcwd()):
   for f in files:
     if any(x in f.lower() for x in listExtensions):
-      listImages.append(f)
+      wFN = os.path.join(dirpath, f)
+      listImages.append(wFN)
 ```
 
 <br>Find home-directory for the actual user
@@ -3971,7 +4359,6 @@ if ergDiff.left_only: ...               # see all changed files on the left side
 
 ---
 ## MODULE - LOGGING
-[jump to top...](#python)<br><br>
 general Logging Layers: debug => info => warning => error => critical<br>
 importing module
 ```markdown
@@ -4053,7 +4440,6 @@ logger.addHandler(my_handler)                                # Define handler wi
 
 ---
 ## MODULE - UNITTEST
-[jump to top...](#python)<br><br>
 many methods: https://docs.python.org/3/library/unittest.html<br>
 Importing module
 ```markdown
@@ -4112,7 +4498,6 @@ self.assertNotIn(i,list)
 
 ---
 ## MODULE - DOTENV - hide environment informations
-[jump to top...](#python)<br><br>
 Installation: pip install python-dotenv
 <br>create .env file and store sensible data in the form TOKEN=xyz123
 <br>and hide the *.env files in the .gitignore
@@ -4128,7 +4513,6 @@ GMAIL_TOKEN = os.environ.get("GMAIL_TOKEN")
 
 ---
 ## MODULE - COLLECTIONS - counter, defaultdic
-[jump to top...](#python)<br><br>
 Counter, namedtuple, OrderedDict, defaultdict, deque
 
 <br>COUNTER
@@ -4179,7 +4563,6 @@ d.rotateleft(-1)			# Shift all elements 1 place to the left
 
 ---
 ## MODULE - ITERTOOLS - products, combinations
-[jump to top...](#python)<br><br>
 - product, permutations, combinations, accumulate, groupby, infinite iterators
 <br>- from itertools import product, permutations, combinations, combinations_with_replacement, accumulate, groupby
 - from itertools import count, cycle, repeat<br>
@@ -4259,7 +4642,6 @@ df = df['col'].apply(lambda x: x.strip())
 
 ---
 ## MODULE - NUMPY - basis for different other modules
-[jump to top...](#python)<br><br>
 - memory efficient, working in the background used by other modules
 <br>- using only the bits which are necessary for each column (1 is stored in python with 24bytes - in numpy with 1byte or lesser)
 - shape of array has to be consistent - otherwise it just fall back to regular python objects eg. [[12,11],[13]]<br>
@@ -4496,7 +4878,6 @@ np.random.seed(1)
 
 ---
 ## MODULE - PANDAS - analyzing and working with data
-[jump to top...](#python)<br><br>
 <br>examples
 ```markdown
 https://gist.github.com/why-not/4582705
@@ -4722,6 +5103,41 @@ dt = pd.Timestamp(dt)
 <br>possible reader: read_csv,read_excel,read_json,read_html,read_sql
 <br>possible writer: to_csv,to_excel,to_json,to_html,to_sql
 
+Important<br>
+Convert pandas timestamp to datetime
+```markdown
+dt = dt.to_pydatetime()
+```
+Convert a dataframe to a nested list (only values, without index)
+```markdown
+l = df.values.tolist()
+```
+Convert a dataframe to a nested list including index
+```markdown
+l = df.reset_index().values.tolist()
+```
+Read first worksheet to dataframe
+```markdown
+df = pd.read_excel(workFN, sheet_name=0)
+```
+get specific row with title in index
+```markdown
+filt = (tmpDF.index == "Total Assets")
+```
+get specific row with title in index
+```markdown
+tmpDF = tmpDF[filt]
+```
+get the first entry of a series
+```markdown
+tmpDF[tmpDF.columns[0]][0]
+```
+add new column in dataframe at position 0 (column is name, value is content)
+```markdown
+df.insert(loc=0, column="A", value="XYZ")
+```
+
+
 CSV<br>
 Shows all parameters for the reader
 ```markdown
@@ -4874,7 +5290,7 @@ df.to_sql("data.db",conn)
 ```
 Writes dataframe to the sql-db (with droping the table before inserting)
 ```markdown
-df.to_sql("data.db",conn,if_exists="replace")
+df.to_sql("Dadata.db",conn,if_exists="replace")
 ```
 Writes dataframe to the sql-db (with inserting new values to existing table)
 ```markdown
@@ -5480,10 +5896,6 @@ Change datetime64 column to datetime
 ```markdown
 df["col1"] = df["col1"].dt.date
 ```
-Convert pandas timestamp to datetime
-```markdown
-dt = dt.to_pydatetime()
-```
 Convert datetime to pandas timestamp
 ```markdown
 dt = pd.Timestamp(dt)
@@ -5517,6 +5929,8 @@ Convert a dataframe to a nested list
 l = df.values.tolist()
 ```
 
+
+
 <br>When there is some warning like "A value is trying to be set on a copy of a slice from a DataFrame"
 ```markdown
 change the access from eg.: df["upperband"][current] = df["upperband"][previous]
@@ -5525,9 +5939,9 @@ to: df.loc[current, "upperband"] = df.loc[previous, "upperband"]
 ```
 
 
+
 ---
 ## MODULE - MATPLOTLIB - working with charts
-[jump to top...](#python)<br><br>
 <br>Import module as plotter plt
 ```markdown
 import matplotlib.pyplot as plt
@@ -5617,7 +6031,6 @@ plt.savefig("example.png",bbox_inches="tight")
 
 ---
 ## MODULE - SELENIUM - browser automatization
-[jump to top...](#python)<br><br>
 chromedriver.exe in Ordner von py-file speichern<br>
 Python specific documentation for selenium
 ```markdown
@@ -5663,13 +6076,25 @@ Define chrome driver - with actual folder os.getcwd
 ```markdown
 driver = webdriver.Chrome(os.getcwd() + '/chromedriver')
 ```
-Access to the url
+Throws exception when time for read is over 10 seconds
 ```markdown
-driver.get("url")
+driver.set_timeout(10)
 ```
 Somtimes necessary to delay some work in progress
 ```markdown
 time.sleep(1)
+```
+Encode url
+```markdown
+link = urllib.parse.quote_plus(link)
+```
+Open link
+```markdown
+driver.get(link)
+```
+get full unparsed html-code
+```markdown
+driver.page_source
 ```
 Find element (input-element with id = "passwd-id")
 ```markdown
@@ -5762,7 +6187,7 @@ driver.forward()
 ```
 Refresh website
 ```markdown
-driver.navigate().refresh()
+driver.refresh()
 ```
 Define an individual cookie
 ```markdown
@@ -5808,12 +6233,21 @@ ScrollDown in the window (maybe to the bottom of the site)
 ```markdown
 driver.execute_script("window.scrollTo(0, 10000)")
 ```
+Open a new tab
+```markdown
+driver.execute_script("window.open('');")
+```
+Swich to first tab
+```markdown
+driver.switch_to.window(driver.window_handles[0])
+```
 
 <br>Switch between iframes
 ```markdown
-iframe = driver.find_element_by_xpath("//iframe[@name='DialWin']")  => Use XPath to locate iframe
-driver.switch_to.frame(iframe)                                      => Switch to iframe
-driver.switch_to.default_content()                                  => Switch back to default content
+waitWD.until(EC.presence_of_element_located((By.XPATH,"//iframe[@id='mainFrame']")))
+iframe = driver.find_element(By.XPATH, "//iframe[@id='mainFrame']")
+driver.switch_to.frame(iframe)
+driver.switch_to.default_content()
 ```
 
 <br>Wait till a specific element is loaded / clickable
@@ -5897,6 +6331,7 @@ Xpath=//tagname[@attribute='value']
 //a[@href='http://demo.guru99.com/']      # anchor with specific link
 //img[@src='//xyz.com/img/java.png']      # img-elem with specific pic-link
 (//button)[2]                             # select the second button on the page
+//button[last()]                          # select the last button
 (//p[@class='product']/span)[2]           # select the second span in the p-element with class =
 
 //*[@type='submit' or @name='btnReset']         # any elem which has 2 OR conditions (for type and name)
@@ -5906,6 +6341,7 @@ Xpath=//tagname[@attribute='value']
 //*[contains(@id,'message')]            # any elem which has "message" somewhere in the id
 //*[contains(text(),'here')]            # any elem which has "here" somewhere in the text
 //*[contains(@href,'orf')]              # any elem which has "orf" somewhere in the href-link
+//select[contains(.,'Division')]        # select-element where some child has the text "Division" in it
 //label[starts-with(@id,'message')]     # elem where id starts with "message"
 
 //*[@type='text']//following::input[1]              # select all following-elements which have input as tag and select the first elem
@@ -5963,13 +6399,55 @@ cssSelector
 XPath
 ```
 
+<br>Solving some captchas - clicking for 10 seconds
+```markdown
+  element = driver.find_element(By.XPATH,"//div[@id='px-captcha']")
+  action = ActionChains(driver)
+  click = ActionChains(driver)
+  action.click_and_hold(element)
+  action.perform()
+  time.sleep(10)
+  action.release(element)
+  action.perform()
+  time.sleep(0.2)
+  action.release(element)
+```
+
+<br>Use only newest fake_useragent
+```markdown
+  # install with
+  # pip uninstall fake-useragent
+  # pip install --force-reinstall "git+https://github.com/robertsmd/fake-useragent.git@robertsmd-feature-only-newest-uas"
+  see: https://github.com/hellysmile/fake-useragent/pull/122
+  from fake_useragent import UserAgent
+  userAgent = UserAgent(num_newest_uas=2).random
+```
+
+<br>Download PDF-File to folder
+```markdown
+  # create this option-setting when creating the driver
+  ...
+  DOCPath = os.path.join(path, "WORK")
+  options = Options()
+  options.add_experimental_option('prefs', {
+    "download.default_directory": DOCPath,
+    "download.prompt_for_download": False,
+    "download.directory_upgrade": True,
+    "plugins.always_open_pdf_externally": True
+    })
+  ...
+  srv=Service(ChromeDriverManager().install())
+  driver = webdriver.Chrome (service=srv, options=options)
+  driver.get(workerPDF)
+```
+
+
 
 ---
 ## MODULE - BEAUTIFUL SOAP - webscraping
-[jump to top...](#python)<br><br>
 <br>Import module for beautiul soap
 ```markdown
-from bs4 import BeautifulSoap
+from bs4 import BeautifulSoup
 ```
 Import moduel for fake useragent
 ```markdown
@@ -5991,9 +6469,13 @@ Read url as page with proxy like eg. "https://10.10.1.11:1080"
 ```markdown
 page = requests.get(url,headers=headers,proxy=proxy)
 ```
-Read page with html.parser
+Read html-page with parser
 ```markdown
 soup = BeautifulSoup (page.content,"html.parser")
+```
+Read xml-page with parser
+```markdown
+soup = BeautifulSoup (page.content,"xml")
 ```
 find first a-tag in body
 ```markdown
@@ -6019,10 +6501,6 @@ Find element with one of this 2 classes
 ```markdown
 soup.find_all("div", {'class':['class1', 'class2']})
 ```
-Find divs which have both classes
-```markdown
-soup.select("div.class1.class2")
-```
 Read all table data cells with id and content
 ```markdown
 for col_id, col_content in enumerate(result.find_all("td")):
@@ -6043,6 +6521,14 @@ Find element with specific text / string
 ```markdown
 soup.find("dt", string="In-App Purchases")
 ```
+General way to find string
+```markdown
+soup.find("div", string=re.compile('contributions'))
+```
+Check if string nameSymbol_" is part of the class-element
+```markdown
+soup.find("small", class_=re.compile("nameSymbol_"))
+```
 Find elements for several tags
 ```markdown
 soup.find_all(["strong","a","br"])
@@ -6054,10 +6540,6 @@ erg2 = erg.find_parent("div")
 Check if class has specific content
 ```markdown
 if row.get("class") == ["ellipsis", "nobr", "new"]:
-```
-Check if string nameSymbol_" is part of the class-element
-```markdown
-soup.find("small", class_=re.compile("nameSymbol_"))
 ```
 Read all links from href element
 ```markdown
@@ -6145,7 +6627,15 @@ return previous elements (as a generator object)
 ```
 find the next ul-element
 ```markdown
-.find_next("ul)
+.find_next("ul")
+```
+find the previous ul-element
+```markdown
+.find_previous("ul")
+```
+find only direct children of an element
+```markdown
+.find_all("div", recursive=False)
 ```
 returns the name of the tag
 ```markdown
@@ -6158,6 +6648,25 @@ get all strings from a tag in an iterable
 get all (stripped) strings from a tag in an iterable
 ```markdown
 .stripped_strings
+```
+get all text directly below a tag
+```markdown
+.find_all(text=True, recursive=False)
+```
+
+<br>Using the select selector
+```markdown
+# https://facelessuser.github.io/soupsieve/selectors/
+soup.select("div.class1.class2")                => divs-elem which have both classes
+soup.select("div[class='table-container']")     => div-elem which have only this class
+soup.select('h1, p')                            => all h1- and p-elements
+soup.select('body p')                           => p-elems in body
+soup.select('div > p')                          => children p-elems in div
+soup.select('h1 ~ p')                           => p-elems on the same level as h1
+soup.select(':any-link')                        => any links which has a href-attribute
+soup.select(':checked')                         => all checked elements (radio-buttons, checkboxes, option)
+soup.select('p:first-child')                    => first child in a group
+soup.select('span:first-of-type')               => firt child of a given type in a group
 ```
 
 
@@ -6198,6 +6707,12 @@ time.sleep (2)  														# Wait till the full site is loaded
 ```markdown
 element = driver.find_element_by_id("analyst-estimate")
 driver.execute_script("arguments[0].scrollIntoView();", element)
+
+driver.execute_script("return arguments[0].scrollIntoView(true);",
+  WebDriverWait(driver, 20).until(EC.visibility_of_element_located((
+    By.XPATH, "//div[@class='search-pagination']"))))
+
+
 time.sleep (1)
 ```
 <br>Read page with html.parser and to the further scraping
@@ -6222,10 +6737,16 @@ driver.find_element_by_css_selector('p.content')						# Search for tag and selec
 ```
 
 
+<br>Read the whole text of an article / element
+```markdown
+  tmpText = soup.find("article", {"itemprop": "description"})
+  if tmpText != None:
+    wText = "\n".join(list(tmpText.stripped_strings)[1:])
+```
+
 
 ---
-## MODULE - REQUESTS - workings with APIs
-[jump to top...](#python)<br><br>
+## MODULE - REQUESTS - workings with APIs and reading websites
 https://realpython.com/python-api/<br>
 import module requests
 ```markdown
@@ -6285,54 +6806,69 @@ resp.json()
 ```
 Pretty-Print formatted json-file
 ```markdown
-print(json.dumps(respJSON,
+print(json.dumps(resp,indent=4,sort_keys=True))
 ```
-indent=4,
-sort_keys=True))
-<br>Read the value for the 1 element and the attribute xyz
+Read the value for the 1 element and the attribute xyz
 ```markdown
 result = api[0]["xyz"]
 ```
 
 
-<br>Install module
+<br>Using requests_html
 ```markdown
-pip install requests-html
+pip install requests-html                         => Install module
+from requests_html import HTMLSession             => Import requests_html
+s = HTMLSession()                                 => Define a html-session
+r = s.get(url, headers=HEADERS)                   => Define response
+r.html.find("title", first=True).text             => title of in the html-tag
+r.html.find("span#wob_tm", first=True).text       => Span-value with id = "wob_tm"
+r.html.find("div.clX", first=True)                => Div-element with class = "clX"
+r.html.find("div.clX span.clY",first=True).text   => Span-element with class="clY" ind Div-element with class="clX"
 ```
-Import requests_html
+
+
+<br>Using request to get the source code or text from a page
 ```markdown
-from requests_html import HTMLSession
+resp = requests.get("https://api.buyproxies.org/?a=showProxies&pid=175649&key=168281a74e7bb3f0dc0feb4f37ec6de5&port=12345")
+proxyList = resp.text.split("\n")
 ```
-Define a html-session
+
+
+<br>Using requests to download a file
 ```markdown
-s = HTMLSession()
+url = "https://xyz.mp3"
+doc = requests.get(url)
+with open('work.mp3', 'wb') as f:
+  f.write(doc.content)
 ```
-Define response
+
+<br>Using requests for reading websites
 ```markdown
-r = s.get(url, headers=HEADERS)
+ua = UserAgent(verify_ssl=False)
+userAgent = ua.random
+HEADERS = {"User-Agent": userAgent}
+page = requests.get (link, headers=HEADERS)
+page = requests.get(site,timeout=5)               => try to read the website for max 5sec
+soup = BeautifulSoup (page.content, "html.parser")
 ```
-title of in the html-tag
+
+<br>Using requests to read image from web, save and build hashValue
 ```markdown
-r.html.find("title", first=True).text
-```
-Span-value with id = "wob_tm"
-```markdown
-r.html.find("span#wob_tm", first=True).text
-```
-Div-element with class = "clX"
-```markdown
-r.html.find("div.clX", first=True)
-```
-Span-element with class="clY" ind Div-element with class="clX"
-```markdown
-r.html.find("div.clX span.clY",first=True).text
+  headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'} # This is chrome, you can set whatever browser you like
+  resp = requests.get(img, headers=headers, stream=True)
+  print(resp.status_code)
+  with open(workerPic, 'wb') as f:
+    shutil.copyfileobj(resp.raw, f)
+  del resp
+  img = Image.open(resp.raw)
+  workihashImg = imagehash.average_hash(img)
+  print(workihashImg)
 ```
 
 
 
 ---
 ## MODULE - SCRAPY - webscraping using spiders
-[jump to top...](#python)<br><br>
 Tutorial: https://docs.scrapy.org/en/latest/intro/tutorial.html
 <br>Video-Tutorial: https://www.youtube.com/c/zytedata/playlists (Playlist - Learn Scrapy)
 Video-Tutorial2: https://www.youtube.com/watch?v=s4jtkzHhLzY (Scrape a Whisky-Shop)<br>
@@ -6593,10 +7129,53 @@ class QuotesScrollSpider(scrapy.Spider):
 
 
 
+<br>Import module
+```markdown
+import ftplib
+```
+Create FTP instance
+```markdown
+ftp = ftplib.FTP()
+```
+Define encoding
+```markdown
+ftp.encoding = "utf-8"
+```
+Connect to ftp-address
+```markdown
+ftp.connect(ADDR)
+```
+Login with username and password
+```markdown
+ftp.login(USERNAME, PW)
+```
+Change working directory eg. to tmp
+```markdown
+ftp.cwd("tmp/")
+```
+Show actual working directory
+```markdown
+ftp.pwd()
+```
+Show files in actual working directory
+```markdown
+ftp.dir()
+```
+Quit ftp instance
+```markdown
+ftp.quit()
+```
+
+<br>Upload file with ftp
+```markdown
+with open(fn, "rb") as file:
+  ftp.storbinary('STOR test.png', file)
+```
+
+
 
 ---
 ## MODULE - PYQT - making GUIs
-[jump to top...](#python)<br><br>
 see Codemy.com https://www.youtube.com/channel/UCFB0dxMudkws1q8w5NJEAmw
 see Python-Diverses/PyQt<br>
 Install Py Qt Designer
@@ -6607,182 +7186,285 @@ Installation
 ```markdown
 pip install pyqt5
 ```
-Defines Application
+
+<br>QtWidgets / Different Widgets
 ```markdown
-from PyQt5.QtWidgets import QApplication
-```
-Defines Label
-```markdown
-from PyQt5.QtWidgets import QLabel
-```
-Defines Widget
-```markdown
-from PyQt5.QtWidgets import QWidget
-```
-Arranges horizontally from left to right
-```markdown
-from PyQt5.QtWidgets import QHBoxLayout
-```
-Arranges vertically from top to bottom
-```markdown
-from PyQt5.QtWidgets import QVBoxLayout
-```
-Arranges in grid from on x and y axes
-```markdown
-from PyQt5.QtWidgets import QGridLayout
-```
-Field for forms - 1col are titles, 2col are fields,rbs,cb
-```markdown
-from PyQt5.QtWidgets import QFormLayout
-```
-Defines PushButton
-```markdown
-from PyQt5.QtWidgets import QPushButton
-```
-Module for dialog windows
-```markdown
-from PyQt5.QtWidgets import QDialog
-```
-Module for button boxes in dialog windows
-```markdown
-from PyQt5.QtWidgets import QDialogButtonBox
-```
-Defines input field with text
-```markdown
-from PyQt5.QtWidgets import QLineEdit
-```
-Module for main windows
-```markdown
-from PyQt5.QtWidgets import QMainWindow
-```
-Module for status bar
-```markdown
-from PyQt5.QtWidgets import QStatusBar
-```
-Module for tool bar
-```markdown
-from PyQt5.QtWidgets import QToolBar
-```
-Create an instance of the application
-```markdown
-app = QApplication(sys.argv)
-```
-Initialize a window
-```markdown
-w = QWidget()
-```
-Title of the windows
-```markdown
-w.setWindowTitle('Windows Title')
-```
-Define windows (1:x-coord,2:y-coord,3:width,4:height)
-```markdown
-w.setGeometry(200, 200, 380, 180)
-```
-Place / move windows to coodinates 60,15
-```markdown
-w.move(50, 15)
-```
-Define label / message in format h1
-```markdown
-msg = QLabel('<h1>Hello World!</h1>', parent=window)
-```
-Place / move labe to coordinates 60,15
-```markdown
-msg.move(50, 15)
-```
-Show the application GUI - schedules a paint event
-```markdown
-windows.show()
-```
-Start the app and close it with sys.exit
-```markdown
-sys.exit(app.exce_())
-```
-Defines horzontal box
-```markdown
-layout_qh = QHBoxLayout()
-```
-Defines vertical box
-```markdown
-layout_qv = QVBoxLayout()
-```
-Defines grid layout
-```markdown
-layout_qg = QGridLayout()
-```
-Defines form layout
-```markdown
-layout_qf = QFormLayout()
-```
-Defines one or more buttons
-```markdown
-layout_qh.addWidget(QPushButton('Button1'))
-```
-Defines one or more buttons
-```markdown
-layout_qv.addWidget(QPushButton('Button1'))
-```
-Defines one or more buttons and set it to position 1,0
-```markdown
-layout_qg.addWidget(QPushButton('Button1'),1,0)
-```
-Set buttons to position 2,1 and span it 1row/2cols
-```markdown
-layout_qg.addWidget(QPushButton('Button1'),2,1,1,2)
-```
-Defines input field
-```markdown
-layout_qf.addRow("text:", QLineEdit())
-```
-Sets layout dimensions to window
-```markdown
-w.setLayout(layout_xy)
-```
-Defines a class dialog which inherits from QDialog
-```markdown
-class Dialog(QDialog):
-```
-Define buttons for a dialog window
-```markdown
-buttons = QDialogButtonBox()
-```
-Defines a ok button on a dialog window
-```markdown
-buttons.setStandardButtons(QDialogButtons.OK)
-```
-Adds buttons to vertical layout
-```markdown
-layout_qv.addWidget(buttons)
-```
-Defines a class Windows which inherits from QMainWindow
-```markdown
-class Window(QMainWindow):
-```
-Convert Qt-Designer file to a python-file
-```markdown
-pyuic5 -x 6PyQtDesigner.ui -o 6PyQtDesigner.py
+import PyQt5.QtWidgets as qtw   # Import QtWidgets
+qtw.QApplication                # Defines Application
+qtw.QLabel                      # Defines Label
+qtw.QWidget                     # Defines Widget
+qtw.QHBoxLayout                 # Arranges horizontally from left to right
+qtw.QVBoxLayout                 # Arranges vertically from top to bottom
+qtw.QGridLayout                 # Arranges in grid from on x and y axes
+qtw.QFormLayout                 # Field for forms - 1col are titles, 2col are fields,rbs,cb
+qtw.QPushButton                 # Defines PushButton
+qtw.QDialog                     # Module for dialog windows
+qtw.QDialogButtonBox            # Module for button boxes in dialog windows
+qtw.QLineEdit                   # Defines input field with text
+qtw.QMainWindow                 # Module for main windows
+qtw.QStatusBar                  # Module for status bar
+qtw.QToolBar                    # Module for tool bar
+qtw.QMessageBox                 # Module for Message Boxes
+qtw.QCommandLinkButton          # Module for Command Link Button
+qtw.QCheckBox                   # Module for CheckBox
+qtw.QDialog                     # Module for Dial Widget
+qtw.QFileDialog                 # Module for File Dialog
 ```
 
-<br>simplest App
+<br>Main Window
+```markdown
+app = QApplication(sys.argv)                            # Create an instance of the application
+w = QWidget()                                           # Initialize a window
+w.setWindowTitle('Windows Title')                       # Title of the windows
+w.setGeometry(200, 200, 380, 180)                       # Define windows (1:x-coord,2:y-coord,3:width,4:height)
+w.move(50, 15)                                          # Place / move windows to coodinates 60,15
+msg = QLabel('<h1>Hello World!</h1>', parent=window)    # Define label / message in format h1
+msg.move(50, 15)                                        # Place / move labe to coordinates 60,15
+windows.show()                                          # Show the application GUI - schedules a paint event
+sys.exit(app.exce_())                                   # Start the app and close it with sys.exit
+```
+
+<br>Layouts
+```markdown
+qhLayout = QHBoxLayout()                                # Defines horzontal box layout
+qvLayout = QVBoxLayout()                                # Defines vertical box layout
+qgLayout = QGridLayout()                                # Defines grid layout
+qfLayout = QFormLayout()                                # Defines form layout
+btn1 = qtw.QPushButton(self)                            # Define Push-Button
+qhLayout.addWidget(btn1)                                # Add Button on Layout
+qvLayout.addLayout(qhLayout)                            # Add horizontal Box Layout in vertical Layout
+lbl = qtw.QLabel('Name:', self)                         # Define Label
+inp = qtw.QLineEdit(self)                               # Define Input-Field
+qfLayout.addRow(lbl, inp)                               # Add row in form (Label + Input-Field)
+qgLayout.addWidget(QPushButton('Button1'),1,0)          # Defines one or more buttons and set it to position 1,0
+qgLayout.addWidget(QPushButton('Button1'),2,1,1,2)      # Set buttons to position 2,1 and span it 1row/2cols
+w.setLayout(layoutXY)                                   # Sets layout dimensions to window
+
+=> Button / QPushButton
+```
+btn = qtw.QPushButton(self)                             # Define Push-Button
+layout.addWidget(btn)                                   # Add ComboBox to layout
+btn.setText("Calc")                                     # Set Text of button
+btn.setEnabled(False)                                   # Deactivate the button
+btn.clicked.connect(self.btnPressedCalc)                # Set Function which should run when the button is clicked
+<br>2nd method to assign a function (short method)
+```markdown
+btn = qtw.QPushButton(self, clicked = lambda: self.btnPressedCalc())
+```
+btn.setStyleSheet("QPushButton {color: red;}")          # Set color of button to red
+btn.setStyleSheet("QPushButton {color: #797979;}")      # Set color of button to hex-code
+```markdown
+
+=> Label / QLabel
+```
+lbl = qtw.QLabel("Name:", self)    # Define Label
+layout.addWidget(lbl)              # Add Label to layout
+lbl.setText("xyz")                 # Set text of label
+lbl.setPixmap(self.pixMap)         # Show picture in label
+```markdown
+
+=> Input-Field / QLineEdit
+```
+inp = qtw.QLineEdit(self)                 # Define Input-Field
+layout.addWidget(inp)                     # Add input field to layout
+inp.clear()                               # Delete content of input-field
+inp.text()                                # Get actual text from the input-field
+inp.textChanged.connect(self.inputName)   # Call function when something is changed
+```markdown
+
+=> ComboBox / QComboBox
+```
+cb = qtw.QComboBox(self)                    # Create ComboBox
+l = [("AAPL",23),("BRK",47),("CYP",78)]     # Define list with shown value and data behind (eg. AAPL and 23)
+cb.addItems(l)                              # Add list of items to combobox as content
+cb.addItem(s)                               # Add one item to combobox as content
+layout.addWidget(cb)                        # Add ComboBox to layout
+layout.addRow("Name:",cb)                   # Add ComboBox to form-layout
+cb.currentText()                            # Actual selected value (AAPL, BRK, CYP)
+cb.currentData()                            # The data of the selected item (23, 47, 78)
+cb.currentIndex()                           # Index-number of the selected item
+idx = cb.findText("xyz")                    # Find index of the element in the combobox
+cb.setCurrentIndex(idx+1)                   # Set element the found element by index
+cb.setEnabled(False)                        # Disable or enable combobox
+cb.clear()                                  # Clear / empty combo box
+cb.activated.connect(self.funcClicker)      # Call function when entry in combobox is selected
+cb = qtw.QComboBox(self,                    # Create editable ComboBox
+editable=True,
+insertPolicy=qtw.QComboBox.InsertAtBottom
+```markdown
+
+=> List / QListWidget
+```
+lw = qtw.QListWidget(self)            # Create List
+lw.addItems(l)                        # Add list of items to listwidget as content
+lw.addItem(s)                         # Add one item to listwidget as content
+lw.currentRow()                       # Get index of current row
+lw.takeItem(1)                        # Delete / take 2nd item from the list
+lw.count()                            # Number of items in the list
+lw.item(idx)                          # Take the element from the idx-position
+lw.item(idx).text()                   # Get text of the element
+```markdown
+
+=> SpinBoxes / QSpinBox, QDoubleSpinBox
+```
+sp = qtw.QSpinBox(self,           # create spinbox
+value=10,                     # start value
+maximum=100,
+minimum=0,
+singleStep=5,                 # steps between values
+prefix="#",                   # prefix before the value
+suffix=" Order"               # suffix behind the value
+<br>Add SpinBox to layout
+```markdown
+layout.addWidget(sp)
+```
+Add SpinBox to form-layout
+```markdown
+layout.addRow("Name:",sp)
+```
+sp = qtx.QDoubleSpinBox (self)    # create spinbox for floats
+```markdown
+
+=> Textfield / QTextEdit
+```
+txt = qtw.QTextEdit(self)       # create Textfield
+layout.addWidget(txt)           # add textfield to layout
+txt.toPlainText()               # convert Text to plain text
+txt.setPlainText("xyz")         # set Textfield to xyz
+txt = qtw.QTextEdit(self,
+lineWrapMode = qtw.QTextEdit.FixedColumnWidth,
+lineWrapColumnOrWidth = 50,
+placeholderText="ABC",
+readOnly=False)
+```markdown
+
+=> RadioButtons / QRadioButton
+```
+rb = qtw.QRadioButton(self)     # define radio button
+rb.isChecked()                  # return true if radio-button is selected
+rb.text()                       # outputs text of the radio button
+rbHam.setChecked(True)          # check radio button (eg. for default setting when opening)
+rb.setText("xyz")               # change name of the radio button to xyz
+rb.toggled.connect(lambda: self.func())   # call function when radio-button is pressed
+```markdown
+
+=> CheckBoxes / QCheckBox
+```
+cb = qtw.QCheckBox(self)      # define checkbox
+cb.setChecked(True)           # check checkbox
+cb.isChecked()                # return true if check-box is checked
+cb.checkState()               # return 0 when unchecked, return 1 when checked
+cb.stateChanged.connect(lambda: self.checked())   # call function when state of checkbox change
+cb.toggled.connect(lambda:self.checked())         # call function when checkbox is pressed
+```markdown
+
+=> DialWidget / QDial
+```
+dw = qtw.QDial              # define dial widget
+dw.value()                  # get the value of the dial widget
+dw.setMinimum(10)           # set minimum to 10
+dw.setMaximum(360)          # set minimum to 10
+dw.setRange(100,200)        # set range (with min and max)
+dw.setValue(50)             # set (default-)value
+dw.setNotchesVisible(True)  # put scale on the widget
+dw.valueChanged.connect(lambda: self.func())      # call function when dial widget is turned around
+```markdown
+
+=> Statusbar
+```
+statbar = qtv.QStatusBar(self)    # create Statusbar
+statbar.showmessage("xyz")        # show message in status bar
+
+```markdown
+
+=> MessageBox
+```
+msg = QMessageBox()                             # Define Message Box
+msg.setWindowTitle("Infobox")                   # Set Title of Message-Window
+msg.setText("Your Todo List has been saved!")   # Set Text of Message-Box
+msg.setIcon(QMessageBox.Information)            # Set Info-Icon for Message-Box
+```markdown
+
+=> FileDialog / QFileDialog
+```
+# get Filename,
+# 1st parameter: name of the window-filedialog eg. "Open File"
+```markdown
+  # 3rd parameter: which files can be selected eg. "All Files" for all files
+  # returning a tuple (name of the file and selected extension)
+```
+fName = qtw.QFileDialog.getOpenFileName(self, "Open File", "C:\\TEMP", "All Files (*)")
+```markdown
+  fName[0]    # to get only the choosen filename
+```
+
+<br>Menu or Icon / QAction
+```markdown
+  self.menu = qtw.QAction(MainWindow)
+  self.menu.triggered.connect(self.actPressedOpen)    => Set Function which should run when the menu is clicked
+```
+
+class Dialog(QDialog):                                  # Defines a class dialog which inherits from QDialog
+buttons = QDialogButtonBox()                            # Define buttons for a dialog window
+buttons.setStandardButtons(QDialogButtons.OK)           # Defines a ok button on a dialog window
+class Window(QMainWindow):                              # Defines a class Windows which inherits from QMainWindow
+
+<br>PyQt5Designer
+```markdown
+pip install PyQt5Designer                 # Install PyQt5Designer
+designer.exe                              # Find designer.exe in installed venv
+<Form><Preview>                           # Show preview of the designed window
+pyuic5 -x filename.ui -o filename.py      # Convert Qt-Designer file to a python-file
+```
+
+<br>QtGui / Change GUI like font, size
+```markdown
+import PyQt5.QtGui as qtg                               # Import Gui for changing fontsize
+nameLabel.setFont(qtg.QFont("Helvetica", 18))           # Change font of the label
+```
+
+<br>Open other Window / Dialog
+<br>Click button one window to open another window
+```markdown
+  from Window2from24 import Ui_SubWindow      # import Class / Window from other py-file
+  from Dialog24 import Ui_Dialog              # import Class / Dialog from other py-file
+  ...
+  def openWindow(self):
+    self.window = QtWidgets.QMainWindow()     # Which widget should be opened QMainWindow / QDialog
+    self.ui = Ui_SubWindow()                  # Class Name of the window which sould be opened
+    self.ui.setupUi(self.window)
+    self.window.show()
+    self.ui.label.setText("New")              # Access some elements on the opened window
+  ...
+  self.pb.clicked.connect(self.openDialog)    # call the function where the window is opened
+  self.pb2.clicked.connect(self.openWindow)   # call the function where the dialog is opened
+```
+
+<br>Load ui-file in py-file
+```markdown
+uic.loadUi("27LoadUIFile.ui",self)            # load the ui-file
+self.l = self.findChild(qtw.QLabel, "label")  # assign label from ui
+self.btn = self.findChild(qtw.QPushButton, "pushButton")    # assign push button from ui
+```
+
+<br>Simplest App
 ```markdown
 import PyQt5.QtWidgets as qtw
 class MainWindow(qtw.QWidget):
   def __init__(self):
     super().__init__()
-    self.setWindowTitle("Check Orphans App")
-    ...
-    self.show()
-app = qtw.QApplication([])
-mw = MainWindow()
-app.exec_()
+    self.setWindowTitle("Name XY")
+if __name__ == '__main__':
+  app = qtw.QApplication(sys.argv)
+  mw = MainWindow()
+  mw.show()
+  sys.exit(app.exec_())
 ```
 
 
 
 ---
 ## MODULE - TKINTER - making GUIs
-[jump to top...](#python)<br><br>
 <br>Tutorial with deep explanation
 ```markdown
 https://www.youtube.com/watch?v=YXPyB4XeYLA
@@ -6976,7 +7658,6 @@ OptionMenu(root,var,*options).pack							# Define dropdown menue
 
 ---
 ## MOUULE - KIVY - making GUIs
-[jump to top...](#python)<br><br>
 <br>https://kivy.org/#home
 ```markdown
 Kivy documentation
@@ -7238,7 +7919,6 @@ py-file:
 
 ---
 ## MODULE - PYGAME - making games
-[jump to top...](#python)<br><br>
 <br>Pygame documentation
 ```markdown
 http://pygame.org/docs/
@@ -7454,7 +8134,6 @@ screen.blit(msg_img, msg_img_rect)
 
 ---
 ## MODULE - PYTHONCOM - make new formula in excel with python-function
-[jump to top...](#python)<br><br>
 https://www.youtube.com/watch?v=cYwn8Pu5eRg&feature=emb_logo<br>
 Import necessary modules
 ```markdown
@@ -7546,7 +8225,6 @@ End Function
 
 ---
 ## MODULE - FLASK, ZAPPA, AWS - making an API
-[jump to top...](#python)<br><br>
 <br>create basic api in flask
 ```markdown
 https://nordicapis.com/how-to-create-an-api-from-a-dataset-using-python-and-flask/
@@ -7658,7 +8336,6 @@ check API-access
 
 ---
 ## MODULE - FLASK, heroku, GUNICORN  - making an API
-[jump to top...](#python)<br><br>
 https://stackabuse.com/deploying-a-flask-application-to-heroku/
 
 ongoing deployment / update
@@ -7675,7 +8352,6 @@ git push heroku main
 
 ---
 ## MODULE - FASTPI, UVICORN - making an app
-[jump to top...](#python)<br><br>
 https://www.youtube.com/watch?v=OFnOEIyqSRg&list=PLvzuUVysUFOuoRna8KhschkVVUo2E2g6G
 see Python-Diverse - TradingApp<br>
 import module
@@ -7718,7 +8394,6 @@ def index():
 
 ---
 ## MODULE - ICECREAM - print for debugging
-[jump to top...](#python)<br><br>
 <br>Imort icecream
 ```markdown
 from icecream import ic
@@ -7740,7 +8415,6 @@ ic.configureOutput(includeContext=True)
 
 ---
 ## MODULE - TA-LIB - technical analysis of financial market
-[jump to top...](#python)<br><br>
 Documentation: https://mrjbq7.github.io/ta-lib/
 
 <br>Installation
@@ -7755,7 +8429,6 @@ then: pip install TA-Lib
 
 ---
 ## MODULE - YFINANCE - date from Yahoo Finance
-[jump to top...](#python)<br><br>
 Docu and examples: https://aroussi.com/post/python-yahoo-finance<br>
 Installation (yfinance as yf not working - problems with pyinstaller)
 ```markdown
@@ -7834,7 +8507,6 @@ dataYF.isin
 
 ---
 ## MODULE - PLOTLY - data visualization
-[jump to top...](#python)<br><br>
 <br>installation
 ```markdown
 pip install plotly
@@ -7852,7 +8524,6 @@ Python-Diverses / Plotly / example.py
 
 ---
 ## MODULE - DJANGO - framework for webdevelopment
-[jump to top...](#python)<br><br>
 <br>Video Training
 ```markdown
 https://www.youtube.com/watch?v=F5mRW0jo-U4&t=5043s
@@ -8048,7 +8719,6 @@ capitalize and upper the whole string
 
 ---
 ## DOLT - Databases like Repos
-[jump to top...](#python)<br><br>
 https://www.dolthub.com/blog/2020-02-03-dolt-and-dolthub-getting-started/
 Install on windows with msi-file from here: https://github.com/dolthub/dolt/releases
 <br>Config Mail
@@ -8087,103 +8757,7 @@ dolt sql -r csv -q "SELECT * FROM Salaries" > salary-hr.csv
 
 
 ---
-## PYINSTALLER, INNO SETUP COMPILER - generate python programs to executables
-[jump to top...](#python)<br><br>
-<br>Installation
-```markdown
-pip install pyinstaller
-```
-Generate the bundle in a subdirectory called dist.
-```markdown
-pyinstaller prg.py
-```
-Generate only one file
-```markdown
-pyinstaller --onefile prg.py
-```
-Generate only one file (to get for sure the pyinstaller from the actual env)
-```markdown
-python -m pyinstaller --onefile prg.py
-```
-add this when some modules are not found
-```markdown
---copy-metadata pandas_ta
-```
-When some modules are making problems - sometimes this helps
-```markdown
---hidden-import=pymssql
-```
-when there is a depreciating warning from matlib
-```markdown
---exclude-module matplotlib
-```
-Generate file with icon
-```markdown
---icon=app.ico
-```
-Generating under mac os sometimes only work with this params
-```markdown
---hidden-import=pkg_resources.py2_warn
-```
-Generating under mac os sometimes only work with this params
-```markdown
---hidden-import=pkg_resources.py2_warn
-```
-Collect data for specific python module
-```markdown
---collect-data moduleXY
-```
-
-<br>Open this file to start the python-program
-```markdown
-prg.exe
-```
-only working with import yfinance (not with import yfinance as yf)
-```markdown
-yfinance module
-```
-
-<br>Problems with some added python modules (eg. pycountry)
-```markdown
-https://groups.google.com/g/pyinstaller/c/OYhJdeZ9010/m/32g3-T8XBAAJ
-Create hook-file hook-pycountry.py with content:
-	from PyInstaller.utils.hooks import copy_metadata, collect_data_files
-	datas = copy_metadata("pycountry") + collect_data_files("pycountry")
-Compile Program with
-	pyinstaller --onefile --exclude-module matplotlib --additional-hooks-dir=. TestPyCountry.py
-```
-
-<br>Problems with path when executing from py and exe
-```markdown
-config_name = 'creds.json'                                    # Define the config file name
-```
-
-<br>Determine if application is a script file or frozen exe
-```markdown
-if getattr(sys, 'frozen', False):                             # Get path when starting as executable
-    application_path = os.path.dirname(sys.executable)
-elif __file__:                                                # Get path when running from IDE as py-file
-    application_path = os.path.dirname(__file__)
-config_path = os.path.join(application_path, config_name)     # Final Config Path
-```
-
-<br>Using Inno Setup Compiler for creating a setup.exe for all files
-```markdown
-https://jrsoftware.org/isdl.php
-- Application Information => provide application informations (appName, appVersion, publisher, website)
-- Application Files => select application main executable file and add all necessary folder and files
-- Application File Association => no selection
-- Application Documentation => select files which should be shown before / after the installation
-- Setup Languages => select which languages should be included during installation
-- Save installation script
-- Final setup.exe is stored in the "Output"-folder
-```
-
-
-
----
 ## PYTHONANYWHERE
-[jump to top...](#python)<br><br>
 <br>install python modules in specific version / environment
 ```markdown
 pip3.7 install --user --upgrade selenium
@@ -8193,7 +8767,6 @@ pip3.7 install --user --upgrade selenium
 
 ---
 ## HEROKU - run python scripts in the cloud
-[jump to top...](#python)<br><br>
 Instruction: https://dev.to/josylad/how-to-deploy-a-python-script-or-bot-to-heroku-in-5-minutes-9dp
 <br>New => Create new app => give name with only lowercases
 ```markdown
