@@ -13,7 +13,7 @@
 #> STRING
 #> REGEX
 #> LIST
-#> TUPEL
+#> TUPLE
 #> DICTIONARY
 #> SETS  
 #> CONTROL STRUCTURES and ITERATIONS
@@ -80,7 +80,7 @@
 import math                      =>  Import python module
 from math import ceil            =>  Import specific function of a module
 import numpy as np               =>  Import a module with abbreviation
-if __name__ == '__main__':       =>  When directly called - programm is running from here
+if __name__ == '__main__':       =>  Program execution starts from here
 python --version				 =>  Check which python version is installed
 
 => Use modules / functions from other folder
@@ -223,13 +223,13 @@ Ctrl Shift Right	      => Select word to the end
 Ctrl Left / Right	      => Go one word left
 Ctrl Shift K            => Delete current line
 Ctrl Del                => Delete to end of word
-Ctrl Background         => Delete to beginning of word
+Ctrl Backspace          => Delete to beginning of word
 Ctrl B							    => Hide/Show sidebar
 Ctrl J                  => Hide/Show terminal 
 Ctrl P                  => Show command line (eg. open a file where the name is known)
 Ctrl Shift P					  => Open the the command panel
 Ctrl TAB                => Toggle through the open files in the editor
-Ctrl WARNING            => Close File
+Ctrl W                  => Close File
 Ctrl Alt Up/Down        => MultiCursor - Select more cursors in rows for multiple change in rows
 Ctrl D							    => MultiCursor - Select Cursor at multiple positions for the same name
 Ctrl Shift L            => Select all occurences of this word in the document and change all with one change
@@ -294,7 +294,7 @@ Ctrl F5             # Clear Cache and reload page
 Alt Tab         # Focus on other window
 Ctrl C          # Copy
 Ctrl X          # Cut
-Ctrl VALUES     # Paste	
+Ctrl V          # Paste	
 ""
 
 => Enable pushing with ssh-key in Idea and VSCode
@@ -307,9 +307,9 @@ Run commands: https://stackoverflow.com/questions/56490194/vs-code-bitbucket-ssh
 ###### OPERATORS, INPUTS, OUTPUTS, ARGUMENTS, STATISTICS
 import math                     => Import module for math calculations
 import sys						          => Import module for reading arguments from the command line
-import statistics as stat		    => Using some numpy functions
+import statistics as stat		    => Using some statistics functions
 5 // 2                          => Result without Decimals (=> 2)
-7 % 2                           => Modulo / Rest of the division (=> 1)
+7 % 2                           => Modulo / Reamainder of the division (=> 1)
 d,e,f = 4,5,6                   => Assigment of several varaibles
 a,b = b,a                       => Change / swap 2 values
 a += 1                          => Increase value by one
@@ -319,24 +319,23 @@ int(v - v%10)                   => Round to tens place
 str(5), float("5"), int("5")    => Conversion to String / Float / Int
 abs(-2)                         => Outputs absolute value => 2
 input("ENTER to continue")      => Wait for pressing ENTER (or a keyboard stroke) to follow along
-int(input("Alter?"))            => Input age and change to int
+int(input("Age?":))             => Input age and change to int
 type(var)                       => Returns the type of a variable
 dir(var)                        => Shows all available methods and attributes for the object as list
 isinstance(x,float)             => Check if x has type format float (others: str,int,list,tuple,range,dict,set,bool)
 x = float("inf")                => Set var to max-value (float infinite)
 math.sqrt(9)                    => Calculates the sqrt of the value => i3
 if "myVar" in locals():         => Check if a variable exists
-sys.argv[1:].upper()            => Check for argument which is given when starting the program
+sys.argv[1:]                    => Check for argument which is given when starting the program
 print("Text")					          => Print "Text" (with a linebreak \n at the end)
 print("Text", end="-")			    => Print with end-statement (next print will be in the same line
-print(repr("xyz\n"))            => Print text with linebreaks \n etc
-example starting program 		    => python test.py arg1 arg2 arg3
-str(sys.argv)					          => Show the arguments from the command line when starting the program eg. ['test.py', 'arg1', 'arg2', 'arg3']
+print(repr("xyz\n"))            => Print text with special characters like \n,\t etc
+python test.py arg1 arg2 arg3   => example for starting a program with 3 parameters / arguments
 len(sys.argv)					          => Len of the arguments - eg. 4 (program test.py itself and 3 arguments following)
 min(3,5,7)						          => Find the minimum value => 3
 max(3,5,7)						          => Find the maximum value => 7
 stat.mean([3,5,7])				      => Find the mean value => 5 (with statistic-module - input must be given as list)
-exit()							            => Stop program at this point (helpful in test-situations)
+sys.exit()							        => Stop program at this point (helpful in test-situations)
 (newVal-oldVal)/oldVal * 100	  => Calculate the change from an old value to a new value in percent
 import pprint as pp             => Import pretty print functionality
 pp.pprint(dict)                 => pretty print dict line by line
@@ -414,13 +413,12 @@ s = s.replace("e","X")                          => Replacement of two strings
 s = re.sub("[e0fi]", "X", s)                    => Replace several chars in a string
 s = re.subn("[e0fi]", "X", s)                   => Replace several chars in a string (get back a tupple: 1st changed string, 2nd: count of changed chars)
 s.isdigit()                                     => True if the whole string are digits
-s.isalpha()                                     => True if the whole string are no digits
+s.isalpha()                                     => True if the whole string contains only letters
 s2 in s                                         => TRUE if string2 is in strings1
 l = list(s)                                     => Change string to list with all single chars
 ord(char)                                       => Convert char to ASCII value
 chr(ascii)                                      => Convert ASCII value to char (eg. 65=A, 97=a)
 hashlib.md5(s).encode('utf-8')).hexdigest()     => Outputs hashvalue oif the string (needs import hashlib)
-exec(print("hello"))                            => Execute statement in a string => hello
 eval("2+2")                                     => Gives the value of an expression => 4 (dangerous - can used for sql-injections)
 my_string[::-1]									                => Reverse a string
 repr(s)											                    => Print string with special characters
@@ -465,13 +463,13 @@ all = match.group(0)											  => Show the full string => "3 n: nnnlncrnnnnn"
 
 ###### LIST
 => ordered, mutable, allows duplicate elements
-l1,l2,l3,l4 = ([] for i in range(4))		     => Define several empty lists (NOT use l1=l=l3=[] => this would be the SAME list)		
+l1,l2,l3,l4 = ([] for i in range(4))		         => Define several empty lists (NOT use l1=l=l3=[] => this would be the SAME list)		
 if l											 => check for True if list has an element
 if not l										 => check for False if list is empty (same would be if l == []
 l = [4,5,6]                                      => Define list with content
 l = list(range(20))                              => Define list - content is list from 0 to 19
 l = ["" for x in range(8)]                       => Define list with 8 empyt strings
-l = [x.upper(for x in l)]                        => Uppercase the whole list
+[x.upper() for x in l]                           => Uppercase the whole list
 l = [["" for x in range(5)] for x in range(5)]   => Define a nested list with 5x5
 l1 + l2											 => Add both lists together (to a new list)	
 l.append(1)                                      => Add 1 element to the list at the back
@@ -500,10 +498,10 @@ l.remove("abc")                                  => Delete first element with th
 l.clear()                                        => Delete complete content of the list (same as l = [])
 min(l)                                           => Find smallest element in the list
 max(l)                                           => Find greatest element in the list
-max(mylist, key=len)							 => Find longest string in the list
-len(max(mylist, key=len))						 => Find lenght of longest string in the list
+max(mylist, key=len)							               => Find longest string in the list
+len(max(mylist, key=len))						             => Find lenght of longest string in the list
 sum(l)                                           => Sum of all elements in the list
-2xls_sum  = [sum(pair) for pair in zip(l1, l2)]  => Pair Sorting from 2 lists (1 with 1, 2 with 2, 3 mit 3, aso.) 
+[sum(pair) for pair in zip(l1, l2)]              => Pair Sorting from 2 lists (1 with 1, 2 with 2, 3 mit 3, aso.) 
 len(l)                                           => Count of elements in list
 l.count("a")									                   => Count of occurence of the element "a" in the list	
 l2 = l1											                     => No seperate copy of the list (updates in both lists)
@@ -563,16 +561,16 @@ for row in l:
 
 
 
-###### TUPEL
+###### TUPLE
 => ordered, immutable, allows duplicate elements
 => working can be more efficient than with lists - especially with big data - regarding space and runtime
 t = (4,5,6)										=> Create a tuple
-t = tuple([3,4,4]								=> Create a tuple from a list
-t[]												=> Selection / slicing of elements - same as with lists
+t = tuple([3,4,4])						=> Create a tuple from a list
+t[]												    => Selection / slicing of elements - same as with lists
 l = list(t)										=> Change tuple to list
 t = tuple(l)									=> Change list to tuples
-a,b,c = (0,1,2)									=> Assigning vars to tuple-elements (a=0, b=1, c=2)
-f,*m,l = (0,1,2,3,4)							=> Assigning to tuple-values (f=0, m=[1,2,3], l=4)
+a,b,c = (0,1,2)								=> Assigning vars to tuple-elements (a=0, b=1, c=2)
+f,*m,l = (0,1,2,3,4)					=> Assigning to tuple-values (f=0, m=[1,2,3], l=4)
 
 
 
@@ -914,9 +912,8 @@ with open(fnJSON, errors="ignore") as f:
 => read JSON from website
 => ignoring errors and handles multiple json-objects
 ""
-r = requests.get(tmpJSONWord)
-jsonStrList = r.text.split("\n")
-jsonList = [json.loads(j, errors="ignore") for j in jsonStrList if j != '']
+r = requests.get(url)
+jsonList = [json.loads(r.text, errors="ignore") for j in jsonStrList if j != '']
 ""
 
 => write JSON to txt-file
@@ -1833,7 +1830,7 @@ pip install pymysql                                        => necessary to insta
 engine = create_engine("mysql+pymysql: //user:pw@localhost/dbname?host=localhost?port=3306")                     => Define access to the MySQL-DB (username, pw, dbname)
 conn = engine.connect()                                    => Establish connection
 engine.table_names()                                       => Read all existing tables from the databasen - returns list
-conn.execute("SELECT * FROM actor").fetchall()             => Read data from db - returns list with tupels as rows
+conn.execute("SELECT * FROM actor").fetchall()             => Read data from db - returns list with tuples as rows
 conn.close()											   => Close connection at the end
 engine.dispose()										   => Close sql engine at the end
 
@@ -1950,7 +1947,7 @@ c.execute("INSERT INTO tbl VALUES (:attr1,:attr2,:attr3)",
 ""
 
 c.execute("SELECT * FROM adresses")		=> Select rows from database
-c.execute("DELETE from addresses WHERE oid = " + delete_box.get())			=> Delete row from database - get key from delete_box widget (eg. tkinter-module)		
+c.execute("DELETE from addresses WHERE oid = "idVal"			=> Delete row from database - get key from delete_box widget (eg. tkinter-module)		
 records = c.fetchall()							  => Fetch all rows
 c.fetchone()							            => Fetch only one row
 records = c.fetchmany(50)						  => Fetch the first 50 rows
@@ -2171,7 +2168,7 @@ for dirpath,dir,files in os.walk(os.getcwd())        => Outputs dirpath - all th
 os.environ.get("HOME")                               => Get home dir of the actual user
 os.path.basename("temp/file.txt")                    => Outputs only the filename => file.txt
 os.path.dirname("temp/file.txt")                     => Outputs only the dir => temp/  
-os.path.split("temp/file.txt")                       => Outputs filename and dir as a tupel => ("temp/","file.txt")
+os.path.split("temp/file.txt")                       => Outputs filename and dir as a tuple => ("temp/","file.txt")
 os.path.exists("temp/file.txt")                      => Checks if filename exists in the filesystem
 os.path.isdir("xyz")                                 => Checks if folder exists / element is a directory (in the actual dir)
 os.path.isfile("xyz")                                => Checks if files exists / element is a file (in the actual dir)
