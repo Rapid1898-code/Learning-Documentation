@@ -1,0 +1,1461 @@
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">GENERAL</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>link the html-file to the css-file</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code><link rel="stylesheet" href="css/style.css"></code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>comment in css</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>/* comment */</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>syntax of the css statement / rule</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>p {<br>    color: red;                                 /* (p => selector, color:red; => declaration) */<br>}                                               /* color => property, red => value) */</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>set rule with 2 declerations for p  red and bold</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>p {<br>    color: red;<br>    font_weight: bold;<br>}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Cascade Rules (but Specificity overrules - see below)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>p {                                             /* cascading rules (from top to bottom, step by step) */<br>    color: red;                                 /* output is blue+bold */<br>    font_weight: bold;<br>}<br>p {<br>    color: blue;<br>}</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">ATTRIBUTES</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define red color for element</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>color: red;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define color with hex code</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>color: #FF0000;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Defome color with rgb code (4th parameter is opaque - 0.5. means half transparent, 1 no transparent)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>color: rgba(255,0,0,1);</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>define color per hsla value</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>color: hsla(0, 100%, 50%,1);</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Font bold</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>font_weight: bold;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define when a font is downloaded from eg. google fonts</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>font_weight: 700;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define font size with 25 pixel</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>font-size: 25px;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Font italic / cursive</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>font-style: italic;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Defines line-height as 1.5 of the normal height</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>line-height: 1.5;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define text decoration a red underline</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>text-decoration: underline red;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define text with line-through</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>text-decoration: line-through;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Center text / or list-entries in ul</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>text-align: center;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Display text as blocktext (left and right in a line)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>text-align: justify;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Make text uppercased</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>text-transform: uppercase;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define background color</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>background-color: #e2b007;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define border of element (width, style, color) - "shorthand"-method</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>border: 3px solid #FFA500;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define border of element (width, style, color) - "shorthand"-method</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>border: thin solid red;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define only the bottom-border - "longhand"-method</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>border-bottom: 6px dashed #FFA500;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define only the bottom-border-width - "longhand"-method</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>border-bottom-width: 12px;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define a border radius with 5 pixel - "shorthand"-method</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>border-radius: 5px;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define the border radius for top right corner  - "longhand"-method</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>border-top-right-radius: 5px;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define border color with red</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>border-color: red;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define border width with 1px/2px (clockwise => up-rigth-down-left)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>border-width: 1px 2px 1px 2px;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define border style</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>border-style: solid;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Height of the box</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>height: 100px;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Margin of the box (outside the border, for all 4 sites) - "shorthand"-setting</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>margin: 20px;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Margin of the box (10 pixel for top/bottom and 20 pixel for left/right)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>margin: 10px 20px;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Margin of the box (clockwise from tom) => 10px top, 20px right, 0px bottom, 115px left</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>margin: 10px 20px 0 15px;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Margin of the box => will do this clockwise for top+right and bottom-left => 100px for top+bottom, 0 for right+left</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>margin: 100px 0;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Set the margin automatc - wg. when the width is set to a percentage</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>margin: auto;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Center the content horizontal</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>margin: 0 auto;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Setting the margin to 10 pixel - "longhand"-method</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>margin-top: 10px</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Padding on all sides</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>padding: 20px;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Padding only on the bottom side (values are going clockwise starting at the top)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>padding: 0 0 20px 0;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Padding on the left and right - no padding at top and bottom</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>padding: 0 10px;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Setting the padding to 6 pixel - "longhand"-method</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>padding-left: 6px</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define width in percent (relative to the width of the parent element)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>width: 50%;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define width (calculated on elements font size - when font-size=14px - the width would be 70px (5*14)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>width: 5em;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define width (and reserve additional 10px for eg. the margin of each element)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>width: calc(33.3% - 20px)</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define height of element</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>height: 200px;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Resize something eg. img</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>max-width:20%;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Prevents the eg. image from getting bigger than its original size</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>max-width:100%;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Resize something eg. img</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>max-height:20%;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>no bullets in unordered list (using at ul-element)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>list-style-type: none;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>disc (for Bullet), circle, square, decimal, lower-alpha,</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>list-style-type: xyz</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>hide element</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>disply: none;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>show element in line - eg. horizontal li-elements - or wrap border only around a paragraph p (and not the whole block)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>display: inline;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>show element as a block (max width of the window) - eg. wrap border around a span element over the whole window (and not only the span)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>display: block;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>show elements in the block in a line - eg. all p-elements in a div-element</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>display: inline-block;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>show elements in the block in the flex system</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>display: flex;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define floating for an image (text will float her on the right side of the image)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>float: left;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Clear floating (for left and right)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>clear: both;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Change the background fading in for 5 seconds	(eg. going from white to dark blue)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>transistion: background 5s;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Static element - is not positioned in any way (position tags top-bottom-left-rigth will have no effect)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>position: static;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>With the position tags (top, botom, left, right) the element is shifted away from its normal position</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>position: relative;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Element stays according the position tags - but will not change the place even if the windows is scrolled</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>position: fixed;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Default-value - we can see the content when it overflows</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>overflow: visible;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Hides the overflow (can not see the text which is outside the box)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>overflow: hidden;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Shows a scrollbar when the content is overflowing</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>overflow: auto;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Can overlap other elements - element with the highest z-index in front</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>z-index: 2;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Make a picture darker</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>filter: brightness(40%);</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Make cursor a pointer when going over the element</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>cursor: pointer;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Disable highlighting of text selection</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>user-select: none;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Make copyright-sign</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>&copy</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">FORMATING SNIPPETS</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>center an unordered list</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>ul {<br>   text-align: center;					# center the whole ul in the block<br>}<br>ul li {<br>   display: inline-block;				# arrange list elements vertically<br>   list-style-type: none;			   	# not dots for the list elements<br>}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>show sepeartor between unordered list</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>li + li:before{<br>    content: " | ";<br>    padding: 0 3px;<br>}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>resize a block element and center it</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>(if using only "width" => when the window is to small - the browser resolves this with a horizontal scrollbar)<br>(so its better to use "max-width" => this reduces the width when the windows is / becomes to small)<br>    max-width: 600px;<br>    margin: 0 auto;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>let a image float right - and let the text float around it in the left and bottom area around the picture</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>img {<br>  float: right;<br>  margin: 0 0 1em 1em;<br>}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>when floating and the image is bigger then the element use this so the element is adjusted to the image heigth</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>.clearfix {<br>  overflow: auto;<br>}<br></code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>nav menue on the left side - with several section beside the nav in the right area</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>(with a percentage parameter - better then fixed px-amounts especially when using smaller windows)<br>nav {<br>  float: left;<br>  width: 25%;}<br>section {<br>  margin-left: 25%;<br>}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>show all elements in a div-block flexible as inline</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>div {<br>    display: inline-block;<br>    width: 300px;<br>    height: 100px;<br>    margin: 1em;<br>}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>size div automatically according to the content</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>height: fit-content</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>styling link based on state</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>a:link {...}		=> format link when not allready clicked<br>a:visited {...}		=> format link when allready clicked<br>a:hover {...}		=> format link when hovered over with the mouse</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>center the whole site in the middle</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>body {<br>	width: 75%;						# space which can be taken by the body<br>	margin: 0 auto;}				# rest of the space (=25%) will be splitted left and right</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>make media scalable</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>img, video, canvas {<br>	max-width: 100%;}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>show different images depending on browser width</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code><picture><br>  <source srcset="img_smallflower.jpg" media="(max-width: 600px)"><br>  <source srcset="img_flowers.jpg" media="(max-width: 1500px)"><br>  <source srcset="flowers.jpg"><br>  <img src="img_flowers.jpg" alt="Flowers" style="width:auto;"><br></picture></code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>define variable at the very beginning:</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>:root {<br>  --primary-color: #047aed<br>}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>use the variable somewhere in the css:</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>background-color: var(--primary-color);</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>no border when entering an input field</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>input:focus {<br>  outline: none;<br>}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>button attention (makes button during hovering a little bit smaller)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>transform: scale(0.98);</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>button / picture attention (shift button / pic up for 15px when hoovered)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>transform: translateY(-15px);}				# shift up element for 15px when hoovered<br>transition: 1.5s ease;						# make smooth transisition (with ease => slow - than fast - than slow again)</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>make a obliquely line</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>.element::before					# define area before the element<br>.element::after						# define area after the element<br>	height: 100px;					# define heigth for the element<br>	transform (skeyY(-3deg);		# make it oblique before / after the element</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">FONT DEFINITION</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>taken from google fonts for example (take fonts and then create link in upper right corner for the link</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code><head>                     # define in html in the header<br>    <link href="https://fonts.googleapis.com/css2?familiy=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylessheet"><br></head></code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Helvetica and sans-serif are the fallback fonts when Source Sans Pro is not loading</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>p {<br>    font-family: "Source Sans Pro", "Helvetica", sans-serif;<br>	font-weight: 700;				# how thick / bold the font is<br>}</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">ICON USE</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Using icons directly from https://fontawesome.com/</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code><head>      # Definition in the head<br>	<script src="https://kit.fontawesome.com/bf5e040b82.js"<br>        crossorigin="anonymous"></script><br></head><br><i class="fas fa-search">		# use icon in css (change size, color)</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Using svg-files</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>put full svg-code (source) of the svg in a svg-tag<br>		like: <svg enable-background="new 0 0 515.91 728.5"<br>            height="512" id="Layer_1" version="1.1"<br>            xmlns="http://www.w3.org/2000/svg"...</svg><br>		change all fill="#123456" entries to fill=currentColor<br>put a div-wrapper around the svg-element (and probably a a-tag for a link around the wrapper too)<br>		like: <div class="wrapperSVG"> ... </div><br>format the svg:						# for sizing the svg-icon with width and height<br>	svg {<br>		width: 1.4%;<br>		height: 1%;}<br>format the div-wrapper:				# for coloring and positioning the svg-icon (in the wrapper)<br>	div.wrapperSVG {<br>		color: var(--darkest);<br>		display: inline;<br>		position: relative;<br>		top: 3px;<br>	}</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">PARENT CHILD RELATIONSHIP</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>direct parent/child relationship</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code><section><br>    <p>hello, twitch!</p><br></section>                 # direct parent relationsship > child connection with ">"<br>section > p {              # direct child connection (only the p which are direct unter section<br>    color:red;             # p is the direct child of section<br>}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>normal parent/child realtionship</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code><section><br>    <article><br>        <p>hello, twitch!</p><br>    </article><br></section>                 # normal parent child connection (ignores deepeness)<br>section p {                # all connections above (when there is a p - somewhere on a level - in the section)<br>    color:red;             # p is the grandchild of section / somewhere a child of section<br>}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Sibling Relationship</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code><section><br>    <p>Hello, Twitch!</p><br>	<p>Hello, YouTube!</p><br></section>				   # previous sibling + next sibling<br>p + p {					   # format is used when two <p>s are after each other<br>	color: red;			   # only the second p will get red<br>}</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">SELECTORS AND COMBINATIONS</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Type Selector - Select one specific type</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>h1 {...}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Universal Selector - Select everything</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>* {...}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Class Selector - Select specific class</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>.box {...}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>ID Selectors - Select specific ID</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>#unique {...}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Attribute Selectors - Select elements which have the attribute "title"</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>Attribute selector	a[title] {...}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Pseudo Class Selector - Select elements with special state (eg. first-child, hover, focus, clicked,...)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>p:first-child {...}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Pseudo Elements Selector - Style a specific part of the selected element (eg. first-letter, first-line,...)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>p::first-line {...}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Descendant combinator - all connections above (when there is a p - somewhere on a level - in the article)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>article p</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Child Combinator - direct child connection (only the p which are direct unter article)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>article > p</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Adjacent Sibling - format is used when a p-element is following directly after a h1-element</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>h1 + p</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>General Sibling - selects any p-element which is following somewhere after a h1-element</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>h1 ~ p</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>selects any span-element that is inside a p-element, which is inside an article-element</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>article p span {...}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>selects any p-element that comes directly after a ul-element, which comes directly after an h1-element</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>h1 + ul + p {...}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>select elements with class "special" which are somwhere after p which is directly after h1 which is somewhere in the body</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>body h1 + p .special {...}</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">CLASSES</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>class is used for formating many different elements</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code><section><br>	<p class="robot">Hello, Twitch!</p><br>	<p id="zebra" class="bob">Hello, YouTube!</p><br>	<p class="bob">Goodbye!</p><br></section><br>.bob {<br>	color: red;<br>}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>both classes have to be in the SAME element</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>.class1.class2 {...}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>both classes have to be in the SAME element - only for p-elements</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>p.class1.class2 {...}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>the parent-element has to be class1 and the child-element class2</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>.class1 .class2 {...}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>the parent-element section has to be class1 and the child-element h2 class2</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>section.class1 h2.class2 {...}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>one of the classes have to be in the element</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>.class1,.class2 {...}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>rule is for p with class1+class2 or a with class2</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>p.class1.class2, a.class2 {...}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>h2, which have class2+classe3 in h2, their parent has class1, and the parent is in body</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>body article.class1 h2.class2.class3 {...}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>rule for h3 which have a parent-element aside with class aExtra</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>aside.aExtra h3</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">ID</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>id is used for formating unique elements</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code><section><br>	<p>Hello, Twitch!</p><br>	<p id="zebra">Hello, YouTube!</p><br></section></code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>can used only ONE time - only one id per element - nothing else can have this id</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>#zebra {color: red;}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>one of the ids have to be in the element</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>#class1,#class2 {...}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>h2, which has id=rhino, the parent has class=top and the parent is in body</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>body section.top h2#rhino {...}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>rule for h2 which have a parent-element section with id aMilk</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>section#aMilk h2</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">INLINE STYLE</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>!important</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>.bob {<br>	color: red !important;						# with !important this style get the maximum priority / overwrites everything<br>}												# not often used - eg. in cases of immediate urgency to show something - when a error is not found cxurrently</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">SPECIFICITY</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>defines the priority which styles can overwrite which style</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>priority has the style which came later - but only when the specificity is equal or higher!<br>1 point for tags<br>10 points for classes<br>100 points for ids<br>1000 points for Inline Style</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>1 point (1 tag)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>p{}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>100 points (1 id)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>#zebra{}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>11 points (1 tag + 1 class)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>section .bob { }</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>1010 points (1 class + 1 other)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>.bob{ !important }</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>11 points (1 tag + 1 class) for section1 and for section2</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>section1,section2 .bob { }</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">PSEUDO CLASSES</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>special classes which are dinamically populated as a result of user actions of document structure</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>a:link{...}								=> format link when not clicked<br>a:visited{...}							=> format link when allready clicked<br>a:hover{...}							=> format link when hoovered over it<br>li:first-child							=> Selects an element that is the first within a parent<br>li:last-child							=> Selects an element that is the last within a parent<br>p:first-of-type							=> Selects an element that is the first of its type within a parent<br>p:last-of-type							=> Selects an element that is the last of its type within a parent<br>div p:nth-child(2)						=> Select the second p-child in the div-element</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">BOX MODEL</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>eg. h1, p - break to new line, fill the maximum available space, width and heigth will be respected</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>block boxes</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>eg. a, span, em, strong - will not break to new line, use only the minium space, width/heigth will not apply</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>inline boxes</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>With this statement every sizing is included with the border</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>*{box-sizing: border-box}</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">LAYOUTS, FLOATING</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>every element is a box - box in the middle<br>box has a heigth and width - eg. 100px*100px<br>padding outside the box - between box and border (top,right,bottom,left)<br>border (outside padding) (top,right,bottom,left)<br>margin (outside border) (top,right,bottom,left)<br>element tries to got as much up to the top - and as much left (or right according if floated left or right)<br>normaly everything will float to the left<br>example1 - without cass all the elements will be positoned from top to bottom</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>Positioning Content<br><header>...</header><br><section>...</section><br><aside>...</aside><br><footer>...</footer><br><br>section {									# with that css-command section and aside will be on the same level<br>	float:left;								# section on the left side and aside on the right side<br>}<br>aside {<br>	float:right;<br>}<br><br>section {									# with that css-command section and aside will be on the same level<br>	float:left;								# section on the left side with 63% of the space and aside with 30% of the space<br>	margin 0 1.5%;							# both have a margin outside the element<br>	width: 63%<br>}<br>aside {<br>	float:right;<br>	margin 0 1.5%;<br>	width: 30%<br>}<br>footer {<br>	clear: both;							# after the float - the floats have to be cleared to get the old normal vertically float<br>}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>example2 - without cass all the elements will be positoned from top to bottom</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code><header>...</header><br><section>...</section><br><section>...</section><br><section>...</section><br><footer>...</footer><br><br>section {									# with that all 3 section elements will float left<br>	float: left								# so they are horizontal alligned side by side<br>	margin 0 1.5%;							# width has to be adjusted accordingly<br>	width: 30%<br>}<br>footer {<br>	clear: both;							# after the float - the floats have to be cleared to get the old normal vertically float<br>}</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">LAYOUT FLEXBOX</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Initialize flexcontainer (parent element as a block)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>display: flex;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Initialize flexcontainer (as inline-element - not as block)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>display: inline-flex;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Items are placed horizontal from left to right (DEFAULT)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>flex-direction: row;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Items are placed horizontal from rigth to left (main axis is horizontal and cross axis is vertical)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>flex-direction: row-reverse;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Items are placed vertical top to bottom</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>flex-direction: column;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Items are placed vertical top to bottom (main axis is vertical and cross axis is horizontal)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>flex-direction: column-reverse;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>No wrapping - shows all items in one line (overwrites element width) (DEFAULT)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>flex-wrap: nowrap;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Wrap elements to next line in the flexcontainer section (according to the width)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>flex-wrap: wrap;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Wrap elements but start at the bottom left corner(and going from left to right)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>flex-wrap: wrap-reverse;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Combination from direction + row (same as flex-direction:	row and flex-wrap: wrap)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>flex-flow: row wrap;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Give every element equal space / proportion</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>flex: 1;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>One element or all elements should have 2 proportions - eg. more space for a specific item</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>flex: 2;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Defines the order of the specific element (if > 0 then put it at the end - when < 0 put it at the very beginning)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>order: 1;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Show every item in a single line in the flexcontainer section</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>flex-wrap: nowrap;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Wrap elements to next line in the flexcontainer section</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>flex-wrap: wrap;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Combination from direction + row (same as flex-direction:	row and flex-wrap: wrap)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>flex-flow: row wrap;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Put elements to the max left/top (for the main axis) (DEFAULT)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>justify-content: flex-start;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Put elements to the max right/bottom (for the main axis=</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>justify-ccontent: flex-end;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Center the elements (for the main axis)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>justify-content: center;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Place elements with equal space around the elements (for the main axis)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>justify-content: space-around;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Place elements with equal space between the elements (for the main axis)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>justify-content: space-between;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Stretches the elements on the cross axis (DEFAULT)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>align-items: stretch;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Align elements from the top or left (for the cross axis)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>align-items: flex-start;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Align elements from the bottom or right (for the cross axis)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>align-items: flex-end;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Center the elements (for the cross axis)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>align-items: center;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Align elements on the baseline of the elements (for the cross axis) - eg. when there are different font-sizes in the flex-items</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>align-items: baseline;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Align individual element at the bottom or right (for the cross axis) - overwrittes the align-items-setting for the single item</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>align-self: flex-end;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Gives the flex-item 1 proportion value (when there are 3 items - every item gets the same space)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>flex: 1 200px;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Give the element 5times the overall room - eg. 3 items get 1 spaces and 1 item get 5 spaces (8 spaces overall)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>flex: 5;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Gives the 3rd item 2 proportion (item 1+2 get 1/4 of the space - item 3 gets 1/2 of the space)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>article:nth-of-type(3) { flex: 2 200px; }</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Overwrites the vertical position of the item in the flexcontainer</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>button:first-child { align-self: flex-end; }</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Change the order of the first item (everything has order 0 - with 1 it goes to the very right position)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>button:first-child { order: 1; }</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Change the order of the last item (everything has order 0 - with -1 it goes to the very first position)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>button:last-child { order: -1; }</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>css-tricks.com: Complete Guide To Flexbox<br>flex-basis, flex-grow, flex-shrink (longhanded values for flex)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>flex: 10 5 400px								# means 10 for flex-grow, 5 for flex-shrink, 400px for flex-basis<br>	=> flex-basis: set the basis width of the flex-element<br>	=> flex-grow: how to deal with the extra-space (in the main axis)<br>	=> flex-grow: when there is extra space would should be done with them - DEFAULT is 0 => do nothing<br>	=> flex-grow: when set to 1 for one element the whole extra-space will be taken for this element<br>	=> flex-shrink: what to do when there is not enough space when the window gets shrinked<br>	=> flex-shrink: DEFAULT is 0 - when there is not enough space the elments get shrinked equally</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">LAYOUT GRID</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define grid for the layouting as block)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>display: grid;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define grid as inline-block</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>display: inline-grid;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define 3 fixed columns with 200px each</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>grid-template-columns: 200px 200px 200px;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define 3 flexible columns with fr-units (define 3 columns with max possible place)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>grid-template-columns: 1fr 1fr 1fr;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>2nd way: Define 3 flexible columns with fr-units (define 3 columns with max possible place)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>grid-template-columns: repeat(3, 1fr);</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>3rd way: Define 3 flexible columns with auto</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>grid-template-columns: auto auto auto;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define 3 flexible columns with fr-units (4 spaces - 1st column takes 2; 2nd+3rd colujmn take 1)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>grid-template-columns: 2fr 1fr 1fr;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Create as many columns as will fit into the container</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define gap between the elements (20 px for rows and columns)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>grid-gap: 20px;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define gap between the elements (10px for the row-gap and 50px for the column-gap)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>grid-gap: 10px 50px;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define the gap only for the rows</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>grid-row-gap: 30px;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define the gap only for the columns</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>grid-column-gap: 20px;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define heigth of the row</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>grid-auto-rows: 100px;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define heigth of the row (100px is minimum, auto expand to fit the content)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>grid-auto-rows: minmax(100px, auto);</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Use for element grid-columns 1 - 3</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>grid-column 1 / 3;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Use for element gird columns 1 and 2</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>grid-column 1 / span 2;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Use for element grid-row 1</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>grid-row: 1;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Use for element area => grid-row-start / grid-column-start / grid-row-end / grid-column-end</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>grid-area: 1 / 2 / 5 / 6;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Arrange grid elements (horizontally) with equal space around every element</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>justify-content: space-evenly;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Same space around every grid</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>justify-content: space-around;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Same space between the elements</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>justify-content: space-between;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Center the elements</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>justify-content: center;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Arrange the elements on the starting left side</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>justify-content: start;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Arrange the elements on the ending right side</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>justify-content: end;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Arrange grid elements (vertically) - center the elements</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>align-content: center;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Same options as horizontaly with justify-content</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>align-content: start, space-around,...</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Element spans from 1st column to thue 3rd column</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>grid-column-start: 1<br>grid-column-end: 4</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Element spans from the 1st row to the 2nd row in the 3rd column</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>grid-column: 3;<br>grid-row-start: 1;<br>grid-row-end: 3;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Name all items</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>.item1 { grid-area: header; }					# Name the different areas<br>.item2 { grid-area: menu; }<br>.item3 { grid-area: main; }<br>.item4 { grid-area: right; }<br>.item5 { grid-area: footer; }<br>.gid-container {<br>  grid-template-areas:<br>    'header header header header header header' # Define where the areas should be displayed in the grid<br>    'menu main main main right right'<br>    'menu footer footer footer footer footer';<br>}</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">RESPONSIVE DESIGN</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Running the page on different / smaller devices</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>- Fluid - everything sized with percentage (no fixed measures)<br>	=> looks more or less good on every windows-size<br>- Elastic - using em and rem (em looks at the parents fontsize and use this as a base / rem looks at the html-element)<br>	(set a standard font-size as a base for the whole document)<br>	=> em: the change has only to be done at the one font-size decleration<br>	=> rem: the change has only to be done at the font-size from the html<br>	=> font-size: 62.5%; /* font-size 1em = 10px bei normaler Browser-Einstellung */<br>	(so everything would response to the default font size from the actual user)<br>	(only changing the font-size central when changes)<br>- Content Decision - Mobile First or Desktop to Mobile<br>	=> first think about the design on mobile (and then bigger and bigger from Tablet to fully desktop)<br>	=> or make it the other way (desktop design first and then shrinking to mobile version)<br>	=> decide what should be shown on mobile devices and what not<br>	=> using media queries</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Make YouTube-Video responsive</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>.financeToolsDetail .videoContainer {<br>    position: relative;<br>    padding-bottom: 56.25%;<br>    padding-top: 30px; height: 0; overflow: hidden;<br>}<br>.financeToolsDetail .videoContainer iframe {<br>    position: absolute;<br>    top: 0;<br>    left: 15%;											# Position the video in the middle of the div-box<br>    width: 60%;											# Defines how big the video should be displayed (width)<br>    height: 55%;										# Defines how big the video should be displayed (height)<br>}</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">MEDIA QUERIES</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>smartphones: this rule get only be used when the device width is between 0 and 600 pixel</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>@media screen and (max-width: 600px) {<br>	h1 { color: blue; }              }</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>tablets: this rule is used when the width is greater 600px</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>@media screen and (min-width: 600px) {<br>    .middle{color: yellow; }         }</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>desktop: this rule is used when the width is greater 900px</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>@media screen and (min-width: 900px) {<br>    .middle{color: yellow; }         }</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>this rule is used when the width is between 600px and 900px</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>@media screen and (min-width: 600px) and (max-width: 900px){<br>	img {border: 2px solid red;}     }</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>use the full length of the width</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>section {<br>	height: 200px;<br>	border 1px solid black;<br>	flex: 1;<br>}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>arranges elements in main and class bottom with flex-system</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>main,.bottom {<br>	display: flex;<br>}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Important addition to the template-columns:</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code><meta name="viewport" content="width=device-width, initial-scale=1"><br>	=> enables the windows to be zoomed<br>	(never set initial-scale to none - zooming would be not possible)</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">ANIMATING, TRANSFORM</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>combines the follwing 6 rules</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>transform: matrix(1,2,3,4,5,6);</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>move left/right, up/down4kode</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>transform: translate (120px, 50%);</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>change the scale of the object</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>transform: scale (2, 0.5);</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>rotate object (possible for any axes (rotateX, rotateY, rotateZ)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>transform: rotate (0.5turn);</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>skew object</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>transform: skew(30deg, 20deg);</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>combine some transformations</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>transform: scale(0.5) translate(-100%,-100%)</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>responsible for the animation - is corresponding to a class definition (see below)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>@keyframes xyzAction{<br>	0% {transform: rotateZ(0deg)};				# at 0% of the animation nothing should change on the z-axe<br>	50% {transform: rotateZ(180deg)};			# at 50% of the antimaton the z-axe should rotate 180deg<br>	100% {transform: rotateZ(360deg)};			# at 100% of the antimaton the z-axe should rotate 360deg<br>}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>define the class for the @keyframe above</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>.letRip{}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Name of the keyframe (puts together the setup to the keyframe)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>animation-name: xyzAction;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>How many times the animation runs (infinite or eg. 5 for 5 times)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>animation-iteration-count: infinite;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Lenght of one duration of the animation eg. 500ms or 0.5sec</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>animation-duration: 500ms;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Animation is progressing linear</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>animation-function: linear;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Animation is progressing faster to the end</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>animation-function: easy-in-out;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Animation is progressing in steps (not smooth)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>animation-function: step(5,end);</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Possible values are runnning or pause (can be used with javacript to start/stop)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>animation-play-state: running;</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>How long the start of the animation delays</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>animation-delay</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Control of the progression - forward, backward, alternate</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>animation-direction:</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Animation fill mode</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>animation-fill-mode</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">VARIABLES</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Define variables in css</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>:root {											# Highest possible level of setting a variable<br>	--var1: 10px;								# Define variable and initialize with 10px<br>	--var2: #ffd166;							# Define variable and initialize with color hex code<br>	--var3: 20%;								# Define variable and initialize with percentage value<br>}</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Use variables in in css</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>img {											# Eg. using for image-rule<br>	padding: var(--var1)						# Using Variable<br>	background: var(--var2)<br>	max-width: var(--var3)<br>}<br>(Changing variable in JS have a look at JS Learning Path / Cheatsheet)</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">TEMPLATE</h2>
+<!-- /wp:heading -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">PERFORMANCE ORGANIZATION</h2>
+<!-- /wp:heading -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">CHROME HACKS</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>live the selected element in the browser</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select the width or heigth - press rigth strg - up/down</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">PREPROCESSORS</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Installation of haml</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>gem install haml</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Compile the .haml-file to html</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>haml index.haml index.html</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">SASS</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Installation of Sass</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>gem install sass</code></pre>
+<!-- /wp:code -->

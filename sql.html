@@ -1,0 +1,474 @@
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">Installation MYSQL</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Installation</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>https://www.youtube.com/watch?v=GIRcpjg-3Eg</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">SELECT, FROM</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs all columns from the table customer (automatically sorted by id)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select * from customer</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs only the column firstname (no sorting)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select firstname from customer</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs 2 columns firstname and lastname</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select firstname, lastname from customer</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">DISTINCT, WHERE, BETWEEN, IN</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>With distinct the output occurs only one time if the firstname is the same</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select distinct firstname from customer</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Everything will be outputed cause the id is unique</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select distinct id,firstname from customer</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Only when firstname and lastname are equal there will be no outputs</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select distinct firstname,lastname</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs the row with the id = 0</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select * from customer<br>    where id = 0</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs all rows where the firstname is Janet</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select * from customer<br>    where firstname = 'Janet'</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs all streets which are in the city of Oslo</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select street from customer<br>    where city = 'Oslo'</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>all IDs >= 40</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>...where id >= 40</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>all IDs except 40 (in some DBs you have to use instead !=)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>...where id <> 40</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>everything between 40 and 50</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>...where id between 40 and 50</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>some values are checked for id</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>...where id in (43,44,45)</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">AND, OR, ORDER BY, ASC, DESC</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs all rows where id >= 40 and firstname is Robert</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select * from customer<br>where id >= 40<br>and firstname = "Robert"</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>One of the both conditions have to be fullfilled</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>...where id >= 40 or firstname = "Robert"</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>combinaton of logical or and and (better to use parantheses)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>...where id >= 40 or firstname = "Robert" and lastname = "Fuller"</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs rows >=40 sorted ascending for firstname and lastname</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select * from customer<br>where id >= 40<br>order by firstname, lastname asc</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Output in descending order</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>...order by firstname, lastname desc</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">INSERT, INTO, VALUES, UPDATE, SET, DELETE</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Inserts row in the table with specific values for the columns</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>insert into customer<br>values (50, 'James', 'Karsen', '107 Upland Pl.', 'Dallas')</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Inserts row  with streetname = NULL (this is not working for key-columns like id)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>insert into customer (id, firstname, lastname, city)<br>values (51, 'James', 'Karsen', 'Dallas')</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Update the row with the id = 51 regarding street</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>update customer<br>set street = '547 Seventh Av.'<br>where id = 51</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Update the strett where firstname James and lastname Karsen</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>...where firstname = 'James' and lastname = 'Karsen'</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Delete row with the id = 51</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>delete from customer<br>where id = 51</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">NULL, LIKE, TOP, LIMIT, ROWNUM, PERCENT</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs the first 5 results (depending on the sorting)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select top 5 * from customer</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>in some DBs also in the following form - oututs the first 10 results</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select * from customer<br>limit 10</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>and also in this form in some DBs</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select * from customer<br>where rownum <= 10</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs 10 top percent of the results</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select top 10 percent * from customer</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>"_" will be replaced with one char - so the output will be done for eg. Oslo or Oxlo</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select * from computer<br>where city like 'O_lo'</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs all entries which end with "lo" for the column city</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>... where city like '%lo'</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs all entries which start with 2 chars and then the char "l"</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>... where city like '__l%'</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>When there sould be a serach for the percent sign "%" - this has to be masked with \%</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>... where city like '__l\%'</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs all rows where lastname is NULL</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select * from computer<br>where lastname is NULL</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs all rows where there is some entry in the column lastname</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>where lastname is NOT NULL</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">IN</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>IDs will be selected from the rechnungen-table and will be used for the aboth where-clausel for select *</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select * from customer<br>where id IN<br>        (select id from rechnungen<br>        where date <=3)</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">Tables and Data-Types</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>CREATE, TABLE, INT, VARCHAR, BINARY, BOOLEAN, VARBINARY, SMALLINT, BIGINT, DECIMAL, NUMERIC, DATE, TIME<br>Create a new table with name Rechnung</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>create table Rechnung<br>    (<br>    RechnungsID int,<br>    CustomerID, int,<br>    Betrag int<br>    )</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Insert a row in the new table Rechnung with specific values</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>insert into Rechnung values (1,0,50)</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Integer</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>value INT</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>variable Character</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>name VARCHAR(255)</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Bits</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>bin BINARY (255)</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Bool (TRUE / FALSE)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>bool BOOLEAN</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>variable Bits</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>VARBINARY(255)</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>SmallInt</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>SMALLINT</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>BigInt</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>BIGINT</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Decimal Number (total,decimal places) - 3 beforce decimal places, 2 decimal places</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>DECIMAL (5,2)</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Numeric Number</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>NUMERIC (5,2)</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Floating Number</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>FLOAT (10)</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Double Precision</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>DOUBLE PRECISION</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Date value</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>DATE</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Time value</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>TIME</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Timestamp value</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>TIMESTAMP</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">Primary und Foreign Keys, not null</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Drop whole table</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>drop table Rechnung IF EXISTS</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>DROP, UNIQUE, NOT NULL, PRIMARY KEY, FOREIGN KEY, REFERENCES<br>RechnungID is a mandatory field - must be allways available and not empty with NULL - with UNIQUE the ID has to be unique<br>Define the Primary Key with PRIMARY KEY<br>Define the Foreign Key with FOREIN KEY (Primary Key in anderer Tabelle) - is referencing to the id in the customer table</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>create table Rechnung<br>    (<br>    RechnungsID int NOT NULL UNIQUE<br>    CustomerID int NOT NULL<br>    Betrag int NOT NULL<br>    PRIMARY KEY(RechnungsID)<br>    FOREIGN KEY(CustomerID) REFERENCES Customer(ID)<br>    )</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">Change Tables, Autoincrement</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>AUTO_INCREMENT, DEFAULT, IDENTITY, ALTER TABLE, ADD, DROP COLUMN, ALTER COLUMN<br>With AUTO_INCREMENT the id will be given automatically - starts with 1 and then ascending (e.g. MYSQL)<br>In some DBs with: RechnungsID int IDENTITY(0,1) (e.g. MSSQL)<br>In some DBs with: RechnungsID int IDENTITY (e.g. HSQL)<br>Using DEFAULT - when something is inserted without specific value - 50 will be used as default value</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>create table Rechnung<br>    (<br>    RechnungsID int NOT NULL AUTO_INCREMENT<br>    CustomerID int NOT NULL,<br>    Betrag int DEFAULT 50,<br>    PRIMARY KEY(RechnungsID),<br>    FOREIGN KEY(CustomerID) REFERENCES Customer(ID)<br>    )</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>change table Rechnung</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>alter table Rechnung</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>add datum-column with datatype date</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>add Datum Date</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>drop column betrag from the table</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>drop column betrag</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>change column to VARCHAR(255)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>alter column VARCHAR(255)</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">Joins</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>INNER JOIN, ON, LEFT JOIN, RIGTH JOIN, FULL JOIN<br>Outputs firstname + lastname from all customers which exists in the rechnung table</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select firstname, lastname from customer<br>where id in (select customerID from rechnung)</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs all attributes from the customers, which have a rechnung (same as aboth - but for all attributes)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select *<br>from customer<br>inner join Rechnung<br>on customer.ID = rechnung.customerID</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs all elements from the left table (customer) - where in the table Rechnung something is inside it will be outputed</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>...left join Rechnung</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs alle elements from the right table (Rechnung) - with informations from both tables</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>...right join Rechnung</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs everything from both sides</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>...full join Rechnung</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">SQL Built In Funktionen</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs the average</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select avg(betrag) from rechnung</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Returns the count of the rows</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select count(rechnungID) from rechnung</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>AVG, COUNT, TOP,  FIRST, LIMIT, LAST, UCASE, UPPER, LCASE, LOWER<br>Outputs the count of the rechnungIDs where the betrag is >= the average in the rechnungs table</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select count(rechnungID) from rechnung<br>where betrag >= (select AVB(betrag) from rechnung)</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs maximum betrag from the table</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select max(betrag) from rechnung</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs the minimum betrag from the table</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select min(betrag) from rechnung</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs the sum betrag from the table</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select sum(betrag) from rechnung</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs the firstname as uppercase - sometimes also upper(firstname)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select ucase(firstname) from customer</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs the firstname as lowercase - sometimes also lower(firstname)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select lcase(firstname) from customer</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs the length of the string</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select len(firstname) from customer</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Outputs the actual date + time</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select now() from  customer</code></pre>
+<!-- /wp:code -->

@@ -1,0 +1,288 @@
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">BASICS, GITHUB</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Installation (linux)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>sudo apt-get install git</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Config name for the repository (onetime setting)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git config --global user.name "Rapid1898"</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Config mail for the repository (onetime setting - use the mail using for github.com)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git config --global user.email "x@gmx.com"</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Create repository in the actual directory</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git init</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Add file to the repository / staging area (prepared for later commit)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git add file.xyz</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Add all html-files to the repo / staging area</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git add *.html</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Add everything to the repository / staging area from the directory</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git add .</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>2nd way to add everything to the repository / staging area from the directory</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git add *</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Add readme-file</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git add README.md</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>remove specific file from the repository / staging area (before commiting!)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git rm --cached index.html</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Actual status in the git-directoy (eg. added files, changed files, not added,...)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git status</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Commit files which are added / changed in the repo (with comment) - taking a "snapshot"</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git commit -m "comment"</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Show overview about the last activities</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git log</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Clone a repository in the actual path</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git clone github-link</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Link the acutal folder/repo to the github-repo</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git remote add origin https://github.com/link/Test.git</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Push with upstream definition (shorthand - to the master)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git push -u origin master</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Push with upstream definition (longhand - to the branch "answer")</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git push --set -upstream origin answer</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>undo add command before (all files get set back to the initial state)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git reset</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>undo the last commit</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git reset HEAD~</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>ignore changes eg. for xlsx on the local machine</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git stash</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Pull (update) files from GitHub<br></p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git pull -u origin master</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Enable pushing with ssh-key in Idea and VSCode</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>Enable open ssh agent: https://dev.to/aka_anoop/how-to-enable-openssh-agent-to-access-your-github-repositories-on-windows-powershell-1ab8<br>Run commands: https://stackoverflow.com/questions/56490194/vs-code-bitbucket-ssh-permission-denied-publickey</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">GITIGNORE</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>all files in this folder will be ignored</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>add folder: /prg/dist/*</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>this specific file will be ignored</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>add file: /prg.xlsx</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">BRANCHES</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Create a new branch with the name "newFeature"</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git branch newFeature</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Change to branch "newFeature" (from the master-branch)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git checkout newFeature</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Return to the master-branch</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git checkout master</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Delete branch</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git branch -d newFeature</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Change name of the branch - eg. for renaming branch "master" to "main"</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git branch -m main</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Create a new branch named "new"</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git checkout -b new</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Show the difference in the files</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git diff head</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Show only the differences for the files which are not commited yet</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git diff --staged</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>Merge the branch with the master</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git merge newFeature</code></pre>
+<!-- /wp:code -->
+<!-- wp:heading {"canvasClassName":"cnvs-block-core-heading-1686125278519"} -->
+<h2 class="wp-block-heading">WORKFLOW EXAMPLE</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>fork the initial repository on github (select personal account as target)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>click fork-button in github</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>get the forked repository clone</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>click code-button to grab link</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>clone the repository to the local folder</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git clone github-link</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>create branch "answer"</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git branch answer</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>set current branch to "answer"</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git checkout answer</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>see which branch is curently active (eg. main or answer)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git status</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>add all files to the stage (all in the current folder)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git add .</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>when something wrong were added (undo the whole add command)</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>(git reset)</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>shows the actual files on the stage</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git status</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>commit files from stage ("take snapshot")</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git commit -m "Completed"</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>push with upstream definition (to the branch "answer")</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>git push --set-upstream origin answer</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>change from main to the branch "answer"</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>select branch on git hub with button</code></pre>
+<!-- /wp:code -->
+<!-- wp:paragraph {"canvasClassName":"cnvs-block-core-paragraph-1686132588595"} -->
+<p>make an pull request to the original repository</p>
+<!-- /wp:paragraph -->
+<!-- wp:code {"canvasClassName":"cnvs-block-core-code-1686132588597"} -->
+<pre class="wp-block-code"><code>click pull request button</code></pre>
+<!-- /wp:code -->

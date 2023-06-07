@@ -80,12 +80,13 @@ if __name__ == '__main__':       =>  Program execution starts from here
 python --version				 =>  Check which python version is installed
 
 => Use modules / functions from other folder
-(not working with eg. yahoocrawler.py and rapidtechtools.py - all modules, wether they are needed or not have to
-imported in the program...)
+=> (not working with eg. yahoocrawler.py and rapidtechtools.py - all modules, wether they are needed or not have to imported in the program...)
 ""
 import sys, os
-sys.path.append(os.path.join('C:/', 'Users\path_to_module'))	# Create Path to module
-import RapidTechTools as rtt        # Import Module RapidTechTools
+# Create Path to module
+sys.path.append(os.path.join('C:/', 'Users\path_to_module'))	
+# Import Module RapidTechTools
+import RapidTechTools as rtt        
 ""
 
 
@@ -343,8 +344,12 @@ int("1010",2)                   => convert binary value to decimal
 
 
 ###### RANDOM, SECRETS
-=> random: unsecure, reproducable with seeds
-=> secret: secure, not reproducable
+=> General
+""
+random: unsecure, reproducable with seeds
+secret: secure, not reproducable
+""
+
 import random					    => Import random module - fast, but not very secure
 random.randint(1,6)       => Random int number between 1 and 6 like a cube
 random.uniform(1,3)				=> Random float number between 1 and 3 
@@ -365,10 +370,14 @@ secrets.choice(l)			  	=> Random choice (which is not reproducable)
 
 
 ###### STRING
-=> ordered, immutable, text representation
-s = "this is a test"							# Define a string
-s = "this \n text"								# String with linebreak \n
-s = "this \t text" 								# String with tab between the words
+=> General
+""
+ordered, immutable, text representation
+""
+
+s = "this is a test"							=> Define a string
+s = "this \n text"								=> String with linebreak \n
+s = "this \t text" 								=> String with tab between the words
 
 => Define string over more lines in editor with
 ""
@@ -3435,7 +3444,7 @@ w = QWidget()                                           # Initialize a window
 w.setWindowTitle('Windows Title')                       # Title of the windows
 w.setGeometry(200, 200, 380, 180)                       # Define windows (1:x-coord,2:y-coord,3:width,4:height)
 w.move(50, 15)                                          # Place / move windows to coodinates 60,15
-msg = QLabel('<h1>Hello World!</h1>', parent=window)    # Define label / message in format h1
+msg = QLabel('*h1*Hello World!*/h1*', parent=window)    # Define label / message in format h1
 msg.move(50, 15)                                        # Place / move labe to coordinates 60,15
 windows.show()                                          # Show the application GUI - schedules a paint event
 sys.exit(app.exce_())                                   # Start the app and close it with sys.exit
@@ -4368,7 +4377,7 @@ https://docs.djangoproject.com/en/4.0/ref/templates/builtins/     => overview bu
   eg. path('contact/', contactView)
 # and in the views.py is the html-code stored
   eg. def contactView(*args, **kwargs):
-        return HttpResponse("<h1>Contacts!</h1>")  
+        return HttpResponse("*h1*Contacts!*/h1*")  
 ""
 
 => using templates
@@ -4385,14 +4394,14 @@ https://docs.djangoproject.com/en/4.0/ref/templates/builtins/     => overview bu
 => extends: template Inheritance
 ""
 # create base-html
-  eg. <h1>This is a navbar</h1>
+  eg. *h1*This is a navbar*/h1*
       {% block content %}
         replace me
       {% endblock %}
 # inside the about-html 
   eg. {% extends "base.html"  %}
       {% block content %}
-        <h1>About</h1>
+        *h1*About*/h1*
         <p>This is a template</p>
       {% endblock %}
 # "replace me" will get replace by the info from about-html from the block content
