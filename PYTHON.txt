@@ -1471,6 +1471,7 @@ wb.activate(steal_focus=True)                           => Bring workbook to the
 ws.range("A1:A10").value = ws2.range("A1:A10").options(ndim=2).value      => copy range from one sheet to another
 ws1.api.Move(Before=wsWork.api)                         => Move worksheet at the beginning    
 ws1.api.Move(After=wsWork.api)                          => Move worksheet at the end
+ws.range("A1").api.AddComment(Text="My Comment")        => Add comment to a cell
 
 => Get address and subaddress from hyperlinks
 ""
