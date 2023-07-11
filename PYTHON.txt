@@ -541,6 +541,7 @@ list(set(l))									                   => Remove duplicates from a list
 list(dict.fromkeys(l))                           => Remove duplicates from a list and keep existing order
 list(map(int,l))								                 => Change elements in list to int
 [[x[i] for x in l] for i in range(len(l[0]))]    => Transpose nested list (change rows and columns)
+l3 = set(l2) - set(l1)                           => Get difference of 2 lists
 
 => rotate list for n places
 ""
