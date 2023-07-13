@@ -541,6 +541,7 @@ list(set(l))									                   => Remove duplicates from a list
 list(dict.fromkeys(l))                           => Remove duplicates from a list and keep existing order
 list(map(int,l))								                 => Change elements in list to int
 [[x[i] for x in l] for i in range(len(l[0]))]    => Transpose nested list (change rows and columns)
+l3 = set(l2) - set(l1)                           => Get difference of 2 lists
 
 => rotate list for n places
 ""
@@ -1178,11 +1179,13 @@ wb = load_workbook(("Test.xlsx"))               => Load xlsx
 wb = load_workbook(filename="Test.xlsm",        => Load xlsm
                   read_only=False,  
                   keep_vba=True)  
+wb.worksheets[0]                                => Select first worksheet
+wb["Subsellers"]                                => Select specific worksheet
 wb = openpyxl.Workbook()								        => Create new workbook
 wb.create_sheet("ws")									          => Create new worksheet (at the end)
 wb.create_sheet("ws",0)									        => Create new worksheet (at the beginning)
 wb.create_sheet("ws",-2)								        => Create new worksheet (at the second last position)
-
+                       
 ws.title = "xyz"										            => Change worksheet name
 
 ws.cell(row=1, column=1).value                  => Value from specific cell (other method)
