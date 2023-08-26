@@ -867,8 +867,13 @@ with open ("fn.txt","r+") as f: print(f.read()			=> Open File for Read and Write
 with open(fn, encoding="utf8", errors="ignore") as f:
   lines = f.readlines()
 ""
-    
-with open("fn.txt","w") as obj: obj.write("Ein neuer Text")   => Writing in textfile
+
+=> Write txtfile - from list
+""
+with open("fn.txt", "w", encoding="utf8", errors="ignore") as f:
+  lines = f.writelines(["Hello\n", "World", "NextLine])
+""
+
 with open("fn.txt","a") as obj: obj.write("\nNoch ein Text")  => Append text in the next line
 if os.path.exists(fn) == False:							=> Check if file allready exists
 with open (fn,"a") as f: f.write("init")				=> Create and initialize file when not exisiting
