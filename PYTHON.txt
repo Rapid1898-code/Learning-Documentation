@@ -871,7 +871,7 @@ with open(fn, encoding="utf8", errors="ignore") as f:
 => Write txtfile - from list
 ""
 with open("fn.txt", "w", encoding="utf8", errors="ignore") as f:
-  lines = f.writelines(["Hello\n", "World", "NextLine])
+  lines = f.writelines(["Hello\n", "World", "NextLine"])
 ""
 
 with open("fn.txt","a") as obj: obj.write("\nNoch ein Text")  => Append text in the next line
