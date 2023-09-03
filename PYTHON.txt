@@ -323,6 +323,7 @@ isinstance(x,float)             => Check if x has type format float (others: str
 x = float("inf")                => Set var to max-value (float infinite)
 math.sqrt(9)                    => Calculates the sqrt of the value => i3
 if "myVar" in locals():         => Check if a variable exists
+min = a if a < b else B         => Ternary Operator for if statement
 sys.argv[1:]                    => Check for argument which is given when starting the program
 print("Text")					          => Print "Text" (with a linebreak \n at the end)
 print("Text", end="-")			    => Print with end-statement (next print will be in the same line
