@@ -2199,7 +2199,7 @@ os.path.isfile("xyz")                                => Checks if files exists /
 os.path.join(path, "URLS", link)                     => Join path together on every os-system (win,mac,linux)
 os.popen('attrib +h ' + fn).read().close()					 => Change file to hidden
 send2trash(filename)                                 => Send file to trash (needs:)
-
+os.path.abspath(os.path.join(path, os.path.pardir))  => Get parent folder
 
 => Put all files with path in a list from actual directory with all subdirs and Filtering
 ""
