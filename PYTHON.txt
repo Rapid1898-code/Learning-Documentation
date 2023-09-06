@@ -2161,7 +2161,7 @@ path = path.resolve()                                       => make path absolut
 
 => get mac-adress from the actual pc
 ""
-from uuid import getnode as get_mac
+from uuid import getnode as get_ma8c
 mac = get_mac()
 ""
 
