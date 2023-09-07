@@ -1,3 +1,5 @@
+Edit-Mode: https://rapidtech1898.com/wp-admin
+
 ### Table of Contents on the right side
 Appearance - Widgets - Table of Contents
 Set Minimum number of headings
