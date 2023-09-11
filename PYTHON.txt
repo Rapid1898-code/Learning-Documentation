@@ -788,8 +788,12 @@ sorted(g)							=> Sorted-Function can use generator => returns list with sorted
 ""
 try:
 	a = 5 / 0
-except Exception as e:
+except FileNotFoundError as e:
+  print(f"File not found with this error:)
 	print("Exception: ",e)						# Prints exception "division by zero"	
+except Exception as e:
+  print(f"Problems finding file {fn} - skipped...")
+  continue  
 ""
 
 => assert / raise
@@ -2860,6 +2864,7 @@ driver.minimize_window()                                            => Minmize w
 driver.execute_script("window.scrollTo(0, 10000)")                  => ScrollDown in the window (maybe to the bottom of the site) 
 driver.execute_script("window.open('');")                           => Open a new tab
 driver.switch_to.window(driver.window_handles[0])                   => Swich to first tab
+driver.elem.get_attribute("src")                                    => Get value from tag form an element
 
 => Switch between iframes
 ""
