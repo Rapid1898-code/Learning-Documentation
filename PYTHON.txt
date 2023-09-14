@@ -3214,9 +3214,7 @@ resp = requests.get (url)                       => Request api from the generate
 
 => GET-request with payload and headers
 ""
-resp = requests.request("GET", url,             
-                        json=payload, 
-                        headers=headers)    
+resp = requests.request("GET", url, json=payload, headers=headers)    
 ""
 
 => Return the statuscode of the response
