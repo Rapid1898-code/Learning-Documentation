@@ -481,7 +481,8 @@ l1 + l2											 => Add both lists together (to a new list)
 l.append(1)                                      => Add 1 element to the list at the back
 l.extend([6,5,4])                                => Add several elements to the list at the back
 l.insert(3, "xyz")                               => Insert an element at the index-position 3
-l.index("xzy")                                   => Returns first index position of element "xyz"
+l.index("xzy")                                   => Returns first index position of an element
+[i for i,v in enumerate(wHeader) if v == "xyz"]  => Find all indizes for a specific element
 l.pop()                                          => Delete last element from list
 l.pop(0)                                         => Delete first element from list
 l.sort()                                         => Sort list ascending
@@ -1029,7 +1030,9 @@ with open(workFN, "r", encoding="utf-16") as f:
   ...
 
 # when this error happens: UnicodeDecodeError: 'utf-8' codec can't decode byte 0x96 
-with open(workFN, "r", encoding="mac_roman") as f:               
+# use some of this solutions
+with open(fn, "r", encoding="mac_roman") as f:   
+with open(fn, "r",  encoding='ISO-8859-1') as f:             
   ...
 ""
 
