@@ -141,7 +141,7 @@ python -m Pyinstaller --onefile prg.py      => Generate only one file (to get fo
 --copy-metadata pandas_ta					          => add this when some modules are not found
 --hidden-import=pymssql						          => When some modules are making problems - sometimes this helps
     pyinstaller --onefile --collect-datas=trafilatura xyz.py
-    pyinstaller --onefile --collect-data fake_useragent  checkMapsSel2.py  
+    pyinstaller --onefilFe --collect-data fake_useragent  checkMapsSel2.py  
     pyinstaller --onefile --collect-data frozendict stockma3.py     => <frozen importlib._bootstrap> error when using yfinance
 
 --exclude-module matplotlib                 => when there is a depreciating warning from matlib 
@@ -2935,6 +2935,7 @@ options.add_argument(f'user-agent={userAgent}')
 => Using XPath with Selenium
 ""
 https://www.guru99.com/xpath-selenium.html
+https://scrapfly.io/blog/xpath-cheatsheet/
 Can be used to find the location of any element in a html- or xml document
 
 Example:
