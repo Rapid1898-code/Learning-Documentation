@@ -523,6 +523,7 @@ l[2:4]                                           => Elements from index position
 l[:2]                                            => Elements from 0 to 1 (exclusive index position 2)
 l[2:]                                            => Elements from index position 2 to the end of the list
 l[::2]                                           => Every second element [start:end:step]
+l[::-1]                                          => Reverse list
 9 in l                                           => Check if element is in list
 if any(x in st for x in ["ab","cd","de"]):       => Check if any elements from the list are in the string
 if all(x in st for x in ["ab","cd","de"]):       => Check if all elements from the list are in the string    
@@ -586,14 +587,14 @@ f,*m,l = (0,1,2,3,4)					=> Assigning to tuple-values (f=0, m=[1,2,3], l=4)
 => key-value pairs, unordered (till version 3.7), mutable
 d = {}                                               => Define empty dict
 d = {"one": 1, "two": 2, "three": 3}                 => Define dict with content
-d = dict(one=1,two=2,three=3)						 => 2nd way to defince a dict with content
+d = dict(one=1,two=2,three=3)						             => 2nd way to defince a dict with content
 d = dict([("one",1),("two",2),("three",3)])          => Define dict with content (with dupels)
 d = dict([["one",1],["two",2],["three",3]])          => Define dict with content (with pairs in nested list)
 d = dict(zip(["one","two","three"], [1,2,3]))        => Define dict with 2 different lists (1x keys and 1x values)
 d["two"]                                             => Access value with key element (error when the key is not in the dict)
-d.get("two","N/A")									 => BETTER: Acesss value with get for key element (no error when the key is not in the dict - returns second parameter instead)
-d.setdefault("two","N/A")							 => Access value - same as get - but also initialize the key when it is not in the dict - with the second parameter)
-key = list(d.keys())[list(d.values()).index(v)]		 => Find key for specific value (v) in dict
+d.get("two","N/A")									                 => BETTER: Acesss value with get for key element (no error when the key is not in the dict - returns second parameter instead)
+d.setdefault("two","N/A")							               => Access value - same as get - but also initialize the key when it is not in the dict - with the second parameter)
+key = list(d.keys())[list(d.values()).index(v)]		   => Find key for specific value (v) in dict
 list(d.keys())                                       => Read keys from dict to list
 list(d.values())                                     => Read values from dict to list
 len(d)                                               => Count of entries in dict
@@ -614,12 +615,12 @@ for key in sorted(d.keys(),reverse=True):            => Iterate through sorted d
 for val in d.values():                               => Iterate through dict values
 for key, val in d.items():                           => Iterate through keys and values of the dict
 d = {x[0]: x[1:] for x in l}                         => built dict with dict-comprehension
-d = {k: v for k, v in sorted(d.items(), key=lambda item: item[1], reverse=True)}    => Sort dict descending according to values (=item[1])
-d = {k: v for k, v in sorted(d.items(), key=lambda item: item[0])}      => Sort dict ascending according to keys (=item[0])
-d = {k: v for k, v in sorted(d.items(), key=lambda x: (-x[1],x[0]))}    => Dict sorted: 1st value-desc (x[0]) - 2nd key-ascnd (-x[0])
-l = sorted(d.items(), key=lambda e: e[1][2])                            => Sort dict and output list, sorted according to the 3rd element of the list in the dict
-l = sorted(d.items(), key=lambda e: e[1][2], reverse=True)              => Sort dict and output list, sorted according to the 3rd element of the list in the dict - descending
-d3 = {key: d1.get(key,0)+d2.get(key,0) for key in set(d1)|set(d2)}      => Merge 2 dictionaries
+d = {k: v for k, v in sorted(d.items(), key=lambda x: x[1], reverse=True)}    => Sort dict descending according to values (=item[1])
+d = {k: v for k, v in sorted(d.items(), key=lambda x: x[0])}                  => Sort dict ascending according to keys (=item[0])
+d = {k: v for k, v in sorted(d.items(), key=lambda x: (-x[1],x[0]))}          => Dict sorted: 1st value-desc (x[0]) - 2nd key-ascnd (-x[0])
+l = sorted(d.items(), key=lambda e: e[1][2])                                  => Sort dict and output list, sorted according to the 3rd element of the list in the dict
+l = sorted(d.items(), key=lambda e: e[1][2], reverse=True)                    => Sort dict and output list, sorted according to the 3rd element of the list in the dict - descending
+d3 = {key: d1.get(key,0)+d2.get(key,0) for key in set(d1)|set(d2)}            => Merge 2 dictionaries
 
 => save dict to pkl-file
 ""
@@ -650,15 +651,16 @@ s | s2                  => Untion of 2 sets (same as: s.union(s2))
 s - s2                  => Difference of 2 sets (same as: s.difference(s2))
 s <= s2                 => True if s is subset from s2 (same as: s.issubset(s2))
 3 in s                  => Check if element is in set
-s.clear()				=> Clear the set
+s.clear()				  	    => Clear the set
 s.pop()                 => Delete lowest elmeent in set
-s.remove(5)				=> Delete element 5 from set - but key error possible
+s.remove(5)				      => Delete element 5 from set - but key error possible
 s.discard(5)            => Delete element 5 from set - NO key error possible
 for i in s:             => Iterate through set content
-s2 = s1					=> Copying a set (all changes will be made in BOTH sets)
-s2 = s.copy()			=> Copying a set (set will be handled seperate)
-s2 = set(s)				=> Copying a set 2nd method (set will be handled seperate)
-s = frozenset(1,2,3)	=> Define a frozenset - no changes are possible in the set - union, intersection aso. will work
+s2 = s1					        => Copying a set (all changes will be made in BOTH sets)
+s2 = s.copy()			      => Copying a set (set will be handled seperate)
+s2 = set(s)				      => Copying a set 2nd method (set will be handled seperate)
+s = frozenset(1,2,3)	  => Define a frozenset - no changes are possible in the set - union, intersection aso. will work
+s = {x for x in l}      => Create a set with set-comprehension form a list as basis
 
 
 
