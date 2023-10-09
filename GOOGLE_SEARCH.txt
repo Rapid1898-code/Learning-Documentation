@@ -9,3 +9,18 @@ HR AND microsoft AND (site:linkedin.com) AND (gl:us)
 
 # search for social Accounts
 tim soulo (site:twitter.com OR site:facebook.com OR site:linkedin.com)
+
+# search for linkedin-profiles 
+site:linkedin.com/in/ AND "Adult Psychiatrist" AND ("MD" OR "DO") AND "Pennsylvania" -inurl:/company/ -inurl:/jobs/ -inurl:/posts -inurl:/groups/ -inurl:/products/ -inurl:/services/ -inurl:/events/ -inurl:/courses/ -inurl:/schools/ -inurl:/photos/ -inurl:/images/ -inurl:/image/ -inurl:/pulse/'
+site:linkedin.com/in/ AND "aerospace engineer" AND Seattle -inurl:/company/ -inurl:/jobs/ -inurl:/posts -inurl:/groups/ -inurl:/products/ -inurl:/services/ -inurl:/events/ -inurl:/courses/ -inurl:/schools/ -inurl:/photos/ -inurl:/images/ -inurl:/image/ -inurl:/pulse/'
+site:linkedin.com/in/ AND "avionics design engineer" AND Boeing AND "5 years"~5 intext:experience -inurl:/company/ -inurl:/jobs/ -inurl:/posts -inurl:/groups/ -inurl:/products/ -inurl:/services/ -inurl:/events/ -inurl:/courses/ -inurl:/schools/ -inurl:/photos/ -inurl:/images/ -inurl:/image/ -inurl:/pulse/'
+site:linkedin.com/in/ AND "software developer" AND "spacex" inanchor:"open" OR inanchor:"new opportunities"  -inurl:/company/ -inurl:/jobs/ -inurl:/posts -inurl:/groups/ -inurl:/products/ -inurl:/services/ -inurl:/events/ -inurl:/courses/ -inurl:/schools/ -inurl:/photos/ -inurl:/images/ -inurl:/image/ -inurl:/pulse/'
+site:linkedin.com/in/ AND "aerospace engineer" AND Texas AND intext:"secret clearance"  -inurl:/company/ -inurl:/jobs/ -inurl:/posts -inurl:/groups/ -inurl:/products/ -inurl:/services/ -inurl:/events/ -inurl:/courses/ -inurl:/schools/ -inurl:/photos/ -inurl:/images/ -inurl:/image/ -inurl:/pulse/'
+site:linkedin.com/in/ AND ("flight dynamics" OR "aerodynamics" OR "flight test") AND (engineer OR analyst) AND ("aerospace" OR "aviation" OR "defense" OR "space") AND ("Huntsville" OR "Madison" OR "Decatur") AND Alabama  -inurl:/company/ -inurl:/jobs/ -inurl:/posts -inurl:/groups/ -inurl:/products/ -inurl:/services/ -inurl:/events/ -inurl:/courses/ -inurl:/schools/ -inurl:/photos/ -inurl:/images/ -inurl:/image/ -inurl:/pulse/'
+site:linkedin.com/in/ AND ("CFD" OR "Aerodynamics" OR "Flight Dynamics" OR "Rotorcraft" OR "Aerospace Engineering" OR "Aeronautical Engineering")  -inurl:/company/ -inurl:/jobs/ -inurl:/posts -inurl:/groups/ -inurl:/products/ -inurl:/services/ -inurl:/events/ -inurl:/courses/ -inurl:/schools/ -inurl:/photos/ -inurl:/images/ -inurl:/image/ -inurl:/pulse/'
+site:linkedin.com/in/ AND "Aerodynamics Engineer" AND inanchor:(PHD OR PH.D) AND (Aerospace OR Defense) AND USA  -inurl:/company/ -inurl:/jobs/ -inurl:/posts -inurl:/groups/ -inurl:/products/ -inurl:/services/ -inurl:/events/ -inurl:/courses/ -inurl:/schools/ -inurl:/photos/ -inurl:/images/ -inurl:/image/ -inurl:/pulse/'
+site:linkedin.com/in/ AND adns-grossiste.fr -inurl:/company/ -inurl:/jobs/ -inurl:/posts -inurl:/groups/ -inurl:/products/ -inurl:/services/ -inurl:/events/ -inurl:/courses/ -inurl:/schools/ -inurl:/photos/ -inurl:/images/ -inurl:/image/ -inurl:/pulse/'
+
+
+site:facebook.com AND Rapid inurl:/groups
+site:facebook.com AND Rapid inurl:/user
