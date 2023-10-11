@@ -260,8 +260,8 @@ Alt Enter			      # Suggestions for fix error, function informations
 Alt 1				        # Open the project windows (on the left side)
 Alt F7				      # Show usage of the variable, function, class
 Esc					        # Focus back on the editor window
-Ctrl Shift -    	  # Collapse everything
-Ctrl Shift +        # Exapnds everything
+Ctrl Shift -    	  # Make screen smaller
+Ctrl Shift +        # Make screen bigger
 Ctrl - 				      # Collapse block ("-" on numblock)
 Ctrl + 				      # Expand block ("+" on numblock)
 Ctrl A         		  # Select whole file
