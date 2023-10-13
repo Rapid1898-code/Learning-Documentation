@@ -1,5 +1,5 @@
 ### Calculate the growth of 2 values
-()newval - oldval) / oldVal * 100
+(newval - oldval) / oldVal * 100
 
 
 ### Custom Format for Date and Time
