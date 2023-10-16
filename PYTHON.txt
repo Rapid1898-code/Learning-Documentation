@@ -873,7 +873,7 @@ with open ("fn.txt","r+") as f: print(f.read()			=> Open File for Read and Write
 => Read textfile - stored in list per line
 ""
 with open(fn, encoding="utf8", errors="ignore") as f:
-  lines = f.readlines()
+  lines = f.read().splitlines()
 ""
 
 => Write txtfile - from list
