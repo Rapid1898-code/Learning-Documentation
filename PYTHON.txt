@@ -1477,6 +1477,7 @@ ws.pictures["xyz"].delete()                             => Delete the first pict
 ws.api.AutoFilterMode = False                           => Disable auto filter in worksheet
 ws.clear()                                              => Clears the content and formatting of the whole sheet
 ws.clear_contents()                                     => Clears the content but leaves formatting
+ws.clear_foramat()                                      => Clears the formating but keeps the content
 [x.name for x in wb.sheets]						    	            => Read worksheetnames to list
 wb.sheets["OldWS"].delete()                             => Delete worksheet in workbook
 wb.sheets["WS"].api.Visible = False                     => Hide worksheet in workbook
