@@ -143,6 +143,7 @@ python -m Pyinstaller --onefile prg.py      => Generate only one file (to get fo
     pyinstaller --onefile --collect-datas=trafilatura xyz.py
     pyinstaller --onefilFe --collect-data fake_useragent  checkMapsSel2.py  
     pyinstaller --onefile --collect-data frozendict stockma3.py     => <frozen importlib._bootstrap> error when using yfinance
+    pyinstaller --onefile --collect-data langchain --copy-metadata=tqdm --copy-metadata=regex --copy-metadata requests --copy-metadata packaging --copy-metadata filelock URLanswering.py
 
 --exclude-module matplotlib                 => when there is a depreciating warning from matlib 
 --icon=app.ico                              => Generate file with icon
