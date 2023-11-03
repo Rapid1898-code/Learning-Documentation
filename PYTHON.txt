@@ -149,8 +149,7 @@ python -m Pyinstaller --onefile prg.py      => Generate only one file (to get fo
 --icon=app.ico                              => Generate file with icon
 --hidden-import=pkg_resources.py2_warn      => Generating under mac os sometimes only work with this params
 --hidden-import=cmath                       => Generating under mac os sometimes only work with this params   
-
-
+pyinstaller --onefile main.spec
 prg.exe                                     => Open this file to start the python-program
 yfinance module                             => only working with import yfinance (not with import yfinance as yf)
 
