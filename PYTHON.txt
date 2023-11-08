@@ -438,6 +438,18 @@ if not any(x in s for x in l):                # check if any elems from checks a
 if all(x in s for x in l):                    # check if all elems from checks are in string s
 ""
 
+=> string library
+""
+https://docs.python.org/3/library/string.html
+import string
+string.ascii_letters            => all letters
+string.ascii_uppercase          => uppercase letters
+string.ascii_lowercase          => lowercase letters
+string.digits                   => digits
+string.punctuation              => punctuation
+""
+
+
 
 
 ###### REGEX
