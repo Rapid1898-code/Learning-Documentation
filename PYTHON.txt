@@ -473,7 +473,7 @@ len(re.findall(f'(.*?){w}(.*?)', l))              => count all words which have 
 
 => Read string an try to match with groups
 pattern = "([0-9]+) ([a-z]:([a-z]+)"				=> Define pattern => as many digits (endless) + " " + one lowercase cahr + ":" + as many digits (endless)
-match = re.search(pattern, elem)						=> Check if elem fits the pattern => returns <re.Match object; span=(0, 19), match="3 n: nnnlncrnnnnn">
+match = research(pattern, elem)						=> Check if elem fits the pattern => returns <re.Match object; span=(0, 19), match="3 n: nnnlncrnnnnn">
 value = match.group(1)											=> Assign the value of the first group => 3
 all = match.group(0)											  => Show the full string => "3 n: nnnlncrnnnnn"
 
@@ -1446,7 +1446,8 @@ ws2.conditional_formatting.add(f"K4:K12", ruleBottomGreen)
 
 
 ###### MODULE - XLWINGS - working on the fly with open excel worksheets
-=> Update XLSX in reealtime
+=> Update XLSX in realtime
+=> api documentation for excel
 import xlwings as xw                                    => Import module
 app = xw.App(visible=False)                             => Use xlwings with hidden excel-worksheets
 wb = xw.Book()                                          => Create a new workbook
@@ -1463,6 +1464,7 @@ ws["C8"].color											                    => Reads the color of a cell and re
 ws["C8"].value                                          => Set value for cell
 ws.range ("A2").hyperlink                               => Read hyperlink of cell
 ws.range("A1:C3").value                                 => Set values for specific cell
+ws.range("A1:A10").merge()                              => Merge several cells
 ws["C8"].color = None									                  => Remove background from a cell
 ws.range("A1:C3").color = (255,255,255)					        => White: Assigns background color for a range of cells
 ws.range("A1:C3").color = (149,237,173)					        => Green: Assigns background color
@@ -1508,6 +1510,10 @@ ws.range("A1").note.delete()                            => Delete comment in cel
 ws.range("A1").api.AddComment(Text = "My Comment")      => Add comment to a cell (for Windows)
 ws.range("A5").api.Comment.Shape.DrawingObject.AutoSize = True    => Autosize comment in excel-sheet (for Windows)
 ws["A1"].api.add_comment(comment_text='My Comment')     => Add comment to a cell (for Mac)
+from xlwings.constants import VAlign, HAlign            => Need this import for following alignments
+ws.range("C7").api.VerticalAlignment = VAlign.xlVAlignTop   => Set the vertical alignment to Top
+ws.range("C7").api.HorizontalAlignment = HAlign.xlHAlignCenter   => Set the horizontal alignment to Center
+
 
 
 => Get address and subaddress from hyperlinks
