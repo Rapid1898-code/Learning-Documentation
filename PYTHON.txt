@@ -144,6 +144,7 @@ python -m Pyinstaller --onefile prg.py      => Generate only one file (to get fo
     pyinstaller --onefilFe --collect-data fake_useragent  checkMapsSel2.py  
     pyinstaller --onefile --collect-data frozendict stockma3.py     => <frozen importlib._bootstrap> error when using yfinance
     pyinstaller --onefile --collect-data langchain --copy-metadata=tqdm --copy-metadata=regex --copy-metadata requests --copy-metadata packaging --copy-metadata filelock URLanswering.py
+    pyinstaller --onefile --hidden-import=tiktoken_ext.openai_public --hidden-import=tiktoken_ext checkRSS.py
 
 --exclude-module matplotlib                 => when there is a depreciating warning from matlib 
 --icon=app.ico                              => Generate file with icon
@@ -417,6 +418,7 @@ s = s.strip()                                   => Delete all whitespaces at the
 s = " ".join(s.split())                         => Remove all duplicate spaces in a string
 s = s.replace("e","X")                          => Replacement of two strings
 s = re.sub("[e0fi]", "X", s)                    => Replace several chars in a string
+s2 = re.sub(f"[{string.punctuation}]", "", s)   => Replace all punctuation chars in a string
 s = re.subn("[e0fi]", "X", s)                   => Replace several chars in a string (get back a tupple: 1st changed string, 2nd: count of changed chars)
 s.isdigit()                                     => True if the whole string are digits
 s.isalpha()                                     => True if the whole string contains only letters
