@@ -397,7 +397,8 @@ s = f"{float:0.2f}                  => Format float with allways 2 decimal place
 s = f"{float:09.2f}                 => Format float with 2 decmial places and overall 9 chars with leading 0
 
 "{0} like, {0} especially {0} but {1}".format("Joe", "noodles")  	=> Multiple use   							
-s.find ("ist")                                  => Returns the index where the text is found
+s.find ("ist")                                  => Returns the index where the text is found (return -1 when nothing is found)
+s.rfind("ist")                                  => Returns the last index where the text is found (return -1 when nothing is found)
 s.count ("i")                                   => Counts the occurrence of a text
 re.findall('[.,’]', s)                          => Counts several chars in a text
 [i for i, c in enumerate(s) if c == "/"]	      => Return all index of the char "/" in the string
