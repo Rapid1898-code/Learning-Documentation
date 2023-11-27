@@ -54,6 +54,10 @@ Choose Media File
 ### Set the front page
 https://wordpress.com/support/pages/front-page/
 
+
+### Change Icons and TopBar in the header of the page
+Appearance - Customise - Menus - Icons / TopBar
+
 Question:
 - Same image view when settings are landscape? (service contacted)
 - convert to wwww.rapidtech1898.com?
