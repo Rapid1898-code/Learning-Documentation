@@ -402,7 +402,7 @@ s.rfind("ist")                                  => Returns the last index where 
 s.count ("i")                                   => Counts the occurrence of a text
 re.findall('[.,’]', s)                          => Counts several chars in a text
 [i for i, c in enumerate(s) if c == "/"]	      => Return all index of the char "/" in the string
-[x.start() for x in re.finditer('ist', s)]      => Returns all index as a list (needs import re)
+[x.start() for x in re.finditer('ist', s)]      => Returns all index as a list for a substring in a string (needs import re)
 s = s.lower()                                   => Lowercase the whole string
 s = s.upper()                                   => Capitalize the whole string
 s = s.capitalize()                              => Capitalize the first char
