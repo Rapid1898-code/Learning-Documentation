@@ -118,6 +118,7 @@ venv\Scripts\activate
 ""
 download and install the python-version - Important: remember the path to the python.exe
 create a venv with: virtualenv envName -p path\to\new_python.exe
+
 ""
 
 
