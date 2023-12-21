@@ -3262,6 +3262,7 @@ resp.status_code
     # 500: Internal Server Error: something broken on the server site
 ""
 
+resp.url                                        => get url after request (eg. in case of redirection it will change)
 resp.reasons                                    => shows the statuscode in textform (eg. OK, Not Found)
 resp.request.headers                            => used headers for the request
 resp.headers                                    => header from the response
