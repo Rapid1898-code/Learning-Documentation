@@ -1458,10 +1458,11 @@ import xlwings as xw                                    => Import module
 app = xw.App(visible=False)                             => Use xlwings with hidden excel-worksheets
 wb = xw.Book()                                          => Create a new workbook
 wb = xw.Book ("name.xlsx")                              => Read XLSX
-wb = xw.Book ("name.xlsx", password("xyz"))             => Read XLSX with password protection
+wb = xw.Book ("name.xlsx", password = "xyz")             => Read XLSX with password protection
 ws = wb.sheets["name_sheet"]                            => Read specific worksheet
 ws = wb.sheets[0]                                       => Read first worksheet
 wb.sheets.add("NewWS")									                => Add worksheet in workbook
+[x.name for x in wb.sheets]						    	            => Read worksheetnames to list
 f = ws["A1"].formula                                    => Reads the formula of a cell (not the value)
 ws["A1"].formula = string                               => Assign formula to a cell
 for i in ws.range("A3:A7"): i.value = ""				        => Iterate trough cells an set them to "" / None
@@ -1498,7 +1499,6 @@ ws.api.AutoFilterMode = False                           => Disable auto filter i
 ws.clear()                                              => Clears the content and formatting of the whole sheet
 ws.clear_contents()                                     => Clears the content but leaves formatting
 ws.clear_formats()                                      => Clears the formating but keeps the content
-[x.name for x in wb.sheets]						    	            => Read worksheetnames to list
 wb.sheets["OldWS"].delete()                             => Delete worksheet in workbook
 wb.sheets["WS"].api.Visible = False                     => Hide worksheet in workbook
 ws.copy(name='copied')                                  => Copy worksheet
@@ -2088,11 +2088,11 @@ is_dst(datetime(2019, 4, 1), timezone="CET")				# True => at this date CET has d
 => Timing a specific activity
 ""
 import timeit
-start = timeit.default_timer()                          # Start timer
-stop = timeit.default_timer()                           # Stop timer
-round(stop-start,2)										# Stopped time in seconds and rounded to 2 decimals
-round((stop-start)/60,2)                                # Stopped time in minutes and rounded to 2 decimals
-timeit.timeit(stmt="[0,1,2]",number=1000000)     		# Checking the time for creating the list for 1mio times
+start = timeit.default_timer()                # Start timer
+stop = timeit.default_timer()                 # Stop timer
+round(stop-start,2)										        # Stopped time in seconds and rounded to 2 decimals
+round((stop-start)/60,2)                      # Stopped time in minutes and rounded to 2 decimals
+timeit.timeit(stmt="[0,1,2]",number=1000000)  # Checking the time for creating the list for 1mio times
 ""
 
 => Countdown while waiting

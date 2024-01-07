@@ -1,0 +1,8 @@
+How to install games on Metaquest?
+
+https://www.reddit.com/r/QuestPiracy/comments/jcvfzo/the_definitive_quest_piracy_guide/
+https://www.youtube.com/watch?v=RoIXxIfRNTw&t=169s
+
+- ocolus adb drivers: https://developer.oculus.com/downloads/package/oculus-adb-drivers/
+- turn on developer-mode: (https://www.youtube.com/watch?v=N7hQ4XNOKAU&t=116s)
+- use Rookie Sideloader
