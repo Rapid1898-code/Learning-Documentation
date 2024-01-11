@@ -76,3 +76,9 @@ see: Excel_HowtoDropBoxWithoutBlanks.xlsx
 ### How to change the column-headers from char to number
 - File - Options - Formulas
 - check R1C1 reference style (under Working with formulas)
+
+
+### Force specific delimiter when open a csv in excel
+put "sep=;" in the first line - then the ; delimiter will be used
+doesn´t matter which language you are using
+https://superuser.com/questions/1145892/how-to-make-excel-open-csv-files-and-automatically-split-the-comma-delimited-col
