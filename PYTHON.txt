@@ -1202,7 +1202,7 @@ import openpyxl as on_text
 wb = ox.load_workbook("test.xlsx")              => Read xlsx
 l = wb.sheetnames     							            => Read worksheetnames to list
 ws = wb["sheet1"]                               => Select specific worksheet in workbook
-ws = wb[wb.sheetnames[0]]                       => Select first worksheet
+ws = wb.worksheets[0]                           => Select first worksheet
 ws = wb.active                                  => Select active worksheet from workbook		
 val = ws["A1"].value                            => Value from specific cell
 
