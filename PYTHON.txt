@@ -900,12 +900,28 @@ with open("fn.txt", "w", encoding="utf8", errors="ignore") as f:
   lines = f.writelines(["Hello\n", "World", "NextLine"])
 ""
 
+=> Write only a max-size in a txt-file (eg. only a maximum of 50kb will be written)
+""
+  maxSize = 50*1024 # 50kb in bytes    
+  totalSize = 0
+  with open(txtFN, 'w', encoding='utf-8') as f:
+    for l in foundText.split("\n"):
+      sizeLine = len(l.encode('utf-8'))
+      if totalSize + sizeLine > maxSize:
+        print("Reached the maximum file size limit. Stopping further writes.")
+        break
+      f.write(l)
+      totalSize += sizeLine  
+""
+
+
+
 with open("fn.txt","a") as obj: obj.write("\nNoch ein Text")  => Append text in the next line
 if os.path.exists(fn) == False:							=> Check if file allready exists
-with open (fn,"a") as f: f.write("init")				=> Create and initialize file when not exisiting
-f.read()												=> Read content to string
-f.seek(0)												=> Set the current postion in the file to beginning
-f.write(s)												=> Write s to the f-file opened
+with open (fn,"a") as f: f.write("init")		=> Create and initialize file when not exisiting
+f.read()												            => Read content to string
+f.seek(0)												            => Set the current postion in the file to beginning
+f.write(s)												          => Write s to the f-file opened
     
 => Try/Except - checks if file can be saved
 ""
