@@ -390,14 +390,15 @@ s = '''this \
 	and this'''
 ""
 
-c = s[0]										        => first char of a string
-c = s[-1]										        => last char of a string
-s = "text %s bla" % var							=> Insert variable in string oldest method (%s for string, %i for int, %f for float, %.2f for 2 decimals)
-s = "text {} bla".format(var)				=> Insert variable in string old method (:.2f for 2 decimals)
-s = f"text {var} bla"							  => Insert variable in string new method
-s = f"{var:02d}"                    => Format int with allways 2 digits
-s = f"{float:0.2f}                  => Format float with allways 2 decimal places
-s = f"{float:09.2f}                 => Format float with 2 decmial places and overall 9 chars with leading 0
+s[0]										        => first char of a string
+s[-1]										        => last char of a string
+"text %s bla" % var							=> Insert variable in string oldest method (%s for string, %i for int, %f for float, %.2f for 2 decimals)
+"text {} bla".format(var)				=> Insert variable in string old method (:.2f for 2 decimals)
+f"text {v} bla"							    => Insert variable in string new method
+f"{v:02d}"                      => Format int with allways 2 digits
+f"{v:0.2f}                      => Format float with allways 2 decimal places
+f"{v:09.2f}                     => Format float with 2 decmial places and overall 9 chars with leading 0
+s = f"{v=}"                     => Output the variable name and the value of the variable in the form "v=4811"
 
 "{0} like, {0} especially {0} but {1}".format("Joe", "noodles")  	=> Multiple use   							
 s.find ("ist")                                  => Returns the index where the text is found (return -1 when nothing is found)
@@ -487,15 +488,18 @@ all = match.group(0)											  => Show the full string => "3 n: nnnlncrnnnnn"
 
 ###### LIST
 => ordered, mutable, allows duplicate elements
+l=[x*2 for x in l]					                     => Also possible with list comprehension => [2,4,6,8,10]
+l=[x for x in l if x%2==0]			                 => Also possible with list comprehension => [2,4]
+l=[x*2 if x.isdigit() else x for x in l]         => List comprehension with if and else
 l1,l2,l3,l4 = ([] for i in range(4))		         => Define several empty lists (NOT use l1=l=l3=[] => this would be the SAME list)		
-if l											 => check for True if list has an element
-if not l										 => check for False if list is empty (same would be if l == []
+if l											                       => check for True if list has an element
+if not l										                     => check for False if list is empty (same would be if l == []
 l = [4,5,6]                                      => Define list with content
 l = list(range(20))                              => Define list - content is list from 0 to 19
 l = ["" for x in range(8)]                       => Define list with 8 empyt strings
 [x.upper() for x in l]                           => Uppercase the whole list
 l = [["" for x in range(5)] for x in range(5)]   => Define a nested list with 5x5
-l1 + l2											 => Add both lists together (to a new list)	
+l1 + l2											                     => Add both lists together (to a new list)	
 l.append(1)                                      => Add 1 element to the list at the back
 l.extend([6,5,4])                                => Add several elements to the list at the back
 l.insert(3, "xyz")                               => Insert an element at the index-position 3
@@ -553,9 +557,6 @@ for x,y in zip(l1,l2):							             => Iterate through 2 lists pair-wise (
 ', '.join(l)                              		   => Create string with elements joined together with ", " eg. ["a","b","c"] => a, b, c
 a = [1,2,3,4,5]                                  => Define list
 list(map(lambda x: x*2, [1,2,3,4,5]))			       => List is mapped with the lambda function => [2,4,6,8,10]
-l=[x*2 for x in l]					                     => Also possible with list comprehension => [2,4,6,8,10]
-l=[x for x in l if x%2==0]			                 => Also possible with list comprehension => [2,4]
-l=[x*2 if x.isdigit() else x for x in l]         => List comprehension with if and else
 list(filter(lambda x: x%2==0, [1,2,3,4,5]))		   => List is filtered with lambda for even numbers => [2,4]
 zip([1,2,3],[4,5,6])							               => Build paris as tuple => (1,4),(2,5),(3,6)
 list(set(l))									                   => Remove duplicates from a list
@@ -563,6 +564,7 @@ list(dict.fromkeys(l))                           => Remove duplicates from a lis
 list(map(int,l))								                 => Change elements in list to int
 [[x[i] for x in l] for i in range(len(l[0]))]    => Transpose nested list (change rows and columns)
 l3 = set(l2) - set(l1)                           => Get difference of 2 lists
+1st, 2nd, *rest = ["A","B","C","D","E"]          => Unpacking of a list (1st=A, 2nd=B, rest=["C","D","E"])
 
 => rotate list for n places
 ""
