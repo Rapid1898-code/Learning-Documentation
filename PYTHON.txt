@@ -194,6 +194,10 @@ https://jrsoftware.org/isdl.php
 - Final setup.exe is stored in the "Output"-folder
 ""
 
+=> pathlib error when running executable on Mac
+""
+delete all created folder from pyinstaller an try again to create the excecutable
+""
 
 
 ###### SHORTCUTS VSCODE
