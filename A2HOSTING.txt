@@ -1,0 +1,70 @@
+FTP access with FileZilla
+Server: 68.66.248.55
+Benutzer: Rapid1898@rapidtech1898.com
+PW: I65faue#AG9#
+Port: (not necessary when loging in)
+
+SSH access with Putty
+Hostname: nl1-ss18.a2hosting.com
+Port: 7822
+<Press Button Open>
+User: rapidtec
+PW: C1d0q6bsE2C]:D (from mainpage - your Active Products/Sevices - click)
+
+
+MariaDB SSH access (via HeidiSQL):
+Instruction for HeidiSQL-Setup: https://www.enovision.net/mysql-ssh-tunnel-heidisql
+All infos / pws / users at: "Mainpage =>  Your Active Products/Sevices" - click on orange "My Services" - click "Manage"
+SETTNGS-Tab:
+  Network type: MariaDB or MySQL (SSH tunnel)
+  Library: libmariadb.dll
+  Hostname / IP: 127.0.0.1
+  User: rapidtec_Rapid1898
+  PW: I65faue#AG9#
+SSH TUNNEL-Tab:
+  Download plink.exe for x86/x64 and store at C:\TOOLS\plink.exe
+  Link to program: https://www.softpedia.com/get/Network-Tools/Telnet-SSH-Clients/Tatham-Plink.shtml
+  SSH Host: nl1-ts105.a2hosting.com
+  SSH Port: 7822
+  Username: rapidtec (from Mainpage see above)
+  Password: C1d0q6bsE2C]:D
+  plink.exe timeout: 4
+  Local Port: 3307
+
+
+MariaDB Local (via HeidiSQL):
+Network type: MySQL (TCP/IP)
+Hostname/IP: 127.0.01
+User: root
+PW: ???I65faueI65faue???
+
+
+Backup-Code: 4a25 d246 c246 a26e
+Mail: office@rapidtech1898.com
+
+
+Andxfive accounts:
+Server: 68.66.248.55
+Benutzer: andxfive@rapidtech1898.com
+PW: rezlop2649#1
+
+
+Network type: MySQL (TCP/IP)
+Library: libmariadb.dll
+Hostname/IP: nl1-ss18.a2hosting.com
+User: rapidtec_andxfive
+PW: rezlop2649#1
+Port: 3306
+
+
+OLD OLD OLD:
+MariaDB access (via HeidiSQL):
+Network type: MySQL (TCP/IP)
+Library: libmariadb.dll
+OLD Hostname/IP: nl1-ss18.a2hosting.com
+NEW Hostname/IP: nl1-ts105.a2hosting.com
+User: rapidtec_Rapid1898
+PW: I65faue#AG9#
+Port: 3306
+(all Checkboxes are unchecked)
+PW: @thebot_maker: VGHk@$WlKq2]
