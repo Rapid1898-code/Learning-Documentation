@@ -816,10 +816,10 @@ sorted(g)							=> Sorted-Function can use generator => returns list with sorted
 ""
 try:
 	a = 5 / 0
-except FileNotFoundError as e:
+except FileNotFoundError as error:
   print(f"File not found with this error:)
-	print("Exception: ",e)						# Prints exception "division by zero"	
-except Exception as e:
+	print("Exception: ",error)						# Prints exception "division by zero"	
+except Exception as error:
   print(f"Problems finding file {fn} - skipped...")
   continue  
 ""
