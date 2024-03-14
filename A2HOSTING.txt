@@ -22,7 +22,7 @@ SETTNGS-Tab:
   User: rapidtec_Rapid1898
   PW: I65faue#AG9#
 SSH TUNNEL-Tab:
-  Download plink.exe for x86/x64 and store at C:\TOOLS\plink.exe
+  Download plink.exe for x86/x64 and store at something like C:\TOOLS\plink.exe or C:\PRG\plink.exe
   Link to program: https://www.softpedia.com/get/Network-Tools/Telnet-SSH-Clients/Tatham-Plink.shtml
   SSH Host: nl1-ts105.a2hosting.com
   SSH Port: 7822
