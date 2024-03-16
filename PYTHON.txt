@@ -4388,18 +4388,52 @@ Python-Diverses / Plotly / example.py   => see example for candlestick-chart
 
 
 ###### MODULE - DJANGO - framework for webdevelopment
-https://www.youtube.com/watch?v=F5mRW0jo-U4&t=5043s   => Video Training
+https://www.youtube.com/watch?v=F5mRW0jo-U4&t=5043s     # Video Training
+https://www.youtube.com/playlist?list=PLCC34OHNcOtpRfBYk-8y0GMO4i1p1zn50      # Building an ecommerce webpage
+https://startbootstrap.com/     # bootstrap templates
 C:\Users\Polzi\Documents\DEV\Python-Diverses\Django   => Example
-pip install django                => installation
-django-admin startproject pjName  => create a blank django project
-python manage.py runserver        => run django server (start site on http://127.0.0.1:8000/)
+0) pip install django			# installation
+1) django-admin startproject PJ_NAME	# create a blank django project
+2) python manage.py startapp APP_NAME	# create an app (in the django project)
+
+in PJ_NAME folder:
+3) settings.py: add the APP_NAME to the INSTALLED_APPS
+4) urls.py: add include to <from django.urls import path>
+5) urls.py: add in urlpatterns => path ('', include('APP_NAME.urls'))
+
+in APP_NAME folder:
+6) create urls.py (copy urls.py from PJ_NAME and delete import admin line and include at the django.urls and urlpatterns list
+7) in urls.py add: from . import views
+8) in urls.py in urlpatterns add: path('', views.home, name='home')
+9) in views.py add: def home(request): return render(request, 'home.html', {})
+10) create "templates" folder (in APP_NAME folder) 	# all html-templates are stored there
+11) create home.html in "templates" folder
+
+12) python manage.py runserver	# run the server
+13) open site localhost:8000 (or http://127.0.0.1:8000)
+14) python manage.py migrate	# migrate all changes (admin-page would not work without that)
+15) open site localhost:8000/admin to get to the admin page now
+16) python manage.py createsuperuser	#create superuser (eg. for login in /admin - provide name + pw)
+
+in PJ_NAME folder:
+17) settings.py: add import os
+18) settings.py: under "STATIC_URL" add: MEDIA_URL = "media/" and MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+(images, videos etc. are going in this folder)
+19) url.py add: from . import settings and from django.conf.urls.static import static
+20) url.py after the urlpatterns-list add:  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
+
+21) pip install pillow (necessary for the images)
+22) models.py: create models (eg. products, categories, orders, etc.)
+23) python manage.py makemigrations AND python manage.py migrate	# prepeare migrations (when anything changed in the apps)
+24) admin.py: from .models import Category, Customer, Product, Order
+25) admin.py: admin.site.register(Category), admin.site.register(Customer), admin.site.register(Product), admin.site.register(Order)
 
 settings.py in django-folder
 ""
   BASE_DIR => directory of the django-project
   SECRET_KEY => individual key from django-project
   DEBUG => should be set to False in production
-  INSTALLED_APPS => componente / pieces of the django-project
+  INSTALLED_APPS => components / pieces of the django-project
   DATABASES => database of the django-project
 ""
 
@@ -4410,9 +4444,6 @@ python manage.py startapp products
   add "products" to INSTALLED_APPS in settings.py
 ""
 
-python manage.py createsuperuser        => create superuser (eg. for login to /admin app/component)
-python manage.py makemigrations         => prepeare migrations (when anything changed in the apps)
-python manage.py migrate                => migrate all changes
 add this: from .models import Product in admin.py of the products app / component     => now products can created in the /admin-page
 python manage.py shell                  => open django-sheel (eg. create products from the shell )
 https://docs.djangoproject.com/en/4.0/ref/templates/builtins/     => overview builtins
