@@ -897,14 +897,20 @@ with open ("fn.txt","r+") as f: print(f.read()			=> Open File for Read and Write
 
 => Read textfile - stored in list per line
 ""
-with open(fn, encoding="utf8", errors="ignore") as f:
+with open(fn, encoding="mac_roman", errors="ignore") as f:
   lines = f.read().splitlines()
 ""
 
 => Write txtfile - from list
 ""
-with open("fn.txt", "w", encoding="utf8", errors="ignore") as f:
+with open("fn.txt", "w", encoding="mac_roman", errors="ignore") as f:
   lines = f.writelines(["Hello\n", "World", "NextLine"])
+""
+
+=> Write txtfile - from string
+""
+with open("fn.txt", "w", encoding="mac_roman", errors="ignore") as f:
+  f.write("some text")
 ""
 
 => Write only a max-size in a txt-file (eg. only a maximum of 50kb will be written)
