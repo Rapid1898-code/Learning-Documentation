@@ -4434,6 +4434,9 @@ in PJ_NAME folder:
 24) admin.py: from .models import Category, Customer, Product, Order
 25) admin.py: admin.site.register(Category), admin.site.register(Customer), admin.site.register(Product), admin.site.register(Order)
 
+
+
+
 settings.py in django-folder
 ""
   BASE_DIR => directory of the django-project
