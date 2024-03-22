@@ -4404,14 +4404,35 @@ C:\Users\Polzi\Documents\DEV\Python-Diverses\Django   => Example
 
 in PJ_NAME folder:
 3) settings.py: add the APP_NAME to the INSTALLED_APPS
-4) urls.py: add include to <from django.urls import path>
+4) urls.py: add include to <from django.urls import path, include>
 5) urls.py: add in urlpatterns => path ('', include('APP_NAME.urls'))
+""
+from django.contrib import admin
+from django.urls import path, include
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('gpp.urls')),
+]
+""
 
 in APP_NAME folder:
-6) create urls.py (copy urls.py from PJ_NAME and delete import admin line and include at the django.urls and urlpatterns list
+6) create urls.py (copy urls.py from PJ_NAME and delete import admin line and delete include at the django.urls and urlpatterns list
 7) in urls.py add: from . import views
 8) in urls.py in urlpatterns add: path('', views.home, name='home')
+""
+from django.urls import path
+from . import views
+urlpatterns = [
+  path('', views.home, name='home'),
+]
+""
 9) in views.py add: def home(request): return render(request, 'home.html', {})
+""
+from django.shortcuts import render
+def home(request):
+  products = Product.objects.all()
+  return render(request, "home.html", {})
+""
 10) create "templates" folder (in APP_NAME folder) 	# all html-templates are stored there
 11) create home.html in "templates" folder
 
