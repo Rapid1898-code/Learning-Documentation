@@ -1070,7 +1070,7 @@ import csv
 => Read csv-file to nested-list
 ""
 fn = os.path.join(path, "inp.csv")
-with open(fn, "r", encoding="utf-8") as f:               
+with open(fn, "r", encoding="mac_roman") as f:               
   csvRead = csv.reader(f, delimiter=";")
   inpData = [x for x in csvRead]                                
 
@@ -1094,7 +1094,7 @@ with open(fn, "r",  encoding='ISO-8859-1') as f:
 => Write csv-file from nested list
 ""
 FN = os.path.join(path, "output.csv")
-with open(FN, 'w', newline='', encoding="utf-8") as f:
+with open(FN, 'w', newline='', encoding="mac_roman") as f:
   writer = csv.writer(f, delimiter=";")
   writer.writerows(l)
 ""
@@ -4397,6 +4397,7 @@ Python-Diverses / Plotly / example.py   => see example for candlestick-chart
 https://www.youtube.com/watch?v=F5mRW0jo-U4&t=5043s     # Video Training
 https://www.youtube.com/playlist?list=PLCC34OHNcOtpRfBYk-8y0GMO4i1p1zn50      # Building an ecommerce webpage
 https://startbootstrap.com/     # bootstrap templates
+https://www.youtube.com/watch?v=xtnUwvjOThg     # deploy on python anywhere
 C:\Users\Polzi\Documents\DEV\Python-Diverses\Django   => Example
 0) pip install django			# installation
 1) django-admin startproject PJ_NAME	# create a blank django project
