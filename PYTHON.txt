@@ -1043,6 +1043,7 @@ for item in lst:
 => https://docs.python.org/3/library/urllib.request.html#module-urllib.request
 import urllib.parse                           => Import Module for URL parsing
 import urllib.request                         => Import Module for request
+from urllib.parse import urlparse             => Import for url parsing
 link = urllib.parse.quote_plus(link)          => Encode url
 link = urllib.parse.unquote_plus(link)        => Uncode url
 u = urlparse("http://google.com/search")			=> Parse HTML-link1
