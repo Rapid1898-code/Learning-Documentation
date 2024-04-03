@@ -19,7 +19,7 @@ https://github.com/gto76/python-cheatsheet
 #> GENERATORS, YIELD
 #> LAMBDA, MAP, FILTER
 #> CLASSES, DATACLASSES
-#> TXT FILES
+#> f
 #> JSON FORMAT
 #> XML FORMAT
 #> URLLIB
