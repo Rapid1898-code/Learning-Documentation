@@ -2247,7 +2247,7 @@ for f in os.listdir(): print(f)                      => Outputs the entire conte
 for f in os.listdir(): fn, ext = os.path.splitext(f) => Outputs the elements seperated in name + extension
 os.rename(filename, new_name)                        => Change the filenmae
 os.rename(src, dst)							                     => Cut and paste file from path1 to path2
-shutil.copyfile("src", "dst")                        => Copy file from source to destination
+shutil.copyfile(src, dst)                            => Copy file from source to destination
 os.mkdir("folder")                                   => Creates new folder (also possible with makedirs => is prefered)
 os.makedirs("folder/subfolder")                      => Creates new folder and subfolders
 os.remove (file)											               => Delete file
