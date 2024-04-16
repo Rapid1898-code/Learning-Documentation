@@ -4406,10 +4406,6 @@ https://www.youtube.com/watch?v=xtnUwvjOThg     # deploy on pythonanywhere
 3) install modules: pip install django, pip intall openai, pip install python-dotenv
 ""
 
-
-
-
-
 C:\Users\Polzi\Documents\DEV\Python-Diverses\Django   => Example
 0) pip install django			# installation
 1) django-admin startproject PJ_NAME	# create a blank django project
