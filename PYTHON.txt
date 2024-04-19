@@ -4600,12 +4600,29 @@ dolt sql -r csv -q "SELECT * FROM Salaries" > salary-hr.csv   => Write query to 
 
 
 ###### PYTHONANYWHERE
+Selenium setup
+""
 signup for the service and at least take a "hacker"-package: https://www.pythonanywhere.com/pricing/
 (only with that you are able to access all url - otherwise only a few are acccesiable)
 helppage for using selenium: https://help.pythonanywhere.com/pages/selenium
 - create an virtual environment and install all necessary python packages
 - install selenium-version: pip install selenium==4.7.2
+""
 
+Deploy Django as webapp
+""
+https://www.youtube.com/watch?v=xtnUwvjOThg
+""
+
+Allways-on tasks
+https://help.pythonanywhere.com/pages/AlwaysOnTasks/
+""
+put the command like
+/home/colli239/.virtualenvs/venv/bin/python -u /home/colli239/gpt/task.py
+=> first part is the path to the python-exe of the virutal environement (find with "which python")
+=> with the -u parameter every log-output is done at once and not after buffering
+=> last part is the path to the python-file
+""
 
 
 ###### HEROKU - run python scripts in the cloud
