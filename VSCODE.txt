@@ -22,6 +22,7 @@ Color Picker
 CSS Peak
 Dart
 Doxygen Documentation Generator
+Duplicate Action
 Excel Viewer
 Git History
 GitLink
@@ -32,6 +33,7 @@ Jupyter Slide Show
 open in browser
 Prettier - Code formatter
 Pylance
+Python
 Python Remote Explorer
 Setting-Sync
 vscode-icons

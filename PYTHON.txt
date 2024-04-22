@@ -567,7 +567,7 @@ zip([1,2,3],[4,5,6])							               => Build paris as tuple => (1,4),(2,5)
 list(set(l))									                   => Remove duplicates from a list
 list(dict.fromkeys(l))                           => Remove duplicates from a list and keep existing order
 list(map(int,l))								                 => Change elements in list to int
-[[x[i] for x in l] for i in range(len(l[0]))]    => Transpose nested list (change rows and columns)
+lNew = [list(x) for x in zip(*l)]                => Transpose nested list (change rows and columns)
 l3 = set(l2) - set(l1)                           => Get difference of 2 lists
 1st, 2nd, *rest = ["A","B","C","D","E"]          => Unpacking of a list (1st=A, 2nd=B, rest=["C","D","E"])
 
@@ -953,7 +953,7 @@ except Exception as e:
 ###### JSON FORMAT   
 import json                                         => Import json-module
 fn = "numbers.json"                                 => Assign JSON-filename
-with open(fn) as data: info = json.loads(data)      => Reading informations in json-format
+with open(fn) as data: info = json.loads(data)      => Convert json to dict
 json_format = json.dumps(d,indent=2)				        => Convert / Encode a dict to a json-file (with indent for better reading)
 json_format = json.dumps(d,sort_keys=True)			    => Convert / Encode a dict to a json-file (with sorting the keys)
 person = json.loads(json_format)					          => Convert / Decode a json-file to a dict
@@ -4464,9 +4464,15 @@ in PJ_NAME folder:
 24) admin.py: from .models import Category, Customer, Product, Order
 25) admin.py: admin.site.register(Category), admin.site.register(Customer), admin.site.register(Product), admin.site.register(Order)
 
-
-
-
+Files:
+""
+  urls.py             urls for a specific site
+  views.py            view with the logic for the site
+  templates/*html     html-page
+  models.py           definiton of the models / tables in the django application
+  admin.py            register the model so its shown one the /admin page
+""
+    
 settings.py in django-folder
 ""
   BASE_DIR => directory of the django-project

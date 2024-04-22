@@ -12,7 +12,7 @@ VSCode
   Set ruler for 120 chars (https://stackoverflow.com/questions/29968499/vertical-rulers-in-visual-studio-code)
   Set Auto Closing Brackets in setting to allways
   Set option in extension Settings Sync: Quiet Sync enabled (otherwise output windows will open permanently)
-  Set default terminal to bash: F1 - "Terminal Select Defaul"
+  Set default terminal to bash: F1 - "Terminal Select Default"
 
 Install GIT
   Download + Install: https://git-scm.com/downloads
