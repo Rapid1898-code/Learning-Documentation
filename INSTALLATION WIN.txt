@@ -1,3 +1,7 @@
+Installaton mittels Win10 USB-Stick
+Alle anderen Festplatten entfernen vor der Installation ansonst Probleme
+
+
 Windows Explorer
   Versteckte Dateien anzeigen (winExplorer - ansicht - optionen - ansicht))
   Erweiterungen bei bekannten Dateitypen einschalten (s.o.)
