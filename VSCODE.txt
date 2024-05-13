@@ -17,7 +17,7 @@ Auto Align
 autoDocstring - Python Docstring Generator
 C/C+ Extension Pack
 change-case
-Code Runner
+Code Runner     
 Color Picker
 CSS Peak
 Dart
