@@ -1237,6 +1237,7 @@ new_values = [1,2,3,4,5]                              => Define new values for a
 Documentation: => https://openpyxl.readthedocs.io/en/stable/api/openpyxl.worksheet.worksheet.html#openpyxl.worksheet.worksheet.Worksheet.PAPERSIZE_A3
 import openpyxl as on_text
 wb = ox.load_workbook("test.xlsx")              => Read xlsx
+wb = ox.load_workbook(fn, rich_text=True)       => Read xlsx with richtext (eg. for partly coloring a font in a cell)
 l = wb.sheetnames     							            => Read worksheetnames to list
 ws = wb["sheet1"]                               => Select specific worksheet in workbook
 ws = wb.worksheets[0]                           => Select first worksheet
