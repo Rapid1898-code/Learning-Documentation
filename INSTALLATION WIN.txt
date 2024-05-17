@@ -33,8 +33,8 @@ Install Python
   Install VirtualEnv (with pip install virtualenv)
   Create virtual environements under .venv
   (Download and install GitBash)
-  (Set alias for python so it can be used in GitBash: alias python="winpty C:/Users/WRSPOL/AppData/Local/Programs/Python/Python39/python.exe")
-  (Set alias for pip so it can be used in GitBash: alias pip="winpty C:/Users/WRSPOL/AppData/Local/Programs/Python/Python39/Scripts/pip.exe") 
+  (Set alias for python so it can be used in GitBash: alias python="winpty C:/Users/WRSPOL/AppData/Local/Programs/Python/Python312/python.exe")
+  (Set alias for pip so it can be used in GitBash: alias pip="winpty C:/Users/WRSPOL/AppData/Local/Programs/Python/Python312/Scripts/pip.exe") 
 
 Software
   GoogleDriveSetup
