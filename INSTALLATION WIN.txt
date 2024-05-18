@@ -1,3 +1,10 @@
+Installation
+  alle anderen Festplatten abstecken sonst funktoniert die Installation vom USB-Stick nicht
+  https://www.reddit.com/r/Piracy/wiki/guides/win10upgrade_activation/  
+  Activate Windows 10: https://github.com/massgravel/Microsoft-Activation-Scripts with Method 1
+
+  Activate Office: https://old.reddit.com/r/Piracy/wiki/guides/office_activation
+
 Windows Explorer
   Versteckte Dateien anzeigen (winExplorer - ansicht - optionen - ansicht))
   Erweiterungen bei bekannten Dateitypen einschalten (s.o.)

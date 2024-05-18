@@ -1235,7 +1235,7 @@ new_values = [1,2,3,4,5]                              => Define new values for a
 
 ###### MODULE - OPENPYXL - working with excel worksheets
 Documentation: => https://openpyxl.readthedocs.io/en/stable/api/openpyxl.worksheet.worksheet.html#openpyxl.worksheet.worksheet.Worksheet.PAPERSIZE_A3
-import openpyxl as on_text
+import openpyxl as ox
 wb = ox.load_workbook("test.xlsx")              => Read xlsx
 l = wb.sheetnames     							            => Read worksheetnames to list
 ws = wb["sheet1"]                               => Select specific worksheet in workbook
