@@ -450,6 +450,19 @@ if not any(x in s for x in l):                # check if any elems from checks a
 if all(x in s for x in l):                    # check if all elems from checks are in string s
 ""
 
+=> add linebreak after numer of words 
+""
+  start = 0
+  N = 3
+  l = inp.split()
+  outText = []
+  for stop in range(N, len(l)+N, N):
+    worker = ' '.join(l[start:stop])
+    outText.append(worker)
+    start = stop
+  outText = "\n".join(outText)
+""
+
 => string library
 ""
 https://docs.python.org/3/library/string.html
@@ -1099,12 +1112,16 @@ with open(fn, "r",  encoding='ISO-8859-1') as f:
     pass  
 ""
 
-=> Write csv-file from nested list
+=> Write csv-file from nested list and check if file is open
 ""
-FN = os.path.join(path, "output.csv")
-with open(FN, 'w', newline='', encoding="mac_roman") as f:
-  writer = csv.writer(f, delimiter=";")
-  writer.writerows(l)
+  while True:
+    try:
+      with open(fn, 'w', newline='', encoding="utf-8") as f:
+        writer = csv.writer(f, delimiter=";")
+        writer.writerows(inpData)
+      break
+    except PermissionError:
+      input(f"Problems writing csv-file - pls close file and press any key to try again")
 ""
 
 => Read csv-file to a dictionary for every line
@@ -2260,7 +2277,8 @@ shutil.copyfile(src, dst)                            => Copy file from source to
 os.mkdir("folder")                                   => Creates new folder (also possible with makedirs => is prefered)
 os.makedirs("folder/subfolder")                      => Creates new folder and subfolders
 os.remove (file)											               => Delete file
-os.rmdir ("folder")                                  => Delete folder (prefered cause deleting is dangerous)
+os.rmdir (folder)                                    => Delete folder (when there are no file in the folder)
+shutil.rmtree(folder)                                => Delete folder (with file in it) - import shutil necessary
 os.removedirs ("folder/subfolder")                   => Delete folder and subfolders
 os.stat("file")                                      => Outputs the statistics of the file (size, modification time,...)
 for dirpath,dir,files in os.walk(os.getcwd())        => Outputs dirpath - all the dirs - and all the files
