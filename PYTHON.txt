@@ -1237,6 +1237,7 @@ new_values = [1,2,3,4,5]                              => Define new values for a
 Documentation: => https://openpyxl.readthedocs.io/en/stable/api/openpyxl.worksheet.worksheet.html#openpyxl.worksheet.worksheet.Worksheet.PAPERSIZE_A3
 import openpyxl as ox
 wb = ox.load_workbook("test.xlsx")              => Read xlsx
+wb = ox.load_workbook(fn, rich_text=True)       => Read xlsx with richtext (eg. for partly coloring a font in a cell)
 l = wb.sheetnames     							            => Read worksheetnames to list
 ws = wb["sheet1"]                               => Select specific worksheet in workbook
 ws = wb.worksheets[0]                           => Select first worksheet
@@ -2242,7 +2243,8 @@ mac = get_mac()
 ###### MODULE - OS, SHUTIL, FILECMP, DIRCMP, Send2Trash - interacting with the operating system
 import os												                     => Import module
 path = os.path.abspath(os.path.dirname(sys.argv[0])) => Get the actual path
-os.listdir(path)											               => All Files and Folder from the actual path
+os.listdir(path)											               => All Files and Folders from the actual path
+[x.name for x in os.scandir(path) if x.is_dir() ]    => All Folders from the actual path
 [x for x in os.listdir(path) if os.path.isfile(os.path.join(path, x))]   => Only Files from actual path
 [x for x in os.listdir(path) if os.path.isdir(os.path.join(path, x))]    => Only Folders from actual path
 [x[0] for x in os.walk(path)][1:]                    => Put all sub-folders to a list from the actual working dir

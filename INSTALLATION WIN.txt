@@ -1,9 +1,10 @@
 Installation
-  alle anderen Festplatten abstecken sonst funktoniert die Installation vom USB-Stick nicht
+  Installaton mittels Win10 USB-Stick
+  Alle anderen Festplatten entfernen vor der Installation ansonst Probleme
   https://www.reddit.com/r/Piracy/wiki/guides/win10upgrade_activation/  
   Activate Windows 10: https://github.com/massgravel/Microsoft-Activation-Scripts with Method 1
-
-  Activate Office: https://old.reddit.com/r/Piracy/wiki/guides/office_activation
+  Activate Office: https://old.reddit.com/r/Piracy/wiki/guides/office_activation with MAS
+  Download from: https://files.rg-adguard.net/category
 
 Windows Explorer
   Versteckte Dateien anzeigen (winExplorer - ansicht - optionen - ansicht))
@@ -46,7 +47,7 @@ Software
   AnyDesk (grant remote access with lock near address-number)
   NordVPN (no install of software necessary - chrome addon should be sufficient)
   Grammarly (english spelling)
-  Greenshot (screen shots)
+  Greenshot or LightShot (screen shots)
   OBS (screen recording)
   VLC (video/audio player)
   XnView (images)
