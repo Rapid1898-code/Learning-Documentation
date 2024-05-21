@@ -97,11 +97,14 @@ pip install virtualenv          => Install virtualenv
 pip list                        => Global packages installed
 where python                    => Shows where the python-file is (Windows)
 which python                    => Shows where the python-file is (Linux)
+py -3.12 -m venv openai         => Create a virtual environment with a specific installed python version
 python -m virtualenv env        => Create new virtual environment env
 python3 -m venv env             => Create new virtual environment env (for python3 eg. on MacOS)                  
+
 pip freeze --local > requirements.txt                      => Extracts all the modules / dependencies to a txt-file 
 deactivate                                                 => Go back to the global environment
 virtualenv -p C:\..path to..\Python37\python.exe py37_env  => Create new virtual env with specific python-version
+eg. virtualenv -p C:\\Users\\WRSPOL\\AppData\\Local\\Programs\\Python\\Python312\\python.exe selenium
 py37_env\Scripts\activate                                  => Activate new virtual env named py37_env
 python --version                                           => Shows the used python version in the virtual env
 pip install -r requirements.txt                            => Install all the packages from requirements.txt
