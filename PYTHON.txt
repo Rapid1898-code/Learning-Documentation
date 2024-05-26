@@ -3368,7 +3368,8 @@ ua = UserAgent(verify_ssl=False)
 userAgent = ua.random
 HEADERS = {"User-Agent": userAgent}
 page = requests.get (link, headers=HEADERS)
-page = requests.get(site,timeout=5)               => try to read the website for max 5sec
+page = requests.get(site, verify=False)                 =>
+page = requests.get(site, timeout=5)                    => try to read the website for max 5sec
 soup = BeautifulSoup (page.content, "html.parser")
 ""
 
