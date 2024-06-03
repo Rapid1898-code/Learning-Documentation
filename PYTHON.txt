@@ -585,6 +585,9 @@ list(map(int,l))								                 => Change elements in list to int
 lNew = [list(x) for x in zip(*l)]                => Transpose nested list (change rows and columns)
 l3 = set(l2) - set(l1)                           => Get difference of 2 lists
 1st, 2nd, *rest = ["A","B","C","D","E"]          => Unpacking of a list (1st=A, 2nd=B, rest=["C","D","E"])
+[l[i:i + C] for i in range(0, len(l), C)]        => Split a list (l) in chunks (C)
+
+
 
 => rotate list for n places
 ""
@@ -922,17 +925,17 @@ with open(fn, encoding="mac_roman", errors="ignore") as data:
   info = json.load(data) 
 ""
 
-
-
 => Write txtfile - from list
 ""
-with open("fn.txt", "w", encoding="mac_roman", errors="ignore") as f:
+fn = "".join(i for i in wTitle if i not in "\/:*?<>|" and i not in '"')
+with open(fn, "w", encoding="mac_roman", errors="ignore") as f:
   lines = f.writelines(["Hello\n", "World", "NextLine"])
 ""
 
 => Write txtfile - from string
 ""
-with open("fn.txt", "w", encoding="mac_roman", errors="ignore") as f:
+fn = "".join(i for i in wTitle if i not in "\/:*?<>|" and i not in '"')
+with open(fn, "w", encoding="mac_roman", errors="ignore") as f:
   f.write("some text")
 ""
 
@@ -940,7 +943,8 @@ with open("fn.txt", "w", encoding="mac_roman", errors="ignore") as f:
 ""
   maxSize = 50*1024 # 50kb in bytes    
   totalSize = 0
-  with open(txtFN, 'w', encoding='utf-8') as f:
+  fn = "".join(i for i in wTitle if i not in "\/:*?<>|" and i not in '"')
+  with open(fn, 'w', encoding='utf-8') as f:
     for l in foundText.split("\n"):
       sizeLine = len(l.encode('utf-8'))
       if totalSize + sizeLine > maxSize:
@@ -949,7 +953,6 @@ with open("fn.txt", "w", encoding="mac_roman", errors="ignore") as f:
       f.write(l)
       totalSize += sizeLine  
 ""
-
 
 
 with open("fn.txt","a") as obj: obj.write("\nNoch ein Text")  => Append text in the next line
