@@ -611,6 +611,12 @@ for row in l:
     row.append(None)
 ""
 
+=> Sort list in a specific value-order for eg. the sixth column in the list
+""
+  SORT_ORDER = {"RUSH": 0, "HIGH": 1, "MEDIUM": 2, "LOW": 3, "FINISHED": 4} 
+  l.sort(key=lambda val: SORT_ORDER[val[5]])   
+""
+
 
 
 ###### TUPLE
@@ -3308,10 +3314,18 @@ import requests										              => import module requests
 import json                                     => import module json
 resp = requests.get (url)                       => Request api from the generated api-link
 
-=> GET-request with payload and headers
+=> GET-request for API with url, headers, params and authentification
 ""
-payload = {'key1': 'value1', 'key2': 'value2'}
-resp = requests.request("GET", url, data=payload, headers=headers)    
+import requests
+from requests.auth import HTTPBasicAuth
+import json
+url = 'https://services.sandbox.mobile.de/search-api/search'
+username = 'search-generic'
+password = 'search-generic'
+headers = {'Accept': 'application/vnd.de.mobile.api+json'}
+params = {'sort.order': 'DESCENDING','page.size': 5}
+resp = requests.get(url, headers=headers, params=params, auth=HTTPBasicAuth(username, password))
+data = resp.json()
 ""
 
 => Return the statuscode of the response
