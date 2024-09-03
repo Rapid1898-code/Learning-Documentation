@@ -1168,6 +1168,7 @@ zf.open (file_name)												=> Open file vom Zip-File (eg. CSV-File which is 
 see also Python-Diverses / GSpread
 =>  API for GoogleSheets / Tutorial explaining handling
 => https://techwithtim.net/tutorials/google-sheets-python-api-tutorial/	
+=> Documentation User-Guide: https://docs.gspread.org/en/latest/user-guide.html
 ""
 # Create a project on https://console.cloud.google.com/
 # select name + click create + select project
@@ -1200,21 +1201,22 @@ import gspread                                                      # import mod
 import oauth2client                                                 # import module
 from oauth2client.service_account import ServiceAccountCredentials  # import module for account credentials
 from pprint import pprint                                           # import module for better output formatting
-scope = ["https://spreadsheets.google.com/feeds",
-         'https://www.googleapis.com/auth/spreadsheets',
-         "https://www.googleapis.com/auth/drive.file",
-         "https://www.googleapis.com/auth/drive"]
-creds = ServiceAccountCredentials.from_json_keyfile_name
-    ("creds.json", scope)
+scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',
+         "https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
+creds = ServiceAccountCredentials.from_json_keyfile_name ("creds.json", scope)
 ""
         
 gc = gspread.authorize(creds)                         => Credentials Mgmt for GoogleSheets
-wb1 = gc.open("NameOfSheet)                           => Open the Google Sheet
-ws1 = wb1.get_worksheet(0)                            => Open the first worksheet in the Google Sheet
-listWS = wb1.worksheets()                             => Get all worksheets as worksheet-objects
-listWS = [x.title for x in wb1.worksheets()]          => Get all worksheets by n
-sheet = client.open("testpython").sheet1              => Open the spreadhseet
+wb = gc.open("NameOfSheet)                            => Open the GSheet by name (problematic when files with same name)
+wb = gc.open_by_key('1rzlL0YWA1_eIlyTKKwlmXgsFg')     => Open the GSheet by the unique ID (from the link)
+wb = gc.open_by_url(fullLink)                         => Open the GSheet with the full URL
+ws = wb1.get_worksheet(0)                             => Open the first worksheet in the Google Sheet
+ws = wb1.worksheet("xyz")                             => Open worksheet by name
+listWS = wb.worksheets()                              => Get all worksheets as worksheet-objects
+listWS = [x.title for x in wb.worksheets()]           => Get all worksheets by n
 dataList = ws1.get_all_values()                       => Get a list of all records
+ws1.update(dataWork, "A1:I13")                        => Update Sheet
+ws.batch_clear(["A2:I10000"])                         => Clear Sheet regarding the entries
 data = ws1.get('B5:K8')                               => Get specific area
 ws1.acell('B1', value_render_option='FORMULA').value  => Get formula of a cell
 ws1.update('A1:Z10', [[1, 2], [3, 4]])                => Update cell range with nested list
@@ -1232,6 +1234,11 @@ new_values = [1,2,3,4,5]                              => Define new values for a
 => Gspread Formatting
 => https://pypi.org/project/gspread-formatting/
 ""
+wsWork.format("A2:I10000", {"backgroundColor": {"red": 1, "green": 1, "blue": 1},})
+  => set the background color to white / nothing
+wsWork.format("A2:I10000", {"backgroundColor": {"red": 242/255, "green": 206/255, "blue": 239/255},})
+  => set background color to light purple
+
 # Set format for area:
 	from gspread_formatting import *
 	fmt = cellFormat(
