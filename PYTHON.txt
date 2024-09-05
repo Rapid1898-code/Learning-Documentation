@@ -4671,15 +4671,44 @@ helppage for using selenium: https://help.pythonanywhere.com/pages/selenium
 ""
 
 Deploy Django as webapp
-""
 https://www.youtube.com/watch?v=xtnUwvjOThg
 ""
+- zip the whole folder (eg. gpt) and unzip it on the home-folder (eg. /home/rapidtech1898)
+- create a venv and pip install all necessary modules (eg. venv in .virtualenvs)
+- add new webapp with correct python-version and manual set_printer_settings
+- add name of the virtual ennvironment (eg. venv) in the input-field at "Virtualenv:"
+- change the WSGI configuration file eg.
+    import os, sys
+
+    path = '/home/putzfrauagenturkehl/gpt'
+    if path not in sys.path: sys.path.append(path)
+    os.environ['DJANGO_SETTINGS_MODULE'] = 'gpt.settings'
+
+    from django.core.wsgi import get_wsgi_application
+    application = get_wsgi_application()
+- change the ALLOWED_HOST in settings.py (eg. at /home/rapidtech1898/gpt/gpt/settings.py)
+  and add the link of the webapp (eg. rapidtech1898.pythonanywhere.com)
+- Reload and start the app
+""
+
+Scheduled tasks
+https://help.pythonanywhere.com/pages/ScheduledTasks/
+""
+put the command like
+/home/rapidtech1898/.virtualenvs/venv/bin/python -u /home/rapidtech1898/gpt/updDataGSheet.py
+=> first part is the path to the python-exe of the virutal environement (find with "which python")
+=> with the -u parameter every log-output is done at once and not after buffering
+=> last part is the path to the python-file
+=> task can only be scheduled daily or hourly (under one hour has to handled in the proggram)
+  eg. 12 iterations when the program should run every 5 minutes
+""
+
 
 Allways-on tasks
 https://help.pythonanywhere.com/pages/AlwaysOnTasks/
 ""
 put the command like
-/home/colli239/.virtualenvs/venv/bin/python -u /home/colli239/gpt/task.py
+/home/rapidtech1898/.virtualenvs/venv/bin/python -u /home/rapidtech1898/gpt/task.py
 => first part is the path to the python-exe of the virutal environement (find with "which python")
 => with the -u parameter every log-output is done at once and not after buffering
 => last part is the path to the python-file
