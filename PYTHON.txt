@@ -2128,9 +2128,6 @@ t = timedelta(days=0.786331018518518)                        => Convert float to
 f = t.total_seconds() / 86400                                => Convert datetime.timedelta to float
 dt = datetime.utcfromtimestamp(0.459 * 86400)                => Convert float to datetime
 
-
-
-
 => Using german names / deutsche namen for month- and day-names
 ""
 import locale
@@ -3229,6 +3226,12 @@ soap.tbody                        => Reads everyting what is in the tbody-tag
 .strings                          => get all strings from a tag in an iterable
 .stripped_strings                 => get all (stripped) strings from a tag in an iterable
 .find_all(text=True, recursive=False)   => get all text directly below a tag
+
+=> Parse local html file
+""
+  page = open("file.html")
+  soup = BeautifulSoup (page.read(), 'lxml')  
+""
 
 => Using the select selector
 ""
