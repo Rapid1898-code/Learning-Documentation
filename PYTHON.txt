@@ -2126,7 +2126,7 @@ date = datetime.fromtimestamp(ts)                            => Generate Datetim
 sys.getsizeof(l) or sys.getsizeof(t)						             => Shows size of the list / tuple in bytes
 t = timedelta(days=0.786331018518518)                        => Convert float to hh:mm:ss datetime.timedelta
 f = t.total_seconds() / 86400                                => Convert datetime.timedelta to float
-dt = datetime.utcfromtimestamp(0.459 * 86400)                => Convert float to datetime
+dt = datetime.fromtimestamp(0.459 * 86400, UTC)              => Convert float to datetime
 
 => Using german names / deutsche namen for month- and day-names
 ""
