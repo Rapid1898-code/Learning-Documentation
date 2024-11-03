@@ -2118,8 +2118,8 @@ tdelta = timedelta(seconds=60)                               => Creates timedelt
 tday + tdelta                                                => 7 days are added to the actual day
 newdate = date - timedelta(days=1)                           => Previous 1-day-back-date for date
 date2-date1                                                  => Timedelta for two dates
-daysDiff = abs(dt2-dt1).days								                 => Difference in days
-minDiff = (date2-date1).total_seconds() / 60                 => Difference in minutes
+daysDiff = abs(dt2 - dt1).days								               => Difference in days
+minDiff = (date2 - date1).total_seconds() / 60               => Difference in minutes
 datetime.fromisoformat('2020-07-10 02:00:00').timestamp()    => Generate UNIX/ISO-format from datetime
 iso_dt = datetime.fromisoformat(str(datetime.now())).timestamp()   => Generate UNIX/ISO-format from actual date
 date = datetime.fromtimestamp(ts)                            => Generate Datetime from UNIXISO-format
