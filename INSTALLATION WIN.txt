@@ -24,7 +24,7 @@ VSCode
 
 Install GIT
   Download + Install: https://git-scm.com/downloads
-  git config --global user.email "you@example.com"
+  898
   git clone repos
   copy .gitignore
 
