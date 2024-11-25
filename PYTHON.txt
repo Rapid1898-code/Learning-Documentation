@@ -443,6 +443,9 @@ hashlib.md5(s).encode('utf-8')).hexdigest()     => Outputs hashvalue oif the str
 eval("2+2")                                     => Gives the value of an expression => 4 (dangerous - can used for sql-injections)
 my_string[::-1]									                => Reverse a string
 repr(s)											                    => Print string with special characters
+" ".join(s.split())                             => Delete all blank, whitspaces from a string (method 1)
+wAddress = re.sub('\s{2,}', ' ', s)             => Delete all blank, whitspaces from a string (method 2)
+
 
 => check if any string is in another string or all strings are in another string
 ""
