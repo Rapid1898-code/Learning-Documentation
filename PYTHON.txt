@@ -331,6 +331,7 @@ input("ENTER to continue")      => Wait for pressing ENTER (or a keyboard stroke
 int(input("Age?":))             => Input age and change to int
 type(var)                       => Returns the type of a variable
 dir(var)                        => Shows all available methods and attributes for the object as list
+var.__dict__["_rawData"]        => show all attributes with the value 
 isinstance(x,float)             => Check if x has type format float (others: str,int,list,tuple,range,dict,set,bool)
 x = float("inf")                => Set var to max-value (float infinite)
 math.sqrt(9)                    => Calculates the sqrt of the value => i3
