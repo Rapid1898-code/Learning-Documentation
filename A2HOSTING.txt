@@ -21,6 +21,7 @@ SETTNGS-Tab:
   Hostname / IP: 127.0.0.1
   User: rapidtec_Rapid1898
   PW: I65faue#AG9#
+  Port: 3306
 SSH TUNNEL-Tab:
   Download plink.exe for x86/x64 and store at something like C:\TOOLS\plink.exe or C:\PRG\plink.exe
   SSH executable: store the path in the field
