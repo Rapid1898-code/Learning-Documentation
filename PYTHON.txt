@@ -1134,7 +1134,7 @@ with open(fn, "r",  encoding='ISO-8859-1') as f:
     try:
       with open(fn, 'w', newline='', encoding="utf-8") as f:
         writer = csv.writer(f, delimiter=";")
-        writer.writerows(inpData)
+        writer.writerows(outData)
       break
     except PermissionError:
       input(f"Problems writing csv-file - pls close file and press any key to try again")
