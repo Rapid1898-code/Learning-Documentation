@@ -3418,6 +3418,19 @@ soup = BeautifulSoup (page.content, "html.parser")
 ""
 
 
+=> Using requests to get data from an API with a curl-example
+""
+  # Convert the curl-example to python using: https://curlconverter.com/python/
+  headers = {'Content-Type': 'application/json', 'Authorization': 'Bearer YOUR_TOKEN_HERE'}
+  data = {'key1': 'value1', 'key2': 'value2'}
+  response = requests.post(url, headers=headers, json=data)
+  print(resp.status_code, resp.reason )
+  erg = resp.json()  
+  with open('data.json', 'w', encoding='utf-8') as f:
+    json.dump(erg, f, ensure_ascii=False, indent=4)                           
+  exit()
+""
+
 
 ###### MODULE - SCRAPY - webscraping using spiders
 => Tutorial: https://docs.scrapy.org/en/latest/intro/tutorial.html
