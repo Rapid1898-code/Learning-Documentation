@@ -1,0 +1,163 @@
+### Get some data out of a text:
+Answer the following questions about the text below line by line
+Output the answers line be line and output only the finding and nothing else
+
+Parse the gmail-address.  Output only the gmail-adress and nothing else.
+Parse the name of the person Output only the name and nothing else.
+Parse the Zip-Code and City. Output only the zip-code and city-name in the format "ZIP CITY" and nothing else.
+Parse the street and street-number. Output only the street and street-number in the format "STREETNAME STREETNUMBER"
+Parse the phone-number. Output only the phone-number and nothing else.
+
+{TEXT}
+
+
+
+### Create an image out of a text:
+Create an realistic image for this project i did:
+Check the url for some companies, scrape some data and answer questions using OpenAI
+
+
+
+### Answer questinos about a text-file:
+instructions="You are a machine learning researcher, answer questions about the provided text-file",
+
+Check if it is a joint venture. If yes output the names of the parent companies, but only the names and nothing else and also no source information. If not output "No Joint Venture" and nothing else.
+Identify the points of contact names. Output only the names and nothing else. Also no source information.
+Identify the points of contact info. Output only the email-addresses and nothing else. Also no source information.
+Provide a full list of all their core competencies
+Provide a full list of all their certifications
+
+
+
+### Check if a website has ordering and reservation possibility:
+instructions="You are a machine learning researcher, answer questions about the provided text-file",
+Does the text offers online ordering and reservations?
+
+
+
+### Get infos from a website in a specific structure:
+Your task is to gather specific information from a text-file and structure it according to
+predefined categories. Follow these guidelines carefully:
+Guidelines:
+1. The output language must be German (Germany), even if the source language is different.
+2. Output the informaEon without comments or courtesy phrases (e.g., “Here are the details you requested…” or similar introducEons or closing remarks).
+Structure the Output as follows:
+1. Name des Ortes (Name of the LocaEon):
+2. Adresse (Address):
+3. Straße (Street):
+4. Postleitzahl (Postal Code):
+5. Ort (City):
+6. Bundesland (State):
+7. Land (Country):
+8. Längengrad (Longitude): Determine the longitude based on the address using a mapping service.
+9. Breitengrad (LaEtude): Determine the laEtude based on the address using a mapping service.
+10. Kontak4nforma4onen (Contact InformaEon):
+a. Telefonnummer (Phone number): (standard format: +49 (0) 421 3650 410)
+b. E-Mail-Adresse (Email address):
+c. Homepage (Website):
+11. Besonderheiten (Special Features): Indicate YES for each criterion that applies to the locaEon. Do not show criteria that do not apply, and do not add addiEonal criteria.
+a. Angebote (Offers):
+i. Individuelle Auszeit (Individual retreat)
+ii. Leben in GemeinschaG auf Zeit (Living in community temporarily)
+iii. Mitarbeiten möglich (Volunteering opportuniEes)
+iv. Kurse und Seminare (Courses and seminars)
+v. MeditaEonsangebote (MeditaEon offerings)
+vi. Gebete und Andachten (Prayers and worship services)
+vii. ExerziEenangebote (Spiritual exercises)
+viii. Gesprächsangebote (Counseling)
+ix. Vorträge (Lectures)
+x. KörpertherapeuEsche Angebote (Body therapy offerings)
+xi. Musikveranstaltungen (Musical events)
+xii. Mehrtägige Retreats (MulE-day retreats)
+b. Konfession (DenominaEon):
+i. Katholisch (Catholic)
+ii. Evangelisch (Protestant)
+iii. BuddhisEsch (Buddhist)
+iv. Islamisch (Islamic)
+v. Überkonfessionell (InterdenominaEonal)
+c. Zielgruppe (Target Groups):
+i. Einzelgäste willkommen (Individual guests welcome)
+ii. Gruppen willkommen (Groups welcome)
+iii. Angebote nur für Männer (Offers only for men)
+iv. Angebote nur für Frauen (Offers only for women)
+v. Herberge für Pilger (Pilgrim accommodaEon)
+d. Verpflegung (Catering):
+i. Verpflegung möglich (Catering available)
+ii. Selbstverpflegung möglich (Self-catering possible)
+iii. Biologisch (Organic)
+iv. Vegetarisch (Vegetarian)
+v. Vegan
+vi. Ayurvedisch (Ayurvedic)
+e. Lage (LocaEon):
+i. Naturnahe Lage (Near nature)
+ii. Zentrumnahe Lage (Central locaEon)
+iii. Blick auf Wasser (Water view)
+iv. Blick auf Berge (Mountain view)
+v. Blick auf Wiesen und Felder (Field view)
+vi. Blick auf Wald (Forest view)
+vii. Ruhige Umgebung (Quiet surroundings)
+f. Erreichbarkeit (Accessibility):
+i. Erreichbar mit ÖPNV (Accessible by public transport)
+ii. Durchgehend öffentlich zugänglich (Open access all the Eme)
+iii. Feste Öffnungszeiten (Fixed opening hours)
+iv. Anmeldung erbeten (RegistraEon requested)
+g. AusstaUung (AmeniEes):
+i. Sauna
+ii. Fitnessraum (Fitness room)
+iii. Fahrradverleih (Bike rental)
+iv. WLAN
+h. Sons4ge Merkmale (Other Features):
+i. WLAN- und Handyfreie Zonen (WLAN and mobile-free zones)
+ii. Ökologische Bauweise (Eco-friendly construcEon)
+12. Preis (Price):
+Check the lowest and highest overnight price per night and per person. Classify the price based on the following ranges:
+- Einfach (Basic): lowest overnight price < 50 Euro
+- Standard: 50 Euro < lowest overnight price < 100 Euro
+- Gehobener Standard (High Standard): 100 Euro < lowest overnight price < 150 Euro
+- Exklusiv (Exclusive): lowest overnight price > 150 Euro
+13. Beschreibung (DescripEon) - at least 5,000 characters:
+- The descripEon must be between 5,000 and 10,000 characters. UElize all relevant
+informaEon from the website and expand the content to reach the minimum length
+of 5,000 characters.
+- completely avoid using asterisks and use <strong> tags for all emphasis
+- Format the descripEon in HTML with the following secEons: <h2>Über den Ort</h2>,
+<h3>SElleangebote</h3>, <h3>Übernachtungspreise</h3>, <h3>Lage</h3>,
+<h3>Anfahrt</h3>.
+- Use blank lines before each new headline to visually space out the text.
+- Use 1-2 <strong> tags per paragraph to highlight key relevant terms (such as “Auszeit,”
+“Einkehr,” “SElle,” “MeditaEon,” “biologisches Essen”). Use only <strong> tags for
+emphasis. Other methods like ** or similar symbols are not allowed.
+- Avoid duplicated content and unnecessary repeEEons within the descripEon text.
+Each text should be unique and free of repeated sentences or informaEon.
+14. Meta-Beschreibung (Meta DescripEon):
+- The meta descripEon should be an SEO-opEmized summary of the locaEon, inviEng
+and clearly outlining the main theme.
+- It should be between 150 and 160 characters long and focus on the key aspects of the locaEon.
+- Formulate the meta descripEon in German.
+15. Kategorie (Category):
+Based on the gathered informaEon, classify the entry into one of the following categories:
+- Gästehäuser & Hotels (Guesthouses & Hotels)
+- Klöster & Klosterhotels (Monasteries & Monastery Hotels)
+- Medita4ons- und Seminarzentren (MeditaEon and Seminar Centers)
+- Offene Orte des Glaubens (Open Places of Faith)
+- Parks & Gärten (Parks & Gardens)
+- Sons4ge Orte der S4lle (Other Places of Silence)
+Note: Select only one or two categories that best fit the descripEon of the place.
+
+
+
+### Get description of a website in a html-format:
+Create a description to at least 5000 characters, using all relevant informations from the text-file. Add details that pertain to the atmosphere,
+offerings, special features, and spiritual aspects of the location. Important:
+Strictly use <strong> tags in formating to highlight key relevant terms.
+completely avoid using asterisks and use <strong> tags for all emphasis.
+Guideline:
+1. Format the description in HTML: Use the following sections:
+<h2>Über den Ort</h2>, <h3>S-lleangebote</h3>,
+<h3>Übernachtungspreise</h3>, <h3>Lage</h3>, <h3>Anfahrt</h3>.
+2. Use blank lines before each new headline to visually space out the
+text.
+3. Use 1-2 <strong> tags per paragraph to highlight key relevant terms
+(such as “Auszeit,” “Einkehr,” “Stille,” “Meditation,” “biologisches Essen”). Completely avoid using asterisks and use <strong> tags for all
+emphasis. Use only <strong> tags for emphasis, other methods like ** or similar symbols are not allowed.
+4. Avoid duplicated content and unnecessary repetitions within the description text. Each text should be unique and free of repeated sentences or information.
