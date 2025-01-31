@@ -11,6 +11,28 @@ Parse the phone-number. Output only the phone-number and nothing else.
 {TEXT}
 
 
+### Get some data out of an email eml-file
+Answer the following questions about the eml-file below line by line
+Output the answers line be line and output only the findings and nothing else
+
+Parse the gmail-address.  Output only the gmail-adress and nothing else.
+Parse the name of the person Output only the name and nothing else.
+Parse the Zip-Code and City. Output only the zip-code and city-name in the format "ZIP CITY" and nothing else.
+Parse the street and street-number. Output only the street and street-number in the format "STREETNAME STREETNUMBER"
+Parse the phone-number. Output only the phone-number and nothing else.
+
+
+### Get some data out of an email eml-file (DEUTSCH)
+Beantworten Sie die folgenden Fragen zur geladenen EML-Datei Zeile für Zeile
+Geben Sie die Antworten Zeile für Zeile aus und geben Sie nur die Ergebnisse und sonst nichts aus
+
+Um welche Attraktion handelt es sich in dem EMail-Text
+Finde das Datum im EMail-Text
+Finde die Uhrzeit im EMail-Text
+Finde den Namen im EMail-Text
+Finde die Telefonnummer im EMail-Text
+Finde die E-Mail-Adresse im Email-Text
+
 
 ### Create an image out of a text:
 Create an realistic image for this project i did:
