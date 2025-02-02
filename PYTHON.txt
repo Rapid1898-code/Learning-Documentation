@@ -924,6 +924,12 @@ astuple(dc)								# converts the dataclass to a tuple
 with open ("fn.txt","r") as f: print(f.read()			=> Read textfile - and print it
 with open ("fn.txt","r+") as f: print(f.read()			=> Open File for Read and Write
 
+=> Read textfile
+""
+with open(fn, encoding="mac_roman", errors="ignore") as f:
+  lines = f.read()
+""
+
 => Read textfile - stored in list per line
 ""
 with open(fn, encoding="mac_roman", errors="ignore") as f:
