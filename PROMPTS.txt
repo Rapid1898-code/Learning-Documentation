@@ -1,3 +1,15 @@
+### Get some info out of a html-file
+Finde in dem angehängten HTML-Code all offenen Stellenausschreibungen und gib pro Position
+
+folgende Informationen aus:
+- Titel der Stellenauschreibung
+- Standort der Stellenausschreibung
+- Art der Anstellung (Permanent, Working Student, etc.)
+- Stundenanzahl (Full Time, Part Time, etc.)
+Für jede Stellenauschreibung wird eine eigene Zeile in der Form:
+Titel ; Standort ; Art der Anstellung ; Stundenanzahl
+
+
 ### Get some data out of a text:
 Answer the following questions about the text below line by line
 Output the answers line be line and output only the finding and nothing else

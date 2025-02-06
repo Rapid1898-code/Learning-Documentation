@@ -942,18 +942,18 @@ with open(fn, encoding="mac_roman", errors="ignore") as data:
   info = json.load(data) 
 ""
 
-=> Write txtfile - from list
-""
-fn = "".join(i for i in wTitle if i not in "\/:*?<>|" and i not in '"')
-with open(fn, "w", encoding="mac_roman", errors="ignore") as f:
-  lines = f.writelines(["Hello\n", "World", "NextLine"])
-""
-
 => Write txtfile - from string
 ""
 fn = "".join(i for i in wTitle if i not in "\/:*?<>|" and i not in '"')
 with open(fn, "w", encoding="mac_roman", errors="ignore") as f:
   f.write("some text")
+""
+
+=> Write txtfile - from list
+""
+fn = "".join(i for i in wTitle if i not in "\/:*?<>|" and i not in '"')
+with open(fn, "w", encoding="mac_roman", errors="ignore") as f:
+  lines = f.writelines(["Hello\n", "World", "NextLine"])
 ""
 
 => Write only a max-size in a txt-file (eg. only a maximum of 50kb will be written)
