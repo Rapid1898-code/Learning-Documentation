@@ -926,33 +926,33 @@ with open ("fn.txt","r+") as f: print(f.read()			=> Open File for Read and Write
 
 => Read textfile
 ""
-with open(fn, encoding="mac_roman", errors="ignore") as f:
+with open(fn, encoding="UTF-8", errors="ignore") as f:
   lines = f.read()
 ""
 
 => Read textfile - stored in list per line
 ""
-with open(fn, encoding="mac_roman", errors="ignore") as f:
+with open(fn, encoding="UTF-8", errors="ignore") as f:
   lines = f.read().splitlines()
 ""
 
 => Read json textfile to dict
 ""
-with open(fn, encoding="mac_roman", errors="ignore") as data: 
+with open(fn, encoding="UTF-8", errors="ignore") as data: 
   info = json.load(data) 
 ""
 
 => Write txtfile - from string
 ""
 fn = "".join(i for i in wTitle if i not in "\/:*?<>|" and i not in '"')
-with open(fn, "w", encoding="mac_roman", errors="ignore") as f:
+with open(fn, "w", encoding="UTF-8", errors="ignore") as f:
   f.write("some text")
 ""
 
 => Write txtfile - from list
 ""
 fn = "".join(i for i in wTitle if i not in "\/:*?<>|" and i not in '"')
-with open(fn, "w", encoding="mac_roman", errors="ignore") as f:
+with open(fn, "w", encoding="UTF-8", errors="ignore") as f:
   lines = f.writelines(["Hello\n", "World", "NextLine"])
 ""
 
@@ -1114,7 +1114,7 @@ import csv
 => Read csv-file to nested-list
 ""
 fn = os.path.join(path, "inp.csv")
-with open(fn, "r", encoding="mac_roman") as f:               
+with open(fn, "r", encoding="UTF-8") as f:               
   csvRead = csv.reader(f, delimiter=";")
   inpData = [x for x in csvRead]                                
 
@@ -1124,7 +1124,7 @@ with open(workFN, "r", encoding="utf-16") as f:
 
 # when this error happens: UnicodeDecodeError: 'utf-8' codec can't decode byte 0x96 
 # use some of this solutions
-with open(fn, "r", encoding="mac_roman") as f:   
+with open(fn, "r", encoding="UTF-8") as f:   
 with open(fn, "r",  encoding='ISO-8859-1') as f:             
   ...
 ""
