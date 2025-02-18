@@ -97,7 +97,6 @@ pip install virtualenv          => Install virtualenv
 pip list                        => Global packages installed
 where python                    => Shows where the python-file is (Windows)
 which python                    => Shows where the python-file is (Linux)
-py -3.12 -m venv openai         => Create a virtual environment with a specific installed python version
 python -m virtualenv env        => Create new virtual environment env
 python3 -m venv env             => Create new virtual environment env (for python3 eg. on MacOS)                  
 
@@ -148,7 +147,7 @@ pip install -U pyinstaller-hooks-contrib    => In case of problems when creating
 --copy-metadata pandas_ta					          => add this when some modules are not found
 --hidden-import=pymssql						          => When some modules are making problems - sometimes this helps
     pyinstaller --onefile --collect-datas=trafilatura xyz.py
-    pyinstaller --onefilFe --collect-data fake_useragent  checkMapsSel2.py  
+    pyinstaller --onefile --collect-data fake_useragent  checkMapsSel2.py  
     pyinstaller --onefile --collect-data frozendict stockma3.py     => <frozen importlib._bootstrap> error when using yfinance
     pyinstaller --onefile --collect-data langchain --copy-metadata=tqdm --copy-metadata=regex --copy-metadata requests --copy-metadata packaging --copy-metadata filelock URLanswering.py
     pyinstaller --onefile --hidden-import=tiktoken_ext.openai_public --hidden-import=tiktoken_ext checkRSS.py
@@ -926,34 +925,34 @@ with open ("fn.txt","r+") as f: print(f.read()			=> Open File for Read and Write
 
 => Read textfile
 ""
-with open(fn, encoding="mac_roman", errors="ignore") as f:
+with open(fn, encoding="UTF-8", errors="ignore") as f:
   lines = f.read()
 ""
 
 => Read textfile - stored in list per line
 ""
-with open(fn, encoding="mac_roman", errors="ignore") as f:
+with open(fn, encoding="UTF-8", errors="ignore") as f:
   lines = f.read().splitlines()
 ""
 
 => Read json textfile to dict
 ""
-with open(fn, encoding="mac_roman", errors="ignore") as data: 
+with open(fn, encoding="UTF-8", errors="ignore") as data: 
   info = json.load(data) 
-""
-
-=> Write txtfile - from list
-""
-fn = "".join(i for i in wTitle if i not in "\/:*?<>|" and i not in '"')
-with open(fn, "w", encoding="mac_roman", errors="ignore") as f:
-  lines = f.writelines(["Hello\n", "World", "NextLine"])
 ""
 
 => Write txtfile - from string
 ""
 fn = "".join(i for i in wTitle if i not in "\/:*?<>|" and i not in '"')
-with open(fn, "w", encoding="mac_roman", errors="ignore") as f:
+with open(fn, "w", encoding="UTF-8", errors="ignore") as f:
   f.write("some text")
+""
+
+=> Write txtfile - from list
+""
+fn = "".join(i for i in wTitle if i not in "\/:*?<>|" and i not in '"')
+with open(fn, "w", encoding="UTF-8", errors="ignore") as f:
+  lines = f.writelines(["Hello\n", "World", "NextLine"])
 ""
 
 => Write only a max-size in a txt-file (eg. only a maximum of 50kb will be written)
@@ -1114,7 +1113,7 @@ import csv
 => Read csv-file to nested-list
 ""
 fn = os.path.join(path, "inp.csv")
-with open(fn, "r", encoding="mac_roman") as f:               
+with open(fn, "r", encoding="UTF-8") as f:               
   csvRead = csv.reader(f, delimiter=";")
   inpData = [x for x in csvRead]                                
 
@@ -1124,7 +1123,7 @@ with open(workFN, "r", encoding="utf-16") as f:
 
 # when this error happens: UnicodeDecodeError: 'utf-8' codec can't decode byte 0x96 
 # use some of this solutions
-with open(fn, "r", encoding="mac_roman") as f:   
+with open(fn, "r", encoding="UTF-8") as f:   
 with open(fn, "r",  encoding='ISO-8859-1') as f:             
   ...
 ""
@@ -2289,7 +2288,7 @@ mac = get_mac()
 import os												                     => Import module
 path = os.path.abspath(os.path.dirname(sys.argv[0])) => Get the actual path
 os.listdir(path)											               => All Files and Folders from the actual path
-[x.name for x in os.scandir(path) if x.is_dir() ]    => All Folders from the actual path
+[x.name for x in os.scandir(path) if x.is_dir()]     => All Folders from the actual path
 [x for x in os.listdir(path) if os.path.isfile(os.path.join(path, x))]   => Only Files from actual path
 [x for x in os.listdir(path) if os.path.isdir(os.path.join(path, x))]    => Only Folders from actual path
 [x[0] for x in os.walk(path)][1:]                    => Put all sub-folders to a list from the actual working dir
