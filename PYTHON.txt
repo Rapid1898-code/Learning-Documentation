@@ -487,19 +487,21 @@ string.punctuation              => punctuation
 import re                                                       => import regex module
 https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285		=> Information about regex handling
 https://regex101.com/     => test regex strings
-pattern = re.compile("^[0-9]{4}-[0-9]{2}$")       => Find str with 4xdigits + "-"char + 2xdigits
+re.compile("^[0-9]{4}-[0-9]{2}$")                 => Find str with 4xdigits + "-"char + 2xdigits
 pattern.match(s)                                  => Check if pattern matches - <> None when matches
-pattern2 = re.compile("[0-9]{4}-[0-9]{2}")        => Find str with 4xdigits + "-"char + 2xdigits
-pattern2 = re.compile("[0-9]{3,4}-[0-9]{2}")      => Find str with 3 to 4 xdigits + "-"char + 2xdigits
+re.compile("[0-9]{4}-[0-9]{2}")                   => Find str with 4xdigits + "-"char + 2xdigits
+re.compile("[0-9]{3,4}-[0-9]{2}")                 => Find str with 3 to 4 xdigits + "-"char + 2xdigits
 pattern.fullmatch(s)											        => Check with fullmatch (^ and $ not necessary) - <> None when matches 
-pattern3 = re.compile ("[0-9]{1}\.[0-9]{3}")			=> Char "." has to cherck with "\n" (is a wildcard letter in regex)
+re.compile ("[0-9]{1}\.[0-9]{3}")			            => Char "." has to cherck with "\n" (is a wildcard letter in regex)
 re.sub("\d","",s)												          => Replace all digits in string with blank
 re.sub(r'([a-z](?=[A-Z])|[A-Z](?=[A-Z][a-z]))', r'\1 ', "txt")	=> Insert blank before every capitalized word eg. "CostOfRevenue" => "Cost Of Revenue"
 len(re.findall(f'[{cL}"]{w}[{cL}"]', l))          => count all words which start and ends with a char from cL
 len(re.findall(f'^{w}[{charList}"]', l))          => count all words which start with w and ends with a char from cL
 len(re.findall(f'[{charList}"]{w}$', l))          => count all words which start with a char from cL and ends w
 len(re.findall(f'(.*?){w}(.*?)', l))              => count all words which have w in the middle of anything else
-
+re.compile('xyz')                                 => check if xyz is in the string
+re.compile('[xX]yz')                              => check if xyz or Xyz is in the string
+re.compile('abc|xyz')                             => check if abc or xyz is in the string
 
 
 => Read string an try to match with groups
@@ -3079,7 +3081,7 @@ Xpath=//tagname[@attribute='value']
 
 //*[contains(@name,'btn')]              # any elem which has "btn" somewhere in the name
 //*[contains(@id,'message')]            # any elem which has "message" somewhere in the id
-//*[contains(text(),'here')]            # any elem which has "here" somewhere in the text
+//span[contains(text(),'here')]         # any elem which has "here" somewhere in the text
 //*[contains(@href,'orf')]              # any elem which has "orf" somewhere in the href-link
 //select[contains(.,'Division')]        # select-element where some child has the text "Division" in it
 //label[starts-with(@id,'message')]     # elem where id starts with "message"
