@@ -1,3 +1,14 @@
+### Get information out of a job-description for contact informations
+Finde in dem angehängten HTML-Code einer Stellenausschreibungen nachfolgende Informationen:
+- Name des Ansprechpartners für die Stellenauschreibung
+- Telefonnummer des Ansprechapartners bzw. des ausschreibenden Unternehmens
+- Email des Ansprechapartnes bzw. wohin man die Bewerbung schicken soll
+
+Gib nur diese 3 Ergebnisse in folgender Form aus:
+Name Ansprechpartner ; Telefonnummer ; EMail
+Gib nur diese 3 Informationen aus uns sonst nichts - auch keine Quellenangabe oder ähnliches
+
+
 ### Get some info out of a html-file
 Finde in dem angehängten HTML-Code all offenen Stellenausschreibungen und gib pro Position
 
