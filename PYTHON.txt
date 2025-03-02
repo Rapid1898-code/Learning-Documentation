@@ -102,12 +102,25 @@ python3 -m venv env             => Create new virtual environment env (for pytho
 
 pip freeze --local > requirements.txt                      => Extracts all the modules / dependencies to a txt-file 
 deactivate                                                 => Go back to the global environment
-virtualenv -p C:\..path to..\Python37\python.exe py37_env  => Create new virtual env with specific python-version
-eg. virtualenv -p C:\\Users\\WRSPOL\\AppData\\Local\\Programs\\Python\\Python312\\python.exe selenium
 py37_env\Scripts\activate                                  => Activate new virtual env named py37_env
 python --version                                           => Shows the used python version in the virtual env
 pip install -r requirements.txt                            => Install all the packages from requirements.txt
 py -0p                                                     => Windows: Show all installed python-versions + paths
+
+=> WIN: Install specific python-version in venv
+""
+virtualenv -p C:\..path to..\Python37\python.exe py37_env  => WIN: Create new virtual env with specific python-version
+eg. virtualenv -p C:\\Users\\WRSPOL\\AppData\\Local\\Programs\\Python\\Python312\\python.exe selenium
+""
+
+=> MAC: Install specific python-version in venv
+""
+brew install python@3.11
+python3.11 -m venv Name_3_11
+(install brew when neccesary not allready installed:)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"     # Installation
+eval $(/opt/homebrew/bin/brew shellenv)     
+""
 
 => Activate environment 
 ""
@@ -137,11 +150,10 @@ pip install -r requirements.txt   => install modules from requirements.txt
 
 
 ###### PYINSTALLER, INNO SETUP COMPILER - generate python programs to executables
-pip install pyinstaller                     => Installation
-pip install -Iv pyinstaller==4.8            => Install specific version
-pyinstaller prg.py                          => Generate the bundle in a subdirectory called dist.
-pyinstaller --onefile prg.py                => Generate only one file
-python -m Pyinstaller --onefile prg.py      => Generate only one file (to get for sure the pyinstaller from the actual env)
+pyinstaller prg.py                                          => Generate the bundle in a subdirectory called dist.
+pyinstaller --onefile prg.py                                => Generate only one file
+pyinstaller --onefile --target-architecture x86_64 prg.py   => Create an executable on a M1_Mac for an older Intel-Mac
+
 pip install -U pyinstaller-hooks-contrib    => In case of problems when creating the exe (eg. some problems with pydantic)
 --collect-data moduleXY                     => Collect data for specific python module
 --copy-metadata pandas_ta					          => add this when some modules are not found
@@ -157,8 +169,15 @@ pip install -U pyinstaller-hooks-contrib    => In case of problems when creating
 --hidden-import=pkg_resources.py2_warn      => Generating under mac os sometimes only work with this params
 --hidden-import=cmath                       => Generating under mac os sometimes only work with this params   
 pyinstaller --onefile main.spec
-prg.exe                                     => Open this file to start the python-program
 yfinance module                             => only working with import yfinance (not with import yfinance as yf)
+
+=> Problem and weird behaviour when using multiprocessing libraries like yahooquery
+""
+https://github.com/orgs/pyinstaller/discussions/9040
+add the following at the very beginning of the code:
+from multiprocessing import freeze_support
+freeze_support()
+""
 
 => Problems with some added python modules (eg. pycountry)
 ""

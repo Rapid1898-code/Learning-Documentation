@@ -48,4 +48,10 @@ wird mit Alt-L erzeugt
 
 ### Virtual Box - MacOs
 Right-Ctrl Home       					# Open Menü in VirtualBox
-Read USB-Stick							# Menü aufrufen => "Geräte" und "USB" auswählen
+Read USB-Stick							    # Menü aufrufen => "Geräte" und "USB" auswählen
+
+
+### Brew Install & Install specific python-version in venv
+                                                        # Set Path
+brew install python@3.11
+python3.11 -m venv Name_3_11
