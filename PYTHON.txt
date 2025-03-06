@@ -2134,6 +2134,7 @@ datetime.strptime("Apr 21, 2020", "%b %d. %Y")               => Conversion for d
 datetime.strptime(s, "%H:%M:%S UTC %Y-%m-%d")                => Conversion for utc format eg. "14:42:46 UTC 2021-12-15
 datetime.strptime("05:20:25","%H:%M:%S")                     => Conversion for time format hh:mm:ss
 datetime.strftime(dt, "%Y-%m-%d")                            => Conversion datetime to string in format yyyy-mm-dd
+datetime.strftime(dt, "%m-%d-%Y")                            => Conversion datetime to string in format mm/dd/yyyy
 datetime.strftime("%H:%M")                                   => Conversion datetime to string in format HH:MM
 dt.strftime((dt.strptime(tmp,"%m/%d/%Y")),"%Y-%m-%d")      	 => Convert dateformat from string in one line (1st from - 2nd to)
 isinstance(x, date)											                     => Check if variable is of type datetime.date or datetime.datetime                   
