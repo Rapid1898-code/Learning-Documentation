@@ -1155,12 +1155,6 @@ with open(fn, "r",  encoding='ISO-8859-1') as f:
   ...
 ""
 
-=> Create an empty csv-file
-""
-  with open(fnName, "w") as f:      
-    pass  
-""
-
 => Write csv-file from nested list and check if file is open
 ""
   while True:
@@ -1171,6 +1165,12 @@ with open(fn, "r",  encoding='ISO-8859-1') as f:
       break
     except PermissionError:
       input(f"Problems writing csv-file - pls close file and press any key to try again")
+""
+
+=> Create an empty csv-file
+""
+  with open(fnName, "w") as f:      
+    pass  
 ""
 
 => Read csv-file to a dictionary for every line

@@ -83,3 +83,15 @@ see: Excel_HowtoDropBoxWithoutBlanks.xlsx
 put "sep=;" in the first line - then the ; delimiter will be used
 doesn´t matter which language you are using
 https://superuser.com/questions/1145892/how-to-make-excel-open-csv-files-and-automatically-split-the-comma-delimited-col
+
+
+### Use , as delimiter on Windows
+change in Region / Weitere Einstellungen: Dezimaltrennzeichen to "."
+change in Region / Weitere Einstellungen: Listentrennzeichen to ","
+=> now everything is stored with delimiter "," (when Dezimaltrennezeichen is still "," - it will use ";" as standard delimiter)
+
+### Use ; as delimiter on Mac
+change Region in "Language & Region" to Germany
+change Numer Format in "Language & Region" to "1.234.567,89"
+restart the computer
+=> now everthing is stored with delimiter ";"
