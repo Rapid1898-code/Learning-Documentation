@@ -1,3 +1,16 @@
+### Get some data out of a text:
+Answer the following questions about the text below line by line
+Output the answers line be line and output only the finding and nothing else
+
+Parse the gmail-address.  Output only the gmail-adress and nothing else.
+Parse the name of the person Output only the name and nothing else.
+Parse the Zip-Code and City. Output only the zip-code and city-name in the format "ZIP CITY" and nothing else.
+Parse the street and street-number. Output only the street and street-number in the format "STREETNAME STREETNUMBER"
+Parse the phone-number. Output only the phone-number and nothing else.
+
+{TEXT}
+
+
 ### Get information out of a job-description for contact informations
 Finde in dem angehängten HTML-Code einer Stellenausschreibungen nachfolgende Informationen:
 - Name des Ansprechpartners für die Stellenauschreibung
@@ -19,19 +32,6 @@ folgende Informationen aus:
 - Stundenanzahl (Full Time, Part Time, etc.)
 Für jede Stellenauschreibung wird eine eigene Zeile in der Form:
 Titel ; Standort ; Art der Anstellung ; Stundenanzahl
-
-
-### Get some data out of a text:
-Answer the following questions about the text below line by line
-Output the answers line be line and output only the finding and nothing else
-
-Parse the gmail-address.  Output only the gmail-adress and nothing else.
-Parse the name of the person Output only the name and nothing else.
-Parse the Zip-Code and City. Output only the zip-code and city-name in the format "ZIP CITY" and nothing else.
-Parse the street and street-number. Output only the street and street-number in the format "STREETNAME STREETNUMBER"
-Parse the phone-number. Output only the phone-number and nothing else.
-
-{TEXT}
 
 
 ### Get some data out of an email eml-file
