@@ -2155,6 +2155,7 @@ tdelta = timedelta(seconds=60)                               => Creates timedelt
 tday + tdelta                                                => 7 days are added to the actual day
 newdate = date - timedelta(days=1)                           => Previous 1-day-back-date for date
 date2-date1                                                  => Timedelta for two dates
+monthsDiff = (d1.year - d2.year) * 12 + d1.month - d2.month  => Difference in months
 daysDiff = abs(dt2 - dt1).days								               => Difference in days
 hoursDiff = (date2 - date1).total_seconds() / 3600           => Difference in hours
 minDiff = (date2 - date1).total_seconds() / 60               => Difference in minutes
