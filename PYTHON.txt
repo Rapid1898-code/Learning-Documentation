@@ -2155,6 +2155,7 @@ tdelta = timedelta(seconds=60)                               => Creates timedelt
 tday + tdelta                                                => 7 days are added to the actual day
 newdate = date - timedelta(days=1)                           => Previous 1-day-back-date for date
 date2-date1                                                  => Timedelta for two dates
+age = int(((d1.year-d2.year) *12 + d1.month-d2.month) / 12)  => Age in years 
 monthsDiff = (d1.year - d2.year) * 12 + d1.month - d2.month  => Difference in months
 daysDiff = abs(dt2 - dt1).days								               => Difference in days
 hoursDiff = (date2 - date1).total_seconds() / 3600           => Difference in hours
@@ -3090,6 +3091,7 @@ Xpath=//tagname[@attribute='value']
     @: Select attribute.
     Attribute: Attribute name of the node.
     Value: Value of the attribute.    
+""
 
 //input[@name='uid']                      # input-elem with name = "uid"
 //input[@type='text']                     # input-elem with type = "text"

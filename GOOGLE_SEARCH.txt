@@ -1,4 +1,7 @@
 # https://ahrefs.com/blog/google-advanced-search-operators/
+# https://www.semrush.com/blog/google-search-operators/
+# https://uk.pcmag.com/software-services/138320/21-google-search-tips-youll-want-to-learn
+# https://www.google.com/advanced_search
 
 # search for something on a specific site:
 Baklava AND "inbox" AND (site:facebook.com OR site:instagram.com)
@@ -24,3 +27,16 @@ site:linkedin.com/in/ AND adns-grossiste.fr -inurl:/company/ -inurl:/jobs/ -inur
 
 site:facebook.com AND Rapid inurl:/groups
 site:facebook.com AND Rapid inurl:/user
+site:facebook.com AND companyname
+
+Searching for Emails:
+@gmail.com OR @hotmail.com OR @yahoo.com OR @icloud.com OR @outlook.com independent wireless retailer Unites States site:facebook.com
+  # facebook.com
+  # linkedin.com
+  # instagram.com
+  # twitter.com
+  # youtube.com
+  # reddit.com
+  # pinterest.com
+  # tiktok.com
+
