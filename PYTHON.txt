@@ -447,7 +447,7 @@ s = s.title()                                   => Capitalize the first char of 
 s.startswith("H")								                => Check if string is starting with char "H"
 s.startswith(("H","F","L"))                     => Check if string starts with several chars
 s.endswith("H")	      							            => Check if string is ending with char "H"
-s.endwith(("H","F","L"))                        => Check if string ends with several chars
+s.endswith(("H","F","L"))                       => Check if string ends with several chars
 s.split(" ")                                    => Split the words in a list which are seperated by " "
 re.split("[.|!|?]", s)                          => Split for several chars (eg. ".", "!", "?")
 s.split('=>', 1)[0]								              => Split till the first occurence of "=>"
