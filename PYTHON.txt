@@ -958,7 +958,8 @@ with open(fn, encoding="UTF-8", errors="ignore") as f:
 
 => Read textfile - stored in list per line
 ""
-|
+with open(fn, encoding="UTF-8", errors="ignore") as f:
+  lines = f.read().splitlines()|
 ""
 
 => Read json textfile to dict
