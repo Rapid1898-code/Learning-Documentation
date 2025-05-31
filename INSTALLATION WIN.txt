@@ -42,6 +42,7 @@ Install Python
 
 Software
   GoogleDriveSetup
+  Setup PCloud
   KeePass (read kdbx-file from GDrive Wichtig)
   HeidiSQL (import Setting from Backup)
   AnyDesk (grant remote access with lock near address-number)
