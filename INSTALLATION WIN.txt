@@ -16,7 +16,7 @@ VSCode
   Activate Settings Sync 
   Install the Extensions (see VSCODE.txt)
   Set AutoSave (in Menu File)
-  Set tab to 2 spaces (https://www.kindacode.com/article/vs-code-how-to-change-indentation-2-spaces-4-spaces/)
+  Set tab to 2 spaces (Setting at bottom left - Click Setting - search for Tab Size and change to 2)
   Set ruler for 120 chars (https://stackoverflow.com/questions/29968499/vertical-rulers-in-visual-studio-code)
   Set Auto Closing Brackets in setting to allways
   Set option in extension Settings Sync: Quiet Sync enabled (otherwise output windows will open permanently)
