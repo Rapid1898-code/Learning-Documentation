@@ -3011,6 +3011,7 @@ driver.execute_script("window.scrollTo(0, 10000)")                  => ScrollDow
 driver.execute_script("window.open('');")                           => Open a new tab
 driver.switch_to.window(driver.window_handles[0])                   => Swich to first tab
 driver.elem.get_attribute("src")                                    => Get value from tag form an element
+driver.save_screenshot("a.png")                                     => take a screenshot (especially helpful using headless mode for debugging)
 
 => Switch between iframes
 ""
@@ -3147,16 +3148,6 @@ webdriver.ActionChains(driver).move_to_element(element ).click(element ).perform
 Method2:
 element = driver.find_element_by_css('div[class*="loadingWhiteBox"]')
 driver.execute_script("arguments[0].click();", element)
-""
-
-=> Take a screenshot when something fails in headless mode
-""
-try:
-    ...
-    do the whole selenium work...
-    ...
-except:
-    driver.save_screenshot("a.png")
 ""
 
 => use locators in this order as suggested by Selenium contributors
