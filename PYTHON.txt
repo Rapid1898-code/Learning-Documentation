@@ -970,6 +970,7 @@ with open(fn, encoding="UTF-8", errors="ignore") as data:
 
 => Write txtfile - from string
 ""
+fn = os.path.join(path, "textOut.txt")
 fn = "".join(i for i in wTitle if i not in "\/:*?<>|" and i not in '"')
 with open(fn, "w", encoding="UTF-8", errors="ignore") as f:
   f.write("some text")
@@ -977,9 +978,10 @@ with open(fn, "w", encoding="UTF-8", errors="ignore") as f:
 
 => Write txtfile - from list
 ""
+fn = os.path.join(path, "textOut.txt")
 fn = "".join(i for i in wTitle if i not in "\/:*?<>|" and i not in '"')
 with open(fn, "w", encoding="UTF-8", errors="ignore") as f:
-  lines = f.writelines(["Hello\n", "World", "NextLine"])
+  lines = f.writelines([x, y, z])
 ""
 
 => Write only a max-size in a txt-file (eg. only a maximum of 50kb will be written)
