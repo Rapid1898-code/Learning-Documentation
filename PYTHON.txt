@@ -952,12 +952,14 @@ with open ("fn.txt","r+") as f: print(f.read()			=> Open File for Read and Write
 
 => Read textfile
 ""
+fn = os.path.join(path, "text.txt")
 with open(fn, encoding="UTF-8", errors="ignore") as f:
   lines = f.read()
 ""
 
 => Read textfile - stored in list per line
 ""
+fn = os.path.join(path, "text.txt")
 with open(fn, encoding="UTF-8", errors="ignore") as f:
   lines = f.read().splitlines()|
 ""
