@@ -177,6 +177,11 @@ pip install -U pyinstaller-hooks-contrib    => In case of problems when creating
 pyinstaller --onefile main.spec
 yfinance module                             => only working with import yfinance (not with import yfinance as yf)
 
+=> Compiling using ocrmypdf
+""
+pyinstaller --onefile --collect-data ocrmypdf.data --collect-submodules ocrmypdf test.py
+""
+
 => Problem and weird behaviour when using multiprocessing libraries like yahooquery
 ""
 https://github.com/orgs/pyinstaller/discussions/9040
@@ -952,24 +957,30 @@ with open ("fn.txt","r+") as f: print(f.read()			=> Open File for Read and Write
 
 => Read textfile
 ""
+fn = os.path.join(path, "textIn.txt")
 with open(fn, encoding="UTF-8", errors="ignore") as f:
   lines = f.read()
 ""
 
 => Read textfile - stored in list per line
 ""
+path = os.path.abspath(os.path.dirname(sys.argv[0]))
+fn = os.path.join(path, "textIn.txt")
 with open(fn, encoding="UTF-8", errors="ignore") as f:
-  lines = f.read().splitlines()|
+  lines = f.read().splitlines()
 ""
 
 => Read json textfile to dict
 ""
+path = os.path.abspath(os.path.dirname(sys.argv[0]))
+fn = os.path.join(path, "textIn.txt")
 with open(fn, encoding="UTF-8", errors="ignore") as data: 
   info = json.load(data) 
 ""
 
 => Write txtfile - from string
 ""
+path = os.path.abspath(os.path.dirname(sys.argv[0]))
 fn = os.path.join(path, "textOut.txt")
 fn = "".join(i for i in wTitle if i not in "\/:*?<>|" and i not in '"')
 with open(fn, "w", encoding="UTF-8", errors="ignore") as f:
@@ -978,10 +989,12 @@ with open(fn, "w", encoding="UTF-8", errors="ignore") as f:
 
 => Write txtfile - from list
 ""
+path = os.path.abspath(os.path.dirname(sys.argv[0]))
 fn = os.path.join(path, "textOut.txt")
 fn = "".join(i for i in wTitle if i not in "\/:*?<>|" and i not in '"')
+outData = [f"{x}\n" for x in outData]
 with open(fn, "w", encoding="UTF-8", errors="ignore") as f:
-  lines = f.writelines([x, y, z])
+  lines = f.writelines(outData)
 ""
 
 => Write only a max-size in a txt-file (eg. only a maximum of 50kb will be written)
