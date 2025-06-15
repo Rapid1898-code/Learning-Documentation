@@ -957,15 +957,23 @@ with open ("fn.txt","r+") as f: print(f.read()			=> Open File for Read and Write
 
 => Read textfile
 ""
+<<<<<<< HEAD
 fn = os.path.join(path, "textIn.txt")
+=======
+fn = os.path.join(path, "text.txt")
+>>>>>>> 5035258affb664e54fef85db2d3daa2dc63ef514
 with open(fn, encoding="UTF-8", errors="ignore") as f:
   lines = f.read()
 ""
 
 => Read textfile - stored in list per line
 ""
+<<<<<<< HEAD
 path = os.path.abspath(os.path.dirname(sys.argv[0]))
 fn = os.path.join(path, "textIn.txt")
+=======
+fn = os.path.join(path, "text.txt")
+>>>>>>> 5035258affb664e54fef85db2d3daa2dc63ef514
 with open(fn, encoding="UTF-8", errors="ignore") as f:
   lines = f.read().splitlines()
 ""
