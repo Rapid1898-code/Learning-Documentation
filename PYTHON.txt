@@ -42,7 +42,7 @@ https://github.com/gto76/python-cheatsheet
 #> MODULE - PYCOUNTRY - Countries, Currency, Language
 #> MODULES - SMTPLIB, MIMEText - sending emails
 #> MODULE - PATHLIB - interacting with the operating system
-#> MODULE - OS, SHUTIL, FILECMP, DIRCMP, Send2Trash - interacting with the operating system
+#> MODULE - OS, SHUTIL, GLOB, FILECMP, DIRCMP, Send2Trash - interacting with the operating system
 #> MODULE - LOGGING
 #> MODULE - UNITTEST
 #> MODULE - DOTENV - hide environment informations
@@ -957,23 +957,15 @@ with open ("fn.txt","r+") as f: print(f.read()			=> Open File for Read and Write
 
 => Read textfile
 ""
-<<<<<<< HEAD
 fn = os.path.join(path, "textIn.txt")
-=======
-fn = os.path.join(path, "text.txt")
->>>>>>> 5035258affb664e54fef85db2d3daa2dc63ef514
 with open(fn, encoding="UTF-8", errors="ignore") as f:
   lines = f.read()
 ""
 
 => Read textfile - stored in list per line
 ""
-<<<<<<< HEAD
 path = os.path.abspath(os.path.dirname(sys.argv[0]))
 fn = os.path.join(path, "textIn.txt")
-=======
-fn = os.path.join(path, "text.txt")
->>>>>>> 5035258affb664e54fef85db2d3daa2dc63ef514
 with open(fn, encoding="UTF-8", errors="ignore") as f:
   lines = f.read().splitlines()
 ""
@@ -2373,6 +2365,32 @@ os.path.join(path, "URLS", link)                     => Join path together on ev
 os.popen('attrib +h ' + fn).read().close()					 => Change file to hidden
 send2trash(filename)                                 => Send file to trash (needs:)
 os.path.abspath(os.path.join(path, os.path.pardir))  => Get parent folder
+
+
+=> Get most recent files according to the modification date
+""
+import glob
+fn = os.path.join(fn, "*")
+files = glob.glob(fn)
+latest_file = max(files, key=os.path.getmtime)
+""
+
+=> Get alle files in subfolders and also the files in the folder itself
+""
+import glob
+worker1 = glob.glob(os.path.join(fn, "**", "*.pdf"), recursive=True)
+worker2 = glob.glob(os.path.join(fn, "*.pdf"))
+worker2.extend(worker1)
+files = sorted(worker2, key=os.path.getmtime, reverse = True)
+""
+
+=> Sort files by modification date
+""
+import glob
+fn = os.path.join(fn, "*")
+files = glob.glob(fn)
+files = sorted(files, key=os.path.getmtime, reverse = True)
+""
 
 => Put all files with path in a list from actual directory with all subdirs and Filtering
 ""
