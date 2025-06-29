@@ -2183,6 +2183,7 @@ sys.getsizeof(l) or sys.getsizeof(t)						             => Shows size of the list
 t = timedelta(days=0.786331018518518)                        => Convert float to hh:mm:ss datetime.timedelta
 f = t.total_seconds() / 86400                                => Convert datetime.timedelta to float
 dt = datetime.fromtimestamp(0.459 * 86400, UTC)              => Convert float to datetime (import needed: from datetime import datetime, UTC)
+dt = dt.replace(year=2025, day=20, hour=15, minute=30)       => Replace parts of a datetime
 
 => Using german names / deutsche namen for month- and day-names
 ""
