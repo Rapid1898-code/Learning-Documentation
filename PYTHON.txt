@@ -2161,7 +2161,7 @@ date = date(2020,7,24)                                       => Define date as "
 dt = datetime(2020,3,5,19,27,23)                      		   => Define date+time as "2020-03-05 19:27:23"
 now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")           => Actual date+time in format 2020-06-09 20:11:13
 now = datetime.now().strftime("%Y-%m-%d") 			             => Actual date in format 2020-06-09
-tday = datetime.today()                                      => Actual date in datetime format
+tday = datetim e.today()                                      => Actual date in datetime format
 tday = datetime.today().date()								               => Actual date as date format
 tday = str(datetime.today().date())								           => Actual date as string format
 date = dt.date()                                             => Convert datetime to date
