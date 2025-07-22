@@ -955,11 +955,11 @@ astuple(dc)								# converts the dataclass to a tuple
 with open ("fn.txt","r") as f: print(f.read()			=> Read textfile - and print it
 with open ("fn.txt","r+") as f: print(f.read()			=> Open File for Read and Write
 
-=> Read textfile
+=> Read textfile to list
 ""
 fn = os.path.join(path, "textIn.txt")
 with open(fn, encoding="UTF-8", errors="ignore") as f:
-  lines = f.read()
+  lines = [x for x in f.read().split("\n") if x]
 ""
 
 => Read textfile - stored in list per line
@@ -992,9 +992,8 @@ with open(fn, "w", encoding="UTF-8", errors="ignore") as f:
 path = os.path.abspath(os.path.dirname(sys.argv[0]))
 fn = os.path.join(path, "textOut.txt")
 fn = "".join(i for i in wTitle if i not in "\/:*?<>|" and i not in '"')
-outData = [f"{x}\n" for x in outData]
 with open(fn, "w", encoding="UTF-8", errors="ignore") as f:
-  lines = f.writelines(outData)
+  lines = f.writelines([f"{x}\n" for x in outData])
 ""
 
 => Write only a max-size in a txt-file (eg. only a maximum of 50kb will be written)
