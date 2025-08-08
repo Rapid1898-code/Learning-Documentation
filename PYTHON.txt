@@ -955,6 +955,13 @@ astuple(dc)								# converts the dataclass to a tuple
 with open ("fn.txt","r") as f: print(f.read()			=> Read textfile - and print it
 with open ("fn.txt","r+") as f: print(f.read()			=> Open File for Read and Write
 
+=> Read textfile to string
+""
+fn = os.path.join(path, "textIn.txt")
+with open(fn, encoding="UTF-8", errors="ignore") as f:
+  txt = f.read()
+""
+
 => Read textfile to list
 ""
 fn = os.path.join(path, "textIn.txt")
