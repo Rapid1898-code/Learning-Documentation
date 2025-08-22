@@ -1,3 +1,8 @@
+- download chrome (via Safari)
+- confiuge google remote desktop
+
+
+
 ### Install MS Office on Mac
 https://massgrave.dev/office_for_mac
 

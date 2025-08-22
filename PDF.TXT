@@ -1,0 +1,13 @@
+Show point coordinates in Acrobat reader (in Adobe Acrobat Pro XI)
+(eg. for redacting informations in a pdf using pymupdf)
+- change Units to Points (Edit - Preferences - Unites & Guides - change to Points)
+- show coordinates (View - Show/Hide - Cursor Coordinates)
+- create a reactangle and show the coordinates
+
+Add edit-fields (in Adobe Acrobat Pro XI)
+- right upper side "Tools" - "Forms" - "Create/Edit"
+- Add New Field
+Hinzufügen von Edit-Feldern (in Adobe Acrobat Pro XI)
+- rechts oben "Werkzeuge" - "Formulare" - Erstellen/Bearbeiten
+- rechts "Neues Feld hinzufügen"
+
