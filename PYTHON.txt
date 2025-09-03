@@ -1000,7 +1000,7 @@ path = os.path.abspath(os.path.dirname(sys.argv[0]))
 fn = os.path.join(path, "textOut.txt")
 fn = "".join(i for i in wTitle if i not in "\/:*?<>|" and i not in '"')
 with open(fn, "w", encoding="UTF-8", errors="ignore") as f:
-  lines = f.writelines([f"{x}\n" for x in outData])
+  f.writelines([f"{x}\n" for x in outData])
 ""
 
 => Write only a max-size in a txt-file (eg. only a maximum of 50kb will be written)
