@@ -560,7 +560,6 @@ l.append(1)                                      => Add 1 element to the list at
 l.extend([6,5,4])                                => Add several elements to the list at the back
 l.insert(3, "xyz")                               => Insert an element at the index-position 3
 l.index("xzy")                                   => Returns first index position of an element
-[i for i, val in enumerate(l) if val == "xyz"]   => Get all indizes of the occurence in from the list
 [i for i,v in enumerate(wHeader) if v == "xyz"]  => Find all indizes for a specific element
 l.pop()                                          => Delete last element from list
 l.pop(0)                                         => Delete first element from list
