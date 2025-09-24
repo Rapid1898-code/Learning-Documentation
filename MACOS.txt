@@ -1,7 +1,27 @@
+- when entering the email for the apple-id: change layout to AT and get @ with Alt-Gr "L"
+- change the mouse wheel direction in the mouse system settings: mouse - unselect natural scrolling
 - download chrome (via Safari)
 - confiuge google remote desktop
+- install brew: https://brew.sh
+- use this commands to be able to use brew in the terminal:
+  cd /opt/homebrew/bin/
+  PATH=$PATH:/opt/homebrew/bin
+  echo export PATH=$PATH:/opt/homebrew/bin >> ~/.zshrc
+- install git: brew install git
+- git clone repos (sometimes access with github user Rapid1898 and token from github is necessary)#
+  create a token at github settings - developer settings - personal accesst token
+- install python: https://www.python.org/downloads/macos/ - access with python3
+- create virtual environements with eg: python3 -m venv xlwings
+- install ms office: https://massgrave.dev/office_for_mac
+- run the activation from the bottom of the same site
+- set inactive screen saver at System Settings - Screen Saver - Lock Screen Settings - set everything to never
+- set accessibility keyboard at System Settings - LockSreen Settings - Accesibility Options - set Accesibility Keyboard
+(otherwise password could be not entered after a restart)
 
-
+### @-Zeichen:
+change to Austrian Layout in the upper right side of the installation windows
+wird mit Alt-L erzeugt
+Max
 
 ### Install MS Office on Mac
 https://massgrave.dev/office_for_mac
@@ -47,8 +67,6 @@ https://www.shellhacks.com/python-install-pip-mac-ubuntu-centos/
 (sometimes its only working when pip3 installed in the terminal from pyhcharm)
 
 
-### @-Zeichen:
-wird mit Alt-L erzeugt
 
 
 ### Virtual Box - MacOs
