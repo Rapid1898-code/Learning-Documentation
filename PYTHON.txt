@@ -3062,7 +3062,7 @@ driver.execute_script("window.scrollTo(0, 10000)")                  => ScrollDow
 driver.execute_script("window.open('');")                           => Open a new tab
 driver.switch_to.window(driver.window_handles[0])                   => Swich to first tab
 driver.elem.get_attribute("src")                                    => Get value from tag form an element
-driver.save_screenshot("a.png")                                     => take a screenshot (especially helpful using headless mode for debugging)
+driver.save_screenshot("screen.png")                                     => take a screenshot (especially helpful using headless mode for debugging)
 
 => Switch between iframes
 ""
