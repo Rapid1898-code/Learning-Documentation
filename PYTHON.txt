@@ -150,6 +150,7 @@ pip install -r requirements.txt   => install modules from requirements.txt
 Actual Install problems
 ""
 sshtunnel:
+pip install paramiko==3.5.1 to solve an error
 https://stackoverflow.com/questions/78853596/how-to-solve-importerror-dll-load-failed-while-importing-rust
 ""
 
