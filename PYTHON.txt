@@ -159,7 +159,6 @@ https://stackoverflow.com/questions/78853596/how-to-solve-importerror-dll-load-f
 ###### PYINSTALLER, INNO SETUP COMPILER - generate python programs to executables
 pyinstaller prg.py                                          => Generate the bundle in a subdirectory called dist.
 pyinstaller --onefile prg.py                                => Generate only one file
-pyinstaller --onefile --target-architecture x86_64 prg.py   => Create an executable on a M1_Mac for an older Intel-Mac
 
 pip install -U pyinstaller-hooks-contrib    => In case of problems when creating the exe (eg. some problems with pydantic)
 --collect-data moduleXY                     => Collect data for specific python module
@@ -231,6 +230,16 @@ https://jrsoftware.org/isdl.php
 ""
 delete all created folder from pyinstaller an try again to create the excecutable
 ""
+
+=> Create an executable on a M1_Mac for an Intel-Mac
+""
+- check that rosetta is installed: softwareupdate --install-rosetta
+- the universal python-version has to be installed: https://www.python.org/downloads/macos/
+- create a venv for x86 environment: arch -x86_64 python3.13 -m venv x86
+- install all needed modules with: arch -x86_64 pip install
+- create executable with: arch -x86_64 pyinstaller --onefile xyz.py
+""
+
 
 
 ###### SHORTCUTS VSCODE

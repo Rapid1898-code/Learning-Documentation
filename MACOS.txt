@@ -10,12 +10,13 @@
 - install git: brew install git
 - git clone repos (sometimes access with github user Rapid1898 and token from github is necessary)#
   create a token at github settings - developer settings - personal accesst token
-- install python: https://www.python.org/downloads/macos/ - access with python3
+- install python: https://www.python.org/downloads/macos/ - access with python3 and use an universal2 installer
 - create virtual environements with eg: python3 -m venv xlwings
 - install ms office: https://massgrave.dev/office_for_mac
 - run the activation from the bottom of the same site
 - set inactive screen saver at System Settings - Screen Saver - Lock Screen Settings - set everything to never
 - set accessibility keyboard at System Settings - LockSreen Settings - Accesibility Options - set Accesibility Keyboard
+- install rosetta: softwareupdate --install-rosetta
 (otherwise password could be not entered after a restart)
 
 ### @-Zeichen:
