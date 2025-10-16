@@ -4523,8 +4523,8 @@ ic.configureOutput(includeContext=True)						=> Set Context Output => also shows
 
 => Installation
 ""
-Download whl file from here: https://www.lfd.uci.edu/~gohlke/pythonlibs/#ta-lib
-(with corresponding python version (eg. cp39) and os (eg. adm64)
+Download whl file from here: https://github.com/cgohlke/talib-build/releases
+(with corresponding python version for windows (eg. win_amd64) or mac (eg. adm64)
 then: pip install *.whl (eg. pip install TA_Lib-0.4.19-cp39-cp39-win_amd64.whl)
 then: pip install TA-Lib
 ""
