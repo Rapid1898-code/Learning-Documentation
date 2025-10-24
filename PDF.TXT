@@ -11,3 +11,9 @@ Hinzufügen von Edit-Feldern (in Adobe Acrobat Pro XI)
 - rechts oben "Werkzeuge" - "Formulare" - Erstellen/Bearbeiten
 - rechts "Neues Feld hinzufügen"
 
+Right align text in form fields
+- Properties - Options - Alignment - change to right
+
+Set bold text in form fields
+- Properties - Options - Allow Rich Text Formatting - check options
+- write text in form field - select text - press Ctrl-E and format the text - delete the text
