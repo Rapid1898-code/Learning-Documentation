@@ -1,3 +1,4 @@
+### ADOBE ACROBAT:
 Show point coordinates in Acrobat reader (in Adobe Acrobat Pro XI)
 (eg. for redacting informations in a pdf using pymupdf)
 - change Units to Points (Edit - Preferences - Unites & Guides - change to Points)
@@ -17,3 +18,11 @@ Right align text in form fields
 Set bold text in form fields
 - Properties - Options - Allow Rich Text Formatting - check options
 - write text in form field - select text - press Ctrl-E and format the text - delete the text
+
+### FOXIT READER:
+Show Coordinates
+- File - Preferences - Measuring - change to Points
+- View - View Setting - Page Display - Rulers / Cursor Coordinates
+
+
+
