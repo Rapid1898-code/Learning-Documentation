@@ -3265,6 +3265,14 @@ XPath
   driver.get(workerPDF)
 ""
 
+=> Convert html-file to PDF
+""
+  pdf = driver.execute_cdp_cmd("Page.printToPDF", {"printBackground": True})
+  pdf_data = base64.b64decode(pdf["data"])
+  with open("test.pdf", "wb") as f:
+    f.write(pdf_data)
+""
+
 => Download full screenshot in incognito mode
 ""
 total_height = driver.execute_script("return document.body.scrollHeight")
