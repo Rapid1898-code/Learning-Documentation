@@ -141,7 +141,8 @@ create a venv with: virtualenv envName -p path\to\new_python.exe
 ###### PIP
 pip install moduleXY				      => install module
 pip install moduleXY --upgrade	  => upgrade module
-pip install -Iv pyinstaller==4.8  => Install specific version
+pip install paramiko==3.5         => Install specific version (problem when installing sshtunnel with version 4.0)
+pip install pyinstaller==4.8      => Install specific version
 pip uninstall module XY           => uninstall module XY
 pip list							            => show installed modules in actual environment
 pip freeze > requirements.txt		  => output modules in requirements.txt
