@@ -161,6 +161,9 @@ https://stackoverflow.com/questions/78853596/how-to-solve-importerror-dll-load-f
 pyinstaller prg.py                                          => Generate the bundle in a subdirectory called dist.
 pyinstaller --onefile prg.py                                => Generate only one file
 
+Compiling for bardcode: pyinstaller --onefile --collect-data=barcode recentAuto.py
+Compiling using ocrmypdf: pyinstaller --onefile --collect-data ocrmypdf.data --collect-submodules ocrmypdf test.py
+
 pip install -U pyinstaller-hooks-contrib    => In case of problems when creating the exe (eg. some problems with pydantic)
 --collect-data moduleXY                     => Collect data for specific python module
 --copy-metadata pandas_ta					          => add this when some modules are not found
@@ -177,11 +180,6 @@ pip install -U pyinstaller-hooks-contrib    => In case of problems when creating
 --hidden-import=cmath                       => Generating under mac os sometimes only work with this params   
 pyinstaller --onefile main.spec
 yfinance module                             => only working with import yfinance (not with import yfinance as yf)
-
-=> Compiling using ocrmypdf
-""
-pyinstaller --onefile --collect-data ocrmypdf.data --collect-submodules ocrmypdf test.py
-""
 
 => Problem and weird behaviour when using multiprocessing libraries like yahooquery
 ""
