@@ -162,7 +162,9 @@ pyinstaller prg.py                                          => Generate the bund
 pyinstaller --onefile prg.py                                => Generate only one file
 
 Compiling for bardcode: pyinstaller --onefile --collect-data=barcode recentAuto.py
-Compiling using ocrmypdf: pyinstaller --onefile --collect-data ocrmypdf.data --collect-submodules ocrmypdf test.py
+Compiling for ocrmypdf: pyinstaller --onefile --collect-data ocrmypdf.data --collect-submodules ocrmypdf test.py
+Compiling for ddgs: pyinstaller --onefile --collect-data fake_useragent --collect-submodules ddgs.engines test.py
+Compiling for trafilatura: pyinstaller --onefile --collect-datas=trafilatura xyz.py
 
 pip install -U pyinstaller-hooks-contrib    => In case of problems when creating the exe (eg. some problems with pydantic)
 --collect-data moduleXY                     => Collect data for specific python module
@@ -966,6 +968,7 @@ with open ("fn.txt","r+") as f: print(f.read()			=> Open File for Read and Write
 
 => Read textfile to string
 ""
+path = os.path.abspath(os.path.dirname(sys.argv[0]))
 fn = os.path.join(path, "textIn.txt")
 with open(fn, encoding="UTF-8", errors="ignore") as f:
   txt = f.read()
@@ -973,6 +976,7 @@ with open(fn, encoding="UTF-8", errors="ignore") as f:
 
 => Read textfile to list
 ""
+path = os.path.abspath(os.path.dirname(sys.argv[0]))
 fn = os.path.join(path, "textIn.txt")
 with open(fn, encoding="UTF-8", errors="ignore") as f:
   lines = [x for x in f.read().split("\n") if x]
@@ -1052,7 +1056,7 @@ except Exception as e:
 ###### JSON FORMAT   
 import json                                         => Import json-module
 fn = "numbers.json"                                 => Assign JSON-filename
-with open(fn) as data: info = json.load(data)      => Convert json to dict
+json.loads(data)                                    => Convert json to dict
 json_format = json.dumps(d,indent=2)				        => Convert / Encode a dict to a json-file (with indent for better reading)
 json_format = json.dumps(d,sort_keys=True)			    => Convert / Encode a dict to a json-file (with sorting the keys)
 person = json.loads(json_format)					          => Convert / Decode a json-file to a dict
