@@ -488,7 +488,7 @@ repr(s)											                    => Print string with special characters
 " ".join(s.split())                             => Delete all blank, whitspaces from a string (method 1)
 wAddress = re.sub('\s{2,}', ' ', s)             => Delete all blank, whitspaces from a string (method 2)
 "".join([x if x.isalnum() else "_" for x in s])               => Create valid filename for operating system (1)
-"".join(i for i in s if i not in "\/:*?<>|" and i not in '"') => Create valid filename for operating system (2)
+"".join(i for i in s if i not in "/\\:*?<>|" and i not in '"') => Create valid filename for operating system (2)
 
 => check if any string is in another string or all strings are in another string
 ""
@@ -1174,10 +1174,7 @@ u.netloc											                => Returns "google.com"
 import csv                                              
 => Read csv-file to nested-list
 ""
-fn = os.path.join(path, "inp.csv")
-with open(fn, "r", encoding="UTF-8") as f:               
-  csvRead = csv.reader(f, delimiter=";")
-  inpData = [x for x in csvRead]                                
+cd ..                               
 
 # when this error happens: _csv.Error: line contains NULL
 with open(workFN, "r", encoding="utf-16") as f:               
