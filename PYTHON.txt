@@ -165,6 +165,7 @@ Compiling for bardcode: pyinstaller --onefile --collect-data=barcode recentAuto.
 Compiling for ocrmypdf: pyinstaller --onefile --collect-data ocrmypdf.data --collect-submodules ocrmypdf test.py
 Compiling for ddgs: pyinstaller --onefile --collect-data fake_useragent --collect-submodules ddgs.engines test.py
 Compiling for trafilatura: pyinstaller --onefile --collect-datas=trafilatura xyz.py
+Compiling for pandas_ta: pyinstaller --onefile --hidden-import=talib.stream collSignals2.py
 
 pip install -U pyinstaller-hooks-contrib    => In case of problems when creating the exe (eg. some problems with pydantic)
 --collect-data moduleXY                     => Collect data for specific python module
