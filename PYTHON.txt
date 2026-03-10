@@ -2836,6 +2836,7 @@ df.head(22)                                                 => Output of the fir
 df.tail()                                                   => Output of the last 5 rows per default
 df.tail(22)                                                 => Output of the last 22 rows
 df.columns                                                  => Output of all column names
+df.columns = df.columns.get_level_values(0)                 => Get only the first index of a multi-index dataframe
 df.index													=> Outputs the index
 df.index = df["name"]										=> Set index to column "name"
 df.size														=> Outputs the size of the dataframe	
