@@ -2886,6 +2886,7 @@ df.drop(["Popl","Continent"],axis="columns")				=> Drops the cols Popl,Continent
 df.drop(df.index, inplace=True)								      => Drops the whole dataframe
 crisis = pd.Series([-10,-0,3],index=["Popl","HDI"])			=> Define series with same col-names as in the dataframe - with some correction values
 df[["Popl","HDI"]] + crisis									=> Comines crisis-series to the df => all values in "Popl" -10 and "HDI" -0,3 in the df
+df.columns = df.columns.droplevel(1)                => drope the second index in a multiindex dataframe
 
 => Define new series for new column in dataframe
 ""

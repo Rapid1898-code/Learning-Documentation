@@ -19,6 +19,12 @@ Set bold text in form fields
 - Properties - Options - Allow Rich Text Formatting - check options
 - write text in form field - select text - press Ctrl-E and format the text - delete the text
 
+Redact informatons in the document
+- Tools - protection
+- Mark for Redaction (select area or text parts)
+- Right Click to adjust properties (eg. for coloring)
+- Apply Redactions
+
 ### FOXIT READER:
 Show Coordinates
 - File - Preferences - Measuring - change to Points
