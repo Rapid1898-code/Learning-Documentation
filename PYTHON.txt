@@ -166,12 +166,14 @@ Compiling for ocrmypdf: pyinstaller --onefile --collect-data ocrmypdf.data --col
 Compiling for ddgs: pyinstaller --onefile --collect-data fake_useragent --collect-submodules ddgs.engines test.py
 Compiling for trafilatura: pyinstaller --onefile --collect-datas=trafilatura xyz.py
 Compiling for pandas_ta: pyinstaller --onefile --hidden-import=talib.stream collSignals2.py
+Compiling for scipy: pyinstaller --onefile --collect-data scipy --collect submodules scipy collSignals4.py
+Compiling for pandas_ta + scipy: pyinstaller --onefile --hidden-import=talib.stream --collect-data scipy --collect-submodules scipy collSignals4.py
+Compiling trafilatura: pyinstaller --onefile --collect-datas=trafilatura prog.py
 
 pip install -U pyinstaller-hooks-contrib    => In case of problems when creating the exe (eg. some problems with pydantic)
 --collect-data moduleXY                     => Collect data for specific python module
 --copy-metadata pandas_ta					          => add this when some modules are not found
---hidden-import=pymssql						          => When some modules are making problems - sometimes this helps
-    pyinstaller --onefile --collect-datas=trafilatura xyz.py
+--hidden-import=pymssql						          => When some modules are making problems - sometimes this helps    
     pyinstaller --onefile --collect-data fake_useragent  checkMapsSel2.py  
     pyinstaller --onefile --collect-data frozendict stockma3.py     => <frozen importlib._bootstrap> error when using yfinance
     pyinstaller --onefile --collect-data langchain --copy-metadata=tqdm --copy-metadata=regex --copy-metadata requests --copy-metadata packaging --copy-metadata filelock URLanswering.py
