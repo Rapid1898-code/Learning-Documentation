@@ -1,0 +1,76 @@
+### Create a react app: 
+npm create vite@latest my-dashboard
+select React and then JavsScript
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+
+### Go into the project:
+cd my-dashboard
+npm install
+
+### Start the app
+npm run dev
+shows:
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+
+### Deploy this to vercel https://vercel.com/
+- create the solution directly in a github-repo (no title folder or anyting)
+- push the solution to github
+- click add new (upper right) - select project - import the github repo
+
+### Deploy this to netlify https://app.netlify.com/
+- create the solution directly in a github-repo (no title folder or anyting)
+- push the solution to github
+- click add new project (upper right) - import the github repo - select the github repo you want to deploy
+
+### Fix wrong tailwind installation
+npm install -D tailwindcss postcss autoprefixer
+
+
+### Vite + React + Tailwind v4 setup
+1. Clean install (recommended reset)
+  Inside your project folder:
+  rmdir /s /q node_modules
+  del package-lock.json
+  npm install
+2. Install correct Tailwind setup (v4 style)
+  npm install -D tailwindcss @tailwindcss/postcss autoprefixer
+3. Create postcss.config.js
+  project root:
+  export default {
+    plugins: {
+      "@tailwindcss/postcss": {},
+      autoprefixer: {},
+    },
+  }
+4. Create tailwind.config.js
+  project root:
+  export default {
+    content: [
+      "./index.html",
+      "./src/**/*.{js,ts,jsx,tsx}",
+    ],
+    theme: {
+      extend: {},
+    },
+    plugins: [],
+  }
+5. Add Tailwind to CSS
+  src/index.css
+  @import "tailwindcss";
+6. Ensure main entry is correct
+  import React from "react"
+  import ReactDOM from "react-dom/client"
+  import App from "./App.jsx"
+  import "./index.css"
+  ReactDOM.createRoot(document.getElementById("root")).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  )
+7. Run dev server
+  npm run dev
+  Open: http://localhost:5173/
