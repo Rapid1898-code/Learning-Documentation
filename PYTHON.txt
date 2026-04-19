@@ -1690,9 +1690,14 @@ ws = wb.sheets[0]
 => Definiton for linestyles see: https://docs.microsoft.com/en-US/dotnet/api/microsoft.office.interop.excel.xllinestyle?view=excel-pia
 => Definiton for border-sites see: https://docs.microsoft.com/en-us/office/vba/api/excel.xlbordersindex
 ""
-for e in ws.range("B3:D3"):
-  for site in [7,8,9,10]:
-    e.api.Borders(site).LineStyle = 1
+["A1:C4", "A6:C8"]
+for listIDX, listEntry in enumerate(borderList):
+    if listIDX % 10 == 0:
+      print(f"Working for border {listIDX + 1} of {len(borderList)}")
+    rng = wsOut.range(listEntry).api
+    for side in range(7, 13):
+      rng.Borders(side).LineStyle = 1
+      rng.Borders(side).Weight = 3
 ""
 
 => Update row / change whole row
