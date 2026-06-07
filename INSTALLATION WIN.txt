@@ -1,3 +1,8 @@
+Win11 USB-Stick
+  Image herunterladen: https://www.microsoft.com/de-de/software-download/windows11
+  Media Creation tool herunterladen: https://support.microsoft.com/en-us/windows/create-installation-media-for-windows-99a58364-8c02-206f-aa6f-40c3b507420d
+  USB-Stick erstellen mit dem Media Creation Tool
+
 Installation
   Installaton mittels Win10 USB-Stick
   Alle anderen Festplatten entfernen vor der Installation ansonst Probleme
