@@ -202,7 +202,7 @@ Create hook-file hook-pycountry.py with content:
 	datas = copy_metadata("pycountry") + collect_data_files("pycountry")
 Compile Program with
 	pyinstaller --onefile --exclude-module matplotlib --additional-hooks-dir=. TestPyCountry.py
-""
+ ""
 
 => Problems with path when executing from py and exe   
 ""
@@ -242,6 +242,8 @@ delete all created folder from pyinstaller an try again to create the excecutabl
 - create a venv for x86 environment: arch -x86_64 python3.13 -m venv x86
 - install all needed modules with: arch -x86_64 pip install
 - create executable with: arch -x86_64 pyinstaller --onefile xyz.py
+- check if it ok: type "file xyz" and output should be: "xyz: Mach-O 64-bit executable x86_64"
+
 ""
 
 
