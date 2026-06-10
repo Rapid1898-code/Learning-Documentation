@@ -161,14 +161,15 @@ https://stackoverflow.com/questions/78853596/how-to-solve-importerror-dll-load-f
 pyinstaller prg.py                                          => Generate the bundle in a subdirectory called dist.
 pyinstaller --onefile prg.py                                => Generate only one file
 
-Compiling for bardcode: pyinstaller --onefile --collect-data=barcode recentAuto.py
-Compiling for ocrmypdf: pyinstaller --onefile --collect-data ocrmypdf.data --collect-submodules ocrmypdf test.py
-Compiling for ddgs: pyinstaller --onefile --collect-data fake_useragent --collect-submodules ddgs.engines test.py
-Compiling for trafilatura: pyinstaller --onefile --collect-datas=trafilatura xyz.py
-Compiling for pandas_ta: pyinstaller --onefile --hidden-import=talib.stream collSignals2.py
-Compiling for scipy: pyinstaller --onefile --collect-data scipy --collect submodules scipy collSignals4.py
-Compiling for pandas_ta + scipy: pyinstaller --onefile --hidden-import=talib.stream --collect-data scipy --collect-submodules scipy collSignals4.py
+Compiling bardcode: pyinstaller --onefile --collect-data=barcode recentAuto.py
+Compiling ocrmypdf: pyinstaller --onefile --collect-data ocrmypdf.data --collect-submodules ocrmypdf test.py
+Compiling ddgs: pyinstaller --onefile --collect-data fake_useragent --collect-submodules ddgs.engines test.py
+Compiling trafilatura: pyinstaller --onefile --collect-datas=trafilatura xyz.py
+Compiling pandas_ta: pyinstaller --onefile --hidden-import=talib.stream collSignals2.py
+Compiling scipy: pyinstaller --onefile --collect-data scipy --collect submodules scipy collSignals4.py
+Compiling pandas_ta + scipy: pyinstaller --onefile --hidden-import=talib.stream --collect-data scipy --collect-submodules scipy collSignals4.py
 Compiling trafilatura: pyinstaller --onefile --collect-datas=trafilatura prog.py
+Compiling selenium.chrome.webdriver: pyinstaller --onefile --collect-all selenium collXYZ.py
 
 pip install -U pyinstaller-hooks-contrib    => In case of problems when creating the exe (eg. some problems with pydantic)
 --collect-data moduleXY                     => Collect data for specific python module
