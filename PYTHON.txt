@@ -1609,8 +1609,9 @@ ws2.conditional_formatting.add(f"K4:K12", ruleBottomGreen)
 import xlwings as xw                                    => Import module
 app = xw.App(visible=False)                             => Use xlwings with hidden excel-worksheets
 wb = xw.Book()                                          => Create a new workbook
-wb = xw.Book ("name.xlsx")                              => Read XLSX
-wb = xw.Book ("name.xlsx", password = "xyz")            => Read XLSX with password protection
+wb = xw.Book (wFile)                                    => Read XLSX
+wb = xw.Book (wFile, password = "xyz")                  => Read XLSX with password protection
+wb = xw.Book (wFile, update_links=0)                    => Read XLSX and prevent from being blocked with links in it
 ws = wb.sheets["name_sheet"]                            => Read specific worksheet
 ws = wb.sheets[0]                                       => Read first worksheet
 wb.sheets.add("NewWS")									                => Add worksheet in workbook
