@@ -1650,6 +1650,7 @@ ws.pictures[0].delete()                                 => Delete the first pict
 ws.pictures["xyz"].delete()                             => Delete the first picture with the name "xyz"
 ws.api.AutoFilterMode = False                           => Disable auto filter in worksheet
 ws.clear()                                              => Clears the content and formatting of the whole sheet
+ws.range(f"A2:Z50000").clear()                          => Clears content + formatting of specific cell area
 ws.clear_contents()                                     => Clears the content but leaves formatting
 ws.clear_formats()                                      => Clears the formating but keeps the content
 wb.sheets["OldWS"].delete()                             => Delete worksheet in workbook
@@ -1672,8 +1673,13 @@ ws["A1"].api.add_comment(comment_text='My Comment')     => Add comment to a cell
 from xlwings.constants import VAlign, HAlign            => Need this import for following alignments
 ws.range("C7").api.VerticalAlignment = VAlign.xlVAlignTop   => Set the vertical alignment to Top
 ws.range("C7").api.HorizontalAlignment = HAlign.xlHAlignCenter   => Set the horizontal alignment to Center
+ 
 
-
+=> Copy full range of cells with all the formating
+""
+  last_col = wsSRC.range("XFD1").end("left").column     => if you want to get the maximum colnr
+  wsSRC.range((rowNr, 1), (rowNr, 24)).api.Copy(Destination=wsDeDup.range((rowDeDeup, 1)).api) 
+""
 
 => Get address and subaddress from hyperlinks
 ""
