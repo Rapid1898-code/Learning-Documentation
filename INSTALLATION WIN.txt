@@ -4,8 +4,9 @@ Win11 USB-Stick
   USB-Stick erstellen mit dem Media Creation Tool
 
 Installation
-  Installaton mittels Win10 USB-Stick
+  Installaton mittels Win11 USB-Stick
   Alle anderen Festplatten entfernen vor der Installation ansonst Probleme
+  Secure Boot im BIOS deaktivieren (falls der USB-Stick nicht erkannt wird) beim
   https://www.reddit.com/r/Piracy/wiki/guides/win10upgrade_activation/  
   Activate Windows 10: https://github.com/massgravel/Microsoft-Activation-Scripts with Method 1
   Activate Office: https://old.reddit.com/r/Piracy/wiki/guides/office_activation with MAS
