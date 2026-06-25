@@ -141,7 +141,7 @@ create a venv with: virtualenv envName -p path\to\new_python.exe
 ###### PIP
 pip install moduleXY				      => install module
 pip install moduleXY --upgrade	  => upgrade module
-pip install paramiko==3.5         => Install specific version (problem when installing sshtunnel with version 4.0)
+paul        => Install specific version (problem when installing sshtunnel with version 4.0)
 pip install pyinstaller==4.8      => Install specific version
 pip uninstall module XY           => uninstall module XY
 pip list							            => show installed modules in actual environment
@@ -170,6 +170,7 @@ Compiling scipy: pyinstaller --onefile --collect-data scipy --collect submodules
 Compiling pandas_ta + scipy: pyinstaller --onefile --hidden-import=talib.stream --collect-data scipy --collect-submodules scipy collSignals4.py
 Compiling trafilatura: pyinstaller --onefile --collect-datas=trafilatura prog.py
 Compiling selenium.chrome.webdriver: pyinstaller --onefile --collect-all selenium collXYZ.py
+Compiling talib.stream: pyinstaller --onefile --hidden-import=talib.stream makro.py
 
 pip install -U pyinstaller-hooks-contrib    => In case of problems when creating the exe (eg. some problems with pydantic)
 --collect-data moduleXY                     => Collect data for specific python module
