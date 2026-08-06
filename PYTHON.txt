@@ -636,7 +636,7 @@ zip([1,2,3],[4,5,6])							               => Build paris as tuple => (1,4),(2,5)
 list(set(l))									                   => Remove duplicates from a list
 list(dict.fromkeys(l))                           => Remove duplicates from a list and keep existing order
 list(map(int,l))								                 => Change elements in list to int
-lNew = [list(x) for x in zip(*l)]                => Transpose nested list (change rows and columns)
+lNew = [list(x) for x in zip(*l)]                => Pivot / Transpose nested list (change rows and columns)
 l3 = set(l2) - set(l1)                           => Get difference of 2 lists
 1st, 2nd, *rest = ["A","B","C","D","E"]          => Unpacking of a list (1st=A, 2nd=B, rest=["C","D","E"])
 [l[i:i + C] for i in range(0, len(l), C)]        => Split a list (l) in chunks (C)
