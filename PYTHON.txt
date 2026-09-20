@@ -1009,7 +1009,7 @@ with open(fn, encoding="UTF-8", errors="ignore") as data:
 ""
 path = os.path.abspath(os.path.dirname(sys.argv[0]))
 fn = os.path.join(path, "textOut.txt")
-fn = "".join(i for i in wTitle if i not in "\/:*?<>|" and i not in '"')
+fn = "".join(i for i in wSubject if i not in '/\\:*?<>|".')
 with open(fn, "w", encoding="UTF-8", errors="ignore") as f:
   f.write("some text")
 ""
@@ -1018,7 +1018,7 @@ with open(fn, "w", encoding="UTF-8", errors="ignore") as f:
 ""
 path = os.path.abspath(os.path.dirname(sys.argv[0]))
 fn = os.path.join(path, "textOut.txt")
-fn = "".join(i for i in wTitle if i not in "\/:*?<>|" and i not in '"')
+fn = "".join(i for i in wSubject if i not in '/\\:*?<>|".')
 with open(fn, "w", encoding="UTF-8", errors="ignore") as f:
   f.writelines([f"{x}\n" for x in outData])
 ""
@@ -1027,7 +1027,7 @@ with open(fn, "w", encoding="UTF-8", errors="ignore") as f:
 ""
   maxSize = 50*1024 # 50kb in bytes    
   totalSize = 0
-  fn = "".join(i for i in wTitle if i not in "\/:*?<>|" and i not in '"')
+  fn = "".join(i for i in wSubject if i not in '/\\:*?<>|".')
   with open(fn, 'w', encoding='utf-8') as f:
     for l in foundText.split("\n"):
       sizeLine = len(l.encode('utf-8'))
