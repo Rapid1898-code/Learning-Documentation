@@ -10,8 +10,9 @@ Installation
   (in MSI Bios: Settings → Advanced → Windows OS Configuration.)
   https://www.reddit.com/r/Piracy/wiki/guides/win10upgrade_activation/  
   Activate Windows 10: https://github.com/massgravel/Microsoft-Activation-Scripts with Method 1
-  Activate Office: https://old.reddit.com/r/Piracy/wiki/guides/office_activation with MAS
-  Download from: https://files.rg-adguard.net/category
+  Download Office from: https://files.rg-adguard.net/category
+  (File list >> Applications >> Office 2024 (v.16.0.17928.20148) >> de-de_O365ProPlusRetail.img)
+  Activate Office: https://old.reddit.com/r/Piracy/wiki/guides/office_activation with MAS 
   Download Adobe Software: https://w18.monkrus.ws/
   (ISO-File bereitstellen im WinExplorer - autoplay.exe aufrufen)
 
