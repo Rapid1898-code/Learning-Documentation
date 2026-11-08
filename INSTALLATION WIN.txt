@@ -68,4 +68,10 @@ Software
   KeePass (secure information)
   JDownloader, qBittorrent (data)
   
+Fixe LW-Buchstaben festlegen:
+(damit keine Konflikte wenn USB oder so angeschlossen wird)
+In der Datenträgerverwaltung:
+DATEN => R
+FILME => S
+Externe USB Drive => T
 
